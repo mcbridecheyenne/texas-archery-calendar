@@ -1,0 +1,16 @@
+{
+  "buildCommand": "npm run build:client",
+  "outputDirectory": "dist/public",
+  "installCommand": "npm install",
+  "framework": null,
+  "functions": {
+    "api/*.ts": {
+      "runtime": "@vercel/node@3"
+    }
+  },
+  "rewrites": [
+    { "source": "/api/events", "destination": "/api/events" },
+    { "source": "/api/refresh", "destination": "/api/refresh" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

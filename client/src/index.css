@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Texas Archery Outdoor — warm parchment + burnt orange + deep pine */
+:root {
+  --button-outline: rgba(60, 36, 20, 0.12);
+  --badge-outline: rgba(60, 36, 20, 0.08);
+  --opaque-button-border-intensity: -10;
+  --elevate-1: rgba(60, 36, 20, 0.04);
+  --elevate-2: rgba(60, 36, 20, 0.10);
+
+  --background: 38 38% 95%;            /* parchment */
+  --foreground: 26 35% 14%;            /* deep walnut */
+  --border: 32 22% 84%;
+  --card: 36 40% 97%;
+  --card-foreground: 26 35% 14%;
+  --card-border: 32 22% 86%;
+
+  --sidebar: 36 33% 92%;
+  --sidebar-foreground: 26 35% 14%;
+  --sidebar-border: 32 22% 84%;
+  --sidebar-primary: 18 78% 42%;
+  --sidebar-primary-foreground: 38 38% 96%;
+  --sidebar-accent: 36 28% 86%;
+  --sidebar-accent-foreground: 26 35% 14%;
+  --sidebar-ring: 18 78% 42%;
+
+  --popover: 36 40% 97%;
+  --popover-foreground: 26 35% 14%;
+  --popover-border: 32 22% 84%;
+
+  --primary: 18 78% 42%;               /* Texas burnt orange */
+  --primary-foreground: 38 38% 96%;
+  --secondary: 36 28% 88%;
+  --secondary-foreground: 26 35% 14%;
+  --muted: 36 22% 90%;
+  --muted-foreground: 26 18% 38%;
+  --accent: 36 28% 88%;
+  --accent-foreground: 26 35% 14%;
+  --destructive: 0 72% 38%;
+  --destructive-foreground: 38 38% 96%;
+  --input: 32 22% 78%;
+  --ring: 18 78% 42%;
+
+  /* Source brand hues */
+  --tfaa: 18 78% 42%;                  /* burnt orange */
+  --tfaa-soft: 18 65% 92%;
+  --asa: 150 38% 26%;                  /* deep pine */
+  --asa-soft: 150 28% 90%;
+  --tsaa: 214 58% 36%;                 /* TSAA blue */
+  --tsaa-soft: 214 48% 92%;
+
+  --chart-1: 18 78% 42%;
+  --chart-2: 150 38% 26%;
+  --chart-3: 214 58% 36%;
+  --chart-4: 26 35% 30%;
+  --chart-5: 200 25% 40%;
+
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --font-mono: "JetBrains Mono", Menlo, monospace;
+  --radius: 0.5rem;
+
+  --shadow-sm: 0 1px 2px rgba(60, 36, 20, 0.06);
+  --shadow: 0 2px 6px rgba(60, 36, 20, 0.08);
+  --shadow-md: 0 4px 12px rgba(60, 36, 20, 0.10);
+  --shadow-lg: 0 10px 30px rgba(60, 36, 20, 0.12);
+}
+
+.dark {
+  --button-outline: rgba(255, 245, 230, 0.10);
+  --badge-outline: rgba(255, 245, 230, 0.05);
+  --opaque-button-border-intensity: 10;
+  --elevate-1: rgba(255, 245, 230, 0.04);
+  --elevate-2: rgba(255, 245, 230, 0.10);
+
+  --background: 26 22% 9%;
+  --foreground: 38 30% 92%;
+  --border: 26 14% 22%;
+  --card: 26 20% 12%;
+  --card-foreground: 38 30% 92%;
+  --card-border: 26 14% 22%;
+
+  --sidebar: 26 20% 11%;
+  --sidebar-foreground: 38 30% 92%;
+  --sidebar-border: 26 14% 20%;
+  --sidebar-primary: 22 85% 55%;
+  --sidebar-primary-foreground: 26 22% 9%;
+  --sidebar-accent: 26 14% 20%;
+  --sidebar-accent-foreground: 38 30% 92%;
+  --sidebar-ring: 22 85% 55%;
+
+  --popover: 26 20% 13%;
+  --popover-foreground: 38 30% 92%;
+  --popover-border: 26 14% 24%;
+
+  --primary: 22 85% 55%;
+  --primary-foreground: 26 22% 9%;
+  --secondary: 26 14% 20%;
+  --secondary-foreground: 38 30% 92%;
+  --muted: 26 14% 18%;
+  --muted-foreground: 38 20% 68%;
+  --accent: 26 14% 22%;
+  --accent-foreground: 38 30% 92%;
+  --destructive: 0 70% 50%;
+  --destructive-foreground: 38 30% 92%;
+  --input: 26 14% 28%;
+  --ring: 22 85% 55%;
+
+  --tfaa: 22 85% 55%;
+  --tfaa-soft: 22 40% 22%;
+  --asa: 150 40% 50%;
+  --asa-soft: 150 25% 18%;
+  --tsaa: 214 70% 62%;
+  --tsaa-soft: 214 32% 20%;
+
+  --chart-1: 22 85% 55%;
+  --chart-2: 150 40% 50%;
+  --chart-3: 214 70% 62%;
+  --chart-4: 38 20% 70%;
+  --chart-5: 200 25% 60%;
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1, h2, h3 { font-family: var(--font-serif); letter-spacing: -0.01em; }
+}
+
+/* Subtle topographic background — Texas hill country contour lines */
+.bg-topo {
+  background-color: hsl(var(--background));
+  background-image:
+    radial-gradient(circle at 20% 30%, hsl(var(--primary) / 0.06), transparent 40%),
+    radial-gradient(circle at 80% 70%, hsl(var(--asa) / 0.08), transparent 45%),
+    radial-gradient(circle at 52% 12%, hsl(var(--tsaa) / 0.05), transparent 36%),
+    repeating-radial-gradient(
+      circle at 50% 50%,
+      hsl(var(--foreground) / 0.03) 0px,
+      hsl(var(--foreground) / 0.03) 1px,
+      transparent 1px,
+      transparent 28px
+    );
+}
+
+/* Source pills */
+.pill-tfaa {
+  background-color: hsl(var(--tfaa-soft));
+  color: hsl(var(--tfaa));
+  border: 1px solid hsl(var(--tfaa) / 0.25);
+}
+.pill-asa {
+  background-color: hsl(var(--asa-soft));
+  color: hsl(var(--asa));
+  border: 1px solid hsl(var(--asa) / 0.25);
+}
+.pill-tsaa {
+  background-color: hsl(var(--tsaa-soft));
+  color: hsl(var(--tsaa));
+  border: 1px solid hsl(var(--tsaa) / 0.25);
+}
+
+/* Calendar day cell event bar */
+.event-bar-tfaa {
+  background-color: hsl(var(--tfaa));
+  color: hsl(var(--primary-foreground));
+}
+.event-bar-asa {
+  background-color: hsl(var(--asa));
+  color: hsl(var(--primary-foreground));
+}
+.event-bar-tsaa {
+  background-color: hsl(var(--tsaa));
+  color: hsl(var(--primary-foreground));
+}
+
+@layer utilities {
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate),
+  .hover-elevate-2:not(.no-default-hover-elevate),
+  .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: 999;
+  }
+
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+}
