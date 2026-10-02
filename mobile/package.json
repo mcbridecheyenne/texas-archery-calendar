@@ -8,7 +8,8 @@
     "ios": "expo start --ios",
     "android": "expo start --android",
     "typecheck": "tsc --noEmit",
-    "upgrade-sdk": "npx expo install expo@latest && npx expo install --fix"
+    "upgrade-sdk": "npx expo install expo@latest && npx expo install --fix",
+    "publish-update": "eas update --channel production"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "2.2.0",
@@ -16,6 +17,7 @@
     "expo-calendar": "~15.0.7",
     "expo-notifications": "~0.32.11",
     "expo-status-bar": "~3.0.8",
+    "expo-updates": "~29.0.11",
     "react": "19.1.0",
     "react-native": "0.81.4",
     "react-native-safe-area-context": "~5.6.0"

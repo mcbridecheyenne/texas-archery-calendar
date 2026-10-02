@@ -9,16 +9,15 @@ function isEventsResponse(x: unknown): x is EventsResponse {
   return !!r && Array.isArray(r.events) && Array.isArray(r.sources);
 }
 
-// GET /api/events serves the cached schedule; POST /api/refresh re-pulls from
-// TFAA, Texas ASA and TSAA. Either way the result is saved for offline use.
+// Loads events.json (collected every few hours on GitHub) and saves it for offline use.
+// forceRefresh skips any cached copy along the way, for pull-to-refresh.
 export async function fetchEvents(apiBaseUrl: string, forceRefresh = false): Promise<EventsResponse> {
   const base = apiBaseUrl.replace(/\/+$/, "");
-  const url = `${base}/api/${forceRefresh ? "refresh" : "events"}`;
+  const url = `${base}/events.json${forceRefresh ? `?t=${Date.now()}` : ""}`;
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
     const res = await fetch(url, {
-      method: forceRefresh ? "POST" : "GET",
       headers: { Accept: "application/json" },
       signal: controller.signal,
     });
