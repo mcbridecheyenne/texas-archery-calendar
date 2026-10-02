@@ -1,0 +1,396 @@
+// The whole calendar experience in one component.
+// Standalone app: <CalendarScreen apiBaseUrl="..." />
+// Inside another app's tab bar: <CalendarScreen apiBaseUrl="..." showHeader={false} />
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  ActivityIndicator,
+  Animated,
+  Pressable,
+  RefreshControl,
+  ScrollView,
+  SectionList,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { EventDetail } from "./components/EventDetail";
+import { EventRow } from "./components/EventRow";
+import { MonthGrid } from "./components/MonthGrid";
+import { currentYM, daysInRange, fmtDayLong, fmtMonthYear, fmtRelative, parseISODate, toIso, type YM } from "./dates";
+import { useCalendarTheme, type CalendarTheme } from "./theme";
+import { sourceLabel, type EventSource, type SourceFilter, type TournamentEvent } from "./types";
+import { useEvents } from "./useEvents";
+import { useGoing } from "./useGoing";
+
+export interface CalendarScreenProps {
+  apiBaseUrl: string;
+  /** Hide the built-in title bar when a host app (like a tab navigator) shows its own. */
+  showHeader?: boolean;
+}
+
+const SOURCES: EventSource[] = ["TFAA", "ASA", "TSAA"];
+
+export function CalendarScreen({ apiBaseUrl, showHeader = true }: CalendarScreenProps) {
+  const theme = useCalendarTheme();
+  const insets = useSafeAreaInsets();
+  const { data, loading, refreshing, error, refresh } = useEvents(apiBaseUrl);
+  const { going, isGoing, toggle } = useGoing();
+
+  const [filter, setFilter] = useState<SourceFilter>("all");
+  const [view, setView] = useState<"calendar" | "list">("calendar");
+  const [month, setMonth] = useState<YM>(currentYM());
+  const [selectedDay, setSelectedDay] = useState<string | null>(null);
+  const [openEvent, setOpenEvent] = useState<TournamentEvent | null>(null);
+  const [toast, showToast] = useToast();
+
+  const todayIso = toIso(new Date());
+  const allEvents = data?.events ?? [];
+
+  const filtered = useMemo(
+    () =>
+      allEvents.filter((e) =>
+        filter === "all" ? true : filter === "going" ? going.has(e.id) : e.source === filter
+      ),
+    [allEvents, filter, going]
+  );
+  const upcoming = useMemo(() => filtered.filter((e) => e.endDate >= todayIso), [filtered, todayIso]);
+
+  const counts = useMemo(() => {
+    const c: Record<string, number> = { all: allEvents.length, going: 0, TFAA: 0, ASA: 0, TSAA: 0 };
+    for (const e of allEvents) {
+      c[e.source]++;
+      if (going.has(e.id) && e.endDate >= todayIso) c.going++;
+    }
+    return c;
+  }, [allEvents, going, todayIso]);
+
+  const eventsByDay = useMemo(() => {
+    const map = new Map<string, TournamentEvent[]>();
+    for (const ev of filtered) {
+      for (const iso of daysInRange(ev.startDate, ev.endDate)) {
+        const arr = map.get(iso);
+        if (arr) arr.push(ev);
+        else map.set(iso, [ev]);
+      }
+    }
+    return map;
+  }, [filtered]);
+
+  // On first load, open the calendar on the month of the next upcoming shoot.
+  const jumped = useRef(false);
+  useEffect(() => {
+    if (jumped.current || !data) return;
+    jumped.current = true;
+    const next = data.events.find((e) => e.endDate >= todayIso);
+    if (next) {
+      const d = parseISODate(next.startDate);
+      setMonth({ year: d.getFullYear(), month: d.getMonth() });
+    }
+  }, [data, todayIso]);
+
+  const changeMonth = useCallback((ym: YM) => {
+    setMonth(ym);
+    setSelectedDay(null);
+  }, []);
+
+  const onToggleGoing = useCallback(
+    async (event: TournamentEvent) => {
+      const msg = await toggle(event);
+      if (msg) showToast(msg);
+    },
+    [toggle, showToast]
+  );
+
+  // Events listed under the month grid: the tapped day, or everything in the visible month.
+  const belowGrid = useMemo(() => {
+    if (selectedDay) return eventsByDay.get(selectedDay) ?? [];
+    const first = toIso(new Date(month.year, month.month, 1));
+    const last = toIso(new Date(month.year, month.month + 1, 0));
+    return filtered.filter((e) => e.startDate <= last && e.endDate >= first);
+  }, [selectedDay, eventsByDay, filtered, month]);
+
+  const sections = useMemo(() => {
+    const out: { title: string; data: TournamentEvent[] }[] = [];
+    for (const ev of upcoming) {
+      const d = parseISODate(ev.startDate);
+      const title = fmtMonthYear({ year: d.getFullYear(), month: d.getMonth() });
+      const last = out[out.length - 1];
+      if (last && last.title === title) last.data.push(ev);
+      else out.push({ title, data: [ev] });
+    }
+    return out;
+  }, [upcoming]);
+
+  const refreshControl = (
+    <RefreshControl refreshing={refreshing} onRefresh={refresh} tintColor={theme.primary} colors={[theme.primary]} />
+  );
+
+  const renderRow = (ev: TournamentEvent) => (
+    <EventRow
+      key={ev.id}
+      event={ev}
+      theme={theme}
+      going={isGoing(ev.id)}
+      onPress={setOpenEvent}
+      onToggleGoing={onToggleGoing}
+    />
+  );
+
+  const controls = (
+    <View style={styles.controls}>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chips}>
+        <Chip label={`All ${counts.all}`} active={filter === "all"} onPress={() => setFilter("all")} theme={theme} />
+        <Chip label={`★ Going ${counts.going}`} active={filter === "going"} onPress={() => setFilter("going")} theme={theme} />
+        {SOURCES.map((s) => (
+          <Chip
+            key={s}
+            label={`${sourceLabel(s)} ${counts[s]}`}
+            dot={theme.source[s].solid}
+            active={filter === s}
+            onPress={() => setFilter(s)}
+            theme={theme}
+          />
+        ))}
+      </ScrollView>
+      <View style={[styles.segment, { backgroundColor: theme.subtle }]}>
+        {(["calendar", "list"] as const).map((v) => (
+          <Pressable
+            key={v}
+            onPress={() => setView(v)}
+            style={[styles.segmentBtn, view === v && { backgroundColor: theme.card }]}
+            accessibilityRole="tab"
+            accessibilityState={{ selected: view === v }}
+          >
+            <Text style={[styles.segmentText, { color: view === v ? theme.text : theme.muted }]}>
+              {v === "calendar" ? "Calendar" : "Upcoming"}
+            </Text>
+          </Pressable>
+        ))}
+      </View>
+      <StatusNotes data={data} error={error} theme={theme} onRetry={refresh} />
+    </View>
+  );
+
+  return (
+    <View style={[styles.screen, { backgroundColor: theme.background }]}>
+      {showHeader ? (
+        <View style={[styles.header, { paddingTop: insets.top + 8, borderBottomColor: theme.border }]}>
+          <Text style={[styles.headerTitle, { color: theme.text }]} accessibilityRole="header">
+            Texas Archery Calendar
+          </Text>
+          <Text style={[styles.headerSub, { color: theme.muted }]}>
+            {data ? `TFAA · Texas ASA · TSAA · updated ${fmtRelative(data.lastUpdated)}` : "TFAA · Texas ASA · TSAA"}
+          </Text>
+        </View>
+      ) : null}
+
+      {loading && !data ? (
+        <View style={styles.center}>
+          <ActivityIndicator color={theme.primary} size="large" />
+          <Text style={[styles.centerText, { color: theme.muted }]}>Loading the schedule…</Text>
+        </View>
+      ) : !data ? (
+        <View style={styles.center}>
+          <Text style={[styles.centerTitle, { color: theme.text }]}>Couldn't load the schedule</Text>
+          <Text style={[styles.centerText, { color: theme.muted }]}>{error}</Text>
+          <Pressable onPress={refresh} style={[styles.retry, { backgroundColor: theme.primary }]} accessibilityRole="button">
+            <Text style={{ color: theme.onPrimary, fontWeight: "700" }}>Try again</Text>
+          </Pressable>
+        </View>
+      ) : view === "calendar" ? (
+        <ScrollView contentContainerStyle={[styles.scroll, { paddingBottom: insets.bottom + 24 }]} refreshControl={refreshControl}>
+          {controls}
+          <MonthGrid
+            month={month}
+            onMonthChange={changeMonth}
+            selectedDay={selectedDay}
+            onSelectDay={(iso) => setSelectedDay((cur) => (cur === iso ? null : iso))}
+            eventsByDay={eventsByDay}
+            theme={theme}
+          />
+          <View style={styles.belowHeader}>
+            <Text style={[styles.sectionTitle, { color: theme.muted }]}>
+              {selectedDay ? fmtDayLong(selectedDay).toUpperCase() : `ALL OF ${fmtMonthYear(month).toUpperCase()}`}
+            </Text>
+            {selectedDay ? (
+              <Pressable onPress={() => setSelectedDay(null)} hitSlop={8} accessibilityRole="button">
+                <Text style={[styles.link, { color: theme.primary }]}>Whole month</Text>
+              </Pressable>
+            ) : null}
+          </View>
+          {belowGrid.length ? (
+            belowGrid.map(renderRow)
+          ) : (
+            <Empty theme={theme} text={selectedDay ? "No tournaments on this day." : "No tournaments this month."} />
+          )}
+        </ScrollView>
+      ) : (
+        <SectionList
+          sections={sections}
+          keyExtractor={(ev) => ev.id}
+          renderItem={({ item }) => renderRow(item)}
+          renderSectionHeader={({ section }) => (
+            <Text style={[styles.sectionTitle, styles.listSection, { color: theme.muted, backgroundColor: theme.background }]}>
+              {section.title.toUpperCase()}
+            </Text>
+          )}
+          ListHeaderComponent={controls}
+          ListEmptyComponent={
+            <Empty
+              theme={theme}
+              text={filter === "going" ? "Tap ☆ on a tournament to add it to your Going list." : "No upcoming tournaments match."}
+            />
+          }
+          contentContainerStyle={[styles.scroll, { paddingBottom: insets.bottom + 24 }]}
+          refreshControl={refreshControl}
+          stickySectionHeadersEnabled
+        />
+      )}
+
+      <EventDetail
+        event={openEvent}
+        going={openEvent ? isGoing(openEvent.id) : false}
+        theme={theme}
+        onClose={() => setOpenEvent(null)}
+        onToggleGoing={onToggleGoing}
+      />
+
+      {toast ? (
+        <Animated.View
+          pointerEvents="none"
+          style={[styles.toast, { bottom: insets.bottom + 20, backgroundColor: theme.text, opacity: toast.opacity }]}
+        >
+          <Text style={[styles.toastText, { color: theme.background }]}>{toast.text}</Text>
+        </Animated.View>
+      ) : null}
+    </View>
+  );
+}
+
+function StatusNotes({
+  data,
+  error,
+  theme,
+  onRetry,
+}: {
+  data: { lastUpdated: string; sources: { name: EventSource; status: string }[] } | null;
+  error: string | null;
+  theme: CalendarTheme;
+  onRetry: () => void;
+}) {
+  if (!data) return null;
+  const down = data.sources.filter((s) => s.status !== "ok").map((s) => sourceLabel(s.name));
+  if (!error && !down.length) return null;
+  return (
+    <View style={[styles.notice, { backgroundColor: theme.card, borderColor: theme.border }]}>
+      {error ? (
+        <Pressable onPress={onRetry} accessibilityRole="button">
+          <Text style={[styles.noticeText, { color: theme.warning }]}>
+            Offline — showing the schedule from {fmtRelative(data.lastUpdated)}. Pull down to retry.
+          </Text>
+        </Pressable>
+      ) : null}
+      {down.length ? (
+        <Text style={[styles.noticeText, { color: theme.muted }]}>
+          {down.join(" and ")} didn't fully update this time, so some of their events may be missing.
+        </Text>
+      ) : null}
+    </View>
+  );
+}
+
+function Chip({
+  label,
+  active,
+  onPress,
+  theme,
+  dot,
+}: {
+  label: string;
+  active: boolean;
+  onPress: () => void;
+  theme: CalendarTheme;
+  dot?: string;
+}) {
+  return (
+    <Pressable
+      onPress={onPress}
+      accessibilityRole="button"
+      accessibilityState={{ selected: active }}
+      style={[
+        styles.chip,
+        active ? { backgroundColor: theme.text, borderColor: theme.text } : { backgroundColor: theme.card, borderColor: theme.border },
+      ]}
+    >
+      {dot ? <View style={[styles.dot, { backgroundColor: dot }]} /> : null}
+      <Text style={[styles.chipText, { color: active ? theme.background : theme.text }]}>{label}</Text>
+    </Pressable>
+  );
+}
+
+function Empty({ text, theme }: { text: string; theme: CalendarTheme }) {
+  return (
+    <View style={[styles.empty, { borderColor: theme.border }]}>
+      <Text style={[styles.centerText, { color: theme.muted }]}>{text}</Text>
+    </View>
+  );
+}
+
+function useToast(): [{ text: string; opacity: Animated.Value } | null, (text: string) => void] {
+  const [text, setText] = useState<string | null>(null);
+  const opacity = useRef(new Animated.Value(0)).current;
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => () => {
+    if (timer.current) clearTimeout(timer.current);
+  }, []);
+  const show = useCallback(
+    (t: string) => {
+      setText(t);
+      if (timer.current) clearTimeout(timer.current);
+      Animated.timing(opacity, { toValue: 1, duration: 150, useNativeDriver: true }).start();
+      timer.current = setTimeout(() => {
+        Animated.timing(opacity, { toValue: 0, duration: 250, useNativeDriver: true }).start(() => setText(null));
+      }, 2600);
+    },
+    [opacity]
+  );
+  return [text ? { text, opacity } : null, show];
+}
+
+const styles = StyleSheet.create({
+  screen: { flex: 1 },
+  header: { paddingHorizontal: 16, paddingBottom: 10, borderBottomWidth: StyleSheet.hairlineWidth },
+  headerTitle: { fontSize: 22, fontWeight: "800" },
+  headerSub: { fontSize: 12, marginTop: 2 },
+  scroll: { padding: 16 },
+  controls: { gap: 10, marginBottom: 12 },
+  chips: { gap: 8, paddingRight: 8 },
+  chip: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    paddingHorizontal: 12,
+    paddingVertical: 7,
+    borderRadius: 999,
+    borderWidth: StyleSheet.hairlineWidth,
+  },
+  chipText: { fontSize: 13, fontWeight: "600" },
+  dot: { width: 8, height: 8, borderRadius: 4 },
+  segment: { flexDirection: "row", borderRadius: 10, padding: 3 },
+  segmentBtn: { flex: 1, paddingVertical: 7, borderRadius: 8, alignItems: "center" },
+  segmentText: { fontSize: 14, fontWeight: "600" },
+  notice: { borderRadius: 10, borderWidth: StyleSheet.hairlineWidth, padding: 10, gap: 4 },
+  noticeText: { fontSize: 13 },
+  belowHeader: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: 18, marginBottom: 8 },
+  sectionTitle: { fontSize: 12, fontWeight: "700", letterSpacing: 1.2 },
+  listSection: { paddingVertical: 8 },
+  link: { fontSize: 14, fontWeight: "600" },
+  center: { flex: 1, alignItems: "center", justifyContent: "center", padding: 32, gap: 10 },
+  centerTitle: { fontSize: 18, fontWeight: "700" },
+  centerText: { fontSize: 14, textAlign: "center" },
+  retry: { marginTop: 8, paddingHorizontal: 22, paddingVertical: 11, borderRadius: 10 },
+  empty: { borderWidth: 1, borderStyle: "dashed", borderRadius: 12, padding: 24, marginTop: 4 },
+  toast: { position: "absolute", left: 24, right: 24, borderRadius: 12, paddingVertical: 12, paddingHorizontal: 16 },
+  toastText: { fontSize: 14, fontWeight: "600", textAlign: "center" },
+});
