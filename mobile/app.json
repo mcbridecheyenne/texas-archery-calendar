@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Texas Archery Calendar",
-    "slug": "texas-archery-calendar",
+    "name": "Archery in Texas",
+    "slug": "archery-in-texas",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,20 +13,22 @@
       "backgroundColor": "#F7F2EA"
     },
     "ios": {
-      "bundleIdentifier": "com.cheyennemcbride.archerycalendar",
+      "bundleIdentifier": "com.cheyennemcbride.archeryintexas",
       "supportsTablet": true,
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
-      }
+      },
+      "usesAppleSignIn": true
     },
     "android": {
-      "package": "com.cheyennemcbride.archerycalendar",
+      "package": "com.cheyennemcbride.archeryintexas",
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#F7F2EA"
       }
     },
     "plugins": [
+      "expo-router",
       [
         "expo-calendar",
         {
@@ -40,10 +42,23 @@
           "iosAppId": "ca-app-pub-3940256099942544~1458002511",
           "androidAppId": "ca-app-pub-3940256099942544~3347511713"
         }
+      ],
+      "expo-apple-authentication",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Archery in Texas uses your photos so you can add pictures to your listings.",
+          "cameraPermission": "Archery in Texas uses the camera so you can photograph gear you're selling.",
+          "microphonePermission": false
+        }
       ]
     ],
     "runtimeVersion": {
       "policy": "appVersion"
+    },
+    "scheme": "archeryintexas",
+    "experiments": {
+      "typedRoutes": false
     }
   }
 }

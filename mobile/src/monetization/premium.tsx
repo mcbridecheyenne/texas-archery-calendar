@@ -29,6 +29,9 @@ export interface PremiumState {
   plans: Plan[]; // monthly first, then yearly
   purchase: (plan: Plan) => Promise<"purchased" | "cancelled" | "failed">;
   restore: () => Promise<boolean>;
+  sheetOpen: boolean; // the "Go ad-free" screen
+  openSheet: () => void;
+  closeSheet: () => void;
 }
 
 const PremiumContext = createContext<PremiumState>({
@@ -38,6 +41,9 @@ const PremiumContext = createContext<PremiumState>({
   plans: [],
   purchase: async () => "failed",
   restore: async () => false,
+  sheetOpen: false,
+  openSheet: () => {},
+  closeSheet: () => {},
 });
 
 export function usePremium(): PremiumState {
@@ -55,6 +61,9 @@ export function PremiumProvider({ children }: { children: ReactNode }) {
   const [isPremium, setIsPremium] = useState(false);
   const [ready, setReady] = useState(!enabled);
   const [plans, setPlans] = useState<Plan[]>([]);
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const openSheet = useCallback(() => setSheetOpen(true), []);
+  const closeSheet = useCallback(() => setSheetOpen(false), []);
 
   const apply = useCallback((info: any) => {
     setIsPremium(!!info?.entitlements?.active?.[PURCHASES.entitlement]);
@@ -122,8 +131,11 @@ export function PremiumProvider({ children }: { children: ReactNode }) {
       plans,
       purchase,
       restore,
+      sheetOpen,
+      openSheet,
+      closeSheet,
     }),
-    [enabled, plans, isPremium, ready, purchase, restore]
+    [enabled, plans, isPremium, ready, purchase, restore, sheetOpen, openSheet, closeSheet]
   );
 
   return <PremiumContext.Provider value={value}>{children}</PremiumContext.Provider>;

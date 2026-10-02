@@ -3,8 +3,19 @@
 // Android app and website always show the same schedule.
 export const API_BASE_URL = "https://mcbridecheyenne.github.io/texas-archery-calendar";
 
+// ---- Marketplace (Supabase) ----
+// From supabase.com → your project → Project Settings → API: the Project URL and the
+// "anon public" key. Both are safe to ship in the app; the database rules in
+// supabase/schema.sql decide what each person can do. Leave blank to show
+// "Marketplace coming soon" instead.
+export const SUPABASE = {
+  url: "",
+  anonKey: "",
+};
+
 // Public pages linked from the subscription screen (Apple requires both).
 export const PRIVACY_URL = `${API_BASE_URL}/privacy.html`;
+export const RULES_URL = `${API_BASE_URL}/marketplace-rules.html`;
 export const TERMS_URL = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/";
 
 // ---- Ads (Google AdMob) ----

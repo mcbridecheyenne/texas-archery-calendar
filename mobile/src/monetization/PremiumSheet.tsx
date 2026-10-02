@@ -164,3 +164,9 @@ const styles = StyleSheet.create({
   links: { flexDirection: "row", justifyContent: "center", gap: 22, marginTop: 16 },
   link: { fontSize: 14, fontWeight: "600" },
 });
+
+// Renders the sheet wherever the app opens it from (banner link, Account tab).
+export function PremiumSheetHost() {
+  const { sheetOpen, closeSheet } = usePremium();
+  return <PremiumSheet visible={sheetOpen} onClose={closeSheet} />;
+}

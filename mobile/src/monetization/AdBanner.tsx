@@ -39,7 +39,8 @@ export function useAdsVisible(): boolean {
   return !!Ads && ADS.enabled && ready && !isPremium;
 }
 
-export function AdBanner({ onRemoveAds }: { onRemoveAds: () => void }) {
+// padBottom: add the phone's bottom safe area (off when a tab bar sits underneath).
+export function AdBanner({ onRemoveAds, padBottom = true }: { onRemoveAds: () => void; padBottom?: boolean }) {
   const theme = useCalendarTheme();
   const insets = useSafeAreaInsets();
   const { available } = usePremium();
@@ -61,7 +62,7 @@ export function AdBanner({ onRemoveAds }: { onRemoveAds: () => void }) {
     <View
       style={[
         styles.wrap,
-        { backgroundColor: theme.card, borderTopColor: theme.border, paddingBottom: insets.bottom },
+        { backgroundColor: theme.card, borderTopColor: theme.border, paddingBottom: padBottom ? insets.bottom : 0 },
       ]}
     >
       {loaded && available ? (

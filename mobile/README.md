@@ -1,6 +1,17 @@
-# Texas Archery Calendar — iPhone & Android app
+# Archery in Texas — iPhone & Android app
 
-One React Native (Expo) app that builds for both iPhone and Android.
+One React Native (Expo) app for Texas archers that builds for both iPhone and Android.
+It grows one tab at a time:
+
+| Tab | What it does | Data |
+|---|---|---|
+| Tournaments | TFAA, Texas ASA and TSAA calendar, Going list, reminders | `events.json` on GitHub Pages |
+| Marketplace | Buy and sell used gear, hand off at a shoot | Supabase |
+| Messages | Chat between buyers and sellers | Supabase |
+| Account | Profile, my listings, ad-free, delete account | Supabase |
+
+To add a feature later (scores, clubs, results…), add a folder under `src/features/`
+and a file under `app/(tabs)/`, then list it in `app/(tabs)/_layout.tsx`.
 
 ## Where the schedule comes from
 
@@ -29,15 +40,17 @@ first. Re-enable it from the repo's **Actions** tab, or just push any change.
 
 ```
 mobile/
-  App.tsx                 thin shell: just renders <CalendarScreen />
-  config.ts               the website address the app reads events from
-  src/features/calendar/  everything about the calendar (self-contained)
+  app/                       screens (Expo Router: one file per screen)
+    (tabs)/                  the four tabs
+    listing/ chat/ …         screens that slide over the tabs
+  config.ts                  all the ids and keys you fill in
+  src/features/calendar/     tournament calendar (self-contained, no ads or accounts)
+  src/features/marketplace/  listings, photos, chat, reports, content filter
+  src/lib/                   Supabase connection and sign-in
+  src/monetization/          banner ad and ad-free subscription
+  src/ui/                    shared buttons, fields, menus
+  supabase/schema.sql        the marketplace database, run once in Supabase
 ```
-
-`src/features/calendar` only depends on React Native and four Expo libraries (no ads), takes
-the server address as a prop, and keeps its saved data under its own `archeryCalendar.` keys.
-To make it a tab in the scoring app later, copy the folder in and render
-`<CalendarScreen apiBaseUrl={...} showHeader={false} />` as that tab's screen.
 
 ## First-time setup (on your Mac)
 
@@ -55,6 +68,49 @@ To make it a tab in the scoring app later, copy the folder in and render
 npx expo start
 ```
 Install **Expo Go** from the App Store and scan the QR code that appears in Terminal.
+The calendar and marketplace work in Expo Go. Ads, subscriptions and Sign in with Apple
+only work in a real build (TestFlight); email sign-in works in both.
+
+## Turn on the marketplace (Supabase)
+
+Until `SUPABASE` in `config.ts` is filled in, the Marketplace tab says "coming soon"
+and everything else works.
+
+1. **Create the project:** at supabase.com, make a free project (region: Central US).
+2. **Create the database:** SQL Editor → New query → paste all of `supabase/schema.sql` → Run.
+   This makes the tables, the photo bucket, and the security rules (people can only edit
+   their own listings, read their own chats, and so on). It's safe to run again after updates.
+3. **Email sign-in codes:** Authentication → Emails → Templates. In both **Magic Link** and
+   **Confirm signup**, replace the body with something like:
+   `Your Archery in Texas code is {{ .Token }}`
+   Then Authentication → Emails → SMTP Settings: connect a free sender (for example Resend).
+   Supabase's built-in email only sends a few messages an hour, which is fine for testing but not for launch.
+4. **Sign in with Apple:** Authentication → Sign In / Providers → Apple → turn on, and add
+   `com.cheyennemcbride.archeryintexas` under Client IDs. (Native sign-in doesn't need the
+   secret key; that's only for websites.)
+5. **Connect the app:** Project Settings → API. Copy the Project URL and the `anon` public key
+   into `config.ts` under `SUPABASE`.
+
+### Moderating
+
+- **Reports** land in Table Editor → `reports`. Review them within 24 hours (Apple expects this).
+- **Remove a listing:** in `listings`, set its `status` to `removed`. The seller can't undo it.
+- **Ban someone:** in `profiles`, set `is_banned` to true. Their listings disappear and they
+  can't post or message. They can't change it back themselves.
+- **Filtered words:** `src/features/marketplace/moderation.ts` blocks profanity and
+  non-archery items like firearms. Add words there as needed.
+
+### Limits on the free plan
+
+The free Supabase plan includes 500 MB of database and 1 GB of photos. Photos are shrunk to
+about 300 KB before upload, so 1 GB holds roughly 3,000 photos (around 800 listings).
+Supabase pauses free projects after a week with no activity, so upgrade ($25/month) once real
+people are using it.
+
+### Not in this version yet
+
+- Push notifications for new messages (the Messages tab shows unread counts while the app is open).
+- In-app payments; buyers and sellers settle up themselves.
 
 ## TestFlight / App Store (iPhone)
 
@@ -65,7 +121,7 @@ eas init                  # links this folder to an Expo project (one time)
 eas build -p ios          # builds in Expo's cloud; sign in with your Apple ID when asked
 eas submit -p ios         # uploads the build to App Store Connect → TestFlight
 ```
-Bundle ID: `com.cheyennemcbride.archerycalendar`.
+Bundle ID: `com.cheyennemcbride.archeryintexas`.
 
 ## Updating the app without the App Store
 
@@ -83,7 +139,7 @@ new native library still need a new build through the App Store / Google Play.
 The free version shows one small banner at the bottom of the screen: no pop-ups or
 video, and non-personalized ads only, so there's no "allow tracking" prompt.
 Subscribers ($0.99/month or $9.99/year) don't see it. The code is in `src/monetization/`,
-outside the calendar folder, so the calendar stays ad-free if it moves into the scoring app.
+outside the feature folders.
 
 Until you fill in your own ids, the app shows Google's **test** ads and the
 "Go ad-free" option stays hidden.
@@ -108,7 +164,12 @@ net about $0.84 a month or $8.49 a year per subscriber, before taxes.
 **Privacy:** the policy is at https://mcbridecheyenne.github.io/texas-archery-calendar/privacy.html.
 Use that link in App Store Connect and Google Play. On Apple's privacy questionnaire, answer for
 Google AdMob's data collection (device ID, coarse location, usage and diagnostics, used for
-advertising, not for tracking).
+advertising, not for tracking), plus marketplace data: email (account), name, photos and
+messages (user content), and user ID, all linked to the person and used for app functionality.
+
+**App Review notes:** tell Apple that browsing needs no account and that reviewers can sign in
+with Sign in with Apple. Point out Report and Block (the ••• button on listings and chats), the
+marketplace rules agreement during setup, and Account → Delete account.
 
 ## Google Play (Android)
 

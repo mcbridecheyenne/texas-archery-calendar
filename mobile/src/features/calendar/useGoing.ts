@@ -11,16 +11,20 @@ export interface GoingState {
   isGoing: (id: string) => boolean;
   // Resolves to a short message to show the archer, or null.
   toggle: (event: TournamentEvent) => Promise<string | null>;
+  reload: () => Promise<void>; // re-read the saved list (e.g. when another tab changed it)
 }
 
 export function useGoing(): GoingState {
   const [going, setGoing] = useState<Set<string>>(new Set());
 
-  useEffect(() => {
-    readJSON<string[]>(KEY).then((ids) => {
-      if (Array.isArray(ids)) setGoing(new Set(ids));
-    });
+  const reload = useCallback(async () => {
+    const ids = await readJSON<string[]>(KEY);
+    if (Array.isArray(ids)) setGoing(new Set(ids));
   }, []);
+
+  useEffect(() => {
+    reload();
+  }, [reload]);
 
   const isGoing = useCallback((id: string) => going.has(id), [going]);
 
@@ -49,5 +53,5 @@ export function useGoing(): GoingState {
     [going]
   );
 
-  return { going, isGoing, toggle };
+  return { going, isGoing, toggle, reload };
 }

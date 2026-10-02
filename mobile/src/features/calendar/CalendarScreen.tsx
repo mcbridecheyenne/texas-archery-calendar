@@ -27,6 +27,8 @@ export interface CalendarScreenProps {
   apiBaseUrl: string;
   /** Hide the built-in title bar when a host app (like a tab navigator) shows its own. */
   showHeader?: boolean;
+  /** Title in the built-in header. */
+  title?: string;
   /** Space to leave at the bottom. Defaults to the phone's safe area; pass 0 when the host
    *  puts something (like a tab bar or banner) under this screen that already handles it. */
   bottomInset?: number;
@@ -36,7 +38,7 @@ export interface CalendarScreenProps {
 
 const SOURCES: EventSource[] = ["TFAA", "ASA", "TSAA"];
 
-export function CalendarScreen({ apiBaseUrl, showHeader = true, bottomInset, footer }: CalendarScreenProps) {
+export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas Archery Calendar", bottomInset, footer }: CalendarScreenProps) {
   const theme = useCalendarTheme();
   const insets = useSafeAreaInsets();
   const bottom = bottomInset ?? insets.bottom;
@@ -183,7 +185,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, bottomInset, foo
       {showHeader ? (
         <View style={[styles.header, { paddingTop: insets.top + 8, borderBottomColor: theme.border }]}>
           <Text style={[styles.headerTitle, { color: theme.text }]} accessibilityRole="header">
-            Texas Archery Calendar
+            {title}
           </Text>
           <Text style={[styles.headerSub, { color: theme.muted }]}>
             {data ? `TFAA · Texas ASA · TSAA · updated ${fmtRelative(data.lastUpdated)}` : "TFAA · Texas ASA · TSAA"}
