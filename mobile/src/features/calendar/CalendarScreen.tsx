@@ -1,7 +1,7 @@
 // The whole calendar experience in one component.
 // Standalone app: <CalendarScreen apiBaseUrl="..." />
 // Inside another app's tab bar: <CalendarScreen apiBaseUrl="..." showHeader={false} />
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
   ActivityIndicator,
   Animated,
@@ -27,13 +27,19 @@ export interface CalendarScreenProps {
   apiBaseUrl: string;
   /** Hide the built-in title bar when a host app (like a tab navigator) shows its own. */
   showHeader?: boolean;
+  /** Space to leave at the bottom. Defaults to the phone's safe area; pass 0 when the host
+   *  puts something (like a tab bar or banner) under this screen that already handles it. */
+  bottomInset?: number;
+  /** Extra content shown at the very end of the list, e.g. a "Go ad-free" link. */
+  footer?: ReactNode;
 }
 
 const SOURCES: EventSource[] = ["TFAA", "ASA", "TSAA"];
 
-export function CalendarScreen({ apiBaseUrl, showHeader = true }: CalendarScreenProps) {
+export function CalendarScreen({ apiBaseUrl, showHeader = true, bottomInset, footer }: CalendarScreenProps) {
   const theme = useCalendarTheme();
   const insets = useSafeAreaInsets();
+  const bottom = bottomInset ?? insets.bottom;
   const { data, loading, refreshing, error, refresh } = useEvents(apiBaseUrl);
   const { going, isGoing, toggle } = useGoing();
 
@@ -199,7 +205,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true }: CalendarScreen
           </Pressable>
         </View>
       ) : view === "calendar" ? (
-        <ScrollView contentContainerStyle={[styles.scroll, { paddingBottom: insets.bottom + 24 }]} refreshControl={refreshControl}>
+        <ScrollView contentContainerStyle={[styles.scroll, { paddingBottom: bottom + 24 }]} refreshControl={refreshControl}>
           {controls}
           <MonthGrid
             month={month}
@@ -224,6 +230,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true }: CalendarScreen
           ) : (
             <Empty theme={theme} text={selectedDay ? "No tournaments on this day." : "No tournaments this month."} />
           )}
+          {footer}
         </ScrollView>
       ) : (
         <SectionList
@@ -236,13 +243,14 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true }: CalendarScreen
             </Text>
           )}
           ListHeaderComponent={controls}
+          ListFooterComponent={footer ? <>{footer}</> : null}
           ListEmptyComponent={
             <Empty
               theme={theme}
               text={filter === "going" ? "Tap ☆ on a tournament to add it to your Going list." : "No upcoming tournaments match."}
             />
           }
-          contentContainerStyle={[styles.scroll, { paddingBottom: insets.bottom + 24 }]}
+          contentContainerStyle={[styles.scroll, { paddingBottom: bottom + 24 }]}
           refreshControl={refreshControl}
           stickySectionHeadersEnabled
         />
@@ -259,7 +267,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true }: CalendarScreen
       {toast ? (
         <Animated.View
           pointerEvents="none"
-          style={[styles.toast, { bottom: insets.bottom + 20, backgroundColor: theme.text, opacity: toast.opacity }]}
+          style={[styles.toast, { bottom: bottom + 20, backgroundColor: theme.text, opacity: toast.opacity }]}
         >
           <Text style={[styles.toastText, { color: theme.background }]}>{toast.text}</Text>
         </Animated.View>

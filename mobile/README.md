@@ -34,7 +34,7 @@ mobile/
   src/features/calendar/  everything about the calendar (self-contained)
 ```
 
-`src/features/calendar` only depends on React Native and four Expo libraries, takes
+`src/features/calendar` only depends on React Native and four Expo libraries (no ads), takes
 the server address as a prop, and keeps its saved data under its own `archeryCalendar.` keys.
 To make it a tab in the scoring app later, copy the folder in and render
 `<CalendarScreen apiBaseUrl={...} showHeader={false} />` as that tab's screen.
@@ -77,6 +77,38 @@ npm run publish-update    # sends the current code to every installed copy
 ```
 Phones pick it up the next time the app opens. Changes that add a new permission or a
 new native library still need a new build through the App Store / Google Play.
+
+## Ads and the ad-free subscription
+
+The free version shows one small banner at the bottom of the screen: no pop-ups or
+video, and non-personalized ads only, so there's no "allow tracking" prompt.
+Subscribers ($0.99/month or $9.99/year) don't see it. The code is in `src/monetization/`,
+outside the calendar folder, so the calendar stays ad-free if it moves into the scoring app.
+
+Until you fill in your own ids, the app shows Google's **test** ads and the
+"Go ad-free" option stays hidden.
+
+**AdMob (ads)**
+1. At admob.google.com, add two apps (iOS and Android) and a **Banner** ad unit for each.
+2. Put the app ids (`ca-app-pub-…~…`) in `app.json` under `react-native-google-mobile-ads`,
+   and the banner ids (`ca-app-pub-…/…`) in `config.ts` under `ADS`.
+
+**Subscriptions**
+1. App Store Connect → Agreements, Tax, and Banking: accept the **Paid Apps** agreement and add banking/tax info.
+2. App Store Connect → your app → Subscriptions: create a group "Ad-free" with two
+   auto-renewable subscriptions: `adfree_monthly` ($0.99, 1 month) and `adfree_yearly` ($9.99, 1 year).
+3. Google Play Console → Monetize → Subscriptions: create the same two.
+4. At app.revenuecat.com: create a project, add the iOS and Android apps, add both products,
+   create an entitlement `ad_free` that includes them, and an offering with a **Monthly** and an **Annual** package.
+5. Copy the public SDK keys into `config.ts` under `PURCHASES`.
+
+Store fees: Apple and Google keep 15% under their small-business programs, so you
+net about $0.84 a month or $8.49 a year per subscriber, before taxes.
+
+**Privacy:** the policy is at https://mcbridecheyenne.github.io/texas-archery-calendar/privacy.html.
+Use that link in App Store Connect and Google Play. On Apple's privacy questionnaire, answer for
+Google AdMob's data collection (device ID, coarse location, usage and diagnostics, used for
+advertising, not for tracking).
 
 ## Google Play (Android)
 

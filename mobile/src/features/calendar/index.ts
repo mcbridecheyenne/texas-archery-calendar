@@ -4,5 +4,6 @@
 export { CalendarScreen, type CalendarScreenProps } from "./CalendarScreen";
 export { useEvents } from "./useEvents";
 export { useGoing } from "./useGoing";
+export { useCalendarTheme, type CalendarTheme } from "./theme";
 export { fetchEvents, readCachedEvents } from "./api";
 export type { TournamentEvent, EventsResponse, EventSource, SourceStatus } from "./types";

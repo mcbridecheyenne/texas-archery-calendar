@@ -33,7 +33,14 @@
           "calendarPermission": "Texas Archery Calendar adds the tournaments you pick to your calendar."
         }
       ],
-      "expo-notifications"
+      "expo-notifications",
+      [
+        "react-native-google-mobile-ads",
+        {
+          "iosAppId": "ca-app-pub-3940256099942544~1458002511",
+          "androidAppId": "ca-app-pub-3940256099942544~3347511713"
+        }
+      ]
     ],
     "runtimeVersion": {
       "policy": "appVersion"
