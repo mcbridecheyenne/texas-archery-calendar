@@ -17,7 +17,7 @@ function friendsNote(names: string[] | undefined): string | null {
 
 export default function TournamentsTab() {
   const router = useRouter();
-  const { enabled } = useAuth();
+  const { enabled, profile } = useAuth();
   const fr = useFriends();
   const community = useCommunity();
 
@@ -54,5 +54,14 @@ export default function TournamentsTab() {
   }, [enabled, community, fr, router]);
 
   // The tab bar below handles the bottom safe area.
-  return <CalendarScreen apiBaseUrl={API_BASE_URL} title="Archery in Texas" bottomInset={0} social={social} sharePlug={SHARE_PLUG} />;
+  return (
+    <CalendarScreen
+      apiBaseUrl={API_BASE_URL}
+      title="Archery in Texas"
+      bottomInset={0}
+      social={social}
+      sharePlug={SHARE_PLUG}
+      shareAs={{ name: profile?.display_name, archeryClass: profile?.archery_class }}
+    />
+  );
 }

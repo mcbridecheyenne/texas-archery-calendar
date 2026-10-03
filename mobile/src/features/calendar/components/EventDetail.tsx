@@ -5,7 +5,8 @@ import { addToPhoneCalendar, callHost, emailHost, openDirections, openUrl } from
 import { daysUntil, fmtRange } from "../dates";
 import type { CalendarTheme } from "../theme";
 import { sourceLabel, type TournamentEvent } from "../types";
-import { shareShoot } from "../share";
+import { shareShoot, shootMessage } from "../share";
+import { useShareCard, type ShareCardInfo } from "./ShareCard";
 import { SourcePill } from "./SourcePill";
 
 interface Props {
@@ -17,6 +18,7 @@ interface Props {
   /** Host-supplied content under the Going button (friends going, etc.). */
   extra?: (event: TournamentEvent, going: boolean, close: () => void) => ReactNode;
   sharePlug?: string;
+  shareAs?: ShareCardInfo;
 }
 
 function countdown(event: TournamentEvent): string | null {
@@ -28,7 +30,8 @@ function countdown(event: TournamentEvent): string | null {
   return null;
 }
 
-export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra, sharePlug }: Props) {
+export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra, sharePlug, shareAs }: Props) {
+  const card = useShareCard();
   const insets = useSafeAreaInsets();
   return (
     <Modal visible={!!event} animationType="slide" presentationStyle="pageSheet" onRequestClose={onClose}>
@@ -89,7 +92,13 @@ export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra
               {event.location || event.city ? (
                 <Action label="Directions" theme={theme} onPress={() => openDirections(event)} />
               ) : null}
-              <Action label="Share" theme={theme} onPress={() => shareShoot(event, going, sharePlug).catch(() => {})} />
+              <Action label="Share" theme={theme} onPress={() =>
+                  (going
+                    ? card.shareCard([event], shareAs ?? {}, shootMessage(event, true, sharePlug))
+                    : shareShoot(event, false, sharePlug)
+                  ).catch(() => {})
+                }
+              />
             </View>
 
             <View style={[styles.card, { backgroundColor: theme.card, borderColor: theme.border }]}>
@@ -137,6 +146,7 @@ export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra
               Always confirm dates and details with the host club before you travel.
             </Text>
           </ScrollView>
+          {card.element}
         </View>
       ) : null}
     </Modal>

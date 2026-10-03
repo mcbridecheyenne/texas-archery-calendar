@@ -20,7 +20,8 @@ import { MonthGrid } from "./components/MonthGrid";
 import { currentYM, daysInRange, fmtDayLong, fmtMonthYear, fmtRelative, parseISODate, toIso, type YM } from "./dates";
 import { useCalendarTheme, type CalendarTheme } from "./theme";
 import { sourceLabel, type CalendarSocial, type EventSource, type SourceFilter, type TournamentEvent } from "./types";
-import { shareMyShoots } from "./share";
+import { useShareCard, type ShareCardInfo } from "./components/ShareCard";
+import { shootsMessage } from "./share";
 import { useEvents } from "./useEvents";
 import { useGoing } from "./useGoing";
 
@@ -37,13 +38,16 @@ export interface CalendarScreenProps {
   footer?: ReactNode;
   /** Added to the end of shared shoots, e.g. "Get the Archery in Texas app: <link>". */
   sharePlug?: string;
+  /** Name and class printed on shared shoot pictures. */
+  shareAs?: ShareCardInfo;
   /** Optional friends/sharing/archer-added tournaments, supplied by the host app. */
   social?: CalendarSocial;
 }
 
 const OFFICIAL: EventSource[] = ["TFAA", "ASA", "TSAA"];
 
-export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas Archery Calendar", bottomInset, footer, social, sharePlug }: CalendarScreenProps) {
+export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas Archery Calendar", bottomInset, footer, social, sharePlug, shareAs }: CalendarScreenProps) {
+  const card = useShareCard();
   const theme = useCalendarTheme();
   const insets = useSafeAreaInsets();
   const bottom = bottomInset ?? insets.bottom;
@@ -194,7 +198,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
       {segment}
       {myShoots.length ? (
         <Pressable
-          onPress={() => shareMyShoots(myShoots, sharePlug).catch(() => {})}
+          onPress={() => card.shareCard(myShoots, shareAs ?? {}, shootsMessage(myShoots, sharePlug)).catch(() => {})}
           style={({ pressed }) => [styles.shareBtn, { backgroundColor: theme.primary, opacity: pressed ? 0.85 : 1 }]}
           accessibilityRole="button"
         >
@@ -326,7 +330,10 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
         onToggleGoing={onToggleGoing}
         extra={social?.renderDetail}
         sharePlug={sharePlug}
+        shareAs={shareAs}
       />
+
+      {card.element}
 
       {toast ? (
         <Animated.View
