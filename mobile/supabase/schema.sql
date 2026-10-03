@@ -553,11 +553,15 @@ alter table public.profiles add column if not exists archery_class text
 -- ============================================================
 alter table public.profiles add column if not exists discoverable boolean not null default false;
 
-create or replace function public.search_archers(q text)
+drop function if exists public.search_archers(text);
+
+-- q: part of a name or town (optional when a class is picked); klass: archery class (optional).
+create or replace function public.search_archers(q text, klass text default null)
 returns table (id uuid, display_name text, city text, archery_class text, relation text)
 language sql stable security definer set search_path = public as $$
   with term as (
-    select replace(replace(replace(trim(coalesce(q, '')), '\', ''), '%', ''), '_', '') as t
+    select replace(replace(replace(trim(coalesce(q, '')), '\', ''), '%', ''), '_', '') as t,
+           nullif(trim(coalesce(klass, '')), '') as k
   )
   select p.id, p.display_name, p.city, p.archery_class,
     coalesce((
@@ -573,18 +577,19 @@ language sql stable security definer set search_path = public as $$
   from public.profiles p, term
   where auth.uid() is not null
     and public.is_active_member(auth.uid())
-    and char_length(term.t) >= 2
+    and (char_length(term.t) >= 2 or term.k is not null)
     and p.discoverable
     and not p.is_banned
     and p.id <> auth.uid()
     and not public.either_blocked(auth.uid(), p.id)
-    and (p.display_name ilike '%' || term.t || '%' or p.city ilike term.t || '%')
+    and (term.t = '' or p.display_name ilike '%' || term.t || '%' or p.city ilike term.t || '%')
+    and (term.k is null or p.archery_class ilike term.k)
   order by (p.display_name ilike term.t || '%') desc, p.display_name
   limit 25;
 $$;
 
-revoke all on function public.search_archers(text) from public, anon;
-grant execute on function public.search_archers(text) to authenticated;
+revoke all on function public.search_archers(text, text) from public, anon;
+grant execute on function public.search_archers(text, text) to authenticated;
 
 -- Send a request to someone found by search (they must still be searchable).
 create or replace function public.send_friend_request_to(target uuid)

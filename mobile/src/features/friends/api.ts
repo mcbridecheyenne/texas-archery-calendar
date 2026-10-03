@@ -128,9 +128,9 @@ export interface SearchResult {
   relation: "none" | "sent" | "received" | "friends";
 }
 
-/** Archers who chose to be findable, whose name (or town) matches. */
-export async function searchArchers(q: string): Promise<SearchResult[]> {
-  const { data, error } = await db().rpc("search_archers", { q });
+/** Archers who chose to be findable, whose name (or town) matches, optionally only one class. */
+export async function searchArchers(q: string, archeryClass?: string | null): Promise<SearchResult[]> {
+  const { data, error } = await db().rpc("search_archers", { q, klass: archeryClass || null });
   if (error) throw error;
   return ((data ?? []) as any[]).map((r) => ({
     id: r.id,

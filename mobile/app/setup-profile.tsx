@@ -4,11 +4,12 @@ import { useState } from "react";
 import { Alert, Linking, Pressable, ScrollView, StyleSheet, Switch, Text, View } from "react-native";
 import { RULES_URL } from "../config";
 import { checkListingText } from "../src/features/marketplace/moderation";
+import { ARCHERY_CLASSES } from "../src/features/friends";
 import { useAuth } from "../src/lib/auth";
 import { Button, Chip, Field, errorText, useTheme } from "../src/ui";
 
 // Quick picks; archers can type any class their association uses.
-const CLASS_IDEAS = ["Open Pro", "Known 50", "Known 45", "Senior Open", "Hunter", "Bowhunter Freestyle", "Freestyle", "Barebow", "Traditional", "Youth"];
+const CLASS_IDEAS = ARCHERY_CLASSES;
 
 export default function SetupProfileScreen() {
   const t = useTheme();

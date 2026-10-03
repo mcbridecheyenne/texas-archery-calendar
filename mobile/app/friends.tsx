@@ -2,9 +2,9 @@
 import { useRouter } from "expo-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ActivityIndicator, Alert, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
-import { addResultMessage, cleanCode, searchArchers, shareInvite, useFriends, type Friend, type SearchResult } from "../src/features/friends";
+import { ARCHERY_CLASSES, addResultMessage, cleanCode, searchArchers, shareInvite, useFriends, type Friend, type SearchResult } from "../src/features/friends";
 import { useAuth } from "../src/lib/auth";
-import { Button, Empty, Field, SectionLabel, confirm, errorText, showMenu, useTheme } from "../src/ui";
+import { Button, Chip, Empty, Field, SectionLabel, confirm, errorText, showMenu, useTheme } from "../src/ui";
 
 export default function FriendsScreen() {
   const t = useTheme();
@@ -14,6 +14,7 @@ export default function FriendsScreen() {
   const [code, setCode] = useState("");
   const [adding, setAdding] = useState(false);
   const [q, setQ] = useState("");
+  const [klass, setKlass] = useState<string | null>(null);
   const [results, setResults] = useState<SearchResult[] | null>(null);
   const [searching, setSearching] = useState(false);
   const [busyId, setBusyId] = useState<string | null>(null);
@@ -23,7 +24,7 @@ export default function FriendsScreen() {
   const friendKey = `${fr.friends.length}-${fr.incoming.length}-${fr.outgoing.length}`;
   useEffect(() => {
     const term = q.trim();
-    if (term.length < 2 || !auth.profile) {
+    if ((term.length < 2 && !klass) || !auth.profile) {
       setResults(null);
       setSearching(false);
       return;
@@ -31,13 +32,13 @@ export default function FriendsScreen() {
     const id = ++searchId.current;
     setSearching(true);
     const timer = setTimeout(() => {
-      searchArchers(term)
+      searchArchers(term, klass)
         .then((r) => id === searchId.current && setResults(r))
         .catch(() => id === searchId.current && setResults([]))
         .finally(() => id === searchId.current && setSearching(false));
     }, 350);
     return () => clearTimeout(timer);
-  }, [q, auth.profile, friendKey]);
+  }, [q, klass, auth.profile, friendKey]);
 
   if (!auth.enabled) return <Empty title="Friends" body="Friends open with accounts." />;
   if (!auth.userId)
@@ -118,6 +119,12 @@ export default function FriendsScreen() {
         clearButtonMode="while-editing"
         hint={auth.profile.discoverable ? undefined : "You're hidden from search. To let friends find you, turn it on in Account → Edit profile."}
       />
+      <Text style={[styles.p, { color: t.muted }]}>Filter by class</Text>
+      <View style={styles.classes}>
+        {ARCHERY_CLASSES.map((c) => (
+          <Chip key={c} label={c} active={klass === c} onPress={() => setKlass((cur) => (cur === c ? null : c))} />
+        ))}
+      </View>
       {searching ? <ActivityIndicator color={t.primary} style={{ marginVertical: 8 }} /> : null}
       {!searching && results !== null ? (
         results.length ? (
@@ -134,7 +141,9 @@ export default function FriendsScreen() {
           ))
         ) : (
           <Text style={[styles.p, { color: t.muted }]}>
-            No archers found. They may have turned off search; ask for their friend code instead.
+            {klass && q.trim().length < 2
+              ? `No searchable archers in ${klass} yet.`
+              : "No archers found. They may have turned off search; ask for their friend code instead."}
           </Text>
         )
       ) : null}
@@ -242,4 +251,5 @@ const styles = StyleSheet.create({
   name: { fontSize: 16, fontWeight: "700" },
   p: { fontSize: 13, lineHeight: 18 },
   actions: { flexDirection: "row", gap: 8, alignItems: "center" },
+  classes: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
 });
