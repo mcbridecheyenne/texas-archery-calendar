@@ -81,11 +81,15 @@ export default function MarketTab() {
     load(0);
   }, [load]);
 
-  // Pick up new listings and Going-list changes when coming back to this tab.
+  // Coming back to this tab (or back from a listing that was deleted, sold or edited):
+  // reload the listings and the Going list so nothing stale stays on screen.
+  const focusedBefore = useRef(false);
   useFocusEffect(
     useCallback(() => {
       reloadGoing();
-    }, [reloadGoing])
+      if (focusedBefore.current) load(0); // the first visit is already loaded by the effect above
+      focusedBefore.current = true;
+    }, [reloadGoing, load])
   );
 
   const refresh = useCallback(async () => {
