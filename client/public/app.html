@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get Archery in Texas</title>
+<meta name="description" content="TFAA, Texas ASA and TSAA tournament schedules, see which friends are going, and buy and sell used archery gear.">
+<meta property="og:title" content="Archery in Texas">
+<meta property="og:description" content="Every Texas archery shoot in one place. See who's going, share your shoots, and trade gear.">
+<style>
+  :root { --bg:#F7F2EA; --fg:#30231A; --muted:#73604F; --accent:#BE4F17; --onaccent:#FBF7F1; --card:#FBF8F3; --border:#E3D9CC; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#1C1612; --fg:#F0EADF; --muted:#B3A595; --accent:#E2703A; --onaccent:#1C1612; --card:#251E19; --border:#3D332B; } }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  main { max-width:480px; margin:0 auto; padding:48px 16px 64px; text-align:center; }
+  h1 { font-size:30px; line-height:1.15; margin:8px 0; }
+  .lead { color:var(--muted); font-size:17px; margin:0 0 24px; }
+  .emoji { font-size:52px; }
+  ul { text-align:left; background:var(--card); border:1px solid var(--border); border-radius:16px; padding:18px 18px 18px 38px; margin:0 0 24px; }
+  li { margin:6px 0; }
+  .btn { display:block; background:var(--accent); color:var(--onaccent); text-decoration:none; font-weight:700; padding:14px 18px; border-radius:12px; margin:10px 0; }
+  .btn.secondary { background:transparent; color:var(--accent); border:1.5px solid var(--accent); }
+  .soon { color:var(--muted); font-size:14px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="emoji">🏹</div>
+  <h1>Archery in Texas</h1>
+  <p class="lead">Every Texas archery shoot in one place.</p>
+  <ul>
+    <li>TFAA, Texas ASA and TSAA schedules, updated every few hours</li>
+    <li>See which friends are going, and what class they shoot</li>
+    <li>Reminders the night before, and one-tap directions</li>
+    <li>Share your shoots and buy or sell used gear</li>
+  </ul>
+  <div id="stores"></div>
+  <a class="btn secondary" href="./">See the schedule on the web</a>
+</main>
+<script>
+  // Fill these in when the app is live; links shared from the app already point here.
+  var APP_STORE_URL = "";   // e.g. https://apps.apple.com/app/id6818734839
+  var PLAY_STORE_URL = "";  // e.g. https://play.google.com/store/apps/details?id=com.cheyennemcbride.archeryintexas
+
+  var ua = navigator.userAgent;
+  var stores = document.getElementById("stores");
+  var html = "";
+  if (APP_STORE_URL) html += '<a class="btn" href="' + APP_STORE_URL + '">Download on the App Store</a>';
+  if (PLAY_STORE_URL) html += '<a class="btn" href="' + PLAY_STORE_URL + '">Get it on Google Play</a>';
+  if (!html) html = '<p class="soon">Coming soon to the App Store and Google Play.</p>';
+  stores.innerHTML = html;
+  if (/iPhone|iPad|iPod/.test(ua) && APP_STORE_URL) location.replace(APP_STORE_URL);
+  else if (/Android/.test(ua) && PLAY_STORE_URL) location.replace(PLAY_STORE_URL);
+</script>
+</body>
+</html>

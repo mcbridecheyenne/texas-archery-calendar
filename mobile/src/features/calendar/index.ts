@@ -6,4 +6,5 @@ export { useEvents } from "./useEvents";
 export { useGoing } from "./useGoing";
 export { useCalendarTheme, type CalendarTheme } from "./theme";
 export { fetchEvents, readCachedEvents } from "./api";
+export { shareMyShoots, shareShoot } from "./share";
 export type { TournamentEvent, EventsResponse, EventSource, SourceStatus, CalendarSocial } from "./types";

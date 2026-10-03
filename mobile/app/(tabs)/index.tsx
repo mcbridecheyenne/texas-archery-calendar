@@ -1,7 +1,7 @@
 import { useRouter } from "expo-router";
 import { useMemo } from "react";
 import { Alert } from "react-native";
-import { API_BASE_URL } from "../../config";
+import { API_BASE_URL, SHARE_PLUG } from "../../config";
 import { CalendarScreen, type CalendarSocial, type TournamentEvent } from "../../src/features/calendar";
 import { CommunityActions, useCommunity } from "../../src/features/community";
 import { GoingWith, askShareLevel, useFriends } from "../../src/features/friends";
@@ -54,5 +54,5 @@ export default function TournamentsTab() {
   }, [enabled, community, fr, router]);
 
   // The tab bar below handles the bottom safe area.
-  return <CalendarScreen apiBaseUrl={API_BASE_URL} title="Archery in Texas" bottomInset={0} social={social} />;
+  return <CalendarScreen apiBaseUrl={API_BASE_URL} title="Archery in Texas" bottomInset={0} social={social} sharePlug={SHARE_PLUG} />;
 }

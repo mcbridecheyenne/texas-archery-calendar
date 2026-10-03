@@ -20,6 +20,7 @@ import { MonthGrid } from "./components/MonthGrid";
 import { currentYM, daysInRange, fmtDayLong, fmtMonthYear, fmtRelative, parseISODate, toIso, type YM } from "./dates";
 import { useCalendarTheme, type CalendarTheme } from "./theme";
 import { sourceLabel, type CalendarSocial, type EventSource, type SourceFilter, type TournamentEvent } from "./types";
+import { shareMyShoots } from "./share";
 import { useEvents } from "./useEvents";
 import { useGoing } from "./useGoing";
 
@@ -34,13 +35,15 @@ export interface CalendarScreenProps {
   bottomInset?: number;
   /** Extra content shown at the very end of the list, e.g. a "Go ad-free" link. */
   footer?: ReactNode;
+  /** Added to the end of shared shoots, e.g. "Get the Archery in Texas app: <link>". */
+  sharePlug?: string;
   /** Optional friends/sharing/archer-added tournaments, supplied by the host app. */
   social?: CalendarSocial;
 }
 
 const OFFICIAL: EventSource[] = ["TFAA", "ASA", "TSAA"];
 
-export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas Archery Calendar", bottomInset, footer, social }: CalendarScreenProps) {
+export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas Archery Calendar", bottomInset, footer, social, sharePlug }: CalendarScreenProps) {
   const theme = useCalendarTheme();
   const insets = useSafeAreaInsets();
   const bottom = bottomInset ?? insets.bottom;
@@ -48,7 +51,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
   const { going, isGoing, toggle } = useGoing();
 
   const [filter, setFilter] = useState<SourceFilter>("all");
-  const [view, setView] = useState<"calendar" | "list">("calendar");
+  const [view, setView] = useState<"list" | "calendar" | "mine">("list");
   const [month, setMonth] = useState<YM>(currentYM());
   const [selectedDay, setSelectedDay] = useState<string | null>(null);
   const [openEvent, setOpenEvent] = useState<TournamentEvent | null>(null);
@@ -78,6 +81,8 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
     [allEvents, filter, going]
   );
   const upcoming = useMemo(() => filtered.filter((e) => e.endDate >= todayIso), [filtered, todayIso]);
+  // "My Shoots": every upcoming tournament marked Going, whatever filter is picked.
+  const myShoots = useMemo(() => allEvents.filter((e) => going.has(e.id) && e.endDate >= todayIso), [allEvents, going, todayIso]);
 
   const counts = useMemo(() => {
     const c: Record<string, number> = { all: allEvents.length, going: 0, TFAA: 0, ASA: 0, TSAA: 0, USER: 0 };
@@ -140,7 +145,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
 
   const sections = useMemo(() => {
     const out: { title: string; data: TournamentEvent[] }[] = [];
-    for (const ev of upcoming) {
+    for (const ev of view === "mine" ? myShoots : upcoming) {
       const d = parseISODate(ev.startDate);
       const title = fmtMonthYear({ year: d.getFullYear(), month: d.getMonth() });
       const last = out[out.length - 1];
@@ -148,7 +153,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
       else out.push({ title, data: [ev] });
     }
     return out;
-  }, [upcoming]);
+  }, [upcoming, myShoots, view]);
 
   const refreshControl = (
     <RefreshControl refreshing={refreshing} onRefresh={refresh} tintColor={theme.primary} colors={[theme.primary]} />
@@ -166,11 +171,45 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
     />
   );
 
+  const segment = (
+    <View style={[styles.segment, { backgroundColor: theme.subtle }]}>
+      {(["list", "calendar", "mine"] as const).map((v) => (
+        <Pressable
+          key={v}
+          onPress={() => setView(v)}
+          style={[styles.segmentBtn, view === v && { backgroundColor: theme.card }]}
+          accessibilityRole="tab"
+          accessibilityState={{ selected: view === v }}
+        >
+          <Text style={[styles.segmentText, { color: view === v ? theme.text : theme.muted }]}>
+            {v === "list" ? "Upcoming" : v === "calendar" ? "Calendar" : `★ My Shoots${counts.going ? ` ${counts.going}` : ""}`}
+          </Text>
+        </Pressable>
+      ))}
+    </View>
+  );
+
+  const mineHeader = (
+    <View style={styles.controls}>
+      {segment}
+      {myShoots.length ? (
+        <Pressable
+          onPress={() => shareMyShoots(myShoots, sharePlug).catch(() => {})}
+          style={({ pressed }) => [styles.shareBtn, { backgroundColor: theme.primary, opacity: pressed ? 0.85 : 1 }]}
+          accessibilityRole="button"
+        >
+          <Text style={[styles.shareText, { color: theme.onPrimary }]}>Share my shoots</Text>
+          <Text style={[styles.shareSub, { color: theme.onPrimary }]}>Text, Facebook, Instagram, WhatsApp and more</Text>
+        </Pressable>
+      ) : null}
+    </View>
+  );
+
   const controls = (
     <View style={styles.controls}>
+      {segment}
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chips}>
         <Chip label={`All ${counts.all}`} active={filter === "all"} onPress={() => setFilter("all")} theme={theme} />
-        <Chip label={`★ Going ${counts.going}`} active={filter === "going"} onPress={() => setFilter("going")} theme={theme} />
         {SOURCES.map((s) => (
           <Chip
             key={s}
@@ -191,21 +230,6 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
           <Text style={[styles.addText, { color: theme.source.USER.solid }]}>＋ Add a tournament</Text>
         </Pressable>
       ) : null}
-      <View style={[styles.segment, { backgroundColor: theme.subtle }]}>
-        {(["calendar", "list"] as const).map((v) => (
-          <Pressable
-            key={v}
-            onPress={() => setView(v)}
-            style={[styles.segmentBtn, view === v && { backgroundColor: theme.card }]}
-            accessibilityRole="tab"
-            accessibilityState={{ selected: view === v }}
-          >
-            <Text style={[styles.segmentText, { color: view === v ? theme.text : theme.muted }]}>
-              {v === "calendar" ? "Calendar" : "Upcoming"}
-            </Text>
-          </Pressable>
-        ))}
-      </View>
       <StatusNotes data={data} error={error} theme={theme} onRetry={refresh} />
     </View>
   );
@@ -274,14 +298,14 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
               {section.title.toUpperCase()}
             </Text>
           )}
-          ListHeaderComponent={controls}
+          ListHeaderComponent={view === "mine" ? mineHeader : controls}
           ListFooterComponent={footer ? <>{footer}</> : null}
           ListEmptyComponent={
             <Empty
               theme={theme}
               text={
-                filter === "going"
-                  ? "Tap ☆ on a tournament to add it to your Going list."
+                view === "mine" || filter === "going"
+                  ? "Tap ☆ on a tournament to add it to My Shoots. Then you can share them with friends."
                   : filter === "USER"
                   ? "No tournaments added by archers yet. Know of one? Tap Add a tournament."
                   : "No upcoming tournaments match."
@@ -301,6 +325,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
         onClose={() => setOpenEvent(null)}
         onToggleGoing={onToggleGoing}
         extra={social?.renderDetail}
+        sharePlug={sharePlug}
       />
 
       {toast ? (
@@ -429,6 +454,9 @@ const styles = StyleSheet.create({
   addText: { fontSize: 14, fontWeight: "700" },
   segmentBtn: { flex: 1, paddingVertical: 7, borderRadius: 8, alignItems: "center" },
   segmentText: { fontSize: 14, fontWeight: "600" },
+  shareBtn: { borderRadius: 12, paddingVertical: 12, paddingHorizontal: 14, alignItems: "center", gap: 2 },
+  shareText: { fontSize: 16, fontWeight: "800" },
+  shareSub: { fontSize: 12, opacity: 0.9 },
   notice: { borderRadius: 10, borderWidth: StyleSheet.hairlineWidth, padding: 10, gap: 4 },
   noticeText: { fontSize: 13 },
   belowHeader: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: 18, marginBottom: 8 },

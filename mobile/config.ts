@@ -16,6 +16,12 @@ export const SUPABASE = {
 // Public pages linked from the subscription screen (Apple requires both).
 export const PRIVACY_URL = `${API_BASE_URL}/privacy.html`;
 export const RULES_URL = `${API_BASE_URL}/marketplace-rules.html`;
+
+// Link added to shared shoots ("Get the Archery in Texas app"). It's a page on the website
+// that sends people to the App Store or Google Play, so it can be updated after launch
+// without an app update (edit client/public/app.html).
+export const APP_DOWNLOAD_URL = `${API_BASE_URL}/app.html`;
+export const SHARE_PLUG = `📲 Find Texas archery shoots and see who's going with the free Archery in Texas app: ${APP_DOWNLOAD_URL}`;
 export const TERMS_URL = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/";
 
 // ---- Ads (Google AdMob) ----

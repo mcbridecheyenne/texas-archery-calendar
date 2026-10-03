@@ -5,6 +5,7 @@ import { addToPhoneCalendar, callHost, emailHost, openDirections, openUrl } from
 import { daysUntil, fmtRange } from "../dates";
 import type { CalendarTheme } from "../theme";
 import { sourceLabel, type TournamentEvent } from "../types";
+import { shareShoot } from "../share";
 import { SourcePill } from "./SourcePill";
 
 interface Props {
@@ -15,6 +16,7 @@ interface Props {
   onToggleGoing: (event: TournamentEvent) => void;
   /** Host-supplied content under the Going button (friends going, etc.). */
   extra?: (event: TournamentEvent, going: boolean, close: () => void) => ReactNode;
+  sharePlug?: string;
 }
 
 function countdown(event: TournamentEvent): string | null {
@@ -26,7 +28,7 @@ function countdown(event: TournamentEvent): string | null {
   return null;
 }
 
-export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra }: Props) {
+export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra, sharePlug }: Props) {
   const insets = useSafeAreaInsets();
   return (
     <Modal visible={!!event} animationType="slide" presentationStyle="pageSheet" onRequestClose={onClose}>
@@ -87,6 +89,7 @@ export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra
               {event.location || event.city ? (
                 <Action label="Directions" theme={theme} onPress={() => openDirections(event)} />
               ) : null}
+              <Action label="Share" theme={theme} onPress={() => shareShoot(event, going, sharePlug).catch(() => {})} />
             </View>
 
             <View style={[styles.card, { backgroundColor: theme.card, borderColor: theme.border }]}>
