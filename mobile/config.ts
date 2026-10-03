@@ -25,12 +25,12 @@ export const SHARE_PLUG = `📲 Find Texas archery shoots and see who's going wi
 export const TERMS_URL = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/";
 
 // ---- Ads (Google AdMob) ----
-// These are Google's TEST ids: they show sample ads and earn nothing.
-// Replace them with your own from admob.google.com before the App Store release
-// (the app ids go in app.json too, under the react-native-google-mobile-ads plugin).
+// Your AdMob ids (admob.google.com). The app ids are in app.json under the
+// react-native-google-mobile-ads plugin. Don't tap your own ads; add your phone as a
+// test device in AdMob → Settings → Test devices instead.
 export const ADS = {
   enabled: true,
-  iosBannerId: "ca-app-pub-3940256099942544/2435281174",
+  iosBannerId: "ca-app-pub-7930621070150782/8333303000", // Archery in Texas (iOS) · Bottom banner
   androidBannerId: "ca-app-pub-7930621070150782/6158655092", // Archery in Texas (Android) · Bottom banner
 };
 
