@@ -1,0 +1,57 @@
+# Collects tournament events and publishes the website + events.json on GitHub Pages.
+# The website and the phone app both read https://mcbridecheyenne.github.io/texas-archery-calendar/events.json
+name: Collect events and publish site
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 */3 * * *" # every 3 hours
+  workflow_dispatch: # "Run workflow" button on the Actions tab
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci --ignore-scripts
+
+      - name: Build website
+        run: npm run build:client
+
+      - name: Collect events
+        run: node --experimental-strip-types script/collect-events.ts dist/public/events.json
+        env:
+          PREVIOUS_EVENTS_URL: https://mcbridecheyenne.github.io/texas-archery-calendar/events.json
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

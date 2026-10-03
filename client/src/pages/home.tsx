@@ -40,17 +40,19 @@ function sourceBarClass(source: TournamentEvent["source"]): string {
 }
 
 export default function Home() {
+  // events.json is collected every few hours by GitHub Actions
+  // (.github/workflows/pages.yml) and published next to this page.
   const { data, isLoading, isError, error } = useQuery<EventsResponse>({
-    queryKey: ["/api/events"],
+    queryKey: ["events.json"],
   });
 
   const refresh = useMutation({
     mutationFn: async () => {
-      const res = await apiRequest("POST", "/api/refresh");
+      const res = await apiRequest("GET", `events.json?t=${Date.now()}`);
       return (await res.json()) as EventsResponse;
     },
     onSuccess: (fresh) => {
-      queryClient.setQueryData(["/api/events"], fresh);
+      queryClient.setQueryData(["events.json"], fresh);
     },
   });
 
