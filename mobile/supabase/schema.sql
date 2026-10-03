@@ -29,13 +29,38 @@ create policy "update own profile" on public.profiles
   for update using (id = auth.uid())
   with check (id = auth.uid());
 
+-- Friend code: a short code each archer shares so friends can add them.
+-- Letters and digits that are easy to read aloud (no 0/O or 1/I/L).
+create or replace function public.new_friend_code()
+returns text language plpgsql volatile set search_path = public as $$
+declare
+  alphabet constant text := 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+  code text;
+begin
+  loop
+    code := '';
+    for i in 1..6 loop
+      code := code || substr(alphabet, 1 + floor(random() * length(alphabet))::int, 1);
+    end loop;
+    exit when not exists (select 1 from public.profiles where friend_code = code);
+  end loop;
+  return code;
+end $$;
+
+alter table public.profiles add column if not exists friend_code text unique;
+
+alter table public.profiles alter column friend_code set default public.new_friend_code();
+update public.profiles set friend_code = public.new_friend_code() where friend_code is null;
+
 -- People can't unban themselves: is_banned can only change from the dashboard.
+-- The friend code can't be changed from the app either.
 create or replace function public.protect_ban_flag()
 returns trigger language plpgsql as $$
 begin
   -- App requests run as 'authenticated'; your dashboard edits run as an admin role.
-  if new.is_banned is distinct from old.is_banned and current_user in ('authenticated', 'anon') then
+  if current_user in ('authenticated', 'anon') then
     new.is_banned := old.is_banned;
+    new.friend_code := old.friend_code;
   end if;
   return new;
 end $$;
@@ -289,6 +314,238 @@ alter table public.reports enable row level security;
 drop policy if exists "file reports" on public.reports;
 create policy "file reports" on public.reports
   for insert with check (reporter_id = auth.uid());
+
+-- ============================================================
+-- Friends: one row per pair. Requests start 'pending' and the other
+-- archer accepts. Requests are only created through send_friend_request().
+-- ============================================================
+create table if not exists public.friendships (
+  requester_id uuid not null references public.profiles (id) on delete cascade,
+  addressee_id uuid not null references public.profiles (id) on delete cascade,
+  status text not null default 'pending' check (status in ('pending', 'accepted')),
+  created_at timestamptz not null default now(),
+  accepted_at timestamptz,
+  primary key (requester_id, addressee_id),
+  check (requester_id <> addressee_id)
+);
+
+-- Only one row per pair, whichever way round it was sent.
+create unique index if not exists friendships_one_per_pair on public.friendships
+  (least(requester_id, addressee_id), greatest(requester_id, addressee_id));
+create index if not exists friendships_addressee on public.friendships (addressee_id);
+
+alter table public.friendships enable row level security;
+
+drop policy if exists "see own friendships" on public.friendships;
+create policy "see own friendships" on public.friendships
+  for select using (auth.uid() in (requester_id, addressee_id));
+
+-- The person a request was sent to can accept it.
+drop policy if exists "accept friend requests" on public.friendships;
+create policy "accept friend requests" on public.friendships
+  for update using (addressee_id = auth.uid() and status = 'pending')
+  with check (addressee_id = auth.uid() and status = 'accepted');
+
+-- Either person can decline, cancel or unfriend.
+drop policy if exists "remove friendships" on public.friendships;
+create policy "remove friendships" on public.friendships
+  for delete using (auth.uid() in (requester_id, addressee_id));
+
+create or replace function public.are_friends(a uuid, b uuid)
+returns boolean language sql stable security definer set search_path = public as $$
+  select exists (
+    select 1 from public.friendships
+    where status = 'accepted'
+      and ((requester_id = a and addressee_id = b) or (requester_id = b and addressee_id = a))
+  );
+$$;
+
+-- Add a friend by their friend code. If they already asked you, this accepts.
+-- Returns {"status": "sent" | "accepted" | "already_sent" | "already_friends", "name": "..."}.
+create or replace function public.send_friend_request(code text)
+returns json language plpgsql security definer set search_path = public as $$
+declare
+  me uuid := auth.uid();
+  them uuid;
+  their_name text;
+  existing record;
+begin
+  if me is null or not public.is_active_member(me) then
+    raise exception 'Sign in and finish your profile to add friends.';
+  end if;
+
+  select id, display_name into them, their_name
+  from public.profiles
+  where friend_code = upper(regexp_replace(coalesce(code, ''), '[^A-Za-z0-9]', '', 'g')) and not is_banned;
+
+  if them is null then
+    raise exception 'No archer has that friend code. Check it and try again.';
+  end if;
+  if them = me then
+    raise exception 'That''s your own friend code. Share it with friends so they can add you.';
+  end if;
+  if public.either_blocked(me, them) then
+    raise exception 'You can''t add this archer.';
+  end if;
+
+  select * into existing from public.friendships
+  where (requester_id = me and addressee_id = them) or (requester_id = them and addressee_id = me);
+
+  if found then
+    if existing.status = 'accepted' then
+      return json_build_object('status', 'already_friends', 'name', their_name);
+    elsif existing.requester_id = me then
+      return json_build_object('status', 'already_sent', 'name', their_name);
+    else
+      update public.friendships set status = 'accepted', accepted_at = now()
+      where requester_id = them and addressee_id = me;
+      return json_build_object('status', 'accepted', 'name', their_name);
+    end if;
+  end if;
+
+  insert into public.friendships (requester_id, addressee_id) values (me, them);
+  return json_build_object('status', 'sent', 'name', their_name);
+end $$;
+
+revoke all on function public.send_friend_request(text) from public, anon;
+grant execute on function public.send_friend_request(text) to authenticated;
+
+create or replace function public.stamp_accepted_at()
+returns trigger language plpgsql as $$
+begin
+  if new.status = 'accepted' and old.status <> 'accepted' then
+    new.accepted_at := now();
+  end if;
+  return new;
+end $$;
+
+drop trigger if exists stamp_accepted_at on public.friendships;
+create trigger stamp_accepted_at before update on public.friendships
+  for each row execute function public.stamp_accepted_at();
+
+-- Blocking someone also ends the friendship.
+create or replace function public.unfriend_on_block()
+returns trigger language plpgsql security definer set search_path = public as $$
+begin
+  delete from public.friendships
+  where (requester_id = new.blocker_id and addressee_id = new.blocked_id)
+     or (requester_id = new.blocked_id and addressee_id = new.blocker_id);
+  return new;
+end $$;
+
+drop trigger if exists unfriend_on_block on public.blocks;
+create trigger unfriend_on_block after insert on public.blocks
+  for each row execute function public.unfriend_on_block();
+
+-- ============================================================
+-- Going: tournaments an archer chose to share. "Just me" stays on the
+-- phone and never comes here. 'friends' rows are seen only by accepted
+-- friends; 'public' rows by any signed-in archer. Signed-out visitors see none.
+-- ============================================================
+create table if not exists public.going (
+  user_id uuid not null references public.profiles (id) on delete cascade,
+  event_id text not null check (char_length(event_id) <= 200),
+  event_name text not null check (char_length(event_name) <= 200),
+  event_date date not null,
+  visibility text not null check (visibility in ('friends', 'public')),
+  created_at timestamptz not null default now(),
+  primary key (user_id, event_id)
+);
+
+create index if not exists going_by_event on public.going (event_id);
+create index if not exists going_by_date on public.going (event_date);
+
+alter table public.going enable row level security;
+
+drop policy if exists "see shared going" on public.going;
+create policy "see shared going" on public.going
+  for select to authenticated using (
+    user_id = auth.uid()
+    or (
+      public.is_active_member(user_id)
+      and not public.either_blocked(auth.uid(), user_id)
+      and (visibility = 'public' or public.are_friends(auth.uid(), user_id))
+    )
+  );
+
+drop policy if exists "share own going" on public.going;
+create policy "share own going" on public.going
+  for insert to authenticated with check (user_id = auth.uid() and public.is_active_member(auth.uid()));
+
+drop policy if exists "change own going" on public.going;
+create policy "change own going" on public.going
+  for update to authenticated using (user_id = auth.uid()) with check (user_id = auth.uid());
+
+drop policy if exists "remove own going" on public.going;
+create policy "remove own going" on public.going
+  for delete to authenticated using (user_id = auth.uid());
+
+-- ============================================================
+-- Tournaments added by archers. Shown in the calendar under
+-- "Added by archers", always labeled as not from an official schedule.
+-- ============================================================
+create table if not exists public.community_events (
+  id uuid primary key default gen_random_uuid(),
+  created_by uuid not null references public.profiles (id) on delete cascade,
+  name text not null check (char_length(trim(name)) between 3 and 120),
+  start_date date not null,
+  end_date date not null,
+  location text not null check (char_length(trim(location)) between 2 and 160),
+  city text not null check (char_length(trim(city)) between 2 and 60),
+  host text check (host is null or char_length(host) <= 120),
+  phone text check (phone is null or char_length(phone) <= 40),
+  email text check (email is null or char_length(email) <= 120),
+  url text check (url is null or (char_length(url) <= 300 and url ~* '^https?://')),
+  details text check (details is null or char_length(details) <= 1500),
+  status text not null default 'active' check (status in ('active', 'removed')),
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  check (end_date >= start_date and end_date - start_date <= 14)
+);
+
+create index if not exists community_events_dates on public.community_events (status, start_date);
+create index if not exists community_events_creator on public.community_events (created_by);
+
+alter table public.community_events enable row level security;
+
+-- Anyone can see active ones (browsing needs no account); creators also see their removed ones.
+drop policy if exists "browse community events" on public.community_events;
+create policy "browse community events" on public.community_events
+  for select using (
+    (status = 'active' and public.is_active_member(created_by))
+    or created_by = auth.uid()
+  );
+
+drop policy if exists "add community events" on public.community_events;
+create policy "add community events" on public.community_events
+  for insert with check (
+    created_by = auth.uid() and status = 'active' and public.is_active_member(auth.uid())
+    and start_date >= current_date - 1
+  );
+
+-- Creators can edit their own, but can't undo a removal by you.
+drop policy if exists "edit own community events" on public.community_events;
+create policy "edit own community events" on public.community_events
+  for update using (created_by = auth.uid() and status = 'active')
+  with check (created_by = auth.uid() and status = 'active');
+
+drop policy if exists "delete own community events" on public.community_events;
+create policy "delete own community events" on public.community_events
+  for delete using (created_by = auth.uid());
+
+drop trigger if exists community_events_touch on public.community_events;
+create trigger community_events_touch before update on public.community_events
+  for each row execute function public.touch_updated_at();
+
+-- Reports can point at an archer-added tournament too.
+alter table public.reports add column if not exists community_event_id uuid
+  references public.community_events (id) on delete set null;
+
+-- ============================================================
+-- Archery class shown next to your name (e.g. "Known 50", "Senior Open").
+-- ============================================================
+alter table public.profiles add column if not exists archery_class text
+  check (archery_class is null or char_length(archery_class) <= 40);
 
 -- ============================================================
 -- Delete my account (Apple requires this inside the app).

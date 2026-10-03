@@ -12,11 +12,12 @@ export async function addToPhoneCalendar(event: TournamentEvent): Promise<void> 
   const end = new Date(endDay.getFullYear(), endDay.getMonth(), endDay.getDate() + 1);
 
   const notes = [
-    `${sourceLabel(event.source)} tournament`,
+    event.source === "USER" ? `Added in Archery in Texas by ${event.addedBy ?? "an archer"} (not an official schedule)` : `${sourceLabel(event.source)} tournament`,
     event.contact && `Contact: ${event.contact}`,
     event.phone && `Phone: ${event.phone}`,
     event.email && `Email: ${event.email}`,
-    `Details: ${event.sourceUrl}`,
+    event.details,
+    event.sourceUrl && `Details: ${event.sourceUrl}`,
   ]
     .filter(Boolean)
     .join("\n");
@@ -28,7 +29,7 @@ export async function addToPhoneCalendar(event: TournamentEvent): Promise<void> 
     allDay: true,
     location: event.location ?? undefined,
     notes,
-    url: event.sourceUrl,
+    url: event.sourceUrl || undefined,
   };
 
   try {

@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Alert, Modal, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { addToPhoneCalendar, callHost, emailHost, openDirections, openUrl } from "../actions";
@@ -12,6 +13,8 @@ interface Props {
   theme: CalendarTheme;
   onClose: () => void;
   onToggleGoing: (event: TournamentEvent) => void;
+  /** Host-supplied content under the Going button (friends going, etc.). */
+  extra?: (event: TournamentEvent, going: boolean, close: () => void) => ReactNode;
 }
 
 function countdown(event: TournamentEvent): string | null {
@@ -23,7 +26,7 @@ function countdown(event: TournamentEvent): string | null {
   return null;
 }
 
-export function EventDetail({ event, going, theme, onClose, onToggleGoing }: Props) {
+export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra }: Props) {
   const insets = useSafeAreaInsets();
   return (
     <Modal visible={!!event} animationType="slide" presentationStyle="pageSheet" onRequestClose={onClose}>
@@ -43,6 +46,15 @@ export function EventDetail({ event, going, theme, onClose, onToggleGoing }: Pro
               <Text style={[styles.countdown, { color: theme.primary }]}>{countdown(event)}</Text>
             ) : null}
 
+            {event.source === "USER" ? (
+              <View style={[styles.userNote, { backgroundColor: theme.source.USER.soft, borderColor: theme.source.USER.solid + "55" }]}>
+                <Text style={[styles.userNoteText, { color: theme.text }]}>
+                  Added by <Text style={{ fontWeight: "700" }}>{event.addedBy ?? "an archer"}</Text>. This isn't from an official
+                  association schedule, so confirm the details with the host.
+                </Text>
+              </View>
+            ) : null}
+
             <Pressable
               onPress={() => onToggleGoing(event)}
               style={({ pressed }) => [
@@ -59,6 +71,8 @@ export function EventDetail({ event, going, theme, onClose, onToggleGoing }: Pro
                 {going ? "★  Going" : "☆  I'm going"}
               </Text>
             </Pressable>
+
+            {extra ? extra(event, going, onClose) : null}
 
             <View style={styles.actions}>
               <Action
@@ -91,15 +105,30 @@ export function EventDetail({ event, going, theme, onClose, onToggleGoing }: Pro
               {event.email ? (
                 <Row label="Email" value={event.email} theme={theme} link onPress={() => emailHost(event.email!, event)} />
               ) : null}
-              <Row
-                label="Source"
-                value={`View on the ${sourceLabel(event.source)} schedule`}
-                theme={theme}
-                link
-                onPress={() => openUrl(event.sourceUrl)}
-                last
-              />
+              {event.source === "USER" ? (
+                event.sourceUrl ? (
+                  <Row label="Website or flyer" value={event.sourceUrl} theme={theme} link onPress={() => openUrl(event.sourceUrl)} last />
+                ) : (
+                  <Row label="Added by" value={event.addedBy ?? "An archer"} theme={theme} last />
+                )
+              ) : (
+                <Row
+                  label="Source"
+                  value={`View on the ${sourceLabel(event.source)} schedule`}
+                  theme={theme}
+                  link
+                  onPress={() => openUrl(event.sourceUrl)}
+                  last
+                />
+              )}
             </View>
+
+            {event.details ? (
+              <View style={[styles.card, { backgroundColor: theme.card, borderColor: theme.border, paddingVertical: 12 }]}>
+                <Text style={[styles.rowLabel, { color: theme.muted }]}>DETAILS</Text>
+                <Text style={[styles.rowValue, { color: theme.text, marginTop: 4 }]}>{event.details}</Text>
+              </View>
+            ) : null}
 
             <Text style={[styles.note, { color: theme.muted }]}>
               Always confirm dates and details with the host club before you travel.
@@ -181,4 +210,6 @@ const styles = StyleSheet.create({
   rowLabel: { fontSize: 12, fontWeight: "600", letterSpacing: 0.4 },
   rowValue: { fontSize: 15 },
   note: { fontSize: 12, marginTop: 14, textAlign: "center" },
+  userNote: { marginTop: 10, borderRadius: 10, borderWidth: StyleSheet.hairlineWidth, padding: 10 },
+  userNoteText: { fontSize: 14, lineHeight: 19 },
 });

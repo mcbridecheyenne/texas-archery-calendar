@@ -6,7 +6,7 @@ export function SourcePill({ source, theme }: { source: EventSource; theme: Cale
   const c = theme.source[source];
   return (
     <View style={[styles.pill, { backgroundColor: c.soft, borderColor: c.solid + "40" }]}>
-      <Text style={[styles.text, { color: c.solid }]}>{sourceLabel(source).toUpperCase()}</Text>
+      <Text style={[styles.text, { color: c.solid }]}>{source === "USER" ? "ADDED BY ARCHER" : sourceLabel(source).toUpperCase()}</Text>
     </View>
   );
 }

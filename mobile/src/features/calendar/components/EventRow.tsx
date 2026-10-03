@@ -9,11 +9,12 @@ interface Props {
   event: TournamentEvent;
   theme: CalendarTheme;
   going: boolean;
+  note?: string | null;
   onPress: (event: TournamentEvent) => void;
   onToggleGoing: (event: TournamentEvent) => void;
 }
 
-export const EventRow = memo(function EventRow({ event, theme, going, onPress, onToggleGoing }: Props) {
+export const EventRow = memo(function EventRow({ event, theme, going, note, onPress, onToggleGoing }: Props) {
   const d = parseISODate(event.startDate);
   return (
     <Pressable
@@ -38,6 +39,11 @@ export const EventRow = memo(function EventRow({ event, theme, going, onPress, o
         {event.location ? (
           <Text style={[styles.meta, { color: theme.muted }]} numberOfLines={1}>
             📍 {event.location}
+          </Text>
+        ) : null}
+        {note ? (
+          <Text style={[styles.note, { color: theme.primary }]} numberOfLines={1}>
+            👥 {note}
           </Text>
         ) : null}
       </View>
@@ -77,6 +83,7 @@ const styles = StyleSheet.create({
   body: { flex: 1, gap: 3 },
   name: { fontSize: 16, fontWeight: "600", marginTop: 2 },
   meta: { fontSize: 13 },
+  note: { fontSize: 13, fontWeight: "600", marginTop: 1 },
   star: { paddingLeft: 4, paddingTop: 2 },
   starText: { fontSize: 24 },
 });

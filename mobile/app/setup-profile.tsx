@@ -1,11 +1,14 @@
-// Name, city, and (the first time) agreeing to the marketplace rules.
+// Name, city, archery class, and (the first time) agreeing to the marketplace rules.
 import { useRouter } from "expo-router";
 import { useState } from "react";
 import { Alert, Linking, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { RULES_URL } from "../config";
 import { checkListingText } from "../src/features/marketplace/moderation";
 import { useAuth } from "../src/lib/auth";
-import { Button, Field, errorText, useTheme } from "../src/ui";
+import { Button, Chip, Field, errorText, useTheme } from "../src/ui";
+
+// Quick picks; archers can type any class their association uses.
+const CLASS_IDEAS = ["Open Pro", "Known 50", "Known 45", "Senior Open", "Hunter", "Bowhunter Freestyle", "Freestyle", "Barebow", "Traditional", "Youth"];
 
 export default function SetupProfileScreen() {
   const t = useTheme();
@@ -14,6 +17,7 @@ export default function SetupProfileScreen() {
   const firstTime = !profile;
   const [name, setName] = useState(profile?.display_name ?? suggestedName ?? "");
   const [city, setCity] = useState(profile?.city ?? "");
+  const [archeryClass, setArcheryClass] = useState(profile?.archery_class ?? "");
   const [agreed, setAgreed] = useState(!firstTime);
   const [busy, setBusy] = useState(false);
 
@@ -22,7 +26,7 @@ export default function SetupProfileScreen() {
       Alert.alert("Add your name", "Use at least 2 letters. First name and last initial works well.");
       return;
     }
-    if (checkListingText(name, city)) {
+    if (checkListingText(name, `${city} ${archeryClass}`)) {
       Alert.alert("Pick a different name", "Please keep names respectful.");
       return;
     }
@@ -32,7 +36,7 @@ export default function SetupProfileScreen() {
     }
     try {
       setBusy(true);
-      await saveProfile(name, city);
+      await saveProfile(name, city, archeryClass);
       if (router.canGoBack()) router.back();
       else router.replace("/");
     } catch (e) {
@@ -49,11 +53,27 @@ export default function SetupProfileScreen() {
       {firstTime ? (
         <>
           <Text style={[styles.title, { color: t.text }]}>Welcome!</Text>
-          <Text style={[styles.lead, { color: t.muted }]}>This is what buyers and sellers see. Your email stays private.</Text>
+          <Text style={[styles.lead, { color: t.muted }]}>This is what friends, buyers and sellers see. Your email stays private.</Text>
         </>
       ) : null}
       <Field label="Name" value={name} onChangeText={setName} placeholder="Cheyenne M." maxLength={40} autoCapitalize="words" />
       <Field label="City (optional)" value={city} onChangeText={setCity} placeholder="Wichita Falls" maxLength={60} autoCapitalize="words" />
+      <View style={{ gap: 8 }}>
+        <Field
+          label="Archery class (optional)"
+          value={archeryClass}
+          onChangeText={setArcheryClass}
+          placeholder="Known 50"
+          maxLength={40}
+          autoCapitalize="words"
+          hint="Shown next to your name when you share that you're going to a tournament."
+        />
+        <View style={styles.ideas}>
+          {CLASS_IDEAS.map((c) => (
+            <Chip key={c} label={c} active={archeryClass === c} onPress={() => setArcheryClass((cur) => (cur === c ? "" : c))} />
+          ))}
+        </View>
+      </View>
 
       {firstTime ? (
         <Pressable onPress={() => setAgreed((v) => !v)} style={[styles.agree, { borderColor: t.border, backgroundColor: t.card }]} accessibilityRole="checkbox" accessibilityState={{ checked: agreed }}>
@@ -82,4 +102,5 @@ const styles = StyleSheet.create({
   agree: { flexDirection: "row", gap: 12, padding: 14, borderRadius: 12, borderWidth: StyleSheet.hairlineWidth },
   box: { width: 24, height: 24, borderRadius: 6, borderWidth: 2, alignItems: "center", justifyContent: "center", marginTop: 1 },
   agreeText: { flex: 1, fontSize: 14, lineHeight: 20 },
+  ideas: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
 });

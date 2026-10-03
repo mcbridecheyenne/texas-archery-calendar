@@ -40,6 +40,7 @@ export interface Profile {
   id: string;
   display_name: string;
   city: string | null;
+  archery_class?: string | null;
   created_at: string;
 }
 

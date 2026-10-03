@@ -5,10 +5,10 @@ It grows one tab at a time:
 
 | Tab | What it does | Data |
 |---|---|---|
-| Tournaments | TFAA, Texas ASA and TSAA calendar, Going list, reminders | `events.json` on GitHub Pages |
+| Tournaments | TFAA, Texas ASA and TSAA calendar, tournaments added by archers, Going list, reminders, which friends are going | `events.json` on GitHub Pages + Supabase |
 | Marketplace | Buy and sell used gear, hand off at a shoot | Supabase |
 | Messages | Chat between buyers and sellers | Supabase |
-| Account | Profile, my listings, ad-free, delete account | Supabase |
+| Account | Profile (with archery class), friends, my listings, ad-free, delete account | Supabase |
 
 To add a feature later (scores, clubs, results…), add a folder under `src/features/`
 and a file under `app/(tabs)/`, then list it in `app/(tabs)/_layout.tsx`.
@@ -71,10 +71,23 @@ Install **Expo Go** from the App Store and scan the QR code that appears in Term
 The calendar and marketplace work in Expo Go. Ads, subscriptions and Sign in with Apple
 only work in a real build (TestFlight); email sign-in works in both.
 
+## Friends, shared Going and tournaments added by archers
+
+- **Friends:** every profile gets a 6-character friend code (Account → Friends). Share it with
+  **Share invite**, which sends a link to `friend.html` on the website that opens the app's Add Friend screen.
+  Requests must be accepted, and blocking someone ends the friendship.
+- **Shared Going:** when a signed-in archer marks a tournament Going, the app asks who can see it:
+  *My friends*, *Everyone in the app*, or *Just me* (stays on the phone). Tap **Change** in the
+  tournament's details to switch. Friends going show on the tournament's row and details, with their archery class.
+- **Added by archers:** **＋ Add a tournament** on the Tournaments tab. These have their own purple
+  "Added by archer" label and filter, show who added them, and warn before saving if the tournament
+  looks like one already listed. The person who added one can edit or delete it; anyone can report it.
+  To hide one, set its `status` to `removed` in Table Editor → `community_events`.
+
 ## Turn on the marketplace (Supabase)
 
-Until `SUPABASE` in `config.ts` is filled in, the Marketplace tab says "coming soon"
-and everything else works.
+Until `SUPABASE` in `config.ts` is filled in, the Marketplace tab says "coming soon", the
+friends and add-a-tournament features stay hidden, and the schedule still works.
 
 1. **Create the project:** at supabase.com, make a free project (region: Central US).
 2. **Create the database:** SQL Editor → New query → paste all of `supabase/schema.sql` → Run.

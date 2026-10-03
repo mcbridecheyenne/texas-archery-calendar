@@ -19,7 +19,7 @@ import { EventRow } from "./components/EventRow";
 import { MonthGrid } from "./components/MonthGrid";
 import { currentYM, daysInRange, fmtDayLong, fmtMonthYear, fmtRelative, parseISODate, toIso, type YM } from "./dates";
 import { useCalendarTheme, type CalendarTheme } from "./theme";
-import { sourceLabel, type EventSource, type SourceFilter, type TournamentEvent } from "./types";
+import { sourceLabel, type CalendarSocial, type EventSource, type SourceFilter, type TournamentEvent } from "./types";
 import { useEvents } from "./useEvents";
 import { useGoing } from "./useGoing";
 
@@ -34,15 +34,17 @@ export interface CalendarScreenProps {
   bottomInset?: number;
   /** Extra content shown at the very end of the list, e.g. a "Go ad-free" link. */
   footer?: ReactNode;
+  /** Optional friends/sharing/archer-added tournaments, supplied by the host app. */
+  social?: CalendarSocial;
 }
 
-const SOURCES: EventSource[] = ["TFAA", "ASA", "TSAA"];
+const OFFICIAL: EventSource[] = ["TFAA", "ASA", "TSAA"];
 
-export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas Archery Calendar", bottomInset, footer }: CalendarScreenProps) {
+export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas Archery Calendar", bottomInset, footer, social }: CalendarScreenProps) {
   const theme = useCalendarTheme();
   const insets = useSafeAreaInsets();
   const bottom = bottomInset ?? insets.bottom;
-  const { data, loading, refreshing, error, refresh } = useEvents(apiBaseUrl);
+  const { data, loading, refreshing, error, refresh: refreshOfficial } = useEvents(apiBaseUrl);
   const { going, isGoing, toggle } = useGoing();
 
   const [filter, setFilter] = useState<SourceFilter>("all");
@@ -53,7 +55,20 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
   const [toast, showToast] = useToast();
 
   const todayIso = toIso(new Date());
-  const allEvents = data?.events ?? [];
+  const extraEvents = social?.extraEvents;
+  const allEvents = useMemo(() => {
+    const official = data?.events ?? [];
+    if (!extraEvents?.length) return official;
+    return [...official, ...extraEvents].sort(
+      (a, b) => a.startDate.localeCompare(b.startDate) || a.name.localeCompare(b.name)
+    );
+  }, [data, extraEvents]);
+  const SOURCES: EventSource[] = extraEvents ? [...OFFICIAL, "USER"] : OFFICIAL;
+  const onRefresh = social?.onRefresh;
+  const refresh = useCallback(() => {
+    onRefresh?.();
+    return refreshOfficial();
+  }, [onRefresh, refreshOfficial]);
 
   const filtered = useMemo(
     () =>
@@ -65,7 +80,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
   const upcoming = useMemo(() => filtered.filter((e) => e.endDate >= todayIso), [filtered, todayIso]);
 
   const counts = useMemo(() => {
-    const c: Record<string, number> = { all: allEvents.length, going: 0, TFAA: 0, ASA: 0, TSAA: 0 };
+    const c: Record<string, number> = { all: allEvents.length, going: 0, TFAA: 0, ASA: 0, TSAA: 0, USER: 0 };
     for (const e of allEvents) {
       c[e.source]++;
       if (going.has(e.id) && e.endDate >= todayIso) c.going++;
@@ -102,12 +117,17 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
     setSelectedDay(null);
   }, []);
 
+  const beforeGoing = social?.beforeGoing;
+  const onGoingChange = social?.onGoingChange;
   const onToggleGoing = useCallback(
     async (event: TournamentEvent) => {
+      const adding = !isGoing(event.id);
+      if (adding && beforeGoing && !(await beforeGoing(event))) return;
       const msg = await toggle(event);
+      onGoingChange?.(event, adding);
       if (msg) showToast(msg);
     },
-    [toggle, showToast]
+    [toggle, showToast, isGoing, beforeGoing, onGoingChange]
   );
 
   // Events listed under the month grid: the tapped day, or everything in the visible month.
@@ -140,6 +160,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
       event={ev}
       theme={theme}
       going={isGoing(ev.id)}
+      note={social?.rowNote?.(ev) ?? null}
       onPress={setOpenEvent}
       onToggleGoing={onToggleGoing}
     />
@@ -161,6 +182,15 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
           />
         ))}
       </ScrollView>
+      {social?.onAddEvent ? (
+        <Pressable
+          onPress={social.onAddEvent}
+          style={({ pressed }) => [styles.addBtn, { borderColor: theme.source.USER.solid, opacity: pressed ? 0.75 : 1 }]}
+          accessibilityRole="button"
+        >
+          <Text style={[styles.addText, { color: theme.source.USER.solid }]}>＋ Add a tournament</Text>
+        </Pressable>
+      ) : null}
       <View style={[styles.segment, { backgroundColor: theme.subtle }]}>
         {(["calendar", "list"] as const).map((v) => (
           <Pressable
@@ -249,7 +279,13 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
           ListEmptyComponent={
             <Empty
               theme={theme}
-              text={filter === "going" ? "Tap ☆ on a tournament to add it to your Going list." : "No upcoming tournaments match."}
+              text={
+                filter === "going"
+                  ? "Tap ☆ on a tournament to add it to your Going list."
+                  : filter === "USER"
+                  ? "No tournaments added by archers yet. Know of one? Tap Add a tournament."
+                  : "No upcoming tournaments match."
+              }
             />
           }
           contentContainerStyle={[styles.scroll, { paddingBottom: bottom + 24 }]}
@@ -264,6 +300,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
         theme={theme}
         onClose={() => setOpenEvent(null)}
         onToggleGoing={onToggleGoing}
+        extra={social?.renderDetail}
       />
 
       {toast ? (
@@ -388,6 +425,8 @@ const styles = StyleSheet.create({
   chipText: { fontSize: 13, fontWeight: "600" },
   dot: { width: 8, height: 8, borderRadius: 4 },
   segment: { flexDirection: "row", borderRadius: 10, padding: 3 },
+  addBtn: { borderWidth: 1.5, borderStyle: "dashed", borderRadius: 10, paddingVertical: 9, alignItems: "center" },
+  addText: { fontSize: 14, fontWeight: "700" },
   segmentBtn: { flex: 1, paddingVertical: 7, borderRadius: 8, alignItems: "center" },
   segmentText: { fontSize: 14, fontWeight: "600" },
   notice: { borderRadius: 10, borderWidth: StyleSheet.hairlineWidth, padding: 10, gap: 4 },

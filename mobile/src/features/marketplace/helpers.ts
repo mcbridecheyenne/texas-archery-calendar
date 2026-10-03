@@ -40,7 +40,7 @@ const REASONS: { id: ReportReason; label: string }[] = [
 
 // Asks why, files the report, and thanks the person. Reports go to the
 // `reports` table in Supabase for review.
-export function askToReport(reporterId: string | null, target: { listingId?: string; userId?: string; messageId?: number }) {
+export function askToReport(reporterId: string | null, target: { listingId?: string; userId?: string; messageId?: number; communityEventId?: string }) {
   if (!reporterId) {
     Alert.alert("Sign in to report", "Reports need an account so we can follow up.");
     return;

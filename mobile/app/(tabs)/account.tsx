@@ -6,6 +6,7 @@ import { ActivityIndicator, Alert, Image, Linking, Pressable, ScrollView, StyleS
 import { PRIVACY_URL, RULES_URL } from "../../config";
 import { fetchMyListings } from "../../src/features/marketplace/api";
 import { formatPrice, type Listing } from "../../src/features/marketplace/types";
+import { useFriends } from "../../src/features/friends";
 import { useAuth } from "../../src/lib/auth";
 import { photoUrl } from "../../src/lib/supabase";
 import { usePremium } from "../../src/monetization/premium";
@@ -17,6 +18,7 @@ export default function AccountTab() {
   const router = useRouter();
   const auth = useAuth();
   const premium = usePremium();
+  const friends = useFriends();
   const [mine, setMine] = useState<Listing[] | null>(null);
   const [deleting, setDeleting] = useState(false);
 
@@ -51,8 +53,10 @@ export default function AccountTab() {
       {auth.enabled ? (
         !auth.userId ? (
           <View style={[styles.card, { backgroundColor: t.card, borderColor: t.border }]}>
-            <Text style={[styles.h, { color: t.text }]}>Sell gear and message archers</Text>
-            <Text style={[styles.p, { color: t.muted }]}>An account is only needed for the marketplace.</Text>
+            <Text style={[styles.h, { color: t.text }]}>Friends, tournaments and gear</Text>
+            <Text style={[styles.p, { color: t.muted }]}>
+              Sign in to add friends, see who's going to which shoots, add tournaments, and buy or sell gear. The schedule works without an account.
+            </Text>
             <Button title="Sign in" onPress={() => router.push("/sign-in")} />
           </View>
         ) : auth.loading ? (
@@ -76,11 +80,25 @@ export default function AccountTab() {
               <View style={{ flex: 1 }}>
                 <Text style={[styles.h, { color: t.text }]}>{auth.profile.display_name}</Text>
                 <Text style={[styles.p, { color: t.muted }]}>
-                  {[auth.profile.city, memberSince(auth.profile.created_at)].filter(Boolean).join(" · ")}
+                  {[auth.profile.archery_class, auth.profile.city, memberSince(auth.profile.created_at)].filter(Boolean).join(" · ")}
                 </Text>
               </View>
               <Text style={{ color: t.primary, fontWeight: "600" }}>Edit</Text>
             </Pressable>
+
+            <SectionLabel>Friends</SectionLabel>
+            <View style={[styles.group, { backgroundColor: t.card, borderColor: t.border }]}>
+              <Row
+                icon="people-outline"
+                label={
+                  friends.incoming.length
+                    ? `Friends · ${friends.incoming.length} new request${friends.incoming.length > 1 ? "s" : ""}`
+                    : `Friends${friends.friends.length ? ` (${friends.friends.length})` : ""}`
+                }
+                onPress={() => router.push("/friends")}
+                first
+              />
+            </View>
 
             <SectionLabel>My listings</SectionLabel>
             {mine === null ? (

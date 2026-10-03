@@ -150,6 +150,7 @@ export async function report(input: {
   listingId?: string;
   userId?: string;
   messageId?: number;
+  communityEventId?: string;
   details?: string;
 }): Promise<void> {
   const { error } = await db().from("reports").insert({
@@ -158,6 +159,7 @@ export async function report(input: {
     listing_id: input.listingId ?? null,
     reported_user_id: input.userId ?? null,
     message_id: input.messageId ?? null,
+    community_event_id: input.communityEventId ?? null,
     details: input.details ?? null,
   });
   if (error) throw error;

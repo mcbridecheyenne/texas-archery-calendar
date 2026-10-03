@@ -20,12 +20,14 @@ export interface AuthState {
   signInWithApple: () => Promise<"ok" | "cancelled">;
   sendEmailCode: (email: string) => Promise<void>;
   verifyEmailCode: (email: string, code: string) => Promise<void>;
-  saveProfile: (displayName: string, city: string) => Promise<void>;
+  saveProfile: (displayName: string, city: string, archeryClass?: string) => Promise<void>;
   block: (userId: string) => Promise<void>;
   unblock: (userId: string) => Promise<void>;
   signOut: () => Promise<void>;
   deleteAccount: () => Promise<void>;
 }
+
+const PROFILE_FIELDS = "id, display_name, city, archery_class, created_at";
 
 const AuthContext = createContext<AuthState | null>(null);
 
@@ -71,7 +73,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     let cancelled = false;
     (async () => {
       const [{ data: p }, { data: b }] = await Promise.all([
-        supabase!.from("profiles").select("id, display_name, city, created_at").eq("id", userId).maybeSingle(),
+        supabase!.from("profiles").select(PROFILE_FIELDS).eq("id", userId).maybeSingle(),
         supabase!.from("blocks").select("blocked_id").eq("blocker_id", userId),
       ]);
       if (cancelled) return;
@@ -115,13 +117,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const saveProfile = useCallback(
-    async (displayName: string, city: string) => {
+    async (displayName: string, city: string, archeryClass = "") => {
       if (!userId) throw new Error("Not signed in");
-      const row = { id: userId, display_name: displayName.trim(), city: city.trim() || null };
+      const row = {
+        id: userId,
+        display_name: displayName.trim(),
+        city: city.trim() || null,
+        archery_class: archeryClass.trim() || null,
+      };
       const { data, error } = await supabase!
         .from("profiles")
         .upsert(row)
-        .select("id, display_name, city, created_at")
+        .select(PROFILE_FIELDS)
         .single();
       if (error) throw error;
       setProfile(data as Profile);

@@ -1,6 +1,9 @@
 // Mirrors shared/schema.ts on the website so both read the same /api/events feed.
+import type { ReactNode } from "react";
 
-export type EventSource = "TFAA" | "ASA" | "TSAA";
+/** Official schedules, plus "USER" for tournaments archers added in the app. */
+export type EventSource = "TFAA" | "ASA" | "TSAA" | "USER";
+export type OfficialSource = Exclude<EventSource, "USER">;
 
 export interface TournamentEvent {
   id: string;
@@ -16,11 +19,15 @@ export interface TournamentEvent {
   contact: string | null;
   phone: string | null;
   email: string | null;
-  sourceUrl: string;
+  sourceUrl: string; // official schedule page, or the host's link for archer-added events ("" if none)
+  // Only on tournaments archers added:
+  addedBy?: string | null; // display name of the archer who added it
+  addedById?: string | null;
+  details?: string | null;
 }
 
 export interface SourceStatus {
-  name: EventSource;
+  name: OfficialSource;
   url: string;
   status: "ok" | "partial" | "error";
   message: string | null;
@@ -36,8 +43,30 @@ export interface EventsResponse {
 
 export type SourceFilter = "all" | "going" | EventSource;
 
+/**
+ * Optional hooks a host app can pass to CalendarScreen to add social features
+ * (friends, sharing, archer-added tournaments) without the calendar knowing about accounts.
+ */
+export interface CalendarSocial {
+  /** Tournaments archers added, merged into the calendar under the "Added by archers" filter. */
+  extraEvents?: TournamentEvent[];
+  /** Shows an "Add a tournament" button when provided. */
+  onAddEvent?: () => void;
+  /** Runs before an event is added to Going. Resolve false to cancel. */
+  beforeGoing?: (event: TournamentEvent) => Promise<boolean>;
+  /** Runs after Going changes. */
+  onGoingChange?: (event: TournamentEvent, going: boolean) => void;
+  /** A short line on an event's row, e.g. "Kim and Jo are going". */
+  rowNote?: (event: TournamentEvent) => string | null;
+  /** Extra content in the event's detail sheet, under the Going button. */
+  renderDetail?: (event: TournamentEvent, going: boolean, close: () => void) => ReactNode;
+  /** Pull-to-refresh also reloads these. */
+  onRefresh?: () => void;
+}
+
 export function sourceLabel(source: EventSource): string {
   if (source === "TFAA") return "TFAA";
   if (source === "ASA") return "Texas ASA";
-  return "TSAA";
+  if (source === "TSAA") return "TSAA";
+  return "Added by archers";
 }

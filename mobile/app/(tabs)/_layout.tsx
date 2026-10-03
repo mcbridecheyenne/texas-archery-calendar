@@ -3,6 +3,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { BottomTabBar } from "@react-navigation/bottom-tabs";
 import { Tabs } from "expo-router";
 import { View } from "react-native";
+import { useFriends } from "../../src/features/friends";
 import { useInbox } from "../../src/features/marketplace/inbox";
 import { AdBanner } from "../../src/monetization/AdBanner";
 import { usePremium } from "../../src/monetization/premium";
@@ -17,6 +18,7 @@ function icon(name: IconName) {
 export default function TabsLayout() {
   const t = useTheme();
   const { unreadCount } = useInbox();
+  const { incoming } = useFriends();
   const { openSheet } = usePremium();
 
   return (
@@ -49,7 +51,15 @@ export default function TabsLayout() {
           tabBarBadgeStyle: { backgroundColor: t.primary, color: t.onPrimary },
         }}
       />
-      <Tabs.Screen name="account" options={{ title: "Account", tabBarIcon: icon("person-circle-outline") }} />
+      <Tabs.Screen
+        name="account"
+        options={{
+          title: "Account",
+          tabBarIcon: icon("person-circle-outline"),
+          tabBarBadge: incoming.length > 0 ? incoming.length : undefined,
+          tabBarBadgeStyle: { backgroundColor: t.primary, color: t.onPrimary },
+        }}
+      />
     </Tabs>
   );
 }
