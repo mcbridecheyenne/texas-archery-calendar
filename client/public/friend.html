@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Add a Friend — Archery in Texas</title>
+<style>
+  :root { --bg:#F7F2EA; --fg:#30231A; --muted:#73604F; --accent:#BE4F17; --onaccent:#FBF7F1; --card:#FBF8F3; --border:#E3D9CC; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#1C1612; --fg:#F0EADF; --muted:#B3A595; --accent:#E2703A; --onaccent:#1C1612; --card:#251E19; --border:#3D332B; } }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  main { max-width:460px; margin:0 auto; padding:48px 16px 64px; text-align:center; }
+  h1 { font-size:26px; line-height:1.2; margin:0 0 8px; }
+  p { margin:8px 0; }
+  .muted { color:var(--muted); font-size:15px; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:22px 16px; margin:24px 0; }
+  .code { font:800 34px/1.1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing:6px; margin:6px 0 2px; }
+  .btn { display:inline-block; background:var(--accent); color:var(--onaccent); text-decoration:none; font-weight:700; padding:13px 22px; border-radius:12px; margin-top:12px; }
+  ol { text-align:left; padding-left:22px; color:var(--fg); }
+</style>
+</head>
+<body>
+<main>
+  <h1>You're invited to be friends on Archery in Texas</h1>
+  <p class="muted">See which friends are going to which shoots.</p>
+
+  <div class="card">
+    <p class="muted">Friend code</p>
+    <div class="code" id="code">——</div>
+    <a class="btn" id="open" href="#">Open in the app</a>
+  </div>
+
+  <p><strong>Don't have the app yet?</strong></p>
+  <ol>
+    <li>Install Archery in Texas on your phone.</li>
+    <li>Sign in, then go to <strong>Account → Friends</strong>.</li>
+    <li>Type the friend code above and tap <strong>Add</strong>.</li>
+  </ol>
+</main>
+<script>
+  (function () {
+    var raw = new URLSearchParams(location.search).get("code") || "";
+    var code = raw.replace(/[^A-Za-z0-9]/g, "").toUpperCase().slice(0, 12);
+    var appLink = "archeryintexas://add-friend/" + encodeURIComponent(code);
+    document.getElementById("code").textContent = code || "——";
+    var open = document.getElementById("open");
+    if (code) {
+      open.href = appLink;
+      // Try to open the app right away; if it isn't installed, this page stays put.
+      setTimeout(function () { location.href = appLink; }, 300);
+    } else {
+      open.style.display = "none";
+    }
+  })();
+</script>
+</body>
+</html>
