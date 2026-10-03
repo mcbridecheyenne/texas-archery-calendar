@@ -3,7 +3,7 @@ import * as AppleAuthentication from "expo-apple-authentication";
 import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { Alert, KeyboardAvoidingView, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
-import { PRIVACY_URL, RULES_URL } from "../config";
+import { EMAIL_SIGN_IN_ENABLED, PRIVACY_URL, RULES_URL } from "../config";
 import { useAuth } from "../src/lib/auth";
 import { Button, Field, errorText, useTheme } from "../src/ui";
 
@@ -66,9 +66,9 @@ export default function SignInScreen() {
   return (
     <KeyboardAvoidingView style={{ flex: 1, backgroundColor: t.background }} behavior={Platform.OS === "ios" ? "padding" : undefined}>
       <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
-        <Text style={[styles.title, { color: t.text }]}>Join the marketplace</Text>
+        <Text style={[styles.title, { color: t.text }]}>Sign in</Text>
         <Text style={[styles.lead, { color: t.muted }]}>
-          An account lets you sell gear and message other archers. Browsing tournaments and listings never needs one.
+          An account lets you add friends, share the shoots you're going to, add tournaments, and buy or sell gear. Browsing the schedule never needs one.
         </Text>
 
         {appleAvailable && step === "email" ? (
@@ -80,15 +80,23 @@ export default function SignInScreen() {
               style={styles.apple}
               onPress={apple}
             />
-            <View style={styles.orRow}>
-              <View style={[styles.line, { backgroundColor: t.border }]} />
-              <Text style={{ color: t.muted, fontSize: 13 }}>or use email</Text>
-              <View style={[styles.line, { backgroundColor: t.border }]} />
-            </View>
+            {EMAIL_SIGN_IN_ENABLED ? (
+              <View style={styles.orRow}>
+                <View style={[styles.line, { backgroundColor: t.border }]} />
+                <Text style={{ color: t.muted, fontSize: 13 }}>or use email</Text>
+                <View style={[styles.line, { backgroundColor: t.border }]} />
+              </View>
+            ) : null}
           </>
         ) : null}
 
-        {step === "email" ? (
+        {!EMAIL_SIGN_IN_ENABLED ? (
+          appleAvailable ? null : (
+            <Text style={[styles.lead, { color: t.text }]}>
+              Sign-in on this phone is coming soon. You can still browse every tournament and the marketplace.
+            </Text>
+          )
+        ) : step === "email" ? (
           <View style={styles.form}>
             <Field
               label="Email"

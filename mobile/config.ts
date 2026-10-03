@@ -14,6 +14,11 @@ export const SUPABASE = {
 };
 
 // Public pages linked from the subscription screen (Apple requires both).
+// Email sign-in sends a 6-digit code. It needs your own email sender connected in
+// Supabase (Authentication → Emails → SMTP) so the email can include the code.
+// Until then it's hidden; iPhone users sign in with Apple.
+export const EMAIL_SIGN_IN_ENABLED = false;
+
 export const PRIVACY_URL = `${API_BASE_URL}/privacy.html`;
 export const RULES_URL = `${API_BASE_URL}/marketplace-rules.html`;
 
