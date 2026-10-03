@@ -22,6 +22,12 @@ export interface Plan {
   pkg: unknown;
 }
 
+export interface Tip {
+  id: string; // store product id
+  price: string; // e.g. "$1.99"
+  product: unknown;
+}
+
 export interface PremiumState {
   available: boolean; // subscriptions are set up and the store is reachable
   isPremium: boolean; // ad-free
@@ -29,6 +35,8 @@ export interface PremiumState {
   plans: Plan[]; // monthly first, then yearly
   purchase: (plan: Plan) => Promise<"purchased" | "cancelled" | "failed">;
   restore: () => Promise<boolean>;
+  tips: Tip[]; // smallest first; empty until the tip products exist in the stores
+  sendTip: (tip: Tip) => Promise<"thanks" | "cancelled" | "failed">;
   sheetOpen: boolean; // the "Go ad-free" screen
   openSheet: () => void;
   closeSheet: () => void;
@@ -41,6 +49,8 @@ const PremiumContext = createContext<PremiumState>({
   plans: [],
   purchase: async () => "failed",
   restore: async () => false,
+  tips: [],
+  sendTip: async () => "failed",
   sheetOpen: false,
   openSheet: () => {},
   closeSheet: () => {},
@@ -61,6 +71,7 @@ export function PremiumProvider({ children }: { children: ReactNode }) {
   const [isPremium, setIsPremium] = useState(false);
   const [ready, setReady] = useState(!enabled);
   const [plans, setPlans] = useState<Plan[]>([]);
+  const [tips, setTips] = useState<Tip[]>([]);
   const [sheetOpen, setSheetOpen] = useState(false);
   const openSheet = useCallback(() => setSheetOpen(true), []);
   const closeSheet = useCallback(() => setSheetOpen(false), []);
@@ -96,6 +107,15 @@ export function PremiumProvider({ children }: { children: ReactNode }) {
         if (current?.annual) found.push(toPlan(current.annual, "year"));
         if (!cancelled) setPlans(found);
       } catch {}
+      try {
+        // One-time tips are consumable products, fetched directly (no offering needed).
+        const products: any[] = await Purchases.getProducts(PURCHASES.tipProductIds, Purchases.PRODUCT_CATEGORY?.NON_SUBSCRIPTION);
+        const list = (products ?? [])
+          .map((p) => ({ id: p.identifier, price: p.priceString ?? "", amount: p.price ?? 0, product: p }))
+          .sort((a, b) => a.amount - b.amount)
+          .map(({ amount, ...t }) => t as Tip);
+        if (!cancelled) setTips(list);
+      } catch {}
     })();
     return () => {
       cancelled = true;
@@ -123,6 +143,15 @@ export function PremiumProvider({ children }: { children: ReactNode }) {
     }
   }, [apply]);
 
+  const sendTip = useCallback(async (tip: Tip) => {
+    try {
+      await Purchases.purchaseStoreProduct(tip.product);
+      return "thanks" as const;
+    } catch (e: any) {
+      return e?.userCancelled ? ("cancelled" as const) : ("failed" as const);
+    }
+  }, []);
+
   const value = useMemo<PremiumState>(
     () => ({
       available: enabled && plans.length > 0,
@@ -131,11 +160,13 @@ export function PremiumProvider({ children }: { children: ReactNode }) {
       plans,
       purchase,
       restore,
+      tips,
+      sendTip,
       sheetOpen,
       openSheet,
       closeSheet,
     }),
-    [enabled, plans, isPremium, ready, purchase, restore, sheetOpen, openSheet, closeSheet]
+    [enabled, plans, isPremium, ready, purchase, restore, tips, sendTip, sheetOpen, openSheet, closeSheet]
   );
 
   return <PremiumContext.Provider value={value}>{children}</PremiumContext.Provider>;

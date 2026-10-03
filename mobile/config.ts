@@ -41,4 +41,7 @@ export const PURCHASES = {
   iosApiKey: "",
   androidApiKey: "",
   entitlement: "ad_free", // the entitlement id you create in RevenueCat
+  // "Support the app" tips: consumable in-app purchases with these product ids, created in
+  // App Store Connect and Google Play and added to RevenueCat. Hidden until they exist.
+  tipProductIds: ["tip_small", "tip_medium", "tip_large"],
 };

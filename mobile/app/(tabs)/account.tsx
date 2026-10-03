@@ -21,6 +21,7 @@ export default function AccountTab() {
   const friends = useFriends();
   const [mine, setMine] = useState<Listing[] | null>(null);
   const [deleting, setDeleting] = useState(false);
+  const [tipping, setTipping] = useState<string | null>(null);
 
   useFocusEffect(
     useCallback(() => {
@@ -133,6 +134,37 @@ export default function AccountTab() {
         )
       ) : null}
 
+      {premium.tips.length ? (
+        <>
+          <SectionLabel>Support the app</SectionLabel>
+          <View style={[styles.card, { backgroundColor: t.card, borderColor: t.border }]}>
+            <Text style={[styles.h, { color: t.text }]}>❤️ Enjoying Archery in Texas?</Text>
+            <Text style={[styles.p, { color: t.muted }]}>
+              It's built by an archer here in Texas. A tip helps keep the schedule updating and new features coming. Totally optional, and thank you!
+            </Text>
+            <View style={styles.tips}>
+              {premium.tips.map((tip, i) => (
+                <View key={tip.id} style={{ flex: 1 }}>
+                  <Button
+                    small
+                    kind={i === 1 ? "primary" : "secondary"}
+                    title={tip.price}
+                    busy={tipping === tip.id}
+                    onPress={async () => {
+                      setTipping(tip.id);
+                      const r = await premium.sendTip(tip);
+                      setTipping(null);
+                      if (r === "thanks") Alert.alert("Thank you! 🏹", "Your tip means a lot and helps keep the app going.");
+                      else if (r === "failed") Alert.alert("Tip didn't go through", "Nothing was charged. Please try again later.");
+                    }}
+                  />
+                </View>
+              ))}
+            </View>
+          </View>
+        </>
+      ) : null}
+
       <SectionLabel>App</SectionLabel>
       <View style={[styles.group, { backgroundColor: t.card, borderColor: t.border }]}>
         {premium.available || premium.isPremium ? (
@@ -184,5 +216,6 @@ const styles = StyleSheet.create({
   row: { flexDirection: "row", alignItems: "center", gap: 12, paddingHorizontal: 14, paddingVertical: 14 },
   rowTitle: { fontSize: 16, fontWeight: "600" },
   listingRow: { flexDirection: "row", alignItems: "center", gap: 12, padding: 10 },
+  tips: { flexDirection: "row", gap: 10, marginTop: 4 },
   thumb: { width: 48, height: 48, borderRadius: 8, overflow: "hidden" },
 });
