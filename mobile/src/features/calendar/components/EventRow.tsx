@@ -2,7 +2,7 @@ import { memo } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { fmtRange, monthShort, parseISODate } from "../dates";
 import type { CalendarTheme } from "../theme";
-import type { TournamentEvent } from "../types";
+import { isOutOfState, type TournamentEvent } from "../types";
 import { SourcePill } from "./SourcePill";
 
 interface Props {
@@ -31,7 +31,7 @@ export const EventRow = memo(function EventRow({ event, theme, going, note, onPr
         <Text style={[styles.badgeDay, { color: theme.text }]}>{d.getDate()}</Text>
       </View>
       <View style={styles.body}>
-        <SourcePill source={event.source} theme={theme} />
+        <SourcePill source={event.source} theme={theme} outOfState={isOutOfState(event) ? event.state : null} />
         <Text style={[styles.name, { color: theme.text }]} numberOfLines={2}>
           {event.name}
         </Text>

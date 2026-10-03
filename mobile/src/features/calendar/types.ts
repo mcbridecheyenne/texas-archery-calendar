@@ -41,7 +41,14 @@ export interface EventsResponse {
   lastUpdated: string;
 }
 
-export type SourceFilter = "all" | "going" | EventSource;
+/** "OOS" = out of state: any tournament (official or archer-added) outside Texas. */
+export type SourceFilter = "all" | "going" | "OOS" | EventSource;
+
+/** True when a tournament's state is known and isn't Texas. */
+export function isOutOfState(e: Pick<TournamentEvent, "state">): boolean {
+  const s = (e.state ?? "").trim().toUpperCase();
+  return !!s && s !== "TX" && s !== "TEXAS";
+}
 
 /**
  * Optional hooks a host app can pass to CalendarScreen to add social features

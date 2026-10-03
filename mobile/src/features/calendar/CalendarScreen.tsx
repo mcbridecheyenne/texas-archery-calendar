@@ -19,7 +19,7 @@ import { EventRow } from "./components/EventRow";
 import { MonthGrid } from "./components/MonthGrid";
 import { currentYM, daysInRange, fmtDayLong, fmtMonthYear, fmtRelative, parseISODate, toIso, type YM } from "./dates";
 import { useCalendarTheme, type CalendarTheme } from "./theme";
-import { sourceLabel, type CalendarSocial, type EventSource, type SourceFilter, type TournamentEvent } from "./types";
+import { isOutOfState, sourceLabel, type CalendarSocial, type EventSource, type SourceFilter, type TournamentEvent } from "./types";
 import { useShareCard, type ShareCardInfo } from "./components/ShareCard";
 import { shootsMessage } from "./share";
 import { useEvents } from "./useEvents";
@@ -80,7 +80,15 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
   const filtered = useMemo(
     () =>
       allEvents.filter((e) =>
-        filter === "all" ? true : filter === "going" ? going.has(e.id) : e.source === filter
+        filter === "all"
+          ? true
+          : filter === "going"
+          ? going.has(e.id)
+          : filter === "OOS"
+          ? isOutOfState(e)
+          : filter === "USER"
+          ? e.source === "USER" && !isOutOfState(e) // archer-added outside Texas live under Out of state
+          : e.source === filter
       ),
     [allEvents, filter, going]
   );
@@ -89,9 +97,11 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
   const myShoots = useMemo(() => allEvents.filter((e) => going.has(e.id) && e.endDate >= todayIso), [allEvents, going, todayIso]);
 
   const counts = useMemo(() => {
-    const c: Record<string, number> = { all: allEvents.length, going: 0, TFAA: 0, ASA: 0, TSAA: 0, USER: 0 };
+    const c: Record<string, number> = { all: allEvents.length, going: 0, TFAA: 0, ASA: 0, TSAA: 0, USER: 0, OOS: 0 };
     for (const e of allEvents) {
-      c[e.source]++;
+      if (e.source === "USER" && isOutOfState(e)) c.OOS++;
+      else c[e.source]++;
+      if (e.source !== "USER" && isOutOfState(e)) c.OOS++;
       if (going.has(e.id) && e.endDate >= todayIso) c.going++;
     }
     return c;
@@ -225,6 +235,15 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
             theme={theme}
           />
         ))}
+        {counts.OOS || extraEvents ? (
+          <Chip
+            label={`Out of state ${counts.OOS}`}
+            dot={theme.dark ? "#D9A66B" : "#8A5A2B"}
+            active={filter === "OOS"}
+            onPress={() => setFilter("OOS")}
+            theme={theme}
+          />
+        ) : null}
       </View>
       {social?.onAddEvent ? (
         <Pressable
@@ -313,6 +332,8 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
                   ? "Tap ☆ on a tournament to add it to My Shoots. Then you can share them with friends."
                   : filter === "USER"
                   ? "No tournaments added by archers yet. Know of one? Tap Add a tournament."
+                  : filter === "OOS"
+                  ? "No upcoming out-of-state tournaments. Add one and pick its state."
                   : "No upcoming tournaments match."
               }
             />

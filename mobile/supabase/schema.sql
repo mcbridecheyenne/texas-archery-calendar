@@ -537,6 +537,10 @@ drop trigger if exists community_events_touch on public.community_events;
 create trigger community_events_touch before update on public.community_events
   for each row execute function public.touch_updated_at();
 
+-- Two-letter state. Anything other than TX shows under "Out of state" in the app.
+alter table public.community_events add column if not exists state text not null default 'TX'
+  check (state ~ '^[A-Z]{2}$');
+
 -- Reports can point at an archer-added tournament too.
 alter table public.reports add column if not exists community_event_id uuid
   references public.community_events (id) on delete set null;

@@ -9,6 +9,10 @@ import type { CommunityEventInput } from "./api";
 import { findLikelyDuplicates } from "./duplicates";
 import { useCommunity } from "./CommunityProvider";
 
+const US_STATES = new Set(
+  ("AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY DC").split(" ")
+);
+
 function toUS(iso: string | undefined): string {
   if (!iso) return "";
   const [y, m, d] = iso.split("-");
@@ -56,6 +60,7 @@ export function TournamentForm({
   const [end, setEnd] = useState(initial && initial.endDate !== initial.startDate ? toUS(initial.endDate) : "");
   const [location, setLocation] = useState(initial?.location ?? "");
   const [city, setCity] = useState(initial?.city ?? "");
+  const [stateCode, setStateCode] = useState((initial?.state ?? "TX").toUpperCase());
   const [host, setHost] = useState(initial?.contact ?? "");
   const [phone, setPhone] = useState(initial?.phone ?? "");
   const [email, setEmail] = useState(initial?.email ?? "");
@@ -74,12 +79,14 @@ export function TournamentForm({
     if (!initial && startDate < todayIso()) return "That date has already passed.";
     if (location.trim().length < 2) return "Add where it is: the range or club name, and the address if you have it.";
     if (city.trim().length < 2) return "Add the town.";
+    const st = stateCode.trim().toUpperCase();
+    if (!US_STATES.has(st)) return "Enter the state as two letters, like TX or OK.";
     let link = url.trim();
     if (link && !/^https?:\/\//i.test(link)) link = `https://${link}`;
     if (link && !/^https?:\/\/[^\s.]+\.[^\s]+$/i.test(link)) return "That website link doesn't look right.";
     if (email.trim() && !/^\S+@\S+\.\S+$/.test(email.trim())) return "That email doesn't look right.";
     if (checkListingText(name, `${details} ${location} ${host}`)) return "Please keep it to archery and keep it respectful.";
-    return { name, startDate, endDate, location, city, host, phone, email: email.trim(), url: link, details };
+    return { name, startDate, endDate, location, city, state: st, host, phone, email: email.trim(), url: link, details };
   }
 
   async function save(input: CommunityEventInput) {
@@ -117,7 +124,8 @@ export function TournamentForm({
       <View style={[styles.note, { backgroundColor: t.source.USER.soft, borderColor: t.source.USER.solid + "55" }]}>
         <Text style={[styles.noteText, { color: t.text }]}>
           Tournaments you add show under <Text style={{ fontWeight: "700" }}>Added by archers</Text> with your name, so everyone
-          knows they aren't from the TFAA, Texas ASA or TSAA schedules.
+          knows they aren't from the TFAA, Texas ASA or TSAA schedules. Shoots outside Texas go under{" "}
+          <Text style={{ fontWeight: "700" }}>Out of state</Text>.
         </Text>
       </View>
       <Field label="Tournament name" value={name} onChangeText={setName} placeholder="Wichita Falls Spring 3D Shoot" maxLength={120} autoCapitalize="words" />
@@ -130,7 +138,27 @@ export function TournamentForm({
         </View>
       </View>
       <Field label="Where" value={location} onChangeText={setLocation} placeholder="Range or club name, address" maxLength={160} />
-      <Field label="Town" value={city} onChangeText={setCity} placeholder="Wichita Falls" maxLength={60} autoCapitalize="words" />
+      <View style={styles.row}>
+        <View style={{ flex: 3 }}>
+          <Field label="Town" value={city} onChangeText={setCity} placeholder="Wichita Falls" maxLength={60} autoCapitalize="words" />
+        </View>
+        <View style={{ flex: 1 }}>
+          <Field
+            label="State"
+            value={stateCode}
+            onChangeText={(v) => setStateCode(v.replace(/[^A-Za-z]/g, "").toUpperCase().slice(0, 2))}
+            placeholder="TX"
+            autoCapitalize="characters"
+            autoCorrect={false}
+            maxLength={2}
+          />
+        </View>
+      </View>
+      {stateCode.length === 2 && stateCode !== "TX" ? (
+        <Text style={[styles.noteText, { color: t.muted, marginTop: -6 }]}>
+          Outside Texas, so it will show under <Text style={{ fontWeight: "700" }}>Out of state</Text>.
+        </Text>
+      ) : null}
       <Field label="Host club or contact (optional)" value={host} onChangeText={setHost} maxLength={120} autoCapitalize="words" />
       <View style={styles.row}>
         <View style={{ flex: 1 }}>

@@ -4,7 +4,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { addToPhoneCalendar, callHost, emailHost, openDirections, openUrl } from "../actions";
 import { daysUntil, fmtRange } from "../dates";
 import type { CalendarTheme } from "../theme";
-import { sourceLabel, type TournamentEvent } from "../types";
+import { isOutOfState, sourceLabel, type TournamentEvent } from "../types";
 import { shareShoot, shootMessage } from "../share";
 import { useShareCard, type ShareCardInfo } from "./ShareCard";
 import { SourcePill } from "./SourcePill";
@@ -38,7 +38,7 @@ export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra
       {event ? (
         <View style={[styles.sheet, { backgroundColor: theme.background }]}>
           <View style={[styles.topBar, { borderBottomColor: theme.border }]}>
-            <SourcePill source={event.source} theme={theme} />
+            <SourcePill source={event.source} theme={theme} outOfState={isOutOfState(event) ? event.state : null} />
             <Pressable onPress={onClose} hitSlop={10} accessibilityRole="button" accessibilityLabel="Close">
               <Text style={[styles.done, { color: theme.primary }]}>Done</Text>
             </Pressable>

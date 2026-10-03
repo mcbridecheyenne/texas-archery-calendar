@@ -4,7 +4,7 @@ import { db } from "../../lib/supabase";
 import type { TournamentEvent } from "../calendar";
 
 const FIELDS =
-  "id, created_by, name, start_date, end_date, location, city, host, phone, email, url, details, status, created_at, " +
+  "id, created_by, name, start_date, end_date, location, city, state, host, phone, email, url, details, status, created_at, " +
   "creator:profiles!community_events_created_by_fkey(display_name)";
 
 export interface CommunityEventInput {
@@ -13,6 +13,7 @@ export interface CommunityEventInput {
   endDate: string;
   location: string;
   city: string;
+  state: string; // two letters, e.g. "TX"
   host: string;
   phone: string;
   email: string;
@@ -39,7 +40,7 @@ function toEvent(r: any): TournamentEvent {
     endDate: r.end_date,
     location: r.location,
     city: r.city,
-    state: "TX",
+    state: r.state ?? "TX",
     registrationStart: null,
     registrationEnd: null,
     contact: r.host,
@@ -79,6 +80,7 @@ function toRow(input: CommunityEventInput) {
     end_date: input.endDate,
     location: input.location.trim(),
     city: input.city.trim(),
+    state: (input.state.trim() || "TX").toUpperCase(),
     host: clean(input.host),
     phone: clean(input.phone),
     email: clean(input.email),
