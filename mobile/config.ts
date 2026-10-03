@@ -31,7 +31,7 @@ export const TERMS_URL = "https://www.apple.com/legal/internet-services/itunes/d
 export const ADS = {
   enabled: true,
   iosBannerId: "ca-app-pub-3940256099942544/2435281174",
-  androidBannerId: "ca-app-pub-3940256099942544/9214589741",
+  androidBannerId: "ca-app-pub-7930621070150782/6158655092", // Archery in Texas (Android) · Bottom banner
 };
 
 // ---- Ad-free subscription (RevenueCat) ----
