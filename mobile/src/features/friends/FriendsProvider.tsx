@@ -20,6 +20,7 @@ export interface FriendsState {
   shareLevelFor: (eventId: string) => ShareLevel;
   setShareLevel: (event: TournamentEvent, level: ShareLevel) => Promise<void>;
   addByCode: (code: string) => Promise<AddFriendResult>;
+  addById: (archerId: string) => Promise<AddFriendResult>;
   accept: (friendId: string) => Promise<void>;
   remove: (friendId: string) => Promise<void>;
   refresh: () => Promise<void>;
@@ -37,6 +38,9 @@ const FriendsContext = createContext<FriendsState>({
   shareLevelFor: () => "private",
   setShareLevel: noop,
   addByCode: async () => {
+    throw new Error("Sign in to add friends.");
+  },
+  addById: async () => {
     throw new Error("Sign in to add friends.");
   },
   accept: noop,
@@ -142,6 +146,16 @@ export function FriendsProvider({ children }: { children: ReactNode }) {
     [active, refresh]
   );
 
+  const addById = useCallback(
+    async (archerId: string) => {
+      if (!active) throw new Error("Sign in and finish your profile to add friends.");
+      const result = await api.sendFriendRequestTo(archerId);
+      await refresh();
+      return result;
+    },
+    [active, refresh]
+  );
+
   const accept = useCallback(
     async (friendId: string) => {
       if (!userId) return;
@@ -173,11 +187,12 @@ export function FriendsProvider({ children }: { children: ReactNode }) {
       shareLevelFor,
       setShareLevel,
       addByCode,
+      addById,
       accept,
       remove,
       refresh,
     }),
-    [active, friendCode, friends, incoming, outgoing, friendIds, friendsGoing, shareLevelFor, setShareLevel, addByCode, accept, remove, refresh]
+    [active, friendCode, friends, incoming, outgoing, friendIds, friendsGoing, shareLevelFor, setShareLevel, addByCode, addById, accept, remove, refresh]
   );
 
   return <FriendsContext.Provider value={value}>{children}</FriendsContext.Provider>;

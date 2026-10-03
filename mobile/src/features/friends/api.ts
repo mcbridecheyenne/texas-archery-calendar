@@ -119,3 +119,30 @@ export async function fetchAttendees(me: string, eventId: string, friendIds: Set
     isFriend: friendIds.has(r.user_id),
   }));
 }
+
+export interface SearchResult {
+  id: string;
+  name: string;
+  city: string | null;
+  archeryClass: string | null;
+  relation: "none" | "sent" | "received" | "friends";
+}
+
+/** Archers who chose to be findable, whose name (or town) matches. */
+export async function searchArchers(q: string): Promise<SearchResult[]> {
+  const { data, error } = await db().rpc("search_archers", { q });
+  if (error) throw error;
+  return ((data ?? []) as any[]).map((r) => ({
+    id: r.id,
+    name: r.display_name,
+    city: r.city ?? null,
+    archeryClass: r.archery_class ?? null,
+    relation: r.relation,
+  }));
+}
+
+export async function sendFriendRequestTo(target: string): Promise<AddFriendResult> {
+  const { data, error } = await db().rpc("send_friend_request_to", { target });
+  if (error) throw error;
+  return data as AddFriendResult;
+}

@@ -1,8 +1,8 @@
 // Friends: your friend code and invite link, adding by code, requests, and your friends list.
 import { useRouter } from "expo-router";
-import { useState, type ReactNode } from "react";
-import { Alert, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
-import { addResultMessage, cleanCode, shareInvite, useFriends, type Friend } from "../src/features/friends";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import { ActivityIndicator, Alert, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { addResultMessage, cleanCode, searchArchers, shareInvite, useFriends, type Friend, type SearchResult } from "../src/features/friends";
 import { useAuth } from "../src/lib/auth";
 import { Button, Empty, Field, SectionLabel, confirm, errorText, showMenu, useTheme } from "../src/ui";
 
@@ -13,6 +13,31 @@ export default function FriendsScreen() {
   const fr = useFriends();
   const [code, setCode] = useState("");
   const [adding, setAdding] = useState(false);
+  const [q, setQ] = useState("");
+  const [results, setResults] = useState<SearchResult[] | null>(null);
+  const [searching, setSearching] = useState(false);
+  const [busyId, setBusyId] = useState<string | null>(null);
+  const searchId = useRef(0);
+
+  // Search a moment after typing stops. Friend lists changing (accept/add) refresh the results too.
+  const friendKey = `${fr.friends.length}-${fr.incoming.length}-${fr.outgoing.length}`;
+  useEffect(() => {
+    const term = q.trim();
+    if (term.length < 2 || !auth.profile) {
+      setResults(null);
+      setSearching(false);
+      return;
+    }
+    const id = ++searchId.current;
+    setSearching(true);
+    const timer = setTimeout(() => {
+      searchArchers(term)
+        .then((r) => id === searchId.current && setResults(r))
+        .catch(() => id === searchId.current && setResults([]))
+        .finally(() => id === searchId.current && setSearching(false));
+    }, 350);
+    return () => clearTimeout(timer);
+  }, [q, auth.profile, friendKey]);
 
   if (!auth.enabled) return <Empty title="Friends" body="Friends open with accounts." />;
   if (!auth.userId)
@@ -44,6 +69,18 @@ export default function FriendsScreen() {
     }
   }
 
+  async function addFound(r: SearchResult) {
+    try {
+      setBusyId(r.id);
+      if (r.relation === "received") await fr.accept(r.id);
+      else Alert.alert(...addResultMessage(await fr.addById(r.id)));
+    } catch (e) {
+      Alert.alert("Couldn't add friend", errorText(e));
+    } finally {
+      setBusyId(null);
+    }
+  }
+
   function friendMenu(f: Friend) {
     showMenu(f.name, [
       {
@@ -69,7 +106,40 @@ export default function FriendsScreen() {
         <Button title="Invite friends" onPress={() => fr.friendCode && shareInvite(fr.friendCode)} disabled={!fr.friendCode} />
       </View>
 
-      <SectionLabel>Add a friend</SectionLabel>
+      <SectionLabel>Find archers</SectionLabel>
+      <Field
+        label="Search by name"
+        value={q}
+        onChangeText={setQ}
+        placeholder="e.g. Kim R."
+        autoCapitalize="words"
+        autoCorrect={false}
+        returnKeyType="search"
+        clearButtonMode="while-editing"
+        hint={auth.profile.discoverable ? undefined : "You're hidden from search. To let friends find you, turn it on in Account → Edit profile."}
+      />
+      {searching ? <ActivityIndicator color={t.primary} style={{ marginVertical: 8 }} /> : null}
+      {!searching && results !== null ? (
+        results.length ? (
+          results.map((r) => (
+            <Person key={r.id} f={{ name: r.name, city: r.city, archeryClass: r.archeryClass }}>
+              {r.relation === "friends" ? (
+                <Text style={{ color: t.muted, fontWeight: "700" }}>Friends ✓</Text>
+              ) : r.relation === "sent" ? (
+                <Text style={{ color: t.muted, fontWeight: "700" }}>Requested</Text>
+              ) : (
+                <Button small title={r.relation === "received" ? "Accept" : "Add"} busy={busyId === r.id} onPress={() => addFound(r)} />
+              )}
+            </Person>
+          ))
+        ) : (
+          <Text style={[styles.p, { color: t.muted }]}>
+            No archers found. They may have turned off search; ask for their friend code instead.
+          </Text>
+        )
+      ) : null}
+
+      <SectionLabel>Add by friend code</SectionLabel>
       <View style={styles.addRow}>
         <View style={{ flex: 1 }}>
           <Field
@@ -132,7 +202,7 @@ export default function FriendsScreen() {
   );
 }
 
-function Person({ f, children, onPress }: { f: Friend; children: ReactNode; onPress?: () => void }) {
+function Person({ f, children, onPress }: { f: Pick<Friend, "name" | "city" | "archeryClass">; children: ReactNode; onPress?: () => void }) {
   const t = useTheme();
   const body = (
     <View style={[styles.person, { backgroundColor: t.card, borderColor: t.border }]}>

@@ -20,14 +20,14 @@ export interface AuthState {
   signInWithApple: () => Promise<"ok" | "cancelled">;
   sendEmailCode: (email: string) => Promise<void>;
   verifyEmailCode: (email: string, code: string) => Promise<void>;
-  saveProfile: (displayName: string, city: string, archeryClass?: string) => Promise<void>;
+  saveProfile: (displayName: string, city: string, archeryClass?: string, discoverable?: boolean) => Promise<void>;
   block: (userId: string) => Promise<void>;
   unblock: (userId: string) => Promise<void>;
   signOut: () => Promise<void>;
   deleteAccount: () => Promise<void>;
 }
 
-const PROFILE_FIELDS = "id, display_name, city, archery_class, created_at";
+const PROFILE_FIELDS = "id, display_name, city, archery_class, discoverable, created_at";
 
 const AuthContext = createContext<AuthState | null>(null);
 
@@ -117,13 +117,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const saveProfile = useCallback(
-    async (displayName: string, city: string, archeryClass = "") => {
+    async (displayName: string, city: string, archeryClass = "", discoverable?: boolean) => {
       if (!userId) throw new Error("Not signed in");
       const row = {
         id: userId,
         display_name: displayName.trim(),
         city: city.trim() || null,
         archery_class: archeryClass.trim() || null,
+        ...(discoverable === undefined ? {} : { discoverable }),
       };
       const { data, error } = await supabase!
         .from("profiles")

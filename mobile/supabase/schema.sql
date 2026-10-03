@@ -548,6 +548,61 @@ alter table public.profiles add column if not exists archery_class text
   check (archery_class is null or char_length(archery_class) <= 40);
 
 -- ============================================================
+-- Finding friends by name. Only archers who turned on "Let other archers
+-- find me by name" show up, and never anyone you've blocked or who blocked you.
+-- ============================================================
+alter table public.profiles add column if not exists discoverable boolean not null default false;
+
+create or replace function public.search_archers(q text)
+returns table (id uuid, display_name text, city text, archery_class text, relation text)
+language sql stable security definer set search_path = public as $$
+  with term as (
+    select replace(replace(replace(trim(coalesce(q, '')), '\', ''), '%', ''), '_', '') as t
+  )
+  select p.id, p.display_name, p.city, p.archery_class,
+    coalesce((
+      select case
+        when f.status = 'accepted' then 'friends'
+        when f.requester_id = auth.uid() then 'sent'
+        else 'received' end
+      from public.friendships f
+      where (f.requester_id = auth.uid() and f.addressee_id = p.id)
+         or (f.requester_id = p.id and f.addressee_id = auth.uid())
+      limit 1
+    ), 'none') as relation
+  from public.profiles p, term
+  where auth.uid() is not null
+    and public.is_active_member(auth.uid())
+    and char_length(term.t) >= 2
+    and p.discoverable
+    and not p.is_banned
+    and p.id <> auth.uid()
+    and not public.either_blocked(auth.uid(), p.id)
+    and (p.display_name ilike '%' || term.t || '%' or p.city ilike term.t || '%')
+  order by (p.display_name ilike term.t || '%') desc, p.display_name
+  limit 25;
+$$;
+
+revoke all on function public.search_archers(text) from public, anon;
+grant execute on function public.search_archers(text) to authenticated;
+
+-- Send a request to someone found by search (they must still be searchable).
+create or replace function public.send_friend_request_to(target uuid)
+returns json language plpgsql security definer set search_path = public as $$
+declare
+  c text;
+begin
+  select friend_code into c from public.profiles where id = target and discoverable and not is_banned;
+  if c is null then
+    raise exception 'This archer can''t be found anymore.';
+  end if;
+  return public.send_friend_request(c);
+end $$;
+
+revoke all on function public.send_friend_request_to(uuid) from public, anon;
+grant execute on function public.send_friend_request_to(uuid) to authenticated;
+
+-- ============================================================
 -- Delete my account (Apple requires this inside the app).
 -- The app removes the person's photos first, then calls this.
 -- ============================================================

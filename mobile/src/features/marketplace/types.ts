@@ -41,6 +41,7 @@ export interface Profile {
   display_name: string;
   city: string | null;
   archery_class?: string | null;
+  discoverable?: boolean; // shows up when other archers search by name
   created_at: string;
 }
 

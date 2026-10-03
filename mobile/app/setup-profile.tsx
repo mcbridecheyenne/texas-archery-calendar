@@ -1,7 +1,7 @@
 // Name, city, archery class, and (the first time) agreeing to the marketplace rules.
 import { useRouter } from "expo-router";
 import { useState } from "react";
-import { Alert, Linking, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Alert, Linking, Pressable, ScrollView, StyleSheet, Switch, Text, View } from "react-native";
 import { RULES_URL } from "../config";
 import { checkListingText } from "../src/features/marketplace/moderation";
 import { useAuth } from "../src/lib/auth";
@@ -18,6 +18,8 @@ export default function SetupProfileScreen() {
   const [name, setName] = useState(profile?.display_name ?? suggestedName ?? "");
   const [city, setCity] = useState(profile?.city ?? "");
   const [archeryClass, setArcheryClass] = useState(profile?.archery_class ?? "");
+  // New archers start searchable (they can switch it off right here); existing ones keep their choice.
+  const [discoverable, setDiscoverable] = useState(profile ? !!profile.discoverable : true);
   const [agreed, setAgreed] = useState(!firstTime);
   const [busy, setBusy] = useState(false);
 
@@ -36,7 +38,7 @@ export default function SetupProfileScreen() {
     }
     try {
       setBusy(true);
-      await saveProfile(name, city, archeryClass);
+      await saveProfile(name, city, archeryClass, discoverable);
       if (router.canGoBack()) router.back();
       else router.replace("/");
     } catch (e) {
@@ -75,6 +77,23 @@ export default function SetupProfileScreen() {
         </View>
       </View>
 
+      <View style={[styles.agree, { borderColor: t.border, backgroundColor: t.card, alignItems: "center" }]}>
+        <View style={{ flex: 1, gap: 2 }}>
+          <Text style={[styles.agreeText, { color: t.text, fontWeight: "700" }]}>Let other archers find me by name</Text>
+          <Text style={[styles.hint, { color: t.muted }]}>
+            {discoverable
+              ? "Archers can search for your name to send you a friend request. You choose whether to accept."
+              : "You won't show up in search. Friends can still add you with your friend code."}
+          </Text>
+        </View>
+        <Switch
+          value={discoverable}
+          onValueChange={setDiscoverable}
+          trackColor={{ true: t.primary, false: t.border }}
+          accessibilityLabel="Let other archers find me by name"
+        />
+      </View>
+
       {firstTime ? (
         <Pressable onPress={() => setAgreed((v) => !v)} style={[styles.agree, { borderColor: t.border, backgroundColor: t.card }]} accessibilityRole="checkbox" accessibilityState={{ checked: agreed }}>
           <View style={[styles.box, { borderColor: agreed ? t.primary : t.muted, backgroundColor: agreed ? t.primary : "transparent" }]}>
@@ -103,4 +122,5 @@ const styles = StyleSheet.create({
   box: { width: 24, height: 24, borderRadius: 6, borderWidth: 2, alignItems: "center", justifyContent: "center", marginTop: 1 },
   agreeText: { flex: 1, fontSize: 14, lineHeight: 20 },
   ideas: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
+  hint: { fontSize: 13, lineHeight: 18 },
 });
