@@ -9,8 +9,8 @@ export const API_BASE_URL = "https://mcbridecheyenne.github.io/texas-archery-cal
 // supabase/schema.sql decide what each person can do. Leave blank to show
 // "Marketplace coming soon" instead.
 export const SUPABASE = {
-  url: "",
-  anonKey: "",
+  url: "https://mefqiniuudxcnoimfipo.supabase.co",
+  anonKey: "sb_publishable_GWYdb3dSEHy4jvrkkJJEww_FD6nOt3B",
 };
 
 // Public pages linked from the subscription screen (Apple requires both).
