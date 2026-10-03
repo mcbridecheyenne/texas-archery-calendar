@@ -212,7 +212,8 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
   const controls = (
     <View style={styles.controls}>
       {segment}
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chips}>
+      {/* Wraps onto a second line instead of scrolling sideways, so every association is visible. */}
+      <View style={styles.chips}>
         <Chip label={`All ${counts.all}`} active={filter === "all"} onPress={() => setFilter("all")} theme={theme} />
         {SOURCES.map((s) => (
           <Chip
@@ -224,7 +225,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
             theme={theme}
           />
         ))}
-      </ScrollView>
+      </View>
       {social?.onAddEvent ? (
         <Pressable
           onPress={social.onAddEvent}
@@ -444,7 +445,7 @@ const styles = StyleSheet.create({
   headerSub: { fontSize: 12, marginTop: 2 },
   scroll: { padding: 16 },
   controls: { gap: 10, marginBottom: 12 },
-  chips: { gap: 8, paddingRight: 8 },
+  chips: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
   chip: {
     flexDirection: "row",
     alignItems: "center",
