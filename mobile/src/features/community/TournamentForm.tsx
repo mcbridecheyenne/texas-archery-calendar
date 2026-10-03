@@ -1,6 +1,7 @@
 // The add/edit form for an archer-added tournament, with a duplicate check before saving.
+import * as ImagePicker from "expo-image-picker";
 import { useState } from "react";
-import { Alert, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Alert, Image, Linking, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { Button, Field, errorText, useTheme } from "../../ui";
 import type { TournamentEvent } from "../calendar";
 import { fmtRange } from "../calendar/dates";
@@ -66,6 +67,34 @@ export function TournamentForm({
   const [email, setEmail] = useState(initial?.email ?? "");
   const [url, setUrl] = useState(initial?.sourceUrl ?? "");
   const [details, setDetails] = useState(initial?.details ?? "");
+  // The flyer picture: the saved one (path + url), a newly picked one (uri), or none.
+  const [flyer, setFlyer] = useState<(NonNullable<CommunityEventInput["flyer"]> & { preview?: string }) | null>(
+    initial?.flyerPath ? { path: initial.flyerPath, preview: initial.flyerUrl ?? undefined } : null
+  );
+
+  async function pickFlyer(fromCamera: boolean) {
+    try {
+      let result: ImagePicker.ImagePickerResult;
+      if (fromCamera) {
+        const perm = await ImagePicker.requestCameraPermissionsAsync();
+        if (!perm.granted) {
+          Alert.alert("Camera access is off", "Allow camera access in Settings to take a photo of the flyer.", [
+            { text: "Not now", style: "cancel" },
+            { text: "Open Settings", onPress: () => Linking.openSettings() },
+          ]);
+          return;
+        }
+        result = await ImagePicker.launchCameraAsync({ mediaTypes: ["images"], quality: 1 });
+      } else {
+        result = await ImagePicker.launchImageLibraryAsync({ mediaTypes: ["images"], quality: 1 });
+      }
+      if (result.canceled || !result.assets[0]) return;
+      const a = result.assets[0];
+      setFlyer({ uri: a.uri, width: a.width, height: a.height, preview: a.uri });
+    } catch (e) {
+      Alert.alert("Couldn't add the flyer", errorText(e));
+    }
+  }
   const [busy, setBusy] = useState(false);
 
   function problem(): string | CommunityEventInput {
@@ -86,7 +115,8 @@ export function TournamentForm({
     if (link && !/^https?:\/\/[^\s.]+\.[^\s]+$/i.test(link)) return "That website link doesn't look right.";
     if (email.trim() && !/^\S+@\S+\.\S+$/.test(email.trim())) return "That email doesn't look right.";
     if (checkListingText(name, `${details} ${location} ${host}`)) return "Please keep it to archery and keep it respectful.";
-    return { name, startDate, endDate, location, city, state: st, host, phone, email: email.trim(), url: link, details };
+    const flyerInput = flyer ? { path: flyer.path, uri: flyer.uri, width: flyer.width, height: flyer.height } : null;
+    return { name, startDate, endDate, location, city, state: st, host, phone, email: email.trim(), url: link, details, flyer: flyerInput };
   }
 
   async function save(input: CommunityEventInput) {
@@ -168,6 +198,31 @@ export function TournamentForm({
           <Field label="Email (optional)" value={email} onChangeText={setEmail} keyboardType="email-address" autoCapitalize="none" maxLength={120} />
         </View>
       </View>
+      <View style={{ gap: 6 }}>
+        <Text style={[styles.label, { color: t.muted }]}>Flyer picture (optional)</Text>
+        {flyer?.preview ? (
+          <View style={[styles.flyerBox, { borderColor: t.border, backgroundColor: t.card }]}>
+            <Image source={{ uri: flyer.preview }} style={styles.flyer} resizeMode="contain" accessibilityLabel="Tournament flyer" />
+            <View style={styles.row}>
+              <View style={{ flex: 1 }}>
+                <Button small kind="secondary" title="Replace" onPress={() => pickFlyer(false)} />
+              </View>
+              <View style={{ flex: 1 }}>
+                <Button small kind="danger" title="Remove" onPress={() => setFlyer(null)} />
+              </View>
+            </View>
+          </View>
+        ) : (
+          <View style={styles.row}>
+            <Pressable onPress={() => pickFlyer(true)} style={[styles.pick, { borderColor: t.border, backgroundColor: t.card }]} accessibilityRole="button">
+              <Text style={[styles.pickText, { color: t.primary }]}>📷  Take photo</Text>
+            </Pressable>
+            <Pressable onPress={() => pickFlyer(false)} style={[styles.pick, { borderColor: t.border, backgroundColor: t.card }]} accessibilityRole="button">
+              <Text style={[styles.pickText, { color: t.primary }]}>🖼  Choose photo</Text>
+            </Pressable>
+          </View>
+        )}
+      </View>
       <Field label="Website or flyer link (optional)" value={url} onChangeText={setUrl} keyboardType="url" autoCapitalize="none" maxLength={300} placeholder="facebook.com/…" />
       <Field label="Details (optional)" value={details} onChangeText={setDetails} multiline maxLength={1500} placeholder="Classes, entry fees, start times, food…" />
       <Button title={submitLabel} onPress={submit} busy={busy} />
@@ -180,4 +235,9 @@ const styles = StyleSheet.create({
   row: { flexDirection: "row", gap: 10 },
   note: { borderRadius: 10, borderWidth: StyleSheet.hairlineWidth, padding: 10 },
   noteText: { fontSize: 14, lineHeight: 19 },
+  label: { fontSize: 13, fontWeight: "600" },
+  flyerBox: { borderWidth: StyleSheet.hairlineWidth, borderRadius: 12, padding: 10, gap: 10 },
+  flyer: { width: "100%", height: 260, borderRadius: 8 },
+  pick: { flex: 1, borderWidth: StyleSheet.hairlineWidth, borderRadius: 12, paddingVertical: 14, alignItems: "center" },
+  pickText: { fontSize: 15, fontWeight: "700" },
 });

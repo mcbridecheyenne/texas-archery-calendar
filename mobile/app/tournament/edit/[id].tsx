@@ -27,7 +27,7 @@ export default function EditTournamentScreen() {
       initial={event}
       submitLabel="Save changes"
       onSubmit={async (input) => {
-        await updateCommunityEvent(id, input);
+        await updateCommunityEvent(userId!, id, input, event.flyerPath);
         await refresh();
         router.back();
       }}

@@ -24,6 +24,8 @@ export interface TournamentEvent {
   addedBy?: string | null; // display name of the archer who added it
   addedById?: string | null;
   details?: string | null;
+  flyerUrl?: string | null; // picture of the tournament flyer
+  flyerPath?: string | null; // where that picture is stored
 }
 
 export interface SourceStatus {

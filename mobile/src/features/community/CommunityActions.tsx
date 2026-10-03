@@ -25,7 +25,7 @@ export function CommunityActions({ event, close }: { event: TournamentEvent; clo
   function remove() {
     confirm("Delete this tournament?", "It will be removed for everyone, including anyone who marked it Going.", "Delete", async () => {
       try {
-        await deleteCommunityEvent(id);
+        await deleteCommunityEvent(id, event.flyerPath);
         close();
         await refresh();
       } catch (e) {

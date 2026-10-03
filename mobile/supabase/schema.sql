@@ -537,6 +537,10 @@ drop trigger if exists community_events_touch on public.community_events;
 create trigger community_events_touch before update on public.community_events
   for each row execute function public.touch_updated_at();
 
+-- Optional flyer picture, stored in the listing-photos bucket as <user id>/tournaments/<file>.jpg
+alter table public.community_events add column if not exists flyer_path text
+  check (flyer_path is null or char_length(flyer_path) <= 300);
+
 -- Two-letter state. Anything other than TX shows under "Out of state" in the app.
 alter table public.community_events add column if not exists state text not null default 'TX'
   check (state ~ '^[A-Z]{2}$');

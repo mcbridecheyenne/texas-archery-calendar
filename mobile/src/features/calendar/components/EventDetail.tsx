@@ -1,5 +1,5 @@
-import type { ReactNode } from "react";
-import { Alert, Modal, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { useState, type ReactNode } from "react";
+import { Alert, Image, Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { addToPhoneCalendar, callHost, emailHost, openDirections, openUrl } from "../actions";
 import { daysUntil, fmtRange } from "../dates";
@@ -32,6 +32,8 @@ function countdown(event: TournamentEvent): string | null {
 
 export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra, sharePlug, shareAs }: Props) {
   const card = useShareCard();
+  const [flyerOpen, setFlyerOpen] = useState(false);
+  const win = useWindowDimensions();
   const insets = useSafeAreaInsets();
   return (
     <Modal visible={!!event} animationType="slide" presentationStyle="pageSheet" onRequestClose={onClose}>
@@ -135,6 +137,18 @@ export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra
               )}
             </View>
 
+            {event.flyerUrl ? (
+              <Pressable
+                onPress={() => setFlyerOpen(true)}
+                style={[styles.flyerCard, { backgroundColor: theme.card, borderColor: theme.border }]}
+                accessibilityRole="imagebutton"
+                accessibilityLabel="Tournament flyer. Tap to view full screen."
+              >
+                <Text style={[styles.rowLabel, { color: theme.muted }]}>FLYER · TAP TO ENLARGE</Text>
+                <Image source={{ uri: event.flyerUrl }} style={styles.flyerThumb} resizeMode="contain" />
+              </Pressable>
+            ) : null}
+
             {event.details ? (
               <View style={[styles.card, { backgroundColor: theme.card, borderColor: theme.border, paddingVertical: 12 }]}>
                 <Text style={[styles.rowLabel, { color: theme.muted }]}>DETAILS</Text>
@@ -147,6 +161,27 @@ export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra
             </Text>
           </ScrollView>
           {card.element}
+
+          {event.flyerUrl ? (
+            <Modal visible={flyerOpen} animationType="fade" onRequestClose={() => setFlyerOpen(false)} supportedOrientations={["portrait", "landscape"]}>
+              <View style={styles.viewer}>
+                {/* Pinch to zoom on iPhone; the flyer fits the screen to start. */}
+                <ScrollView
+                  maximumZoomScale={5}
+                  minimumZoomScale={1}
+                  centerContent
+                  contentContainerStyle={{ flexGrow: 1, justifyContent: "center" }}
+                  showsHorizontalScrollIndicator={false}
+                  showsVerticalScrollIndicator={false}
+                >
+                  <Image source={{ uri: event.flyerUrl }} style={{ width: win.width, height: win.height * 0.85 }} resizeMode="contain" />
+                </ScrollView>
+                <Pressable onPress={() => setFlyerOpen(false)} style={[styles.viewerClose, { top: insets.top + 12 }]} hitSlop={12} accessibilityRole="button" accessibilityLabel="Close flyer">
+                  <Text style={styles.viewerCloseText}>Done</Text>
+                </Pressable>
+              </View>
+            </Modal>
+          ) : null}
         </View>
       ) : null}
     </Modal>
@@ -223,6 +258,11 @@ const styles = StyleSheet.create({
   rowLabel: { fontSize: 12, fontWeight: "600", letterSpacing: 0.4 },
   rowValue: { fontSize: 15 },
   note: { fontSize: 12, marginTop: 14, textAlign: "center" },
+  flyerCard: { marginTop: 16, borderRadius: 12, borderWidth: StyleSheet.hairlineWidth, padding: 12, gap: 8 },
+  flyerThumb: { width: "100%", height: 320, borderRadius: 8 },
+  viewer: { flex: 1, backgroundColor: "#000" },
+  viewerClose: { position: "absolute", right: 16, backgroundColor: "rgba(255,255,255,0.15)", paddingHorizontal: 14, paddingVertical: 8, borderRadius: 999 },
+  viewerCloseText: { color: "#fff", fontSize: 16, fontWeight: "700" },
   userNote: { marginTop: 10, borderRadius: 10, borderWidth: StyleSheet.hairlineWidth, padding: 10 },
   userNoteText: { fontSize: 14, lineHeight: 19 },
 });
