@@ -38,7 +38,7 @@ export const ADS = {
 // Public SDK keys from app.revenuecat.com → Project → API keys. Leave blank to hide
 // the "Remove ads" option until the subscription is set up.
 export const PURCHASES = {
-  iosApiKey: "",
+  iosApiKey: "appl_ckvTHhsHxFRTCRfnbnVsRfukCgl",
   androidApiKey: "",
   entitlement: "ad_free", // the entitlement id you create in RevenueCat
   // "Support the app" tips: consumable in-app purchases with these product ids, created in
