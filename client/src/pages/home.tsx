@@ -21,21 +21,33 @@ import {
 
 type SourceFilter = "all" | TournamentEvent["source"];
 
+// Emails here are checked every few hours; verified shoots are added after review.
+const SUBMIT_SHOOT_HREF =
+  "mailto:cheyenne@inkboxmail.com?subject=" +
+  encodeURIComponent("Add a shoot") +
+  "&body=" +
+  encodeURIComponent(
+    "Event name:\nHost club:\nSanctioned by (ASA, NFAA/TFAA, USA Archery/TSAA, IBO, or none):\nDates:\nVenue and address:\nCity, state:\nLink to flyer, club page or registration:\nYour name, role with the club, and phone:\n"
+  );
+
 function sourceLabel(source: TournamentEvent["source"]): string {
   if (source === "TFAA") return "TFAA";
   if (source === "ASA") return "Texas ASA";
+  if (source === "CLUB") return "Club shoot";
   return "TSAA";
 }
 
 function sourcePillClass(source: TournamentEvent["source"]): string {
   if (source === "TFAA") return "pill-tfaa";
   if (source === "ASA") return "pill-asa";
+  if (source === "CLUB") return "pill-club";
   return "pill-tsaa";
 }
 
 function sourceBarClass(source: TournamentEvent["source"]): string {
   if (source === "TFAA") return "event-bar-tfaa";
   if (source === "ASA") return "event-bar-asa";
+  if (source === "CLUB") return "event-bar-club";
   return "event-bar-tsaa";
 }
 
@@ -76,6 +88,7 @@ export default function Home() {
   const tfaaCount = data?.events.filter((e) => e.source === "TFAA").length ?? 0;
   const asaCount = data?.events.filter((e) => e.source === "ASA").length ?? 0;
   const tsaaCount = data?.events.filter((e) => e.source === "TSAA").length ?? 0;
+  const clubCount = data?.events.filter((e) => e.source === "CLUB").length ?? 0;
 
   const initial = useMemo(() => {
     // Open the calendar on the month of the next upcoming event, falling back to today.
@@ -176,7 +189,7 @@ export default function Home() {
               onClick={() => setFilter("all")}
               testId="filter-all"
             >
-              All ({(tfaaCount + asaCount + tsaaCount) || 0})
+              All ({(tfaaCount + asaCount + tsaaCount + clubCount) || 0})
             </FilterChip>
             <FilterChip
               active={filter === "TFAA"}
@@ -202,6 +215,16 @@ export default function Home() {
             >
               TSAA ({tsaaCount})
             </FilterChip>
+            {clubCount > 0 && (
+              <FilterChip
+                active={filter === "CLUB"}
+                onClick={() => setFilter("CLUB")}
+                testId="filter-club"
+                source="CLUB"
+              >
+                Club shoots ({clubCount})
+              </FilterChip>
+            )}
           </div>
 
           <div className="flex items-center gap-1 rounded-lg border border-card-border bg-card p-1">
@@ -304,6 +327,16 @@ export default function Home() {
               TSAA
             </a>
             . Always confirm details with the host club.
+          </p>
+          <p>
+            Hosting a shoot that isn't listed?{" "}
+            <a
+              className="underline underline-offset-2 hover:text-foreground"
+              href={SUBMIT_SHOOT_HREF}
+              data-testid="link-submit-shoot"
+            >
+              Submit a shoot
+            </a>
           </p>
           {data && (
             <p>

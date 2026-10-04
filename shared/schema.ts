@@ -4,7 +4,7 @@ import { z } from "zod";
 
 export const tournamentEventSchema = z.object({
   id: z.string(),
-  source: z.enum(["TFAA", "ASA", "TSAA"]),
+  source: z.enum(["TFAA", "ASA", "TSAA", "CLUB"]), // CLUB: shoots a host club submitted
   name: z.string(),
   startDate: z.string(), // ISO YYYY-MM-DD
   endDate: z.string(),
@@ -17,6 +17,7 @@ export const tournamentEventSchema = z.object({
   phone: z.string().nullable(),
   email: z.string().nullable(),
   sourceUrl: z.string(),
+  flyerUrl: z.string().nullable().optional(), // resized flyer image, club shoots only
 });
 
 export type TournamentEvent = z.infer<typeof tournamentEventSchema>;
