@@ -1,0 +1,63 @@
+200 https://austinarcheryclub.com/events/ -> https://austinarcheryclub.com/events/  39123
+200 https://austinarcheryclub.com/details3d/ -> https://austinarcheryclub.com/details3d/  45067
+200 https://hillcountrybowhunters.com/3d-archery/ -> https://hillcountrybowhunters.com/3d-archery/  115223
+200 https://hillcountrybowhunters.com/ -> https://hillcountrybowhunters.com/  158364
+200 https://tylerarcheryclub.com/ -> https://tylerarcheryclub.com/  120429
+200 https://texasarchery.info/dallas-tournaments -> https://texasarchery.info/dallas-tournaments  48068
+200 https://texasarchery.info/ -> https://texasarchery.info/  42169
+200 https://www.cowtownbowmen.com/Shoots.html -> https://www.cowtownbowmen.com/Shoots.html  20265
+200 https://huacobowmen.org/events -> https://huacobowmen.org/events  100987
+200 https://www.tbot.org/schedule.html -> https://www.tbot.org/schedule.html  9608
+200 https://www.tbot.org/schedule_club.html -> https://www.tbot.org/schedule_club.html  10422
+200 https://pearlandarcheryclub.com/calendar/ -> https://pearlandarcheryclub.com/calendar/  100058
+200 https://tejasbowmen.com/ -> https://tejasbowmen.com/  22366
+200 https://sherwoodarchery.com/ -> https://sherwoodarchery.com/  114
+200 https://viking-archery.com/Archery_Events_in_the_Texas_Hill_Country_near_San_Antonio.php -> https://viking-archery.com/Archery_Events_in_the_Texas_Hill_Country_near_San_Antonio.php  11107
+200 http://www.collincountybowhunters.org/ -> https://collincountybowhunters.org/  201225
+200 https://www.fortgrard.com/ -> https://www.fortgrard.com/  114792
+200 https://ttha.com/archery-tournament/ -> https://ttha.com/archery-tournament/  514384
+200 https://d24-h.tamu.edu/3d-archery-shoot -> https://d24-h.tamu.edu/3d-archery-shoot/  52112
+200 http://centraltexasarchery.org/ -> http://www.centraltexasarchery.org.s3-website-us-west-2.amazonaws.com/  29131
+0 https://centraltexasarchery.org/calendar -> https://centraltexasarchery.org/calendar ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR 0
+200 https://southplainsarchery.com/ -> https://southplainsarchery.com/  157030
+200 https://darkhorse-archery.com/ -> https://darkhorse-archery.com/  82510
+200 https://www.archerytrainingcenter.com/ -> https://www.archerytrainingcenter.com/  53652
+200 https://lgrgc.com/events -> https://lgrgc.com/events  937090
+200 https://lgrgc.com/Range-Calendar -> https://lgrgc.com/Range-Calendar  19304
+200 https://www.legacyarcherydfw.com/ -> https://www.legacyarcherydfw.com/  1840865
+200 https://abilenebowhunters.com/ -> https://www.abilenebowhunters.com/  556835
+200 https://www.brazoscountyarchery.com/ -> https://www.brazoscountyarchery.com/  483815
+200 https://leadingedgearchery.com/ -> https://leadingedgearchery.com/  226723
+200 https://buckdoes.com/archery-range/ -> https://buckdoes.com/archery-range/  239357
+200 https://www.ibatx.org/schedule-and-events -> https://www.ibatx.org/schedule-and-events  571114
+200 https://www.redriverbowmenarcheryclub.com/calendar -> https://www.redriverbowmenarcheryclub.com/calendar  715992
+200 https://hogheaven.com/events -> https://hogheaven.com/events  23884
+200 https://baytownarcheryclub.com/ -> https://baytownarcheryclub.com/  167127
+200 https://www.bananabendarchery.club/ -> https://gloucesterbluesfestival.com/  498190
+200 https://archerycountry.com/collections/events-classes-leagues -> https://archerycountry.com/collections/events-classes-leagues  337702
+200 https://texarchery.com/pages/events -> https://texarchery.com/pages/events  97556
+200 https://www.arjunarcheryacademy.com/tournaments/upcoming-tournaments -> https://www.arjunarcheryacademy.com/tournaments/upcoming-tournaments  204152
+200 https://tamuarchery.com/ -> https://tamuarchery.com/  110877
+200 https://ncscshooting.org/ -> https://ncscshooting.org/  40597
+200 https://huntersarchery.com/ -> https://huntersarchery.com/  422981
+WPNS https://austinarcheryclub.com: oembed/1.0 akismet/v1 pretty-links/v1 yoast/v1 wp-mail-smtp/setup-wizard/v1 wp-rollback/v1 genesis/v1 mepr/insights wpforms/v1 wp/v2 wp-site-health/v1 wp-block-editor/v1 wp-abilities/v1
+WPNS https://hillcountrybowhunters.com: oembed/1.0 sliderrevolution elementor-one/v1 gravityforms/v2 elementor/v1 elementor/v1/documents elementor-ai/v1 elementor-pro/v1 wp/v2 wp-site-health/v1 wp-block-editor/v1 wp-abilities/v1
+WPNS https://tylerarcheryclub.com: oembed/1.0 wsp-route/v1 wc/v3 wc/v1 wc/pos/v1/catalog jetpack/v4 paypal/v1 wc/v3/wc_paypal wc-admin wc-analytics wc/store wc/store/v1 wc/private payments/woopay wc/v2 wc-admin-email wc-push-notifications wc-telemetry wccom-site/v3 wp-abilities/v1 wp/v2 wp-site-health/v1 wp-block-editor/v1
+WPNS https://texasarchery.info: oembed/1.0 categoryPosts gravityforms/v2 wp-smush/v1 wp/v2 wp-site-health/v1 wp-block-editor/v1
+WPNS https://leadingedgearchery.com: oembed/1.0 akismet/v1 jetpack/v4 jetpack-boost/v1 my-jetpack/v1 jetpack/v4/explat yoast/v1 hostgator/v1 newfold-features/v1 elementor-mcp-composer/v1.0.18 elementor-one/v1 jetpack/v4/stats-app zipwp/v1 elementor/v1 elementor-pro/v1 spectra/v1 uag/v1 nfd-wonder-blocks/v1 nfd-help-center/v1 newfold-multi-search/v1 newfold-staging/v1 astra/v1 jetpack/v4/blaze-app jetpack/v4/blaze newfold-installer/v1 newfold-ai/v1 newfold-facebook/v1 newfold-coming-soon/v1 newfold-ecommerce/v1 newfold-ctb/v2 newfold-marketplace/v1 newfold-notifications/v1 newfold-solutions/v1 newfold-sso/v1 elementor/v1/documents elementor-ai/v1 elementor/v1/feedback one-onboarding/v1 wpforms/v1 newfold-data/v1 getting-started/v1 zipwp-images/v1 nps-survey/v1 gutenberg-templates/v1 bsf-core/v1 jetpack/v4/import wpcom/v2 wpcom/v3 wp/v2 wp-site-health/v1 wp-block-editor/v1 wp-abilities/v1
+WPNS https://buckdoes.com: oembed/1.0 bd-js-error-logger/v1 contact-form-7/v1 rankmath/v1 rankmath/v1/setupWizard wordfence-login-security/v1 wordfence/v1 wp-mail-smtp/setup-wizard/v1 buck_does_2024/v1 rankmath/v1/ai-visibility rankmath/v1/ca rankmath/v1/an rankmath/v1/in rankmath/v1/status google-site-kit/v1 mcp wp/v2 wp-site-health/v1 wp-block-editor/v1 wp-abilities/v1
+WPNS https://huntersarchery.com: oembed/1.0 akismet/v1 jetpack/v4 e-send/v1 wc/v3 wc/v1 wc/pos/v1/catalog yoast/v1 hostgator/v1 newfold-features/v1 elementor-mcp-composer/v1.0.18 elementor-one/v1 wpcom/v2 jetpack/v4/stats-app creativemail/v1 monsterinsights/v1 spectra/v1 uag/v1 wc-admin wc-analytics wc/store wc/store/v1 wc/private wp-mail-smtp/setup-wizard/v1 nfd-wonder-blocks/v1 nfd-help-center/v1 newfold-multi-search/v1 newfold-staging/v1 wc/v2 cartflows/v1 astra/v1 jetpack/v4/blaze-app jetpack/v4/blaze woocommerce-analytics/v1 newfold-installer/v1 newfold-ai/v1 newfold-facebook/v1 newfold-coming-soon/v1 newfold-ecommerce/v1 newfold-ctb/v2 newfold-marketplace/v1 newfold-notifications/v1 newfold-solutions/v1 newfold-sso/v1 elementor/v1/documents elementor/v1 elementor-ai/v1 elementor/v1/feedback zbscrm/v1 one-onboarding/v1 omapp/v1 wc-admin-email wc-push-notifications wc-telemetry wccom-site/v3 wpforms/v1 newfold-data/v1 wcar/api zipwp-images/v1 nps-survey/v1 zipwp/v1 gutenberg-templates/v1 jetpack/v4/import jetpack-boost/v1 my-jetpack/v1 jetpack/v4/explat wpcom/v3 wp-abilities/v1 wp/v2 wp-site-health/v1 wp-block-editor/v1
+WPNS http://www.collincountybowhunters.org: oembed/1.0 fluentform/v1 sliderrevolution safe-svg/v1 trustindex/v1 mc4wp/v1 ai1wm/v1 wp-mail-smtp/setup-wizard/v1 wp/v2 wp-site-health/v1 wp-block-editor/v1 wp-abilities/v1
+WPNS https://ncscshooting.org: not json (404)
+WPNS https://ttha.com: ithemes-security/rpc ithemes-security/v1 oembed/1.0 wpe/cache-plugin/v1 wpe_sign_on_plugin/v1 contact-form-7/v1 disqus/v1 redirection/v1 wc/v3 wc/v1 wc/pos/v1/catalog yoast/v1 v1 jetpack/v4 popup-maker/v2 pum/v1 wc-admin wc-analytics wc/store wc/store/v1 wc/private wp-rocket/v1 wc/v2 salient/v1 gf/v2 font-awesome/v1 mepr/insights publishpress-future/v1 wc-admin-email wc-push-notifications wc-telemetry wccom-site/v3 wpforms/v1 wp-abilities/v1 mcp wp/v2 wp-site-health/v1 wp-block-editor/v1
+WPNS https://d24-h.tamu.edu: oembed/1.0 wpe/cache-plugin/v1 wpe_sign_on_plugin/v1 akismet/v1 yoast/v1 tec/migrations/v1 tribe/event-aggregator/v1 tribe/events/v1 tribe/views/v2 tec/v2/onboarding tec/v1 ed11y/v1 gtm4wp/v2 wp-mail-smtp/setup-wizard/v1 monsterinsights/v1 wp/v2 wp-site-health/v1 wp-block-editor/v1 wp-abilities/v1
+WPNS https://buffalofield.org: oembed/1.0 akismet/v1 tnp quiz-survey-master/v1 qsm quiz-survey-master/v2 tec/migrations/v1 liquidweb/harbor/v1 tec/tickets/onboarding tribe/tickets/v1 tribe/event-aggregator/v1 tribe/events/v1 tribe/views/v2 tec/v2/onboarding tec/v1 tribe/zapier/v1 tribe/power-automate/v1 wp-mail-smtp/setup-wizard/v1 llar/v1 aios/v1/onboarding hub-connector/v1 forminator/v1 wpmudev_pcs/v1 wp/v2 wp-site-health/v1 wp-block-editor/v1 wp-abilities/v1
+ICS 200 Archery Training Center 15902380
+ICS 200 Brazos County 121145
+ICS 200 Fort Grard 434592
+ICS 200 Buffalo Field ical 1510
+JSON 200 https://www.archeryhqtx.com/events?format=json 162813
+JSON 200 https://www.abilenebowhunters.com/local-competitions?format=json 28912
+JSON 200 https://www.abilenebowhunters.com/clubevents?format=json 19909
+JSON 200 https://buffalofield.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-04 2331
+JSON 200 https://d24-h.tamu.edu/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-04 209

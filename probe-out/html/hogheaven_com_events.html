@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Events | Hog Heaven Sporting Club</title>
+<meta name="description" content="The Hog Heaven calendar: shooting clinics, leagues, tournaments, socials and standing member programming in Dripping Springs, Texas.">
+<link rel="canonical" href="https://www.hogheaven.com/events.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hog Heaven Sporting Club">
+<meta property="og:title" content="Events Calendar | Hog Heaven Sporting Club">
+<meta property="og:description" content="The Hog Heaven calendar: shooting clinics, leagues, tournaments, socials and standing member programming in Dripping Springs, Texas.">
+<meta property="og:url" content="https://www.hogheaven.com/events.html">
+<meta property="og:image" content="https://www.hogheaven.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A member fly fishing on the lake at Hog Heaven Sporting Club at golden hour">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="https://use.typekit.net/kvb3svr.css">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/rhythm-icons.css">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "background": "#EDE6D9",
+          "off-white": "#ECE4D3",
+          "surface": "#EDE6D9",
+          "surface-bright": "#EDE6D9",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-low": "#F7F3EE",
+          "surface-container": "#F1EDE8",
+          "surface-container-high": "#E7E0D2",
+          "surface-container-highest": "#DED6C6",
+          "paper": "#E3DAC9",
+          "deep-olive": "#1C261E",
+          "ink": "#1A1A1A",
+          "scrim": "#141B15",
+          "on-surface-variant": "#444843",
+          "camel": "#BD8667",
+          "accent-deep": "#AD8168",
+          "moss": "#4A5439",
+          "accent": "#BD572A",
+          "accent-dark": "#A8481F",
+          "earth-deep": "#8C634C",
+          "earth-light": "#D0A790",
+          "hunter-mid": "#2D3A2F",
+          "on-primary": "#ffffff"
+        },
+        borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+        spacing: {
+          "section-padding-desktop": "120px",
+          "section-padding-mobile": "64px",
+          "unit": "8px",
+          "container-max": "1280px",
+          "gutter": "32px"
+        },
+        fontFamily: {
+          "wordmark": ["arpona", "Georgia", "serif"],
+          "display-lg": ["arpona", "Georgia", "serif"],
+          "headline-md": ["arpona", "Georgia", "serif"],
+          "eyebrow": ["arponasans", "system-ui", "sans-serif"],
+          "label-mono": ["arponasans", "system-ui", "sans-serif"],
+          "body-md": ["arponasans", "system-ui", "sans-serif"],
+          "body-lg": ["arponasans", "system-ui", "sans-serif"]
+        },
+        fontSize: {
+          "wordmark": ["32px", { "lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "400" }],
+          "display-lg": ["84px", { "lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "700" }],
+          "display-lg-mobile": ["48px", { "lineHeight": "1.1", "fontWeight": "700" }],
+          "headline-md": ["42px", { "lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500" }],
+          "label-mono": ["13px", { "lineHeight": "1.4", "letterSpacing": "0.15em", "fontWeight": "400" }],
+          "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+          "body-lg": ["20px", { "lineHeight": "1.6", "fontWeight": "400" }],
+          "eyebrow": ["14px", { "lineHeight": "1.45", "letterSpacing": "0.2em", "fontWeight": "600" }]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  /* TYPE TREATMENT, beyond size.
+     KERNING. CSS cannot do Adobe's optical kerning: that is a layout-engine feature, not a
+     font one. What a browser CAN do is honour the kerning pairs built into the font, which
+     is off by default at some sizes. These three lines turn it on and keep it on.
+     TRACKING. Caps need air that lowercase does not. Every all-caps display face carries
+     positive tracking; body copy carries none. See the fontSize block above. */
+  h1, h2, h3, h4, .font-display-lg, .font-headline-md, .font-wordmark {
+    font-kerning: normal;
+    font-feature-settings: "kern" 1, "liga" 1;
+    text-rendering: optimizeLegibility;
+  }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .scrim-hero { background: linear-gradient(to bottom, rgba(20,27,21,0.45) 0%, rgba(20,27,21,0.80) 100%); }
+  :root { --rule: #BD8667; }
+  /* THE RULE. One decorative divider, one spec.
+     2px, not 1: at 1px the accent measured 1.4-1.5:1 against the page field and vanished.
+     Full-strength accent, no opacity. Sits under the headline it belongs to. One per section. */
+  .rule { width: 64px; height: 2px; background: var(--rule); flex: none;
+           margin-top: 2rem; margin-bottom: 2rem; }
+  /* THE HAIRLINE. The other decorative line, and a different job: it is structural,
+     it runs beside a heading to fill the row, and it is neutral, never the accent.
+     Was ink/10 (1.21:1, invisible). Now ink/22, which reads without shouting. */
+  .hairline { height: 1px; background: rgba(26,26,26,0.22); }
+  /* IMAGE PLACEHOLDER. Black on purpose so an empty slot is unmistakable, outlined so you
+     can see the exact frame, and labelled with the filename it is waiting for. */
+  .img-placeholder { background-color: #000000; display: flex; align-items: center; justify-content: center;
+    outline: 2px dashed rgba(255,255,255,0.45); outline-offset: -8px; position: relative; overflow: hidden; }
+  .img-placeholder::after { content: attr(data-file) "\A" attr(data-spec); white-space: pre-line; font-family: "Courier New", monospace; font-size: 12px;
+    line-height: 1.4; letter-spacing: 0.04em; color: rgba(255,255,255,0.85); text-align: center;
+    padding: 8px 12px; word-break: break-all; max-width: 90%; }
+  .img-placeholder-dark { background-color: #000000; }
+  .img-placeholder-dark::after { color: rgba(255,255,255,0.85); }
+  /* The image sits ABOVE the placeholder's dashed frame and filename label.
+     z-index only. Do NOT add `position: relative` here: `.img-placeholder > img` beats
+     Tailwind's `.absolute` on specificity, so it silently overrode `absolute inset-0`
+     on every real photo, dropping it out of its frame and blowing the layout apart.
+     Empty slots looked fine, so the bug only appeared the moment a real photo landed. */
+  .img-placeholder > img, .img-placeholder > video { z-index: 1; }
+  .img-placeholder.has-photo { background-color: transparent; outline: none; }
+  .img-placeholder.has-photo::after { content: ""; padding: 0; }
+  .hero-scrim { background: linear-gradient(to bottom, rgba(14,19,15,0.4) 0%, rgba(14,19,15,0.7) 100%); }
+  /* Signature wood-grain texture on the moss CTA/feature bands. Off-white vector grain,
+     low opacity, behind content. Hog Heaven's equivalent of Packsaddle's topo lines. */
+  .wood-cta { position: relative; overflow: hidden; }
+  .wood-cta::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+    background-image:url("assets/wood.svg"); background-size:820px auto; background-repeat:repeat; opacity:0.20; }
+  .wood-cta > * { position: relative; z-index: 1; }
+  /* MOBILE: bring the big display headings down so they don't overwhelm small screens.
+     Eyebrows and body copy are untouched. */
+  @media (max-width: 640px){
+    .text-display-lg-mobile{ font-size:36px !important; line-height:1.1 !important; }
+    .text-headline-md{ font-size:28px !important; line-height:1.2 !important; }
+    .text-6xl{ font-size:38px !important; line-height:1.05 !important; }
+    .text-5xl{ font-size:32px !important; line-height:1.1 !important; }
+    .text-4xl{ font-size:28px !important; line-height:1.15 !important; }
+  }
+</style>
+<!-- Klaviyo onsite tracking (Hog Heaven account Yi7JBH). Powers Active-on-Site tracking and any
+     Klaviyo-hosted signup forms; the footer newsletter form posts to Klaviyo on its own. -->
+<script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/Yi7JBH/klaviyo.js"></script>
+</head>
+<body class="bg-background text-ink font-body-md min-h-screen flex flex-col selection:bg-camel selection:text-white">
+
+<!-- ============ SHARED HEADER ============ -->
+<nav class="bg-background flex flex-col w-full z-50 sticky top-0 border-b border-ink/20">
+  <div class="max-w-container-max mx-auto w-full px-5 md:px-gutter py-4 relative flex items-center justify-center md:grid md:grid-cols-3">
+    <div class="hidden md:flex items-center"><a class='inline-flex items-center gap-2 bg-accent text-white font-eyebrow font-semibold text-[12px] uppercase tracking-[0.1em] px-5 py-2.5 hover:bg-accent-dark hover:text-white transition-colors duration-300' href='/membership#inquiry'><i class="rio rio-hat text-[15px]"></i>Join the Club</a></div>
+    <a aria-label='Hog Heaven Sporting Club, Home' class='flex items-center justify-center' href='/'>
+      <img src="assets/hogheaven_logo_primary_horizontal_on-light.png" alt="Hog Heaven Sporting Club" class="h-16 w-auto object-contain max-w-[68vw] md:max-w-none">
+    </a>
+    <div class="absolute right-5 md:static flex items-center justify-end gap-6">
+      <div class="hidden md:flex items-center gap-6">
+      <button class="text-ink/55 font-eyebrow font-semibold text-[13px] uppercase tracking-[0.1em] py-3 cursor-not-allowed inline-flex items-center gap-2" title="Coming soon" disabled>Members' Entrance <span class="text-[9px] tracking-widest text-ink/40 border border-ink/20 px-2 py-0.5">Coming Soon</span></button>
+    </div>
+      <button class="md:hidden text-ink" aria-label="Open menu">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+    </div>
+  </div>
+  <div class="hidden md:flex w-full justify-center border-t border-ink/10 py-3">
+    <ul class="flex gap-10">
+      <li><a class='font-eyebrow text-eyebrow uppercase tracking-widest text-ink hover:text-accent transition-colors duration-300' href='/club-life'>Club Life</a></li>
+      <li><a class='font-eyebrow text-eyebrow uppercase tracking-widest text-ink hover:text-accent transition-colors duration-300' href='/adventure'>Adventure</a></li>
+      <li class="relative group"><span class="font-eyebrow text-eyebrow uppercase tracking-widest text-ink group-hover:text-accent transition-colors duration-300 cursor-default inline-flex items-center gap-1" aria-haspopup="true">Education<i class="rio rio-dropdown ml-0.5" aria-hidden="true"></i></span><div class="absolute left-1/2 -translate-x-1/2 top-full pt-4 hidden group-hover:block group-focus-within:block z-50"><ul class="bg-background border border-ink/15 shadow-[0_14px_30px_-12px_rgba(26,26,26,0.35)] py-2"><li><a class='block px-5 py-3 font-eyebrow text-[12px] uppercase tracking-widest whitespace-nowrap transition-colors text-ink hover:text-accent' href='/education'>Adult Education</a></li><li><a class='block px-5 py-3 font-eyebrow text-[12px] uppercase tracking-widest whitespace-nowrap transition-colors text-ink hover:text-accent' href='/youth-education'>Youth Education</a></li></ul></div></li>
+      <li><a class='font-eyebrow text-eyebrow uppercase tracking-widest text-ink hover:text-accent transition-colors duration-300' href='/membership'>Membership</a></li>
+      <li><a class='font-eyebrow text-eyebrow uppercase tracking-widest text-accent font-bold border-b-2 border-accent pb-1' href='/events'>Events Calendar</a></li>
+      <li><a class='font-eyebrow text-eyebrow uppercase tracking-widest text-ink hover:text-accent transition-colors duration-300' href='/private-events'>Private Events</a></li>
+    </ul>
+  </div>
+  <div id="mobileNav" class="md:hidden hidden border-t border-ink/10 bg-background"></div>
+</nav>
+
+<main class="flex-grow">
+
+  <!-- Hero -->
+  <section class="relative w-full aspect-[4/3] md:aspect-auto md:h-[616px] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 img-placeholder img-placeholder-dark has-photo" data-spec="16:9 wide - 2400 x 1350 px" data-file="hero-events.jpg" ><img src="assets/hero-events.jpg" alt="A day on the range at Hog Heaven" loading="lazy" onerror="this.remove()" class="absolute inset-0 w-full h-full object-cover" style="z-index:0"></div>
+    <div class="absolute inset-0 scrim-hero"></div>
+    <div class="relative z-10 text-center text-white px-gutter max-w-4xl mx-auto">
+      <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg uppercase leading-tight">Event Calendar</h1>
+    </div>
+  </section>
+
+  <!-- Included-with-membership CTA -->
+  <section class="bg-hunter-mid text-white py-14">
+    <div class="max-w-container-max mx-auto px-gutter text-center">
+      <p class="font-eyebrow text-eyebrow uppercase tracking-[0.2em] text-accent-deep mb-3">Included with Membership</p>
+      <p class="font-headline-md text-2xl md:text-3xl max-w-3xl mx-auto leading-snug mb-8">Most of what fills this calendar: leagues, classes, and social events, comes free with your membership.</p>
+      <button id="showIncluded" class="inline-flex items-center gap-2 bg-accent text-white font-eyebrow font-semibold text-[13px] uppercase tracking-[0.1em] px-8 py-4 hover:bg-accent-dark transition-colors"><i class="rio rio-hat text-[18px]"></i> Show what's included</button>
+    </div>
+  </section>
+
+  <!-- Filters + view controls -->
+  <section class="py-12 border-b border-ink/10 bg-surface/50">
+    <div class="max-w-container-max mx-auto px-gutter space-y-6">
+      <div id="progNotice" class="hidden"></div>
+      <div class="flex flex-col items-center md:flex-row justify-center gap-x-10 gap-y-4">
+        <div class="flex flex-col items-center gap-3">
+          <span class="font-label-mono text-[11px] uppercase tracking-widest text-accent-deep shrink-0">Event Type</span>
+          <div id="typeFilters" class="flex flex-wrap justify-center gap-3"></div>
+        </div>
+        <div class="flex flex-col items-center gap-3">
+          <span class="font-label-mono text-[11px] uppercase tracking-widest text-accent-deep shrink-0">Discipline</span>
+          <div id="discFilters" class="flex flex-wrap justify-center gap-3"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main content -->
+  <div class="max-w-container-max mx-auto px-gutter py-section-padding-desktop">
+
+    <!-- Featured event -->
+    <div id="featuredWrap" class="mb-24"></div>
+
+    <!-- Upcoming list -->
+    <div class="space-y-12">
+      <div class="text-center">
+        <h3 class="font-display-lg text-5xl md:text-6xl text-ink uppercase" id="listHeading">Upcoming Events</h3>
+        <div class="rule mx-auto"></div>
+      </div>
+      <div id="eventList" class="space-y-12"></div>
+
+      <!-- Standing programmes: they have no date, so they sit BELOW the dated calendar,
+           not above it. Up top they were competing with the featured event. -->
+      <div id="standingWrap" class="mt-24 scroll-mt-40" style="display:none"></div>
+    </div>
+  </div>
+
+  <!-- Membership CTA band -->
+  <section class="wood-cta bg-moss text-white py-20 relative">
+    <div class="max-w-container-max mx-auto px-gutter relative z-10">
+      <div class="text-center">
+        <h3 class="font-headline-md text-headline-md uppercase mb-4 leading-tight text-white">Exclusive Access</h3>
+        <div class="max-w-2xl mx-auto mb-8"><p class="font-body-lg text-body-lg text-white/80">Members enjoy access to a slate of exclusive programming, from shooting clinics to game nights.</p></div>
+        <a class='inline-block text-center bg-accent text-white px-12 py-4 font-eyebrow font-semibold text-[13px] uppercase tracking-[0.1em] hover:bg-accent-dark transition-all' href='/membership'>Become a Member</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ SHARED FOOTER ============ -->
+<footer class="bg-deep-olive text-surface-container-low w-full mt-auto">
+  <div class="border-b border-surface-container-low/10">
+    <div class="max-w-container-max mx-auto px-section-padding-mobile md:px-gutter py-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-center md:gap-12">
+      <div class="md:max-w-md">
+        <h4 class="font-label-mono text-label-mono uppercase tracking-[0.2em] text-accent-deep mb-2">Newsletter</h4>
+        <p class="font-body-md text-body-md text-surface-container-low/80">Receive regular updates and club news.</p>
+      </div>
+      <form data-newsletter class="flex flex-col sm:flex-row sm:flex-wrap gap-2 w-full md:w-auto md:min-w-[440px]" onsubmit="return false;">
+        <input type="email" name="email" placeholder="Email Address" aria-label="Email address" autocomplete="email" required class="flex-grow bg-transparent border border-surface-container-low/20 p-3 text-white font-body-md focus:outline-none focus:border-camel transition-colors placeholder:text-surface-container-low/30">
+        <button type="submit" class="bg-accent text-on-primary font-eyebrow font-semibold text-[13px] uppercase tracking-[0.1em] px-6 py-4 hover:bg-accent-dark transition-colors duration-300">Subscribe</button>
+        <p data-newsletter-msg class="hidden w-full font-body-md text-body-md text-surface-container-low/80" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto px-section-padding-mobile md:px-gutter pt-12 pb-section-padding-desktop md:pt-section-padding-desktop">
+    <div class="col-span-1 flex justify-center md:justify-start items-start mb-10 md:mb-0">
+      <img src="assets/hogheaven_logo_primary_vertical_on-dark.png" alt="Hog Heaven Sporting Club" class="h-40 w-auto object-contain">
+    </div>
+    <div class="col-span-1 space-y-6">
+      <div>
+        <h4 class="font-label-mono text-label-mono uppercase tracking-[0.2em] text-accent-deep mb-2">Location</h4>
+        <p class="text-surface-container-low/80 font-body-md text-body-md leading-relaxed">24905 Ranch Rd 12<br>Dripping Springs, TX 78620</p>
+      </div>
+      <div>
+        <h4 class="font-label-mono text-label-mono uppercase tracking-[0.2em] text-accent-deep mb-2">Contact</h4>
+        <p class="text-surface-container-low/80 font-body-md text-body-md break-words"><a class="hover:text-white transition-colors" href="mailto:shoot@hogheaven.com">shoot@hogheaven.com</a></p>
+        <p class="text-surface-container-low/80 font-body-md text-body-md"><a class="hover:text-white transition-colors" href="tel:+15129876938">(512) 987-6938</a></p>
+      </div>
+      <div>
+        <h4 class="font-label-mono text-label-mono uppercase tracking-[0.2em] text-accent-deep mb-2">Club Office Hours</h4>
+        <p class="text-surface-container-low/80 font-body-md text-body-md">Mon: Closed</p>
+        <p class="text-surface-container-low/80 font-body-md text-body-md">Tue-Sat: 10 AM - 4 PM</p>
+        <p class="text-surface-container-low/80 font-body-md text-body-md">Sun: Closed</p>
+      </div>
+    </div>
+    <div class="col-span-1 flex flex-col space-y-4">
+      <h4 class="font-label-mono text-label-mono uppercase tracking-[0.2em] text-accent-deep mb-2">Explore</h4>
+      <a class='text-surface-container-low/80 font-body-md text-body-md hover:text-white transition-colors' href='/'>Home</a>
+    <a class='text-surface-container-low/80 font-body-md text-body-md hover:text-white transition-colors' href='/club-life'>Club Life</a>
+      <a class='text-surface-container-low/80 font-body-md text-body-md hover:text-white transition-colors' href='/adventure'>Adventure</a>
+      <a class='text-surface-container-low/80 font-body-md text-body-md hover:text-white transition-colors' href='/education'>Education</a>
+      <a class='text-surface-container-low/80 font-body-md text-body-md hover:text-white transition-colors' href='/membership'>Membership</a>
+      <a class='text-surface-container-low/80 font-body-md text-body-md hover:text-white transition-colors' href='/events'>Events Calendar</a>
+      <a class='text-surface-container-low/80 font-body-md text-body-md hover:text-white transition-colors' href='/private-events'>Private Events</a>
+    </div>
+    <div class="col-span-1 flex flex-col space-y-4">
+      <h4 class="font-label-mono text-label-mono uppercase tracking-[0.2em] text-accent-deep mb-2">Connect</h4>
+      <a class="text-surface-container-low/80 font-body-md text-body-md hover:text-white transition-colors" href="https://www.instagram.com/hogheavensporting/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a class="text-surface-container-low/80 font-body-md text-body-md hover:text-white transition-colors" href="https://www.facebook.com/hogheavensporting/" target="_blank" rel="noopener noreferrer">Facebook</a>
+    </div>
+  </div>
+  <div class="max-w-container-max mx-auto px-section-padding-mobile md:px-gutter py-4 flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center font-label-mono text-[11px] uppercase tracking-widest text-surface-container-low/50">
+    <span>Hog Heaven Sporting Club is a <a class="underline underline-offset-2 hover:text-white transition-colors" href="https://rhythm.co" target="_blank" rel="noopener noreferrer">Rhythm Outdoors</a> club.</span>
+    <span class="text-surface-container-low/25 hidden md:inline">&middot;</span>
+    <a class='hover:text-white transition-colors' href='/'>Hog Heaven Sporting Club</a>
+    <span class="text-surface-container-low/25 hidden md:inline">&middot;</span>
+    <a class="hover:text-white transition-colors" href="https://www.hsbsportingclub.com" target="_blank" rel="noopener">Horseshoe Bay Sporting Club</a>
+    <span class="text-surface-container-low/25 hidden md:inline">&middot;</span>
+    <a class="hover:text-white transition-colors" href="https://www.packsaddleprecision.com" target="_blank" rel="noopener">Packsaddle Precision</a>
+  </div>
+
+  <div class="w-full border-t border-surface-container-low/10 max-w-container-max mx-auto px-section-padding-mobile md:px-gutter py-6 text-center text-label-mono font-label-mono text-surface-container-low/50">
+    <span>&copy; 2026 Hog Heaven Sporting Club. All Rights Reserved.</span>
+  </div>
+</footer>
+
+
+
+<script src="assets/rhythm-events.js?v=12" data-club="Hog Heaven Sporting Club"></script>
+<script>
+/* Mobile nav: the hamburger toggles a dropdown built from this page's own desktop links. */
+(function(){
+  var nav=document.querySelector('nav');
+  var btn=nav&&nav.querySelector('button[aria-label="Open menu"]');
+  var panel=document.getElementById('mobileNav');
+  var srcUl=nav&&nav.querySelector('ul');
+  if(!btn||!panel||!srcUl) return;
+  var out='<ul class="flex flex-col px-5">';
+  srcUl.querySelectorAll('a').forEach(function(a){
+    out+='<li><a href="'+a.getAttribute('href')+'" class="block py-4 border-b border-ink/10 font-eyebrow text-eyebrow uppercase tracking-widest text-ink">'+a.textContent.trim()+'</a></li>';
+  });
+  out+='</ul>';
+  panel.innerHTML=out;
+  var icon=btn.querySelector('.material-symbols-outlined');
+  btn.addEventListener('click',function(){
+    var hid=panel.classList.toggle('hidden');
+    if(icon) icon.textContent = hid ? 'menu' : 'close';
+  });
+})();
+</script>
+<script src="assets/rhythm-newsletter.js?v=2"></script>
+</body>
+</html>
