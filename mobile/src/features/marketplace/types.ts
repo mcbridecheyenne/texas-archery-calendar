@@ -42,6 +42,8 @@ export interface Profile {
   city: string | null;
   archery_class?: string | null;
   discoverable?: boolean; // shows up when other archers search by name
+  home_state?: string | null; // two-letter code; the calendar's state filter starts on it
+  age_confirmed_at?: string | null; // when they confirmed they're 13 or older
   created_at: string;
 }
 

@@ -9,6 +9,7 @@ import { checkListingText } from "../marketplace/moderation";
 import type { CommunityEventInput } from "./api";
 import { findLikelyDuplicates } from "./duplicates";
 import { useCommunity } from "./CommunityProvider";
+import { useHomeState } from "../../lib/homeState";
 
 const US_STATES = new Set(
   ("AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY DC").split(" ")
@@ -56,12 +57,13 @@ export function TournamentForm({
 }) {
   const t = useTheme();
   const { everything } = useCommunity();
+  const { homeState } = useHomeState();
   const [name, setName] = useState(initial?.name ?? "");
   const [start, setStart] = useState(toUS(initial?.startDate));
   const [end, setEnd] = useState(initial && initial.endDate !== initial.startDate ? toUS(initial.endDate) : "");
   const [location, setLocation] = useState(initial?.location ?? "");
   const [city, setCity] = useState(initial?.city ?? "");
-  const [stateCode, setStateCode] = useState((initial?.state ?? "TX").toUpperCase());
+  const [stateCode, setStateCode] = useState((initial?.state ?? homeState ?? "TX").toUpperCase());
   const [host, setHost] = useState(initial?.contact ?? "");
   const [phone, setPhone] = useState(initial?.phone ?? "");
   const [email, setEmail] = useState(initial?.email ?? "");
@@ -184,11 +186,6 @@ export function TournamentForm({
           />
         </View>
       </View>
-      {stateCode.length === 2 && stateCode !== "TX" ? (
-        <Text style={[styles.noteText, { color: t.muted, marginTop: -6 }]}>
-          Outside Texas, so it will show under <Text style={{ fontWeight: "700" }}>Out of state</Text>.
-        </Text>
-      ) : null}
       <Field label="Host club or contact (optional)" value={host} onChangeText={setHost} maxLength={120} autoCapitalize="words" />
       <View style={styles.row}>
         <View style={{ flex: 1 }}>

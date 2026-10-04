@@ -74,7 +74,7 @@ function Card({ events, info }: { events: TournamentEvent[]; info: ShareCardInfo
 
       <View style={s.foot}>
         <Text style={s.footTitle}>Come shoot with {info.name ? "me" : "us"}!</Text>
-        <Text style={s.footSub}>Find Texas shoots & see who's going — free Archery in Texas app</Text>
+        <Text style={s.footSub}>Find archery shoots & see who's going — free Archery in the USA app</Text>
       </View>
     </View>
   );
