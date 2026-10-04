@@ -45,6 +45,12 @@
       ],
       "expo-apple-authentication",
       [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Archery in Texas uses your approximate location to show used gear you can pick up nearby."
+        }
+      ],
+      [
         "expo-image-picker",
         {
           "photosPermission": "Archery in Texas uses your photos so you can add pictures to your listings.",

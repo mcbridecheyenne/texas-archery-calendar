@@ -54,6 +54,8 @@ export interface Listing {
   category: Category;
   condition: Condition;
   city: string | null;
+  lat?: number | null; // rough pickup spot, rounded to ~3 miles
+  lng?: number | null;
   handoff_event_id: string | null;
   handoff_event_name: string | null;
   handoff_event_date: string | null; // YYYY-MM-DD

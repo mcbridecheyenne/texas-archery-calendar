@@ -1,11 +1,12 @@
 // Everything the marketplace reads and writes in Supabase.
 import { decode } from "base64-arraybuffer";
 import * as ImageManipulator from "expo-image-manipulator";
+import { approxHere, boxAround, placeCoords, type Coords } from "../../lib/location";
 import { db, PHOTO_BUCKET } from "../../lib/supabase";
 import type { Category, Condition, Conversation, Listing, Message, ReportReason } from "./types";
 
 const LISTING_FIELDS =
-  "id, seller_id, title, description, price_cents, category, condition, city, handoff_event_id, handoff_event_name, handoff_event_date, photos, status, created_at, updated_at, seller:profiles(id, display_name, city, created_at)";
+  "id, seller_id, title, description, price_cents, category, condition, city, lat, lng, handoff_event_id, handoff_event_name, handoff_event_date, photos, status, created_at, updated_at, seller:profiles(id, display_name, city, created_at)";
 
 export const PAGE_SIZE = 24;
 
@@ -13,6 +14,7 @@ export interface ListingQuery {
   search?: string;
   category?: Category | null;
   eventIds?: string[] | null; // only listings handed off at these shoots
+  near?: { at: Coords; miles: number } | null; // only listings within this many miles
   page?: number;
 }
 
@@ -25,6 +27,11 @@ export async function fetchListings(q: ListingQuery): Promise<Listing[]> {
     .order("created_at", { ascending: false })
     .range(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE - 1);
   if (q.category) req = req.eq("category", q.category);
+  if (q.near) {
+    // A box is cheap to filter on; the market tab trims the corners to a true circle.
+    const b = boxAround(q.near.at, q.near.miles);
+    req = req.gte("lat", b.minLat).lte("lat", b.maxLat).gte("lng", b.minLng).lte("lng", b.maxLng);
+  }
   if (q.eventIds) req = req.in("handoff_event_id", q.eventIds.length ? q.eventIds : ["none"]);
   const term = (q.search ?? "").replace(/[%_,()*\\]/g, " ").trim();
   if (term) req = req.or(`title.ilike.%${term}%,description.ilike.%${term}%`);
@@ -103,13 +110,23 @@ export async function saveListing(userId: string, input: ListingInput, existing?
     paths.push(p.path ?? (await uploadPhoto(userId, listingId, p, i)));
   }
 
+  // Pickup spot for the distance filter: the city they typed, or where the phone is.
+  // Editing keeps the old spot unless the city changed.
+  const city = input.city.trim();
+  const keepSpot = existing && (existing.city ?? "") === city && existing.lat != null;
+  const spot = keepSpot
+    ? { lat: existing!.lat!, lng: existing!.lng! }
+    : (await placeCoords(city)) ?? (await approxHere());
+
   const row = {
     title: input.title.trim(),
     description: input.description.trim(),
     price_cents: input.priceCents,
     category: input.category,
     condition: input.condition,
-    city: input.city.trim() || null,
+    city: city || null,
+    lat: spot?.lat ?? null,
+    lng: spot?.lng ?? null,
     handoff_event_id: input.handoff?.id ?? null,
     handoff_event_name: input.handoff?.name ?? null,
     handoff_event_date: input.handoff?.date ?? null,

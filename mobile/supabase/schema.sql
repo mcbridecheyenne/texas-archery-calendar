@@ -681,3 +681,14 @@ begin
     alter publication supabase_realtime add table public.conversations;
   end if;
 end $$;
+
+-- ============================================================
+-- Rough location of a listing's pickup spot, for the "within N miles" filter.
+-- Rounded to about 3 miles in the app so it never pins down someone's house.
+-- Safe to re-run; add these before shipping the app version that reads them.
+-- ============================================================
+alter table public.listings add column if not exists lat double precision
+  check (lat is null or lat between -90 and 90);
+alter table public.listings add column if not exists lng double precision
+  check (lng is null or lng between -180 and 180);
+create index if not exists listings_lat on public.listings (lat) where status = 'active';
