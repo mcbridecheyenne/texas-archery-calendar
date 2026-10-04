@@ -1,0 +1,64 @@
+stats/out/javascript-root.js:330:      url = "../php/ajax/getResourceSubCategories.php?parent_url=" + val;
+stats/out/javascript-root.js:367:        "../php/ajax/filterResources.php?category=" +
+stats/out/javascript-root.js:416:      "../php/ajax/updateDateFilter.php?filter=" +
+stats/out/javascript-root.js:432:      "../php/ajax/filterNews.php?filter=" +
+stats/out/javascript-root.js:469:      "../php/ajax/updateCategoryFilter.php?filter=" +
+stats/out/javascript-root.js:486:      "../php/ajax/filterNews.php?filter=" +
+stats/out/javascript-root.js:526:      "../php/ajax/filterNews.php?filter=" +
+stats/out/javascript-root.js:555:      url = "../php/ajax/signupUser.php";
+stats/out/javascript-root.js:587:      $("#filter_events").trigger("click");
+stats/out/javascript-root.js:616:    $("#events_calendar_table").html(
+stats/out/javascript-root.js:621:      "../php/ajax/filterEvents.php?level=" +
+stats/out/javascript-root.js:642:        $(".loadMoreHolder").remove();
+stats/out/javascript-root.js:647:  if ($("#events_calendar_table").length) {
+stats/out/javascript-root.js:648:    $("#filter_events").click();
+stats/out/javascript-root.js:651:  $(document).on("click", ".loadMoreEvents", function (e) {
+stats/out/javascript-root.js:671:    var page = $(".loadMoreEvents").attr("data-page");
+stats/out/javascript-root.js:673:    //$('.loadMoreHolder').html('<h2 class="loadingTitle">Loading...</h2>');
+stats/out/javascript-root.js:676:      "../php/ajax/filterEvents.php?level=" +
+stats/out/javascript-root.js:692:      $(".loadMoreHolder").remove();
+stats/out/javascript-root.js:695:      $("#events_calendar_table").append(data_split[0]);
+stats/out/javascript-root.js:700:  //load more marvel events
+stats/out/javascript-root.js:701:  $(document).on("click", ".loadMoreMarvelEvents", function (e) {
+stats/out/javascript-root.js:715:    var page = $(".loadMoreMarvelEvents").attr("data-page");
+stats/out/javascript-root.js:717:    //$('.loadMoreHolder').html('<h2 class="loadingTitle">Loading...</h2>');
+stats/out/javascript-root.js:720:      "../php/ajax/filterEventsMarvel.php?state=" +
+stats/out/javascript-root.js:732:      $(".loadMoreHolder").remove();
+stats/out/javascript-root.js:786:      "../php/ajax/filterClubs.php?club_type=" +
+stats/out/javascript-root.js:806:  $(document).on("click", ".loadMoreClubs", function (e) {
+stats/out/javascript-root.js:834:    var page = $(".loadMoreClubs").attr("data-page");
+stats/out/javascript-root.js:836:    $(".loadMoreHolder").html('<h2 class="loadingTitle">Loading...</h2>');
+stats/out/javascript-root.js:839:      "../php/ajax/filterClubs.php?club_type=" +
+stats/out/javascript-root.js:857:      $(".loadMoreHolder").remove();
+stats/out/javascript-root.js:898:      "../php/ajax/filterCourses.php?level=" +
+stats/out/javascript-root.js:916:        $(".loadMoreHolder").remove();
+stats/out/javascript-root.js:951:      "../php/ajax/filterCoursesOnline.php?level=" +
+stats/out/javascript-root.js:969:        $(".loadMoreHolder").remove();
+stats/out/javascript-root.js:978:  $(document).on("click", ".loadMoreCourses", function (e) {
+stats/out/javascript-root.js:998:    var page = $(".loadMoreCourses").attr("data-page");
+stats/out/javascript-root.js:1000:    //$('.loadMoreHolder').html('<h2 class="loadingTitle">Loading...</h2>');
+stats/out/javascript-root.js:1003:      "../php/ajax/filterCourses.php?level=" +
+stats/out/javascript-root.js:1020:      $(".loadMoreHolder").remove();
+stats/out/javascript-root.js:1028:  $(document).on("click", ".loadMoreCoursesOnline", function (e) {
+stats/out/javascript-root.js:1048:    var page = $(".loadMoreCoursesOnline").attr("data-page");
+stats/out/javascript-root.js:1050:    //$('.loadMoreHolder').html('<h2 class="loadingTitle">Loading...</h2>');
+stats/out/javascript-root.js:1053:      "../php/ajax/filterCoursesOnline.php?level=" +
+stats/out/javascript-root.js:1070:      $(".loadMoreHolder").remove();
+stats/out/javascript-root.js:1117:      "../php/ajax/filterCoaches.php?coach_type=" +
+stats/out/javascript-root.js:1137:  $(document).on("click", ".loadMoreCoaches", function (e) {
+stats/out/javascript-root.js:1157:    var page = $(".loadMoreCoaches").attr("data-page");
+stats/out/javascript-root.js:1159:    $(".loadMoreHolder").html('<h2 class="loadingTitle">Loading...</h2>');
+stats/out/javascript-root.js:1162:      "../php/ajax/filterCoaches.php?coach_type=" +
+stats/out/javascript-root.js:1180:      $(".loadMoreHolder").remove();
+stats/out/javascript-root.js:1224:      "../php/ajax/filterJudges.php?judge_type=" +
+stats/out/javascript-root.js:1244:  $(document).on("click", ".loadMoreJudges", function (e) {
+stats/out/javascript-root.js:1264:    var page = $(".loadMoreJudges").attr("data-page");
+stats/out/javascript-root.js:1266:    $(".loadMoreHolder").html('<h2 class="loadingTitle">Loading...</h2>');
+stats/out/javascript-root.js:1269:      "../php/ajax/filterJudges.php?judge_type=" +
+stats/out/javascript-root.js:1287:      $(".loadMoreHolder").remove();
+stats/out/javascript-root.js:1322:      "../php/ajax/filterCamps.php?level=" +
+stats/out/javascript-root.js:1406:      url = "../php/ajax/sendFeedbackFormJudges.php";
+stats/out/javascript-root.js:1503:      url = "../php/ajax/sendReportConcernForm.php";
+stats/out/javascript-root.js:1669:    $("#filter_events_marvel").trigger("click");
+stats/out/javascript-root.js:1692:    /*$("#events_calendar_table").html(
+stats/out/javascript-root.js:1701:      "../php/ajax/filterEventsMarvel.php?state=" +

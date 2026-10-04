@@ -1,0 +1,9 @@
+total 224
+drwxr-xr-x 2 runner runner  4096 Oct  4 23:00 .
+drwxr-xr-x 3 runner runner  4096 Oct  4 23:00 ..
+-rw-r--r-- 1 runner runner 40662 Oct  4 23:00 dashboard.js
+-rw-r--r-- 1 runner runner   564 Oct  4 23:00 jar
+-rw-r--r-- 1 runner runner 53571 Oct  4 23:00 javascript-root.js
+-rw-r--r-- 1 runner runner 40664 Oct  4 23:00 javascript.js
+-rw-r--r-- 1 runner runner     0 Oct  4 23:00 log.txt
+-rw-r--r-- 1 runner runner 76815 Oct  4 23:00 usa.html
