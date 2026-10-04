@@ -40,6 +40,14 @@ jobs:
         env:
           PREVIOUS_EVENTS_URL: https://mcbridecheyenne.github.io/texas-archery-calendar/events.json
 
+      # Nationwide feed for the USA version of the app. Its own step, so a problem here
+      # never stops events.json from publishing.
+      - name: Collect nationwide events
+        continue-on-error: true
+        run: node --experimental-strip-types script/collect-usa-events.ts dist/public/events-usa.json
+        env:
+          PREVIOUS_EVENTS_URL: https://mcbridecheyenne.github.io/texas-archery-calendar/events-usa.json
+
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
