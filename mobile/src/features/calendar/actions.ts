@@ -3,7 +3,7 @@
 import * as Calendar from "expo-calendar";
 import { Alert, Linking, Platform } from "react-native";
 import { parseISODate } from "./dates";
-import { sourceLabel, type TournamentEvent } from "./types";
+import { listedBy, type TournamentEvent } from "./types";
 
 export async function addToPhoneCalendar(event: TournamentEvent): Promise<void> {
   const start = parseISODate(event.startDate);
@@ -12,7 +12,7 @@ export async function addToPhoneCalendar(event: TournamentEvent): Promise<void> 
   const end = new Date(endDay.getFullYear(), endDay.getMonth(), endDay.getDate() + 1);
 
   const notes = [
-    event.source === "USER" ? `Added in Archery in Texas by ${event.addedBy ?? "an archer"} (not an official schedule)` : `${sourceLabel(event.source)} tournament`,
+    event.source === "USER" ? `Added in Archery in the USA by ${event.addedBy ?? "an archer"} (not an official schedule)` : `${listedBy(event)} tournament`,
     event.contact && `Contact: ${event.contact}`,
     event.phone && `Phone: ${event.phone}`,
     event.email && `Email: ${event.email}`,

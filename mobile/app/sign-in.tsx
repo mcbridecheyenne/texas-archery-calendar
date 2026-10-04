@@ -4,6 +4,7 @@ import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { Alert, KeyboardAvoidingView, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { EMAIL_SIGN_IN_ENABLED, PRIVACY_URL, RULES_URL } from "../config";
+import { isMarkedUnder13 } from "../src/lib/age";
 import { useAuth } from "../src/lib/auth";
 import { Button, Field, errorText, useTheme } from "../src/ui";
 
@@ -16,6 +17,13 @@ export default function SignInScreen() {
   const [step, setStep] = useState<"email" | "code">("email");
   const [busy, setBusy] = useState(false);
   const [signedIn, setSignedIn] = useState(false);
+
+  // Someone who said they're under 13 on this phone sees the "13 and older" note instead.
+  useEffect(() => {
+    isMarkedUnder13().then((v) => {
+      if (v) router.replace("/setup-profile");
+    });
+  }, [router]);
 
   // Once signed in and the profile has loaded: new people set up a profile, others go back.
   useEffect(() => {

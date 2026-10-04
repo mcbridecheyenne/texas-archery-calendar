@@ -5,7 +5,16 @@ import { useTheme } from "../../../ui";
 import { fmtDayLong } from "../../calendar/dates";
 import { formatPrice, type Listing } from "../types";
 
-export const ListingCard = memo(function ListingCard({ listing, onPress }: { listing: Listing; onPress: (l: Listing) => void }) {
+export const ListingCard = memo(function ListingCard({
+  listing,
+  miles,
+  onPress,
+}: {
+  listing: Listing;
+  miles?: number | null; // from the archer, when both locations are known
+  onPress: (l: Listing) => void;
+}) {
+  const away = miles == null ? "" : miles < 5 ? "Under 5 mi" : `${Math.round(miles)} mi`;
   const t = useTheme();
   const cover = listing.photos[0];
   return (
@@ -32,9 +41,9 @@ export const ListingCard = memo(function ListingCard({ listing, onPress }: { lis
           <Text style={[styles.meta, { color: t.primary }]} numberOfLines={1}>
             🤝 {listing.handoff_event_date ? fmtDayLong(listing.handoff_event_date) : listing.handoff_event_name}
           </Text>
-        ) : listing.city ? (
+        ) : listing.city || away ? (
           <Text style={[styles.meta, { color: t.muted }]} numberOfLines={1}>
-            {listing.city}
+            {[listing.city, away].filter(Boolean).join(" · ")}
           </Text>
         ) : null}
       </View>

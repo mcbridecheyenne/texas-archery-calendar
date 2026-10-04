@@ -37,7 +37,7 @@ export function inviteLink(code: string): string {
 
 export async function shareInvite(code: string): Promise<void> {
   await Share.share({
-    message: `Add me as a friend on Archery in Texas so we can see who's going to which shoots! My friend code is ${code}.\n${inviteLink(code)}`,
+    message: `Add me as a friend on Archery in the USA so we can see who's going to which shoots! My friend code is ${code}.\n${inviteLink(code)}`,
   });
 }
 

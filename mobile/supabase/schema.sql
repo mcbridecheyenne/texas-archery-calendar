@@ -681,3 +681,24 @@ begin
     alter publication supabase_realtime add table public.conversations;
   end if;
 end $$;
+
+-- ============================================================
+-- Rough location of a listing's pickup spot, for the "within N miles" filter.
+-- Rounded to about 3 miles in the app so it never pins down someone's house.
+-- Safe to re-run; add these before shipping the app version that reads them.
+-- ============================================================
+alter table public.listings add column if not exists lat double precision
+  check (lat is null or lat between -90 and 90);
+alter table public.listings add column if not exists lng double precision
+  check (lng is null or lng between -180 and 180);
+create index if not exists listings_lat on public.listings (lat) where status = 'active';
+
+-- ============================================================
+-- Archery in the USA: home state (the calendar's state filter starts on it) and
+-- when the archer confirmed they're 13 or older at sign-up. The birth date itself
+-- is never stored. Safe to re-run; add these before shipping the app version that
+-- reads them.
+-- ============================================================
+alter table public.profiles add column if not exists home_state text
+  check (home_state is null or home_state ~ '^[A-Z]{2}$');
+alter table public.profiles add column if not exists age_confirmed_at timestamptz;

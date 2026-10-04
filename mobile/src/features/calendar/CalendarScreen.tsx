@@ -19,7 +19,10 @@ import { EventRow } from "./components/EventRow";
 import { MonthGrid } from "./components/MonthGrid";
 import { currentYM, daysInRange, fmtDayLong, fmtMonthYear, fmtRelative, parseISODate, toIso, type YM } from "./dates";
 import { useCalendarTheme, type CalendarTheme } from "./theme";
-import { isOutOfState, sourceLabel, type CalendarSocial, type EventSource, type SourceFilter, type TournamentEvent } from "./types";
+import { normalizeEvent } from "./api";
+import { StatePicker } from "./components/StatePicker";
+import { stateName } from "./states";
+import { organizationOf, type CalendarSocial, type OrgFilter, type StateFilter, type TournamentEvent } from "./types";
 import { useShareCard, type ShareCardInfo } from "./components/ShareCard";
 import { shootsMessage } from "./share";
 import { useEvents } from "./useEvents";
@@ -36,17 +39,20 @@ export interface CalendarScreenProps {
   bottomInset?: number;
   /** Extra content shown at the very end of the list, e.g. a "Go ad-free" link. */
   footer?: ReactNode;
-  /** Added to the end of shared shoots, e.g. "Get the Archery in Texas app: <link>". */
+  /** Added to the end of shared shoots, e.g. "Get the Archery in the USA app: <link>". */
   sharePlug?: string;
   /** Name and class printed on shared shoot pictures. */
   shareAs?: ShareCardInfo;
   /** Optional friends/sharing/archer-added tournaments, supplied by the host app. */
   social?: CalendarSocial;
+  /** The archer's home state; the state filter starts on it (all states when null). */
+  homeState?: string | null;
 }
 
-const OFFICIAL: EventSource[] = ["TFAA", "ASA", "TSAA"];
+// Club shoots and archer-added tournaments go after the governing bodies.
+const LAST_ORGS = ["Other", "Club shoots", "Added by archers"];
 
-export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas Archery Calendar", bottomInset, footer, social, sharePlug, shareAs }: CalendarScreenProps) {
+export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery in the USA", bottomInset, footer, social, sharePlug, shareAs, homeState }: CalendarScreenProps) {
   const card = useShareCard();
   const theme = useCalendarTheme();
   const insets = useSafeAreaInsets();
@@ -54,7 +60,14 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
   const { data, loading, refreshing, error, refresh: refreshOfficial } = useEvents(apiBaseUrl);
   const { going, isGoing, toggle } = useGoing();
 
-  const [filter, setFilter] = useState<SourceFilter>("all");
+  const [filter, setFilter] = useState<OrgFilter>("all");
+  const [stateFilter, setStateFilter] = useState<StateFilter>(homeState || "ALL");
+  const [pickingState, setPickingState] = useState(false);
+  // Follow the home state when it loads or changes.
+  useEffect(() => {
+    setStateFilter(homeState || "ALL");
+    setFilter("all");
+  }, [homeState]);
   const [view, setView] = useState<"list" | "calendar" | "mine">("list");
   const [month, setMonth] = useState<YM>(currentYM());
   const [selectedDay, setSelectedDay] = useState<string | null>(null);
@@ -66,47 +79,55 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
   const allEvents = useMemo(() => {
     const official = data?.events ?? [];
     if (!extraEvents?.length) return official;
-    return [...official, ...extraEvents].sort(
+    return [...official, ...extraEvents.map(normalizeEvent)].sort(
       (a, b) => a.startDate.localeCompare(b.startDate) || a.name.localeCompare(b.name)
     );
   }, [data, extraEvents]);
-  const hasClub = allEvents.some((e) => e.source === "CLUB");
-  const SOURCES: EventSource[] = [...OFFICIAL, ...(hasClub ? (["CLUB"] as const) : []), ...(extraEvents ? (["USER"] as const) : [])];
+  // Upcoming tournaments in the picked state; the organization chips and counts come from these.
+  const inState = useMemo(
+    () => allEvents.filter((e) => e.endDate >= todayIso && (stateFilter === "ALL" || e.state === stateFilter)),
+    [allEvents, stateFilter, todayIso]
+  );
+  const stateCounts = useMemo(() => {
+    const c: Record<string, number> = {};
+    for (const e of allEvents) if (e.endDate >= todayIso && e.state) c[e.state] = (c[e.state] ?? 0) + 1;
+    return c;
+  }, [allEvents, todayIso]);
+  // Organizations with upcoming tournaments here, busiest first, each with the color of its source.
+  const orgs = useMemo(() => {
+    const m = new Map<string, { count: number; color: string }>();
+    for (const e of inState) {
+      const o = organizationOf(e);
+      const cur = m.get(o);
+      if (cur) cur.count++;
+      else m.set(o, { count: 1, color: (theme.source[e.source] ?? theme.source.OTHER).solid });
+    }
+    if (extraEvents && !m.has("Added by archers")) m.set("Added by archers", { count: 0, color: theme.source.USER.solid });
+    return [...m.entries()]
+      .map(([name, v]) => ({ name, ...v }))
+      .sort((a, b) => LAST_ORGS.indexOf(a.name) - LAST_ORGS.indexOf(b.name) || b.count - a.count || a.name.localeCompare(b.name));
+  }, [inState, extraEvents, theme]);
   const onRefresh = social?.onRefresh;
   const refresh = useCallback(() => {
     onRefresh?.();
     return refreshOfficial();
   }, [onRefresh, refreshOfficial]);
 
+  // Past tournaments stay in for the month grid; the list below only shows upcoming ones.
   const filtered = useMemo(
     () =>
-      allEvents.filter((e) =>
-        filter === "all"
-          ? true
-          : filter === "going"
-          ? going.has(e.id)
-          : filter === "OOS"
-          ? isOutOfState(e)
-          : filter === "USER"
-          ? e.source === "USER" && !isOutOfState(e) // archer-added outside Texas live under Out of state
-          : e.source === filter
+      allEvents.filter(
+        (e) =>
+          (stateFilter === "ALL" || e.state === stateFilter) &&
+          (filter === "all" ? true : filter === "going" ? going.has(e.id) : organizationOf(e) === filter)
       ),
-    [allEvents, filter, going]
+    [allEvents, filter, stateFilter, going]
   );
   const upcoming = useMemo(() => filtered.filter((e) => e.endDate >= todayIso), [filtered, todayIso]);
   // "My Shoots": every upcoming tournament marked Going, whatever filter is picked.
   const myShoots = useMemo(() => allEvents.filter((e) => going.has(e.id) && e.endDate >= todayIso), [allEvents, going, todayIso]);
 
-  const counts = useMemo(() => {
-    const c: Record<string, number> = { all: allEvents.length, going: 0, TFAA: 0, ASA: 0, TSAA: 0, CLUB: 0, USER: 0, OOS: 0 };
-    for (const e of allEvents) {
-      if (e.source === "USER" && isOutOfState(e)) c.OOS++;
-      else c[e.source]++;
-      if (e.source !== "USER" && isOutOfState(e)) c.OOS++;
-      if (going.has(e.id) && e.endDate >= todayIso) c.going++;
-    }
-    return c;
-  }, [allEvents, going, todayIso]);
+  const counts = useMemo(() => ({ all: inState.length, going: myShoots.length }), [inState, myShoots]);
 
   const eventsByDay = useMemo(() => {
     const map = new Map<string, TournamentEvent[]>();
@@ -204,6 +225,8 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
     </View>
   );
 
+  const stateLabel = stateFilter === "ALL" ? "All states" : stateName(stateFilter) ?? stateFilter;
+
   const mineHeader = (
     <View style={styles.controls}>
       {segment}
@@ -223,28 +246,28 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
   const controls = (
     <View style={styles.controls}>
       {segment}
-      {/* Wraps onto a second line instead of scrolling sideways, so every association is visible. */}
+      <Pressable
+        onPress={() => setPickingState(true)}
+        style={({ pressed }) => [styles.stateBtn, { backgroundColor: theme.card, borderColor: theme.border, opacity: pressed ? 0.75 : 1 }]}
+        accessibilityRole="button"
+        accessibilityLabel={`State: ${stateLabel}. Change state`}
+      >
+        <Text style={[styles.stateText, { color: theme.text }]}>📍 {stateLabel}</Text>
+        <Text style={[styles.stateChange, { color: theme.primary }]}>Change ▾</Text>
+      </Pressable>
+      {/* Wraps onto a second line instead of scrolling sideways, so every organization is visible. */}
       <View style={styles.chips}>
         <Chip label={`All ${counts.all}`} active={filter === "all"} onPress={() => setFilter("all")} theme={theme} />
-        {SOURCES.map((s) => (
+        {orgs.map((o) => (
           <Chip
-            key={s}
-            label={`${sourceLabel(s)} ${counts[s]}`}
-            dot={theme.source[s].solid}
-            active={filter === s}
-            onPress={() => setFilter(s)}
+            key={o.name}
+            label={`${o.name} ${o.count}`}
+            dot={o.color}
+            active={filter === o.name}
+            onPress={() => setFilter(o.name)}
             theme={theme}
           />
         ))}
-        {counts.OOS || extraEvents ? (
-          <Chip
-            label={`Out of state ${counts.OOS}`}
-            dot={theme.dark ? "#D9A66B" : "#8A5A2B"}
-            active={filter === "OOS"}
-            onPress={() => setFilter("OOS")}
-            theme={theme}
-          />
-        ) : null}
       </View>
       {social?.onAddEvent ? (
         <Pressable
@@ -267,7 +290,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
             {title}
           </Text>
           <Text style={[styles.headerSub, { color: theme.muted }]}>
-            {data ? `TFAA · Texas ASA · TSAA · updated ${fmtRelative(data.lastUpdated)}` : "TFAA · Texas ASA · TSAA"}
+            {data ? `${stateLabel} · updated ${fmtRelative(data.lastUpdated)}` : stateLabel}
           </Text>
         </View>
       ) : null}
@@ -331,10 +354,10 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
               text={
                 view === "mine" || filter === "going"
                   ? "Tap ☆ on a tournament to add it to My Shoots. Then you can share them with friends."
-                  : filter === "USER"
-                  ? "No tournaments added by archers yet. Know of one? Tap Add a tournament."
-                  : filter === "OOS"
-                  ? "No upcoming out-of-state tournaments. Add one and pick its state."
+                  : filter === "Added by archers"
+                  ? "No tournaments added by archers here yet. Know of one? Tap Add a tournament."
+                  : stateFilter !== "ALL" && filter === "all"
+                  ? `No upcoming tournaments in ${stateLabel} yet. Know of one? Add it, or pick another state.`
                   : "No upcoming tournaments match."
               }
             />
@@ -358,6 +381,21 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
 
       {card.element}
 
+      <StatePicker
+        visible={pickingState}
+        value={stateFilter}
+        theme={theme}
+        title="Show tournaments in"
+        allLabel="All states"
+        counts={stateCounts}
+        onClose={() => setPickingState(false)}
+        onPick={(code) => {
+          setStateFilter(code);
+          setFilter("all");
+          setPickingState(false);
+        }}
+      />
+
       {toast ? (
         <Animated.View
           pointerEvents="none"
@@ -376,13 +414,15 @@ function StatusNotes({
   theme,
   onRetry,
 }: {
-  data: { lastUpdated: string; sources: { name: EventSource; status: string }[] } | null;
+  data: { lastUpdated: string; sources: { name: string; status: string }[] } | null;
   error: string | null;
   theme: CalendarTheme;
   onRetry: () => void;
 }) {
   if (!data) return null;
-  const down = data.sources.filter((s) => s.status !== "ok").map((s) => sourceLabel(s.name));
+  const down = data.sources
+    .filter((s) => s.status !== "ok")
+    .map((s) => (s.name === "ASA" ? "Texas ASA" : s.name === "Manual" ? "The national list" : s.name));
   if (!error && !down.length) return null;
   return (
     <View style={[styles.notice, { backgroundColor: theme.card, borderColor: theme.border }]}>
@@ -468,6 +508,17 @@ const styles = StyleSheet.create({
   scroll: { padding: 16 },
   controls: { gap: 10, marginBottom: 12 },
   chips: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
+  stateBtn: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    borderRadius: 10,
+    borderWidth: StyleSheet.hairlineWidth,
+    paddingHorizontal: 12,
+    paddingVertical: 9,
+  },
+  stateText: { fontSize: 15, fontWeight: "700" },
+  stateChange: { fontSize: 14, fontWeight: "600" },
   chip: {
     flexDirection: "row",
     alignItems: "center",

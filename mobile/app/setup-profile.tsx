@@ -1,11 +1,15 @@
-// Name, city, archery class, and (the first time) agreeing to the marketplace rules.
+// Name, home state, city, archery class, and (the first time) confirming they're 13 or
+// older and agreeing to the marketplace rules.
 import { useRouter } from "expo-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Alert, Linking, Pressable, ScrollView, StyleSheet, Switch, Text, View } from "react-native";
 import { RULES_URL } from "../config";
+import { StatePicker, stateName } from "../src/features/calendar";
 import { checkListingText } from "../src/features/marketplace/moderation";
 import { ARCHERY_CLASSES } from "../src/features/friends";
+import { ageFrom, isMarkedUnder13, markUnder13 } from "../src/lib/age";
 import { useAuth } from "../src/lib/auth";
+import { useHomeState } from "../src/lib/homeState";
 import { Button, Chip, Field, errorText, useTheme } from "../src/ui";
 
 // Quick picks; archers can type any class their association uses.
@@ -14,8 +18,19 @@ const CLASS_IDEAS = ARCHERY_CLASSES;
 export default function SetupProfileScreen() {
   const t = useTheme();
   const router = useRouter();
-  const { profile, suggestedName, saveProfile, userId } = useAuth();
+  const { profile, suggestedName, saveProfile, userId, deleteAccount } = useAuth();
+  const home = useHomeState();
   const firstTime = !profile;
+  // Asked once: at sign-up, or the next time someone who signed up before the age question edits their profile.
+  const askAge = !profile?.age_confirmed_at;
+  const [homeState, setHomeStateField] = useState<string | null>(profile?.home_state ?? home.homeState);
+  const [pickingState, setPickingState] = useState(false);
+  const [birthMonth, setBirthMonth] = useState("");
+  const [birthYear, setBirthYear] = useState("");
+  const [under13, setUnder13] = useState(false);
+  useEffect(() => {
+    isMarkedUnder13().then(setUnder13);
+  }, []);
   const [name, setName] = useState(profile?.display_name ?? suggestedName ?? "");
   const [city, setCity] = useState(profile?.city ?? "");
   const [archeryClass, setArcheryClass] = useState(profile?.archery_class ?? "");
@@ -33,13 +48,34 @@ export default function SetupProfileScreen() {
       Alert.alert("Pick a different name", "Please keep names respectful.");
       return;
     }
+    if (!homeState) {
+      Alert.alert("Pick your home state", "The calendar opens on tournaments in your state. You can still look at any state.");
+      return;
+    }
+    if (askAge) {
+      const m = Number(birthMonth);
+      const y = Number(birthYear);
+      const thisYear = new Date().getFullYear();
+      if (!Number.isInteger(m) || m < 1 || m > 12 || !Number.isInteger(y) || y < thisYear - 120 || y > thisYear) {
+        Alert.alert("Add your birthday", "Enter the month (1 to 12) and the four-digit year you were born.");
+        return;
+      }
+      if (ageFrom(m, y) < 13) {
+        await markUnder13();
+        setUnder13(true);
+        // Remove the sign-in they just made, so nothing about them is kept.
+        await deleteAccount().catch(() => {});
+        return;
+      }
+    }
     if (!agreed) {
       Alert.alert("One more thing", "Please agree to the marketplace rules to continue.");
       return;
     }
     try {
       setBusy(true);
-      await saveProfile(name, city, archeryClass, discoverable);
+      await saveProfile(name, city, archeryClass, discoverable, { homeState, ageConfirmed: askAge });
+      await home.setHomeState(homeState);
       if (router.canGoBack()) router.back();
       else router.replace("/");
     } catch (e) {
@@ -47,6 +83,19 @@ export default function SetupProfileScreen() {
     } finally {
       setBusy(false);
     }
+  }
+
+  if (under13) {
+    return (
+      <View style={[styles.content, { backgroundColor: t.background, flex: 1 }]}>
+        <Text style={[styles.title, { color: t.text }]}>Sorry!</Text>
+        <Text style={[styles.lead, { color: t.muted, marginTop: 0 }]}>
+          Accounts are for archers 13 and older. You can still look up tournaments, mark the ones you're going to, and get
+          reminders without an account.
+        </Text>
+        <Button title="Back to tournaments" onPress={() => router.replace("/")} />
+      </View>
+    );
   }
 
   if (!userId) return null;
@@ -60,6 +109,44 @@ export default function SetupProfileScreen() {
         </>
       ) : null}
       <Field label="Name" value={name} onChangeText={setName} placeholder="Cheyenne M." maxLength={40} autoCapitalize="words" />
+      <View style={{ gap: 6 }}>
+        <Text style={[styles.label, { color: t.muted }]}>Home state</Text>
+        <Pressable
+          onPress={() => setPickingState(true)}
+          style={[styles.picker, { borderColor: t.border, backgroundColor: t.card }]}
+          accessibilityRole="button"
+          accessibilityLabel={`Home state: ${stateName(homeState) ?? "not picked"}. Change`}
+        >
+          <Text style={{ color: homeState ? t.text : t.muted, fontSize: 16, flex: 1 }}>{stateName(homeState) ?? "Pick your state"}</Text>
+          <Text style={{ color: t.primary, fontWeight: "600" }}>▾</Text>
+        </Pressable>
+        <Text style={[styles.hint, { color: t.muted }]}>The calendar opens on tournaments in your state.</Text>
+      </View>
+      <StatePicker
+        visible={pickingState}
+        value={homeState}
+        theme={t}
+        title="Your home state"
+        onClose={() => setPickingState(false)}
+        onPick={(code) => {
+          setHomeStateField(code);
+          setPickingState(false);
+        }}
+      />
+      {askAge ? (
+        <View style={{ gap: 6 }}>
+          <Text style={[styles.label, { color: t.muted }]}>Your birthday</Text>
+          <View style={{ flexDirection: "row", gap: 10 }}>
+            <View style={{ flex: 1 }}>
+              <Field label="Month" value={birthMonth} onChangeText={setBirthMonth} placeholder="MM" keyboardType="number-pad" maxLength={2} />
+            </View>
+            <View style={{ flex: 2 }}>
+              <Field label="Year" value={birthYear} onChangeText={setBirthYear} placeholder="YYYY" keyboardType="number-pad" maxLength={4} />
+            </View>
+          </View>
+          <Text style={[styles.hint, { color: t.muted }]}>Only used to check you're old enough for an account. It isn't saved or shown.</Text>
+        </View>
+      ) : null}
       <Field label="City (optional)" value={city} onChangeText={setCity} placeholder="Wichita Falls" maxLength={60} autoCapitalize="words" />
       <View style={{ gap: 8 }}>
         <Field
@@ -124,4 +211,6 @@ const styles = StyleSheet.create({
   agreeText: { flex: 1, fontSize: 14, lineHeight: 20 },
   ideas: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
   hint: { fontSize: 13, lineHeight: 18 },
+  label: { fontSize: 13, fontWeight: "600" },
+  picker: { flexDirection: "row", alignItems: "center", borderWidth: 1, borderRadius: 10, paddingHorizontal: 12, paddingVertical: 12 },
 });

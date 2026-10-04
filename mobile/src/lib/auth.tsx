@@ -20,14 +20,20 @@ export interface AuthState {
   signInWithApple: () => Promise<"ok" | "cancelled">;
   sendEmailCode: (email: string) => Promise<void>;
   verifyEmailCode: (email: string, code: string) => Promise<void>;
-  saveProfile: (displayName: string, city: string, archeryClass?: string, discoverable?: boolean) => Promise<void>;
+  saveProfile: (displayName: string, city: string, archeryClass?: string, discoverable?: boolean, extra?: ProfileExtra) => Promise<void>;
   block: (userId: string) => Promise<void>;
   unblock: (userId: string) => Promise<void>;
   signOut: () => Promise<void>;
   deleteAccount: () => Promise<void>;
 }
 
-const PROFILE_FIELDS = "id, display_name, city, archery_class, discoverable, created_at";
+const PROFILE_FIELDS = "id, display_name, city, archery_class, discoverable, home_state, age_confirmed_at, created_at";
+
+/** Home state, and (once, at sign-up) confirmation that they're 13 or older. */
+export interface ProfileExtra {
+  homeState?: string | null;
+  ageConfirmed?: boolean;
+}
 
 const AuthContext = createContext<AuthState | null>(null);
 
@@ -117,7 +123,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const saveProfile = useCallback(
-    async (displayName: string, city: string, archeryClass = "", discoverable?: boolean) => {
+    async (displayName: string, city: string, archeryClass = "", discoverable?: boolean, extra: ProfileExtra = {}) => {
       if (!userId) throw new Error("Not signed in");
       const row = {
         id: userId,
@@ -125,6 +131,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         city: city.trim() || null,
         archery_class: archeryClass.trim() || null,
         ...(discoverable === undefined ? {} : { discoverable }),
+        ...(extra.homeState === undefined ? {} : { home_state: extra.homeState }),
+        ...(extra.ageConfirmed ? { age_confirmed_at: new Date().toISOString() } : {}),
       };
       const { data, error } = await supabase!
         .from("profiles")

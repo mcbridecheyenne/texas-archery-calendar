@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Archery in Texas",
+    "name": "Archery in the USA",
     "slug": "archery-in-texas",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -32,7 +32,7 @@
       [
         "expo-calendar",
         {
-          "calendarPermission": "Texas Archery Calendar adds the tournaments you pick to your calendar."
+          "calendarPermission": "Archery in the USA adds the tournaments you pick to your calendar."
         }
       ],
       "expo-notifications",
@@ -45,10 +45,16 @@
       ],
       "expo-apple-authentication",
       [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Archery in the USA uses your approximate location to show used gear you can pick up nearby and to check which state you're in for state-specific features."
+        }
+      ],
+      [
         "expo-image-picker",
         {
-          "photosPermission": "Archery in Texas uses your photos so you can add pictures to your listings.",
-          "cameraPermission": "Archery in Texas uses the camera so you can photograph gear you're selling.",
+          "photosPermission": "Archery in the USA uses your photos so you can add pictures to your listings.",
+          "cameraPermission": "Archery in the USA uses the camera so you can photograph gear you're selling.",
           "microphonePermission": false
         }
       ]

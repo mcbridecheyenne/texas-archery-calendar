@@ -173,8 +173,8 @@ export default function ListingScreen() {
           ) : null}
 
           <Text style={[styles.safety, { color: t.muted }]}>
-            Stay safe: meet in a public place (a tournament is perfect), inspect gear before you pay, and never pay
-            with gift cards or wire transfers.
+            Local pickup only, no shipping. Stay safe: meet in a public place (a tournament is perfect), inspect gear
+            before you pay, and never pay with gift cards or wire transfers.
           </Text>
         </View>
       </ScrollView>
