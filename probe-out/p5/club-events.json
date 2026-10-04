@@ -1,0 +1,126 @@
+{
+ "club": [
+  {
+   "id": "club-1940gsh",
+   "source": "CLUB",
+   "feedName": "CLUB: Buffalo Field Archery Club",
+   "organization": "Club shoots",
+   "name": "BFAC Halloween Field Fun Shoot",
+   "startDate": "2026-10-24",
+   "endDate": "2026-10-24",
+   "location": "Buffalo Archery Field, 13155 Clay Rd, Houston, TX",
+   "city": "Houston",
+   "state": "TX",
+   "registrationStart": null,
+   "registrationEnd": null,
+   "contact": "Buffalo Field Archery Club",
+   "phone": null,
+   "email": null,
+   "sourceUrl": "https://buffalofield.org/event/bfac-halloween-field-fun-shoot/"
+  },
+  {
+   "id": "club-18phiqv",
+   "source": "CLUB",
+   "feedName": "CLUB: Fort Grard Guns & Archery",
+   "organization": "Club shoots",
+   "name": "Harpers Benefit Cancer Shoot",
+   "startDate": "2026-11-21",
+   "endDate": "2026-11-21",
+   "location": "Fort Grard Guns & Archery, Weatherford, TX",
+   "city": "Weatherford",
+   "state": "TX",
+   "registrationStart": null,
+   "registrationEnd": null,
+   "contact": "Fort Grard Guns & Archery",
+   "phone": null,
+   "email": null,
+   "sourceUrl": "https://www.fortgrard.com/"
+  },
+  {
+   "id": "club-1y1nqb6",
+   "source": "CLUB",
+   "feedName": "CLUB: Archery HQ",
+   "organization": "Club shoots",
+   "name": "Lonestar 600 Archery Tournament",
+   "startDate": "2027-01-01",
+   "endDate": "2027-01-03",
+   "location": "Archery HQ, New Braunfels, TX",
+   "city": "New Braunfels",
+   "state": "TX",
+   "registrationStart": null,
+   "registrationEnd": null,
+   "contact": "Archery HQ",
+   "phone": null,
+   "email": null,
+   "sourceUrl": "https://www.archeryhqtx.com/events/lonestar-600-archery-tournament"
+  },
+  {
+   "id": "club-k25s2f",
+   "source": "CLUB",
+   "feedName": "CLUB: Fort Grard Guns & Archery",
+   "organization": "Club shoots",
+   "name": "Azle 4H Tournament",
+   "startDate": "2027-02-20",
+   "endDate": "2027-02-21",
+   "location": "Fort Grard Guns & Archery, Weatherford, TX",
+   "city": "Weatherford",
+   "state": "TX",
+   "registrationStart": null,
+   "registrationEnd": null,
+   "contact": "Fort Grard Guns & Archery",
+   "phone": null,
+   "email": null,
+   "sourceUrl": "https://www.fortgrard.com/"
+  }
+ ],
+ "sources": [
+  {
+   "name": "CLUB: Buffalo Field Archery Club",
+   "url": "https://buffalofield.org/events/",
+   "status": "ok",
+   "eventCount": 1,
+   "fetchedAt": "2026-10-04T16:54:51.288Z",
+   "message": null
+  },
+  {
+   "name": "CLUB: Fort Grard Guns & Archery",
+   "url": "https://www.fortgrard.com/",
+   "status": "ok",
+   "eventCount": 2,
+   "fetchedAt": "2026-10-04T16:54:51.290Z",
+   "message": "5 already listed by TFAA/Texas ASA/TSAA"
+  },
+  {
+   "name": "CLUB: Archery HQ",
+   "url": "https://www.archeryhqtx.com/events",
+   "status": "ok",
+   "eventCount": 1,
+   "fetchedAt": "2026-10-04T16:54:51.292Z",
+   "message": "2 already listed by TFAA/Texas ASA/TSAA"
+  },
+  {
+   "name": "CLUB: Abilene Bowhunters Association",
+   "url": "https://www.abilenebowhunters.com/local-competitions",
+   "status": "ok",
+   "eventCount": 0,
+   "fetchedAt": "2026-10-04T16:54:51.293Z",
+   "message": "Calendar loaded (0 upcoming entries) but none look like shoots right now."
+  },
+  {
+   "name": "CLUB: Permian Basin Archers Association",
+   "url": "https://permianbasinarchers.com/schedules",
+   "status": "ok",
+   "eventCount": 0,
+   "fetchedAt": "2026-10-04T16:54:51.295Z",
+   "message": "Calendar loaded (0 upcoming entries) but none look like shoots right now."
+  },
+  {
+   "name": "CLUB: Brazos County Archery Club",
+   "url": "https://www.brazoscountyarchery.com/",
+   "status": "ok",
+   "eventCount": 0,
+   "fetchedAt": "2026-10-04T16:54:51.297Z",
+   "message": "Calendar loaded (0 upcoming entries) but none look like shoots right now."
+  }
+ ]
+}

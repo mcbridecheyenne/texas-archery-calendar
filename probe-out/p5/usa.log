@@ -1,0 +1,12 @@
+TFAA: ok, 83 events
+ASA: ok, 29 events
+TSAA: ok, 70 events (Texas-relevant TSAA calendar events loaded; duplicates already covered by TFAA/Texas ASA were hidden.)
+World Archery: ok, 45 events
+Manual: ok, 1 events
+CLUB: Buffalo Field Archery Club: ok, 1 events
+CLUB: Fort Grard Guns & Archery: ok, 2 events (5 already listed by TFAA/Texas ASA/TSAA)
+CLUB: Archery HQ: ok, 1 events (2 already listed by TFAA/Texas ASA/TSAA)
+CLUB: Abilene Bowhunters Association: ok, 0 events (Calendar loaded (0 upcoming entries) but none look like shoots right now.)
+CLUB: Permian Basin Archers Association: ok, 0 events (Calendar loaded (0 upcoming entries) but none look like shoots right now.)
+CLUB: Brazos County Archery Club: ok, 0 events (Calendar loaded (0 upcoming entries) but none look like shoots right now.)
+Wrote 153 events to probe-out/p5/events-usa.json
