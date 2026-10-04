@@ -58,15 +58,20 @@ jobs:
             for (const f of files) {
               if (!fs.existsSync(f)) { bad++; console.log(`::error::${f} was not written`); continue; }
               const { sources } = JSON.parse(fs.readFileSync(f, "utf8"));
+              // GitHub shows at most 10 notices per step, so club calendars share one line.
+              const clubs = [];
               for (const s of sources) {
                 const line = `${s.name}: ${s.status}, ${s.eventCount} events${s.message ? ` (${s.message})` : ""} [${f}]`;
-                // A club calendar that loads but has no shoots right now is only a warning:
-                // clubs go quiet between seasons.
-                const quietClub = s.name.startsWith("CLUB: ") && s.status === "ok";
-                if (!s.eventCount && quietClub) console.log(`::warning::${line}`);
-                else if (!s.eventCount) { bad++; console.log(`::error::${line}`); }
+                const isClub = s.name.startsWith("CLUB: ");
+                if (isClub && s.status === "ok") {
+                  // A club calendar that loads with no shoots on it is fine: clubs go quiet
+                  // between seasons.
+                  clubs.push(`${s.name.slice(6)} ${s.eventCount}`);
+                  console.log(line);
+                } else if (!s.eventCount) { bad++; console.log(`::error::${line}`); }
                 else console.log(`::notice::${line}`);
               }
+              if (clubs.length) console.log(`::notice::Club calendars (shoots each): ${clubs.join("; ")} [${f}]`);
             }
             process.exit(bad ? 1 : 0);
           '
