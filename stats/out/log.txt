@@ -1,2 +1,0 @@
-wa exit 0
-usa page 200 76815
