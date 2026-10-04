@@ -8,19 +8,20 @@ Facebook and Instagram were not looked at. Clubs were found through the TFAA clu
 list, the Texas ASA Federation club links, the TBOT host club pages and web searches.
 
 "Upcoming shoots" counts entries the collector keeps (shoots from today on, after
-skipping meetings, work days, classes, league nights and the like). The clubs marked
-**used** are in `data/club-feeds.json`.
+skipping meetings, work days, classes, league nights and the like); "new" is how many
+of those TFAA, Texas ASA and TSAA don't already list. The clubs marked **used** are in
+`data/club-feeds.json`.
 
 ## Clubs with a usable feed
 
-| Club | City | Site | Feed type | Feed URL | Upcoming shoots | Notes |
+| Club | City | Site | Feed type | Feed URL | Upcoming shoots (new) | Notes |
 |---|---|---|---|---|---|---|
-| Buffalo Field Archery Club (**used**) | Houston | https://buffalofield.org/ | tribe | https://buffalofield.org/wp-json/tribe/events/v1/events | 1 | Also offers `?ical=1` exports. Monthly 3D shoots in season. |
-| Fort Grard Guns & Archery (**used**) | Weatherford | https://www.fortgrard.com/ | ics (Google Calendar) | https://calendar.google.com/calendar/ical/ube761ip2hg745mmckus74206o%40group.calendar.google.com/public/basic.ics | 7 | Busy calendar (4-H and homeschool practices, holidays); the filter keeps the SYWAT weekends, 3D and benefit shoots, and the Azle 4-H tournament. |
-| Archery HQ (**used**) | New Braunfels | https://www.archeryhqtx.com/ | squarespace | https://www.archeryhqtx.com/events | 3 | SYWAT rounds and the Lonestar 600. League nights, ladies' nights and lessons are skipped. |
-| Abilene Bowhunters Association (**used**) | Tuscola | https://www.abilenebowhunters.com/ | squarespace | https://www.abilenebowhunters.com/local-competitions | 0 | Monthly club shoots January to September (7 listed for 2026, all past); next season should appear on its own. |
-| Permian Basin Archers Association (**used**) | Odessa | https://permianbasinarchers.com/ | squarespace | https://permianbasinarchers.com/schedules | 0 | Monthly shoots, last one listed was August 2026. |
-| Brazos County Archery Club (**used**) | Bryan | https://www.brazoscountyarchery.com/ | ics (Google Calendar) | https://calendar.google.com/calendar/ical/brazoscountyarchery%40gmail.com/public/basic.ics | 0 | The calendar was kept up through December 2025 (monthly club shoots, ASA qualifiers) but has nothing for 2026. Worth asking the club whether it still uses it. |
+| Buffalo Field Archery Club (**used**) | Houston | https://buffalofield.org/ | tribe | https://buffalofield.org/wp-json/tribe/events/v1/events | 1 (1) | Also offers `?ical=1` exports. Monthly 3D shoots in season. |
+| Fort Grard Guns & Archery (**used**) | Weatherford | https://www.fortgrard.com/ | ics (Google Calendar) | https://calendar.google.com/calendar/ical/ube761ip2hg745mmckus74206o%40group.calendar.google.com/public/basic.ics | 7 (2) | Busy calendar (4-H and homeschool practices, holidays); the filter keeps the SYWAT weekends, 3D and benefit shoots, and the Azle 4-H tournament. Its SYWAT weekends and the NASP turkey shoot are already on the TFAA/TSAA schedules. |
+| Archery HQ (**used**) | New Braunfels | https://www.archeryhqtx.com/ | squarespace | https://www.archeryhqtx.com/events | 3 (1) | SYWAT rounds (already on TFAA) and the Lonestar 600. League nights, ladies' nights and lessons are skipped. |
+| Abilene Bowhunters Association (**used**) | Tuscola | https://www.abilenebowhunters.com/ | squarespace | https://www.abilenebowhunters.com/local-competitions | 0 (0) | Monthly club shoots January to September (7 listed for 2026, all past); next season should appear on its own. |
+| Permian Basin Archers Association (**used**) | Odessa | https://permianbasinarchers.com/ | squarespace | https://permianbasinarchers.com/schedules | 0 (0) | Monthly shoots, last one listed was August 2026. |
+| Brazos County Archery Club (**used**) | Bryan | https://www.brazoscountyarchery.com/ | ics (Google Calendar) | https://calendar.google.com/calendar/ical/brazoscountyarchery%40gmail.com/public/basic.ics | 0 (0) | The calendar was kept up through December 2025 (monthly club shoots, ASA qualifiers) but has nothing for 2026. Worth asking the club whether it still uses it. |
 | Archery Training Center | Austin | https://www.archerytrainingcenter.com/ | ics (Google Calendar) | public Google Calendar "ATCI Classes" | — | **Not used**: it is a class schedule that also holds students' personal entries. Its only tournaments are USA Archery events already listed elsewhere. |
 | Texas 4-H District 2 (AgriLife) | — | https://d24-h.tamu.edu/ | tribe | https://d24-h.tamu.edu/wp-json/tribe/events/v1/events | 0 | **Not used**: a county extension calendar, not a club; nothing upcoming. |
 
