@@ -95,7 +95,7 @@ friends and add-a-tournament features stay hidden, and the schedule still works.
    their own listings, read their own chats, and so on). It's safe to run again after updates.
 3. **Email sign-in codes:** Authentication → Emails → Templates. In both **Magic Link** and
    **Confirm signup**, replace the body with something like:
-   `Your Archery in Texas code is {{ .Token }}`
+   `Your Archery in the USA code is {{ .Token }}`
    Then Authentication → Emails → SMTP Settings: connect a free sender (for example Resend).
    Supabase's built-in email only sends a few messages an hour, which is fine for testing but not for launch.
 4. **Sign in with Apple:** Authentication → Sign In / Providers → Apple → turn on, and add

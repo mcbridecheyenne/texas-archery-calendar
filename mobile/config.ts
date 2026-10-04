@@ -35,8 +35,8 @@ export const TERMS_URL = "https://www.apple.com/legal/internet-services/itunes/d
 // test device in AdMob → Settings → Test devices instead.
 export const ADS = {
   enabled: true,
-  iosBannerId: "ca-app-pub-7930621070150782/8333303000", // Archery in Texas (iOS) · Bottom banner
-  androidBannerId: "ca-app-pub-7930621070150782/6158655092", // Archery in Texas (Android) · Bottom banner
+  iosBannerId: "ca-app-pub-7930621070150782/8333303000", // AdMob unit "Archery in Texas (iOS) · Bottom banner"
+  androidBannerId: "ca-app-pub-7930621070150782/6158655092", // AdMob unit "Archery in Texas (Android) · Bottom banner"
 };
 
 // ---- Texas Field Archery Scholarship Fund ----
