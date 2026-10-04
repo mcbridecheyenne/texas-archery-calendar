@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Home | Hog Heaven Sporting Club</title>
+<meta name="description" content="A sporting club, outdoor education facility and event venue on 120 acres in Dripping Springs, Texas. Clays, pistol, archery, fishing and a stocked lake.">
+<link rel="canonical" href="https://www.hogheaven.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hog Heaven Sporting Club">
+<meta property="og:title" content="Hog Heaven Sporting Club">
+<meta property="og:description" content="A sporting club, outdoor education facility and event venue on 120 acres in Dripping Springs, Texas. Clays, pistol, archery, fishing and a stocked lake.">
+<meta property="og:url" content="https://www.hogheaven.com/">
+<meta property="og:image" content="https://www.hogheaven.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A member fly fishing on the lake at Hog Heaven Sporting Club at golden hour">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="https://use.typekit.net/kvb3svr.css">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/rhythm-icons.css">
+<!--
+  ============================================================
+  CLUB WEBSITE TEMPLATE  ·  Rhythm Outdoors
+  Generic, un-branded base. Apply per-club branding later by
+  editing:
+    1. The tailwind.config color/font tokens below.
+    2. The [BRACKETED] placeholder copy throughout the page.
+    3. The .img-placeholder blocks (swap for real <img>/bg images).
+  Pages: index · membership · events · adventures · private-events
+  ============================================================
+-->
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "background": "#EDE6D9",
+          "off-white": "#ECE4D3",
+          "surface": "#EDE6D9",
+          "surface-bright": "#EDE6D9",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-low": "#F7F3EE",
+          "surface-container": "#F1EDE8",
+          "surface-container-high": "#E7E0D2",
+          "surface-container-highest": "#DED6C6",
+          "paper": "#E3DAC9",
+          "deep-olive": "#1C261E",
+          "ink": "#1A1A1A",
+          "scrim": "#141B15",
+          "on-surface-variant": "#444843",
+          "camel": "#BD8667",
+          "accent-deep": "#AD8168",
+          "moss": "#4A5439",
+          "accent": "#BD572A",
+          "accent-dark": "#A8481F",
+          "earth-deep": "#8C634C",
+          "earth-light": "#D0A790",
+          "hunter-mid": "#2D3A2F",
+          "on-primary": "#ffffff"
+        },
+        borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
+        spacing: {
+          "section-padding-desktop": "120px",
+          "section-padding-mobile": "64px",
+          "unit": "8px",
+          "container-max": "1280px",
+          "gutter": "32px"
+        },
+        fontFamily: {
+          "wordmark": ["arpona", "Georgia", "serif"],
+          "display-lg": ["arpona", "Georgia", "serif"],
+          "headline-md": ["arpona", "Georgia", "serif"],
+          "eyebrow": ["arponasans", "system-ui", "sans-serif"],
+          "label-mono": ["arponasans", "system-ui", "sans-serif"],
+          "body-md": ["arponasans", "system-ui", "sans-serif"],
+          "body-lg": ["arponasans", "system-ui", "sans-serif"]
+        },
+        fontSize: {
+          "wordmark": ["32px", { "lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "400" }],
+          "display-lg": ["84px", { "lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "700" }],
+          "display-lg-mobile": ["48px", { "lineHeight": "1.1", "fontWeight": "700" }],
+          "headline-md": ["42px", { "lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500" }],
+          "label-mono": ["13px", { "lineHeight": "1.4", "letterSpacing": "0.15em", "fontWeight": "400" }],
+          "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+          "body-lg": ["20px", { "lineHeight": "1.6", "fontWeight": "400" }],
+          "eyebrow": ["14px", { "lineHeight": "1.45", "letterSpacing": "0.2em", "fontWeight": "600" }]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  /* TYPE TREATMENT, beyond size.
+     KERNING. CSS cannot do Adobe's optical kerning: that is a layout-engine feature, not a
+     font one. What a browser CAN do is honour the kerning pairs built into the font, which
+     is off by default at some sizes. These three lines turn it on and keep it on.
+     TRACKING. Caps need air that lowercase does not. Every all-caps display face carries
+     positive tracking; body copy carries none. See the fontSize block above. */
+  h1, h2, h3, h4, .font-display-lg, .font-headline-md, .font-wordmark {
+    font-kerning: normal;
+    font-feature-settings: "kern" 1, "liga" 1;
+    text-rendering: optimizeLegibility;
+  }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  /* Neutral image placeholder, replace with real imagery per club */
+  .scrim-hero { background: linear-gradient(to bottom, rgba(20,27,21,0.45) 0%, rgba(20,27,21,0.80) 100%); }
+  :root { --rule: #BD8667; }
+  /* THE RULE. One decorative divider, one spec.
+     2px, not 1: at 1px the accent measured 1.4-1.5:1 against the page field and vanished.
+     Full-strength accent, no opacity. Sits under the headline it belongs to. One per section. */
+  .rule { width: 64px; height: 2px; background: var(--rule); flex: none;
+           margin-top: 2rem; margin-bottom: 2rem; }
+  /* THE HAIRLINE. The other decorative line, and a different job: it is structural,
+     it runs beside a heading to fill the row, and it is neutral, never the accent.
+     Was ink/10 (1.21:1, invisible). Now ink/22, which reads without shouting. */
+  .hairline { height: 1px; background: rgba(26,26,26,0.22); }
+  /* IMAGE PLACEHOLDER. Black on purpose so an empty slot is unmistakable, outlined so you
+     can see the exact frame, and labelled with the filename it is waiting for. */
+  .img-placeholder { background-color: #000000; display: flex; align-items: center; justify-content: center;
+    outline: 2px dashed rgba(255,255,255,0.45); outline-offset: -8px; position: relative; overflow: hidden; }
+  .img-placeholder::after { content: attr(data-file) "\A" attr(data-spec); white-space: pre-line; font-family: "Courier New", monospace; font-size: 12px;
+    line-height: 1.4; letter-spacing: 0.04em; color: rgba(255,255,255,0.85); text-align: center;
+    padding: 8px 12px; word-break: break-all; max-width: 90%; }
+  .img-placeholder-dark { background-color: #000000; }
+  .img-placeholder-dark::after { color: rgba(255,255,255,0.85); }
+  /* The image sits ABOVE the placeholder's dashed frame and filename label.
+     z-index only. Do NOT add `position: relative` here: `.img-placeholder > img` beats
+     Tailwind's `.absolute` on specificity, so it silently overrode `absolute inset-0`
+     on every real photo, dropping it out of its frame and blowing the layout apart.
+     Empty slots looked fine, so the bug only appeared the moment a real photo landed. */
+  .img-placeholder > img, .img-placeholder > video { z-index: 1; }
+  .img-placeholder.has-photo { background-color: transparent; outline: none; }
+  .img-placeholder.has-photo::after { content: ""; padding: 0; }
+  /* Hog Heaven signature paper grain: linen weave, earth tint (#A56944), ~30%. Baked SVG on the
+     lightest-cream (#F7F3EE) feature band — one per page, mirrors Packsaddle grain rollout. */
+  .grain-field { background-color:#F7F3EE; background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyODAnIGhlaWdodD0nMjgwJz48ZmlsdGVyIGlkPSd0JyB4PScwJyB5PScwJyB3aWR0aD0nMTAwJScgaGVpZ2h0PScxMDAlJz48ZmVUdXJidWxlbmNlIHR5cGU9J3R1cmJ1bGVuY2UnIGJhc2VGcmVxdWVuY3k9JzAuMzQ1IDAuMjc2JyBudW1PY3RhdmVzPScyJyBzdGl0Y2hUaWxlcz0nc3RpdGNoJyByZXN1bHQ9J24nLz48ZmVDb2xvck1hdHJpeCBpbj0nbicgdHlwZT0nbWF0cml4JyB2YWx1ZXM9JzAgMCAwIDAgMC42NDcgMCAwIDAgMCAwLjQxMiAwIDAgMCAwIDAuMjY3IDAuMjI1IDAuMjI1IDAuMjI1IDAgLTAuMTIwJy8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9JzEwMCUnIGhlaWdodD0nMTAwJScgZmlsdGVyPSd1cmwoI3QpJy8+PC9zdmc+Cg=="); background-size:280px 280px; }
+  /* Signature wood-grain texture on the moss CTA/feature bands. Off-white vector grain,
+     low opacity, behind content. Hog Heaven's equivalent of Packsaddle's topo lines. */
+  .wood-cta { position: relative; overflow: hidden; }
+  .wood-cta::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+    background-image:url("assets/wood.svg"); background-size:820px auto; background-repeat:repeat; opacity:0.20; }
+  .wood-cta > * { position: relative; z-index: 1; }
+  /* MOBILE: bring the big display headings down so they don't overwhelm small screens.
+     Eyebrows and body copy are untouched. */
+  @media (max-width: 640px){
+    .text-display-lg-mobile{ font-size:36px !important; line-height:1.1 !important; }
+    .text-headline-md{ font-size:28px !important; line-height:1.2 !important; }
+    .text-6xl{ font-size:38px !important; line-height:1.05 !important; }
+    .text-5xl{ font-size:32px !important; line-height:1.1 !important; }
+    .text-4xl{ font-size:28px !important; line-height:1.15 !important; }
+  }
+</style>
+<!-- Klaviyo onsite tracking (Hog Heaven account Yi7JBH). Powers Active-on-Site tracking and any
+     Klaviyo-hosted signup forms; the footer newsletter form posts to Klaviyo on its own. -->
+<script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/Yi7JBH/klaviyo.js"></script>
+</head>
+<body class="bg-background text-ink font-body-md min-h-screen flex flex-col selection:bg-camel selection:text-white">
+
+<!-- ============ SHARED HEADER (identical on every page) ============ -->
+<nav class="bg-background flex flex-col w-full z-50 sticky top-0 border-b border-ink/20">
+  <div class="max-w-container-max mx-auto w-full px-5 md:px-gutter py-4 relative flex items-center justify-center md:grid md:grid-cols-3">
+    <div class="hidden md:flex items-center"><a class='inline-flex items-center gap-2 bg-accent text-white font-eyebrow font-semibold text-[12px] uppercase tracking-[0.1em] px-5 py-2.5 hover:bg-accent-dark hover:text-white transition-colors duration-300' href='/membership#inquiry'><i class="rio rio-hat text-[15px]"></i>Join the Club</a></div>
+    <a aria-label='Hog Heaven Sporting Club, Home' class='flex items-center justify-center' href='/'>
+      <!-- Logo placeholder: swap for club logo <img> -->
+      <img src="assets/hogheaven_logo_primary_horizontal_on-light.png" alt="Hog Heaven Sporting Club" class="h-16 w-auto object-contain max-w-[68vw] md:max-w-none">
+    </a>
+    <div class="absolute right-5 md:static flex items-center justify-end gap-6">
+      <div class="hidden md:flex items-center gap-6">
+      <button class="text-ink/55 font-eyebrow font-semibold text-[13px] uppercase tracking-[0.1em] py-3 cursor-not-allowed inline-flex items-center gap-2" title="Coming soon" disabled>Members' Entrance <span class="text-[9px] tracking-widest text-ink/40 border border-ink/20 px-2 py-0.5">Coming Soon</span></button>
+    </div>
+      <button class="md:hidden text-ink" aria-label="Open menu">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+    </div>
+  </div>
+  <div class="hidden md:flex w-full justify-center border-t border-ink/10 py-3">
+    <ul class="flex gap-10">
+      <li><a class='font-eyebrow text-eyebrow uppercase tracking-widest text-ink hover:text-accent transition-colors duration-300' href='/club-life'>Club Life</a></li>
+      <li><a class='font-eyebrow text-eyebrow uppercase tracking-widest text-ink hover:text-accent transition-colors duration-300' href='/adventure'>Adventure</a></li>
+      <li class="relative group"><span class="font-eyebrow text-eyebrow uppercase tracking-widest text-ink group-hover:text-accent transition-colors duration-300 cursor-default inline-flex items-center gap-1" aria-haspopup="true">Education<i class="rio rio-dropdown ml-0.5" aria-hidden="true"></i></span><div class="absolute left-1/2 -translate-x-1/2 top-full pt-4 hidden group-hover:block group-focus-within:block z-50"><ul class="bg-background border border-ink/15 shadow-[0_14px_30px_-12px_rgba(26,26,26,0.35)] py-2"><li><a class='block px-5 py-3 font-eyebrow text-[12px] uppercase tracking-widest whitespace-nowrap transition-colors text-ink hover:text-accent' href='/education'>Adult Education</a></li><li><a class='block px-5 py-3 font-eyebrow text-[12px] uppercase tracking-widest whitespace-nowrap transition-colors text-ink hover:text-accent' href='/youth-education'>Youth Education</a></li></ul></div></li>
+      <li><a class='font-eyebrow text-eyebrow uppercase tracking-widest text-ink hover:text-accent transition-colors duration-300' href='/membership'>Membership</a></li>
+      <li><a class='font-eyebrow text-eyebrow uppercase tracking-widest text-ink hover:text-accent transition-colors duration-300' href='/events'>Events Calendar</a></li>
+      <li><a class='font-eyebrow text-eyebrow uppercase tracking-widest text-ink hover:text-accent transition-colors duration-300' href='/private-events'>Private Events</a></li>
+    </ul>
+  </div>
+  <div id="mobileNav" class="md:hidden hidden border-t border-ink/10 bg-background"></div>
+</nav>
+
+<main class="flex-grow w-full flex flex-col">
+
+  <!-- Hero: looping video.
+       Two cuts: assets/video/hero.mp4 and hero-mobile.mp4, picked at runtime below,
+       plus assets/video/hero-poster.jpg.
+       If the file is absent the <video> removes itself and the placeholder shows through.
+       No headline and no scrim here on purpose: a scrim exists to protect text, and
+       there is no text. The campaign line now leads the section below. -->
+  <section class="relative w-full aspect-[4/3] md:aspect-auto md:h-[calc(320px+39vh)] md:max-h-[770px] overflow-hidden bg-deep-olive">
+    <div class="absolute inset-0 img-placeholder img-placeholder-dark has-photo" data-spec="16:9 wide - 2400 x 1350 px" data-file="video/hero.mp4 + video/hero-poster.jpg" ><img src="assets/video/hero-poster.jpg" alt="" loading="lazy" onerror="this.remove()" class="absolute inset-0 w-full h-full object-cover" style="z-index:0"></div>
+    <video id="hero-video" class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline
+           preload="metadata" poster="assets/video/hero-poster.jpg" onerror="this.remove()" aria-hidden="true"></video>
+    <script>
+      /* Pick the lighter cut on small screens or when the visitor has data saver on.
+         Set as a property (not a <source> element) because browsers ignore
+         the media attribute on <source> inside <video>. */
+      (function () {
+        var v = document.getElementById('hero-video');
+        if (!v) return;
+        var save = (navigator.connection || {}).saveData === true;
+        var small = window.matchMedia('(max-width: 900px)').matches;
+        v.src = 'assets/video/' + (save || small ? 'hero-mobile.mp4' : 'hero.mp4');
+      })();
+    </script>
+  </section>
+
+  <!-- ============================================================
+       CLUBHOUSE ANNOUNCEMENT BAND (TEMPORARY - HOG HEAVEN ONLY)
+       Semi-permanent announcement, expected to run roughly 6-9 months
+       while the clubhouse remodel is designed and built. Links to the
+       full story at club-life.html#clubhouse.
+       TO REMOVE WHEN THE CLUBHOUSE OPENS: delete this entire
+       block, and the matching #clubhouse section on club-life.html.
+       Do NOT port this to Horseshoe Bay or Packsaddle.
+       ============================================================ -->
+  <section class="w-full bg-earth-deep text-white relative z-10 shadow-[0_10px_22px_-14px_rgba(26,26,26,0.4)]">
+    <div class="px-gutter w-full max-w-container-max mx-auto py-8 md:py-9">
+      <div class="flex flex-col md:flex-row items-center gap-7 md:gap-10">
+
+        <!-- Rendering (links to the full story) -->
+        <a aria-label='The new clubhouse, coming soon. See the plans.' class='relative block w-full md:w-[360px] shrink-0 group' href='/club-life#clubhouse'>
+          <div class="relative aspect-[16/9] overflow-hidden img-placeholder img-placeholder-dark has-photo" data-spec="16:9 - 1920 x 1080 px" data-file="clubhouse-render-1.jpg"><img src="assets/clubhouse-render-1-sm.jpg" alt="Rendering of the new Hog Heaven clubhouse" loading="lazy" onerror="this.remove()" class="absolute inset-0 w-full h-full object-cover" style="z-index:0"></div>
+          <div class="absolute -top-4 -left-4 w-[104px] h-[104px] rounded-full bg-background flex items-center justify-center text-center rotate-[-8deg] shadow-[0_6px_14px_-6px_rgba(0,0,0,0.45)] transition-transform duration-300 group-hover:rotate-[-4deg]">
+            <div class="absolute inset-[8px] rounded-full border-2 border-earth-deep/35"></div>
+            <div class="relative flex flex-col items-center justify-center text-earth-deep">
+              <span class="font-headline-md font-normal text-[13px] leading-none mb-0.5">20</span>
+              <span class="font-eyebrow font-bold text-[11px] uppercase tracking-[0.12em] leading-tight">Coming<br>Soon</span>
+              <span class="font-headline-md font-normal text-[13px] leading-none mt-0.5">27</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Copy -->
+        <div class="text-left">
+          <h2 class="font-headline-md text-2xl md:text-[32px] text-white uppercase leading-tight mb-3">The New Clubhouse</h2>
+          <p class="font-body-md text-[15px] text-white/85 leading-relaxed max-w-2xl">
+            A full remodel of the current clubhouse is underway: a members' lounge and bar, restaurant, game room, a wrap-around deck under the oaks, plus much more. Breaking ground late 2026.&nbsp;<a class='group whitespace-nowrap font-body-md text-[15px] text-white underline underline-offset-4 decoration-1 decoration-white/50 hover:decoration-white transition-colors inline-flex items-center align-baseline' href='/club-life#clubhouse'>See the plans<i class="rio rio-arrow ml-1.5 transition-transform duration-300 group-hover:translate-x-1"></i></a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ===================== END CLUBHOUSE BAND ===================== -->
+
+  <!-- Intro / About -->
+  <section class="pt-section-padding-mobile md:pt-section-padding-desktop pb-section-padding-desktop bg-surface-container-highest" id="intro">
+    <div class="px-gutter w-full max-w-container-max mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-gutter gap-y-6 md:gap-y-4 md:grid-rows-[auto_1fr]">
+      <div class="md:col-start-1 md:row-start-1 text-left flex flex-col items-start">
+        <p class="font-eyebrow text-eyebrow text-accent-deep uppercase tracking-[0.2em] mb-3">Welcome to Hog Heaven</p>
+        <h1 class="font-headline-md text-headline-md text-ink uppercase">The Country Club of Dripping Springs</h1>
+        <div class="rule md:!mb-0"></div>
+      </div>
+      <div class="md:col-start-2 md:row-start-1 md:row-span-2 md:aspect-[4/5] md:self-start relative aspect-[4/5] overflow-hidden border border-ink/10 img-placeholder has-photo" data-spec="4:5 - 1600 x 2000 px" data-file="intro-index.jpg" ><img src="assets/intro-index.jpg" alt="A member laughing on the range at Hog Heaven" loading="lazy" onerror="this.remove()" class="absolute inset-0 w-full h-full object-cover" style="z-index:0"></div>
+      <div class="md:col-start-1 md:row-start-2 text-left flex flex-col items-start">
+                <p class="font-body-lg text-body-lg text-on-surface-variant">
+          Hog Heaven is a sporting club, outdoor education facility, event venue, and nature preserve set against the backdrop of the Texas Hill Country. Spanning over 120 acres and anchored by a 15-acre stocked lake, sporting clays, pistol, archery, and a full calendar of social events are all here, and all only thirty minutes from Austin.
+          <br><br>
+          Hog Heaven Sporting Club is a place to learn new skills, master your craft, and gather in community. But most of all, for those of us who feel the outdoors as part of our soul and our identity, this is a little slice of heaven, right in your own backyard.
+        </p>
+        <div class="mt-10 w-full flex justify-center">
+          <img src="assets/intro-graphic.svg" alt="Hog Heaven Sporting Club seal" width="128" height="128" loading="lazy" class="w-32 h-32">
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Find Your Way In -->
+  <section class="grain-field bg-surface-container-low py-section-padding-desktop">
+    <div class="px-gutter w-full max-w-container-max mx-auto">
+    <div class="text-center mb-12">
+      <p class="font-eyebrow text-eyebrow text-accent-deep uppercase tracking-[0.2em] mb-3">Club Life</p>
+      <h2 class="font-headline-md text-headline-md text-ink uppercase">Find Your Way In</h2>
+      <div class="rule mx-auto"></div>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <a class='group relative block aspect-[4/5] overflow-hidden border border-ink/10 flex items-end' href='/club-life'>
+        <div class="absolute inset-0 img-placeholder img-placeholder-dark transition-transform duration-700 group-hover:scale-105 has-photo" data-spec="16:9 - 1920 x 1080 px" data-file="wayin-club-life.jpg" ><img src="assets/wayin-club-life.jpg" alt="Members fly fishing on the dock at Hog Heaven" loading="lazy" onerror="this.remove()" class="absolute inset-0 w-full h-full object-cover" style="z-index:0"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-scrim/90 via-scrim/45 to-transparent"></div>
+        <div class="relative z-10 w-full p-6 text-center flex flex-col items-center">
+          <h3 class="font-headline-md text-2xl text-white uppercase mb-2">Club Life</h3>
+          <span class="font-label-mono text-label-mono text-accent-deep uppercase flex items-center group-hover:text-white transition-colors">Explore <i class="rio rio-arrow ml-2 transition-transform duration-300 group-hover:translate-x-1"></i></span>
+        </div>
+      </a>
+      <a class='group relative block aspect-[4/5] overflow-hidden border border-ink/10 flex items-end' href='/adventure'>
+        <div class="absolute inset-0 img-placeholder img-placeholder-dark transition-transform duration-700 group-hover:scale-105 has-photo" data-spec="16:9 - 1920 x 1080 px" data-file="wayin-adventure.jpg" ><img src="assets/wayin-adventure.jpg" alt="A hunter walking the field with a bow" loading="lazy" onerror="this.remove()" class="absolute inset-0 w-full h-full object-cover" style="z-index:0"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-scrim/90 via-scrim/45 to-transparent"></div>
+        <div class="relative z-10 w-full p-6 text-center flex flex-col items-center">
+          <h3 class="font-headline-md text-2xl text-white uppercase mb-2">Adventure</h3>
+          <span class="font-label-mono text-label-mono text-accent-deep uppercase flex items-center group-hover:text-white transition-colors">Explore <i class="rio rio-arrow ml-2 transition-transform duration-300 group-hover:translate-x-1"></i></span>
+        </div>
+      </a>
+      <a class='group relative block aspect-[4/5] overflow-hidden border border-ink/10 flex items-end' href='/education'>
+        <div class="absolute inset-0 img-placeholder img-placeholder-dark transition-transform duration-700 group-hover:scale-105 has-photo" data-spec="16:9 - 1920 x 1080 px" data-file="wayin-education.jpg" ><img src="assets/wayin-education.jpg" alt="A shooter on the pistol bays" loading="lazy" onerror="this.remove()" class="absolute inset-0 w-full h-full object-cover" style="z-index:0"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-scrim/90 via-scrim/45 to-transparent"></div>
+        <div class="relative z-10 w-full p-6 text-center flex flex-col items-center">
+          <h3 class="font-headline-md text-2xl text-white uppercase mb-2">Education</h3>
+          <span class="font-label-mono text-label-mono text-accent-deep uppercase flex items-center group-hover:text-white transition-colors">Explore <i class="rio rio-arrow ml-2 transition-transform duration-300 group-hover:translate-x-1"></i></span>
+        </div>
+      </a>
+      <a class='group relative block aspect-[4/5] overflow-hidden border border-ink/10 flex items-end' href='/events'>
+        <div class="absolute inset-0 img-placeholder img-placeholder-dark transition-transform duration-700 group-hover:scale-105 has-photo" data-spec="16:9 - 1920 x 1080 px" data-file="wayin-events-calendar.jpg" ><img src="assets/wayin-events-calendar.jpg" alt="A hunter walking the field with a bow" loading="lazy" onerror="this.remove()" class="absolute inset-0 w-full h-full object-cover" style="z-index:0"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-scrim/90 via-scrim/45 to-transparent"></div>
+        <div class="relative z-10 w-full p-6 text-center flex flex-col items-center">
+          <h3 class="font-headline-md text-2xl text-white uppercase mb-2">Calendar</h3>
+          <span class="font-label-mono text-label-mono text-accent-deep uppercase flex items-center group-hover:text-white transition-colors">Explore <i class="rio rio-arrow ml-2 transition-transform duration-300 group-hover:translate-x-1"></i></span>
+        </div>
+      </a>
+    </div>
+    </div>
+  </section>
+
+  <!-- Campaign line + mission. Edge-to-edge dark band; a vertical photo breaks its plane:
+       centered on top and overlapping the band on mobile, absolute and taller than the
+       band on desktop so it pokes past the top and bottom edges. Square corners, no panel. -->
+  <section class="bg-hunter-mid">
+    <div class="max-w-container-max mx-auto px-gutter relative flex flex-col md:block">
+      <div class="relative z-20 mx-auto w-3/5 max-w-[240px] aspect-[4/5] -mt-8 md:mt-0 overflow-hidden img-placeholder img-placeholder-dark has-photo md:mx-0 md:absolute md:left-8 md:top-[-32px] md:bottom-[-32px] md:w-[300px] md:max-w-none md:aspect-auto" data-spec="4:5 - 1600 x 2000 px" data-file="mission-portrait.jpg">
+        <img src="assets/mission-portrait.jpg" alt="Time outdoors at Hog Heaven" loading="lazy" onerror="this.remove()" class="absolute inset-0 w-full h-full object-cover" style="z-index:0">
+      </div>
+      <div class="pt-10 pb-14 md:py-20 md:pl-[372px] lg:pl-[404px] text-center md:text-left flex flex-col justify-center md:min-h-[360px]">
+        <p class="font-eyebrow text-eyebrow text-camel uppercase tracking-[0.2em] mb-5">A little slice of heaven. Just minutes away.</p>
+        <p class="font-headline-md text-3xl md:text-5xl text-off-white max-w-2xl leading-snug">Healthy people and strong community, built around the outdoors.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Facilities / What We Offer (mirrors the membership page) -->
+  <section class="py-section-padding-desktop px-gutter w-full max-w-container-max mx-auto">
+    <div class="text-center flex flex-col items-center mb-12">
+      <p class="font-eyebrow text-eyebrow text-accent-deep uppercase tracking-[0.2em] mb-3">The Property</p>
+      <h2 class="font-headline-md text-headline-md text-ink uppercase max-w-3xl mx-auto">All of your outdoor pursuits in one place</h2>
+      <div class="rule mx-auto"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="group relative block aspect-[3/4] overflow-hidden border border-ink/10 flex items-end">
+        <div class="absolute inset-0 img-placeholder img-placeholder-dark transition-transform duration-700 group-hover:scale-105 has-photo" data-spec="3:4 - 1500 x 2000 px" data-file="facility-shotgun.jpg" ><img src="assets/facility-shotgun.jpg" alt="A member shooting shotgun under the pavilion" loading="lazy" onerror="this.remove()" class="absolute inset-0 w-full h-full object-cover" style="z-index:0"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-scrim/95 via-scrim/75 to-scrim/40"></div>
+        <div class="relative z-10 w-full p-8 text-center flex flex-col items-center min-h-[23rem]">
+          <h3 class="font-headline-md text-headline-md text-white uppercase mb-2 min-h-[2.3em] flex items-end justify-center text-center">Shotgun</h3>
+          <p class="text-white/80 font-body-md mb-4 min-h-[4.2em]">Sporting clays course wrapping around the lake, plus skeet, trap, and 5-stand.</p>
+          <ul class="text-left space-y-2 mt-1 w-full">
+              <li class="flex items-start gap-2 text-white/85 font-body-md text-sm"><i class="rio rio-check text-[16px] text-camel leading-tight"></i><span>12 sporting clays stations</span></li>
+              <li class="flex items-start gap-2 text-white/85 font-body-md text-sm"><i class="rio rio-check text-[16px] text-camel leading-tight"></i><span>4 trap and skeet fields</span></li>
+              <li class="flex items-start gap-2 text-white/85 font-body-md text-sm"><i class="rio rio-check text-[16px] text-camel leading-tight"></i><span>5 station super sporting course</span></li>
+              <li class="flex items-start gap-2 text-white/85 font-body-md text-sm"><i class="rio rio-check text-[16px] text-camel leading-tight"></i><span>Two 5-stands</span></li>
+            </ul>
+        </div>
+      </div>
+      <div class="group relative block aspect-[3/4] overflow-hidden border border-ink/10 flex items-end">
+        <div class="absolute inset-0 img-placeholder img-placeholder-dark transition-transform duration-700 group-hover:scale-105 has-photo" data-spec="3:4 - 1500 x 2000 px" data-file="facility-pistol.jpg" ><img src="assets/facility-pistol.jpg" alt="One-on-one pistol instruction on the range" loading="lazy" onerror="this.remove()" class="absolute inset-0 w-full h-full object-cover" style="z-index:0"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-scrim/95 via-scrim/75 to-scrim/40"></div>
+        <div class="relative z-10 w-full p-8 text-center flex flex-col items-center min-h-[23rem]">
+          <h3 class="font-headline-md text-headline-md text-white uppercase mb-2 min-h-[2.3em] flex items-end justify-center text-center">Pistol &amp; Carbine</h3>
+          <p class="text-white/80 font-body-md mb-4 min-h-[4.2em]">Nine outdoor bays with interactive steel and paper targets, and instruction at every level.</p>
+          <ul class="text-left space-y-2 mt-1 w-full">
+              <li class="flex items-start gap-2 text-white/85 font-body-md text-sm"><i class="rio rio-check text-[16px] text-camel leading-tight"></i><span>9 pistol and carbine bays</span></li>
+              <li class="flex items-start gap-2 text-white/85 font-body-md text-sm"><i class="rio rio-check text-[16px] text-camel leading-tight"></i><span>Interactive steel and paper targets</span></li>
+              <li class="flex items-start gap-2 text-white/85 font-body-md text-sm"><i class="rio rio-check text-[16px] text-camel leading-tight"></i><span>Lessons from working pros</span></li>
+            </ul>
+        </div>
+      </div>
+      <div class="group relative block aspect-[3/4] overflow-hidden border border-ink/10 flex items-end">
+        <div class="absolute inset-0 img-placeholder img-placeholder-dark transition-transform duration-700 group-hover:scale-105 has-photo" data-spec="3:4 - 1500 x 2000 px" data-file="facility-archery.jpg" ><img src="assets/facility-archery.jpg" alt="An archer drawing a compound bow" loading="lazy" onerror="this.remove()" class="absolute inset-0 w-full h-full object-cover" style="z-index:0"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-scrim/95 via-scrim/75 to-scrim/40"></div>
+        <div class="relative z-10 w-full p-8 text-center flex flex-col items-center min-h-[23rem]">
+          <h3 class="font-headline-md text-headline-md text-white uppercase mb-2 min-h-[2.3em] flex items-end justify-center text-center">Archery &amp; The Lake</h3>
+          <p class="text-white/80 font-body-md mb-4 min-h-[4.2em]">A 3D archery gallery and a spring-fed lake stocked for real fishing.</p>
+          <ul class="text-left space-y-2 mt-1 w-full">
+              <li class="flex items-start gap-2 text-white/85 font-body-md text-sm"><i class="rio rio-check text-[16px] text-camel leading-tight"></i><span>3D gallery with Texas native and big game targets</span></li>
+              <li class="flex items-start gap-2 text-white/85 font-body-md text-sm"><i class="rio rio-check text-[16px] text-camel leading-tight"></i><span>15-acre stocked lake, 200+ underwater habitat structures</span></li>
+              <li class="flex items-start gap-2 text-white/85 font-body-md text-sm"><i class="rio rio-check text-[16px] text-camel leading-tight"></i><span>Bass, bluegill, and catfish</span></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured events -->
+  <section class="bg-surface-container-highest py-24 border-y border-ink/10">
+    <div class="max-w-container-max mx-auto px-gutter">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+        <div>
+          <p class="font-eyebrow text-eyebrow text-accent-deep uppercase tracking-[0.2em] mb-3">What's On</p>
+          <h2 class="font-headline-md text-headline-md text-ink uppercase">Featured Events</h2>
+          <div class="rule"></div>
+        </div>
+        <a class='hidden md:inline-block font-eyebrow text-eyebrow uppercase tracking-widest text-ink border-b border-ink pb-1 hover:text-on-surface-variant hover:border-on-surface-variant transition-colors' href='/events'>View Full Calendar</a>
+      </div>
+      <div id="featuredEvents" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+      <div class="md:hidden mt-10"><a class='font-eyebrow text-eyebrow uppercase tracking-widest text-ink border-b border-ink pb-1' href='/events'>View Full Calendar</a></div>
+    </div>
+  </section>
+
+  <!-- Join CTA -->
+  <section class="wood-cta w-full bg-moss py-24 text-white">
+    <div class="max-w-4xl mx-auto px-gutter text-center flex flex-col items-center">
+      <h2 class="font-headline-md text-headline-md text-white uppercase mb-6 leading-tight">Join the Club</h2>
+      <p class="font-body-lg text-body-lg text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">Craft, community, and the outdoors, all in an immersive sporting and lifestyle experience less than 30 minutes from Austin.</p>
+      <a class='inline-flex items-center justify-center px-10 py-4 bg-accent text-on-primary font-eyebrow font-semibold text-[13px] uppercase tracking-[0.1em] hover:bg-accent-dark transition-colors duration-300' href='/membership'>Explore Membership</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ SHARED FOOTER (identical on every page) ============ -->
+<footer class="bg-deep-olive text-surface-container-low w-full mt-auto">
+  <div class="border-b border-surface-container-low/10">
+    <div class="max-w-container-max mx-auto px-section-padding-mobile md:px-gutter py-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-center md:gap-12">
+      <div class="md:max-w-md">
+        <h4 class="font-label-mono text-label-mono uppercase tracking-[0.2em] text-accent-deep mb-2">Newsletter</h4>
+        <p class="font-body-md text-body-md text-surface-container-low/80">Receive regular updates and club news.</p>
+      </div>
+      <form data-newsletter class="flex flex-col sm:flex-row sm:flex-wrap gap-2 w-full md:w-auto md:min-w-[440px]" onsubmit="return false;">
+        <input type="email" name="email" placeholder="Email Address" aria-label="Email address" autocomplete="email" required class="flex-grow bg-transparent border border-surface-container-low/20 p-3 text-white font-body-md focus:outline-none focus:border-camel transition-colors placeholder:text-surface-container-low/30">
+        <button type="submit" class="bg-accent text-on-primary font-eyebrow font-semibold text-[13px] uppercase tracking-[0.1em] px-6 py-4 hover:bg-accent-dark transition-colors duration-300">Subscribe</button>
+        <p data-newsletter-msg class="hidden w-full font-body-md text-body-md text-surface-container-low/80" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto px-section-padding-mobile md:px-gutter pt-12 pb-section-padding-desktop md:pt-section-padding-desktop">
+    <div class="col-span-1 flex justify-center md:justify-start items-start mb-10 md:mb-0">
+      <img src="assets/hogheaven_logo_primary_vertical_on-dark.png" alt="Hog Heaven Sporting Club" class="h-40 w-auto object-contain">
+    </div>
+    <div class="col-span-1 space-y-6">
+      <div>
+        <h4 class="font-label-mono text-label-mono uppercase tracking-[0.2em] text-accent-deep mb-2">Location</h4>
+        <p class="text-surface-container-low/80 font-body-md text-body-md leading-relaxed">24905 Ranch Rd 12<br>Dripping Springs, TX 78620</p>
+      </div>
+      <div>
+        <h4 class="font-label-mono text-label-mono uppercase tracking-[0.2em] text-accent-deep mb-2">Contact</h4>
+        <p class="text-surface-container-low/80 font-body-md text-body-md break-words"><a class="hover:text-white transition-colors" href="mailto:shoot@hogheaven.com">shoot@hogheaven.com</a></p>
+        <p class="text-surface-container-low/80 font-body-md text-body-md"><a class="hover:text-white transition-colors" href="tel:+15129876938">(512) 987-6938</a></p>
+      </div>
+      <div>
+        <h4 class="font-label-mono text-label-mono uppercase tracking-[0.2em] text-accent-deep mb-2">Club Office Hours</h4>
+        <p class="text-surface-container-low/80 font-body-md text-body-md">Mon: Closed</p>
+        <p class="text-surface-container-low/80 font-body-md text-body-md">Tue-Sat: 10 AM - 4 PM</p>
+        <p class="text-surface-container-low/80 font-body-md text-body-md">Sun: Closed</p>
+      </div>
+    </div>
+    <div class="col-span-1 flex flex-col space-y-4">
+      <h4 class="font-label-mono text-label-mono uppercase tracking-[0.2em] text-accent-deep mb-2">Explore</h4>
+      <a class='text-surface-container-low/80 font-body-md text-body-md hover:text-white transition-colors' href='/'>Home</a>
+    <a class='text-surface-container-low/80 font-body-md text-body-md hover:text-white transition-colors' href='/club-life'>Club Life</a>
+      <a class='text-surface-container-low/80 font-body-md text-body-md hover:text-white transition-colors' href='/adventure'>Adventure</a>
+      <a class='text-surface-container-low/80 font-body-md text-body-md hover:text-white transition-colors' href='/education'>Education</a>
+      <a class='text-surface-container-low/80 font-body-md text-body-md hover:text-white transition-colors' href='/membership'>Membership</a>
+      <a class='text-surface-container-low/80 font-body-md text-body-md hover:text-white transition-colors' href='/events'>Events Calendar</a>
+      <a class='text-surface-container-low/80 font-body-md text-body-md hover:text-white transition-colors' href='/private-events'>Private Events</a>
+    </div>
+    <div class="col-span-1 flex flex-col space-y-4">
+      <h4 class="font-label-mono text-label-mono uppercase tracking-[0.2em] text-accent-deep mb-2">Connect</h4>
+      <a class="text-surface-container-low/80 font-body-md text-body-md hover:text-white transition-colors" href="https://www.instagram.com/hogheavensporting/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a class="text-surface-container-low/80 font-body-md text-body-md hover:text-white transition-colors" href="https://www.facebook.com/hogheavensporting/" target="_blank" rel="noopener noreferrer">Facebook</a>
+    </div>
+  </div>
+  <div class="max-w-container-max mx-auto px-section-padding-mobile md:px-gutter py-4 flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center font-label-mono text-[11px] uppercase tracking-widest text-surface-container-low/50">
+    <span>Hog Heaven Sporting Club is a <a class="underline underline-offset-2 hover:text-white transition-colors" href="https://rhythm.co" target="_blank" rel="noopener noreferrer">Rhythm Outdoors</a> club.</span>
+    <span class="text-surface-container-low/25 hidden md:inline">&middot;</span>
+    <a class='hover:text-white transition-colors' href='/'>Hog Heaven Sporting Club</a>
+    <span class="text-surface-container-low/25 hidden md:inline">&middot;</span>
+    <a class="hover:text-white transition-colors" href="https://www.hsbsportingclub.com" target="_blank" rel="noopener">Horseshoe Bay Sporting Club</a>
+    <span class="text-surface-container-low/25 hidden md:inline">&middot;</span>
+    <a class="hover:text-white transition-colors" href="https://www.packsaddleprecision.com" target="_blank" rel="noopener">Packsaddle Precision</a>
+  </div>
+
+  <div class="w-full border-t border-surface-container-low/10 max-w-container-max mx-auto px-section-padding-mobile md:px-gutter py-6 text-center text-label-mono font-label-mono text-surface-container-low/50">
+    <span>&copy; 2026 Hog Heaven Sporting Club. All Rights Reserved.</span>
+  </div>
+</footer>
+
+<script src="assets/rhythm-events.js?v=12" data-club="Hog Heaven Sporting Club"></script>
+<script>
+/* Mobile nav: the hamburger toggles a dropdown built from this page's own desktop links. */
+(function(){
+  var nav=document.querySelector('nav');
+  var btn=nav&&nav.querySelector('button[aria-label="Open menu"]');
+  var panel=document.getElementById('mobileNav');
+  var srcUl=nav&&nav.querySelector('ul');
+  if(!btn||!panel||!srcUl) return;
+  var out='<ul class="flex flex-col px-5">';
+  srcUl.querySelectorAll('a').forEach(function(a){
+    out+='<li><a href="'+a.getAttribute('href')+'" class="block py-4 border-b border-ink/10 font-eyebrow text-eyebrow uppercase tracking-widest text-ink">'+a.textContent.trim()+'</a></li>';
+  });
+  out+='</ul>';
+  panel.innerHTML=out;
+  var icon=btn.querySelector('.material-symbols-outlined');
+  btn.addEventListener('click',function(){
+    var hid=panel.classList.toggle('hidden');
+    if(icon) icon.textContent = hid ? 'menu' : 'close';
+  });
+})();
+</script>
+<script src="assets/rhythm-newsletter.js?v=2"></script>
+</body>
+</html>

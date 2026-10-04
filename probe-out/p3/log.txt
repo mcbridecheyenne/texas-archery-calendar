@@ -1,0 +1,46 @@
+200 https://www.fredericksburg3darchery.org/ -> https://www.fredericksburg3darchery.org/  len=1984623 SQS  
+200 https://permianbasinarchers.com/ -> https://permianbasinarchers.com/  len=510958 SQS  
+200 https://x10archery.org/ -> https://www.x10academy.com/  len=217749   
+200 https://tejasjoadarchery.com/ -> https://tejasjoadarchery.com/  len=120058   
+404 http://www.centraltexasarchery.org.s3-website-us-west-2.amazonaws.com/calendar -> http://www.centraltexasarchery.org.s3-website-us-west-2.amazonaws.com/calendar  len=21074   
+404 http://www.centraltexasarchery.org.s3-website-us-west-2.amazonaws.com/events -> http://www.centraltexasarchery.org.s3-website-us-west-2.amazonaws.com/events  len=21074   
+200 https://hogheaven.com/ -> https://hogheaven.com/  len=42682   
+200 https://www.texsar.org/archeryshoot/ -> https://www.texsar.org/archeryshoot/  len=179028  WP 
+200 https://buckdoes.com/class/alamo-area-joad-archery/ -> https://buckdoes.com/class/alamo-area-joad-archery/  len=217584  WP 
+200 https://www.archeryhqtx.com/events -> https://www.archeryhqtx.com/events  len=318617 SQS  
+200 https://lgrgc.wildapricot.org/TeamUp-Calendar -> https://lgrgc.wildapricot.org/TeamUp-Calendar  len=14634   
+  TEAMUP ks5gwh4w3iqp577ufr
+SQS 404 https://www.fredericksburg3darchery.org/events not json
+SQS 404 https://www.fredericksburg3darchery.org/calendar not json
+SQS 404 https://www.fredericksburg3darchery.org/schedule not json
+SQS 404 https://www.fredericksburg3darchery.org/shoots not json
+SQS 404 https://www.fredericksburg3darchery.org/tournaments not json
+SQS 404 https://www.fredericksburg3darchery.org/upcoming-events not json
+SQS 404 https://www.fredericksburg3darchery.org/event-calendar not json
+SQS 404 https://permianbasinarchers.com/events not json
+SQS 404 https://permianbasinarchers.com/calendar not json
+SQS 404 https://permianbasinarchers.com/schedule not json
+SQS 404 https://permianbasinarchers.com/shoots not json
+SQS 404 https://permianbasinarchers.com/tournaments not json
+SQS 404 https://permianbasinarchers.com/upcoming-events not json
+SQS 404 https://permianbasinarchers.com/event-calendar not json
+SQS 404 https://x10archery.org/events not json
+SQS 404 https://x10archery.org/calendar not json
+SQS 404 https://x10archery.org/schedule not json
+SQS 404 https://x10archery.org/shoots not json
+SQS 404 https://x10archery.org/tournaments not json
+SQS 404 https://x10archery.org/upcoming-events not json
+SQS 404 https://x10archery.org/event-calendar not json
+SQS 404 https://tejasjoadarchery.com/events not json
+SQS 404 https://tejasjoadarchery.com/calendar not json
+SQS 404 https://tejasjoadarchery.com/schedule not json
+SQS 404 https://tejasjoadarchery.com/shoots not json
+SQS 404 https://tejasjoadarchery.com/tournaments not json
+SQS 404 https://tejasjoadarchery.com/upcoming-events not json
+SQS 404 https://tejasjoadarchery.com/event-calendar not json
+TRIBE 404 https://hogheaven.com <!DOCTYPE html> <html class="light scroll-smooth" lang="en"> <head> <meta charset="utf-8"> <!-- Netlify serves this page for ANY unknown URL, includin
+TRIBE 200 https://sfhogheaven.com <!DOCTYPE html> <html class="light scroll-smooth" lang="en"> <head> <meta charset="utf-8"> <meta content="width=device-width, initial-scale=1.0" name=
+TRIBE 404 https://www.texsar.org {"code":"rest_no_route","message":"No route was found matching the URL and request method.","data":{"status":404}}
+TRIBE 404 https://x10archery.org Not Found 
+TRIBE 404 https://permianbasinarchers.com <!doctype html> <html xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" lang="en-US" > <head> <meta 
+TRIBE 404 https://www.fredericksburg3darchery.org <!doctype html> <html xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" lang="en-US" > <head> <meta 
