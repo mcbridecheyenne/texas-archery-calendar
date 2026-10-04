@@ -1,0 +1,28 @@
+name: App build
+
+# Push a tag like app-v1.1.0 to build the iPhone app on Expo (EAS) and send it
+# to TestFlight. Nothing reaches the public App Store until Cheyenne releases it.
+on:
+  push:
+    tags: ["app-v*"]
+
+jobs:
+  ios:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mobile
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: mobile/package-lock.json
+      - uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+      - run: npm ci
+      - run: npx tsc --noEmit
+      - run: eas build --platform ios --profile production --non-interactive --auto-submit
