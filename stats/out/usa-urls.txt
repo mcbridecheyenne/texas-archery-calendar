@@ -1,0 +1,17 @@
+https://connect.facebook.net/en_US/fbevents.js
+https://fonts.googleapis.com/css?family=Barlow+Condensed:100,400,500
+https://www.usarchery.org/events/find-an-event
+https://www.worldarchery.sport/events/calendar?discipline=All%20disciplines&amp;country=All%20countries
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134540261-1"
+<script src="js/html5shiv.js"
+<script src="/js/jquery-3.2.1.min.js"
+<script src="/js/slick.min.js"
+<script src="js/instafeed.js"
+<script src="js/imagesloaded.pkgd.min.js"
+<script src="js/jquery.easydropdown.js"
+<script src="js/unorphanize.jquery.js"
+<script src="js/jquery.scrollbar.min.js"
+<script src="js/javascript.js?v=88"
+<script src="js/dashboard.js?v=88"
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
