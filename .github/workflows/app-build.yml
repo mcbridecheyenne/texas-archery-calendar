@@ -1,10 +1,11 @@
 name: App build
 
-# Push a tag like app-v1.1.0 to build the iPhone app on Expo (EAS) and send it
-# to TestFlight. Nothing reaches the public App Store until Cheyenne releases it.
+# Pushing to the app-release branch builds the iPhone app on Expo (EAS) and
+# sends it to TestFlight, e.g. `git push origin mobile-app:app-release`.
+# Nothing reaches the public App Store until Cheyenne releases it.
 on:
   push:
-    tags: ["app-v*"]
+    branches: [app-release]
 
 jobs:
   ios:
