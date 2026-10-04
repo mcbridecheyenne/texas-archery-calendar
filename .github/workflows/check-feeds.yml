@@ -46,9 +46,19 @@ jobs:
               if (!fs.existsSync(f)) { bad++; console.log(`::error::${f} was not written`); continue; }
               const { sources } = JSON.parse(fs.readFileSync(f, "utf8"));
               for (const s of sources) {
-                console.log(`${f}  ${s.name}: ${s.status}, ${s.eventCount} events`);
-                if (!s.eventCount) { bad++; console.log(`::error::${s.name} returned 0 events (${f})`); }
+                const line = `${s.name}: ${s.status}, ${s.eventCount} events${s.message ? ` (${s.message})` : ""} [${f}]`;
+                if (!s.eventCount) { bad++; console.log(`::error::${line}`); }
+                else console.log(`::notice::${line}`);
               }
             }
             process.exit(bad ? 1 : 0);
           '
+
+      # TEMPORARY: what the S3DA site answers, to fix its collector. Remove once S3DA works.
+      - name: Probe S3DA
+        if: always()
+        run: |
+          for u in "https://www.s3da.net/wp-json/tribe/events/v1/events?per_page=2" "https://www.s3da.net/events/" "https://s3da.org/" "https://www.s3da.org/wp-json/tribe/events/v1/events?per_page=2"; do
+            code=$(curl -sS -L -A "Mozilla/5.0" -o body.txt -w '%{http_code} %{url_effective} %{content_type}' "$u" || echo "curl failed")
+            echo "::notice::$u -> $code :: $(head -c 300 body.txt | tr '\n\r' '  ' | sed 's/::/: :/g')"
+          done
