@@ -1,0 +1,54 @@
+[
+  {
+    "club": "Buffalo Field Archery Club",
+    "city": "Houston",
+    "state": "TX",
+    "organization": "Club shoots",
+    "feedType": "tribe",
+    "url": "https://buffalofield.org/wp-json/tribe/events/v1/events",
+    "siteUrl": "https://buffalofield.org/events/"
+  },
+  {
+    "club": "Fort Grard Guns & Archery",
+    "city": "Weatherford",
+    "state": "TX",
+    "organization": "Club shoots",
+    "feedType": "ics",
+    "url": "https://calendar.google.com/calendar/ical/ube761ip2hg745mmckus74206o%40group.calendar.google.com/public/basic.ics",
+    "siteUrl": "https://www.fortgrard.com/"
+  },
+  {
+    "club": "Archery HQ",
+    "city": "New Braunfels",
+    "state": "TX",
+    "organization": "Club shoots",
+    "feedType": "squarespace",
+    "url": "https://www.archeryhqtx.com/events"
+  },
+  {
+    "club": "Abilene Bowhunters Association",
+    "city": "Tuscola",
+    "state": "TX",
+    "organization": "Club shoots",
+    "feedType": "squarespace",
+    "url": "https://www.abilenebowhunters.com/local-competitions"
+  },
+  {
+    "club": "Permian Basin Archers Association",
+    "city": "Odessa",
+    "state": "TX",
+    "organization": "Club shoots",
+    "feedType": "squarespace",
+    "url": "https://permianbasinarchers.com/schedules"
+  },
+  {
+    "club": "Brazos County Archery Club",
+    "city": "Bryan",
+    "state": "TX",
+    "organization": "Club shoots",
+    "feedType": "ics",
+    "url": "https://calendar.google.com/calendar/ical/brazoscountyarchery%40gmail.com/public/basic.ics",
+    "siteUrl": "https://www.brazoscountyarchery.com/",
+    "notes": "Public Google Calendar; its last entry was December 2025 when checked on 2026-10-04."
+  }
+]
