@@ -6,6 +6,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { PRIVACY_URL, TERMS_URL } from "../../config";
 import { useCalendarTheme } from "../features/calendar";
 import { usePremium, type Plan } from "./premium";
+import { ScholarshipNote } from "./ScholarshipNote";
 
 export function PremiumSheet({ visible, onClose }: { visible: boolean; onClose: () => void }) {
   const theme = useCalendarTheme();
@@ -57,7 +58,7 @@ export function PremiumSheet({ visible, onClose }: { visible: boolean; onClose: 
 
         <Text style={[styles.title, { color: theme.text }]}>Go ad-free</Text>
         <Text style={[styles.lead, { color: theme.muted }]}>
-          Remove the banner and help keep Texas Archery Calendar running. Everything else stays free.
+          Remove the banner and help keep Archery in the USA running. Everything else stays free.
         </Text>
 
         {isPremium ? (
@@ -97,6 +98,10 @@ export function PremiumSheet({ visible, onClose }: { visible: boolean; onClose: 
         )}
 
         <View style={{ flex: 1 }} />
+
+        <View style={{ marginBottom: 14 }}>
+          <ScholarshipNote />
+        </View>
 
         {!isPremium && plans.length > 0 ? (
           <>

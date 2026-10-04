@@ -207,7 +207,14 @@ export function ListingForm({
             multiline
             maxLength={2000}
           />
-          <Field label="City" value={city} onChangeText={setCity} placeholder="e.g. Wichita Falls" maxLength={60} />
+          <Field
+            label="Pickup city"
+            value={city}
+            onChangeText={setCity}
+            placeholder="e.g. Wichita Falls, TX"
+            maxLength={60}
+            hint="Local pickup only, no shipping. Archers nearby find your gear by this city."
+          />
         </View>
 
         <SectionLabel>Hand off at a shoot (optional)</SectionLabel>

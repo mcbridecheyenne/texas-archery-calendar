@@ -1,11 +1,11 @@
-# Archery in Texas — iPhone & Android app
+# Archery in the USA (formerly Archery in Texas) — iPhone & Android app
 
-One React Native (Expo) app for Texas archers that builds for both iPhone and Android.
+One React Native (Expo) app for archers across the US that builds for both iPhone and Android. It is the same App Store and Google Play listing as Archery in Texas, upgraded in place.
 It grows one tab at a time:
 
 | Tab | What it does | Data |
 |---|---|---|
-| Tournaments | TFAA, Texas ASA and TSAA calendar, tournaments added by archers, Going list, reminders, which friends are going | `events.json` on GitHub Pages + Supabase |
+| Tournaments | Nationwide calendar filtered by state (starts on your home state) and organization, tournaments added by archers, Going list, reminders, which friends are going | `events.json` on GitHub Pages + Supabase |
 | Marketplace | Buy and sell used gear, hand off at a shoot | Supabase |
 | Messages | Chat between buyers and sellers | Supabase |
 | Account | Profile (with archery class), friends, my listings, ad-free, delete account | Supabase |
@@ -34,7 +34,7 @@ first. Re-enable it from the repo's **Actions** tab, or just push any change.
 - **Add to Calendar:** puts the event into Apple/Google Calendar as an all-day event.
 - **Directions, call and email the host:** tap the event's location, phone or email.
 - **Works offline:** the last schedule it loaded stays on the phone for ranges with no signal.
-- Month calendar and an Upcoming list, filtered by TFAA / Texas ASA / TSAA, in light and dark mode.
+- Month calendar and an Upcoming list, filtered by state (your home state first) and organization, in light and dark mode. Reads `events-usa.json` and falls back to `events.json` until the nationwide feed is published.
 
 ## Layout
 
@@ -191,3 +191,12 @@ eas build -p android      # makes the .aab file for Google Play
 eas submit -p android
 ```
 Needs a Google Play developer account ($25 one-time).
+
+## Archery in the USA update: before shipping
+
+- **Supabase:** re-run `supabase/schema.sql` (adds `home_state` and `age_confirmed_at` to profiles). Safe to re-run.
+- **Store age rating:** set 13+ in App Store Connect and the Google Play content rating questionnaire.
+  The app asks for birth month and year at sign-up and doesn't create accounts for anyone under 13.
+- **Store listing:** rename to Archery in the USA. Keep the 10% scholarship line out of the listing and screenshots.
+- **Scholarship fund:** `SCHOLARSHIP` in `config.ts` stays off until the fund OKs using its name in writing and
+  you paste its donation page URL. It only shows to archers whose home state is Texas and whose phone is in Texas.

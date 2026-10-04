@@ -1,4 +1,4 @@
-// Marketplace tab: browse used archery gear from Texas archers.
+// Marketplace tab: browse used archery gear for local pickup near you.
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useFocusEffect, useNavigation, useRouter } from "expo-router";
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
@@ -9,21 +9,29 @@ import { ListingCard } from "../../src/features/marketplace/components/ListingCa
 import { useRequireMember } from "../../src/features/marketplace/helpers";
 import { CATEGORIES, type Category, type Listing } from "../../src/features/marketplace/types";
 import { useAuth } from "../../src/lib/auth";
+import { approxHere, milesBetween, placeCoords, type Coords } from "../../src/lib/location";
 import { marketplaceConfigured } from "../../src/lib/supabase";
 import { Button, Chip, Empty, errorText, useTheme } from "../../src/ui";
+
+// Pickup is local only, so the tab starts at 100 miles from the archer.
+const DISTANCES = [25, 50, 100, 250] as const;
+const DEFAULT_MILES = 100;
 
 export default function MarketTab() {
   const t = useTheme();
   const router = useRouter();
   const navigation = useNavigation();
   const requireMember = useRequireMember();
-  const { blocked } = useAuth();
+  const { blocked, profile } = useAuth();
   const { going, reload: reloadGoing } = useGoing();
 
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState(""); // search applied after a short pause
   const [category, setCategory] = useState<Category | null>(null);
   const [atMyShoots, setAtMyShoots] = useState(false);
+  const [miles, setMiles] = useState<number | null>(DEFAULT_MILES); // null = any distance
+  const [origin, setOrigin] = useState<Coords | null>(null);
+  const [originChecked, setOriginChecked] = useState(false);
   const [items, setItems] = useState<Listing[]>([]);
   const [page, setPage] = useState(0);
   const [hasMore, setHasMore] = useState(true);
@@ -52,16 +60,35 @@ export default function MarketTab() {
     return () => clearTimeout(id);
   }, [search]);
 
+  // Where "near me" is: the phone's rough location, or else the city on their profile.
+  useEffect(() => {
+    if (!marketplaceConfigured) return;
+    let cancelled = false;
+    (async () => {
+      const here = (await approxHere()) ?? (await placeCoords(profile?.city));
+      if (cancelled) return;
+      setOrigin(here);
+      setOriginChecked(true);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [profile?.city]);
+
+  // Shoot hand-offs are already local to a tournament, so the distance filter steps aside.
+  const near = !atMyShoots && miles && origin ? { at: origin, miles } : null;
+  const nearKey = near ? `${near.at.lat},${near.at.lng},${near.miles}` : "";
+
   const eventIds = atMyShoots ? Array.from(going) : null;
   const eventKey = eventIds?.join(",") ?? "";
 
   const load = useCallback(
     async (nextPage: number) => {
-      if (!marketplaceConfigured) return;
+      if (!marketplaceConfigured || !originChecked) return;
       const id = ++requestId.current;
       setLoading(true);
       try {
-        const rows = await fetchListings({ search: query, category, eventIds, page: nextPage });
+        const rows = await fetchListings({ search: query, category, eventIds, near, page: nextPage });
         if (id !== requestId.current) return; // a newer search started
         setItems((cur) => (nextPage === 0 ? rows : [...cur, ...rows.filter((r) => !cur.some((c) => c.id === r.id))]));
         setHasMore(rows.length === PAGE_SIZE);
@@ -74,7 +101,7 @@ export default function MarketTab() {
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [query, category, eventKey]
+    [query, category, eventKey, nearKey, originChecked]
   );
 
   useEffect(() => {
@@ -98,14 +125,30 @@ export default function MarketTab() {
     setRefreshing(false);
   }, [load]);
 
-  const visible = useMemo(() => items.filter((l) => !blocked.has(l.seller_id)), [items, blocked]);
+  const distanceTo = useCallback(
+    (l: Listing) => (origin && l.lat != null && l.lng != null ? milesBetween(origin, { lat: l.lat, lng: l.lng }) : null),
+    [origin]
+  );
+
+  // The database filters on a box around the archer; this trims it to a true circle.
+  const visible = useMemo(
+    () =>
+      items.filter((l) => {
+        if (blocked.has(l.seller_id)) return false;
+        if (!near) return true;
+        const d = distanceTo(l);
+        return d != null && d <= near.miles;
+      }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [items, blocked, nearKey, distanceTo]
+  );
 
   if (!marketplaceConfigured) {
     return (
       <View style={[styles.fill, { backgroundColor: t.background }]}>
         <Empty
           title="Marketplace coming soon"
-          body="Buy and sell used bows, arrows, sights and more with archers across Texas, and hand gear off at an upcoming shoot."
+          body="Buy and sell used bows, arrows, sights and more with archers near you, and hand gear off at an upcoming shoot."
         />
       </View>
     );
@@ -133,6 +176,19 @@ export default function MarketTab() {
           <Chip key={c.id} label={c.label} active={category === c.id} onPress={() => setCategory(category === c.id ? null : c.id)} />
         ))}
       </ScrollView>
+      {!atMyShoots ? (
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chips}>
+          {DISTANCES.map((d) => (
+            <Chip key={d} label={`Within ${d} mi`} active={!!origin && miles === d} onPress={() => setMiles(d)} />
+          ))}
+          <Chip label="Any distance" active={!origin || miles === null} onPress={() => setMiles(null)} />
+        </ScrollView>
+      ) : null}
+      {originChecked && !origin && !atMyShoots ? (
+        <Text style={[styles.hint, { color: t.muted }]}>
+          Showing gear from everywhere. Turn on location, or add your city in Account, to see gear you can pick up nearby.
+        </Text>
+      ) : null}
       {error ? <Text style={[styles.error, { color: t.danger }]}>{error}</Text> : null}
     </View>
   );
@@ -147,12 +203,12 @@ export default function MarketTab() {
       columnWrapperStyle={styles.row}
       renderItem={({ item }) => (
         <View style={styles.cell}>
-          <ListingCard listing={item} onPress={(l) => router.push(`/listing/${l.id}`)} />
+          <ListingCard listing={item} miles={distanceTo(item)} onPress={(l) => router.push(`/listing/${l.id}`)} />
         </View>
       )}
       ListHeaderComponent={header}
       ListEmptyComponent={
-        loading ? (
+        loading || !originChecked ? (
           <ActivityIndicator color={t.primary} style={{ marginTop: 40 }} />
         ) : atMyShoots ? (
           <Empty
@@ -165,8 +221,14 @@ export default function MarketTab() {
           />
         ) : (
           <Empty
-            title={query || category ? "No matches" : "No listings yet"}
-            body={query || category ? "Try a different search or category." : "Be the first to list some gear."}
+            title={query || category ? "No matches" : near ? `Nothing within ${near.miles} miles yet` : "No listings yet"}
+            body={
+              query || category
+                ? "Try a different search or category."
+                : near
+                  ? "Try a bigger distance, or be the first to list gear near you."
+                  : "Be the first to list some gear."
+            }
             action={<Button title="Sell gear" onPress={sell} />}
           />
         )
@@ -192,4 +254,5 @@ const styles = StyleSheet.create({
   searchInput: { flex: 1, fontSize: 16, paddingVertical: 10 },
   chips: { gap: 8, paddingRight: 8 },
   error: { fontSize: 13 },
+  hint: { fontSize: 13, lineHeight: 18 },
 });

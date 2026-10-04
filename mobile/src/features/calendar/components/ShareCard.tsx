@@ -18,7 +18,7 @@ const C = {
   accent: "#BE4F17",
   onAccent: "#FBF7F1",
   dark: "#30231A",
-  source: { TFAA: "#BE4F17", ASA: "#295B42", TSAA: "#275A91", USER: "#6B4C9A" } as Record<EventSource, string>,
+  source: { TFAA: "#BE4F17", ASA: "#295B42", TSAA: "#275A91", CLUB: "#8A6512", USER: "#6B4C9A" } as Record<EventSource, string>,
 };
 
 const MAX_ROWS = 5;
@@ -74,7 +74,7 @@ function Card({ events, info }: { events: TournamentEvent[]; info: ShareCardInfo
 
       <View style={s.foot}>
         <Text style={s.footTitle}>Come shoot with {info.name ? "me" : "us"}!</Text>
-        <Text style={s.footSub}>Find Texas shoots & see who's going — free Archery in Texas app</Text>
+        <Text style={s.footSub}>Find archery shoots & see who's going — free Archery in the USA app</Text>
       </View>
     </View>
   );

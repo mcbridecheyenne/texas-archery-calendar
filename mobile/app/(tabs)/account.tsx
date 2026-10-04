@@ -10,6 +10,7 @@ import { useFriends } from "../../src/features/friends";
 import { useAuth } from "../../src/lib/auth";
 import { photoUrl } from "../../src/lib/supabase";
 import { usePremium } from "../../src/monetization/premium";
+import { ScholarshipNote } from "../../src/monetization/ScholarshipNote";
 import { Button, SectionLabel, confirm, errorText, useTheme } from "../../src/ui";
 import { memberSince } from "../../src/features/marketplace/helpers";
 
@@ -138,7 +139,7 @@ export default function AccountTab() {
         <>
           <SectionLabel>Support the app</SectionLabel>
           <View style={[styles.card, { backgroundColor: t.card, borderColor: t.border }]}>
-            <Text style={[styles.h, { color: t.text }]}>❤️ Enjoying Archery in Texas?</Text>
+            <Text style={[styles.h, { color: t.text }]}>❤️ Enjoying Archery in the USA?</Text>
             <Text style={[styles.p, { color: t.muted }]}>
               It's built by an archer here in Texas. A tip helps keep the schedule updating and new features coming. Totally optional, and thank you!
             </Text>
@@ -161,6 +162,7 @@ export default function AccountTab() {
                 </View>
               ))}
             </View>
+            <ScholarshipNote />
           </View>
         </>
       ) : null}

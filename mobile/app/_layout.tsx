@@ -4,6 +4,7 @@ import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { AuthProvider } from "../src/lib/auth";
+import { HomeStateProvider } from "../src/lib/homeState";
 import { CommunityProvider } from "../src/features/community";
 import { FriendsProvider } from "../src/features/friends";
 import { InboxProvider } from "../src/features/marketplace/inbox";
@@ -27,37 +28,39 @@ export default function RootLayout() {
     <SafeAreaProvider>
       <PremiumProvider>
         <AuthProvider>
-          <InboxProvider>
-            <FriendsProvider>
-              <CommunityProvider>
-                <StatusBar style="auto" />
-                <Stack
-                  screenOptions={{
-                    headerStyle: { backgroundColor: t.background },
-                    headerTintColor: t.primary,
-                    headerTitleStyle: { color: t.text, fontWeight: "700" },
-                    headerShadowVisible: false,
-                    contentStyle: { backgroundColor: t.background },
-                    headerBackTitle: "Back",
-                  }}
-                >
-                  <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-                  <Stack.Screen name="listing/[id]" options={{ title: "" }} />
-                  <Stack.Screen name="listing/new" options={{ title: "Sell gear", presentation: "modal" }} />
-                  <Stack.Screen name="listing/edit/[id]" options={{ title: "Edit listing", presentation: "modal" }} />
-                  <Stack.Screen name="chat/[id]" options={{ title: "Messages" }} />
-                  <Stack.Screen name="sign-in" options={{ title: "Sign in", presentation: "modal" }} />
-                  <Stack.Screen name="setup-profile" options={{ title: "Your profile", presentation: "modal" }} />
-                  <Stack.Screen name="blocked" options={{ title: "Blocked people" }} />
-                  <Stack.Screen name="friends" options={{ title: "Friends" }} />
-                  <Stack.Screen name="add-friend/[code]" options={{ title: "Add friend" }} />
-                  <Stack.Screen name="tournament/new" options={{ title: "Add a tournament", presentation: "modal" }} />
-                  <Stack.Screen name="tournament/edit/[id]" options={{ title: "Edit tournament", presentation: "modal" }} />
-                </Stack>
-                <PremiumSheetHost />
-              </CommunityProvider>
-            </FriendsProvider>
-          </InboxProvider>
+          <HomeStateProvider>
+            <InboxProvider>
+              <FriendsProvider>
+                <CommunityProvider>
+                  <StatusBar style="auto" />
+                  <Stack
+                    screenOptions={{
+                      headerStyle: { backgroundColor: t.background },
+                      headerTintColor: t.primary,
+                      headerTitleStyle: { color: t.text, fontWeight: "700" },
+                      headerShadowVisible: false,
+                      contentStyle: { backgroundColor: t.background },
+                      headerBackTitle: "Back",
+                    }}
+                  >
+                    <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+                    <Stack.Screen name="listing/[id]" options={{ title: "" }} />
+                    <Stack.Screen name="listing/new" options={{ title: "Sell gear", presentation: "modal" }} />
+                    <Stack.Screen name="listing/edit/[id]" options={{ title: "Edit listing", presentation: "modal" }} />
+                    <Stack.Screen name="chat/[id]" options={{ title: "Messages" }} />
+                    <Stack.Screen name="sign-in" options={{ title: "Sign in", presentation: "modal" }} />
+                    <Stack.Screen name="setup-profile" options={{ title: "Your profile", presentation: "modal" }} />
+                    <Stack.Screen name="blocked" options={{ title: "Blocked people" }} />
+                    <Stack.Screen name="friends" options={{ title: "Friends" }} />
+                    <Stack.Screen name="add-friend/[code]" options={{ title: "Add friend" }} />
+                    <Stack.Screen name="tournament/new" options={{ title: "Add a tournament", presentation: "modal" }} />
+                    <Stack.Screen name="tournament/edit/[id]" options={{ title: "Edit tournament", presentation: "modal" }} />
+                  </Stack>
+                  <PremiumSheetHost />
+                </CommunityProvider>
+              </FriendsProvider>
+            </InboxProvider>
+          </HomeStateProvider>
         </AuthProvider>
       </PremiumProvider>
     </SafeAreaProvider>

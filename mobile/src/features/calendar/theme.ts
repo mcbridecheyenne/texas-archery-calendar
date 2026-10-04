@@ -33,6 +33,10 @@ const light: CalendarTheme = {
     TFAA: { solid: "#BE4F17", soft: "#F8E3D8" },
     ASA: { solid: "#295B42", soft: "#DCEDE4" },
     TSAA: { solid: "#275A91", soft: "#DFE9F5" },
+    S3DA: { solid: "#1F6E6E", soft: "#D8EDEC" },
+    WA: { solid: "#9B2C4A", soft: "#F5DDE4" },
+    OTHER: { solid: "#4F5B66", soft: "#E3E7EA" },
+    CLUB: { solid: "#8A6512", soft: "#F5EBD3" },
     USER: { solid: "#6B4C9A", soft: "#ECE4F5" },
   },
 };
@@ -53,6 +57,10 @@ const dark: CalendarTheme = {
     TFAA: { solid: "#E2703A", soft: "#3E2618" },
     ASA: { solid: "#4FA67B", soft: "#1E3329" },
     TSAA: { solid: "#5B92D1", soft: "#1C2A3D" },
+    S3DA: { solid: "#4DB3B0", soft: "#163130" },
+    WA: { solid: "#D9708C", soft: "#3A1C25" },
+    OTHER: { solid: "#A3AFBA", soft: "#262B30" },
+    CLUB: { solid: "#D9A93F", soft: "#3A2E14" },
     USER: { solid: "#A88BD6", soft: "#2D2440" },
   },
 };

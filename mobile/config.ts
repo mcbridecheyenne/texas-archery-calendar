@@ -22,11 +22,11 @@ export const EMAIL_SIGN_IN_ENABLED = false;
 export const PRIVACY_URL = `${API_BASE_URL}/privacy.html`;
 export const RULES_URL = `${API_BASE_URL}/marketplace-rules.html`;
 
-// Link added to shared shoots ("Get the Archery in Texas app"). It's a page on the website
+// Link added to shared shoots ("Get the Archery in the USA app"). It's a page on the website
 // that sends people to the App Store or Google Play, so it can be updated after launch
 // without an app update (edit client/public/app.html).
 export const APP_DOWNLOAD_URL = `${API_BASE_URL}/app.html`;
-export const SHARE_PLUG = `📲 Find Texas archery shoots and see who's going with the free Archery in Texas app: ${APP_DOWNLOAD_URL}`;
+export const SHARE_PLUG = `📲 Find archery shoots and see who's going with the free Archery in the USA app: ${APP_DOWNLOAD_URL}`;
 export const TERMS_URL = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/";
 
 // ---- Ads (Google AdMob) ----
@@ -37,6 +37,18 @@ export const ADS = {
   enabled: true,
   iosBannerId: "ca-app-pub-7930621070150782/8333303000", // Archery in Texas (iOS) · Bottom banner
   androidBannerId: "ca-app-pub-7930621070150782/6158655092", // Archery in Texas (Android) · Bottom banner
+};
+
+// ---- Texas Field Archery Scholarship Fund ----
+// A "Donate" button (opens the fund's own page in the browser; never an in-app purchase)
+// and the line "10% of the app's net proceeds ... is donated". Both only show to archers
+// whose home state is Texas and whose phone is in Texas right now (see
+// src/monetization/ScholarshipNote.tsx), and must stay out of the store listing.
+// TODO(Cheyenne): turn on once the fund has OK'd using its name in writing (brief Q2).
+// TODO(Cheyenne): paste the fund's donation page below (brief Q1). Until then the button is hidden.
+export const SCHOLARSHIP = {
+  enabled: false,
+  donateUrl: "", // PLACEHOLDER: the fund's donation page, e.g. "https://…"
 };
 
 // ---- Ad-free subscription (RevenueCat) ----
