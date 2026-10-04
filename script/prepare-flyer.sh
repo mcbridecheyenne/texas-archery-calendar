@@ -12,7 +12,8 @@ set -euo pipefail
 
 in="$1"
 slug="$2"
-out_dir="$(dirname "$0")/../client/public/flyers"
+# Writes into the repo you run it from, so it also works when run from a temp copy.
+out_dir="$(git rev-parse --show-toplevel)/client/public/flyers"
 out="$out_dir/$slug.jpg"
 max_bytes=400000 # keeps the app quick on rural cell signal
 mkdir -p "$out_dir"
