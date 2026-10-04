@@ -1,0 +1,1853 @@
+[
+ {
+  "club": "10001 Stinnett Hwy",
+  "city": "",
+  "site": "https://www.mapquest.com/",
+  "reachable": true,
+  "platform": "other",
+  "pages": [
+   "404 https://www.mapquest.com/events/",
+   "404 https://www.mapquest.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://www.mapquest.com/"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://www.mapquest.com/"
+ },
+ {
+  "club": "1975 Ranch 3D Archery",
+  "city": "Von Ormy",
+  "site": "https://1975ranch.com/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 0 ENOTFOUND"
+  ],
+  "homeStatus": 0
+ },
+ {
+  "club": "4-H District 3D shoot (AgriLife D2/4)",
+  "city": "",
+  "site": "https://d24-h.tamu.edu/",
+  "reachable": true,
+  "platform": "WordPress",
+  "pages": [
+   "200 https://d24-h.tamu.edu/d2-4-h-events/",
+   "200 https://d24-h.tamu.edu/d2-4-h-events/d2-4-h-contests/",
+   "200 https://d24-h.tamu.edu/d2-4-h-events/gold-star-award-banquet/",
+   "200 https://d24-h.tamu.edu/events/",
+   "404 https://d24-h.tamu.edu/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [
+   {
+    "url": "https://d24-h.tamu.edu/events/?ical=1",
+    "ok": false,
+    "status": 200,
+    "head": ""
+   }
+  ],
+  "tribe": {
+   "url": "https://d24-h.tamu.edu/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-04",
+   "ok": true,
+   "total": 0,
+   "samples": []
+  },
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://d24-h.tamu.edu/",
+   "calendar widget: addEvent on https://d24-h.tamu.edu/d2-4-h-events/",
+   "calendar widget: addEvent on https://d24-h.tamu.edu/d2-4-h-events/d2-4-h-contests/",
+   "calendar widget: addEvent on https://d24-h.tamu.edu/d2-4-h-events/gold-star-award-banquet/",
+   "calendar widget: addEvent on https://d24-h.tamu.edu/events/"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://d24-h.tamu.edu/"
+ },
+ {
+  "club": "Abilene Bowhunters Assn.",
+  "city": "",
+  "site": "http://abilenebowhunters.com/",
+  "reachable": true,
+  "platform": "Squarespace",
+  "pages": [
+   "200 https://www.abilenebowhunters.com/clubevents",
+   "200 https://www.abilenebowhunters.com/local-competitions",
+   "404 https://www.abilenebowhunters.com/events/",
+   "404 https://www.abilenebowhunters.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [
+   {
+    "url": "https://www.abilenebowhunters.com/local-competitions/cs3f2bzzmze6m83a25jb8cr5l4s97s?format=ical",
+    "ok": true,
+    "total": 1,
+    "upcoming": 0,
+    "samples": []
+   },
+   {
+    "url": "https://www.abilenebowhunters.com/local-competitions/5tgw2hxf4f8nb4l6lpfbkh9x4fkad2?format=ical",
+    "ok": true,
+    "total": 1,
+    "upcoming": 0,
+    "samples": []
+   },
+   {
+    "url": "https://www.abilenebowhunters.com/local-competitions/jzgznd7t9slczr9mjmkhl37w4xkpts?format=ical",
+    "ok": true,
+    "total": 1,
+    "upcoming": 0,
+    "samples": []
+   },
+   {
+    "url": "https://www.abilenebowhunters.com/local-competitions/kzzs6frlx7z9te9bkf4wnfx5fyfkj5?format=ical",
+    "ok": true,
+    "total": 1,
+    "upcoming": 0,
+    "samples": []
+   },
+   {
+    "url": "https://www.abilenebowhunters.com/local-competitions/lt9xcmsrthhj73fl39azgppkt6h7jg?format=ical",
+    "ok": true,
+    "total": 1,
+    "upcoming": 0,
+    "samples": []
+   }
+  ],
+  "tribe": null,
+  "squarespace": [
+   {
+    "url": "https://www.abilenebowhunters.com/clubevents?format=json",
+    "ok": false,
+    "error": "no upcoming/past keys"
+   }
+  ],
+  "notes": [
+   "calendar widget: addEvent on https://www.abilenebowhunters.com/",
+   "calendar widget: addEvent on https://www.abilenebowhunters.com/clubevents",
+   "calendar widget: addEvent on https://www.abilenebowhunters.com/local-competitions"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://www.abilenebowhunters.com/"
+ },
+ {
+  "club": "Archer County AgriLife (Holliday Creek Archery)",
+  "city": "Archer City",
+  "site": "https://archer.agrilife.org/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 403 "
+  ],
+  "homeStatus": 403
+ },
+ {
+  "club": "Archer's Haven",
+  "city": "Canyon Lake",
+  "site": "https://archershaven.com/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 0 ECONNREFUSED"
+  ],
+  "homeStatus": 0
+ },
+ {
+  "club": "Archer's Haven",
+  "city": "",
+  "site": "http://www.archershaven.org/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 0 ENOTFOUND"
+  ],
+  "homeStatus": 0
+ },
+ {
+  "club": "Archers for Christ",
+  "city": "Paris",
+  "site": "https://archersforchrist.org/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 0 ENOTFOUND"
+  ],
+  "homeStatus": 0
+ },
+ {
+  "club": "Archery Country",
+  "city": "Houston",
+  "site": "https://archerycountry.com/",
+  "reachable": true,
+  "platform": "Shopify",
+  "pages": [
+   "200 https://archerycountry.com/collections/events-classes-leagues",
+   "200 https://archerycountry.com/events/",
+   "404 https://archerycountry.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://archerycountry.com/",
+   "calendar widget: addEvent on https://archerycountry.com/collections/events-classes-leagues",
+   "calendar widget: addEvent on https://archerycountry.com/collections/events-classes-leagues"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://archerycountry.com/"
+ },
+ {
+  "club": "Archery HQ",
+  "city": "New Braunfels",
+  "site": "https://www.archeryhqtx.com/",
+  "reachable": true,
+  "platform": "Squarespace",
+  "pages": [
+   "200 https://www.archeryhqtx.com/events",
+   "200 https://www.archeryhqtx.com/3dandoutdoor",
+   "200 https://www.archeryhqtx.com/events/",
+   "404 https://www.archeryhqtx.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [
+   {
+    "url": "https://www.archeryhqtx.com/events/iy603426gucvgoeqmqe52htc9mqtmw?format=ical",
+    "ok": true,
+    "total": 1,
+    "upcoming": 0,
+    "samples": []
+   },
+   {
+    "url": "https://www.archeryhqtx.com/events/ladies-archery-october-event?format=ical",
+    "ok": true,
+    "total": 1,
+    "upcoming": 1,
+    "samples": [
+     "2026-10-17 Ladies Archery- October Event"
+    ]
+   },
+   {
+    "url": "https://www.archeryhqtx.com/events/sywat-shoot-your-way-across-texas?format=ical",
+    "ok": true,
+    "total": 1,
+    "upcoming": 1,
+    "samples": [
+     "2026-10-23 SYWAT- \"Shoot Your Way Across Texas\" #1"
+    ]
+   },
+   {
+    "url": "https://www.archeryhqtx.com/events/sywat-shoot-your-way-across-texas-w94bl?format=ical",
+    "ok": true,
+    "total": 1,
+    "upcoming": 1,
+    "samples": [
+     "2026-12-12 SYWAT- \"Shoot Your Way Across Texas\" #2"
+    ]
+   },
+   {
+    "url": "https://www.archeryhqtx.com/events/lonestar-600-archery-tournament?format=ical",
+    "ok": true,
+    "total": 1,
+    "upcoming": 1,
+    "samples": [
+     "2027-01-02 Lonestar 600 Archery Tournament"
+    ]
+   }
+  ],
+  "tribe": null,
+  "squarespace": [
+   {
+    "url": "https://www.archeryhqtx.com/events?format=json",
+    "ok": true,
+    "total": 5,
+    "past": 30,
+    "samples": [
+     "2026-09-18 fall Indoor League Nights",
+     "2026-10-17 Ladies Archery- October Event",
+     "2026-10-23 SYWAT- \"Shoot Your Way Across Texas\" #1",
+     "2026-12-12 SYWAT- \"Shoot Your Way Across Texas\" #2",
+     "2027-01-02 Lonestar 600 Archery Tournament"
+    ]
+   },
+   {
+    "url": "https://www.archeryhqtx.com/events?format=json",
+    "ok": true,
+    "total": 5,
+    "past": 30,
+    "samples": [
+     "2026-09-18 fall Indoor League Nights",
+     "2026-10-17 Ladies Archery- October Event",
+     "2026-10-23 SYWAT- \"Shoot Your Way Across Texas\" #1",
+     "2026-12-12 SYWAT- \"Shoot Your Way Across Texas\" #2",
+     "2027-01-02 Lonestar 600 Archery Tournament"
+    ]
+   }
+  ],
+  "notes": [
+   "calendar widget: addEvent on https://www.archeryhqtx.com/",
+   "calendar widget: addEvent on https://www.archeryhqtx.com/events",
+   "calendar widget: addEvent on https://www.archeryhqtx.com/3dandoutdoor",
+   "calendar widget: addEvent on https://www.archeryhqtx.com/events/"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://www.archeryhqtx.com/"
+ },
+ {
+  "club": "Archery Training Center",
+  "city": "Austin",
+  "site": "https://www.archerytrainingcenter.com/",
+  "reachable": true,
+  "platform": "other",
+  "pages": [
+   "200 https://www.archerytrainingcenter.com/calendar",
+   "404 https://www.archerytrainingcenter.com/events/",
+   "200 https://www.archerytrainingcenter.com/calendar/"
+  ],
+  "googleCalendars": [
+   {
+    "id": "3cdthat5q4hfrg00krafu4bt6k@group.calendar.google.com",
+    "url": "https://calendar.google.com/calendar/ical/3cdthat5q4hfrg00krafu4bt6k%40group.calendar.google.com/public/basic.ics",
+    "ok": true,
+    "total": 8008,
+    "upcoming": 1436,
+    "samples": [
+     "2023-10-03 (RRULE) OUTDOOR 3-9 at 13.5m-70m",
+     "2013-09-05 (RRULE) Indoor 2/3/4",
+     "2013-10-13 (RRULE) Indoor 3/4/5",
+     "2018-01-07 (RRULE) Warm Up",
+     "2016-01-03 (RRULE) Weigh\\, measure\\, dress\\, eat\\, makeup",
+     "2013-05-08 (RRULE) INDOOR PRACTICE for all archers at 13.5m + 18m",
+     "2013-09-21 (RRULE) Indoor 1: First-timers",
+     "2022-01-16 (RRULE) VIRTUAL NTS Form - Kevin",
+     "2021-04-07 (RRULE) VIRTUAL NTS Form for Instructors - Ted",
+     "2022-02-06 (RRULE) VIRTUAL NTS Form - Lily",
+     "2017-03-31 (RRULE) Week 13",
+     "2022-03-02 (RRULE) VIRTUAL NTS Form - Lily"
+    ],
+    "calname": "ATCI Classes"
+   }
+  ],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [],
+  "homeStatus": 200,
+  "finalUrl": "https://www.archerytrainingcenter.com/"
+ },
+ {
+  "club": "Arjun Archery Academy",
+  "city": "Frisco",
+  "site": "https://www.arjunarcheryacademy.com/",
+  "reachable": true,
+  "platform": "Google Sites",
+  "pages": [
+   "200 https://www.arjunarcheryacademy.com/tournaments",
+   "200 https://www.arjunarcheryacademy.com/tournaments/championship-league",
+   "200 https://www.arjunarcheryacademy.com/tournaments/aapl",
+   "200 https://www.arjunarcheryacademy.com/tournaments/sywat",
+   "200 https://www.arjunarcheryacademy.com/tournaments/upcoming-tournaments",
+   "200 https://www.arjunarcheryacademy.com/tournaments/archery-parents-businesses",
+   "200 https://www.arjunarcheryacademy.com/events/",
+   "404 https://www.arjunarcheryacademy.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://www.arjunarcheryacademy.com/",
+   "calendar widget: addEvent on https://www.arjunarcheryacademy.com/tournaments",
+   "calendar widget: addEvent on https://www.arjunarcheryacademy.com/tournaments/championship-league",
+   "calendar widget: addEvent on https://www.arjunarcheryacademy.com/tournaments/aapl",
+   "calendar widget: addEvent on https://www.arjunarcheryacademy.com/tournaments/sywat",
+   "calendar widget: addEvent on https://www.arjunarcheryacademy.com/tournaments/upcoming-tournaments",
+   "calendar widget: addEvent on https://www.arjunarcheryacademy.com/tournaments/archery-parents-businesses",
+   "calendar widget: addEvent on https://www.arjunarcheryacademy.com/events/"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://www.arjunarcheryacademy.com/"
+ },
+ {
+  "club": "Arrow Minded Outdoors",
+  "city": "Bulverde",
+  "site": "https://arrowmindedoutdoors.com/",
+  "reachable": true,
+  "platform": "GoDaddy",
+  "pages": [
+   "404 https://arrowmindedoutdoors.com/events/",
+   "404 https://arrowmindedoutdoors.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://arrowmindedoutdoors.com/"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://arrowmindedoutdoors.com/"
+ },
+ {
+  "club": "Arrow Minded Outdoors",
+  "city": "",
+  "site": "http://arrowminded.co/",
+  "reachable": true,
+  "platform": "other",
+  "pages": [
+   "202 http://arrowminded.co/events/",
+   "202 http://arrowminded.co/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [],
+  "homeStatus": 202,
+  "finalUrl": "http://arrowminded.co/"
+ },
+ {
+  "club": "Austin Archery Club",
+  "city": "Austin",
+  "site": "https://austinarcheryclub.com/",
+  "reachable": true,
+  "platform": "WordPress",
+  "pages": [
+   "200 https://austinarcheryclub.com/events/",
+   "404 https://austinarcheryclub.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": {
+   "url": "https://austinarcheryclub.com/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-04",
+   "ok": false,
+   "status": 404
+  },
+  "squarespace": [],
+  "notes": [],
+  "homeStatus": 200,
+  "finalUrl": "https://austinarcheryclub.com/"
+ },
+ {
+  "club": "Banana Bend Archery Club",
+  "city": "Baytown",
+  "site": "https://www.bananabendarchery.club/",
+  "reachable": true,
+  "platform": "other",
+  "pages": [
+   "404 https://gloucesterbluesfestival.com/events/",
+   "404 https://gloucesterbluesfestival.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://gloucesterbluesfestival.com/"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://gloucesterbluesfestival.com/"
+ },
+ {
+  "club": "Bayou Bowmen Archery Club",
+  "city": "",
+  "site": "https://bayoubowmenarchery.club/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 0 ENOTFOUND"
+  ],
+  "homeStatus": 0
+ },
+ {
+  "club": "Baytown Archery Club",
+  "city": "Baytown",
+  "site": "https://baytownarcheryclub.com/",
+  "reachable": true,
+  "platform": "GoDaddy",
+  "pages": [
+   "404 https://baytownarcheryclub.com/events/",
+   "404 https://baytownarcheryclub.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://baytownarcheryclub.com/"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://baytownarcheryclub.com/"
+ },
+ {
+  "club": "Brazos County Archery Club",
+  "city": "Bryan",
+  "site": "https://www.brazoscountyarchery.com/",
+  "reachable": true,
+  "platform": "Wix",
+  "pages": [
+   "200 https://www.brazoscountyarchery.com/schedule",
+   "200 https://www.brazoscountyarchery.com/copy-of-shoot-scores-2",
+   "200 https://www.brazoscountyarchery.com/club-shoot-information",
+   "200 https://www.brazoscountyarchery.com/copy-of-shoot-scores-1",
+   "200 https://www.brazoscountyarchery.com/copy-of-2024-shoot-scores",
+   "200 https://www.brazoscountyarchery.com/shoot-scores",
+   "404 https://www.brazoscountyarchery.com/events/",
+   "404 https://www.brazoscountyarchery.com/calendar/"
+  ],
+  "googleCalendars": [
+   {
+    "id": "brazoscountyarchery@gmail.com",
+    "url": "https://calendar.google.com/calendar/ical/brazoscountyarchery%40gmail.com/public/basic.ics",
+    "ok": true,
+    "total": 300,
+    "upcoming": 2,
+    "samples": [
+     "2014-03-04 (RRULE) BCAC Indoor League",
+     "2014-01-21 (RRULE) BCAC Indoor League"
+    ],
+    "calname": "brazoscountyarchery@gmail.com"
+   }
+  ],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://www.brazoscountyarchery.com/",
+   "calendar widget: addEvent on https://www.brazoscountyarchery.com/schedule",
+   "calendar widget: addEvent on https://www.brazoscountyarchery.com/copy-of-shoot-scores-2",
+   "calendar widget: addEvent on https://www.brazoscountyarchery.com/club-shoot-information",
+   "calendar widget: addEvent on https://www.brazoscountyarchery.com/copy-of-shoot-scores-1",
+   "calendar widget: addEvent on https://www.brazoscountyarchery.com/copy-of-2024-shoot-scores",
+   "calendar widget: addEvent on https://www.brazoscountyarchery.com/shoot-scores"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://www.brazoscountyarchery.com/"
+ },
+ {
+  "club": "Buck & Doe's Mercantile",
+  "city": "San Antonio",
+  "site": "https://buckdoes.com/",
+  "reachable": true,
+  "platform": "WordPress",
+  "pages": [
+   "200 https://buckdoes.com/first-time-shooters/",
+   "200 https://buckdoes.com/training/first-time-shooters/",
+   "200 https://buckdoes.com/calendar/",
+   "200 https://buckdoes.com/events/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": {
+   "url": "https://buckdoes.com/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-04",
+   "ok": false,
+   "status": 404
+  },
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://buckdoes.com/",
+   "calendar widget: addEvent on https://buckdoes.com/first-time-shooters/",
+   "calendar widget: addEvent on https://buckdoes.com/training/first-time-shooters/",
+   "calendar widget: addEvent on https://buckdoes.com/calendar/",
+   "calendar widget: addEvent on https://buckdoes.com/events/"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://buckdoes.com/"
+ },
+ {
+  "club": "Buffalo Field Archery Club",
+  "city": "Houston",
+  "site": "https://buffalofield.org/",
+  "reachable": true,
+  "platform": "WordPress",
+  "pages": [
+   "200 https://buffalofield.org/calendar/",
+   "200 https://buffalofield.org/events/month/",
+   "200 https://buffalofield.org/event/bfac-halloween-field-fun-shoot/",
+   "200 https://buffalofield.org/events/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [
+   {
+    "url": "https://buffalofield.org/events/?ical=1",
+    "ok": true,
+    "total": 1,
+    "upcoming": 1,
+    "samples": [
+     "2026-10-24 BFAC Halloween Field Fun Shoot"
+    ],
+    "calname": "Buffalo Field Archery Club"
+   },
+   {
+    "url": "https://buffalofield.org/?post_type=tribe_events&#038;ical=1&#038;eventDisplay=list",
+    "ok": false,
+    "status": 200,
+    "head": "<!DOCTYPE html>\r\n<html class=\"no-js\" lang=\"en\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta name=\"viewport\" content=\"widt"
+   },
+   {
+    "url": "https://buffalofield.org/events/month/?ical=1",
+    "ok": true,
+    "total": 1,
+    "upcoming": 1,
+    "samples": [
+     "2026-10-24 BFAC Halloween Field Fun Shoot"
+    ],
+    "calname": "Buffalo Field Archery Club"
+   },
+   {
+    "url": "https://buffalofield.org/event/bfac-halloween-field-fun-shoot/?ical=1",
+    "ok": true,
+    "total": 1,
+    "upcoming": 1,
+    "samples": [
+     "2026-10-24 BFAC Halloween Field Fun Shoot"
+    ],
+    "calname": "Buffalo Field Archery Club"
+   }
+  ],
+  "tribe": {
+   "url": "https://buffalofield.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-04",
+   "ok": true,
+   "total": 1,
+   "samples": [
+    "2026-10-24 BFAC Halloween Field Fun Shoot"
+   ]
+  },
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://buffalofield.org/",
+   "calendar widget: addEvent on https://buffalofield.org/calendar/",
+   "calendar widget: addEvent on https://buffalofield.org/events/month/",
+   "calendar widget: addevent on https://buffalofield.org/event/bfac-halloween-field-fun-shoot/",
+   "calendar widget: addEvent on https://buffalofield.org/events/"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://buffalofield.org/"
+ },
+ {
+  "club": "Central Texas Archery",
+  "city": "Manor",
+  "site": "https://centraltexasarchery.org/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 0 ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR"
+  ],
+  "homeStatus": 0
+ },
+ {
+  "club": "Cinnamon Creek Ranch",
+  "city": "Roanoke",
+  "site": "https://www.cinnamoncreekranch.com/",
+  "reachable": true,
+  "platform": "Wix",
+  "pages": [
+   "200 https://www.cinnamoncreekranch.com/events",
+   "200 https://www.cinnamoncreekranch.com/community-events",
+   "200 https://www.cinnamoncreekranch.com/teambuilding-corporate",
+   "200 https://www.cinnamoncreekranch.com/events/",
+   "404 https://www.cinnamoncreekranch.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://www.cinnamoncreekranch.com/",
+   "Wix events widget? https://www.cinnamoncreekranch.com/",
+   "calendar widget: addEvent on https://www.cinnamoncreekranch.com/events",
+   "Wix events widget? https://www.cinnamoncreekranch.com/events",
+   "calendar widget: addEvent on https://www.cinnamoncreekranch.com/community-events",
+   "Wix events widget? https://www.cinnamoncreekranch.com/community-events",
+   "calendar widget: addEvent on https://www.cinnamoncreekranch.com/teambuilding-corporate",
+   "Wix events widget? https://www.cinnamoncreekranch.com/teambuilding-corporate",
+   "calendar widget: addEvent on https://www.cinnamoncreekranch.com/events",
+   "Wix events widget? https://www.cinnamoncreekranch.com/events"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://www.cinnamoncreekranch.com/"
+ },
+ {
+  "club": "Collin County Bow Hunters",
+  "city": "",
+  "site": "http://www.collincountybowhunters.org/",
+  "reachable": true,
+  "platform": "WordPress",
+  "pages": [
+   "200 https://collincountybowhunters.org/events/",
+   "200 https://collincountybowhunters.org/tournament-success/",
+   "200 https://collincountybowhunters.org/schedule/",
+   "200 https://collincountybowhunters.org/tailgate-ministries-deerman-shoot/",
+   "404 https://collincountybowhunters.org/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": {
+   "url": "https://collincountybowhunters.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-04",
+   "ok": false,
+   "status": 404
+  },
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://collincountybowhunters.org/",
+   "calendar widget: addEvent on https://collincountybowhunters.org/events/",
+   "calendar widget: addEvent on https://collincountybowhunters.org/tournament-success/",
+   "calendar widget: addEvent on https://collincountybowhunters.org/schedule/",
+   "calendar widget: addEvent on https://collincountybowhunters.org/tailgate-ministries-deerman-shoot/"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://collincountybowhunters.org/"
+ },
+ {
+  "club": "Cowtown Bowmen",
+  "city": "Fort Worth",
+  "site": "https://www.cowtownbowmen.com/",
+  "reachable": true,
+  "platform": "other",
+  "pages": [
+   "200 https://www.cowtownbowmen.com/Shoots.html",
+   "200 https://www.cowtownbowmen.com/Photos.html",
+   "404 https://www.cowtownbowmen.com/events/",
+   "404 https://www.cowtownbowmen.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [],
+  "homeStatus": 200,
+  "finalUrl": "https://www.cowtownbowmen.com/index.html"
+ },
+ {
+  "club": "Dark Horse Archery",
+  "city": "Orange Grove",
+  "site": "https://darkhorsearchery.com/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 0 ECONNRESET"
+  ],
+  "homeStatus": 0
+ },
+ {
+  "club": "Dark Horse Archery",
+  "city": "",
+  "site": "https://darkhorse-archery.com/",
+  "reachable": true,
+  "platform": "GoDaddy",
+  "pages": [
+   "200 https://darkhorse-archery.com/veteran-foundation",
+   "404 https://darkhorse-archery.com/events/",
+   "404 https://darkhorse-archery.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://darkhorse-archery.com/",
+   "calendar widget: addEvent on https://darkhorse-archery.com/veteran-foundation"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://darkhorse-archery.com/"
+ },
+ {
+  "club": "Elm Fork Shooting Sports",
+  "city": "Dallas",
+  "site": "https://elmfork.com/",
+  "reachable": true,
+  "platform": "other",
+  "pages": [
+   "202 https://elmfork.com/events/",
+   "202 https://elmfork.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [],
+  "homeStatus": 202,
+  "finalUrl": "https://elmfork.com/"
+ },
+ {
+  "club": "Enduring Freedom Academy",
+  "city": "San Antonio",
+  "site": "https://enduringfreedomacademy.com/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 0 ENOTFOUND"
+  ],
+  "homeStatus": 0
+ },
+ {
+  "club": "Fort Grard",
+  "city": "",
+  "site": "https://www.fortgrard.com/",
+  "reachable": true,
+  "platform": "Weebly",
+  "pages": [
+   "200 https://www.fortgrard.com/calendar.html",
+   "200 https://www.fortgrard.com/2020-buckle-series-shoot-1.html",
+   "200 https://www.fortgrard.com/2020-buckle-series-shoot-2.html",
+   "200 https://www.fortgrard.com/2020-buckle-series-shoot-3.html",
+   "404 https://www.fortgrard.com/cdn-cgi/l/email-protection",
+   "404 https://www.fortgrard.com/events/",
+   "200 https://www.fortgrard.com/calendar/"
+  ],
+  "googleCalendars": [
+   {
+    "id": "ube761ip2hg745mmckus74206o@group.calendar.google.com",
+    "url": "https://calendar.google.com/calendar/ical/ube761ip2hg745mmckus74206o%40group.calendar.google.com/public/basic.ics",
+    "ok": true,
+    "total": 1011,
+    "upcoming": 44,
+    "samples": [
+     "2016-05-07 (RRULE) Fort Grard Club Shoot",
+     "2027-01-01 Closed Happy New Year!!!!",
+     "2024-09-11 (RRULE) Parker County Homeschool Group",
+     "2024-09-18 (RRULE) PC Homeschool NASP Practice",
+     "2015-11-17 (RRULE) Diva League",
+     "2026-11-26 Closed Happy Thanksgiving!!!",
+     "2027-01-03 Closed Inventory Days",
+     "2026-12-31 Closed Happy New Year!!!!",
+     "2023-03-09 (RRULE) 4H Parker county",
+     "2023-03-16 (RRULE) 4H",
+     "2018-12-03 (RRULE) Closed",
+     "2024-09-04 (RRULE) PC Homeschool NASP practice"
+    ],
+    "calname": "Fort Grard"
+   }
+  ],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://www.fortgrard.com/",
+   "calendar widget: addEvent on https://www.fortgrard.com/calendar.html",
+   "calendar widget: addEvent on https://www.fortgrard.com/2020-buckle-series-shoot-1.html",
+   "calendar widget: addEvent on https://www.fortgrard.com/2020-buckle-series-shoot-2.html",
+   "calendar widget: addEvent on https://www.fortgrard.com/2020-buckle-series-shoot-3.html",
+   "calendar widget: addEvent on https://www.fortgrard.com/calendar.html"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://www.fortgrard.com/"
+ },
+ {
+  "club": "Fredricksburg Archery Club",
+  "city": "",
+  "site": "http://www.fredericksburgarcheryclub.com/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 0 ENOTFOUND"
+  ],
+  "homeStatus": 0
+ },
+ {
+  "club": "Gateway Archery",
+  "city": "Fort Worth",
+  "site": "https://gatewayarchery.com/",
+  "reachable": true,
+  "platform": "other",
+  "pages": [
+   "404 https://www.gatewayarchery.com/events/",
+   "404 https://www.gatewayarchery.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://www.gatewayarchery.com/"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://www.gatewayarchery.com/"
+ },
+ {
+  "club": "Golden Triangle Archery",
+  "city": "Beaumont",
+  "site": "https://goldentrianglearchery.com/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 0 ENOTFOUND"
+  ],
+  "homeStatus": 0
+ },
+ {
+  "club": "Hill Country Bow Hunters",
+  "city": "Liberty Hill",
+  "site": "https://hillcountrybowhunters.com/",
+  "reachable": true,
+  "platform": "WordPress",
+  "pages": [
+   "200 https://hillcountrybowhunters.com/3d-archery/",
+   "200 https://hillcountrybowhunters.com/shootingdivisions/",
+   "200 https://hillcountrybowhunters.com/tournament-scores/",
+   "200 https://hillcountrybowhunters.com/soty/",
+   "200 https://hillcountrybowhunters.com/hcb-annual-fun-shoot-fundraiser/",
+   "200 https://hillcountrybowhunters.com/shootingdivisions",
+   "404 https://hillcountrybowhunters.com/events/",
+   "404 https://hillcountrybowhunters.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": {
+   "url": "https://hillcountrybowhunters.com/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-04",
+   "ok": false,
+   "status": 404
+  },
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://hillcountrybowhunters.com/",
+   "calendar widget: addEvent on https://hillcountrybowhunters.com/3d-archery/",
+   "calendar widget: addEvent on https://hillcountrybowhunters.com/shootingdivisions/",
+   "calendar widget: addEvent on https://hillcountrybowhunters.com/tournament-scores/",
+   "calendar widget: addEvent on https://hillcountrybowhunters.com/soty/",
+   "calendar widget: addEvent on https://hillcountrybowhunters.com/hcb-annual-fun-shoot-fundraiser/",
+   "calendar widget: addEvent on https://hillcountrybowhunters.com/shootingdivisions/"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://hillcountrybowhunters.com/"
+ },
+ {
+  "club": "Huaco Bowmen",
+  "city": "Waco",
+  "site": "https://huacobowmen.org/",
+  "reachable": true,
+  "platform": "GoDaddy",
+  "pages": [
+   "200 https://huacobowmen.org/events",
+   "200 https://huacobowmen.org/events/",
+   "404 https://huacobowmen.org/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://huacobowmen.org/",
+   "calendar widget: addEvent on https://huacobowmen.org/events",
+   "calendar widget: addEvent on https://huacobowmen.org/events/"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://huacobowmen.org/"
+ },
+ {
+  "club": "Hunters Archery",
+  "city": "",
+  "site": "https://huntersarchery.com/",
+  "reachable": true,
+  "platform": "WordPress",
+  "pages": [
+   "404 https://huntersarchery.com/events/",
+   "404 https://huntersarchery.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": {
+   "url": "https://huntersarchery.com/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-04",
+   "ok": false,
+   "status": 404
+  },
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://huntersarchery.com/"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://huntersarchery.com/"
+ },
+ {
+  "club": "Irving Bowhunters Association",
+  "city": "Dallas",
+  "site": "https://www.ibatx.org/",
+  "reachable": true,
+  "platform": "Wix",
+  "pages": [
+   "200 https://www.ibatx.org/schedule-and-events",
+   "404 https://www.ibatx.org/events/",
+   "404 https://www.ibatx.org/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://www.ibatx.org/",
+   "calendar widget: addEvent on https://www.ibatx.org/schedule-and-events"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://www.ibatx.org/"
+ },
+ {
+  "club": "Lake Granbury? LGRGC",
+  "city": "",
+  "site": "https://lgrgc.com/",
+  "reachable": true,
+  "platform": "other",
+  "pages": [
+   "200 https://lgrgc.com/events",
+   "200 https://lgrgc.com/Range-Calendar",
+   "200 https://lgrgc.com/Womens-Shooting-Clinic",
+   "200 https://lgrgc.com/event-6809653",
+   "200 https://lgrgc.com/event-6469034",
+   "200 https://lgrgc.com/event-6793167",
+   "200 https://lgrgc.com/events/",
+   "404 https://lgrgc.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "calendar widget: TeamUp on https://lgrgc.com/",
+   "calendar widget: TeamUp on https://lgrgc.com/events",
+   "calendar widget: TeamUp on https://lgrgc.com/Range-Calendar",
+   "calendar widget: TeamUp on https://lgrgc.com/Womens-Shooting-Clinic",
+   "calendar widget: TeamUp on https://lgrgc.com/event-6809653",
+   "calendar widget: TeamUp on https://lgrgc.com/event-6469034",
+   "calendar widget: TeamUp on https://lgrgc.com/event-6793167",
+   "calendar widget: TeamUp on https://lgrgc.com/events/"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://lgrgc.com/"
+ },
+ {
+  "club": "Leading Edge Archery",
+  "city": "Boerne",
+  "site": "https://leadingedgearchery.com/",
+  "reachable": true,
+  "platform": "WordPress",
+  "pages": [
+   "200 https://www.leadingedgearchery.com/events-and-info",
+   "200 https://leadingedgearchery.com/events/",
+   "404 https://leadingedgearchery.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": {
+   "url": "https://leadingedgearchery.com/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-04",
+   "ok": false,
+   "status": 404
+  },
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://leadingedgearchery.com/",
+   "calendar widget: addEvent on https://leadingedgearchery.com/events-and-info/",
+   "calendar widget: addEvent on https://leadingedgearchery.com/events-and-info/"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://leadingedgearchery.com/"
+ },
+ {
+  "club": "Legacy Archery DFW",
+  "city": "Fort Worth",
+  "site": "https://www.legacyarcherydfw.com/",
+  "reachable": true,
+  "platform": "Squarespace",
+  "pages": [
+   "404 https://www.legacyarcherydfw.com/events/",
+   "404 https://www.legacyarcherydfw.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://www.legacyarcherydfw.com/"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://www.legacyarcherydfw.com/"
+ },
+ {
+  "club": "Lone Star Selfbow Society",
+  "city": "",
+  "site": "https://lonestarselfbow.com/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 0 ENOTFOUND"
+  ],
+  "homeStatus": 0
+ },
+ {
+  "club": "Mesquite Archery Club",
+  "city": "Terrell",
+  "site": "https://www.mesquitearcheryclub.com/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 404 "
+  ],
+  "homeStatus": 404
+ },
+ {
+  "club": "North Caddo Shooting Club",
+  "city": "",
+  "site": "https://ncscshooting.org/",
+  "reachable": true,
+  "platform": "WordPress",
+  "pages": [
+   "200 https://ncscshooting.org/",
+   "200 https://ncscshooting.org/?page_id=796",
+   "200 https://ncscshooting.org/?page_id=159",
+   "200 https://ncscshooting.org/?page_id=693",
+   "200 https://ncscshooting.org/?page_id=520",
+   "200 https://ncscshooting.org/?page_id=204",
+   "404 https://ncscshooting.org/events/",
+   "404 https://ncscshooting.org/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": {
+   "url": "https://ncscshooting.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-04",
+   "ok": false,
+   "status": 404
+  },
+  "squarespace": [],
+  "notes": [],
+  "homeStatus": 200,
+  "finalUrl": "https://ncscshooting.org/"
+ },
+ {
+  "club": "Ollie Liner Center",
+  "city": "",
+  "site": "https://www.halecounty.org/",
+  "reachable": true,
+  "platform": "other",
+  "pages": [
+   "200 https://www.halecounty.org/calendar.php",
+   "404 https://www.halecounty.org/events/",
+   "404 https://www.halecounty.org/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://www.halecounty.org/"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://www.halecounty.org/"
+ },
+ {
+  "club": "Palo Duro Bowhunters",
+  "city": "Amarillo",
+  "site": "https://palodurobowhunters.com/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 0 ENOTFOUND"
+  ],
+  "homeStatus": 0
+ },
+ {
+  "club": "Panola Archery Club",
+  "city": "Carthage",
+  "site": "https://panolaarcheryclub.com/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 0 ENOTFOUND"
+  ],
+  "homeStatus": 0
+ },
+ {
+  "club": "Pearland Archery Club",
+  "city": "Pearland",
+  "site": "https://pearlandarcheryclub.com/",
+  "reachable": true,
+  "platform": "GoDaddy",
+  "pages": [
+   "404 https://pearlandarcheryclub.com/events/",
+   "200 https://pearlandarcheryclub.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://pearlandarcheryclub.com/",
+   "calendar widget: addEvent on https://pearlandarcheryclub.com/calendar/"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://pearlandarcheryclub.com/"
+ },
+ {
+  "club": "Red River Bowmen",
+  "city": "",
+  "site": "http://www.redriverbowmenarcheryclub.com/",
+  "reachable": true,
+  "platform": "Wix",
+  "pages": [
+   "200 https://www.redriverbowmenarcheryclub.com/rrbac-2026-events",
+   "200 https://www.redriverbowmenarcheryclub.com/calendar",
+   "200 https://www.redriverbowmenarcheryclub.com/indoor-leagues-education-clinics",
+   "404 https://www.redriverbowmenarcheryclub.com/events/",
+   "200 https://www.redriverbowmenarcheryclub.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://www.redriverbowmenarcheryclub.com/",
+   "Wix events widget? https://www.redriverbowmenarcheryclub.com/",
+   "calendar widget: addEvent on https://www.redriverbowmenarcheryclub.com/rrbac-2026-events",
+   "Wix events widget? https://www.redriverbowmenarcheryclub.com/rrbac-2026-events",
+   "calendar widget: addEvent on https://www.redriverbowmenarcheryclub.com/calendar",
+   "Wix events widget? https://www.redriverbowmenarcheryclub.com/calendar",
+   "calendar widget: addEvent on https://www.redriverbowmenarcheryclub.com/indoor-leagues-education-clinics",
+   "Wix events widget? https://www.redriverbowmenarcheryclub.com/indoor-leagues-education-clinics",
+   "calendar widget: addEvent on https://www.redriverbowmenarcheryclub.com/calendar",
+   "Wix events widget? https://www.redriverbowmenarcheryclub.com/calendar"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://www.redriverbowmenarcheryclub.com/"
+ },
+ {
+  "club": "Rio Grande Valley Shooting Center",
+  "city": "Rio Hondo",
+  "site": "https://rgvsc.com/",
+  "reachable": true,
+  "platform": "other",
+  "pages": [
+   "404 https://rgvsc.com/events/",
+   "404 https://rgvsc.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [],
+  "homeStatus": 200,
+  "finalUrl": "https://rgvsc.com/"
+ },
+ {
+  "club": "Rockdale Archery / Bowhunters Texas",
+  "city": "",
+  "site": "https://bowhunterstx.com/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 0 ENOTFOUND"
+  ],
+  "homeStatus": 0
+ },
+ {
+  "club": "Saddle River Range",
+  "city": "Conroe",
+  "site": "https://saddleriverrange.com/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 403 "
+  ],
+  "homeStatus": 403
+ },
+ {
+  "club": "SF Hog Heaven",
+  "city": "",
+  "site": "https://sfhogheaven.com/",
+  "reachable": true,
+  "platform": "other",
+  "pages": [
+   "200 https://hogheaven.com/events",
+   "200 https://hogheaven.com/private-events",
+   "200 https://hogheaven.com/events/",
+   "404 https://hogheaven.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://hogheaven.com/",
+   "calendar widget: addEvent on https://hogheaven.com/events",
+   "calendar widget: addEvent on https://hogheaven.com/private-events",
+   "calendar widget: addEvent on https://hogheaven.com/events"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://hogheaven.com/"
+ },
+ {
+  "club": "Sherwood Archery",
+  "city": "Bedias",
+  "site": "https://sherwoodarchery.com/",
+  "reachable": true,
+  "platform": "other",
+  "pages": [
+   "200 https://sherwoodarchery.com/events/",
+   "200 https://sherwoodarchery.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [],
+  "homeStatus": 200,
+  "finalUrl": "https://sherwoodarchery.com/"
+ },
+ {
+  "club": "Sherwood Archery",
+  "city": "",
+  "site": "http://sherwoodtargetarchery.com/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 0 ENOTFOUND"
+  ],
+  "homeStatus": 0
+ },
+ {
+  "club": "South Plains Archery Club",
+  "city": "Lubbock",
+  "site": "https://southplainsarchery.com/",
+  "reachable": true,
+  "platform": "GoDaddy",
+  "pages": [
+   "200 https://southplainsarchery.com/shoot-results",
+   "404 https://southplainsarchery.com/events/",
+   "404 https://southplainsarchery.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://southplainsarchery.com/",
+   "calendar widget: addEvent on https://southplainsarchery.com/shoot-results"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://southplainsarchery.com/"
+ },
+ {
+  "club": "Target Seekers",
+  "city": "Lubbock",
+  "site": "https://targetseekers.org/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 0 ENOTFOUND"
+  ],
+  "homeStatus": 0
+ },
+ {
+  "club": "Tejas Bowmen",
+  "city": "Corpus Christi",
+  "site": "https://tejasbowmen.com/",
+  "reachable": true,
+  "platform": "other",
+  "pages": [
+   "200 https://tejasbowmen.com/events/",
+   "200 https://tejasbowmen.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [],
+  "homeStatus": 200,
+  "finalUrl": "https://tejasbowmen.com/"
+ },
+ {
+  "club": "Tejas Bowmen Archery Club",
+  "city": "",
+  "site": "http://www.tejasbowmenarcheryclub.com/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 0 ENOTFOUND"
+  ],
+  "homeStatus": 0
+ },
+ {
+  "club": "Texans Archery Club (Elm Fork)",
+  "city": "Dallas",
+  "site": "https://texasarchery.info/",
+  "reachable": true,
+  "platform": "WordPress",
+  "pages": [
+   "200 https://texasarchery.info/dallas-tournaments",
+   "200 https://texasarchery.info/pins",
+   "403 https://texasarchery.info/events/",
+   "200 https://texasarchery.info/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": {
+   "url": "https://texasarchery.info/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-04",
+   "ok": false,
+   "status": 404
+  },
+  "squarespace": [],
+  "notes": [],
+  "homeStatus": 200,
+  "finalUrl": "https://texasarchery.info/"
+ },
+ {
+  "club": "TexArchery",
+  "city": "",
+  "site": "https://texarchery.com/",
+  "reachable": true,
+  "platform": "Shopify",
+  "pages": [
+   "200 https://texarchery.com/pages/corporate-events",
+   "200 https://texarchery.com/pages/events",
+   "404 https://texarchery.com/events/",
+   "404 https://texarchery.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://texarchery.com/",
+   "calendar widget: addEvent on https://texarchery.com/pages/corporate-events",
+   "calendar widget: addEvent on https://texarchery.com/pages/events"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://texarchery.com/"
+ },
+ {
+  "club": "Texas A&M Archery",
+  "city": "College Station",
+  "site": "https://tamuarchery.com/",
+  "reachable": true,
+  "platform": "GoDaddy",
+  "pages": [
+   "404 https://tamuarchery.com/events/",
+   "404 https://tamuarchery.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://tamuarchery.com/"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://tamuarchery.com/"
+ },
+ {
+  "club": "Texas Archery Academy",
+  "city": "",
+  "site": "https://texasarcheryacademy.com/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 404 "
+  ],
+  "homeStatus": 404
+ },
+ {
+  "club": "Texas ASA Federation",
+  "city": "",
+  "site": "https://www.txasafederation.com/",
+  "reachable": true,
+  "platform": "Wix",
+  "pages": [
+   "200 https://www.txasafederation.com/texas-asa-schedule",
+   "200 https://www.txasafederation.com/shooter-of-the-year",
+   "200 https://www.txasafederation.com/tournament-results-archive",
+   "200 https://www.txasafederation.com/copy-of-2024-tournament-results",
+   "200 https://www.txasafederation.com/copy-of-2023-tournament-results",
+   "200 https://www.txasafederation.com/copy-of-2022-tournament-results",
+   "404 https://www.txasafederation.com/events/",
+   "404 https://www.txasafederation.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://www.txasafederation.com/",
+   "Wix events widget? https://www.txasafederation.com/",
+   "calendar widget: addEvent on https://www.txasafederation.com/texas-asa-schedule",
+   "Wix events widget? https://www.txasafederation.com/texas-asa-schedule",
+   "calendar widget: addEvent on https://www.txasafederation.com/shooter-of-the-year",
+   "Wix events widget? https://www.txasafederation.com/shooter-of-the-year",
+   "calendar widget: addEvent on https://www.txasafederation.com/tournament-results-archive",
+   "Wix events widget? https://www.txasafederation.com/tournament-results-archive",
+   "calendar widget: addEvent on https://www.txasafederation.com/copy-of-2024-tournament-results",
+   "Wix events widget? https://www.txasafederation.com/copy-of-2024-tournament-results",
+   "calendar widget: addEvent on https://www.txasafederation.com/copy-of-2023-tournament-results",
+   "Wix events widget? https://www.txasafederation.com/copy-of-2023-tournament-results",
+   "calendar widget: addEvent on https://www.txasafederation.com/copy-of-2022-tournament-results",
+   "Wix events widget? https://www.txasafederation.com/copy-of-2022-tournament-results"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://www.txasafederation.com/"
+ },
+ {
+  "club": "Texas Field Archery Association",
+  "city": "",
+  "site": "https://texasfieldarchery.org/",
+  "reachable": true,
+  "platform": "other",
+  "pages": [
+   "200 https://texasfieldarchery.org/",
+   "200 https://texasfieldarchery.org/calendar",
+   "200 https://texasfieldarchery.org/schedule",
+   "200 https://texasfieldarchery.org/9003D",
+   "200 https://texasfieldarchery.org/field50",
+   "200 https://texasfieldarchery.org/schedule/53",
+   "200 https://texasfieldarchery.org/events/",
+   "200 https://texasfieldarchery.org/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [],
+  "homeStatus": 200,
+  "finalUrl": "https://texasfieldarchery.org/"
+ },
+ {
+  "club": "Texas Longbow Shoot",
+  "city": "",
+  "site": "https://texaslongbow.com/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 0 ENOTFOUND"
+  ],
+  "homeStatus": 0
+ },
+ {
+  "club": "Texas State Archery Association",
+  "city": "",
+  "site": "https://texasarchery.org/",
+  "reachable": true,
+  "platform": "other",
+  "pages": [
+   "200 https://texasarchery.org/events/",
+   "200 https://texasarchery.org/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [],
+  "homeStatus": 200,
+  "finalUrl": "https://texasarchery.org/"
+ },
+ {
+  "club": "Texas Trophy Hunters Association",
+  "city": "",
+  "site": "https://ttha.com/",
+  "reachable": true,
+  "platform": "WordPress",
+  "pages": [
+   "200 https://ttha.com/ttha-hunters-extravaganza/",
+   "404 https://ttha.com/events/",
+   "404 https://ttha.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": {
+   "url": "https://ttha.com/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-04",
+   "ok": false,
+   "status": 404
+  },
+  "squarespace": [],
+  "notes": [
+   "calendar widget: addEvent on https://ttha.com/",
+   "calendar widget: addEvent on https://ttha.com/ttha-hunters-extravaganza/"
+  ],
+  "homeStatus": 200,
+  "finalUrl": "https://ttha.com/"
+ },
+ {
+  "club": "The Carriage Archery Club",
+  "city": "Houston",
+  "site": "https://thecarriagehtx.com/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 403 "
+  ],
+  "homeStatus": 403
+ },
+ {
+  "club": "the3d.org",
+  "city": "",
+  "site": "http://www.the3d.org/",
+  "reachable": true,
+  "platform": "GoDaddy",
+  "pages": [
+   "200 http://www.the3d.org/Worldrecords.html",
+   "200 http://www.the3d.org/texasrecords.html",
+   "200 http://www.the3d.org/oklahomarecords.html",
+   "200 http://www.the3d.org/qualdates.html",
+   "200 http://www.the3d.org/Rulebook.html",
+   "200 http://www.the3d.org/TKscoring.html",
+   "404 http://www.the3d.org/events/",
+   "404 http://www.the3d.org/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [],
+  "homeStatus": 200,
+  "finalUrl": "http://www.the3d.org/"
+ },
+ {
+  "club": "tpwd.state.tx.us",
+  "city": "",
+  "site": "http://www.tpwd.state.tx.us/",
+  "reachable": true,
+  "platform": "other",
+  "pages": [
+   "200 https://tpwd.texas.gov/calendar/",
+   "200 https://tpwd.texas.gov/calendar/state-park-events",
+   "200 https://tpwd.texas.gov/calendar/recruiting",
+   "200 https://tpwd.texas.gov/events/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [],
+  "homeStatus": 200,
+  "finalUrl": "https://tpwd.texas.gov/"
+ },
+ {
+  "club": "Traditional Bowhunters of Texas",
+  "city": "",
+  "site": "https://www.tbot.org/",
+  "reachable": true,
+  "platform": "other",
+  "pages": [
+   "200 https://www.tbot.org/schedule.html",
+   "200 https://www.tbot.org/schedule_club.html",
+   "200 https://www.tbot.org/shoot_results/past_shoot_results.html",
+   "200 https://www.tbot.org/hill_country_shootout.html",
+   "200 https://www.tbot.org/documents/schedule/2027_tbot_hcso.pdf",
+   "200 https://www.tbot.org/officers.html",
+   "200 https://www.tbot.org/events/",
+   "200 https://www.tbot.org/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [],
+  "homeStatus": 200,
+  "finalUrl": "https://www.tbot.org/"
+ },
+ {
+  "club": "traditionalarcherysociety.com",
+  "city": "",
+  "site": "https://www.traditionalarcherysociety.com/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 0 ERR_TLS_CERT_ALTNAME_INVALID"
+  ],
+  "homeStatus": 0
+ },
+ {
+  "club": "Tyler Archery Club",
+  "city": "Tyler",
+  "site": "https://tylerarcheryclub.com/",
+  "reachable": true,
+  "platform": "WordPress",
+  "pages": [
+   "200 https://tylerarcheryclub.com/2026/08/05/why-join-an-archery-club-more-than-just-shooting-arrows/",
+   "404 https://tylerarcheryclub.com/events/",
+   "404 https://tylerarcheryclub.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": {
+   "url": "https://tylerarcheryclub.com/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-04",
+   "ok": false,
+   "status": 404
+  },
+  "squarespace": [],
+  "notes": [],
+  "homeStatus": 200,
+  "finalUrl": "https://tylerarcheryclub.com/"
+ },
+ {
+  "club": "Victoria Shooting Sports",
+  "city": "Victoria",
+  "site": "https://victoriashootingsports.com/",
+  "reachable": false,
+  "platform": null,
+  "pages": [],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [
+   "home 0 ENOTFOUND"
+  ],
+  "homeStatus": 0
+ },
+ {
+  "club": "Viking Archery",
+  "city": "San Antonio",
+  "site": "https://viking-archery.com/",
+  "reachable": true,
+  "platform": "other",
+  "pages": [
+   "200 https://viking-archery.com/Archery_Events_in_the_Texas_Hill_Country_near_San_Antonio.php",
+   "404 https://viking-archery.com/events/",
+   "404 https://viking-archery.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [],
+  "homeStatus": 200,
+  "finalUrl": "https://viking-archery.com/"
+ },
+ {
+  "club": "Web-Author.com",
+  "city": "",
+  "site": "http://web-author.com/",
+  "reachable": true,
+  "platform": "Squarespace",
+  "pages": [
+   "200 https://web-author.com/events/",
+   "200 https://web-author.com/calendar/"
+  ],
+  "googleCalendars": [],
+  "icsLinks": [],
+  "tribe": null,
+  "squarespace": [],
+  "notes": [],
+  "homeStatus": 200,
+  "finalUrl": "https://web-author.com/"
+ }
+]

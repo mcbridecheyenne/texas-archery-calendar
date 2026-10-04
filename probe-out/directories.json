@@ -1,0 +1,557 @@
+[
+ {
+  "directory": "https://texasfieldarchery.org/clubs",
+  "status": 200,
+  "links": [
+   {
+    "url": "http://www.archershaven.org/",
+    "text": "Archer's Haven"
+   },
+   {
+    "url": "https://www.arjunarcheryacademy.com/",
+    "text": "Arjun Archery Academy"
+   },
+   {
+    "url": "http://arrowminded.co/",
+    "text": "Arrow Minded Outdoors"
+   },
+   {
+    "url": "http://www.austinarcheryclub.com/",
+    "text": "Austin Archery Club"
+   },
+   {
+    "url": "https://bayoubowmenarchery.club/index.html#/",
+    "text": "Bayou Bowmen Archery Club"
+   },
+   {
+    "url": "https://buffalofield.org/",
+    "text": "Buffalo Field Archery Club"
+   },
+   {
+    "url": "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+    "text": "10001 Stinnett Hwy"
+   },
+   {
+    "url": "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+    "text": "Borger, TX 79007"
+   },
+   {
+    "url": "https://centraltexasarchery.org/",
+    "text": "Central Texas Archery"
+   },
+   {
+    "url": "http://www.cowtownbowmen.com/",
+    "text": "Cowtown Bowmen"
+   },
+   {
+    "url": "https://darkhorse-archery.com/",
+    "text": "Dark Horse Archery"
+   },
+   {
+    "url": "https://www.ibatx.org/",
+    "text": "Irving Bowhunters Association"
+   },
+   {
+    "url": "https://www.ibatx.org/location",
+    "text": "2041 South Walton Walker Blvd"
+   },
+   {
+    "url": "https://www.ibatx.org/location",
+    "text": "Dallas, TX 75211"
+   },
+   {
+    "url": "https://ncscshooting.org/",
+    "text": "North Caddo Shooting Club"
+   },
+   {
+    "url": "https://www.halecounty.org/county_offices/ollie_liner_center.php",
+    "text": "Ollie Liner Center"
+   },
+   {
+    "url": "http://www.pearlandarcheryclub.com/welcome.html",
+    "text": "Pearland Archery Club"
+   },
+   {
+    "url": "http://www.redriverbowmenarcheryclub.com/",
+    "text": "Red River Bowmen"
+   },
+   {
+    "url": "http://sherwoodtargetarchery.com/",
+    "text": "Sherwood Archery"
+   },
+   {
+    "url": "http://texasarchery.info/",
+    "text": "TAA - Plano"
+   },
+   {
+    "url": "http://www.tejasbowmenarcheryclub.com/",
+    "text": "Tejas Bowmen Archery Club"
+   }
+  ],
+  "calendars": []
+ },
+ {
+  "directory": "https://texasfieldarchery.org/clubs (club pages)",
+  "sub": [
+   {
+    "page": "https://texasfieldarchery.org/clubs#",
+    "text": "TOURNAMENTS",
+    "links": [
+     "http://www.archershaven.org/",
+     "https://www.arjunarcheryacademy.com/",
+     "http://arrowminded.co/",
+     "http://www.austinarcheryclub.com/",
+     "https://bayoubowmenarchery.club/index.html#/",
+     "https://buffalofield.org/",
+     "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+     "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+     "https://centraltexasarchery.org/",
+     "http://www.cowtownbowmen.com/",
+     "https://darkhorse-archery.com/",
+     "https://www.ibatx.org/",
+     "https://www.ibatx.org/location",
+     "https://www.ibatx.org/location",
+     "https://ncscshooting.org/",
+     "https://www.halecounty.org/county_offices/ollie_liner_center.php",
+     "http://www.pearlandarcheryclub.com/welcome.html",
+     "http://www.redriverbowmenarcheryclub.com/",
+     "http://sherwoodtargetarchery.com/",
+     "http://texasarchery.info/",
+     "http://www.tejasbowmenarcheryclub.com/"
+    ]
+   },
+   {
+    "page": "https://texasfieldarchery.org/clubs#",
+    "text": "SCHEDULE",
+    "links": [
+     "http://www.archershaven.org/",
+     "https://www.arjunarcheryacademy.com/",
+     "http://arrowminded.co/",
+     "http://www.austinarcheryclub.com/",
+     "https://bayoubowmenarchery.club/index.html#/",
+     "https://buffalofield.org/",
+     "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+     "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+     "https://centraltexasarchery.org/",
+     "http://www.cowtownbowmen.com/",
+     "https://darkhorse-archery.com/",
+     "https://www.ibatx.org/",
+     "https://www.ibatx.org/location",
+     "https://www.ibatx.org/location",
+     "https://ncscshooting.org/",
+     "https://www.halecounty.org/county_offices/ollie_liner_center.php",
+     "http://www.pearlandarcheryclub.com/welcome.html",
+     "http://www.redriverbowmenarcheryclub.com/",
+     "http://sherwoodtargetarchery.com/",
+     "http://texasarchery.info/",
+     "http://www.tejasbowmenarcheryclub.com/"
+    ]
+   },
+   {
+    "page": "https://texasfieldarchery.org/clubs#",
+    "text": "RESULTS",
+    "links": [
+     "http://www.archershaven.org/",
+     "https://www.arjunarcheryacademy.com/",
+     "http://arrowminded.co/",
+     "http://www.austinarcheryclub.com/",
+     "https://bayoubowmenarchery.club/index.html#/",
+     "https://buffalofield.org/",
+     "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+     "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+     "https://centraltexasarchery.org/",
+     "http://www.cowtownbowmen.com/",
+     "https://darkhorse-archery.com/",
+     "https://www.ibatx.org/",
+     "https://www.ibatx.org/location",
+     "https://www.ibatx.org/location",
+     "https://ncscshooting.org/",
+     "https://www.halecounty.org/county_offices/ollie_liner_center.php",
+     "http://www.pearlandarcheryclub.com/welcome.html",
+     "http://www.redriverbowmenarcheryclub.com/",
+     "http://sherwoodtargetarchery.com/",
+     "http://texasarchery.info/",
+     "http://www.tejasbowmenarcheryclub.com/"
+    ]
+   },
+   {
+    "page": "https://texasfieldarchery.org/clubs#",
+    "text": "RECORDS",
+    "links": [
+     "http://www.archershaven.org/",
+     "https://www.arjunarcheryacademy.com/",
+     "http://arrowminded.co/",
+     "http://www.austinarcheryclub.com/",
+     "https://bayoubowmenarchery.club/index.html#/",
+     "https://buffalofield.org/",
+     "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+     "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+     "https://centraltexasarchery.org/",
+     "http://www.cowtownbowmen.com/",
+     "https://darkhorse-archery.com/",
+     "https://www.ibatx.org/",
+     "https://www.ibatx.org/location",
+     "https://www.ibatx.org/location",
+     "https://ncscshooting.org/",
+     "https://www.halecounty.org/county_offices/ollie_liner_center.php",
+     "http://www.pearlandarcheryclub.com/welcome.html",
+     "http://www.redriverbowmenarcheryclub.com/",
+     "http://sherwoodtargetarchery.com/",
+     "http://texasarchery.info/",
+     "http://www.tejasbowmenarcheryclub.com/"
+    ]
+   },
+   {
+    "page": "https://texasfieldarchery.org/clubs",
+    "text": "CLUBS",
+    "links": [
+     "http://www.archershaven.org/",
+     "https://www.arjunarcheryacademy.com/",
+     "http://arrowminded.co/",
+     "http://www.austinarcheryclub.com/",
+     "https://bayoubowmenarchery.club/index.html#/",
+     "https://buffalofield.org/",
+     "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+     "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+     "https://centraltexasarchery.org/",
+     "http://www.cowtownbowmen.com/",
+     "https://darkhorse-archery.com/",
+     "https://www.ibatx.org/",
+     "https://www.ibatx.org/location",
+     "https://www.ibatx.org/location",
+     "https://ncscshooting.org/",
+     "https://www.halecounty.org/county_offices/ollie_liner_center.php",
+     "http://www.pearlandarcheryclub.com/welcome.html",
+     "http://www.redriverbowmenarcheryclub.com/",
+     "http://sherwoodtargetarchery.com/",
+     "http://texasarchery.info/",
+     "http://www.tejasbowmenarcheryclub.com/"
+    ]
+   },
+   {
+    "page": "https://texasfieldarchery.org/clubs#",
+    "text": "HALL OF FAME",
+    "links": [
+     "http://www.archershaven.org/",
+     "https://www.arjunarcheryacademy.com/",
+     "http://arrowminded.co/",
+     "http://www.austinarcheryclub.com/",
+     "https://bayoubowmenarchery.club/index.html#/",
+     "https://buffalofield.org/",
+     "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+     "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+     "https://centraltexasarchery.org/",
+     "http://www.cowtownbowmen.com/",
+     "https://darkhorse-archery.com/",
+     "https://www.ibatx.org/",
+     "https://www.ibatx.org/location",
+     "https://www.ibatx.org/location",
+     "https://ncscshooting.org/",
+     "https://www.halecounty.org/county_offices/ollie_liner_center.php",
+     "http://www.pearlandarcheryclub.com/welcome.html",
+     "http://www.redriverbowmenarcheryclub.com/",
+     "http://sherwoodtargetarchery.com/",
+     "http://texasarchery.info/",
+     "http://www.tejasbowmenarcheryclub.com/"
+    ]
+   },
+   {
+    "page": "https://texasfieldarchery.org/clubs#",
+    "text": "ABOUT",
+    "links": [
+     "http://www.archershaven.org/",
+     "https://www.arjunarcheryacademy.com/",
+     "http://arrowminded.co/",
+     "http://www.austinarcheryclub.com/",
+     "https://bayoubowmenarchery.club/index.html#/",
+     "https://buffalofield.org/",
+     "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+     "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+     "https://centraltexasarchery.org/",
+     "http://www.cowtownbowmen.com/",
+     "https://darkhorse-archery.com/",
+     "https://www.ibatx.org/",
+     "https://www.ibatx.org/location",
+     "https://www.ibatx.org/location",
+     "https://ncscshooting.org/",
+     "https://www.halecounty.org/county_offices/ollie_liner_center.php",
+     "http://www.pearlandarcheryclub.com/welcome.html",
+     "http://www.redriverbowmenarcheryclub.com/",
+     "http://sherwoodtargetarchery.com/",
+     "http://texasarchery.info/",
+     "http://www.tejasbowmenarcheryclub.com/"
+    ]
+   },
+   {
+    "page": "https://texasfieldarchery.org/clubs#",
+    "text": "",
+    "links": [
+     "http://www.archershaven.org/",
+     "https://www.arjunarcheryacademy.com/",
+     "http://arrowminded.co/",
+     "http://www.austinarcheryclub.com/",
+     "https://bayoubowmenarchery.club/index.html#/",
+     "https://buffalofield.org/",
+     "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+     "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+     "https://centraltexasarchery.org/",
+     "http://www.cowtownbowmen.com/",
+     "https://darkhorse-archery.com/",
+     "https://www.ibatx.org/",
+     "https://www.ibatx.org/location",
+     "https://www.ibatx.org/location",
+     "https://ncscshooting.org/",
+     "https://www.halecounty.org/county_offices/ollie_liner_center.php",
+     "http://www.pearlandarcheryclub.com/welcome.html",
+     "http://www.redriverbowmenarcheryclub.com/",
+     "http://sherwoodtargetarchery.com/",
+     "http://texasarchery.info/",
+     "http://www.tejasbowmenarcheryclub.com/"
+    ]
+   },
+   {
+    "page": "https://texasfieldarchery.org/clubs#",
+    "text": "",
+    "links": [
+     "http://www.archershaven.org/",
+     "https://www.arjunarcheryacademy.com/",
+     "http://arrowminded.co/",
+     "http://www.austinarcheryclub.com/",
+     "https://bayoubowmenarchery.club/index.html#/",
+     "https://buffalofield.org/",
+     "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+     "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+     "https://centraltexasarchery.org/",
+     "http://www.cowtownbowmen.com/",
+     "https://darkhorse-archery.com/",
+     "https://www.ibatx.org/",
+     "https://www.ibatx.org/location",
+     "https://www.ibatx.org/location",
+     "https://ncscshooting.org/",
+     "https://www.halecounty.org/county_offices/ollie_liner_center.php",
+     "http://www.pearlandarcheryclub.com/welcome.html",
+     "http://www.redriverbowmenarcheryclub.com/",
+     "http://sherwoodtargetarchery.com/",
+     "http://texasarchery.info/",
+     "http://www.tejasbowmenarcheryclub.com/"
+    ]
+   },
+   {
+    "page": "https://texasfieldarchery.org/clubs#",
+    "text": "",
+    "links": [
+     "http://www.archershaven.org/",
+     "https://www.arjunarcheryacademy.com/",
+     "http://arrowminded.co/",
+     "http://www.austinarcheryclub.com/",
+     "https://bayoubowmenarchery.club/index.html#/",
+     "https://buffalofield.org/",
+     "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+     "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+     "https://centraltexasarchery.org/",
+     "http://www.cowtownbowmen.com/",
+     "https://darkhorse-archery.com/",
+     "https://www.ibatx.org/",
+     "https://www.ibatx.org/location",
+     "https://www.ibatx.org/location",
+     "https://ncscshooting.org/",
+     "https://www.halecounty.org/county_offices/ollie_liner_center.php",
+     "http://www.pearlandarcheryclub.com/welcome.html",
+     "http://www.redriverbowmenarcheryclub.com/",
+     "http://sherwoodtargetarchery.com/",
+     "http://texasarchery.info/",
+     "http://www.tejasbowmenarcheryclub.com/"
+    ]
+   },
+   {
+    "page": "https://texasfieldarchery.org/clubs#",
+    "text": "",
+    "links": [
+     "http://www.archershaven.org/",
+     "https://www.arjunarcheryacademy.com/",
+     "http://arrowminded.co/",
+     "http://www.austinarcheryclub.com/",
+     "https://bayoubowmenarchery.club/index.html#/",
+     "https://buffalofield.org/",
+     "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+     "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+     "https://centraltexasarchery.org/",
+     "http://www.cowtownbowmen.com/",
+     "https://darkhorse-archery.com/",
+     "https://www.ibatx.org/",
+     "https://www.ibatx.org/location",
+     "https://www.ibatx.org/location",
+     "https://ncscshooting.org/",
+     "https://www.halecounty.org/county_offices/ollie_liner_center.php",
+     "http://www.pearlandarcheryclub.com/welcome.html",
+     "http://www.redriverbowmenarcheryclub.com/",
+     "http://sherwoodtargetarchery.com/",
+     "http://texasarchery.info/",
+     "http://www.tejasbowmenarcheryclub.com/"
+    ]
+   },
+   {
+    "page": "https://texasfieldarchery.org/clubs#",
+    "text": "",
+    "links": [
+     "http://www.archershaven.org/",
+     "https://www.arjunarcheryacademy.com/",
+     "http://arrowminded.co/",
+     "http://www.austinarcheryclub.com/",
+     "https://bayoubowmenarchery.club/index.html#/",
+     "https://buffalofield.org/",
+     "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+     "https://www.mapquest.com/us/texas/canadian-river-archery-gun-club-379628170",
+     "https://centraltexasarchery.org/",
+     "http://www.cowtownbowmen.com/",
+     "https://darkhorse-archery.com/",
+     "https://www.ibatx.org/",
+     "https://www.ibatx.org/location",
+     "https://www.ibatx.org/location",
+     "https://ncscshooting.org/",
+     "https://www.halecounty.org/county_offices/ollie_liner_center.php",
+     "http://www.pearlandarcheryclub.com/welcome.html",
+     "http://www.redriverbowmenarcheryclub.com/",
+     "http://sherwoodtargetarchery.com/",
+     "http://texasarchery.info/",
+     "http://www.tejasbowmenarcheryclub.com/"
+    ]
+   }
+  ]
+ },
+ {
+  "directory": "https://texasfieldarchery.org/clubs (raw sample)",
+  "sample": "<!DOCTYPE html> <head> <!-- Global Site Tag (gtag.js) - Google Analytics --> <script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-104922530-1\"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-104922530-1'); </script> <meta charset=\"utf-8\" /> <title>TFAA</title> <meta name=\"description\" content=\"Texas Field Archery Association\" /> <!-- mobile settings --> <meta id=\"viewport\" name=\"viewport\" content=\"width=device-width, maximum-scale=1, initial-scale=1, user-scalable=1\" /> <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]--> <!-- WEB FONTS : use %7C instead of | (pipe) --> <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700\" rel=\"stylesheet\" type=\"text/css\" /> <!-- CORE CSS --> <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css\" integrity=\"sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7\" crossorigin=\"anonymous\"> <!-- REVOLUTION SLIDER --> <link href=\"/resources/theme/default/assets/plugins/slider.revolution/css/extralayers.css\" rel=\"stylesheet\" type=\"text/css\" /> <link href=\"/resources/theme/default/assets/plugins/slider.revolution/css/settings.css\" rel=\"stylesheet\" type=\"text/css\" /> <link href=\"/resources/theme/default/assets/plugins/bootstrap.datepicker/css/bootstrap-datepicker3.min.css\" rel=\"stylesheet\" type=\"text/css\" /> <!-- THEME CSS --> <!--<link rel=\"stylesheet\" href=\"/resources/css/app.css\">--> <link href=\"/resources/theme/default/assets/css/essentials.css\" rel=\"stylesheet\" type=\"text/css\" /> <link href=\"/resources/theme/default/assets/css/layout.css\" rel=\"stylesheet\" type=\"text/css\" /> <link href=\"/resources/theme/default/custom.css\" rel=\"stylesheet\" type=\"text/css\" /> <!-- PAGE LEVEL SCRIPTS --> <link href=\"/resources/theme/default/assets/css/header-1.css\" rel=\"stylesheet\" type=\"text/css\" /> <link href=\"/resources/theme/default/assets/css/color_scheme/darkblue.css\" rel=\"stylesheet\" type=\"text/css\" id=\"color_scheme\" /> <script src=\"/resources/theme/admin/plugins/jquery/jquery-2.2.4.min.js\"></script> <script src=\"/resources/theme/default/assets/plugins/bootstrap/js/bootstrap.js\"></script> <script src=\"/resources/theme/default/assets/plugins/bootstrap.datepicker/js/bootstrap-datepicker.js\"></script> <script src=\"/resources/theme/default/app.js\"></script> </head> <body class=\"smoothscroll enable-animation\"> <div id=\"fb-root\"></div> <script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=1931323320471855\"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk')); </script> <div id=\"wrapper\"> <!-- Top Bar --> <div id=\"topBar\" class=\"hidden-xs\"> <div class=\"container\"> <!-- right --> <ul class=\"top-links list-inline pull-right\"> <li class=\"hidden-xs\"><a href=\"/login\">LOGIN</a></li> <!--<li class=\"hidden-xs\"><a href=\"/register\">REGISTER</a></li>--> </ul> </div> </div> <!-- /Top Bar --> <div id=\"header\" class=\"sticky clearfix\"> <!-- TOP NAV --> <header id=\"topNav\"> <div class=\"container\"> <!-- Mobile Menu Button --> <button class=\"btn btn-mobile\" data-toggle=\"collapse\" data-target=\".nav-main-collapse\"> <i class=\"fa fa-bars\"></i> </button> <!-- BUTTONS --> <ul class=\"pull-right nav nav-pills nav-second-main\"> <!-- SEARCH --> <li class=\"search\"> <a href=\"javascript:;\"> <i class=\"fa fa-search\"></i> </a> <div class=\"search-box\"> <form action=\"/todo/search\" method=\"post\"> <div class=\"input-group\"> <input type=\"text\" name=\"src\" placeholder=\"Search\" class=\"form-control\" /> <span class=\"input-group-btn\"> <button class=\"btn btn-primary\" type=\"submit\">Search</button> </span> </div> </form> </div> </li> <!-- /SEARCH --> </ul> <!-- /BUTTONS --> <!-- Logo --> <a class=\"logo pull-left\" href=\"/\"> <img src=\"/resources/img/logo.png\" alt=\"Logo\" /> </a> <div class=\"navbar-collapse pull-right nav-main-collapse collapse submenu-dark\"> <nav class=\"nav-main\"> <ul id=\"topMain\" class=\"nav nav-pills nav-main\"> <li class=\"visible-xs-block\"><a href=\"/login\">LOGIN</a></li> <li class=\"dropdown\"><a class=\"dropdown-toggle\" href=\"#\">TOURNAMENTS</a><ul class=\"dropdown-menu\"> <li class=\"dropdown\"><a class=\"dropdown-toggle\" href=\"#\">SCHEDULE</a><ul class=\"dropdown-menu\"> <li><a href=\"/calendar\">CALENDAR VIEW</a></li> <li><a href=\"/schedule\">LIST VIEW</a></li> </ul></li> <li class=\"dropdown\"><a class=\"dropdown-toggle\" href=\"#\">RESULTS</a><ul class=\"dropdown-menu\"> <li><a href=\"/results\">SYWAT</a></li> <li><a href=\"/results/state\">STATE</a></li> <li><a href=\"/results/sectional\">SECTIONAL</a></li> <li><a href=\"/results/sywat\">SYWAT STANDINGS</a></li> </ul></li> <li><a href=\"/DivisionsAndStyles\">DIVISIONS-STYLES-AGE GROUPS</a></li> <li><a href=\"/sywat/indoor\">SYWAT INDOOR</a></li> <li><a href=\"/sywat/outdoor\">SYWAT OUTDOOR</a></li> <li><a href=\"/CONTRACTS\">STATE CHAMPIONSHIP CONTRACTS</a></li> <li><a href=\"/SYWATSCORING\">FOR SHOPS AND SCORERS</a></li> <li><a href=\"9003D\">900 ROUND AND KNOWN 3D</a></li> <li><a href=\"/NFAACOURSEFORMS\">NFAA FORMS</a></li> <li><a href=\"field50\">FIELD 50 (TRIAL) OUTDOOR TOURNAMENT</a></li> </ul></li> <li class=\"dropdown\"><a class=\"dropdown-toggle\" href=\"#\">RECORDS</a><ul class=\"dropdown-menu\"> <li><a href=\"/records/indoor\">INDOOR</a></li> <li><a href=\"/records/outdoor\">OUTDOOR</a></li> <li><a href=\"/records/900\">900 ROUND</a></li> </ul></li> <li><a href=\"/clubs\">CLUBS</a></li> <li><a href=\"/proshops\">PRO SHOPS</a></li> <li class=\"dropdown\"><a class=\"dropdown-toggle\" href=\"#\">HALL OF FAME</a><ul class=\"dropdown-menu\"> <li><a href=\"hof/about\">ABOUT THE TFAA HOF</a></li> <li><a href=\"/hof/new\">INDUCTEES</a></li> </ul></li> <li><a href=\"/membership\">MEMBERSHIP</a></li> <li class=\"dropdown\"><a class=\"dropdown-toggle\" href=\"#\">"
+ },
+ {
+  "directory": "https://www.txasafederation.com/club-links",
+  "status": 200,
+  "links": [
+   {
+    "url": "https://www.archershaven.org/",
+    "text": "Archer&#x27;s Haven"
+   },
+   {
+    "url": "http://www.bananabendarchery.club/",
+    "text": "Banana Bend Archery Club"
+   },
+   {
+    "url": "http://www.collincountybowhunters.org/",
+    "text": "Collin County Bow Hunters"
+   },
+   {
+    "url": "http://www.fredericksburgarcheryclub.com/",
+    "text": "Fredricksburg Archery Club"
+   },
+   {
+    "url": "http://www.mesquitearcheryclub.com/",
+    "text": "Mesquite Archery Club"
+   },
+   {
+    "url": "http://www.southplainsarchery.com/",
+    "text": "South Plains Archery Club"
+   },
+   {
+    "url": "http://abilenebowhunters.com/",
+    "text": "Abilene Bowhunters Assn."
+   },
+   {
+    "url": "http://www.brazoscountyarchery.com/",
+    "text": "Brazos County Archery Club"
+   },
+   {
+    "url": "http://www.buffalofield.org/",
+    "text": "Buffalo Field Archery Club"
+   },
+   {
+    "url": "http://www.cowtownbowmen.com/",
+    "text": "Cowtown Bowmen"
+   },
+   {
+    "url": "http://www.tejasbowmen.com/",
+    "text": "Tejas Archery Club"
+   },
+   {
+    "url": "http://austinarcheryclub.com/",
+    "text": "Austin Archery Club"
+   },
+   {
+    "url": "http://www.cinnamoncreekranch.com/",
+    "text": "Cinnamon Creek Ranch"
+   },
+   {
+    "url": "https://www.fortgrard.com/",
+    "text": "Fort Grard"
+   },
+   {
+    "url": "http://www.ibatx.org/",
+    "text": "Irving Bowhunters"
+   }
+  ],
+  "calendars": []
+ },
+ {
+  "directory": "https://www.tbot.org/schedule_club.html",
+  "status": 200,
+  "links": [
+   {
+    "url": "http://web-author.com/",
+    "text": "Web-Author.com"
+   }
+  ],
+  "calendars": []
+ },
+ {
+  "directory": "https://www.tbot.org/schedule.html",
+  "status": 200,
+  "links": [
+   {
+    "url": "http://web-author.com/",
+    "text": "Web-Author.com"
+   }
+  ],
+  "calendars": []
+ },
+ {
+  "directory": "https://centraltexasarchery.org/archery-associations",
+  "status": 0,
+  "error": "ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR"
+ },
+ {
+  "directory": "https://www.ibatx.org/copy-of-sponsors",
+  "status": 200,
+  "links": [
+   {
+    "url": "http://www.tpwd.state.tx.us/",
+    "text": ""
+   },
+   {
+    "url": "https://www.txasafederation.com/",
+    "text": ""
+   },
+   {
+    "url": "https://www.traditionalarcherysociety.com/",
+    "text": ""
+   },
+   {
+    "url": "https://www.tbot.org/",
+    "text": ""
+   },
+   {
+    "url": "https://texasfieldarchery.org/",
+    "text": ""
+   },
+   {
+    "url": "http://www.the3d.org/",
+    "text": ""
+   }
+  ],
+  "calendars": []
+ },
+ {
+  "directory": "https://texasarchery.org/Events",
+  "status": 200,
+  "links": [],
+  "calendars": []
+ }
+]
