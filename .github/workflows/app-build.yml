@@ -10,6 +10,8 @@ on:
 jobs:
   ios:
     runs-on: ubuntu-latest
+    env:
+      EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
     defaults:
       run:
         working-directory: mobile
@@ -17,13 +19,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
           cache-dependency-path: mobile/package-lock.json
-      - uses: expo/expo-github-action@v8
-        with:
-          eas-version: latest
-          token: ${{ secrets.EXPO_TOKEN }}
+      - run: npm install -g eas-cli
+      - run: eas whoami
       - run: npm ci
       - run: npx tsc --noEmit
       - run: eas build --platform ios --profile production --non-interactive --auto-submit
