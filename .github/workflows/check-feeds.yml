@@ -1,10 +1,11 @@
 # Runs both collectors without publishing anything, so a pull request can show whether
-# every source still returns events. Fails when a source comes back with 0 events.
+# every source still returns events. Fails when a source comes back with 0 events (a club
+# calendar that loads with no shoots on it is only a warning).
 name: Check event sources
 
 on:
   pull_request:
-    paths: ["api/**", "script/collect-*.ts", "data/**", ".github/workflows/check-feeds.yml"]
+    paths: ["api/**", "script/collect-*.ts", "script/*.test.ts", "data/**", ".github/workflows/check-feeds.yml"]
   workflow_dispatch:
 
 permissions:
@@ -24,6 +25,9 @@ jobs:
       - name: Install
         run: npm ci --ignore-scripts
 
+      - name: Club feed parser tests
+        run: node --experimental-strip-types --test script/club-feeds.test.ts
+
       - name: Collect Texas events
         run: node --experimental-strip-types script/collect-events.ts out/events.json | tee texas.log
 
@@ -37,6 +41,15 @@ jobs:
           {
             echo "### Texas feed"; echo '```'; cat texas.log; echo '```'
             echo "### Nationwide feed"; echo '```'; cat usa.log; echo '```'
+            echo "### Club calendar shoots"
+            node -e '
+              const fs = require("fs");
+              if (!fs.existsSync("out/events-usa.json")) process.exit(0);
+              const { events } = JSON.parse(fs.readFileSync("out/events-usa.json", "utf8"));
+              console.log("| Club | Dates | Shoot | Organization |\n|---|---|---|---|");
+              for (const e of events.filter((e) => e.source === "CLUB"))
+                console.log(`| ${e.contact} | ${e.startDate}${e.endDate !== e.startDate ? ` to ${e.endDate}` : ""} | [${e.name}](${e.sourceUrl}) | ${e.organization} |`);
+            '
           } >> "$GITHUB_STEP_SUMMARY"
           node -e '
             const fs = require("fs");
@@ -47,7 +60,11 @@ jobs:
               const { sources } = JSON.parse(fs.readFileSync(f, "utf8"));
               for (const s of sources) {
                 const line = `${s.name}: ${s.status}, ${s.eventCount} events${s.message ? ` (${s.message})` : ""} [${f}]`;
-                if (!s.eventCount) { bad++; console.log(`::error::${line}`); }
+                // A club calendar that loads but has no shoots right now is only a warning:
+                // clubs go quiet between seasons.
+                const quietClub = s.name.startsWith("CLUB: ") && s.status === "ok";
+                if (!s.eventCount && quietClub) console.log(`::warning::${line}`);
+                else if (!s.eventCount) { bad++; console.log(`::error::${line}`); }
                 else console.log(`::notice::${line}`);
               }
             }

@@ -2,10 +2,14 @@
 // _scrapers.ts so the Texas feed (events.json) the current app reads is unchanged.
 import { readFileSync } from "node:fs";
 import { getEvents, type TournamentEvent, type SourceStatus } from "./_scrapers.ts";
+import { alreadyListed, collectClubFeeds, type ClubFeed } from "./_clubFeeds.ts";
 
 export interface UsaEvent extends Omit<TournamentEvent, "source"> {
   source: string;
   organization: string;
+  // Club calendar events only: the status row ("CLUB: <club>") the event came from, so a
+  // feed that fails can keep its own events from the last good run.
+  feedName?: string;
 }
 
 export interface UsaSourceStatus extends Omit<SourceStatus, "name"> {
@@ -213,26 +217,48 @@ async function collectManual(): Promise<UsaEvent[]> {
   }));
 }
 
+// --- Club calendar feeds (data/club-feeds.json) ---
+function loadClubFeeds(): ClubFeed[] {
+  try {
+    const path = new URL("../data/club-feeds.json", import.meta.url);
+    return JSON.parse(readFileSync(path, "utf8")) as ClubFeed[];
+  } catch (err) {
+    console.warn(`data/club-feeds.json could not be read, skipping club feeds: ${err}`);
+    return [];
+  }
+}
+
 export async function getUsaEvents(): Promise<UsaResult> {
   // S3DA is not collected automatically: its site has no events API and answers automated
   // requests from GitHub with a block page (checked 2026-10-04). Its national and state
   // championships go in data/manual-events.json instead. collectS3DA is kept in case they
   // open a feed.
-  const [texas, wa, manual] = await Promise.all([
+  const [texas, wa, manual, clubs] = await Promise.all([
     getEvents(),
     runSource("World Archery", WA_URL, collectWorldArchery),
     runSource("Manual", "data/manual-events.json", collectManual),
+    collectClubFeeds(loadClubFeeds()),
   ]);
   const texasEvents: UsaEvent[] = texas.events.map((e) => ({
     ...e, state: normalizeState(e.state) ?? "TX", organization: TEXAS_ORGANIZATION[e.source],
   }));
+  // A club shoot that TFAA, Texas ASA or TSAA already lists is shown once, from the
+  // association's schedule.
+  const clubEvents: UsaEvent[] = clubs.events.filter((e) => !alreadyListed(e, texas.events));
+  for (const s of clubs.sources) {
+    const kept = clubEvents.filter((e) => e.feedName === s.name).length;
+    if (kept !== s.eventCount) {
+      s.message = [s.message, `${s.eventCount - kept} already listed by TFAA/Texas ASA/TSAA`].filter(Boolean).join("; ");
+      s.eventCount = kept;
+    }
+  }
   const today = new Date().toISOString().slice(0, 10);
-  const events = [...texasEvents, ...wa.events, ...manual.events]
+  const events = [...texasEvents, ...wa.events, ...manual.events, ...clubEvents]
     .filter((e) => e.endDate >= today)
     .sort((a, b) => a.startDate.localeCompare(b.startDate) || a.name.localeCompare(b.name));
   return {
     events,
-    sources: [...texas.sources, wa.status, manual.status],
+    sources: [...texas.sources, wa.status, manual.status, ...clubs.sources],
     lastUpdated: new Date().toISOString(),
   };
 }

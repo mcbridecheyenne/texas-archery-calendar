@@ -1,5 +1,6 @@
-// Collects nationwide events (the Texas sources plus World Archery and the hand-kept
-// list in data/manual-events.json) into events-usa.json. Runs next to collect-events.ts in
+// Collects nationwide events (the Texas sources plus World Archery, the hand-kept
+// list in data/manual-events.json and the club calendars in data/club-feeds.json) into
+// events-usa.json. Runs next to collect-events.ts in
 // .github/workflows/pages.yml; the current app's events.json is not touched.
 //
 //   node --experimental-strip-types script/collect-usa-events.ts dist/public/events-usa.json
@@ -27,10 +28,14 @@ async function loadPrevious(): Promise<UsaResult | null> {
 
 const [fresh, previous] = await Promise.all([getUsaEvents(), loadPrevious()]);
 
+const today = new Date().toISOString().slice(0, 10);
 for (const status of fresh.sources) {
-  const failed = status.status === "error" || status.eventCount === 0;
+  // A club calendar that loads with no shoots on it is believed (the club may have taken
+  // a shoot down); only one that can't be read keeps its last good events.
+  const isClub = status.name.startsWith("CLUB: ");
+  const failed = status.status === "error" || (!isClub && status.eventCount === 0);
   if (!failed || !previous) continue;
-  const kept = previous.events.filter((e) => e.source === status.name);
+  const kept = previous.events.filter((e) => (e.feedName ?? e.source) === status.name && e.endDate >= today);
   if (!kept.length) continue;
   const prevStatus = previous.sources.find((s) => s.name === status.name);
   fresh.events.push(...kept);
