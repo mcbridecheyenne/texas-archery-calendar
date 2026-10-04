@@ -2,10 +2,11 @@
 import type { ReactNode } from "react";
 
 /**
- * Official schedules, "CLUB" for shoots a host club emailed in (checked and added to
- * events.json by Cheyenne), and "USER" for tournaments archers added in the app.
+ * Official schedules (the three Texas ones, S3DA, World Archery, and "OTHER" for the
+ * hand-kept nationwide list), "CLUB" for shoots a host club emailed in (checked and added
+ * by Cheyenne), and "USER" for tournaments archers added in the app.
  */
-export type EventSource = "TFAA" | "ASA" | "TSAA" | "CLUB" | "USER";
+export type EventSource = "TFAA" | "ASA" | "TSAA" | "S3DA" | "WA" | "OTHER" | "CLUB" | "USER";
 export type OfficialSource = Exclude<EventSource, "USER" | "CLUB">;
 
 export interface TournamentEvent {
@@ -22,6 +23,8 @@ export interface TournamentEvent {
   contact: string | null;
   phone: string | null;
   email: string | null;
+  /** Governing body, e.g. "NFAA", "ASA", "USA Archery" (filled in by api.ts for every event). */
+  organization?: string | null;
   sourceUrl: string; // official schedule page, or the host's link for archer-added events ("" if none)
   // Only on tournaments archers added:
   addedBy?: string | null; // display name of the archer who added it
@@ -32,7 +35,7 @@ export interface TournamentEvent {
 }
 
 export interface SourceStatus {
-  name: OfficialSource;
+  name: string;
   url: string;
   status: "ok" | "partial" | "error";
   message: string | null;
@@ -46,13 +49,23 @@ export interface EventsResponse {
   lastUpdated: string;
 }
 
-/** "OOS" = out of state: any tournament (official or archer-added) outside Texas. */
-export type SourceFilter = "all" | "going" | "OOS" | EventSource;
+/** "all", "going", or an organization name from organizationOf(). */
+export type OrgFilter = string;
+
+/** "ALL" or a two-letter state. */
+export type StateFilter = string;
 
 /** True when a tournament's state is known and isn't Texas. */
 export function isOutOfState(e: Pick<TournamentEvent, "state">): boolean {
   const s = (e.state ?? "").trim().toUpperCase();
   return !!s && s !== "TX" && s !== "TEXAS";
+}
+
+/** The organization chip a tournament is listed under. */
+export function organizationOf(e: Pick<TournamentEvent, "source" | "organization">): string {
+  if (e.source === "CLUB") return "Club shoots";
+  if (e.source === "USER") return "Added by archers";
+  return e.organization?.trim() || "Other";
 }
 
 /**
@@ -80,6 +93,14 @@ export function sourceLabel(source: EventSource): string {
   if (source === "TFAA") return "TFAA";
   if (source === "ASA") return "Texas ASA";
   if (source === "TSAA") return "TSAA";
+  if (source === "S3DA") return "S3DA";
+  if (source === "WA") return "World Archery";
+  if (source === "OTHER") return "National";
   if (source === "CLUB") return "Club shoots";
   return "Added by archers";
+}
+
+/** Who lists a tournament, e.g. "TFAA" or, for the hand-kept national list, "USA Archery". */
+export function listedBy(e: Pick<TournamentEvent, "source" | "organization">): string {
+  return e.source === "OTHER" && e.organization ? e.organization : sourceLabel(e.source);
 }
