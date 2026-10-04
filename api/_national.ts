@@ -146,7 +146,7 @@ export function parseS3DAEvents(rows: S3DARawEvent[]): UsaEvent[] {
   return out;
 }
 
-async function collectS3DA(): Promise<UsaEvent[]> {
+export async function collectS3DA(): Promise<UsaEvent[]> {
   const today = new Date().toISOString().slice(0, 10);
   const rows: S3DARawEvent[] = [];
   let next: string | null = `${S3DA_API}?start_date=${today}&per_page=50`;
@@ -214,9 +214,12 @@ async function collectManual(): Promise<UsaEvent[]> {
 }
 
 export async function getUsaEvents(): Promise<UsaResult> {
-  const [texas, s3da, wa, manual] = await Promise.all([
+  // S3DA is not collected automatically: its site has no events API and answers automated
+  // requests from GitHub with a block page (checked 2026-10-04). Its national and state
+  // championships go in data/manual-events.json instead. collectS3DA is kept in case they
+  // open a feed.
+  const [texas, wa, manual] = await Promise.all([
     getEvents(),
-    runSource("S3DA", S3DA_URL, collectS3DA),
     runSource("World Archery", WA_URL, collectWorldArchery),
     runSource("Manual", "data/manual-events.json", collectManual),
   ]);
@@ -224,12 +227,12 @@ export async function getUsaEvents(): Promise<UsaResult> {
     ...e, state: normalizeState(e.state) ?? "TX", organization: TEXAS_ORGANIZATION[e.source],
   }));
   const today = new Date().toISOString().slice(0, 10);
-  const events = [...texasEvents, ...s3da.events, ...wa.events, ...manual.events]
+  const events = [...texasEvents, ...wa.events, ...manual.events]
     .filter((e) => e.endDate >= today)
     .sort((a, b) => a.startDate.localeCompare(b.startDate) || a.name.localeCompare(b.name));
   return {
     events,
-    sources: [...texas.sources, s3da.status, wa.status, manual.status],
+    sources: [...texas.sources, wa.status, manual.status],
     lastUpdated: new Date().toISOString(),
   };
 }

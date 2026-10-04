@@ -1,4 +1,4 @@
-// Collects nationwide events (the Texas sources plus S3DA, World Archery and the hand-kept
+// Collects nationwide events (the Texas sources plus World Archery and the hand-kept
 // list in data/manual-events.json) into events-usa.json. Runs next to collect-events.ts in
 // .github/workflows/pages.yml; the current app's events.json is not touched.
 //

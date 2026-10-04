@@ -54,13 +54,3 @@ jobs:
             process.exit(bad ? 1 : 0);
           '
 
-      # TEMPORARY: what the S3DA site answers, to fix its collector. Remove once S3DA works.
-      - name: Probe S3DA
-        if: always()
-        run: |
-          curl -sS -L -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36" -o ev.html https://www.s3da.net/events/
-          curl -sS -L -A "Mozilla/5.0" -o idx.json https://www.s3da.net/wp-json/
-          echo "::notice::namespaces: $(node -e 'try{console.log(JSON.parse(require("fs").readFileSync("idx.json","utf8")).namespaces.join(" "))}catch(e){console.log("no json "+e.message)}')"
-          echo "::notice::markers: ld+json=$(grep -c 'application/ld+json' ev.html) Event=$(grep -o '"@type":"Event"' ev.html | wc -l) tribe=$(grep -c tribe ev.html) mec=$(grep -c 'mec-' ev.html) eventon=$(grep -c eventon ev.html) ical=$(grep -o 'ical=1\|\.ics' ev.html | wc -l) size=$(wc -c < ev.html)"
-          echo "::notice::event links: $(grep -o 'href="[^"]*event[^"]*"' ev.html | sort -u | head -25 | tr '\n' ' ')"
-          echo "::notice::classes: $(grep -o 'class="[^"]*event[^"]*"' ev.html | sort | uniq -c | sort -rn | head -15 | tr '\n' ' ')"
