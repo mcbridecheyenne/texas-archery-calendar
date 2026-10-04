@@ -33,6 +33,7 @@ const light: CalendarTheme = {
     TFAA: { solid: "#BE4F17", soft: "#F8E3D8" },
     ASA: { solid: "#295B42", soft: "#DCEDE4" },
     TSAA: { solid: "#275A91", soft: "#DFE9F5" },
+    CLUB: { solid: "#8A6512", soft: "#F5EBD3" },
     USER: { solid: "#6B4C9A", soft: "#ECE4F5" },
   },
 };
@@ -53,6 +54,7 @@ const dark: CalendarTheme = {
     TFAA: { solid: "#E2703A", soft: "#3E2618" },
     ASA: { solid: "#4FA67B", soft: "#1E3329" },
     TSAA: { solid: "#5B92D1", soft: "#1C2A3D" },
+    CLUB: { solid: "#D9A93F", soft: "#3A2E14" },
     USER: { solid: "#A88BD6", soft: "#2D2440" },
   },
 };

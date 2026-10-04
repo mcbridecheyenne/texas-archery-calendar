@@ -18,7 +18,7 @@ const C = {
   accent: "#BE4F17",
   onAccent: "#FBF7F1",
   dark: "#30231A",
-  source: { TFAA: "#BE4F17", ASA: "#295B42", TSAA: "#275A91", USER: "#6B4C9A" } as Record<EventSource, string>,
+  source: { TFAA: "#BE4F17", ASA: "#295B42", TSAA: "#275A91", CLUB: "#8A6512", USER: "#6B4C9A" } as Record<EventSource, string>,
 };
 
 const MAX_ROWS = 5;

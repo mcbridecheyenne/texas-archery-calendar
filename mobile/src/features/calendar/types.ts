@@ -1,9 +1,12 @@
 // Mirrors shared/schema.ts on the website so both read the same /api/events feed.
 import type { ReactNode } from "react";
 
-/** Official schedules, plus "USER" for tournaments archers added in the app. */
-export type EventSource = "TFAA" | "ASA" | "TSAA" | "USER";
-export type OfficialSource = Exclude<EventSource, "USER">;
+/**
+ * Official schedules, "CLUB" for shoots a host club emailed in (checked and added to
+ * events.json by Cheyenne), and "USER" for tournaments archers added in the app.
+ */
+export type EventSource = "TFAA" | "ASA" | "TSAA" | "CLUB" | "USER";
+export type OfficialSource = Exclude<EventSource, "USER" | "CLUB">;
 
 export interface TournamentEvent {
   id: string;
@@ -24,8 +27,8 @@ export interface TournamentEvent {
   addedBy?: string | null; // display name of the archer who added it
   addedById?: string | null;
   details?: string | null;
-  flyerUrl?: string | null; // picture of the tournament flyer
-  flyerPath?: string | null; // where that picture is stored
+  flyerUrl?: string | null; // picture of the tournament flyer (archer-added and club shoots)
+  flyerPath?: string | null; // where that picture is stored (archer-added only)
 }
 
 export interface SourceStatus {
@@ -77,5 +80,6 @@ export function sourceLabel(source: EventSource): string {
   if (source === "TFAA") return "TFAA";
   if (source === "ASA") return "Texas ASA";
   if (source === "TSAA") return "TSAA";
+  if (source === "CLUB") return "Club shoots";
   return "Added by archers";
 }

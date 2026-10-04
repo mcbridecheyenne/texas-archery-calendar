@@ -70,7 +70,8 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
       (a, b) => a.startDate.localeCompare(b.startDate) || a.name.localeCompare(b.name)
     );
   }, [data, extraEvents]);
-  const SOURCES: EventSource[] = extraEvents ? [...OFFICIAL, "USER"] : OFFICIAL;
+  const hasClub = allEvents.some((e) => e.source === "CLUB");
+  const SOURCES: EventSource[] = [...OFFICIAL, ...(hasClub ? (["CLUB"] as const) : []), ...(extraEvents ? (["USER"] as const) : [])];
   const onRefresh = social?.onRefresh;
   const refresh = useCallback(() => {
     onRefresh?.();
@@ -97,7 +98,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Texas A
   const myShoots = useMemo(() => allEvents.filter((e) => going.has(e.id) && e.endDate >= todayIso), [allEvents, going, todayIso]);
 
   const counts = useMemo(() => {
-    const c: Record<string, number> = { all: allEvents.length, going: 0, TFAA: 0, ASA: 0, TSAA: 0, USER: 0, OOS: 0 };
+    const c: Record<string, number> = { all: allEvents.length, going: 0, TFAA: 0, ASA: 0, TSAA: 0, CLUB: 0, USER: 0, OOS: 0 };
     for (const e of allEvents) {
       if (e.source === "USER" && isOutOfState(e)) c.OOS++;
       else c[e.source]++;

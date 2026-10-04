@@ -128,7 +128,7 @@ export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra
               ) : (
                 <Row
                   label="Source"
-                  value={`View on the ${sourceLabel(event.source)} schedule`}
+                  value={event.source === "CLUB" ? "Host club's page" : `View on the ${sourceLabel(event.source)} schedule`}
                   theme={theme}
                   link
                   onPress={() => openUrl(event.sourceUrl)}
