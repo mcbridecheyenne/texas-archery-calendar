@@ -1,0 +1,8 @@
+200 https://permianbasinarchers.com/schedules?format=json -> https://permianbasinarchers.com/schedules?format=json  len=124677
+404 https://permianbasinarchers.com/txnm-events?format=json -> https://permianbasinarchers.com/txnm-events?format=json  len=85696
+200 https://permianbasinarchers.com/schedules -> https://permianbasinarchers.com/schedules  len=255472
+200 https://www.x10academy.com/book/public-calendar -> https://www.x10academy.com/book/public-calendar  len=184952
+200 https://www.x10academy.com/book/events -> https://www.x10academy.com/book/events  len=215911
+200 https://www.fredericksburg3darchery.org/?format=json -> https://www.fredericksburg3darchery.org/?format=json  len=20266
+200 https://www.abilenebowhunters.com/local-competitions?format=json -> https://www.abilenebowhunters.com/local-competitions?format=json  len=28912
+200 https://www.archeryhqtx.com/events?format=json -> https://www.archeryhqtx.com/events?format=json  len=162813
