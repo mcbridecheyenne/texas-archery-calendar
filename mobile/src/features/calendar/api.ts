@@ -39,8 +39,42 @@ export function normalizeEvent(e: TournamentEvent): TournamentEvent {
   return { ...e, source, state, organization: e.organization || ORGANIZATION[source] || null };
 }
 
+const nameKey = (name: string) => name.toLowerCase().replace(/^the\s+/, "").replace(/[^a-z0-9]/g, "");
+const knownPlace = (e: TournamentEvent) => !!e.city && e.city !== "TBA";
+
+// Two schedules can list the same tournament (TFAA and World Archery both list The Vegas
+// Shoot). Show it once, keeping the copy with a real town, and remember the other listing
+// so the tournament still shows under that organization's filter and state.
+export function mergeDuplicates(events: TournamentEvent[]): TournamentEvent[] {
+  const out: TournamentEvent[] = [];
+  const byName = new Map<string, TournamentEvent[]>();
+  for (const e of events) {
+    const key = nameKey(e.name);
+    const same = (byName.get(key) ?? []).find(
+      (o) => o.source !== e.source && o.startDate <= e.endDate && e.startDate <= o.endDate
+    );
+    if (!same) {
+      out.push(e);
+      byName.set(key, [...(byName.get(key) ?? []), e]);
+      continue;
+    }
+    const [keep, drop] = knownPlace(e) && !knownPlace(same) ? [e, same] : [same, e];
+    const merged: TournamentEvent = {
+      ...keep,
+      alsoListed: [
+        ...(keep.alsoListed ?? []),
+        { source: drop.source, organization: drop.organization ?? null, state: drop.state },
+        ...(drop.alsoListed ?? []),
+      ],
+    };
+    out[out.indexOf(same)] = merged;
+    byName.set(key, (byName.get(key) ?? []).map((o) => (o === same ? merged : o)));
+  }
+  return out;
+}
+
 function normalize(data: EventsResponse): EventsResponse {
-  const events = data.events.map(normalizeEvent);
+  const events = mergeDuplicates(data.events.map(normalizeEvent));
   events.sort((a, b) => a.startDate.localeCompare(b.startDate) || a.name.localeCompare(b.name));
   return { ...data, events };
 }

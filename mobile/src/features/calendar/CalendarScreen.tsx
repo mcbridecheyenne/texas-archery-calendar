@@ -22,7 +22,7 @@ import { useCalendarTheme, type CalendarTheme } from "./theme";
 import { normalizeEvent } from "./api";
 import { StatePicker } from "./components/StatePicker";
 import { stateName } from "./states";
-import { organizationOf, type CalendarSocial, type OrgFilter, type StateFilter, type TournamentEvent } from "./types";
+import { organizationOf, organizationsOf, statesOf, type CalendarSocial, type OrgFilter, type StateFilter, type TournamentEvent } from "./types";
 import { useShareCard, type ShareCardInfo } from "./components/ShareCard";
 import { shootsMessage } from "./share";
 import { useEvents } from "./useEvents";
@@ -85,22 +85,24 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
   }, [data, extraEvents]);
   // Upcoming tournaments in the picked state; the organization chips and counts come from these.
   const inState = useMemo(
-    () => allEvents.filter((e) => e.endDate >= todayIso && (stateFilter === "ALL" || e.state === stateFilter)),
+    () => allEvents.filter((e) => e.endDate >= todayIso && (stateFilter === "ALL" || statesOf(e).includes(stateFilter))),
     [allEvents, stateFilter, todayIso]
   );
   const stateCounts = useMemo(() => {
     const c: Record<string, number> = {};
-    for (const e of allEvents) if (e.endDate >= todayIso && e.state) c[e.state] = (c[e.state] ?? 0) + 1;
+    for (const e of allEvents) if (e.endDate >= todayIso) for (const st of statesOf(e)) c[st] = (c[st] ?? 0) + 1;
     return c;
   }, [allEvents, todayIso]);
   // Organizations with upcoming tournaments here, busiest first, each with the color of its source.
   const orgs = useMemo(() => {
     const m = new Map<string, { count: number; color: string }>();
     for (const e of inState) {
-      const o = organizationOf(e);
-      const cur = m.get(o);
-      if (cur) cur.count++;
-      else m.set(o, { count: 1, color: (theme.source[e.source] ?? theme.source.OTHER).solid });
+      for (const listing of [e, ...(e.alsoListed ?? [])]) {
+        const o = organizationOf(listing);
+        const cur = m.get(o);
+        if (cur) cur.count++;
+        else m.set(o, { count: 1, color: (theme.source[listing.source] ?? theme.source.OTHER).solid });
+      }
     }
     if (extraEvents && !m.has("Added by archers")) m.set("Added by archers", { count: 0, color: theme.source.USER.solid });
     return [...m.entries()]
@@ -118,8 +120,8 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
     () =>
       allEvents.filter(
         (e) =>
-          (stateFilter === "ALL" || e.state === stateFilter) &&
-          (filter === "all" ? true : filter === "going" ? going.has(e.id) : organizationOf(e) === filter)
+          (stateFilter === "ALL" || statesOf(e).includes(stateFilter)) &&
+          (filter === "all" ? true : filter === "going" ? going.has(e.id) : organizationsOf(e).includes(filter))
       ),
     [allEvents, filter, stateFilter, going]
   );
@@ -316,6 +318,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
             onMonthChange={changeMonth}
             selectedDay={selectedDay}
             onSelectDay={(iso) => setSelectedDay((cur) => (cur === iso ? null : iso))}
+            events={filtered}
             eventsByDay={eventsByDay}
             theme={theme}
           />

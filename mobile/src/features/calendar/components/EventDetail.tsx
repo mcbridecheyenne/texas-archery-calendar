@@ -138,9 +138,12 @@ export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra
                   theme={theme}
                   link
                   onPress={() => openUrl(event.sourceUrl)}
-                  last
+                  last={!event.alsoListed?.length}
                 />
               )}
+              {event.alsoListed?.length ? (
+                <Row label="Also listed by" value={[...new Set(event.alsoListed.map(listedBy))].join(", ")} theme={theme} last />
+              ) : null}
             </View>
 
             {event.flyerUrl ? (

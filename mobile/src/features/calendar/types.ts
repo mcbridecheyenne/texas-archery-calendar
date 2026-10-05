@@ -32,6 +32,8 @@ export interface TournamentEvent {
   details?: string | null;
   flyerUrl?: string | null; // picture of the tournament flyer (archer-added and club shoots)
   flyerPath?: string | null; // where that picture is stored (archer-added only)
+  /** Other schedules that list this same tournament (merged in api.ts), so it shows under their filters too. */
+  alsoListed?: Array<{ source: EventSource; organization: string | null; state: string | null }>;
 }
 
 export interface SourceStatus {
@@ -70,6 +72,18 @@ export function organizationOf(e: Pick<TournamentEvent, "source" | "organization
   if (e.source === "USER") return "Added by archers";
   if (e.source === "TFAA" || e.source === "ASA" || e.source === "TSAA") return sourceLabel(e.source);
   return e.organization?.trim() || "Other";
+}
+
+/** Every filter chip a tournament belongs under: its own, plus any other schedule that lists it. */
+export function organizationsOf(e: Pick<TournamentEvent, "source" | "organization" | "alsoListed">): string[] {
+  const all = [organizationOf(e), ...(e.alsoListed ?? []).map(organizationOf)];
+  return [...new Set(all)];
+}
+
+/** The states a tournament shows under: its own, plus any a merged listing gave it (TFAA lists a few out-of-state shoots). */
+export function statesOf(e: Pick<TournamentEvent, "state" | "alsoListed">): string[] {
+  const all = [e.state, ...(e.alsoListed ?? []).map((a) => a.state)].filter((s): s is string => !!s);
+  return [...new Set(all)];
 }
 
 /**

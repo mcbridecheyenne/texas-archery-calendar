@@ -12,4 +12,4 @@ export type { TournamentEvent, EventsResponse, EventSource, SourceStatus, Calend
 export { hasCachedEvents, normalizeEvent } from "./api";
 export { StatePicker } from "./components/StatePicker";
 export { US_STATES, stateName } from "./states";
-export { organizationOf, listedBy } from "./types";
+export { organizationOf, organizationsOf, listedBy } from "./types";
