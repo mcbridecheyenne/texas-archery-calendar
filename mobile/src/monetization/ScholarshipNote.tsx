@@ -1,7 +1,8 @@
 // "Donate to the Texas Field Archery Scholarship Fund" and the 10% line, on the ad-free
 // sheet and the Support section. Shown only when the home state is Texas AND the phone is
-// in Texas right now (approximate, while-in-use location the archer already allowed for
-// the marketplace). If location is off or denied, both stay hidden. Other states can
+// in Texas right now (approximate, while-in-use location). A Texas archer who hasn't
+// answered the location prompt yet is asked once, when this note would appear. If location
+// is off or denied, both stay hidden. Other states can
 // require charity registration for "% of proceeds" claims, so never widen this without
 // re-checking (brief D5-D7, section 7).
 import * as Location from "expo-location";
@@ -17,13 +18,16 @@ export const PROCEEDS_LINE =
 
 // Checked once per app launch.
 let inTexasCache: Promise<boolean> | null = null;
+// Set once they've said no this launch, so the prompt isn't shown again.
+let declined = false;
 
 async function phoneIsInTexas(): Promise<boolean> {
   try {
-    // Never asks: only uses permission the archer already gave.
+    // While-in-use only; asks the first time (approxHere), never again after a no.
     const perm = await Location.getForegroundPermissionsAsync();
-    if (!perm.granted) return false;
+    if (!perm.granted && (declined || !perm.canAskAgain)) return false;
     const here = await approxHere();
+    if (!here) declined = !(await Location.getForegroundPermissionsAsync()).granted;
     if (!here) return false;
     const [place] = await Location.reverseGeocodeAsync({ latitude: here.lat, longitude: here.lng });
     const region = (place?.region ?? "").trim().toUpperCase();

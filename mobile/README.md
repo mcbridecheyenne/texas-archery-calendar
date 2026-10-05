@@ -95,7 +95,7 @@ friends and add-a-tournament features stay hidden, and the schedule still works.
    their own listings, read their own chats, and so on). It's safe to run again after updates.
 3. **Email sign-in codes:** Authentication → Emails → Templates. In both **Magic Link** and
    **Confirm signup**, replace the body with something like:
-   `Your Archery in Texas code is {{ .Token }}`
+   `Your Archery in the USA code is {{ .Token }}`
    Then Authentication → Emails → SMTP Settings: connect a free sender (for example Resend).
    Supabase's built-in email only sends a few messages an hour, which is fine for testing but not for launch.
 4. **Sign in with Apple:** Authentication → Sign In / Providers → Apple → turn on, and add
@@ -127,12 +127,14 @@ people are using it.
 
 ## TestFlight / App Store (iPhone)
 
+iPhone builds run on the Mac mini with Xcode, not in Expo's cloud. Xcode signs with the
+Apple ID under Xcode → Settings → Accounts. Use the separate `~/studio/archery-release`
+clone so other work in the main folder can't break a build:
+
 ```bash
-npm install -g eas-cli
-eas login                 # free account at expo.dev
-eas init                  # links this folder to an Expo project (one time)
-eas build -p ios          # builds in Expo's cloud; sign in with your Apple ID when asked
-eas submit -p ios         # uploads the build to App Store Connect → TestFlight
+cd ~/studio/archery-release && git pull && cd mobile
+npm run ios:build         # makes build/ios/ArcheryintheUSA.ipa (about 2 minutes)
+npm run ios:upload        # same, then uploads it to App Store Connect → TestFlight
 ```
 Bundle ID: `com.cheyennemcbride.archeryintexas`.
 

@@ -1,13 +1,27 @@
-// Month view sized for a phone: each day shows colored bars for its events
-// (one per association), and tapping a day lists that day's shoots below.
+// Month view sized for a phone: each day shows a small label per shoot (who runs it and
+// the town), and tapping a day lists that day's shoots below.
 import { useMemo } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { addMonths, currentYM, fmtMonthYear, monthGridDays, toIso, type YM } from "../dates";
 import type { CalendarTheme } from "../theme";
-import type { TournamentEvent } from "../types";
+import { organizationOf, type TournamentEvent } from "../types";
 
 const WEEKDAYS = ["S", "M", "T", "W", "T", "F", "S"];
-const MAX_BARS = 3;
+const MAX_LABELS = 2;
+
+// Day cells are narrow, so long organization names get a short form.
+const SHORT_ORG: Record<string, string> = {
+  "Texas ASA": "ASA",
+  "USA Archery": "USAA",
+  "World Archery": "WA",
+  "Club shoots": "Club",
+  "Added by archers": "Archer",
+};
+
+function shortOrg(e: TournamentEvent): string {
+  const o = organizationOf(e);
+  return SHORT_ORG[o] ?? o;
+}
 
 interface Props {
   month: YM;
@@ -77,12 +91,25 @@ export function MonthGrid({ month, onMonthChange, selectedDay, onSelectDay, even
                     {d.getDate()}
                   </Text>
                 </View>
-                <View style={styles.bars}>
-                  {dayEvents.slice(0, MAX_BARS).map((ev) => (
-                    <View key={ev.id} style={[styles.bar, { backgroundColor: theme.source[ev.source].solid }]} />
-                  ))}
-                  {dayEvents.length > MAX_BARS ? (
-                    <Text style={[styles.more, { color: theme.muted }]}>+{dayEvents.length - MAX_BARS}</Text>
+                <View style={styles.labels}>
+                  {dayEvents.slice(0, MAX_LABELS).map((ev) => {
+                    const c = theme.source[ev.source] ?? theme.source.OTHER;
+                    const place = ev.city || ev.location;
+                    return (
+                      <View key={ev.id} style={[styles.label, { backgroundColor: c.soft, borderLeftColor: c.solid }]}>
+                        <Text numberOfLines={1} style={[styles.labelOrg, { color: theme.text }]}>
+                          {shortOrg(ev)}
+                        </Text>
+                        {place ? (
+                          <Text numberOfLines={1} style={[styles.labelPlace, { color: theme.text }]}>
+                            {place}
+                          </Text>
+                        ) : null}
+                      </View>
+                    );
+                  })}
+                  {dayEvents.length > MAX_LABELS ? (
+                    <Text style={[styles.more, { color: theme.muted }]}>+{dayEvents.length - MAX_LABELS} more</Text>
                   ) : null}
                 </View>
               </Pressable>
@@ -120,7 +147,7 @@ const styles = StyleSheet.create({
   weekday: { flex: 1, textAlign: "center", fontSize: 11, fontWeight: "600", paddingVertical: 6 },
   cell: {
     flex: 1,
-    height: 58,
+    minHeight: 84,
     margin: 1,
     borderRadius: 8,
     borderWidth: 2,
@@ -130,7 +157,9 @@ const styles = StyleSheet.create({
   },
   dayNum: { width: 24, height: 24, borderRadius: 12, alignItems: "center", justifyContent: "center" },
   dayText: { fontSize: 13, fontWeight: "600" },
-  bars: { width: "80%", marginTop: 3, gap: 2, alignItems: "center" },
-  bar: { width: "100%", height: 4, borderRadius: 2 },
-  more: { fontSize: 9, fontWeight: "600" },
+  labels: { alignSelf: "stretch", marginTop: 2, marginHorizontal: 1, gap: 2 },
+  label: { borderLeftWidth: 2, borderRadius: 3, paddingHorizontal: 2, paddingVertical: 1 },
+  labelOrg: { fontSize: 9, fontWeight: "700", lineHeight: 11 },
+  labelPlace: { fontSize: 8, lineHeight: 10 },
+  more: { fontSize: 8, fontWeight: "600", textAlign: "center" },
 });

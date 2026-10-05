@@ -141,7 +141,7 @@ export default function AccountTab() {
           <View style={[styles.card, { backgroundColor: t.card, borderColor: t.border }]}>
             <Text style={[styles.h, { color: t.text }]}>❤️ Enjoying Archery in the USA?</Text>
             <Text style={[styles.p, { color: t.muted }]}>
-              It's built by an archer here in Texas. A tip helps keep the schedule updating and new features coming. Totally optional, and thank you!
+              It's built by an archer in Texas. A tip helps keep the schedule updating and new features coming. Totally optional, and thank you!
             </Text>
             <View style={styles.tips}>
               {premium.tips.map((tip, i) => (
