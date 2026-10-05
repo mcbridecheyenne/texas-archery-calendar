@@ -8,6 +8,10 @@
 #
 # The build number is the current date and time (e.g. 202610051830), so every
 # build is higher than the last one. The app version comes from app.json.
+#
+# On the Mac mini, run it from the ~/studio/archery-release clone (git pull first),
+# not ~/studio/texas-archery-calendar: other Claude sessions switch branches and
+# reinstall packages there, which breaks a build halfway through.
 set -euo pipefail
 
 TEAM_ID=75Y3S5CV88

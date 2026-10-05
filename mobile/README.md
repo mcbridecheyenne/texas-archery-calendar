@@ -127,12 +127,14 @@ people are using it.
 
 ## TestFlight / App Store (iPhone)
 
+iPhone builds run on the Mac mini with Xcode, not in Expo's cloud. Xcode signs with the
+Apple ID under Xcode → Settings → Accounts. Use the separate `~/studio/archery-release`
+clone so other work in the main folder can't break a build:
+
 ```bash
-npm install -g eas-cli
-eas login                 # free account at expo.dev
-eas init                  # links this folder to an Expo project (one time)
-eas build -p ios          # builds in Expo's cloud; sign in with your Apple ID when asked
-eas submit -p ios         # uploads the build to App Store Connect → TestFlight
+cd ~/studio/archery-release && git pull && cd mobile
+npm run ios:build         # makes build/ios/ArcheryintheUSA.ipa (about 2 minutes)
+npm run ios:upload        # same, then uploads it to App Store Connect → TestFlight
 ```
 Bundle ID: `com.cheyennemcbride.archeryintexas`.
 
