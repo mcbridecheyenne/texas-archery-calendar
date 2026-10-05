@@ -58,7 +58,8 @@
           "microphonePermission": false
         }
       ],
-      "./plugins/withPodsDeploymentTarget"
+      "./plugins/withPodsDeploymentTarget",
+      "./plugins/withSceneLifecycle"
     ],
     "runtimeVersion": {
       "policy": "appVersion"
