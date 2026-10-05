@@ -258,6 +258,12 @@ function splitCityState(region: string | null | undefined): { city: string | nul
   return state ? { city: parts[0] || null, state } : { city: null, state: null };
 }
 
+/** "7 Uchee Creek Rd, Fort Mitchell, AL 36856" -> "Fort Mitchell". */
+export function townFromAddress(address: string | null | undefined): string | null {
+  const m = (address || "").match(/,\s*([^,]+?),\s*[A-Z]{2}\s+\d{5}/);
+  return m ? m[1].trim() : null;
+}
+
 export function mergeAsaProAm(menu: AsaMenuEvent[], feed: AsaFeedEvent[]): UsaEvent[] {
   const bySlug = new Map(feed.filter((f) => f.slug).map((f) => [f.slug!, f]));
   const rows = menu.length
@@ -279,7 +285,10 @@ export function mergeAsaProAm(menu: AsaMenuEvent[], feed: AsaFeedEvent[]): UsaEv
     const cityKey = (row.city || "").split(",")[0].trim().toLowerCase();
     // Use the feed's venue only when it is plainly the same place the menu names.
     const venueMatches = !!cityKey && `${region} ${loc.name ?? ""} ${loc.address ?? ""}`.toLowerCase().includes(cityKey);
-    const { city, state } = splitCityState(row.city);
+    const { city: menuCity, state } = splitCityState(row.city);
+    // ASA sometimes names a county ("Russell County, AL"); the venue address has the town.
+    const town = venueMatches && /\bcounty$/i.test(menuCity ?? "") ? townFromAddress(loc.address) : null;
+    const city = town ?? menuCity;
     return {
       ...blankEvent(),
       id: `asa-proam-${row.slug}-${row.startDate.slice(0, 4)}`,
@@ -326,6 +335,17 @@ async function collectManual(): Promise<UsaEvent[]> {
   }));
 }
 
+// The app's month view labels each shoot with its town, so a place that isn't known
+// ("XXXX" on ASA's page, "Texas (TBD)", a bare ",") reads TBA instead of a blank or a
+// stray bracket.
+export function tidyPlace<T extends Pick<UsaEvent, "city" | "location">>(e: T): T {
+  const unknown = (v: string | null | undefined) => !v || !/[a-z0-9]/i.test(v) || /\b(tbd|tba)\b|^x{3,}$/i.test(v);
+  const city = unknown(e.city) ? null : e.city!.trim();
+  const location = unknown(e.location) ? null : e.location!.trim();
+  if (city || location) return { ...e, city, location };
+  return { ...e, city: "TBA", location: "Location TBA" };
+}
+
 export async function getUsaEvents(): Promise<UsaResult> {
   // S3DA is not collected automatically: its site has no events API and answers automated
   // requests from GitHub with a block page (checked 2026-10-04). Its national and state
@@ -343,6 +363,7 @@ export async function getUsaEvents(): Promise<UsaResult> {
   const today = new Date().toISOString().slice(0, 10);
   const events = [...texasEvents, ...wa.events, ...asa.events, ...manual.events]
     .filter((e) => e.endDate >= today)
+    .map(tidyPlace)
     .sort((a, b) => a.startDate.localeCompare(b.startDate) || a.name.localeCompare(b.name));
   return {
     events,
