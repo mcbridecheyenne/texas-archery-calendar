@@ -1,0 +1,84 @@
+{
+  "expo": {
+    "name": "Archery in the USA",
+    "slug": "archery-in-texas",
+    "version": "1.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#F7F2EA"
+    },
+    "ios": {
+      "bundleIdentifier": "com.cheyennemcbride.archeryintexas",
+      "supportsTablet": true,
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      },
+      "usesAppleSignIn": true
+    },
+    "android": {
+      "package": "com.cheyennemcbride.archeryintexas",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#F7F2EA"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-calendar",
+        {
+          "calendarPermission": "Archery in the USA adds the tournaments you pick to your calendar."
+        }
+      ],
+      "expo-notifications",
+      [
+        "react-native-google-mobile-ads",
+        {
+          "iosAppId": "ca-app-pub-7930621070150782~9562538475",
+          "androidAppId": "ca-app-pub-7930621070150782~2178872475"
+        }
+      ],
+      "expo-apple-authentication",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Archery in the USA uses your approximate location to show used gear you can pick up nearby and to check which state you're in for state-specific features."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Archery in the USA uses your photos so you can add pictures to your listings.",
+          "cameraPermission": "Archery in the USA uses the camera so you can photograph gear you're selling.",
+          "microphonePermission": false
+        }
+      ],
+      "./plugins/withPodsDeploymentTarget",
+      "./plugins/withSceneLifecycle"
+    ],
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "scheme": "archeryintexas",
+    "experiments": {
+      "typedRoutes": false
+    },
+    "extra": {
+      "eas": {
+        "projectId": "0405b8fd-8dd8-47a5-a1d9-f7588cf8450f"
+      }
+    },
+    "owner": "cmprograms",
+    "updates": {
+      "url": "https://u.expo.dev/0405b8fd-8dd8-47a5-a1d9-f7588cf8450f",
+      "requestHeaders": {
+        "expo-channel-name": "production"
+      }
+    }
+  }
+}

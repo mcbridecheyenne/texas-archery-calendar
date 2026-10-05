@@ -96,7 +96,7 @@ export default function Home() {
           </div>
           <div className="min-w-0">
             <h1 className="font-serif text-lg sm:text-xl font-semibold leading-tight">
-              Texas Archery Calendar
+              Archery in the USA
             </h1>
             <p className="text-[11px] text-muted-foreground leading-tight">
               TFAA + Texas ASA + TSAA tournament schedule
