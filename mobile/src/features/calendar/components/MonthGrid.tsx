@@ -158,7 +158,8 @@ const styles = StyleSheet.create({
   dayNum: { width: 24, height: 24, borderRadius: 12, alignItems: "center", justifyContent: "center" },
   dayText: { fontSize: 13, fontWeight: "600" },
   labels: { alignSelf: "stretch", marginTop: 2, marginHorizontal: 1, gap: 2 },
-  label: { borderLeftWidth: 2, borderRadius: 3, paddingHorizontal: 2, paddingVertical: 1 },
+  // Square on the stripe side: a rounded colored edge read as "(" next to the text.
+  label: { borderLeftWidth: 2, borderTopRightRadius: 3, borderBottomRightRadius: 3, paddingHorizontal: 2, paddingVertical: 1 },
   labelOrg: { fontSize: 9, fontWeight: "700", lineHeight: 11 },
   labelPlace: { fontSize: 8, lineHeight: 10 },
   more: { fontSize: 8, fontWeight: "600", textAlign: "center" },
