@@ -194,6 +194,119 @@ async function collectWorldArchery(): Promise<UsaEvent[]> {
   return parseWorldArchery(Array.isArray(data) ? data : data.items ?? []);
 }
 
+// --- ASA Pro/Am tour: the /pro-am/ page plus the site's WordPress events feed ---
+// The page's header menu carries the current season's dates ("Hoyt/Easton Pro/AM <b>Foley,
+// AL<br>Feb 25- 27, 2027</b>") but shows "XXXX" for cities not announced yet. The feed has
+// venue names and addresses, but its dates lag a season behind until ASA edits each event,
+// so dates come from the menu and venues from the feed only when they match the menu city.
+// robots.txt allows both; ASA's terms reserve their text and logos, so only facts are kept.
+const ASA_PROAM_URL = "https://asaarchery.com/pro-am/";
+const ASA_FEED = "https://asaarchery.com/wp-json/wp/v2/events?per_page=50";
+
+const MONTHS: Record<string, number> = {
+  jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12,
+};
+
+// Parses "Feb 25- 27, 2027", "March 18 – 20, 2027" or "July 30 – Aug 1, 2027".
+export function parseAsaDateRange(text: string): { startDate: string; endDate: string } | null {
+  const t = decodeEntities(text).replace(/(\d)(st|nd|rd|th)\b/gi, "$1").replace(/\s+/g, " ");
+  const m = t.match(/([A-Za-z]{3,})\.? (\d{1,2}) ?[-–—] ?(?:([A-Za-z]{3,})\.? )?(\d{1,2}),? (\d{4})/);
+  if (!m) return null;
+  const [, mon1, d1, mon2, d2, year] = m;
+  const m1 = MONTHS[mon1.slice(0, 3).toLowerCase()];
+  const m2 = mon2 ? MONTHS[mon2.slice(0, 3).toLowerCase()] : m1;
+  if (!m1 || !m2) return null;
+  const y1 = m2 < m1 ? Number(year) - 1 : Number(year);
+  const day = (y: number, mo: number, d: string) =>
+    `${y}-${String(mo).padStart(2, "0")}-${d.padStart(2, "0")}`;
+  return { startDate: day(y1, m1, d1), endDate: day(Number(year), m2, d2) };
+}
+
+export interface AsaMenuEvent { slug: string; name: string; city: string | null; startDate: string; endDate: string }
+
+export function parseAsaProAmMenu(html: string): AsaMenuEvent[] {
+  const out: AsaMenuEvent[] = [];
+  const seen = new Set<string>();
+  const re = /<a[^>]+href=["'](?:https?:\/\/asaarchery\.com)?\/events\/([\w-]+)\/?["'][^>]*>([\s\S]*?)<\/a>/gi;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(html))) {
+    const [, slug, inner] = m;
+    const text = inner.match(/<span class="avia-menu-text">([\s\S]*?)<\/span>/i)?.[1];
+    if (!text || seen.has(slug)) continue;
+    const name = decodeEntities(text.split(/<b>/i)[0]).replace(/Pro\/AM\b/g, "Pro/Am");
+    // The bold part is "City, ST" then the dates, split by <br> or by separate <b> tags.
+    const bold = [...text.matchAll(/<b>([\s\S]*?)<\/b>/gi)]
+      .flatMap((b) => b[1].split(/<br\s*\/?>/i)).map(decodeEntities).filter(Boolean);
+    const dates = bold.map(parseAsaDateRange).find(Boolean);
+    if (!name || !dates) continue;
+    const city = bold.find((b) => !parseAsaDateRange(b) && /^[A-Za-z .'-]+, [A-Za-z]{2}$/.test(b)) ?? null;
+    seen.add(slug);
+    out.push({ slug, name, city, ...dates });
+  }
+  return out;
+}
+
+interface AsaFeedEvent {
+  slug?: string; link?: string; title?: string | { rendered?: string };
+  start_date?: string; end_date?: string; location_region?: string;
+  event_location?: { region?: string; name?: string; address?: string };
+}
+
+function splitCityState(region: string | null | undefined): { city: string | null; state: string | null } {
+  const parts = (region || "").split(",").map((s) => s.trim());
+  const state = normalizeState(parts[1]);
+  return state ? { city: parts[0] || null, state } : { city: null, state: null };
+}
+
+export function mergeAsaProAm(menu: AsaMenuEvent[], feed: AsaFeedEvent[]): UsaEvent[] {
+  const bySlug = new Map(feed.filter((f) => f.slug).map((f) => [f.slug!, f]));
+  const rows = menu.length
+    ? menu
+    // Menu missing (page redesigned): fall back to the feed's own dates.
+    : feed.flatMap((f) => {
+        const start = isoDay(f.start_date);
+        const title = typeof f.title === "string" ? f.title : f.title?.rendered;
+        return f.slug && start && title
+          ? [{ slug: f.slug, name: decodeEntities(title).replace(/Pro\/AM\b/g, "Pro/Am"),
+               city: f.location_region || f.event_location?.region || null,
+               startDate: start, endDate: isoDay(f.end_date) ?? start }]
+          : [];
+      });
+  return rows.map((row) => {
+    const f = bySlug.get(row.slug);
+    const loc = f?.event_location ?? {};
+    const region = loc.region || f?.location_region || "";
+    const cityKey = (row.city || "").split(",")[0].trim().toLowerCase();
+    // Use the feed's venue only when it is plainly the same place the menu names.
+    const venueMatches = !!cityKey && `${region} ${loc.name ?? ""} ${loc.address ?? ""}`.toLowerCase().includes(cityKey);
+    const { city, state } = splitCityState(row.city);
+    return {
+      ...blankEvent(),
+      id: `asa-proam-${row.slug}-${row.startDate.slice(0, 4)}`,
+      source: "ASA Pro/Am", organization: "ASA", name: row.name,
+      startDate: row.startDate, endDate: row.endDate,
+      location: venueMatches ? [loc.name, loc.address].filter(Boolean).join(", ") || row.city : row.city,
+      city, state,
+      sourceUrl: f?.link || `https://asaarchery.com/events/${row.slug}/`,
+    };
+  });
+}
+
+async function collectAsaProAm(): Promise<UsaEvent[]> {
+  const headers = { "User-Agent": UA };
+  const pageRes = await fetch(ASA_PROAM_URL, { headers });
+  if (!pageRes.ok) throw new Error(`HTTP ${pageRes.status}`);
+  const menu = parseAsaProAmMenu(await pageRes.text());
+  let feed: AsaFeedEvent[] = [];
+  try {
+    const res = await fetch(ASA_FEED, { headers: { ...headers, Accept: "application/json" } });
+    if (res.ok) feed = (await res.json()) as AsaFeedEvent[];
+  } catch {
+    // Venues are optional; the page alone still gives names, dates and cities.
+  }
+  return mergeAsaProAm(menu, Array.isArray(feed) ? feed : []);
+}
+
 // --- Hand-kept marquee events (data/manual-events.json) ---
 interface ManualEvent {
   organization: string; name: string; startDate: string; endDate?: string;
@@ -218,21 +331,22 @@ export async function getUsaEvents(): Promise<UsaResult> {
   // requests from GitHub with a block page (checked 2026-10-04). Its national and state
   // championships go in data/manual-events.json instead. collectS3DA is kept in case they
   // open a feed.
-  const [texas, wa, manual] = await Promise.all([
+  const [texas, wa, asa, manual] = await Promise.all([
     getEvents(),
     runSource("World Archery", WA_URL, collectWorldArchery),
+    runSource("ASA Pro/Am", ASA_PROAM_URL, collectAsaProAm),
     runSource("Manual", "data/manual-events.json", collectManual),
   ]);
   const texasEvents: UsaEvent[] = texas.events.map((e) => ({
     ...e, state: normalizeState(e.state) ?? "TX", organization: TEXAS_ORGANIZATION[e.source],
   }));
   const today = new Date().toISOString().slice(0, 10);
-  const events = [...texasEvents, ...wa.events, ...manual.events]
+  const events = [...texasEvents, ...wa.events, ...asa.events, ...manual.events]
     .filter((e) => e.endDate >= today)
     .sort((a, b) => a.startDate.localeCompare(b.startDate) || a.name.localeCompare(b.name));
   return {
     events,
-    sources: [...texas.sources, wa.status, manual.status],
+    sources: [...texas.sources, wa.status, asa.status, manual.status],
     lastUpdated: new Date().toISOString(),
   };
 }
