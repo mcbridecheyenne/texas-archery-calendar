@@ -11,7 +11,8 @@
     "upgrade-sdk": "npx expo install expo@latest && npx expo install --fix",
     "publish-update": "eas update --channel production",
     "ios:build": "./scripts/ios-release.sh",
-    "ios:upload": "./scripts/ios-release.sh --upload"
+    "ios:upload": "./scripts/ios-release.sh --upload",
+    "android:build": "./scripts/android-release.sh"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.2",
