@@ -61,10 +61,14 @@ export function isOutOfState(e: Pick<TournamentEvent, "state">): boolean {
   return !!s && s !== "TX" && s !== "TEXAS";
 }
 
-/** The organization chip a tournament is listed under. */
+/**
+ * The filter chip a tournament is listed under. The Texas sources keep their own chips
+ * (TFAA, Texas ASA, TSAA) rather than folding into their national bodies.
+ */
 export function organizationOf(e: Pick<TournamentEvent, "source" | "organization">): string {
   if (e.source === "CLUB") return "Club shoots";
   if (e.source === "USER") return "Added by archers";
+  if (e.source === "TFAA" || e.source === "ASA" || e.source === "TSAA") return sourceLabel(e.source);
   return e.organization?.trim() || "Other";
 }
 

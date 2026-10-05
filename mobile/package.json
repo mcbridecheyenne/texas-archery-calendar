@@ -9,7 +9,9 @@
     "android": "expo start --android",
     "typecheck": "tsc --noEmit",
     "upgrade-sdk": "npx expo install expo@latest && npx expo install --fix",
-    "publish-update": "eas update --channel production"
+    "publish-update": "eas update --channel production",
+    "ios:build": "./scripts/ios-release.sh",
+    "ios:upload": "./scripts/ios-release.sh --upload"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.2",
@@ -36,7 +38,7 @@
     "react-dom": "19.1.0",
     "react-native": "0.81.5",
     "react-native-google-mobile-ads": "^15.0.0",
-    "react-native-purchases": "^9.0.0",
+    "react-native-purchases": "^10.11.0",
     "react-native-safe-area-context": "~5.6.0",
     "react-native-screens": "~4.16.0",
     "react-native-url-polyfill": "^2.0.0",

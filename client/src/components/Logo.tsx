@@ -3,7 +3,7 @@ export function Logo({ className = "" }: { className?: string }) {
     <svg
       viewBox="0 0 40 40"
       className={className}
-      aria-label="Texas Archery Calendar logo"
+      aria-label="Archery in the USA logo"
       role="img"
     >
       {/* Bullseye */}

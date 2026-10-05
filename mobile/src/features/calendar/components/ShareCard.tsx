@@ -36,7 +36,7 @@ function Card({ events, info }: { events: TournamentEvent[]; info: ShareCardInfo
   return (
     <View style={s.card} collapsable={false}>
       <View style={s.top}>
-        <Text style={s.brand}>🏹  ARCHERY IN TEXAS</Text>
+        <Text style={s.brand}>🏹  ARCHERY IN THE USA</Text>
       </View>
 
       <View style={s.body}>

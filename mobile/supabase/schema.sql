@@ -1,4 +1,4 @@
--- Archery in Texas: marketplace database.
+-- Archery in the USA: marketplace database.
 -- Run this once in Supabase: Dashboard → SQL Editor → New query → paste → Run.
 -- Safe to re-run: it only creates things that don't exist yet and replaces policies.
 
