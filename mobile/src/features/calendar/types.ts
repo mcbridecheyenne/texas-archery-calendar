@@ -51,7 +51,7 @@ export interface EventsResponse {
   lastUpdated: string;
 }
 
-/** "all", "going", or an organization name from organizationOf(). */
+/** "all", or an organization name from organizationOf(). */
 export type OrgFilter = string;
 
 /** "ALL" or a two-letter state. */

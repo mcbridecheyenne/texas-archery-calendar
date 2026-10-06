@@ -35,7 +35,8 @@ export default function TournamentsTab() {
         fr.refresh();
       },
       onAddEvent: () => router.push("/tournament/new"),
-      // Signed in: ask who can see it. Signed out: Going stays on the phone, as before.
+      // Signed in: ask who can see it (every choice is saved to their account, so a new phone
+      // gets it back; "Just me" ones only they can see). Signed out: Going stays on the phone, as before.
       beforeGoing: async (event: TournamentEvent) => {
         if (!fr.active) return true;
         const level = await askShareLevel(event.name);
@@ -43,10 +44,9 @@ export default function TournamentsTab() {
         fr.setShareLevel(event, level).catch((e) => Alert.alert("Couldn't share it", errorText(e)));
         return true;
       },
+      // Un-starred: take it out of their account too ("Just me" ones are saved there as well).
       onGoingChange: (event, going) => {
-        if (!going && fr.active && fr.shareLevelFor(event.id) !== "private") {
-          fr.setShareLevel(event, "private").catch(() => {});
-        }
+        if (!going && fr.active) fr.removeGoing(event.id).catch(() => {});
       },
       rowNote: (event) => friendsNote(fr.friendsGoing.get(event.id)),
       renderDetail: (event, going, close) => (

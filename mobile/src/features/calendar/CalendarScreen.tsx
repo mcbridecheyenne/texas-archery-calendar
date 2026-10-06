@@ -11,6 +11,7 @@ import {
   SectionList,
   StyleSheet,
   Text,
+  TextInput,
   View,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -21,12 +22,17 @@ import { currentYM, daysInRange, fmtDayLong, fmtMonthYear, fmtRelative, parseISO
 import { useCalendarTheme, type CalendarTheme } from "./theme";
 import { normalizeEvent } from "./api";
 import { StatePicker } from "./components/StatePicker";
-import { stateName } from "./states";
+import { stateCode, stateName } from "./states";
 import { organizationOf, organizationsOf, statesOf, type CalendarSocial, type OrgFilter, type StateFilter, type TournamentEvent } from "./types";
+import { NEIGHBORS, isNationalChampionship, matchesSearch, searchText, searchWords, statesAround } from "./browse";
+import { useDistances } from "./distances";
+import { readJSON, writeJSON } from "./storage";
+import { approxHere, regionAt, type Coords } from "../../lib/location";
 import { useShareCard, type ShareCardInfo } from "./components/ShareCard";
 import { shootsMessage } from "./share";
 import { useEvents } from "./useEvents";
 import { useGoing } from "./useGoing";
+import { checkStarsAgainst } from "./goingStore";
 
 export interface CalendarScreenProps {
   apiBaseUrl: string;
@@ -52,6 +58,13 @@ export interface CalendarScreenProps {
 // Club shoots and archer-added tournaments go after the governing bodies.
 const LAST_ORGS = ["Other", "Club shoots", "Added by archers"];
 
+// "Near me" distances, the same as the Marketplace tab. The last choice is kept on the phone.
+const NEAR_MILES = [25, 50, 100, 250] as const;
+const NEAR_KEY = "nearMe";
+// Outside "Near me", miles are looked up for the first this-many shoots in the list (the ones
+// people actually scroll to), so picking "All states" doesn't look up every town in the country.
+const MILES_FOR_FIRST = 80;
+
 export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery in the USA", bottomInset, footer, social, sharePlug, shareAs, homeState }: CalendarScreenProps) {
   const card = useShareCard();
   const theme = useCalendarTheme();
@@ -74,6 +87,74 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
   const [openEvent, setOpenEvent] = useState<TournamentEvent | null>(null);
   const [toast, showToast] = useToast();
 
+  // Search box: what's typed, and what's applied after a short pause (like the Marketplace).
+  const [search, setSearch] = useState("");
+  const [query, setQuery] = useState("");
+  useEffect(() => {
+    const id = setTimeout(() => setQuery(search.trim()), 350);
+    return () => clearTimeout(id);
+  }, [search]);
+  const clearSearch = useCallback(() => {
+    setSearch("");
+    setQuery("");
+  }, []);
+  const words = useMemo(() => searchWords(query), [query]);
+  const searching = words.length > 0;
+  // Starting or clearing a search goes back to every organization, so an old chip can't hide matches.
+  useEffect(() => {
+    setFilter("all");
+  }, [searching]);
+
+  // "Near me": a distance in miles instead of a state. null = picking by state, as before.
+  const [near, setNear] = useState<number | null>(null);
+  const [origin, setOrigin] = useState<Coords | null>(null); // the phone's rough location
+  const [originState, setOriginState] = useState<string | null>(null);
+  const [locating, setLocating] = useState(false);
+  const [locationOff, setLocationOff] = useState(false); // they said no, or the phone can't tell
+
+  // ask = false only works if the phone already allows location; it never pops up a question.
+  const locate = useCallback(async (ask: boolean) => {
+    setLocating(true);
+    const here = await approxHere({ ask });
+    setLocating(false);
+    if (!here) {
+      if (ask) setLocationOff(true);
+      return;
+    }
+    setLocationOff(false);
+    setOrigin(here);
+    setOriginState(stateCode(await regionAt(here)));
+  }, []);
+
+  // On opening: bring back last time's "Near me" choice. Either way, if the phone already
+  // allows location (say, from the Marketplace), find it quietly so shoots can show miles.
+  useEffect(() => {
+    (async () => {
+      const saved = await readJSON<{ miles: number | null }>(NEAR_KEY);
+      const miles = NEAR_MILES.find((m) => m === saved?.miles) ?? null;
+      setNear(miles);
+      locate(miles !== null);
+    })();
+  }, [locate]);
+
+  const pickNear = useCallback(
+    (miles: number) => {
+      setNear(miles);
+      writeJSON(NEAR_KEY, { miles });
+      setFilter("all");
+      setPickingState(false);
+      if (!origin) locate(true);
+    },
+    [origin, locate]
+  );
+  const pickState = useCallback((code: string) => {
+    setNear(null);
+    writeJSON(NEAR_KEY, { miles: null });
+    setStateFilter(code);
+    setFilter("all");
+    setPickingState(false);
+  }, []);
+
   const todayIso = toIso(new Date());
   const extraEvents = social?.extraEvents;
   const allEvents = useMemo(() => {
@@ -83,11 +164,68 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
       (a, b) => a.startDate.localeCompare(b.startDate) || a.name.localeCompare(b.name)
     );
   }, [data, extraEvents]);
-  // Upcoming tournaments in the picked state; the organization chips and counts come from these.
-  const inState = useMemo(
-    () => allEvents.filter((e) => e.endDate >= todayIso && (stateFilter === "ALL" || statesOf(e).includes(stateFilter))),
-    [allEvents, stateFilter, todayIso]
+  const upcomingAll = useMemo(() => allEvents.filter((e) => e.endDate >= todayIso), [allEvents, todayIso]);
+  const inPickedState = useCallback(
+    (e: TournamentEvent) => stateFilter === "ALL" || statesOf(e).includes(stateFilter),
+    [stateFilter]
   );
+  // Each shoot's searchable text, worked out once per schedule load and only while searching.
+  const searchIndex = useMemo(
+    () => (searching ? new Map(allEvents.map((e) => [e.id, searchText(e)])) : null),
+    [allEvents, searching]
+  );
+  const matches = useCallback(
+    (e: TournamentEvent) => !searchIndex || matchesSearch(searchIndex.get(e.id) ?? "", words),
+    [searchIndex, words]
+  );
+
+  // The picked state has nothing coming up: show shoots next door and the nationals instead.
+  const stateHasNone = stateFilter !== "ALL" && !upcomingAll.some(inPickedState);
+  const neighborStates = useMemo(() => new Set(stateFilter === "ALL" ? [] : NEIGHBORS[stateFilter] ?? []), [stateFilter]);
+  const nextDoor = useMemo(
+    () => (stateHasNone ? upcomingAll.filter((e) => statesOf(e).some((st) => neighborStates.has(st))) : []),
+    [stateHasNone, upcomingAll, neighborStates]
+  );
+
+  // States close enough to matter for "Near me": next door for 25–50 miles, two states over
+  // for more. Unknown (no state for the phone or the archer) means look everywhere.
+  const center = originState ?? homeState ?? null;
+  const nearStates = useMemo(
+    () => (near !== null && center ? statesAround(center, near >= 100 ? 2 : 1) : null),
+    [near, center]
+  );
+  // The shoots whose towns get looked up for miles, most important first.
+  const wanted = useMemo(() => {
+    if (!origin) return [];
+    if (near !== null) {
+      if (!nearStates) return upcomingAll;
+      const ring = (e: TournamentEvent) => Math.min(...statesOf(e).map((st) => nearStates.get(st) ?? 99), 99);
+      return upcomingAll
+        .map((e) => ({ e, r: ring(e) }))
+        .filter((x) => x.r < 99)
+        .sort((a, b) => a.r - b.r) // closest states first; same-state shoots stay in date order
+        .map((x) => x.e);
+    }
+    const shown = upcomingAll.filter((e) => (searching ? matches(e) : inPickedState(e))).slice(0, MILES_FOR_FIRST);
+    return [...shown, ...nextDoor.slice(0, MILES_FOR_FIRST)];
+  }, [origin, near, nearStates, upcomingAll, searching, matches, inPickedState, nextDoor]);
+  const distances = useDistances(allEvents, origin, wanted);
+  const nearOn = near !== null && origin !== null;
+
+  // Where a shoot has to be to show: anywhere while searching, else within the "Near me"
+  // distance, else in the picked state. Without a location, "Near me" falls back to the state.
+  const inPlace = useCallback(
+    (e: TournamentEvent) => {
+      if (searching) return true;
+      if (nearOn) return (distances.miles.get(e.id) ?? Infinity) <= (near ?? 0);
+      return inPickedState(e);
+    },
+    [searching, nearOn, distances.miles, near, inPickedState]
+  );
+
+  // Upcoming tournaments in the picked place (and matching the search); the organization
+  // chips and counts come from these.
+  const inState = useMemo(() => upcomingAll.filter((e) => inPlace(e) && matches(e)), [upcomingAll, inPlace, matches]);
   const stateCounts = useMemo(() => {
     const c: Record<string, number> = {};
     for (const e of allEvents) if (e.endDate >= todayIso) for (const st of statesOf(e)) c[st] = (c[st] ?? 0) + 1;
@@ -117,15 +255,16 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
 
   // Past tournaments stay in for the month grid; the list below only shows upcoming ones.
   const filtered = useMemo(
-    () =>
-      allEvents.filter(
-        (e) =>
-          (stateFilter === "ALL" || statesOf(e).includes(stateFilter)) &&
-          (filter === "all" ? true : filter === "going" ? going.has(e.id) : organizationsOf(e).includes(filter))
-      ),
-    [allEvents, filter, stateFilter, going]
+    () => allEvents.filter((e) => inPlace(e) && matches(e) && (filter === "all" || organizationsOf(e).includes(filter))),
+    [allEvents, filter, inPlace, matches]
   );
   const upcoming = useMemo(() => filtered.filter((e) => e.endDate >= todayIso), [filtered, todayIso]);
+
+  // Each time the schedule loads: if a starred shoot changed its date or place (which gives
+  // it a new id), move the star and its reminders to the new listing.
+  useEffect(() => {
+    if (data) checkStarsAgainst(allEvents, data).catch(() => {});
+  }, [allEvents, data]);
   // "My Shoots": every upcoming tournament marked Going, whatever filter is picked.
   const myShoots = useMemo(() => allEvents.filter((e) => going.has(e.id) && e.endDate >= todayIso), [allEvents, going, todayIso]);
 
@@ -166,7 +305,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
     async (event: TournamentEvent) => {
       const adding = !isGoing(event.id);
       if (adding && beforeGoing && !(await beforeGoing(event))) return;
-      const msg = await toggle(event);
+      const msg = await toggle(event, adding);
       onGoingChange?.(event, adding);
       if (msg) showToast(msg);
     },
@@ -206,8 +345,51 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
       note={social?.rowNote?.(ev) ?? null}
       onPress={setOpenEvent}
       onToggleGoing={onToggleGoing}
+      miles={distances.miles.get(ev.id)}
     />
   );
+
+  // Instead of a blank page when the picked state (or distance) has nothing coming up:
+  // the closest shoots next door and the national championships.
+  const stillMeasuring = nearOn && distances.pending > 0 && !distances.stuck;
+  const showNothingHere = !searching && (nearOn ? !inState.length && !stillMeasuring : stateHasNone);
+  const nearestNextDoor = useMemo(() => {
+    if (!showNothingHere || nearOn) return [];
+    const far = (e: TournamentEvent) => distances.miles.get(e.id) ?? Infinity;
+    // Closest first when the phone knows where it is, otherwise soonest first.
+    return (origin ? [...nextDoor].sort((a, b) => far(a) - far(b)) : nextDoor).slice(0, 8);
+  }, [showNothingHere, nearOn, nextDoor, origin, distances.miles]);
+  const nationals = useMemo(
+    () =>
+      showNothingHere
+        ? upcomingAll.filter((e) => isNationalChampionship(e) && !nearestNextDoor.includes(e)).slice(0, 6)
+        : [],
+    [showNothingHere, upcomingAll, nearestNextDoor]
+  );
+  const nothingHere = showNothingHere ? (
+    <View>
+      <Empty
+        theme={theme}
+        title={nearOn ? `Nothing within ${near} miles yet` : `Nothing listed in ${stateName(stateFilter) ?? stateFilter} yet`}
+        text={
+          (social?.onAddEvent ? "Know of a shoot? Tap Add a tournament above. " : "") +
+          (nearOn ? "Try a bigger distance, or pick a state." : "Here's what's coming up close by.")
+        }
+      />
+      {nearestNextDoor.length ? (
+        <>
+          <Text style={[styles.sectionTitle, styles.suggestTitle, { color: theme.muted }]}>CLOSEST SHOOTS IN NEIGHBORING STATES</Text>
+          {nearestNextDoor.map(renderRow)}
+        </>
+      ) : null}
+      {nationals.length ? (
+        <>
+          <Text style={[styles.sectionTitle, styles.suggestTitle, { color: theme.muted }]}>NATIONAL CHAMPIONSHIPS</Text>
+          {nationals.map(renderRow)}
+        </>
+      ) : null}
+    </View>
+  ) : null;
 
   const segment = (
     <View style={[styles.segment, { backgroundColor: theme.subtle }]}>
@@ -228,6 +410,21 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
   );
 
   const stateLabel = stateFilter === "ALL" ? "All states" : stateName(stateFilter) ?? stateFilter;
+  // What the place button and header say: the distance when "Near me" is working, else the state.
+  const placeLabel = nearOn ? `Within ${near} mi of you` : stateLabel;
+
+  // One short line under the place button about search or "Near me", when there's something to say.
+  const placeNote = searching
+    ? `Searching every state: ${inState.length} upcoming ${inState.length === 1 ? "shoot matches" : "shoots match"}.`
+    : near !== null && !origin && locating
+    ? "Finding where you are…"
+    : near !== null && !origin && locationOff
+    ? `Couldn't tell where you are, so this shows ${stateLabel}. To use Near me, turn on location for this app in your phone's Settings.`
+    : stillMeasuring
+    ? `Working out how far away shoots are (${distances.pending} ${distances.pending === 1 ? "town" : "towns"} to go). More will show up in a moment.`
+    : nearOn && distances.stuck
+    ? "Couldn't look up every town right now, so a few shoots may be missing. They'll be tried again next time."
+    : null;
 
   const mineHeader = (
     <View style={styles.controls}>
@@ -252,11 +449,30 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
         onPress={() => setPickingState(true)}
         style={({ pressed }) => [styles.stateBtn, { backgroundColor: theme.card, borderColor: theme.border, opacity: pressed ? 0.75 : 1 }]}
         accessibilityRole="button"
-        accessibilityLabel={`State: ${stateLabel}. Change state`}
+        accessibilityLabel={`Showing: ${placeLabel}. Change state or pick Near me`}
       >
-        <Text style={[styles.stateText, { color: theme.text }]}>📍 {stateLabel}</Text>
+        <Text style={[styles.stateText, { color: theme.text }]}>📍 {placeLabel}</Text>
         <Text style={[styles.stateChange, { color: theme.primary }]}>Change ▾</Text>
       </Pressable>
+      <View style={[styles.search, { backgroundColor: theme.card, borderColor: theme.border }]}>
+        <Text style={[styles.searchIcon, { color: theme.muted }]}>🔍</Text>
+        <TextInput
+          value={search}
+          onChangeText={setSearch}
+          placeholder="Search shoots, towns, states, clubs…"
+          placeholderTextColor={theme.muted}
+          style={[styles.searchInput, { color: theme.text }]}
+          returnKeyType="search"
+          autoCorrect={false}
+          accessibilityLabel="Search tournaments"
+        />
+        {search ? (
+          <Pressable onPress={clearSearch} hitSlop={10} accessibilityRole="button" accessibilityLabel="Clear search">
+            <Text style={[styles.searchClear, { color: theme.muted }]}>✕</Text>
+          </Pressable>
+        ) : null}
+      </View>
+      {placeNote ? <Text style={[styles.placeNote, { color: theme.muted }]}>{placeNote}</Text> : null}
       {/* Wraps onto a second line instead of scrolling sideways, so every organization is visible. */}
       <View style={styles.chips}>
         <Chip label={`All ${counts.all}`} active={filter === "all"} onPress={() => setFilter("all")} theme={theme} />
@@ -292,7 +508,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
             {title}
           </Text>
           <Text style={[styles.headerSub, { color: theme.muted }]}>
-            {data ? `${stateLabel} · updated ${fmtRelative(data.lastUpdated)}` : stateLabel}
+            {data ? `${placeLabel} · updated ${fmtRelative(data.lastUpdated)}` : placeLabel}
           </Text>
         </View>
       ) : null}
@@ -332,11 +548,20 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
               </Pressable>
             ) : null}
           </View>
-          {belowGrid.length ? (
-            belowGrid.map(renderRow)
-          ) : (
-            <Empty theme={theme} text={selectedDay ? "No tournaments on this day." : "No tournaments this month."} />
-          )}
+          {belowGrid.length ? belowGrid.map(renderRow) : null}
+          {!belowGrid.length && !nothingHere ? (
+            <Empty
+              theme={theme}
+              text={
+                searching
+                  ? `Nothing ${selectedDay ? "on this day" : "this month"} matches “${query}”.`
+                  : selectedDay
+                  ? "No tournaments on this day."
+                  : "No tournaments this month."
+              }
+            />
+          ) : null}
+          {nothingHere}
           {footer}
         </ScrollView>
       ) : (
@@ -352,18 +577,28 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
           ListHeaderComponent={view === "mine" ? mineHeader : controls}
           ListFooterComponent={footer ? <>{footer}</> : null}
           ListEmptyComponent={
-            <Empty
-              theme={theme}
-              text={
-                view === "mine" || filter === "going"
-                  ? "Tap ☆ on a tournament to add it to My Shoots. Then you can share them with friends."
-                  : filter === "Added by archers"
-                  ? "No tournaments added by archers here yet. Know of one? Tap Add a tournament."
-                  : stateFilter !== "ALL" && filter === "all"
-                  ? `No upcoming tournaments in ${stateLabel} yet. Know of one? Add it, or pick another state.`
-                  : "No upcoming tournaments match."
-              }
-            />
+            view !== "mine" && nothingHere ? (
+              nothingHere
+            ) : view !== "mine" && searching ? (
+              <Empty
+                theme={theme}
+                title={`No shoots match “${query}”`}
+                text="Check the spelling, or try a town, state, club or organization. Tap ✕ to clear the search."
+              />
+            ) : (
+              <Empty
+                theme={theme}
+                text={
+                  view === "mine"
+                    ? "Tap ☆ on a tournament to add it to My Shoots. Then you can share them with friends."
+                    : stillMeasuring
+                    ? "Working out how far away shoots are…"
+                    : filter === "Added by archers"
+                    ? "No tournaments added by archers here yet. Know of one? Tap Add a tournament."
+                    : "No upcoming tournaments match."
+                }
+              />
+            )
           }
           contentContainerStyle={[styles.scroll, { paddingBottom: bottom + 24 }]}
           refreshControl={refreshControl}
@@ -386,17 +621,21 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
 
       <StatePicker
         visible={pickingState}
-        value={stateFilter}
+        value={near !== null ? null : stateFilter}
         theme={theme}
         title="Show tournaments in"
         allLabel="All states"
         counts={stateCounts}
         onClose={() => setPickingState(false)}
-        onPick={(code) => {
-          setStateFilter(code);
-          setFilter("all");
-          setPickingState(false);
-        }}
+        onPick={pickState}
+        nearMiles={NEAR_MILES}
+        nearValue={near}
+        nearNote={
+          locationOff
+            ? "Location is off for this app. Turn it on in your phone's Settings to use Near me."
+            : "Uses your phone's rough location, only while the app is open."
+        }
+        onPickNear={pickNear}
       />
 
       {toast ? (
@@ -474,9 +713,10 @@ function Chip({
   );
 }
 
-function Empty({ text, theme }: { text: string; theme: CalendarTheme }) {
+function Empty({ text, theme, title }: { text: string; theme: CalendarTheme; title?: string }) {
   return (
     <View style={[styles.empty, { borderColor: theme.border }]}>
+      {title ? <Text style={[styles.emptyTitle, { color: theme.text }]}>{title}</Text> : null}
       <Text style={[styles.centerText, { color: theme.muted }]}>{text}</Text>
     </View>
   );
@@ -551,7 +791,14 @@ const styles = StyleSheet.create({
   centerTitle: { fontSize: 18, fontWeight: "700" },
   centerText: { fontSize: 14, textAlign: "center" },
   retry: { marginTop: 8, paddingHorizontal: 22, paddingVertical: 11, borderRadius: 10 },
-  empty: { borderWidth: 1, borderStyle: "dashed", borderRadius: 12, padding: 24, marginTop: 4 },
+  empty: { borderWidth: 1, borderStyle: "dashed", borderRadius: 12, padding: 24, marginTop: 4, gap: 6 },
+  emptyTitle: { fontSize: 16, fontWeight: "700", textAlign: "center" },
+  suggestTitle: { marginTop: 18, marginBottom: 8 },
+  search: { flexDirection: "row", alignItems: "center", gap: 8, borderRadius: 10, borderWidth: StyleSheet.hairlineWidth, paddingHorizontal: 12 },
+  searchIcon: { fontSize: 14 },
+  searchInput: { flex: 1, fontSize: 16, paddingVertical: 9 },
+  searchClear: { fontSize: 16, fontWeight: "700", paddingHorizontal: 2 },
+  placeNote: { fontSize: 13, lineHeight: 18 },
   toast: { position: "absolute", left: 24, right: 24, borderRadius: 12, paddingVertical: 12, paddingHorizontal: 16 },
   toastText: { fontSize: 14, fontWeight: "600", textAlign: "center" },
 });

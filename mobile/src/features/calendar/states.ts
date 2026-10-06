@@ -17,3 +17,11 @@ export function stateName(code: string | null | undefined): string | null {
   const c = (code ?? "").toUpperCase();
   return US_STATES.find((s) => s.code === c)?.name ?? null;
 }
+
+// Turns "TX", "tx" or "Texas" into "TX"; null for anything else (like a Canadian province).
+export function stateCode(text: string | null | undefined): string | null {
+  const t = (text ?? "").trim();
+  if (!t) return null;
+  const upper = t.toUpperCase();
+  return US_STATES.find((s) => s.code === upper || s.name.toUpperCase() === upper)?.code ?? null;
+}

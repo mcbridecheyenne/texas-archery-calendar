@@ -1,54 +1,47 @@
 // The archer's "Going" list, saved on the phone. Marking an event sets reminders.
+// The list itself lives in goingStore.ts, so every screen using this hook stays in step.
 import { useCallback, useEffect, useState } from "react";
-import { cancelRemindersFor, scheduleRemindersFor } from "./reminders";
-import { readJSON, writeJSON } from "./storage";
+import { loadStars, reloadStars, setStar, subscribeStars } from "./goingStore";
+import { maybeAskForReview } from "./review";
 import type { TournamentEvent } from "./types";
-
-const KEY = "going.v1";
 
 export interface GoingState {
   going: Set<string>;
   isGoing: (id: string) => boolean;
-  // Resolves to a short message to show the archer, or null.
-  toggle: (event: TournamentEvent) => Promise<string | null>;
+  // Resolves to a short message to show the archer, or null. Pass want to star (true) or
+  // un-star (false) instead of flipping whatever it is now.
+  toggle: (event: TournamentEvent, want?: boolean) => Promise<string | null>;
   reload: () => Promise<void>; // re-read the saved list (e.g. when another tab changed it)
 }
 
 export function useGoing(): GoingState {
   const [going, setGoing] = useState<Set<string>>(new Set());
 
-  const reload = useCallback(async () => {
-    const ids = await readJSON<string[]>(KEY);
-    if (Array.isArray(ids)) setGoing(new Set(ids));
+  useEffect(() => {
+    let live = true;
+    const unsubscribe = subscribeStars((ids) => live && setGoing(ids));
+    loadStars().then((ids) => live && setGoing(ids));
+    return () => {
+      live = false;
+      unsubscribe();
+    };
   }, []);
 
-  useEffect(() => {
-    reload();
-  }, [reload]);
+  const reload = useCallback(async () => {
+    await reloadStars();
+  }, []);
 
   const isGoing = useCallback((id: string) => going.has(id), [going]);
 
   const toggle = useCallback(
-    async (event: TournamentEvent) => {
-      const adding = !going.has(event.id);
-      const next = new Set(going);
-      if (adding) next.add(event.id);
-      else next.delete(event.id);
-      setGoing(next);
-      await writeJSON(KEY, Array.from(next));
-
-      if (!adding) {
-        await cancelRemindersFor(event.id);
-        return null;
-      }
-      try {
-        const count = await scheduleRemindersFor(event);
-        return count > 0
-          ? "Added to Going. You'll get a reminder the evening before."
-          : "Added to Going.";
-      } catch {
-        return "Added to Going.";
-      }
+    async (event: TournamentEvent, want?: boolean) => {
+      const adding = want ?? !going.has(event.id);
+      const result = await setStar(event, adding);
+      if (!result.starred || !result.changed) return null;
+      maybeAskForReview(result.count);
+      return result.reminders > 0
+        ? "Added to Going. You'll get a reminder the evening before."
+        : "Added to Going.";
     },
     [going]
   );

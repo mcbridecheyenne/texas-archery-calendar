@@ -1,6 +1,6 @@
 // One conversation about a listing, updating live.
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { useLocalSearchParams, useNavigation, useRouter } from "expo-router";
+import { useFocusEffect, useLocalSearchParams, useNavigation, useRouter } from "expo-router";
 import { useCallback, useEffect, useLayoutEffect, useMemo, useState } from "react";
 import {
   ActivityIndicator,
@@ -27,6 +27,7 @@ import { useInbox } from "../../src/features/marketplace/inbox";
 import { checkMessageText, looksLikeScam } from "../../src/features/marketplace/moderation";
 import type { Conversation, Message } from "../../src/features/marketplace/types";
 import { useAuth } from "../../src/lib/auth";
+import { askForPushNotifications, setOpenChat } from "../../src/lib/push";
 import { Empty, confirm, errorText, showMenu, useTheme } from "../../src/ui";
 
 export default function ChatScreen() {
@@ -67,6 +68,14 @@ export default function ChatScreen() {
       unsubscribe();
     };
   }, [id]);
+
+  // While this chat is on screen, new messages in it don't pop up a banner.
+  useFocusEffect(
+    useCallback(() => {
+      setOpenChat(id);
+      return () => setOpenChat(null);
+    }, [id])
+  );
 
   // Mark read when opened and whenever a new message arrives while open.
   useEffect(() => {
@@ -119,6 +128,7 @@ export default function ChatScreen() {
       const m = await sendMessage(id, userId, body);
       setMessages((cur) => (cur.some((x) => x.id === m.id) ? cur : [...cur, m]));
       setDraft("");
+      askForPushNotifications(userId); // so they hear back even when the app is closed
     } catch (e) {
       const msg = errorText(e);
       Alert.alert(

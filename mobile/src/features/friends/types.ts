@@ -1,6 +1,7 @@
 // Shapes for friends and shared "Going" (tables in supabase/schema.sql).
 
-/** Who can see that you're going: "private" stays on the phone only. */
+/** Who can see that you're going. "private" (Just me) is only ever seen by you: it's saved
+ *  to your account (so a new phone gets it back) but no one else can read it. */
 export type ShareLevel = "private" | "friends" | "public";
 
 export interface Friend {
