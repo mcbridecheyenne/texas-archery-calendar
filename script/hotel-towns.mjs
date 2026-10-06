@@ -30,7 +30,8 @@ function stateCode(text) {
 function cityKey(e) {
   const city = String(e.city ?? "").trim().replace(/\s+/g, " ");
   const code = stateCode(e.state);
-  if (!city || /^tba$/i.test(city) || !code) return null;
+  // Skip placeholders like "TBA", "Multiple" or "College Station Texas - Aggie Invite".
+  if (!city || /^(tba|multiple|various)$/i.test(city) || /\s-\s/.test(city) || !code) return null;
   return { key: `${city}, ${code}`.toLowerCase(), city, state: code };
 }
 
