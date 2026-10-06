@@ -1,10 +1,10 @@
 {
  "updated": "2026-10-06",
- "note": "Nightly hotel prices (USD, 2 adults, before taxes) found in a hotel search for each shoot town for the nights of its next shoot (check-in the night before). low = cheapest, high = 90th percentile, typical = average. Refreshed daily by a Claude routine.",
+ "note": "Nightly hotel prices (USD, 2 adults, before taxes) found in a hotel search for each shoot town for the nights of its next shoot (check-in the night before). low = cheapest, high = 90th percentile, typical = average of the hotels up to high. Refreshed daily by a Claude routine.",
  "cities": {
   "allen, tx": {
    "low": 70,
-   "typical": 105,
+   "typical": 95,
    "high": 135,
    "checked": "2026-10-06",
    "hotels": 12,
@@ -22,7 +22,7 @@
   },
   "amarillo, tx": {
    "low": 56,
-   "typical": 125,
+   "typical": 120,
    "high": 143,
    "checked": "2026-10-06",
    "hotels": 12,
@@ -31,7 +31,7 @@
   },
   "ashland, ma": {
    "low": 75,
-   "typical": 135,
+   "typical": 130,
    "high": 169,
    "checked": "2026-10-06",
    "hotels": 11,
@@ -67,7 +67,7 @@
   },
   "burleson, tx": {
    "low": 59,
-   "typical": 115,
+   "typical": 110,
    "high": 152,
    "checked": "2026-10-06",
    "hotels": 12,
@@ -85,7 +85,7 @@
   },
   "canyon lake, tx": {
    "low": 133,
-   "typical": 170,
+   "typical": 160,
    "high": 190,
    "checked": "2026-10-06",
    "hotels": 10,
@@ -94,7 +94,7 @@
   },
   "chula vista, ca": {
    "low": 95,
-   "typical": 160,
+   "typical": 145,
    "high": 214,
    "checked": "2026-10-06",
    "hotels": 10,
@@ -175,7 +175,7 @@
   },
   "fort worth, tx": {
    "low": 56,
-   "typical": 115,
+   "typical": 100,
    "high": 140,
    "checked": "2026-10-06",
    "hotels": 12,
@@ -184,7 +184,7 @@
   },
   "frisco, tx": {
    "low": 89,
-   "typical": 155,
+   "typical": 140,
    "high": 246,
    "checked": "2026-10-06",
    "hotels": 12,
@@ -193,7 +193,7 @@
   },
   "garland, tx": {
    "low": 85,
-   "typical": 105,
+   "typical": 100,
    "high": 120,
    "checked": "2026-10-06",
    "hotels": 12,
@@ -202,7 +202,7 @@
   },
   "georgetown, tx": {
    "low": 65,
-   "typical": 120,
+   "typical": 110,
    "high": 167,
    "checked": "2026-10-06",
    "hotels": 11,
@@ -211,7 +211,7 @@
   },
   "grand prairie, tx": {
    "low": 76,
-   "typical": 120,
+   "typical": 115,
    "high": 162,
    "checked": "2026-10-06",
    "hotels": 12,
@@ -220,7 +220,7 @@
   },
   "grapevine, tx": {
    "low": 92,
-   "typical": 140,
+   "typical": 120,
    "high": 144,
    "checked": "2026-10-06",
    "hotels": 12,
@@ -229,7 +229,7 @@
   },
   "houston, tx": {
    "low": 55,
-   "typical": 165,
+   "typical": 145,
    "high": 261,
    "checked": "2026-10-06",
    "hotels": 12,
@@ -265,7 +265,7 @@
   },
   "kennedale, tx": {
    "low": 71,
-   "typical": 110,
+   "typical": 105,
    "high": 134,
    "checked": "2026-10-06",
    "hotels": 12,
@@ -274,7 +274,7 @@
   },
   "killeen, tx": {
    "low": 61,
-   "typical": 105,
+   "typical": 100,
    "high": 123,
    "checked": "2026-10-06",
    "hotels": 12,
@@ -283,7 +283,7 @@
   },
   "lancaster, pa": {
    "low": 90,
-   "typical": 175,
+   "typical": 165,
    "high": 241,
    "checked": "2026-10-06",
    "hotels": 12,
@@ -292,7 +292,7 @@
   },
   "laredo, tx": {
    "low": 61,
-   "typical": 110,
+   "typical": 105,
    "high": 166,
    "checked": "2026-10-06",
    "hotels": 11,
@@ -310,7 +310,7 @@
   },
   "lunenburg, ma": {
    "low": 88,
-   "typical": 160,
+   "typical": 155,
    "high": 208,
    "checked": "2026-10-06",
    "hotels": 11,
@@ -319,7 +319,7 @@
   },
   "manheim, pa": {
    "low": 62,
-   "typical": 115,
+   "typical": 105,
    "high": 164,
    "checked": "2026-10-06",
    "hotels": 12,
@@ -328,7 +328,7 @@
   },
   "mays landing, nj": {
    "low": 64,
-   "typical": 125,
+   "typical": 115,
    "high": 166,
    "checked": "2026-10-06",
    "hotels": 12,
@@ -337,7 +337,7 @@
   },
   "mcclellan, ca": {
    "low": 55,
-   "typical": 105,
+   "typical": 100,
    "high": 130,
    "checked": "2026-10-06",
    "hotels": 10,
@@ -382,7 +382,7 @@
   },
   "newark, de": {
    "low": 86,
-   "typical": 145,
+   "typical": 125,
    "high": 162,
    "checked": "2026-10-06",
    "hotels": 11,
@@ -409,7 +409,7 @@
   },
   "oro valley, az": {
    "low": 46,
-   "typical": 135,
+   "typical": 125,
    "high": 252,
    "checked": "2026-10-06",
    "hotels": 11,
@@ -445,7 +445,7 @@
   },
   "randleman, nc": {
    "low": 67,
-   "typical": 135,
+   "typical": 115,
    "high": 226,
    "checked": "2026-10-06",
    "hotels": 10,
@@ -499,7 +499,7 @@
   },
   "waco, tx": {
    "low": 66,
-   "typical": 190,
+   "typical": 150,
    "high": 295,
    "checked": "2026-10-06",
    "hotels": 12,
@@ -517,7 +517,7 @@
   },
   "west bloomfield township, mi": {
    "low": 83,
-   "typical": 140,
+   "typical": 135,
    "high": 181,
    "checked": "2026-10-06",
    "hotels": 12,
@@ -526,7 +526,7 @@
   },
   "west bloomfield, mi": {
    "low": 87,
-   "typical": 135,
+   "typical": 125,
    "high": 189,
    "checked": "2026-10-06",
    "hotels": 12,
