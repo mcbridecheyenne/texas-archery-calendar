@@ -14,3 +14,4 @@ export { hasCachedEvents, normalizeEvent } from "./api";
 export { StatePicker } from "./components/StatePicker";
 export { US_STATES, stateName } from "./states";
 export { organizationOf, organizationsOf, listedBy } from "./types";
+export { hotelPrices, hotelSearchUrl, type HotelsConfig } from "./hotels";

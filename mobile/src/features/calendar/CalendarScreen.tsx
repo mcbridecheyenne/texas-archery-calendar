@@ -26,6 +26,7 @@ import { stateCode, stateName } from "./states";
 import { organizationOf, organizationsOf, statesOf, type CalendarSocial, type OrgFilter, type StateFilter, type TournamentEvent } from "./types";
 import { NEIGHBORS, isNationalChampionship, matchesSearch, searchText, searchWords, statesAround } from "./browse";
 import { useDistances } from "./distances";
+import type { HotelsConfig } from "./hotels";
 import { readJSON, writeJSON } from "./storage";
 import { approxHere, regionAt, type Coords } from "../../lib/location";
 import { useShareCard, type ShareCardInfo } from "./components/ShareCard";
@@ -53,6 +54,8 @@ export interface CalendarScreenProps {
   social?: CalendarSocial;
   /** The archer's home state; the state filter starts on it (all states when null). */
   homeState?: string | null;
+  /** "Hotels near the shoot" in each shoot's details (price range + search link). */
+  hotels?: HotelsConfig;
 }
 
 // Club shoots and archer-added tournaments go after the governing bodies.
@@ -65,7 +68,7 @@ const NEAR_KEY = "nearMe";
 // people actually scroll to), so picking "All states" doesn't look up every town in the country.
 const MILES_FOR_FIRST = 80;
 
-export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery in the USA", bottomInset, footer, social, sharePlug, shareAs, homeState }: CalendarScreenProps) {
+export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery in the USA", bottomInset, footer, social, sharePlug, shareAs, homeState, hotels }: CalendarScreenProps) {
   const card = useShareCard();
   const theme = useCalendarTheme();
   const insets = useSafeAreaInsets();
@@ -615,6 +618,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
         extra={social?.renderDetail}
         sharePlug={sharePlug}
         shareAs={shareAs}
+        hotels={hotels}
       />
 
       {card.element}
