@@ -1,0 +1,47 @@
+# Every morning, writes the list of towns with upcoming shoots (and the nights to price) to
+# hotel-towns.json on the hotel-data branch. A daily Claude routine then looks up hotel
+# prices for those towns and writes hotel-prices.json to the same branch; the "Collect
+# events and publish site" workflow publishes it for the phone app.
+name: Hotel towns
+
+on:
+  schedule:
+    - cron: "40 9 * * *" # 9:40 UTC daily (4:40 am Texas time)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hotel-data
+  cancel-in-progress: false
+
+jobs:
+  towns:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download the published schedules
+        run: |
+          mkdir -p out
+          curl -sSf https://mcbridecheyenne.github.io/texas-archery-calendar/events.json -o out/events.json
+          curl -sSf https://mcbridecheyenne.github.io/texas-archery-calendar/events-usa.json -o out/events-usa.json || true
+
+      - name: List towns
+        run: node script/hotel-towns.mjs out/events.json out/events-usa.json > out/hotel-towns.json && head -c 400 out/hotel-towns.json
+
+      - name: Commit to the hotel-data branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git fetch --depth 1 origin hotel-data; then
+            git checkout -B hotel-data FETCH_HEAD
+          else
+            git checkout --orphan hotel-data && git rm -rfq . && git clean -fdq -e out
+          fi
+          cp out/hotel-towns.json hotel-towns.json
+          git add hotel-towns.json
+          git diff --cached --quiet && { echo "No change"; exit 0; }
+          git commit -m "Towns with upcoming shoots ($(date -u +%F))"
+          git push origin hotel-data
