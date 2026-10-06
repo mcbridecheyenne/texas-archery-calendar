@@ -122,8 +122,33 @@ people are using it.
 
 ### Not in this version yet
 
-- Push notifications for new messages (the Messages tab shows unread counts while the app is open).
 - In-app payments; buyers and sellers settle up themselves.
+
+## Push notifications (new messages and friend requests)
+
+Signed-in archers get a notification when someone messages them, sends a friend request,
+or accepts theirs, even with the app closed. Tapping it opens that chat or the Friends screen.
+The app asks permission the first time they open Messages or Friends, or send a message.
+Supabase sends the notifications itself (through Expo), so there's no extra server to run.
+Nothing is sent between people who have blocked each other.
+
+One-time setup:
+
+1. **Supabase:** re-run `supabase/schema.sql` (adds the `push_tokens` table and turns on `pg_net`).
+   If it stops with an error about `pg_net`, turn it on under Database → Extensions → `pg_net`, then run it again.
+2. **iPhone:** in Terminal, `cd mobile && eas credentials -p ios` → production → Push Notifications →
+   set up a new push key (sign in with your Apple ID and let Expo make it).
+3. **Android (Firebase):**
+   - At console.firebase.google.com, create a project and add an Android app with package
+     `com.cheyennemcbride.archeryintexas`. Download `google-services.json` into `mobile/`, and in
+     `app.json` under `"android"` add `"googleServicesFile": "./google-services.json"`.
+   - Firebase → Project settings → Service accounts → **Generate new private key**. Then
+     `eas credentials -p android` → production → Google Service Account → Push Notifications (FCM V1) → upload that file.
+     Keep that key file out of the repo (it's a password).
+4. Ship a new build to both stores (`npm run ios:upload`, `npm run android:build`).
+
+To check it's working, send a message to yourself from a second account. Deleted accounts and
+signed-out phones stop getting notifications automatically.
 
 ## TestFlight / App Store (iPhone)
 

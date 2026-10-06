@@ -702,3 +702,178 @@ create index if not exists listings_lat on public.listings (lat) where status = 
 alter table public.profiles add column if not exists home_state text
   check (home_state is null or home_state ~ '^[A-Z]{2}$');
 alter table public.profiles add column if not exists age_confirmed_at timestamptz;
+
+-- ============================================================
+-- Push notifications: a new message, a friend request, and a friend
+-- request accepted reach the archer's phone even when the app is closed.
+-- The phone saves its Expo push token here; when a row is added to
+-- messages or friendships, the database itself asks Expo to deliver the
+-- notification (through pg_net, Supabase's built-in web request tool), so
+-- there's no extra server to run. Safe to re-run.
+-- ============================================================
+create extension if not exists pg_net with schema extensions;
+
+create table if not exists public.push_tokens (
+  token text primary key check (token ~ '^Expo(nent)?PushToken\[[^]\s]{1,200}\]$'),
+  user_id uuid not null references public.profiles (id) on delete cascade, -- gone when the account is deleted
+  device text not null check (device in ('ios', 'android')),
+  updated_at timestamptz not null default now()
+);
+
+create index if not exists push_tokens_user on public.push_tokens (user_id);
+
+alter table public.push_tokens enable row level security;
+
+-- People only ever see and remove their own phones' tokens. There's no insert or
+-- update rule on purpose: tokens are saved only through save_push_token() below.
+drop policy if exists "see own push tokens" on public.push_tokens;
+create policy "see own push tokens" on public.push_tokens
+  for select to authenticated using (user_id = auth.uid());
+
+drop policy if exists "remove own push tokens" on public.push_tokens;
+create policy "remove own push tokens" on public.push_tokens
+  for delete to authenticated using (user_id = auth.uid());
+
+-- The app calls this after the archer allows notifications. If someone else was
+-- signed in on this phone before, the token moves to whoever is signed in now.
+-- Each archer keeps their 10 most recent phones.
+create or replace function public.save_push_token(new_token text, new_device text)
+returns void language plpgsql security definer set search_path = public as $$
+declare
+  me uuid := auth.uid();
+begin
+  if me is null or not public.is_active_member(me) then
+    raise exception 'Sign in and finish your profile first.';
+  end if;
+
+  insert into public.push_tokens (token, user_id, device, updated_at)
+  values (new_token, me, new_device, now())
+  on conflict (token) do update
+    set user_id = excluded.user_id, device = excluded.device, updated_at = now();
+
+  delete from public.push_tokens
+  where user_id = me
+    and token not in (
+      select t.token from public.push_tokens t
+      where t.user_id = me order by t.updated_at desc limit 10
+    );
+end $$;
+
+revoke all on function public.save_push_token(text, text) from public, anon;
+grant execute on function public.save_push_token(text, text) to authenticated;
+
+-- Sends one notification to every phone of one archer through Expo's push service.
+-- Only the triggers below use it; the app can't call it (or anyone could send
+-- notifications to anyone). If anything goes wrong it gives up quietly, so a
+-- message or friend request is never lost because a notification failed.
+create or replace function public.send_push(to_user uuid, msg_title text, msg_body text, msg_data jsonb)
+returns void language plpgsql security definer set search_path = public as $$
+declare
+  batch jsonb;
+begin
+  select jsonb_agg(jsonb_build_object(
+    'to', t.token,
+    'title', msg_title,
+    'body', msg_body,
+    'data', msg_data,
+    'sound', 'default',
+    'priority', 'high',
+    'channelId', 'messages' -- the Android notification channel the app creates (src/lib/push.ts)
+  ))
+  into batch
+  from public.push_tokens t
+  where t.user_id = to_user;
+
+  if batch is null then
+    return; -- no phones signed up for notifications
+  end if;
+
+  perform net.http_post(
+    url := 'https://exp.host/--/api/v2/push/send',
+    body := batch,
+    headers := jsonb_build_object('Content-Type', 'application/json', 'Accept', 'application/json')
+  );
+exception when others then
+  raise warning 'Push notification not sent: %', sqlerrm;
+end $$;
+
+revoke all on function public.send_push(uuid, text, text, jsonb) from public, anon, authenticated;
+
+-- A new message: notify the other person in the conversation with the sender's
+-- name and the start of the message. Nothing is sent between blocked people.
+create or replace function public.push_on_new_message()
+returns trigger language plpgsql security definer set search_path = public as $$
+declare
+  convo record;
+  recipient uuid;
+  sender_name text;
+  preview text;
+begin
+  select buyer_id, seller_id into convo from public.conversations where id = new.conversation_id;
+  if not found then
+    return new;
+  end if;
+  recipient := case when new.sender_id = convo.buyer_id then convo.seller_id else convo.buyer_id end;
+  if recipient = new.sender_id
+     or public.either_blocked(new.sender_id, recipient)
+     or not public.is_active_member(new.sender_id) then
+    return new;
+  end if;
+
+  select display_name into sender_name from public.profiles where id = new.sender_id;
+  preview := trim(regexp_replace(new.body, '\s+', ' ', 'g'));
+  if char_length(preview) > 80 then
+    preview := left(preview, 79) || '…';
+  end if;
+
+  perform public.send_push(
+    recipient,
+    coalesce(sender_name, 'An archer'),
+    preview,
+    jsonb_build_object(
+      'type', 'message',
+      'conversationId', new.conversation_id,
+      'url', '/chat/' || new.conversation_id
+    )
+  );
+  return new;
+end $$;
+
+drop trigger if exists push_on_new_message on public.messages;
+create trigger push_on_new_message after insert on public.messages
+  for each row execute function public.push_on_new_message();
+
+-- A new friend request (to the person asked), and a request accepted (to the
+-- person who asked). Nothing is sent between blocked people.
+create or replace function public.push_on_friendship()
+returns trigger language plpgsql security definer set search_path = public as $$
+declare
+  who text;
+begin
+  if public.either_blocked(new.requester_id, new.addressee_id) then
+    return new;
+  end if;
+
+  if tg_op = 'INSERT' and new.status = 'pending' then
+    select display_name into who from public.profiles where id = new.requester_id;
+    perform public.send_push(
+      new.addressee_id,
+      'New friend request',
+      coalesce(who, 'An archer') || ' wants to be friends on Archery in the USA.',
+      jsonb_build_object('type', 'friend_request', 'url', '/friends')
+    );
+  elsif tg_op = 'UPDATE' and old.status = 'pending' and new.status = 'accepted' then
+    select display_name into who from public.profiles where id = new.addressee_id;
+    perform public.send_push(
+      new.requester_id,
+      'Friend request accepted',
+      coalesce(who, 'An archer') || ' accepted your friend request.',
+      jsonb_build_object('type', 'friend_accepted', 'url', '/friends')
+    );
+  end if;
+  return new;
+end $$;
+
+drop trigger if exists push_on_friendship on public.friendships;
+create trigger push_on_friendship after insert or update of status on public.friendships
+  for each row execute function public.push_on_friendship();

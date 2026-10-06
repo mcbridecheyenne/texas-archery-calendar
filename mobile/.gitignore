@@ -11,3 +11,5 @@ android/
 *.mobileprovision
 .env*.local
 build/
+# Firebase service-account key for Android push (upload it with eas credentials, never commit it)
+*firebase-adminsdk*.json
