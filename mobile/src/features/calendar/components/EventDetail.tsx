@@ -5,6 +5,7 @@ import { addToPhoneCalendar, callHost, emailHost, openDirections, openUrl } from
 import { daysUntil, fmtRange } from "../dates";
 import type { CalendarTheme } from "../theme";
 import { listedBy, type TournamentEvent } from "../types";
+import { hotelPlace, hotelPrices, hotelSearchUrl, type HotelsConfig } from "../hotels";
 import { shareShoot, shootMessage } from "../share";
 import { useShareCard, type ShareCardInfo } from "./ShareCard";
 import { SourcePill } from "./SourcePill";
@@ -19,6 +20,8 @@ interface Props {
   extra?: (event: TournamentEvent, going: boolean, close: () => void) => ReactNode;
   sharePlug?: string;
   shareAs?: ShareCardInfo;
+  /** Shows "Hotels near the shoot" with a price range and a search link. */
+  hotels?: HotelsConfig;
 }
 
 function countdown(event: TournamentEvent): string | null {
@@ -30,7 +33,7 @@ function countdown(event: TournamentEvent): string | null {
   return null;
 }
 
-export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra, sharePlug, shareAs }: Props) {
+export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra, sharePlug, shareAs, hotels }: Props) {
   const card = useShareCard();
   const [flyerOpen, setFlyerOpen] = useState(false);
   const win = useWindowDimensions();
@@ -146,6 +149,8 @@ export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra
               ) : null}
             </View>
 
+            {hotels?.enabled ? <HotelCard event={event} config={hotels} theme={theme} /> : null}
+
             {event.flyerUrl ? (
               <Pressable
                 onPress={() => setFlyerOpen(true)}
@@ -194,6 +199,40 @@ export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra
         </View>
       ) : null}
     </Modal>
+  );
+}
+
+// Typical nightly prices near the shoot (an estimate) and a button that searches hotels
+// for the shoot's dates. Hidden for shoots that are over or have no place.
+function HotelCard({ event, config, theme }: { event: TournamentEvent; config: HotelsConfig; theme: CalendarTheme }) {
+  const url = hotelSearchUrl(event, config);
+  if (!url) return null;
+  const prices = hotelPrices(event);
+  const place = hotelPlace(event);
+  return (
+    <View style={[styles.card, { backgroundColor: theme.card, borderColor: theme.border, paddingVertical: 12, gap: 6 }]}>
+      <Text style={[styles.rowLabel, { color: theme.muted }]}>HOTELS NEAR THE SHOOT</Text>
+      {prices ? (
+        <>
+          <Text style={[styles.hotelPrice, { color: theme.text }]}>
+            ${prices.low} – ${prices.high}
+            <Text style={[styles.hotelPer, { color: theme.muted }]}> a night</Text>
+          </Text>
+          <Text style={[styles.rowValue, { color: theme.text }]}>About ${prices.typical} a night on average</Text>
+          <Text style={[styles.hotelNote, { color: theme.muted }]}>
+            Typical prices for this area, not live quotes. Prices go up on big shoot weekends, so book early.
+          </Text>
+        </>
+      ) : null}
+      <Pressable
+        onPress={() => openUrl(url)}
+        accessibilityRole="link"
+        accessibilityLabel={`Find hotels near ${place ?? "the shoot"}`}
+        style={({ pressed }) => [styles.hotelBtn, { backgroundColor: theme.primary, opacity: pressed ? 0.8 : 1 }]}
+      >
+        <Text style={[styles.hotelBtnText, { color: theme.onPrimary }]}>Find hotels{place ? ` near ${place}` : ""}</Text>
+      </Pressable>
+    </View>
   );
 }
 
@@ -272,6 +311,11 @@ const styles = StyleSheet.create({
   viewer: { flex: 1, backgroundColor: "#000" },
   viewerClose: { position: "absolute", right: 16, backgroundColor: "rgba(255,255,255,0.15)", paddingHorizontal: 14, paddingVertical: 8, borderRadius: 999 },
   viewerCloseText: { color: "#fff", fontSize: 16, fontWeight: "700" },
+  hotelPrice: { fontSize: 22, fontWeight: "700" },
+  hotelPer: { fontSize: 15, fontWeight: "400" },
+  hotelNote: { fontSize: 12, lineHeight: 16 },
+  hotelBtn: { marginTop: 6, borderRadius: 10, paddingVertical: 11, paddingHorizontal: 12, alignItems: "center" },
+  hotelBtnText: { fontSize: 15, fontWeight: "700", textAlign: "center" },
   userNote: { marginTop: 10, borderRadius: 10, borderWidth: StyleSheet.hairlineWidth, padding: 10 },
   userNoteText: { fontSize: 14, lineHeight: 19 },
 });

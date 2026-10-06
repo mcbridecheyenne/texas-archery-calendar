@@ -39,6 +39,19 @@ export const ADS = {
   androidBannerId: "ca-app-pub-7930621070150782/6158655092", // AdMob unit "Archery in Texas (Android) · Bottom banner"
 };
 
+// ---- Hotels near each shoot (Stay22 affiliate link) ----
+// Each shoot's details show a typical nightly hotel price range for the area and a
+// "Find hotels" button. Stay22 (stay22.com) pays a commission when someone books a stay
+// from that button. Sign up free at stay22.com, then paste your affiliate id ("aid",
+// shown in the Stay22 dashboard under Links) below. While it's blank the button opens a
+// plain Booking.com search, which works but earns nothing.
+// TODO(Cheyenne): paste your Stay22 affiliate id.
+export const HOTELS = {
+  enabled: true,
+  stay22Aid: "", // PLACEHOLDER: e.g. "archeryusa"
+  campaign: "app", // shows app clicks separately from the website in Stay22's reports
+};
+
 // ---- Texas Field Archery Scholarship Fund ----
 // A "Donate" button (opens the fund's own page in the browser; never an in-app purchase)
 // and the line "10% of the app's net proceeds ... is donated". Both only show to archers
