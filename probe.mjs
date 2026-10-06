@@ -54,7 +54,13 @@ async function worker() {
       r.icalLinks = [...new Set([...body.matchAll(/href="([^"]*(?:\.ics|ical=1|webcal:)[^"]*)"/gi)].map((m) => m[1]))].slice(0, 10);
       r.platform = ["wildapricot", "squarespace", "wix.com", "clubexpress", "tribe-events", "localist", "teamup", "weebly", "godaddy", "93ft"].filter((p) => body.toLowerCase().includes(p));
       if (/robots\.txt$|terms|privacy/.test(url)) r.text = body.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").slice(0, 3000);
-      writeFileSync(`out/raw/${safe(url)}`, body.slice(0, 400000));
+      // Saved without scripts and with long key-like strings blanked (sites embed map keys etc.).
+      const clean = body
+        .replace(/<script[\s\S]*?<\/script>/gi, "")
+        .replace(/<style[\s\S]*?<\/style>/gi, "")
+        .replace(/\b(?:pk|sk|tk)\.[A-Za-z0-9._-]{20,}/g, "[key]")
+        .replace(/[A-Za-z0-9_\-+/=]{40,}/g, (m) => (/^https?:/.test(m) ? m : "[long]"));
+      writeFileSync(`out/raw/${safe(url)}`, clean.slice(0, 300000));
     } catch (e) {
       r.error = String(e?.cause?.code || e?.name || e);
     }
