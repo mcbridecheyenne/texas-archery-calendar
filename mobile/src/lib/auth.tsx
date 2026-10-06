@@ -28,7 +28,11 @@ export interface AuthState {
   deleteAccount: () => Promise<void>;
 }
 
-const PROFILE_FIELDS = "id, display_name, city, archery_class, discoverable, home_state, age_confirmed_at, created_at";
+// Your own full profile. Other people's private columns can't be read, so this
+// comes from a database function (my_profile) rather than the profiles table.
+function fetchMyProfile() {
+  return supabase!.rpc("my_profile").maybeSingle();
+}
 
 /** Home state, and (once, at sign-up) confirmation that they're 13 or older. */
 export interface ProfileExtra {
@@ -80,7 +84,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     let cancelled = false;
     (async () => {
       const [{ data: p }, { data: b }] = await Promise.all([
-        supabase!.from("profiles").select(PROFILE_FIELDS).eq("id", userId).maybeSingle(),
+        fetchMyProfile(),
         supabase!.from("blocks").select("blocked_id").eq("blocker_id", userId),
       ]);
       if (cancelled) return;
@@ -127,7 +131,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     async (displayName: string, city: string, archeryClass = "", discoverable?: boolean, extra: ProfileExtra = {}) => {
       if (!userId) throw new Error("Not signed in");
       const row = {
-        id: userId,
         display_name: displayName.trim(),
         city: city.trim() || null,
         archery_class: archeryClass.trim() || null,
@@ -135,12 +138,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         ...(extra.homeState === undefined ? {} : { home_state: extra.homeState }),
         ...(extra.ageConfirmed ? { age_confirmed_at: new Date().toISOString() } : {}),
       };
-      const { data, error } = await supabase!
-        .from("profiles")
-        .upsert(row)
-        .select(PROFILE_FIELDS)
-        .single();
+      // Update, or create the profile the first time. (An upsert would need read
+      // access to the private columns, which the app doesn't have.)
+      const { data: updated, error } = await supabase!.from("profiles").update(row).eq("id", userId).select("id");
       if (error) throw error;
+      if (!updated?.length) {
+        const { error: insertError } = await supabase!.from("profiles").insert({ id: userId, ...row });
+        if (insertError) throw insertError;
+      }
+      const { data, error: readError } = await fetchMyProfile();
+      if (readError) throw readError;
       setProfile(data as Profile);
     },
     [userId]

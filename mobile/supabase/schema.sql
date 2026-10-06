@@ -3,7 +3,8 @@
 -- Safe to re-run: it only creates things that don't exist yet and replaces policies.
 
 -- ============================================================
--- Profiles: one per signed-in person. Public name + city only.
+-- Profiles: one per signed-in person. Other signed-in archers see only the
+-- public columns (name, town, class, member since); see the end of this file.
 -- ============================================================
 create table if not exists public.profiles (
   id uuid primary key references auth.users (id) on delete cascade,
@@ -16,9 +17,11 @@ create table if not exists public.profiles (
 
 alter table public.profiles enable row level security;
 
+-- Signed-out visitors can't read profiles at all.
 drop policy if exists "profiles are public" on public.profiles;
-create policy "profiles are public" on public.profiles
-  for select using (true);
+drop policy if exists "signed-in archers see profiles" on public.profiles;
+create policy "signed-in archers see profiles" on public.profiles
+  for select to authenticated using (true);
 
 drop policy if exists "create own profile" on public.profiles;
 create policy "create own profile" on public.profiles
@@ -31,8 +34,9 @@ create policy "update own profile" on public.profiles
 
 -- Friend code: a short code each archer shares so friends can add them.
 -- Letters and digits that are easy to read aloud (no 0/O or 1/I/L).
+-- Runs as the owner because signed-in archers can't read other people's codes.
 create or replace function public.new_friend_code()
-returns text language plpgsql volatile set search_path = public as $$
+returns text language plpgsql volatile security definer set search_path = public as $$
 declare
   alphabet constant text := 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
   code text;
@@ -47,6 +51,9 @@ begin
   return code;
 end $$;
 
+revoke all on function public.new_friend_code() from public, anon;
+grant execute on function public.new_friend_code() to authenticated;
+
 alter table public.profiles add column if not exists friend_code text unique;
 
 alter table public.profiles alter column friend_code set default public.new_friend_code();
@@ -55,7 +62,7 @@ update public.profiles set friend_code = public.new_friend_code() where friend_c
 -- People can't unban themselves: is_banned can only change from the dashboard.
 -- The friend code can't be changed from the app either.
 create or replace function public.protect_ban_flag()
-returns trigger language plpgsql as $$
+returns trigger language plpgsql set search_path = public as $$
 begin
   -- App requests run as 'authenticated'; your dashboard edits run as an admin role.
   if current_user in ('authenticated', 'anon') then
@@ -138,7 +145,7 @@ create policy "delete own listings" on public.listings
   for delete using (seller_id = auth.uid());
 
 create or replace function public.touch_updated_at()
-returns trigger language plpgsql as $$
+returns trigger language plpgsql set search_path = public as $$
 begin
   new.updated_at := now();
   return new;
@@ -153,7 +160,7 @@ create trigger listings_touch before update on public.listings
 -- listing that's still for sale. Who can renew is the "edit own listings" rule above:
 -- only the seller. Your dashboard edits aren't limited by this.
 create or replace function public.protect_listing_renewal()
-returns trigger language plpgsql as $$
+returns trigger language plpgsql set search_path = public as $$
 begin
   if current_user in ('authenticated', 'anon') then
     if tg_op = 'INSERT' then
@@ -205,6 +212,9 @@ returns boolean language sql stable security definer set search_path = public as
   );
 $$;
 
+revoke all on function public.either_blocked(uuid, uuid) from public, anon;
+grant execute on function public.either_blocked(uuid, uuid) to authenticated;
+
 -- ============================================================
 -- Conversations (one per buyer per listing) and messages
 -- ============================================================
@@ -254,7 +264,7 @@ create policy "mark conversations read" on public.conversations
   with check (auth.uid() in (buyer_id, seller_id));
 
 create or replace function public.limit_conversation_updates()
-returns trigger language plpgsql as $$
+returns trigger language plpgsql set search_path = public as $$
 begin
   -- From the app, only the caller's own read time can change. The message trigger
   -- (on_new_message) runs as the table owner, so it can update the summary fields.
@@ -328,6 +338,9 @@ drop trigger if exists on_new_message on public.messages;
 create trigger on_new_message after insert on public.messages
   for each row execute function public.on_new_message();
 
+-- Trigger-only: the app can't call it (the trigger still runs it).
+revoke all on function public.on_new_message() from public, anon, authenticated;
+
 -- ============================================================
 -- Reports: anyone signed in can report; only you read them (Table Editor).
 -- ============================================================
@@ -380,6 +393,26 @@ create policy "accept friend requests" on public.friendships
   for update using (addressee_id = auth.uid() and status = 'pending')
   with check (addressee_id = auth.uid() and status = 'accepted');
 
+-- Accepting can only change the status, never who the friendship is between.
+revoke update on public.friendships from anon, authenticated;
+grant update (status) on public.friendships to authenticated;
+
+create or replace function public.lock_friendship_pair()
+returns trigger language plpgsql set search_path = public as $$
+begin
+  -- App requests run as 'authenticated'; your dashboard edits run as an admin role.
+  if current_user in ('authenticated', 'anon') then
+    new.requester_id := old.requester_id;
+    new.addressee_id := old.addressee_id;
+    new.created_at := old.created_at;
+  end if;
+  return new;
+end $$;
+
+drop trigger if exists lock_friendship_pair on public.friendships;
+create trigger lock_friendship_pair before update on public.friendships
+  for each row execute function public.lock_friendship_pair();
+
 -- Either person can decline, cancel or unfriend.
 drop policy if exists "remove friendships" on public.friendships;
 create policy "remove friendships" on public.friendships
@@ -393,6 +426,9 @@ returns boolean language sql stable security definer set search_path = public as
       and ((requester_id = a and addressee_id = b) or (requester_id = b and addressee_id = a))
   );
 $$;
+
+revoke all on function public.are_friends(uuid, uuid) from public, anon;
+grant execute on function public.are_friends(uuid, uuid) to authenticated;
 
 -- Add a friend by their friend code. If they already asked you, this accepts.
 -- Returns {"status": "sent" | "accepted" | "already_sent" | "already_friends", "name": "..."}.
@@ -445,7 +481,7 @@ revoke all on function public.send_friend_request(text) from public, anon;
 grant execute on function public.send_friend_request(text) to authenticated;
 
 create or replace function public.stamp_accepted_at()
-returns trigger language plpgsql as $$
+returns trigger language plpgsql set search_path = public as $$
 begin
   if new.status = 'accepted' and old.status <> 'accepted' then
     new.accepted_at := now();
@@ -470,6 +506,8 @@ end $$;
 drop trigger if exists unfriend_on_block on public.blocks;
 create trigger unfriend_on_block after insert on public.blocks
   for each row execute function public.unfriend_on_block();
+
+revoke all on function public.unfriend_on_block() from public, anon, authenticated;
 
 -- ============================================================
 -- Going: the shoots an archer starred (My Shoots), saved to their account
@@ -887,6 +925,8 @@ drop trigger if exists push_on_new_message on public.messages;
 create trigger push_on_new_message after insert on public.messages
   for each row execute function public.push_on_new_message();
 
+revoke all on function public.push_on_new_message() from public, anon, authenticated;
+
 -- A new friend request (to the person asked), and a request accepted (to the
 -- person who asked). Nothing is sent between blocked people.
 create or replace function public.push_on_friendship()
@@ -921,3 +961,40 @@ end $$;
 drop trigger if exists push_on_friendship on public.friendships;
 create trigger push_on_friendship after insert or update of status on public.friendships
   for each row execute function public.push_on_friendship();
+
+revoke all on function public.push_on_friendship() from public, anon, authenticated;
+
+-- ============================================================
+-- Who can read profiles. Signed-out visitors: nothing. Signed-in archers: only
+-- the public columns of other people. Friend code, home state, ban flag,
+-- "find me by name" and age confirmation stay private; your own full profile
+-- comes from my_profile() and your friend code from my_friend_code().
+-- (is_active_member() stays callable when signed out: the rules that let
+-- signed-out visitors browse listings and archer-added shoots use it.)
+-- ============================================================
+revoke all on public.profiles from anon;
+revoke select on public.profiles from authenticated;
+grant select (id, display_name, city, archery_class, created_at) on public.profiles to authenticated;
+
+create or replace function public.my_profile()
+returns table (
+  id uuid, display_name text, city text, archery_class text, discoverable boolean,
+  home_state text, age_confirmed_at timestamptz, created_at timestamptz
+)
+language sql stable security definer set search_path = public as $$
+  select p.id, p.display_name, p.city, p.archery_class, p.discoverable,
+         p.home_state, p.age_confirmed_at, p.created_at
+  from public.profiles p
+  where p.id = auth.uid();
+$$;
+
+revoke all on function public.my_profile() from public, anon;
+grant execute on function public.my_profile() to authenticated;
+
+create or replace function public.my_friend_code()
+returns text language sql stable security definer set search_path = public as $$
+  select friend_code from public.profiles where id = auth.uid();
+$$;
+
+revoke all on function public.my_friend_code() from public, anon;
+grant execute on function public.my_friend_code() to authenticated;
