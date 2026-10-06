@@ -1,17 +1,20 @@
-// "Hotels near the shoot": a typical nightly price range for the shoot's area, and a
-// link to search hotels for the shoot's dates.
+// "Hotels near the shoot": nightly hotel prices in the shoot's town, and a link to search
+// hotels for the shoot's dates.
 //
-// The prices are estimates, not live quotes. There's no free hotel-price feed an app this
-// size can use, so each state gets a typical range for an ordinary hotel room in the towns
-// where shoots usually are (spot-checked against live prices in Oct 2026: Brownwood TX
-// ran $84–$261, Redding CA $90–$168). Edit PRICE_TIERS / STATE_TIER to adjust them.
+// Town prices come from hotel-prices.json on the website (client/public/hotel-prices.json
+// on main): the lowest, highest and middle nightly price we found for each shoot town in a
+// real hotel search. Prices change with dates and demand, so the card says when they were
+// checked. Towns not in that file fall back to a typical range for the state (an estimate,
+// spot-checked against live prices in Oct 2026). Edit PRICE_TIERS / STATE_TIER to adjust it.
 //
 // The link goes through Stay22, which shows hotels from Booking.com, Expedia, Hotels.com
 // and Vrbo and pays a commission on stays booked from it. Until the Stay22 affiliate id is
 // filled in (config.ts → HOTELS.stay22Aid), the button opens a plain Booking.com search
 // so it still works, but nothing is earned.
+import { useEffect, useState } from "react";
 import { parseISODate, toIso } from "./dates";
 import { stateCode, stateName } from "./states";
+import { readJSON, writeJSON } from "./storage";
 import type { TournamentEvent } from "./types";
 
 export interface HotelsConfig {
@@ -20,6 +23,8 @@ export interface HotelsConfig {
   stay22Aid: string;
   /** Label for Stay22's reports, so app clicks show apart from website clicks. */
   campaign: string;
+  /** hotel-prices.json on the website: real prices per shoot town. */
+  pricesUrl?: string;
 }
 
 export interface PriceRange {
@@ -49,11 +54,91 @@ const STATE_TIER: Record<string, keyof typeof PRICE_TIERS> = {
   AK: "island", HI: "island",
 };
 
-/** Typical nightly hotel prices near a shoot, or null when its state isn't known. */
-export function hotelPrices(e: Pick<TournamentEvent, "state">): PriceRange | null {
+/** A town's prices from hotel-prices.json. */
+export interface CityPrices extends PriceRange {
+  /** The date the search was run (YYYY-MM-DD). */
+  checked: string;
+  /** How many hotels the prices came from. */
+  hotels?: number;
+}
+
+/** hotel-prices.json: keyed by cityKey(), e.g. "brownwood, tx". */
+export interface CityPriceTable {
+  updated: string;
+  cities: Record<string, CityPrices>;
+}
+
+export type HotelPriceInfo =
+  | ({ scope: "city"; place: string } & CityPrices)
+  | ({ scope: "state"; place: string } & PriceRange);
+
+/** "brownwood, tx": how a town is looked up in hotel-prices.json. Null without a real town. */
+export function cityKey(e: Pick<TournamentEvent, "city" | "state">): string | null {
+  const city = (e.city ?? "").trim().replace(/\s+/g, " ");
   const code = stateCode(e.state);
+  if (!city || /^tba$/i.test(city) || !code) return null;
+  return `${city}, ${code}`.toLowerCase();
+}
+
+/**
+ * Nightly hotel prices near a shoot: the town's own prices when hotel-prices.json has them,
+ * otherwise the state's typical range. Null when neither the town nor the state is known.
+ */
+export function hotelPrices(
+  e: Pick<TournamentEvent, "city" | "state">,
+  table?: CityPriceTable | null
+): HotelPriceInfo | null {
+  const code = stateCode(e.state);
+  const key = cityKey(e);
+  const city = key ? table?.cities[key] : undefined;
+  if (city && isRange(city)) return { scope: "city", place: `${(e.city ?? "").trim()}, ${code}`, ...city };
   const tier = code ? STATE_TIER[code] : undefined;
-  return tier ? PRICE_TIERS[tier] : null;
+  return tier ? { scope: "state", place: stateName(code) ?? code!, ...PRICE_TIERS[tier] } : null;
+}
+
+function isRange(v: unknown): v is CityPrices {
+  const r = v as CityPrices;
+  return !!r && [r.low, r.typical, r.high].every((n) => typeof n === "number" && n > 0) && r.low <= r.high;
+}
+
+// Loaded once per app launch and saved on the phone, so the card shows town prices offline
+// and right away on the next launch.
+const CACHE_KEY = "hotelPrices.v1";
+let loading: Promise<CityPriceTable | null> | null = null;
+let latest: CityPriceTable | null = null;
+
+function loadTable(url: string): Promise<CityPriceTable | null> {
+  loading ??= (async () => {
+    latest = await readJSON<CityPriceTable>(CACHE_KEY);
+    try {
+      const res = await fetch(url, { headers: { Accept: "application/json" } });
+      if (res.ok) {
+        const data = (await res.json()) as CityPriceTable;
+        if (data && typeof data.cities === "object" && data.cities) {
+          latest = data;
+          writeJSON(CACHE_KEY, data);
+        }
+      }
+    } catch {
+      // Offline or the file isn't there: keep the saved copy (or the state estimates).
+    }
+    return latest;
+  })();
+  return loading;
+}
+
+/** The town price table, or null while loading / when there's none (state estimates are used then). */
+export function useCityPrices(url: string | undefined): CityPriceTable | null {
+  const [table, setTable] = useState<CityPriceTable | null>(latest);
+  useEffect(() => {
+    if (!url) return;
+    let live = true;
+    loadTable(url).then((t) => live && setTable(t));
+    return () => {
+      live = false;
+    };
+  }, [url]);
+  return table;
 }
 
 /** "Brownwood, TX", or the state name when there's no town; null when there's nothing to search. */
