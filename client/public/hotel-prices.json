@@ -1,0 +1,454 @@
+{
+ "updated": "2026-10-06",
+ "note": "Nightly hotel prices (USD, 2 adults, before taxes) found in a hotel search for each shoot town for the night of Fri Nov 13, 2026. low = cheapest hotel, high = 90th percentile (skips one-off luxury outliers), typical = average. Read by the phone app's Hotels near the shoot card; towns not listed use a state-wide estimate.",
+ "cities": {
+  "allen, tx": {
+   "low": 77,
+   "typical": 115,
+   "high": 143,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "alvarado, tx": {
+   "low": 74,
+   "typical": 120,
+   "high": 172,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "amarillo, tx": {
+   "low": 58,
+   "typical": 125,
+   "high": 150,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "ashland, ma": {
+   "low": 89,
+   "typical": 135,
+   "high": 178,
+   "checked": "2026-10-06",
+   "hotels": 11
+  },
+  "boerne, tx": {
+   "low": 52,
+   "typical": 120,
+   "high": 205,
+   "checked": "2026-10-06",
+   "hotels": 11
+  },
+  "borger, tx": {
+   "low": 55,
+   "typical": 115,
+   "high": 183,
+   "checked": "2026-10-06",
+   "hotels": 6
+  },
+  "brownwood, tx": {
+   "low": 79,
+   "typical": 125,
+   "high": 175,
+   "checked": "2026-10-06",
+   "hotels": 11
+  },
+  "bryan, tx": {
+   "low": 128,
+   "typical": 225,
+   "high": 290,
+   "checked": "2026-10-06",
+   "hotels": 6
+  },
+  "burkburnett, tx": {
+   "low": 85,
+   "typical": 130,
+   "high": 200,
+   "checked": "2026-10-06",
+   "hotels": 9
+  },
+  "burleson, tx": {
+   "low": 73,
+   "typical": 115,
+   "high": 164,
+   "checked": "2026-10-06",
+   "hotels": 11
+  },
+  "camp minden, la": {
+   "low": 83,
+   "typical": 140,
+   "high": 178,
+   "checked": "2026-10-06",
+   "hotels": 6
+  },
+  "canton, tx": {
+   "low": 55,
+   "typical": 95,
+   "high": 136,
+   "checked": "2026-10-06",
+   "hotels": 9
+  },
+  "canyon lake, tx": {
+   "low": 123,
+   "typical": 155,
+   "high": 190,
+   "checked": "2026-10-06",
+   "hotels": 4
+  },
+  "chula vista, ca": {
+   "low": 71,
+   "typical": 130,
+   "high": 189,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "clarkston, mi": {
+   "low": 63,
+   "typical": 110,
+   "high": 166,
+   "checked": "2026-10-06",
+   "hotels": 11
+  },
+  "dayton, tx": {
+   "low": 72,
+   "typical": 100,
+   "high": 121,
+   "checked": "2026-10-06",
+   "hotels": 10
+  },
+  "dracut, ma": {
+   "low": 100,
+   "typical": 125,
+   "high": 146,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "edna, tx": {
+   "low": 59,
+   "typical": 85,
+   "high": 158,
+   "checked": "2026-10-06",
+   "hotels": 5
+  },
+  "eustace, tx": {
+   "low": 62,
+   "typical": 110,
+   "high": 168,
+   "checked": "2026-10-06",
+   "hotels": 9
+  },
+  "foley, al": {
+   "low": 52,
+   "typical": 115,
+   "high": 157,
+   "checked": "2026-10-06",
+   "hotels": 9
+  },
+  "fort mitchell, al": {
+   "low": 99,
+   "typical": 140,
+   "high": 153,
+   "checked": "2026-10-06",
+   "hotels": 10
+  },
+  "fort worth, tx": {
+   "low": 52,
+   "typical": 100,
+   "high": 127,
+   "checked": "2026-10-06",
+   "hotels": 11
+  },
+  "frisco, tx": {
+   "low": 112,
+   "typical": 160,
+   "high": 248,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "garland, tx": {
+   "low": 82,
+   "typical": 125,
+   "high": 174,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "georgetown, tx": {
+   "low": 64,
+   "typical": 115,
+   "high": 187,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "grand prairie, tx": {
+   "low": 94,
+   "typical": 125,
+   "high": 157,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "grapevine, tx": {
+   "low": 71,
+   "typical": 155,
+   "high": 195,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "hopkinton, ma": {
+   "low": 85,
+   "typical": 120,
+   "high": 151,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "houston, tx": {
+   "low": 53,
+   "typical": 140,
+   "high": 204,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "hudson, ma": {
+   "low": 85,
+   "typical": 125,
+   "high": 151,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "kaufman, tx": {
+   "low": 83,
+   "typical": 130,
+   "high": 209,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "kemp, tx": {
+   "low": 69,
+   "typical": 85,
+   "high": 108,
+   "checked": "2026-10-06",
+   "hotels": 7
+  },
+  "kennedale, tx": {
+   "low": 73,
+   "typical": 105,
+   "high": 126,
+   "checked": "2026-10-06",
+   "hotels": 11
+  },
+  "killeen, tx": {
+   "low": 66,
+   "typical": 105,
+   "high": 133,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "lancaster, pa": {
+   "low": 64,
+   "typical": 150,
+   "high": 181,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "laredo, tx": {
+   "low": 64,
+   "typical": 115,
+   "high": 174,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "long beach, ca": {
+   "low": 90,
+   "typical": 170,
+   "high": 216,
+   "checked": "2026-10-06",
+   "hotels": 11
+  },
+  "lunenburg, ma": {
+   "low": 88,
+   "typical": 160,
+   "high": 201,
+   "checked": "2026-10-06",
+   "hotels": 11
+  },
+  "manheim, pa": {
+   "low": 52,
+   "typical": 130,
+   "high": 177,
+   "checked": "2026-10-06",
+   "hotels": 11
+  },
+  "mays landing, nj": {
+   "low": 59,
+   "typical": 100,
+   "high": 133,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "mcclellan, ca": {
+   "low": 73,
+   "typical": 100,
+   "high": 124,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "memphis, tn": {
+   "low": 80,
+   "typical": 110,
+   "high": 132,
+   "checked": "2026-10-06",
+   "hotels": 10
+  },
+  "mooringsport, la": {
+   "low": 63,
+   "typical": 145,
+   "high": 268,
+   "checked": "2026-10-06",
+   "hotels": 7
+  },
+  "new braunfels, tx": {
+   "low": 63,
+   "typical": 165,
+   "high": 391,
+   "checked": "2026-10-06",
+   "hotels": 9
+  },
+  "new tripoli, pa": {
+   "low": 66,
+   "typical": 125,
+   "high": 160,
+   "checked": "2026-10-06",
+   "hotels": 11
+  },
+  "newark, de": {
+   "low": 78,
+   "typical": 125,
+   "high": 143,
+   "checked": "2026-10-06",
+   "hotels": 11
+  },
+  "newberry, fl": {
+   "low": 70,
+   "typical": 150,
+   "high": 242,
+   "checked": "2026-10-06",
+   "hotels": 10
+  },
+  "orange grove, tx": {
+   "low": 51,
+   "typical": 100,
+   "high": 137,
+   "checked": "2026-10-06",
+   "hotels": 6
+  },
+  "oro valley, az": {
+   "low": 46,
+   "typical": 140,
+   "high": 252,
+   "checked": "2026-10-06",
+   "hotels": 10
+  },
+  "pampa, tx": {
+   "low": 110,
+   "typical": 130,
+   "high": 147,
+   "checked": "2026-10-06",
+   "hotels": 5
+  },
+  "paris, tx": {
+   "low": 58,
+   "typical": 125,
+   "high": 166,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "phoenix, az": {
+   "low": 64,
+   "typical": 120,
+   "high": 193,
+   "checked": "2026-10-06",
+   "hotels": 11
+  },
+  "plainview, tx": {
+   "low": 84,
+   "typical": 115,
+   "high": 157,
+   "checked": "2026-10-06",
+   "hotels": 5
+  },
+  "randleman, nc": {
+   "low": 87,
+   "typical": 135,
+   "high": 251,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "redding, ca": {
+   "low": 97,
+   "typical": 125,
+   "high": 148,
+   "checked": "2026-10-06",
+   "hotels": 10
+  },
+  "roanoke, tx": {
+   "low": 84,
+   "typical": 125,
+   "high": 169,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "ropesville, tx": {
+   "low": 71,
+   "typical": 115,
+   "high": 153,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "san antonio, tx": {
+   "low": 60,
+   "typical": 125,
+   "high": 201,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "the woodlands, tx": {
+   "low": 47,
+   "typical": 130,
+   "high": 175,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "tyler, tx": {
+   "low": 45,
+   "typical": 95,
+   "high": 122,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "waco, tx": {
+   "low": 68,
+   "typical": 130,
+   "high": 165,
+   "checked": "2026-10-06",
+   "hotels": 9
+  },
+  "weatherford, tx": {
+   "low": 70,
+   "typical": 145,
+   "high": 202,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "west bloomfield township, mi": {
+   "low": 97,
+   "typical": 165,
+   "high": 218,
+   "checked": "2026-10-06",
+   "hotels": 12
+  },
+  "west bloomfield, mi": {
+   "low": 83,
+   "typical": 160,
+   "high": 218,
+   "checked": "2026-10-06",
+   "hotels": 12
+  }
+ }
+}
