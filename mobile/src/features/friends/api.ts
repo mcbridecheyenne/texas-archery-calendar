@@ -2,7 +2,7 @@
 // supabase/schema.sql decides what each archer can see; these just ask.
 import { db } from "../../lib/supabase";
 import type { TournamentEvent } from "../calendar";
-import type { AddFriendResult, Attendee, Friend } from "./types";
+import type { AddFriendResult, Attendee, Friend, ShareLevel } from "./types";
 
 const FRIENDSHIP_FIELDS =
   "requester_id, addressee_id, status, created_at, " +
@@ -59,21 +59,48 @@ export async function removeFriend(me: string, other: string): Promise<void> {
   if (error) throw error;
 }
 
-/** Your own shared events: event id → who can see it. */
-export async function fetchMyShares(me: string): Promise<Map<string, "friends" | "public">> {
-  const { data, error } = await db().from("going").select("event_id, visibility").eq("user_id", me);
-  if (error) throw error;
-  return new Map(((data ?? []) as { event_id: string; visibility: "friends" | "public" }[]).map((r) => [r.event_id, r.visibility]));
+/** One of your own rows in the "going" table: a starred shoot saved to your account. */
+export interface MyGoingRow {
+  eventId: string;
+  eventName: string;
+  eventDate: string;
+  visibility: ShareLevel;
 }
 
-export async function shareGoing(me: string, event: TournamentEvent, visibility: "friends" | "public"): Promise<void> {
-  const { error } = await db().from("going").upsert({
-    user_id: me,
-    event_id: event.id,
-    event_name: event.name.slice(0, 200),
-    event_date: event.startDate,
-    visibility,
-  });
+/** Every shoot you starred that's saved to your account, including "Just me" ones. */
+export async function fetchMyGoing(me: string): Promise<MyGoingRow[]> {
+  const { data, error } = await db().from("going").select("event_id, event_name, event_date, visibility").eq("user_id", me).limit(2000);
+  if (error) throw error;
+  return ((data ?? []) as { event_id: string; event_name: string; event_date: string; visibility: ShareLevel }[]).map((r) => ({
+    eventId: r.event_id,
+    eventName: r.event_name,
+    eventDate: r.event_date,
+    visibility: r.visibility,
+  }));
+}
+
+type ShootBits = Pick<TournamentEvent, "id" | "name" | "startDate">;
+
+const goingRow = (me: string, shoot: ShootBits, visibility: ShareLevel) => ({
+  user_id: me,
+  event_id: shoot.id,
+  event_name: shoot.name.slice(0, 200),
+  event_date: shoot.startDate,
+  visibility,
+});
+
+/** Saves a starred shoot to your account with who can see it ("private" = Just me, only you). */
+export async function shareGoing(me: string, shoot: ShootBits, visibility: ShareLevel): Promise<void> {
+  const { error } = await db().from("going").upsert(goingRow(me, shoot, visibility));
+  if (error) throw error;
+}
+
+/** Saves several starred shoots as "Just me", leaving any that are already saved as they are. */
+export async function saveGoingPrivately(me: string, shoots: ShootBits[]): Promise<void> {
+  if (!shoots.length) return;
+  const { error } = await db()
+    .from("going")
+    .upsert(shoots.map((s) => goingRow(me, s, "private")), { onConflict: "user_id,event_id", ignoreDuplicates: true });
   if (error) throw error;
 }
 
@@ -90,6 +117,7 @@ export async function fetchFriendsGoing(friendIds: string[], fromDate: string): 
     .from("going")
     .select("user_id, event_id")
     .in("user_id", friendIds)
+    .neq("visibility", "private") // "Just me" rows are hidden by the database anyway; this is a second lock
     .gte("event_date", fromDate)
     .limit(2000);
   if (error) throw error;
@@ -108,6 +136,7 @@ export async function fetchAttendees(me: string, eventId: string, friendIds: Set
     .select("user_id, profile:profiles!going_user_id_fkey(display_name, city, archery_class)")
     .eq("event_id", eventId)
     .neq("user_id", me)
+    .neq("visibility", "private")
     .order("created_at", { ascending: true })
     .limit(300);
   if (error) throw error;

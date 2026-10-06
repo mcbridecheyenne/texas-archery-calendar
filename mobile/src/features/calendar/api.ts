@@ -25,7 +25,7 @@ function isEventsResponse(x: unknown): x is EventsResponse {
 }
 
 /** Maps the feed's source names onto the app's, so an unknown future source still shows. */
-function toSource(raw: string): EventSource {
+export function toSource(raw: string): EventSource {
   if (raw === "TFAA" || raw === "ASA" || raw === "TSAA" || raw === "CLUB" || raw === "USER" || raw === "S3DA") return raw;
   if (raw === "World Archery" || raw === "WA") return "WA";
   return "OTHER";
@@ -39,7 +39,8 @@ export function normalizeEvent(e: TournamentEvent): TournamentEvent {
   return { ...e, source, state, organization: e.organization || ORGANIZATION[source] || null };
 }
 
-const nameKey = (name: string) => name.toLowerCase().replace(/^the\s+/, "").replace(/[^a-z0-9]/g, "");
+/** A tournament's name boiled down for comparing ("The Vegas Shoot" and "Vegas Shoot!" match). */
+export const nameKey = (name: string) => name.toLowerCase().replace(/^the\s+/, "").replace(/[^a-z0-9]/g, "");
 const knownPlace = (e: TournamentEvent) => !!e.city && e.city !== "TBA";
 
 // Two schedules can list the same tournament (TFAA and World Archery both list The Vegas

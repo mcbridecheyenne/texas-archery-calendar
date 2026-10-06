@@ -438,33 +438,43 @@ create trigger unfriend_on_block after insert on public.blocks
   for each row execute function public.unfriend_on_block();
 
 -- ============================================================
--- Going: tournaments an archer chose to share. "Just me" stays on the
--- phone and never comes here. 'friends' rows are seen only by accepted
--- friends; 'public' rows by any signed-in archer. Signed-out visitors see none.
+-- Going: the shoots an archer starred (My Shoots), saved to their account
+-- so a new phone gets them back. 'private' ("Just me") rows are seen only
+-- by the archer who starred them; 'friends' rows only by accepted friends;
+-- 'public' rows by any signed-in archer. Signed-out visitors see none.
 -- ============================================================
 create table if not exists public.going (
   user_id uuid not null references public.profiles (id) on delete cascade,
   event_id text not null check (char_length(event_id) <= 200),
   event_name text not null check (char_length(event_name) <= 200),
   event_date date not null,
-  visibility text not null check (visibility in ('friends', 'public')),
+  visibility text not null check (visibility in ('friends', 'public', 'private')),
   created_at timestamptz not null default now(),
   primary key (user_id, event_id)
 );
+
+-- Databases set up before "Just me" rows were saved here only allow 'friends' and
+-- 'public'. Swap that rule for the one above (safe to run again).
+alter table public.going drop constraint if exists going_visibility_check;
+alter table public.going add constraint going_visibility_check
+  check (visibility in ('friends', 'public', 'private'));
 
 create index if not exists going_by_event on public.going (event_id);
 create index if not exists going_by_date on public.going (event_date);
 
 alter table public.going enable row level security;
 
+-- Your own rows (all of them, "Just me" included), plus other archers' shared ones.
+-- A 'private' row never matches the second half, so only its owner can read it.
 drop policy if exists "see shared going" on public.going;
 create policy "see shared going" on public.going
   for select to authenticated using (
     user_id = auth.uid()
     or (
-      public.is_active_member(user_id)
+      visibility in ('friends', 'public')
+      and public.is_active_member(user_id)
       and not public.either_blocked(auth.uid(), user_id)
-      and (visibility = 'public' or public.are_friends(auth.uid(), user_id))
+      and (visibility = 'public' or (visibility = 'friends' and public.are_friends(auth.uid(), user_id)))
     )
   );
 
