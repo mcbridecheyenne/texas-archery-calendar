@@ -2,6 +2,7 @@
 // _scrapers.ts so the Texas feed (events.json) the current app reads is unchanged.
 import { readFileSync } from "node:fs";
 import { getEvents, type TournamentEvent, type SourceStatus } from "./_scrapers.ts";
+import { collectStateCalendars } from "./_states.ts";
 
 export interface UsaEvent extends Omit<TournamentEvent, "source"> {
   source: string;
@@ -66,25 +67,25 @@ export function stateFromText(text: string): string | null {
   return null;
 }
 
-function hash(s: string): string {
+export function hash(s: string): string {
   let h = 5381;
   for (let i = 0; i < s.length; i++) h = ((h << 5) + h) ^ s.charCodeAt(i);
   return (h >>> 0).toString(36);
 }
 
-function isoDay(value: unknown): string | null {
+export function isoDay(value: unknown): string | null {
   const m = String(value ?? "").match(/^(\d{4}-\d{2}-\d{2})/);
   return m ? m[1] : null;
 }
 
-function decodeEntities(s: string): string {
+export function decodeEntities(s: string): string {
   return s
     .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
     .replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#039;/g, "'")
     .replace(/<[^>]+>/g, "").trim();
 }
 
-function blankEvent(): Omit<UsaEvent, "id" | "source" | "organization" | "name" | "startDate" | "endDate" | "sourceUrl"> {
+export function blankEvent(): Omit<UsaEvent, "id" | "source" | "organization" | "name" | "startDate" | "endDate" | "sourceUrl"> {
   return {
     location: null, city: null, state: null, registrationStart: null, registrationEnd: null,
     contact: null, phone: null, email: null,
@@ -351,23 +352,24 @@ export async function getUsaEvents(): Promise<UsaResult> {
   // requests from GitHub with a block page (checked 2026-10-04). Its national and state
   // championships go in data/manual-events.json instead. collectS3DA is kept in case they
   // open a feed.
-  const [texas, wa, asa, manual] = await Promise.all([
+  const [texas, wa, asa, manual, states] = await Promise.all([
     getEvents(),
     runSource("World Archery", WA_URL, collectWorldArchery),
     runSource("ASA Pro/Am", ASA_PROAM_URL, collectAsaProAm),
     runSource("Manual", "data/manual-events.json", collectManual),
+    collectStateCalendars(),
   ]);
   const texasEvents: UsaEvent[] = texas.events.map((e) => ({
     ...e, state: normalizeState(e.state) ?? "TX", organization: TEXAS_ORGANIZATION[e.source],
   }));
   const today = new Date().toISOString().slice(0, 10);
-  const events = [...texasEvents, ...wa.events, ...asa.events, ...manual.events]
+  const events = [...texasEvents, ...wa.events, ...asa.events, ...manual.events, ...states.events]
     .filter((e) => e.endDate >= today)
     .map(tidyPlace)
     .sort((a, b) => a.startDate.localeCompare(b.startDate) || a.name.localeCompare(b.name));
   return {
     events,
-    sources: [...texas.sources, wa.status, asa.status, manual.status],
+    sources: [...texas.sources, wa.status, asa.status, manual.status, states.status],
     lastUpdated: new Date().toISOString(),
   };
 }
