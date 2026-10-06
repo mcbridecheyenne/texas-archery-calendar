@@ -1,0 +1,501 @@
+{
+ "updated": "2026-10-06",
+ "towns": [
+  {
+   "key": "allen, tx",
+   "city": "Allen",
+   "state": "TX",
+   "checkin": "2027-01-06",
+   "checkout": "2027-01-09",
+   "shoot": "Allen Bullseye Classic"
+  },
+  {
+   "key": "alvarado, tx",
+   "city": "Alvarado",
+   "state": "TX",
+   "checkin": "2026-12-11",
+   "checkout": "2026-12-13",
+   "shoot": "Alvarado Archery-1"
+  },
+  {
+   "key": "amarillo, tx",
+   "city": "Amarillo",
+   "state": "TX",
+   "checkin": "2026-11-12",
+   "checkout": "2026-11-14",
+   "shoot": "Randall County 4H-Randall County Fire Department-1"
+  },
+  {
+   "key": "ashland, ma",
+   "city": "Ashland",
+   "state": "MA",
+   "checkin": "2027-04-02",
+   "checkout": "2027-04-04",
+   "shoot": "2027 USA Archery Massachusetts State and JOAD Indoor Championships"
+  },
+  {
+   "key": "boerne, tx",
+   "city": "Boerne",
+   "state": "TX",
+   "checkin": "2026-11-12",
+   "checkout": "2026-11-14",
+   "shoot": "Leading Edge Archery-1"
+  },
+  {
+   "key": "borger, tx",
+   "city": "Borger",
+   "state": "TX",
+   "checkin": "2026-12-18",
+   "checkout": "2026-12-20",
+   "shoot": "Canadian River Archery and Gun Club-1"
+  },
+  {
+   "key": "burkburnett, tx",
+   "city": "Burkburnett",
+   "state": "TX",
+   "checkin": "2026-12-03",
+   "checkout": "2026-12-05",
+   "shoot": "NASP Boomtown Bullseye Tournament"
+  },
+  {
+   "key": "burleson, tx",
+   "city": "Burleson",
+   "state": "TX",
+   "checkin": "2026-10-30",
+   "checkout": "2026-11-01",
+   "shoot": "Korbin's-Burleson-1"
+  },
+  {
+   "key": "canton, tx",
+   "city": "Canton",
+   "state": "TX",
+   "checkin": "2026-11-19",
+   "checkout": "2026-11-21",
+   "shoot": "On Target Archery-1"
+  },
+  {
+   "key": "canyon lake, tx",
+   "city": "Canyon Lake",
+   "state": "TX",
+   "checkin": "2026-11-19",
+   "checkout": "2026-11-22",
+   "shoot": "Archers Haven-1"
+  },
+  {
+   "key": "chula vista, ca",
+   "city": "Chula Vista",
+   "state": "CA",
+   "checkin": "2026-10-09",
+   "checkout": "2026-10-10",
+   "shoot": "2026 South Cali Outdoor"
+  },
+  {
+   "key": "clarkston, mi",
+   "city": "Clarkston",
+   "state": "MI",
+   "checkin": "2026-12-04",
+   "checkout": "2026-12-06",
+   "shoot": "2026 Northern Region Indoor Championship"
+  },
+  {
+   "key": "claude, tx",
+   "city": "Claude",
+   "state": "TX",
+   "checkin": "2026-11-06",
+   "checkout": "2026-11-08",
+   "shoot": "Armstrong County 4H-1"
+  },
+  {
+   "key": "college station texas - aggie invite, tx",
+   "city": "College Station Texas - Aggie Invite",
+   "state": "TX",
+   "checkin": "2026-11-06",
+   "checkout": "2026-11-07",
+   "shoot": "Judge's Seminar"
+  },
+  {
+   "key": "college station, tx",
+   "city": "College Station",
+   "state": "TX",
+   "checkin": "2026-10-29",
+   "checkout": "2026-11-01",
+   "shoot": "Texas Archery-1"
+  },
+  {
+   "key": "dayton, tx",
+   "city": "Dayton",
+   "state": "TX",
+   "checkin": "2027-01-08",
+   "checkout": "2027-01-10",
+   "shoot": "Triple Edge Archery-1"
+  },
+  {
+   "key": "dracut, ma",
+   "city": "Dracut",
+   "state": "MA",
+   "checkin": "2027-02-04",
+   "checkout": "2027-02-07",
+   "shoot": "2027 Snow Bird 600"
+  },
+  {
+   "key": "edna, tx",
+   "city": "Edna",
+   "state": "TX",
+   "checkin": "2026-11-20",
+   "checkout": "2026-11-22",
+   "shoot": "STX Archery & Outdoors-1"
+  },
+  {
+   "key": "eustace, tx",
+   "city": "Eustace",
+   "state": "TX",
+   "checkin": "2026-11-05",
+   "checkout": "2026-11-07",
+   "shoot": "Eustace Invitational (NASP State Qualifier)"
+  },
+  {
+   "key": "foley, al",
+   "city": "Foley",
+   "state": "AL",
+   "checkin": "2027-02-24",
+   "checkout": "2027-02-27",
+   "shoot": "Hoyt/Easton Pro/Am"
+  },
+  {
+   "key": "fort mitchell, al",
+   "city": "Fort Mitchell",
+   "state": "AL",
+   "checkin": "2027-03-17",
+   "checkout": "2027-03-20",
+   "shoot": "Shibuya Archery Pro/Am"
+  },
+  {
+   "key": "fort worth, tx",
+   "city": "Fort Worth",
+   "state": "TX",
+   "checkin": "2026-11-12",
+   "checkout": "2026-11-15",
+   "shoot": "Legacy Archery-1"
+  },
+  {
+   "key": "frisco, tx",
+   "city": "Frisco",
+   "state": "TX",
+   "checkin": "2026-10-30",
+   "checkout": "2026-11-01",
+   "shoot": "Arjun Archery-1"
+  },
+  {
+   "key": "garland, tx",
+   "city": "Garland",
+   "state": "TX",
+   "checkin": "2027-01-08",
+   "checkout": "2027-01-10",
+   "shoot": "All Star Archery & Marine-1"
+  },
+  {
+   "key": "georgetown, tx",
+   "city": "Georgetown",
+   "state": "TX",
+   "checkin": "2026-11-05",
+   "checkout": "2026-11-07",
+   "shoot": "Double G-1"
+  },
+  {
+   "key": "grand prairie, tx",
+   "city": "Grand Prairie",
+   "state": "TX",
+   "checkin": "2026-11-05",
+   "checkout": "2026-11-07",
+   "shoot": "Reagan Knights Fall Tournament - 3D"
+  },
+  {
+   "key": "grapevine, tx",
+   "city": "Grapevine",
+   "state": "TX",
+   "checkin": "2027-01-01",
+   "checkout": "2027-01-03",
+   "shoot": "Bass Pro Shops-Grapevine-1"
+  },
+  {
+   "key": "houston, tx",
+   "city": "Houston",
+   "state": "TX",
+   "checkin": "2026-11-06",
+   "checkout": "2026-11-08",
+   "shoot": "X10 Archery Academy-1"
+  },
+  {
+   "key": "hudson, ma",
+   "city": "Hudson",
+   "state": "MA",
+   "checkin": "2026-12-02",
+   "checkout": "2026-12-06",
+   "shoot": "2026 Riverside Festivus"
+  },
+  {
+   "key": "kaufman, tx",
+   "city": "Kaufman",
+   "state": "TX",
+   "checkin": "2027-03-02",
+   "checkout": "2027-03-06",
+   "shoot": "NASP O.P. Norman Invitational"
+  },
+  {
+   "key": "kemp, tx",
+   "city": "Kemp",
+   "state": "TX",
+   "checkin": "2027-01-06",
+   "checkout": "2027-01-09",
+   "shoot": "NASP Kemp Tournament"
+  },
+  {
+   "key": "kennedale, tx",
+   "city": "Kennedale",
+   "state": "TX",
+   "checkin": "2027-02-19",
+   "checkout": "2027-02-21",
+   "shoot": "Garrett Hull Memorial Scholarship Tournament"
+  },
+  {
+   "key": "killeen, tx",
+   "city": "Killeen",
+   "state": "TX",
+   "checkin": "2026-11-12",
+   "checkout": "2026-11-14",
+   "shoot": "Nocked & Loaded-1"
+  },
+  {
+   "key": "lancaster, pa",
+   "city": "Lancaster",
+   "state": "PA",
+   "checkin": "2026-10-16",
+   "checkout": "2026-10-18",
+   "shoot": "Lancaster Archery Fall Harvest Star FITA"
+  },
+  {
+   "key": "laredo, tx",
+   "city": "Laredo",
+   "state": "TX",
+   "checkin": "2026-11-06",
+   "checkout": "2026-11-08",
+   "shoot": "Arena Archery-1"
+  },
+  {
+   "key": "long beach, ca",
+   "city": "Long Beach",
+   "state": "CA",
+   "checkin": "2026-10-23",
+   "checkout": "2026-10-25",
+   "shoot": "2026 California Classic 1440"
+  },
+  {
+   "key": "lunenburg, ma",
+   "city": "Lunenburg",
+   "state": "MA",
+   "checkin": "2026-11-13",
+   "checkout": "2026-11-15",
+   "shoot": "2026 Lunenburg Open"
+  },
+  {
+   "key": "manheim, pa",
+   "city": "Manheim",
+   "state": "PA",
+   "checkin": "2027-01-20",
+   "checkout": "2027-01-24",
+   "shoot": "2027 Lancaster Archery Classic"
+  },
+  {
+   "key": "mays landing, nj",
+   "city": "Mays Landing",
+   "state": "NJ",
+   "checkin": "2026-11-20",
+   "checkout": "2026-11-22",
+   "shoot": "2026 - Eastern Seaboard Championships"
+  },
+  {
+   "key": "mcclellan, ca",
+   "city": "McClellan",
+   "state": "CA",
+   "checkin": "2027-01-08",
+   "checkout": "2027-01-09",
+   "shoot": "2027 California State Indoor Championship - Sacramento (U13 and U15)"
+  },
+  {
+   "key": "memphis, tn",
+   "city": "Memphis",
+   "state": "TN",
+   "checkin": "2027-02-04",
+   "checkout": "2027-02-07",
+   "shoot": "NFAA Indoor Nationals"
+  },
+  {
+   "key": "mooringsport, la",
+   "city": "Mooringsport",
+   "state": "LA",
+   "checkin": "2026-10-23",
+   "checkout": "2026-10-24",
+   "shoot": "North Caddo Shooting Club-1"
+  },
+  {
+   "key": "multiple, tx",
+   "city": "Multiple",
+   "state": "TX",
+   "checkin": "2027-01-15",
+   "checkout": "2027-01-17",
+   "shoot": "NFAA So. Sectionals (SYWAT - Texas Only)"
+  },
+  {
+   "key": "new braunfels, tx",
+   "city": "New Braunfels",
+   "state": "TX",
+   "checkin": "2026-10-22",
+   "checkout": "2026-10-25",
+   "shoot": "Archery HQ-1"
+  },
+  {
+   "key": "new tripoli, pa",
+   "city": "New Tripoli",
+   "state": "PA",
+   "checkin": "2026-10-10",
+   "checkout": "2026-10-11",
+   "shoot": "Ontelaunee Oktoberfest 18 Meter Indoor"
+  },
+  {
+   "key": "newark, de",
+   "city": "Newark",
+   "state": "DE",
+   "checkin": "2026-10-24",
+   "checkout": "2026-10-25",
+   "shoot": "NC100 Autumn Archers Altercation"
+  },
+  {
+   "key": "newberry, fl",
+   "city": "Newberry",
+   "state": "FL",
+   "checkin": "2027-01-01",
+   "checkout": "2027-01-03",
+   "shoot": "2027 USA Archery Florida State Indoor Championship"
+  },
+  {
+   "key": "orange grove, tx",
+   "city": "Orange Grove",
+   "state": "TX",
+   "checkin": "2026-11-13",
+   "checkout": "2026-11-14",
+   "shoot": "Dark Horse Archery-1"
+  },
+  {
+   "key": "oro valley, az",
+   "city": "Oro Valley",
+   "state": "AZ",
+   "checkin": "2026-11-13",
+   "checkout": "2026-11-14",
+   "shoot": "2026 Arizona State Field Championships"
+  },
+  {
+   "key": "pampa, tx",
+   "city": "Pampa",
+   "state": "TX",
+   "checkin": "2026-10-23",
+   "checkout": "2026-10-25",
+   "shoot": "Gray County 4H-Clyde Carruth Livestock Pavilion-1"
+  },
+  {
+   "key": "phoenix, az",
+   "city": "Phoenix",
+   "state": "AZ",
+   "checkin": "2026-10-16",
+   "checkout": "2026-10-18",
+   "shoot": "2026 USA Archery Arizona State Outdoor Championships"
+  },
+  {
+   "key": "plainview, tx",
+   "city": "Plainview",
+   "state": "TX",
+   "checkin": "2026-10-30",
+   "checkout": "2026-11-01",
+   "shoot": "Hale County 4H-Ollie Liner Center-1"
+  },
+  {
+   "key": "randleman, nc",
+   "city": "Randleman",
+   "state": "NC",
+   "checkin": "2027-01-28",
+   "checkout": "2027-01-30",
+   "shoot": "2027 USA Archery North Carolina Indoor State Championship"
+  },
+  {
+   "key": "roanoke, tx",
+   "city": "Roanoke",
+   "state": "TX",
+   "checkin": "2026-10-23",
+   "checkout": "2026-10-25",
+   "shoot": "Cinnamon Creek Ranch-1"
+  },
+  {
+   "key": "ropesville, tx",
+   "city": "Ropesville",
+   "state": "TX",
+   "checkin": "2027-01-28",
+   "checkout": "2027-01-31",
+   "shoot": "Lubbock County 4H @ Korbin's Archery-Lubbock-1"
+  },
+  {
+   "key": "san antonio, tx",
+   "city": "San Antonio",
+   "state": "TX",
+   "checkin": "2026-10-30",
+   "checkout": "2026-11-01",
+   "shoot": "Mission Ridge-1"
+  },
+  {
+   "key": "the woodlands, tx",
+   "city": "The Woodlands",
+   "state": "TX",
+   "checkin": "2026-10-22",
+   "checkout": "2026-10-25",
+   "shoot": "Saddle River Range-1"
+  },
+  {
+   "key": "tyler, tx",
+   "city": "Tyler",
+   "state": "TX",
+   "checkin": "2026-11-13",
+   "checkout": "2026-11-15",
+   "shoot": "Griffin Archery-1"
+  },
+  {
+   "key": "waco, tx",
+   "city": "Waco",
+   "state": "TX",
+   "checkin": "2026-11-19",
+   "checkout": "2026-11-21",
+   "shoot": "Out House Archery-1"
+  },
+  {
+   "key": "weatherford, tx",
+   "city": "Weatherford",
+   "state": "TX",
+   "checkin": "2026-11-05",
+   "checkout": "2026-11-08",
+   "shoot": "Fort Grard Guns & Archery-1"
+  },
+  {
+   "key": "west bloomfield township, mi",
+   "city": "West Bloomfield Township",
+   "state": "MI",
+   "checkin": "2027-01-15",
+   "checkout": "2027-01-17",
+   "shoot": "2027 USA Archery SAM State Indoor Championship"
+  },
+  {
+   "key": "west bloomfield, mi",
+   "city": "West Bloomfield",
+   "state": "MI",
+   "checkin": "2027-01-09",
+   "checkout": "2027-01-10",
+   "shoot": "2027 Michigan State JOAD Indoor Championship (January 10 ONLY)"
+  }
+ ]
+}
