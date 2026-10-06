@@ -22,9 +22,11 @@ for (const t of towns) {
   const prices = (results[t.key] ?? []).filter((n) => Number.isFinite(n) && n > 0).sort((a, b) => a - b);
   if (prices.length >= MIN_HOTELS) {
     const n = prices.length;
-    const typical = Math.round(prices.reduce((s, p) => s + p, 0) / n / 5) * 5;
     const low = prices[0];
     const high = prices[Math.ceil(0.9 * n) - 1];
+    // Average of the hotels up to "high", so one $600 resort doesn't drag the average up.
+    const usual = prices.filter((p) => p <= high);
+    const typical = Math.round(usual.reduce((s, p) => s + p, 0) / usual.length / 5) * 5;
     cities[t.key] = {
       low,
       typical: Math.min(Math.max(typical, low), high),
@@ -47,7 +49,7 @@ const sorted = Object.fromEntries(Object.keys(cities).sort().map((k) => [k, citi
 const out = {
   updated: today,
   note:
-    "Nightly hotel prices (USD, 2 adults, before taxes) found in a hotel search for each shoot town for the nights of its next shoot (check-in the night before). low = cheapest, high = 90th percentile, typical = average. Refreshed daily by a Claude routine.",
+    "Nightly hotel prices (USD, 2 adults, before taxes) found in a hotel search for each shoot town for the nights of its next shoot (check-in the night before). low = cheapest, high = 90th percentile, typical = average of the hotels up to high. Refreshed daily by a Claude routine.",
   cities: sorted,
 };
 process.stdout.write(JSON.stringify(out, null, 1) + "\n");
