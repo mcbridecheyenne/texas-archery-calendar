@@ -5,7 +5,8 @@ import { addToPhoneCalendar, callHost, emailHost, openDirections, openUrl } from
 import { daysUntil, fmtRange } from "../dates";
 import type { CalendarTheme } from "../theme";
 import { listedBy, type TournamentEvent } from "../types";
-import { hotelPlace, hotelPrices, hotelSearchUrl, type HotelsConfig } from "../hotels";
+import { hotelPlace, hotelPrices, hotelSearchUrl, useCityPrices, type HotelsConfig } from "../hotels";
+import { fmtMonthYear, parseISODate } from "../dates";
 import { shareShoot, shootMessage } from "../share";
 import { useShareCard, type ShareCardInfo } from "./ShareCard";
 import { SourcePill } from "./SourcePill";
@@ -205,9 +206,10 @@ export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra
 // Typical nightly prices near the shoot (an estimate) and a button that searches hotels
 // for the shoot's dates. Hidden for shoots that are over or have no place.
 function HotelCard({ event, config, theme }: { event: TournamentEvent; config: HotelsConfig; theme: CalendarTheme }) {
+  const table = useCityPrices(config.pricesUrl);
   const url = hotelSearchUrl(event, config);
   if (!url) return null;
-  const prices = hotelPrices(event);
+  const prices = hotelPrices(event, table);
   const place = hotelPlace(event);
   return (
     <View style={[styles.card, { backgroundColor: theme.card, borderColor: theme.border, paddingVertical: 12, gap: 6 }]}>
@@ -220,7 +222,9 @@ function HotelCard({ event, config, theme }: { event: TournamentEvent; config: H
           </Text>
           <Text style={[styles.rowValue, { color: theme.text }]}>About ${prices.typical} a night on average</Text>
           <Text style={[styles.hotelNote, { color: theme.muted }]}>
-            Typical prices for this area, not live quotes. Prices go up on big shoot weekends, so book early.
+            {prices.scope === "city"
+              ? `Prices we found for hotels in ${prices.place} (checked ${checkedMonth(prices.checked)}). They change with dates and go up on big shoot weekends, so book early.`
+              : `Typical for ${prices.place}, not prices for this town. Prices go up on big shoot weekends, so book early.`}
           </Text>
         </>
       ) : null}
@@ -234,6 +238,11 @@ function HotelCard({ event, config, theme }: { event: TournamentEvent; config: H
       </Pressable>
     </View>
   );
+}
+
+function checkedMonth(iso: string): string {
+  const d = parseISODate(iso);
+  return isNaN(d.getTime()) ? iso : fmtMonthYear({ year: d.getFullYear(), month: d.getMonth() });
 }
 
 function Action({ label, onPress, theme }: { label: string; onPress: () => void; theme: CalendarTheme }) {

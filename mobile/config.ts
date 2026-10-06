@@ -40,7 +40,8 @@ export const ADS = {
 };
 
 // ---- Hotels near each shoot (Stay22 affiliate link) ----
-// Each shoot's details show a typical nightly hotel price range for the area and a
+// Each shoot's details show nightly hotel prices for the shoot's town (from
+// hotel-prices.json on the website; a state-wide estimate for towns not in it) and a
 // "Find hotels" button. Stay22 (stay22.com) pays a commission when someone books a stay
 // from that button. Sign up free at stay22.com, then paste your affiliate id ("aid",
 // shown in the Stay22 dashboard under Links) below. While it's blank the button opens a
@@ -49,6 +50,7 @@ export const HOTELS = {
   enabled: true,
   stay22Aid: "archeryintheusa", // Cheyenne's Stay22 affiliate id
   campaign: "app", // shows app clicks separately from the website in Stay22's reports
+  pricesUrl: `${API_BASE_URL}/hotel-prices.json`, // edit client/public/hotel-prices.json on main
 };
 
 // ---- Texas Field Archery Scholarship Fund ----
