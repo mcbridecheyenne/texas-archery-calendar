@@ -4,6 +4,7 @@
 export { CalendarScreen, type CalendarScreenProps } from "./CalendarScreen";
 export { useEvents } from "./useEvents";
 export { useGoing } from "./useGoing";
+export { addStarsFromAccount, movedStars, onStarsMoved, starredShoots, type AccountStar, type StarredShoot } from "./goingStore";
 export { useCalendarTheme, type CalendarTheme } from "./theme";
 export { fetchEvents, readCachedEvents } from "./api";
 export { shareMyShoots, shareShoot, shootMessage, shootsMessage } from "./share";

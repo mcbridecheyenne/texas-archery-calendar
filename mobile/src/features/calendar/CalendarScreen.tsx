@@ -27,6 +27,7 @@ import { useShareCard, type ShareCardInfo } from "./components/ShareCard";
 import { shootsMessage } from "./share";
 import { useEvents } from "./useEvents";
 import { useGoing } from "./useGoing";
+import { checkStarsAgainst } from "./goingStore";
 
 export interface CalendarScreenProps {
   apiBaseUrl: string;
@@ -126,6 +127,12 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
     [allEvents, filter, stateFilter, going]
   );
   const upcoming = useMemo(() => filtered.filter((e) => e.endDate >= todayIso), [filtered, todayIso]);
+
+  // Each time the schedule loads: if a starred shoot changed its date or place (which gives
+  // it a new id), move the star and its reminders to the new listing.
+  useEffect(() => {
+    if (data) checkStarsAgainst(allEvents, data).catch(() => {});
+  }, [allEvents, data]);
   // "My Shoots": every upcoming tournament marked Going, whatever filter is picked.
   const myShoots = useMemo(() => allEvents.filter((e) => going.has(e.id) && e.endDate >= todayIso), [allEvents, going, todayIso]);
 
@@ -166,7 +173,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
     async (event: TournamentEvent) => {
       const adding = !isGoing(event.id);
       if (adding && beforeGoing && !(await beforeGoing(event))) return;
-      const msg = await toggle(event);
+      const msg = await toggle(event, adding);
       onGoingChange?.(event, adding);
       if (msg) showToast(msg);
     },

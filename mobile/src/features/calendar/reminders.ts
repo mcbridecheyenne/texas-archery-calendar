@@ -47,8 +47,10 @@ async function schedule(title: string, body: string, date: Date, eventId: string
 }
 
 // Returns how many reminders were set (0 if permission was declined or all dates have passed).
-export async function scheduleRemindersFor(event: TournamentEvent): Promise<number> {
-  const allowed = await ensureNotificationPermission();
+// ask: false only sets reminders if the archer already allowed notifications, without
+// popping up the question (used when the app quietly fixes reminders for a shoot that moved).
+export async function scheduleRemindersFor(event: TournamentEvent, ask = true): Promise<number> {
+  const allowed = ask ? await ensureNotificationPermission() : (await Notifications.getPermissionsAsync()).granted;
   if (!allowed) return 0;
   await ensureChannel();
   await cancelRemindersFor(event.id);
