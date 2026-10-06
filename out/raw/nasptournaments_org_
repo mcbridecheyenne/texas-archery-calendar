@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head id="ctl00_Head1">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="This web site hosts registration, scoring, and result history for NASP® archery tournaments." /><link rel="Stylesheet" type="text/css" href="VTSite.css" /><link href="NavStyles.css" rel="stylesheet" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="[long]" crossorigin="anonymous" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" integrity="[long]" crossorigin="anonymous" /><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="[long]" crossorigin="anonymous" />
+
+    <!-- Google tag (gtag.js) -->
+    
+    
+    
+    
+    <link href="HomePage.css" rel="stylesheet" />
+<title>
+	NASP Tournaments
+</title></head>
+<body>
+    <form name="aspnetForm" method="post" action="./" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="[long]" />
+</div>
+
+
+
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="[long]" />
+</div>
+        <nav class="navbar navbar-expand-lg navbar-dark static-top sb-navbar bg-dark">
+            <div class="container">
+
+                <a class="navbar-brand" href="/">
+                    <img id="ctl00_Image1" class="img-fluid rounded" src="images/nasplogomenubar.png" alt="NASP Logo" style="border-width:0px;" /></a>
+                
+
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                
+
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+
+                    <ul class="navbar-nav mr-auto">
+
+                        
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tournaments</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a id="ctl00_HyperLink4" class="dropdown-item" href="TournamentExplorer.aspx">Tournament Explorer</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink23" class="dropdown-item" href="TournamentExplorerCalendarView.aspx">Tournament Explorer - Calendar</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink31" class="dropdown-item" href="MapView.aspx">Tournament Explorer - Map View</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink336" class="dropdown-item" href="ICTOURN">In-Class Tournament</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink7" class="dropdown-item" href="ListInfo.aspx">List A Tournament</a></li>
+                                
+                            </ul>
+
+
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Archer</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a id="ctl00_HyperLink6" class="dropdown-item" href="CompareScore">How Do I Rank</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink34" class="dropdown-item" href="Rank">Rankings</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink18" class="dropdown-item" href="archersearch.aspx">Archer Search</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink25" class="dropdown-item" href="AcademicArcher.aspx">Academic Archer</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink36" class="dropdown-item" href="records/300club.aspx">300 Club</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">School</a>
+                            <ul class="dropdown-menu">
+                                
+                                <li>
+                                    <a id="ctl00_HyperLink15" class="dropdown-item" href="Schoolmgr">School Manager</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink24" class="dropdown-item" href="schoolsearch.aspx">School Search</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink37" class="dropdown-item" href="SchoolMap.aspx">School Map</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink35" class="dropdown-item" href="Rank">Rankings</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink14" class="dropdown-item" href="ScoreSearch/TeamScores.aspx">Team Score Search</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Software</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a id="ctl00_HyperLink5" class="dropdown-item" href="ClientSoftware/">NASP&reg; Pro Web-Based</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLinkPortalAppScoring" class="dropdown-item" href="ClientSoftware/NASPPortalAppScoring.aspx">NASP&reg; Portal App Scoring</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLinkScannerSoftware" class="dropdown-item" href="ClientSoftware/Scanner.aspx">Apperson Scanner Software</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item  dropdown">
+                            <a id="ctl00_HyperLink38" class="nav-link" href="rules">Rules</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Help</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a id="ctl00_HyperLink9" class="dropdown-item" href="Contact.aspx">Contact</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink10" class="dropdown-item" href="UserUtilities/BAINumberLookup.aspx">BAI Number Lookup</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink33" class="dropdown-item" href="https://naspbai.org/baiverification.aspx">Verify a BAI's Certification Status</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink16" class="dropdown-item" href="help/tutorials.aspx">Tutorials</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink39" class="dropdown-item" href="help/LoginAccountDeletion.aspx">Delete a Login Account</a></li>
+
+                            </ul>
+                        </li>
+
+                        
+                        <li>
+                            <a id="ctl00_HyperLink3" class="nav-link" href="userutilities/login.aspx">Login</a></li>
+                        
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </nav>
+        <br />
+        <div class="container">
+            
+            <div class="ContentArea">
+                
+    <div class="home-page">
+        <section class="home-launch" aria-label="Tournament and participant searches">
+            <div class="home-launch-grid">
+                <a id="[long]" class="home-launch-card home-launch-card--tournaments" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$LinkButton_search_tournaments&#39;,&#39;&#39;)">
+                    <span class="home-launch-icon"><i class="bi bi-calendar3" aria-hidden="true"></i></span>
+                    <span class="home-launch-copy"><strong>Tournaments</strong><small>Browse upcoming and completed events</small></span>
+                    <i class="bi bi-arrow-right home-launch-arrow" aria-hidden="true"></i>
+                </a>
+                <a id="[long]" class="home-launch-card home-launch-card--archers" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$LinkButton_search_archers&#39;,&#39;&#39;)">
+                    <span class="home-launch-icon"><i class="bi bi-person" aria-hidden="true"></i></span>
+                    <span class="home-launch-copy"><strong>Archers</strong><small>Search archer results and history</small></span>
+                    <i class="bi bi-arrow-right home-launch-arrow" aria-hidden="true"></i>
+                </a>
+                <a id="[long]" class="home-launch-card home-launch-card--schools" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$LinkButton_search_schools&#39;,&#39;&#39;)">
+                    <span class="home-launch-icon"><i class="bi bi-building" aria-hidden="true"></i></span>
+                    <span class="home-launch-copy"><strong>Schools</strong><small>Find schools and team information</small></span>
+                    <i class="bi bi-arrow-right home-launch-arrow" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="home-launch-secondary">
+                <a id="[long]" class="home-launch-wide home-launch-wide--rankings" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$LinkButton_rankings&#39;,&#39;&#39;)">
+                    <span class="home-launch-wide-icon"><i class="bi bi-card-list" aria-hidden="true"></i></span>
+                    <span>View Rankings</span>
+                    <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+                <a id="[long]" class="home-launch-wide home-launch-wide--championships" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$LinkButton_world_nat&#39;,&#39;&#39;)">
+                    <span class="home-launch-wide-icon"><i class="bi bi-trophy" aria-hidden="true"></i></span>
+                    <span>National and Championship Events</span>
+                    <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </section>
+
+        
+        
+
+        <section class="home-section" aria-label="Programs and tools">
+            <div class="home-program-grid">
+                <a id="[long]" class="home-action-card home-action-card--academic" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$LinkButton_AA_Archer&#39;,&#39;&#39;)">
+                    <span class="home-action-icon"><img id="ctl00_ContentPlaceHolder1_Image_AA_Logo" src="icons/EastonAALogo75px.png" style="border-width:0px;" /></span>
+                    <span class="home-action-copy"><strong>Academic Archer</strong><small>Celebrate success in the classroom and on the range</small></span>
+                    <i class="bi bi-arrow-right home-action-arrow" aria-hidden="true"></i>
+                </a>
+                <a id="[long]" class="home-action-card home-action-card--notifications" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$LinkButton_notification&#39;,&#39;&#39;)">
+                    <span class="home-action-icon"><i class="bi bi-envelope" aria-hidden="true"></i></span>
+                    <span class="home-action-copy"><strong>Get Notified</strong><small>Keep up with the tournaments you care about</small></span>
+                    <i class="bi bi-arrow-right home-action-arrow" aria-hidden="true"></i>
+                </a>
+                <a id="[long]" class="home-action-card home-action-card--classroom" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$LinkButton_in_class_tournament&#39;,&#39;&#39;)">
+                    <span class="home-action-icon"><i class="bi bi-book" aria-hidden="true"></i></span>
+                    <span class="home-action-copy"><strong>In-Class Tournament</strong><small>Bring a tournament experience to your students</small></span>
+                    <i class="bi bi-arrow-right home-action-arrow" aria-hidden="true"></i>
+                </a>
+            </div>
+        </section>
+        <figure class="home-bowrack-banner">
+            <img src="slideshow/BowRack.jpg" alt="Bows lined up at a NASP tournament" />
+        </figure>
+        <section class="home-official" aria-labelledby="home-official-title">
+            <span class="home-official-icon"><i class="bi bi-globe2" aria-hidden="true"></i></span>
+            <div class="home-official-copy">
+                <span class="home-feature-kicker">Official NASP resource</span>
+                <h2 id="home-official-title">Everything NASP</h2>
+                <p>Visit the official NASP website for program news, resources, and information.</p>
+            </div>
+            <a id="[long]" class="home-button home-button--light" href="http://naspschools.org">
+                Visit naspschools.org <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+        </section>
+
+        <section class="home-feature-card home-stjude" aria-labelledby="home-stjude-title">
+            <div class="home-feature-copy">
+                <h2 id="home-stjude-title">NASP&reg; St. Jude E-Championship Charity Tournament Series</h2>
+                <input type="submit" name="ctl00$ContentPlaceHolder1$Button_echamptionship" value="Explore the St. Jude E-Championship" id="[long]" class="home-button home-button--red" />
+            </div>
+            <div class="home-logo-lockup">
+                <img id="ctl00_ContentPlaceHolder1_Image3" src="images/NASPLogo300.jpg" alt="NASP Logo" style="border-width:0px;" />
+                <span class="home-logo-divider" aria-hidden="true">+</span>
+                <a id="[long]" title="St. Jude Children&#39;s Research Hospital" href="https://www.stjude.org"><img title="St. Jude Children&#39;s Research Hospital" src="echampionship/images/stjudelogo300.jpg" alt="" style="border-width:0px;" /></a>
+            </div>
+        </section>
+
+        <aside class="arrowscores-opportunity-alert" aria-labelledby="arrowscores-title">
+            <img class="arrowscores-opportunity-logo" src="/images/ArrowScoresLogo2.png" alt="ArrowScores" />
+            <div class="arrowscores-opportunity-copy">
+                <span class="home-feature-kicker">More ways to compete</span>
+                <h2 id="arrowscores-title">More tournament opportunities</h2>
+                <p class="arrowscores-opportunity-message">Find even more tournament opportunities on ArrowScores.com.</p>
+            </div>
+            <a href="https://arrowscores.com" class="arrowscores-opportunity-action">Explore ArrowScores.com <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        </aside>
+
+        <section class="home-feature-card home-portal" aria-labelledby="home-portal-title">
+            <div class="home-portal-visual">
+                <img id="ctl00_ContentPlaceHolder1_Image2" src="images/app-image-1.png" alt="NASP Portal mobile app" style="border-width:0px;" />
+            </div>
+            <div class="home-feature-copy">
+                <h2 id="home-portal-title">NASP&reg; Portal App</h2>
+                <div class="home-app-badges">
+                    <a href="https://play.google.com/store/apps/details?id=org.nasptournaments.portal&amp;[long]" aria-label="Get the NASP Portal app on Google Play">
+                        <img alt="Get it on Google Play" src="images/google-play-badge.png" />
+                    </a>
+                    <a href="https://apps.apple.com/us/app/nasp-portal/id1502049294?itsct=apps_box_badge&amp;itscg=30200" aria-label="Download the NASP Portal app on the App Store">
+                        <img src="images/app-store-badge.png" alt="Download on the App Store" />
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="home-promo-grid">
+            <section class="home-promo-card home-target-card" aria-labelledby="home-target-title">
+                <img id="ctl00_ContentPlaceHolder1_Image1" src="images/OTFLA-460x460.jpeg" alt="Archers gathered with their coach" style="border-width:0px;" />
+                <div class="home-promo-copy">
+                    <span class="home-feature-kicker">On Target for Life</span>
+                    <h2 id="home-target-title">Recognize someone who makes a difference</h2>
+                    <p>Nominate outstanding archers, coaches, volunteers, or teams in the NASP community.</p>
+                    <a id="ctl00_ContentPlaceHolder1_HyperLink1" class="home-button home-button--primary" href="https://app.naspschools.org/ontarget/">
+                        Submit a nomination <i class="bi bi-hand-thumbs-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </section>
+            <section class="home-promo-card home-apparel-card" aria-labelledby="home-apparel-title">
+                <span class="home-feature-kicker">Official gear</span>
+                <h2 id="home-apparel-title">NASP Apparel</h2>
+                <p>Shop NASP apparel and merchandise.</p>
+                <a id="[long]" title="Shop NASP apparel at EA Promos" href="http://www.naspshop.com"><img title="Shop NASP apparel at EA Promos" src="images/ea_promos_logo_stacked.jpg" alt="" style="border-width:0px;" /></a>
+            </section>
+        </div>
+    </div>
+
+            </div>
+            <hr>
+        </div>
+        <!-- /container -->
+
+
+        <div style="background-color: #383838; padding-bottom: 20px">
+            <footer class="footer">
+                <br />
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <strong>Site Links</strong>
+                            <div style="padding-top: 5px; padding-bottom: 5px">
+                                <a id="ctl00_HyperLink12" href="tournamentexplorer.aspx">Tournaments</a>
+                            </div>
+                            <div style="padding-top: 5px; padding-bottom: 5px">
+                                <a id="ctl00_HyperLink13" href="ClientSoftware/">Software</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <strong>Contact</strong><br />
+                            <div style="padding-top: 5px; padding-bottom: 5px">
+                                <a id="ctl00_HyperLink17" href="Contact.aspx">support@nasptournaments.org</a>
+                            </div>
+                            <div style="padding-top: 5px; padding-bottom: 5px">
+                                &nbsp;&nbsp;  
+                                <a id="ctl00_HyperLink26" href="https://www.facebook.com/naspschools/."><img src="icons/FB-flogo-Blue-40px.png" alt="Facebook" style="border-width:0px;" /></a>
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-3">
+                            <strong>Links</strong>
+                            <div style="padding-top: 5px; padding-bottom: 5px"><a href="https://naspschools.org">NASP&reg; - https://naspschools.org</a></div>
+                            <div style="padding-top: 5px; padding-bottom: 5px"><a href="https://naspbai.org">BAI - https://naspbai.org</a></div>
+                            <div style="padding-top: 5px; padding-bottom: 5px"><a href="https://naspbai.org/classsearch.aspx">BAI Classes - https://naspbai.org</a></div>
+
+
+                        </div>
+                        <div class="col-md-3">
+                            <strong>Administrative</strong>
+
+                            
+                            <div id="ctl00_Panel_admin_links_not_logged_in">
+	
+                                <div style="padding-top: 5px; padding-bottom: 5px">Login Required</div>
+                            
+</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        Copyright &copy; 2009-<span id="ctl00_Label_footer_year">2026</span>
+                        NASP&reg;
+                    </div>
+                </div>
+                <!-- /container -->
+            </footer>
+        </div>
+    </form>
+    
+    
+    
+</body>
+</html>
+
+
+
+
+
+

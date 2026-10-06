@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /fwnet/
+Disallow: /speciesinfo/reference.asp
+Disallow: /speciesinfo/specieslistcounty.asp
+Disallow: /kyswap/details
+Disallow: /photogalleryviewer/PGView.aspx
+Disallow: /fisheries/tournamentdetail.aspx
+Disallow: /fisheries/fishingtournaments.aspx
+Disallow: /edcourse/courseevent.aspx
+Disallow: /eventregistration/startpage.aspx
+Disallow: /seasondates/calendarsingle.aspx?SID=

@@ -1,0 +1,14 @@
+Crawl-delay: 10
+User-agent: *
+Disallow: [long].json
+
+# START YOAST BLOCK
+# ---------------------------
+User-agent: *
+Disallow:
+
+Sitemap: https://bexar-tx.tamu.edu/sitemap_index.xml
+Sitemap: https://elp.tamu.edu/sitemap_index.xml
+Sitemap: https://travis-tx.tamu.edu/sitemap_index.xml
+# ---------------------------
+# END YOAST BLOCK

@@ -1,0 +1,481 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//NMDOW - ECPv6.18.0//NONSGML v1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:NMDOW
+X-ORIGINAL-URL:https://wildlife.dgf.nm.gov
+X-WR-CALDESC:Events for NMDOW
+REFRESH-INTERVAL;VALUE=DURATION:PT1H
+X-Robots-Tag:noindex
+X-PUBLISHED-TTL:PT1H
+BEGIN:VTIMEZONE
+TZID:America/Denver
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0600
+TZNAME:MDT
+DTSTART:20250309T090000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0700
+TZNAME:MST
+DTSTART:20251102T080000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0600
+TZNAME:MDT
+DTSTART:20260308T090000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0700
+TZNAME:MST
+DTSTART:20261101T080000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0600
+TZNAME:MDT
+DTSTART:20270314T090000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0700
+TZNAME:MST
+DTSTART:20271107T080000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0600
+TZNAME:MDT
+DTSTART:20280312T090000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0700
+TZNAME:MST
+DTSTART:20281105T080000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0600
+TZNAME:MDT
+DTSTART:20290311T090000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0700
+TZNAME:MST
+DTSTART:20291104T080000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0600
+TZNAME:MDT
+DTSTART:20300310T090000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0700
+TZNAME:MST
+DTSTART:20301103T080000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0600
+TZNAME:MDT
+DTSTART:20310309T090000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0700
+TZNAME:MST
+DTSTART:20311102T080000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0600
+TZNAME:MDT
+DTSTART:20320314T090000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0700
+TZNAME:MST
+DTSTART:20321107T080000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261118
+DTEND;VALUE=DATE:20261119
+DTSTAMP:20260810T203718Z
+CREATED:20250930T161909Z
+LAST-MODIFIED:20260810T203718Z
+UID:10000959-1794960000-1795046399@wildlife.dgf.nm.gov
+SUMMARY:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday in November
+DESCRIPTION:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday of the month in February\, May\, August and November.
+URL:https://wildlife.dgf.nm.[long]
+LOCATION:Stephen M. Bush Memorial Shooting Range\, Clayton\, New Mexico
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+ORGANIZER;CN="Cody Johnston":MAILTO:cody.johnston@dgf.nm.gov
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261203
+DTSTAMP:20260810T212936Z
+CREATED:20250930T162542Z
+LAST-MODIFIED:20260810T212936Z
+UID:10000975-1796198400-1796230800@wildlife.dgf.nm.gov
+SUMMARY:Tres Piedras Primitive Shooting Range will be closed
+DESCRIPTION:Tres Piedras Primitive Shooting Range will be closed for maintenance.
+URL:https://wildlife.dgf.nm.[long]
+LOCATION:Tres Piedras Primitive Shooting Range
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+ORGANIZER;CN="Cody Johnston":MAILTO:cody.johnston@dgf.nm.gov
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270217
+DTEND;VALUE=DATE:20270218
+DTSTAMP:20260810T211715Z
+CREATED:20260810T204053Z
+LAST-MODIFIED:20260810T211715Z
+UID:10000969-1802822400-1802908799@wildlife.dgf.nm.gov
+SUMMARY:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday in February
+DESCRIPTION:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday of the month in February\, May\, August and November.
+URL:https://wildlife.dgf.nm.[long]
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270303
+DTEND;VALUE=DATE:20270304
+DTSTAMP:20260810T212936Z
+CREATED:20250930T162542Z
+LAST-MODIFIED:20260810T212936Z
+UID:10000976-1804060800-1804093200@wildlife.dgf.nm.gov
+SUMMARY:Tres Piedras Primitive Shooting Range will be closed
+DESCRIPTION:Tres Piedras Primitive Shooting Range will be closed for maintenance.
+URL:https://wildlife.dgf.nm.[long]
+LOCATION:Tres Piedras Primitive Shooting Range
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+ORGANIZER;CN="Cody Johnston":MAILTO:cody.johnston@dgf.nm.gov
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270519
+DTEND;VALUE=DATE:20270520
+DTSTAMP:20260810T211738Z
+CREATED:20260810T204051Z
+LAST-MODIFIED:20260810T211738Z
+UID:10000964-1810684800-1810771199@wildlife.dgf.nm.gov
+SUMMARY:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday in May
+DESCRIPTION:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday of the month in February\, May\, August and November.
+URL:https://wildlife.dgf.nm.[long]
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270602
+DTEND;VALUE=DATE:20270603
+DTSTAMP:20260810T212936Z
+CREATED:20250930T162542Z
+LAST-MODIFIED:20260810T212936Z
+UID:10000977-1811923200-1811955600@wildlife.dgf.nm.gov
+SUMMARY:Tres Piedras Primitive Shooting Range will be closed
+DESCRIPTION:Tres Piedras Primitive Shooting Range will be closed for maintenance.
+URL:https://wildlife.dgf.nm.[long]
+LOCATION:Tres Piedras Primitive Shooting Range
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+ORGANIZER;CN="Cody Johnston":MAILTO:cody.johnston@dgf.nm.gov
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270818
+DTEND;VALUE=DATE:20270819
+DTSTAMP:20260810T211326Z
+CREATED:20260810T202919Z
+LAST-MODIFIED:20260810T211326Z
+UID:10000955-1818547200-1818633599@wildlife.dgf.nm.gov
+SUMMARY:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday in August
+DESCRIPTION:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday of the month in February\, May\, August and November.
+URL:https://wildlife.dgf.nm.[long]
+LOCATION:Stephen M. Bush Memorial Shooting Range\, Clayton\, New Mexico
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+ORGANIZER;CN="Cody Johnston":MAILTO:cody.johnston@dgf.nm.gov
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270915
+DTEND;VALUE=DATE:20270916
+DTSTAMP:20260810T212936Z
+CREATED:20250930T162542Z
+LAST-MODIFIED:20260810T212936Z
+UID:10000978-1820995200-1821027600@wildlife.dgf.nm.gov
+SUMMARY:Tres Piedras Primitive Shooting Range will be closed
+DESCRIPTION:Tres Piedras Primitive Shooting Range will be closed for maintenance.
+URL:https://wildlife.dgf.nm.[long]
+LOCATION:Tres Piedras Primitive Shooting Range
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+ORGANIZER;CN="Cody Johnston":MAILTO:cody.johnston@dgf.nm.gov
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20271117
+DTEND;VALUE=DATE:20271118
+DTSTAMP:20260810T203718Z
+CREATED:20250930T161909Z
+LAST-MODIFIED:20260810T203718Z
+UID:10000960-1826409600-1826495999@wildlife.dgf.nm.gov
+SUMMARY:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday in November
+DESCRIPTION:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday of the month in February\, May\, August and November.
+URL:https://wildlife.dgf.nm.[long]
+LOCATION:Stephen M. Bush Memorial Shooting Range\, Clayton\, New Mexico
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+ORGANIZER;CN="Cody Johnston":MAILTO:cody.johnston@dgf.nm.gov
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20271215
+DTEND;VALUE=DATE:20271216
+DTSTAMP:20260810T212936Z
+CREATED:20250930T162542Z
+LAST-MODIFIED:20260810T212936Z
+UID:10000979-1828857600-1828890000@wildlife.dgf.nm.gov
+SUMMARY:Tres Piedras Primitive Shooting Range will be closed
+DESCRIPTION:Tres Piedras Primitive Shooting Range will be closed for maintenance.
+URL:https://wildlife.dgf.nm.[long]
+LOCATION:Tres Piedras Primitive Shooting Range
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+ORGANIZER;CN="Cody Johnston":MAILTO:cody.johnston@dgf.nm.gov
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20280216
+DTEND;VALUE=DATE:20280217
+DTSTAMP:20260810T211715Z
+CREATED:20260810T204053Z
+LAST-MODIFIED:20260810T211715Z
+UID:10000970-1834272000-1834358399@wildlife.dgf.nm.gov
+SUMMARY:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday in February
+DESCRIPTION:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday of the month in February\, May\, August and November.
+URL:https://wildlife.dgf.nm.[long]
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20280315
+DTEND;VALUE=DATE:20280316
+DTSTAMP:20260810T212936Z
+CREATED:20250930T162542Z
+LAST-MODIFIED:20260810T212936Z
+UID:10000980-1836720000-1836752400@wildlife.dgf.nm.gov
+SUMMARY:Tres Piedras Primitive Shooting Range will be closed
+DESCRIPTION:Tres Piedras Primitive Shooting Range will be closed for maintenance.
+URL:https://wildlife.dgf.nm.[long]
+LOCATION:Tres Piedras Primitive Shooting Range
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+ORGANIZER;CN="Cody Johnston":MAILTO:cody.johnston@dgf.nm.gov
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20280517
+DTEND;VALUE=DATE:20280518
+DTSTAMP:20260810T211738Z
+CREATED:20260810T204051Z
+LAST-MODIFIED:20260810T211738Z
+UID:10000965-1842134400-1842220799@wildlife.dgf.nm.gov
+SUMMARY:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday in May
+DESCRIPTION:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday of the month in February\, May\, August and November.
+URL:https://wildlife.dgf.nm.[long]
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20280621
+DTEND;VALUE=DATE:20280622
+DTSTAMP:20260810T212936Z
+CREATED:20250930T162542Z
+LAST-MODIFIED:20260810T212936Z
+UID:10000981-1845187200-1845219600@wildlife.dgf.nm.gov
+SUMMARY:Tres Piedras Primitive Shooting Range will be closed
+DESCRIPTION:Tres Piedras Primitive Shooting Range will be closed for maintenance.
+URL:https://wildlife.dgf.nm.[long]
+LOCATION:Tres Piedras Primitive Shooting Range
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+ORGANIZER;CN="Cody Johnston":MAILTO:cody.johnston@dgf.nm.gov
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20280816
+DTEND;VALUE=DATE:20280817
+DTSTAMP:20260810T211326Z
+CREATED:20260810T202919Z
+LAST-MODIFIED:20260810T211326Z
+UID:10000956-1849996800-1850083199@wildlife.dgf.nm.gov
+SUMMARY:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday in August
+DESCRIPTION:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday of the month in February\, May\, August and November.
+URL:https://wildlife.dgf.nm.[long]
+LOCATION:Stephen M. Bush Memorial Shooting Range\, Clayton\, New Mexico
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+ORGANIZER;CN="Cody Johnston":MAILTO:cody.johnston@dgf.nm.gov
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20281115
+DTEND;VALUE=DATE:20281116
+DTSTAMP:20260810T203718Z
+CREATED:20250930T161909Z
+LAST-MODIFIED:20260810T203718Z
+UID:10000961-1857859200-1857945599@wildlife.dgf.nm.gov
+SUMMARY:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday in November
+DESCRIPTION:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday of the month in February\, May\, August and November.
+URL:https://wildlife.dgf.nm.[long]
+LOCATION:Stephen M. Bush Memorial Shooting Range\, Clayton\, New Mexico
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+ORGANIZER;CN="Cody Johnston":MAILTO:cody.johnston@dgf.nm.gov
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20290221
+DTEND;VALUE=DATE:20290222
+DTSTAMP:20260810T211715Z
+CREATED:20260810T204053Z
+LAST-MODIFIED:20260810T211715Z
+UID:10000971-1866326400-1866412799@wildlife.dgf.nm.gov
+SUMMARY:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday in February
+DESCRIPTION:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday of the month in February\, May\, August and November.
+URL:https://wildlife.dgf.nm.[long]
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20290516
+DTEND;VALUE=DATE:20290517
+DTSTAMP:20260810T211738Z
+CREATED:20260810T204051Z
+LAST-MODIFIED:20260810T211738Z
+UID:10000966-1873584000-1873670399@wildlife.dgf.nm.gov
+SUMMARY:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday in May
+DESCRIPTION:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday of the month in February\, May\, August and November.
+URL:https://wildlife.dgf.nm.[long]
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20290815
+DTEND;VALUE=DATE:20290816
+DTSTAMP:20260810T211326Z
+CREATED:20260810T202919Z
+LAST-MODIFIED:20260810T211326Z
+UID:10000957-1881446400-1881532799@wildlife.dgf.nm.gov
+SUMMARY:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday in August
+DESCRIPTION:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday of the month in February\, May\, August and November.
+URL:https://wildlife.dgf.nm.[long]
+LOCATION:Stephen M. Bush Memorial Shooting Range\, Clayton\, New Mexico
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+ORGANIZER;CN="Cody Johnston":MAILTO:cody.johnston@dgf.nm.gov
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20291121
+DTEND;VALUE=DATE:20291122
+DTSTAMP:20260810T203718Z
+CREATED:20250930T161909Z
+LAST-MODIFIED:20260810T203718Z
+UID:10000962-1889913600-1889999999@wildlife.dgf.nm.gov
+SUMMARY:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday in November
+DESCRIPTION:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday of the month in February\, May\, August and November.
+URL:https://wildlife.dgf.nm.[long]
+LOCATION:Stephen M. Bush Memorial Shooting Range\, Clayton\, New Mexico
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+ORGANIZER;CN="Cody Johnston":MAILTO:cody.johnston@dgf.nm.gov
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20300220
+DTEND;VALUE=DATE:20300221
+DTSTAMP:20260810T211715Z
+CREATED:20260810T204053Z
+LAST-MODIFIED:20260810T211715Z
+UID:10000972-1897776000-1897862399@wildlife.dgf.nm.gov
+SUMMARY:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday in February
+DESCRIPTION:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday of the month in February\, May\, August and November.
+URL:https://wildlife.dgf.nm.[long]
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20300515
+DTEND;VALUE=DATE:20300516
+DTSTAMP:20260810T211738Z
+CREATED:20260810T204051Z
+LAST-MODIFIED:20260810T211738Z
+UID:10000967-1905033600-1905119999@wildlife.dgf.nm.gov
+SUMMARY:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday in May
+DESCRIPTION:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday of the month in February\, May\, August and November.
+URL:https://wildlife.dgf.nm.[long]
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20300821
+DTEND;VALUE=DATE:20300822
+DTSTAMP:20260810T211326Z
+CREATED:20260810T202919Z
+LAST-MODIFIED:20260810T211326Z
+UID:10000958-1913500800-1913587199@wildlife.dgf.nm.gov
+SUMMARY:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday in August
+DESCRIPTION:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday of the month in February\, May\, August and November.
+URL:https://wildlife.dgf.nm.[long]
+LOCATION:Stephen M. Bush Memorial Shooting Range\, Clayton\, New Mexico
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+ORGANIZER;CN="Cody Johnston":MAILTO:cody.johnston@dgf.nm.gov
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20301120
+DTEND;VALUE=DATE:20301121
+DTSTAMP:20260810T203718Z
+CREATED:20250930T161909Z
+LAST-MODIFIED:20260810T203718Z
+UID:10000963-1921363200-1921449599@wildlife.dgf.nm.gov
+SUMMARY:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday in November
+DESCRIPTION:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday of the month in February\, May\, August and November.
+URL:https://wildlife.dgf.nm.[long]
+LOCATION:Stephen M. Bush Memorial Shooting Range\, Clayton\, New Mexico
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+ORGANIZER;CN="Cody Johnston":MAILTO:cody.johnston@dgf.nm.gov
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20310219
+DTEND;VALUE=DATE:20310220
+DTSTAMP:20260810T211715Z
+CREATED:20260810T204053Z
+LAST-MODIFIED:20260810T211715Z
+UID:10000973-1929225600-1929311999@wildlife.dgf.nm.gov
+SUMMARY:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday in February
+DESCRIPTION:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday of the month in February\, May\, August and November.
+URL:https://wildlife.dgf.nm.[long]
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20310521
+DTEND;VALUE=DATE:20310522
+DTSTAMP:20260810T211738Z
+CREATED:20260810T204051Z
+LAST-MODIFIED:20260810T211738Z
+UID:10000968-1937088000-1937174399@wildlife.dgf.nm.gov
+SUMMARY:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday in May
+DESCRIPTION:Bush Memorial Shooting Range is closed for maintenance on the third Wednesday of the month in February\, May\, August and November.
+URL:https://wildlife.dgf.nm.[long]
+CATEGORIES:Recreation Events,Shooting Events
+ATTACH;FMTTYPE=image/jpeg:https://wildlife.dgf.nm.[long].jpg
+END:VEVENT
+END:VCALENDAR

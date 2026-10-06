@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Disallow admin, management, and API paths
+Disallow: /admin
+Disallow: /api/
+Disallow: /user_management
+Disallow: /view_registrations
+Disallow: /manage_
+Disallow: /uploads/
+
+# Publicly linked uploads stay crawlable (longest-match wins over the
+# /uploads/ disallow): tournament result PDFs and news/article images.
+Allow: /uploads/result_
+Allow: /uploads/news/
+Allow: /uploads/media/
+
+# Sitemap (dynamic lastmod; /sitemap.xml rewrites to sitemap.php)
+Sitemap: https://sdarchers.com/sitemap.xml

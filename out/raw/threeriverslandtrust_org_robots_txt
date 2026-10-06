@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /wp-content/uploads/wc-logs/
+Disallow: [long]
+Disallow: [long]
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Crawl-delay: 10
+
+Sitemap: https://trlt.org/sitemap_index.xml

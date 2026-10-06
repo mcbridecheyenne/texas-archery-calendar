@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://html5-templates.com/" />
+    <title>Tri-State 3D Archery Listing</title>
+	<meta name="description" content="Listing of 3D Archery shoots in West Virgina, Pennsylvania and Ohio.">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+
+
+
+
+
+
+
+</head>
+
+<body>
+   <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Tri-State 3D Archery Listing</a>
+            </div>
+            
+                     
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Shoots</a>
+                    </li>
+                   <li>
+                        <a href="clubs.html">Clubs</a>
+                    </li>
+              
+ 				<!--	<li>
+                        <a href="events.html">Special Events</a>
+                    </li>
+                    <li>
+                        <a href="leagues.html">League Calendars</a>
+                    </li>
+
+      <li>
+                        <a href="shops.html">ProShops</a>
+                    </li>     -->  
+                        </ul>
+   
+                                       
+            </div>
+
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    
+  
+
+    <!-- Page Content -->
+      <br>
+            <br>
+            
+    <a href="https://goo.gl/maps/dgSYCvkGnfnmtmKd8" target="_blank"> Google map of Archery Locations</a>
+    <br><br>
+            <p> Click on the column header below to sort. </p>
+    <br>
+    <center>
+    
+    
+    <h3>2025 flyers, club info, league info, shoot dates - please send <a href="mailto:marymartinez03@gmail.com?subject=TRISTATE 3D">here</a>  </h3>
+            <br>
+            
+            <p>Thank you to everyone who provided information to make this page work. </p></center>
+            
+            
+            <p>Want to post a Flyer for this site at your club?  Download <a href=tristate.pdf>here</a>  </p></center>
+            
+            <br>
+    <center>
+    
+    
+<!----NEW TEST CODE--->
+
+
+
+
+ <!-- TABLE INFORMATION-->
+    <table id="selectedColumn" class="table sortable table-striped table-bordered table-sm" cellspacing="0" width="90%">
+  <thead>
+    <tr>
+    <th>Date</th>
+    <th>Type</th>
+    <th>Club</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Notes</th>
+         </tr>
+  </thead>
+  <tbody>
+  
+ <!-- Enter Table Here -->
+
+<tr>	<td>	3/19/2025	</td>	<td>	Indoor 3D	</td>	<td>	<a href="	clubs.html#kellystation	">	Kelly Station	</a>	</td>	<td>	Ford City	</td>	<td>	PA	</td>	<td>	Start between 6-7:30, 2 rounds of 15.  $10	</td>	</tr>					
+<tr>	<td>	03/22/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakemilton	">	Lake Milton	</a>	</td>	<td>	Berlin Center	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	03/23/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#eastbrady	">	East Brady	</a>	</td>	<td>	Rimersburg	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	03/23/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#collier	">	Collier	</a>	</td>	<td>	Oakdale	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	03/23/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#eastbrady	">	East Brady	</a>	</td>	<td>	Rimersburg	</td>	<td>	PA	</td>	<td>	Benefit Shoot	</td>	</tr>					
+<tr>	<td>	03/23/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakemilton	">	Lake Milton	</a>	</td>	<td>	Berlin Center	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	3/25/2025	</td>	<td>	Vegas 300	</td>	<td>	<a href="	clubs.html#kellystation	">	Kelly Station	</a>	</td>	<td>	Ford City	</td>	<td>	PA	</td>	<td>	Start between 5:30-7,  $5	</td>	</tr>					
+<tr>	<td>	3/26/2025	</td>	<td>	Indoor 3D	</td>	<td>	<a href="	clubs.html#kellystation	">	Kelly Station	</a>	</td>	<td>	Ford City	</td>	<td>	PA	</td>	<td>	Start between 6-7:30, 2 rounds of 15.  $10	</td>	</tr>					
+<tr>	<td>	04/05/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#allen	">	Allen County	</a>	</td>	<td>	Spencerville	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	04/06/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#saltsburg	">	Saltsburg Sportsmen	</a>	</td>	<td>	Saltsburg	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	04/06/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#library	">	Library	</a>	</td>	<td>	Finleyville	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	04/06/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mosquito	">	Mosquito Bowmen	</a>	</td>	<td>	Cortland	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	04/06/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mingo	">	Mingo Rod and Gun Club	</a>	</td>	<td>	Finleyville	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	04/06/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#allen	">	Allen County	</a>	</td>	<td>	Spencerville	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	04/06/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakecounty	">	Lake County Rod & Gun	</a>	</td>	<td>	Madison	</td>	<td>	OH	</td>	<td>	Out of the Valley	</td>	</tr>					
+<tr>	<td>	04/06/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mingo	">	Mingo Rod and Gun Club	</a>	</td>	<td>	Finleyville	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	04/07/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakecounty	">	Lake County Rod & Gun	</a>	</td>	<td>	Madison	</td>	<td>	OH	</td>	<td>	Out of the Valley	</td>	</tr>					
+<tr>	<td>	04/11/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#shademtn	">	Shade Mountain	</a>	</td>	<td>	Beavertown	</td>	<td>	PA	</td>	<td>	Trad Rendezvous	</td>	</tr>					
+<tr>	<td>	04/12/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#shademtn	">	Shade Mountain	</a>	</td>	<td>	Beavertown	</td>	<td>	PA	</td>	<td>	Trad Rendezvous	</td>	</tr>					
+<tr>	<td>	04/12/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#northyork	">	Northern York	</a>	</td>	<td>	Dover	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	04/13/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#shademtn	">	Shade Mountain	</a>	</td>	<td>	Beavertown	</td>	<td>	PA	</td>	<td>	Trad Rendezvous	</td>	</tr>					
+<tr>	<td>	04/13/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#sparta	">	Sparta Bowhunters	</a>	</td>	<td>	Stewartstown	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	04/13/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#5points	">	5 Points Hunt Club	</a>	</td>	<td>	Aliquippa	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	04/13/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#eastbrady	">	East Brady	</a>	</td>	<td>	Rimersburg	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	04/13/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#hermine	">	Hermine #2 Game Association	</a>	</td>	<td>	Hermine	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	04/13/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#northyork	">	Northern York	</a>	</td>	<td>	Dover	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	04/13/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#columbiana	">	Columbiana County Archers	</a>	</td>	<td>	Lisbon	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	04/13/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#eastbrady	">	East Brady	</a>	</td>	<td>	Rimersburg	</td>	<td>	PA	</td>	<td>	Benefit Shoot	</td>	</tr>					
+<tr>	<td>	04/19/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mcdonald	">	McDonald	</a>	</td>	<td>	Bulger	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	04/19/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#geauga	">	Geauga Bowmen	</a>	</td>	<td>	Chesterland	</td>	<td>	OH	</td>	<td>	Cabin Fever	</td>	</tr>					
+<tr>	<td>	04/20/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mcdonald	">	McDonald	</a>	</td>	<td>	Bulger	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	04/20/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#geauga	">	Geauga Bowmen	</a>	</td>	<td>	Chesterland	</td>	<td>	OH	</td>	<td>	Cabin Fever	</td>	</tr>					
+<tr>	<td>	04/26/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakemilton	">	Lake Milton	</a>	</td>	<td>	Berlin Center	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	04/27/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#collier	">	Collier	</a>	</td>	<td>	Oakdale	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	04/27/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#eastmon	">	East Monongahela	</a>	</td>	<td>	Elizabeth	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	04/27/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakemilton	">	Lake Milton	</a>	</td>	<td>	Berlin Center	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	04/27/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#guernsey	">	Guernsey County	</a>	</td>	<td>	Cambridge	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	05/03/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#allen	">	Allen County	</a>	</td>	<td>	Spencerville	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	05/04/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#eastbrady	">	East Brady	</a>	</td>	<td>	Rimersburg	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	05/04/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#saltsburg	">	Saltsburg Sportsmen	</a>	</td>	<td>	Saltsburg	</td>	<td>	PA	</td>	<td>	TAC Warm Up	</td>	</tr>					
+<tr>	<td>	05/04/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#library	">	Library	</a>	</td>	<td>	Finleyville	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	05/04/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#trafford	">	Trafford	</a>	</td>	<td>	Trafford	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	05/04/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mingo	">	Mingo Rod and Gun Club	</a>	</td>	<td>	Finleyville	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	05/04/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#allen	">	Allen County	</a>	</td>	<td>	Spencerville	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	05/04/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#eastbrady	">	East Brady	</a>	</td>	<td>	Rimersburg	</td>	<td>	PA	</td>	<td>	Benefit Shoot	</td>	</tr>					
+<tr>	<td>	05/04/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakecounty	">	Lake County Rod & Gun	</a>	</td>	<td>	Madison	</td>	<td>	OH	</td>	<td>	Back In the valley	</td>	</tr>					
+<tr>	<td>	05/04/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mingo	">	Mingo Rod and Gun Club	</a>	</td>	<td>	Finleyville	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	05/05/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakecounty	">	Lake County Rod & Gun	</a>	</td>	<td>	Madison	</td>	<td>	OH	</td>	<td>	Back In the valley	</td>	</tr>					
+<tr>	<td>	5/10/2025	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mcdonald	">	McDonald	</a>	</td>	<td>	Bulger	</td>	<td>	PA	</td>	<td>	Steve MacBride Memorial Shoot	</td>	</tr>					
+<tr>	<td>	05/10/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#northyork	">	Northern York	</a>	</td>	<td>	Dover	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	05/10/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#columbiana	">	Columbiana County Archers	</a>	</td>	<td>	Lisbon	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	05/10/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#geauga	">	Geauga Bowmen	</a>	</td>	<td>	Chesterland	</td>	<td>	OH	</td>	<td>	Spring Thaw	</td>	</tr>					
+<tr>	<td>	5/11/2025	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mcdonald	">	McDonald	</a>	</td>	<td>	Bulger	</td>	<td>	PA	</td>	<td>	Steve MacBride Memorial Shoot	</td>	</tr>					
+<tr>	<td>	05/11/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#hermine	">	Hermine #2 Game Association	</a>	</td>	<td>	Hermine	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	05/11/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#northyork	">	Northern York	</a>	</td>	<td>	Dover	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	05/11/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#geauga	">	Geauga Bowmen	</a>	</td>	<td>	Chesterland	</td>	<td>	OH	</td>	<td>	Spring Thaw	</td>	</tr>					
+<tr>	<td>	05/17/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mcdonald	">	McDonald	</a>	</td>	<td>	Bulger	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	05/18/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mcdonald	">	McDonald	</a>	</td>	<td>	Bulger	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	05/18/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#sparta	">	Sparta Bowhunters	</a>	</td>	<td>	Stewartstown	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	05/18/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#5points	">	5 Points Hunt Club	</a>	</td>	<td>	Aliquippa	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	05/18/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mosquito	">	Mosquito Bowmen	</a>	</td>	<td>	Cortland	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	05/18/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#collier	">	Collier	</a>	</td>	<td>	Oakdale	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	05/18/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#easthuntingdon	">	East Huntingdon	</a>	</td>	<td>	Alverton	</td>	<td>	PA	</td>	<td>	Easter Shoot - Win a Ham!	</td>	</tr>					
+<tr>	<td>	05/18/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#guernsey	">	Guernsey County	</a>	</td>	<td>	Cambridge	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	05/24/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakemilton	">	Lake Milton	</a>	</td>	<td>	Berlin Center	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	05/25/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#eastmon	">	East Monongahela	</a>	</td>	<td>	Elizabeth	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	05/25/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakemilton	">	Lake Milton	</a>	</td>	<td>	Berlin Center	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	05/31/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#allen	">	Allen County	</a>	</td>	<td>	Spencerville	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	06/01/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#trafford	">	Trafford	</a>	</td>	<td>	Trafford	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	06/01/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mingo	">	Mingo Rod and Gun Club	</a>	</td>	<td>	Finleyville	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	06/01/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#allen	">	Allen County	</a>	</td>	<td>	Spencerville	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	06/01/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakecounty	">	Lake County Rod & Gun	</a>	</td>	<td>	Madison	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	06/01/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mingo	">	Mingo Rod and Gun Club	</a>	</td>	<td>	Finleyville	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	06/02/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakecounty	">	Lake County Rod & Gun	</a>	</td>	<td>	Madison	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	06/06/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lycoming	">	Lycoming Creek	</a>	</td>	<td>	Trout Run	</td>	<td>	PA	</td>	<td>	Trad Rendezvous	</td>	</tr>					
+<tr>	<td>	06/07/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lycoming	">	Lycoming Creek	</a>	</td>	<td>	Trout Run	</td>	<td>	PA	</td>	<td>	Trad Rendezvous	</td>	</tr>					
+<tr>	<td>	06/07/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mosquito	">	Mosquito Bowmen	</a>	</td>	<td>	Cortland	</td>	<td>	OH	</td>	<td>	OHIO 3D Group	</td>	</tr>					
+<tr>	<td>	06/08/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lycoming	">	Lycoming Creek	</a>	</td>	<td>	Trout Run	</td>	<td>	PA	</td>	<td>	Trad Rendezvous	</td>	</tr>					
+<tr>	<td>	06/08/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#5points	">	5 Points Hunt Club	</a>	</td>	<td>	Aliquippa	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	06/08/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#saltsburg	">	Saltsburg Sportsmen	</a>	</td>	<td>	Saltsburg	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	06/08/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#library	">	Library	</a>	</td>	<td>	Finleyville	</td>	<td>	PA	</td>	<td>	SWPA 3D Tour 2nd Leg	</td>	</tr>					
+<tr>	<td>	06/08/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mosquito	">	Mosquito Bowmen	</a>	</td>	<td>	Cortland	</td>	<td>	OH	</td>	<td>	OHIO 3D Group	</td>	</tr>					
+<tr>	<td>	06/13/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#hermine	">	Hermine #2 Game Association	</a>	</td>	<td>	Hermine	</td>	<td>	PA	</td>	<td>	Traditional Only Weekend	</td>	</tr>					
+<tr>	<td>	06/14/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#hermine	">	Hermine #2 Game Association	</a>	</td>	<td>	Hermine	</td>	<td>	PA	</td>	<td>	Traditional Only Weekend	</td>	</tr>					
+<tr>	<td>	06/14/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#northyork	">	Northern York	</a>	</td>	<td>	Dover	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	06/14/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#guernsey	">	Guernsey County	</a>	</td>	<td>	Cambridge	</td>	<td>	OH	</td>	<td>	Coon Shoot	</td>	</tr>					
+<tr>	<td>	06/15/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#sparta	">	Sparta Bowhunters	</a>	</td>	<td>	Stewartstown	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	06/15/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#hermine	">	Hermine #2 Game Association	</a>	</td>	<td>	Hermine	</td>	<td>	PA	</td>	<td>	Traditional Only Weekend	</td>	</tr>					
+<tr>	<td>	06/15/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#northyork	">	Northern York	</a>	</td>	<td>	Dover	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	06/15/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#columbiana	">	Columbiana County Archers	</a>	</td>	<td>	Lisbon	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	06/15/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#easthuntingdon	">	East Huntingdon	</a>	</td>	<td>	Alverton	</td>	<td>	PA	</td>	<td>	Easter Shoot - Win a Ham!	</td>	</tr>					
+<tr>	<td>	06/15/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#eastmon	">	East Monongahela	</a>	</td>	<td>	Elizabeth	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	06/15/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#guernsey	">	Guernsey County	</a>	</td>	<td>	Cambridge	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	06/21/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mcdonald	">	McDonald	</a>	</td>	<td>	Bulger	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	06/21/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#columbiana	">	Columbiana County Archers	</a>	</td>	<td>	Lisbon	</td>	<td>	OH	</td>	<td>	ASA Shoot	</td>	</tr>					
+<tr>	<td>	06/21/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#geauga	">	Geauga Bowmen	</a>	</td>	<td>	Chesterland	</td>	<td>	OH	</td>	<td>	Swap Meet	</td>	</tr>					
+<tr>	<td>	06/21/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakemilton	">	Lake Milton	</a>	</td>	<td>	Berlin Center	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	06/22/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mcdonald	">	McDonald	</a>	</td>	<td>	Bulger	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	06/22/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#saltsburg	">	Saltsburg Sportsmen	</a>	</td>	<td>	Saltsburg	</td>	<td>	PA	</td>	<td>	Women Shoot Free	</td>	</tr>					
+<tr>	<td>	06/22/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#collier	">	Collier	</a>	</td>	<td>	Oakdale	</td>	<td>	PA	</td>	<td>	Kips BBQ	</td>	</tr>					
+<tr>	<td>	06/22/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#columbiana	">	Columbiana County Archers	</a>	</td>	<td>	Lisbon	</td>	<td>	OH	</td>	<td>	ASA Shoot	</td>	</tr>					
+<tr>	<td>	06/22/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#geauga	">	Geauga Bowmen	</a>	</td>	<td>	Chesterland	</td>	<td>	OH	</td>	<td>	Swap Meet	</td>	</tr>					
+<tr>	<td>	06/22/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakecounty	">	Lake County Rod & Gun	</a>	</td>	<td>	Madison	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	06/22/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakemilton	">	Lake Milton	</a>	</td>	<td>	Berlin Center	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	06/23/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakecounty	">	Lake County Rod & Gun	</a>	</td>	<td>	Madison	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	06/28/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#eastbrady	">	East Brady	</a>	</td>	<td>	Rimersburg	</td>	<td>	PA	</td>	<td>	Saving Dreams Benefit Shoot							
+<tr>	<td>	06/28/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#eastbrady	">	East Brady	</a>	</td>	<td>	Rimersburg	</td>	<td>	PA	</td>	<td>	Benefit Shoot	</td>	</tr>					
+<tr>	<td>	06/29/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#eastbrady	">	East Brady	</a>	</td>	<td>	Rimersburg	</td>	<td>	PA	</td>	<td>	Saving Dreams Benefit Shoot	</td>	</tr>					
+<tr>	<td>	06/29/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#eastbrady	">	East Brady	</a>	</td>	<td>	Rimersburg	</td>	<td>	PA	</td>	<td>	Benefit Shoot	</td>	</tr>					
+<tr>	<td>	07/05/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#allen	">	Allen County	</a>	</td>	<td>	Spencerville	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	07/06/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#saltsburg	">	Saltsburg Sportsmen	</a>	</td>	<td>	Saltsburg	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	07/06/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#library	">	Library	</a>	</td>	<td>	Finleyville	</td>	<td>	PA	</td>	<td>	SWPA 3D Tour 2nd Leg	</td>	</tr>					
+<tr>	<td>	07/06/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mingo	">	Mingo Rod and Gun Club	</a>	</td>	<td>	Finleyville	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	07/06/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#allen	">	Allen County	</a>	</td>	<td>	Spencerville	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	07/06/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mingo	">	Mingo Rod and Gun Club	</a>	</td>	<td>	Finleyville	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	07/11/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#westbranch	">	West Penn	</a>	</td>	<td>	New Ringgold	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	07/12/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#westbranch	">	West Penn	</a>	</td>	<td>	New Ringgold	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	07/13/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#westbranch	">	West Penn	</a>	</td>	<td>	New Ringgold	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	07/13/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#5points	">	5 Points Hunt Club	</a>	</td>	<td>	Aliquippa	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	07/13/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#columbiana	">	Columbiana County Archers	</a>	</td>	<td>	Lisbon	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	07/13/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#eastmon	">	East Monongahela	</a>	</td>	<td>	Elizabeth	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	07/19/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mcdonald	">	McDonald	</a>	</td>	<td>	Bulger	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	07/19/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mosquito	">	Mosquito Bowmen	</a>	</td>	<td>	Cortland	</td>	<td>	OH	</td>	<td>	OHIO ASA State Championship	</td>	</tr>					
+<tr>	<td>	07/19/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#geauga	">	Geauga Bowmen	</a>	</td>	<td>	Chesterland	</td>	<td>	OH	</td>	<td>	Club Shoot - Ohio 3D Group	</td>	</tr>					
+<tr>	<td>	07/20/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mcdonald	">	McDonald	</a>	</td>	<td>	Bulger	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	07/20/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#sparta	">	Sparta Bowhunters	</a>	</td>	<td>	Stewartstown	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	07/20/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#hermine	">	Hermine #2 Game Association	</a>	</td>	<td>	Hermine	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	07/20/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#saltsburg	">	Saltsburg Sportsmen	</a>	</td>	<td>	Saltsburg	</td>	<td>	PA	</td>	<td>	Under 16 shoot free	</td>	</tr>					
+<tr>	<td>	07/20/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mosquito	">	Mosquito Bowmen	</a>	</td>	<td>	Cortland	</td>	<td>	OH	</td>	<td>	OHIO ASA State Championship	</td>	</tr>					
+<tr>	<td>	07/20/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#easthuntingdon	">	East Huntingdon	</a>	</td>	<td>	Alverton	</td>	<td>	PA	</td>	<td>	Easter Shoot - Win a Ham!	</td>	</tr>					
+<tr>	<td>	07/20/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#geauga	">	Geauga Bowmen	</a>	</td>	<td>	Chesterland	</td>	<td>	OH	</td>	<td>	Club Shoot - Ohio 3D Group	</td>	</tr>					
+<tr>	<td>	07/20/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakecounty	">	Lake County Rod & Gun	</a>	</td>	<td>	Madison	</td>	<td>	OH	</td>	<td>	Night Shoot	</td>	</tr>					
+<tr>	<td>	07/20/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#guernsey	">	Guernsey County	</a>	</td>	<td>	Cambridge	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	07/25/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#geauga	">	Geauga Bowmen	</a>	</td>	<td>	Chesterland	</td>	<td>	OH	</td>	<td>	Another Ruckin Archery Challenge	</td>	</tr>					
+<tr>	<td>	07/26/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#geauga	">	Geauga Bowmen	</a>	</td>	<td>	Chesterland	</td>	<td>	OH	</td>	<td>	Another Ruckin Archery Challenge	</td>	</tr>					
+<tr>	<td>	07/26/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakemilton	">	Lake Milton	</a>	</td>	<td>	Berlin Center	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	07/27/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#eastbrady	">	East Brady	</a>	</td>	<td>	Rimersburg	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	07/27/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#collier	">	Collier	</a>	</td>	<td>	Oakdale	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	07/27/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#eastbrady	">	East Brady	</a>	</td>	<td>	Rimersburg	</td>	<td>	PA	</td>	<td>	Benefit Shoot	</td>	</tr>					
+<tr>	<td>	07/27/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#geauga	">	Geauga Bowmen	</a>	</td>	<td>	Chesterland	</td>	<td>	OH	</td>	<td>	Another Ruckin Archery Challenge	</td>	</tr>					
+<tr>	<td>	07/27/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakemilton	">	Lake Milton	</a>	</td>	<td>	Berlin Center	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	08/02/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#allen	">	Allen County	</a>	</td>	<td>	Spencerville	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	08/03/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#saltsburg	">	Saltsburg Sportsmen	</a>	</td>	<td>	Saltsburg	</td>	<td>	PA	</td>	<td>	IBO Worlds Warm Up	</td>	</tr>					
+<tr>	<td>	08/03/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#library	">	Library	</a>	</td>	<td>	Finleyville	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	08/03/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#trafford	">	Trafford	</a>	</td>	<td>	Trafford	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	08/03/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mingo	">	Mingo Rod and Gun Club	</a>	</td>	<td>	Finleyville	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	08/03/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#allen	">	Allen County	</a>	</td>	<td>	Spencerville	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	08/03/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakecounty	">	Lake County Rod & Gun	</a>	</td>	<td>	Madison	</td>	<td>	OH	</td>	<td>	Extreme Shoot	</td>	</tr>					
+<tr>	<td>	08/03/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mingo	">	Mingo Rod and Gun Club	</a>	</td>	<td>	Finleyville	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	08/04/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakecounty	">	Lake County Rod & Gun	</a>	</td>	<td>	Madison	</td>	<td>	OH	</td>	<td>	Extreme Shoot	</td>	</tr>					
+<tr>	<td>	08/09/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#5points	">	5 Points Hunt Club	</a>	</td>	<td>	Aliquippa	</td>	<td>	PA	</td>	<td>	Hunt of a Lifetime	</td>	</tr>					
+<tr>	<td>	08/09/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#northyork	">	Northern York	</a>	</td>	<td>	Dover	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	08/10/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#5points	">	5 Points Hunt Club	</a>	</td>	<td>	Aliquippa	</td>	<td>	PA	</td>	<td>	Hunt of a Lifetime	</td>	</tr>					
+<tr>	<td>	08/10/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#hermine	">	Hermine #2 Game Association	</a>	</td>	<td>	Hermine	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	08/10/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#northyork	">	Northern York	</a>	</td>	<td>	Dover	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	08/10/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#columbiana	">	Columbiana County Archers	</a>	</td>	<td>	Lisbon	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	08/10/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#eastmon	">	East Monongahela	</a>	</td>	<td>	Elizabeth	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	08/15/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#hopewell	">	Hopewell Fish & Game	</a>	</td>	<td>	Stewartstown	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	08/16/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mcdonald	">	McDonald	</a>	</td>	<td>	Bulger	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	08/16/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#hopewell	">	Hopewell Fish & Game	</a>	</td>	<td>	Stewartstown	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	08/16/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#sparta	">	Sparta Bowhunters	</a>	</td>	<td>	Stewartstown	</td>	<td>	PA	</td>	<td>	35 Deer Targets	</td>	</tr>					
+<tr>	<td>	08/16/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#geauga	">	Geauga Bowmen	</a>	</td>	<td>	Chesterland	</td>	<td>	OH	</td>	<td>	Exotic Animals	</td>	</tr>					
+<tr>	<td>	08/17/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mcdonald	">	McDonald	</a>	</td>	<td>	Bulger	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	08/17/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#hopewell	">	Hopewell Fish & Game	</a>	</td>	<td>	Stewartstown	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	08/17/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#sparta	">	Sparta Bowhunters	</a>	</td>	<td>	Stewartstown	</td>	<td>	PA	</td>	<td>	35 Deer Targets	</td>	</tr>					
+<tr>	<td>	08/17/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#saltsburg	">	Saltsburg Sportsmen	</a>	</td>	<td>	Saltsburg	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	08/17/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#easthuntingdon	">	East Huntingdon	</a>	</td>	<td>	Alverton	</td>	<td>	PA	</td>	<td>	Easter Shoot - Win a Ham!	</td>	</tr>					
+<tr>	<td>	08/17/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#geauga	">	Geauga Bowmen	</a>	</td>	<td>	Chesterland	</td>	<td>	OH	</td>	<td>	Exotic Animals	</td>	</tr>					
+<tr>	<td>	08/17/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#guernsey	">	Guernsey County	</a>	</td>	<td>	Cambridge	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	08/23/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakemilton	">	Lake Milton	</a>	</td>	<td>	Berlin Center	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	08/24/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#eastbrady	">	East Brady	</a>	</td>	<td>	Rimersburg	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	08/24/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#collier	">	Collier	</a>	</td>	<td>	Oakdale	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	08/24/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#eastbrady	">	East Brady	</a>	</td>	<td>	Rimersburg	</td>	<td>	PA	</td>	<td>	Benefit Shoot	</td>	</tr>					
+<tr>	<td>	08/24/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakemilton	">	Lake Milton	</a>	</td>	<td>	Berlin Center	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	08/31/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mosquito	">	Mosquito Bowmen	</a>	</td>	<td>	Cortland	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	08/31/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#eastmon	">	East Monongahela	</a>	</td>	<td>	Elizabeth	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	09/05/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#allen	">	Allen County	</a>	</td>	<td>	Spencerville	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	09/07/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#saltsburg	">	Saltsburg Sportsmen	</a>	</td>	<td>	Saltsburg	</td>	<td>	PA	</td>	<td>	Jerry Bucco Memorial Bowhunter Bash	</td>	</tr>					
+<tr>	<td>	09/07/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#library	">	Library	</a>	</td>	<td>	Finleyville	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	09/07/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mingo	">	Mingo Rod and Gun Club	</a>	</td>	<td>	Finleyville	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	09/07/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#columbiana	">	Columbiana County Archers	</a>	</td>	<td>	Lisbon	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	09/07/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#allen	">	Allen County	</a>	</td>	<td>	Spencerville	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	09/07/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakecounty	">	Lake County Rod & Gun	</a>	</td>	<td>	Madison	</td>	<td>	OH	</td>	<td>	Small Game Kahuna	</td>	</tr>					
+<tr>	<td>	09/07/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mingo	">	Mingo Rod and Gun Club	</a>	</td>	<td>	Finleyville	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	09/08/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakecounty	">	Lake County Rod & Gun	</a>	</td>	<td>	Madison	</td>	<td>	OH	</td>	<td>	Small Game Kahuna	</td>	</tr>					
+<tr>	<td>	09/13/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#geauga	">	Geauga Bowmen	</a>	</td>	<td>	Chesterland	</td>	<td>	OH	</td>	<td>	Deer Season Warm up	</td>	</tr>					
+<tr>	<td>	09/14/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#5points	 ">	5 Points Hunt Club	</a>	</td>	<td>	Aliquippa	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	09/14/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#hermine	">	Hermine #2 Game Association	</a>	</td>	<td>	Hermine	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	09/14/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mosquito	">	Mosquito Bowmen	</a>	</td>	<td>	Cortland	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	09/14/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#eastmon	">	East Monongahela	</a>	</td>	<td>	Elizabeth	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	09/14/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#geauga	">	Geauga Bowmen	</a>	</td>	<td>	Chesterland	</td>	<td>	OH	</td>	<td>	Deer Season Warm up	</td>	</tr>					
+<tr>	<td>	09/20/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mcdonald	">	McDonald	</a>	</td>	<td>	Bulger	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	09/20/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mcdonald	">	McDonald	</a>	</td>	<td>	Bulger	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	09/20/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakemilton	">	Lake Milton	</a>	</td>	<td>	Berlin Center	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	09/20/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#guernsey	">	Guernsey County	</a>	</td>	<td>	Cambridge	</td>	<td>	OH	</td>	<td>	Coon Shot	</td>	</tr>					
+<tr>	<td>	09/21/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mcdonald	">	McDonald	</a>	</td>	<td>	Bulger	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	09/21/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#sparta	">	Sparta Bowhunters	</a>	</td>	<td>	Stewartstown	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	09/21/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#eastbrady	">	East Brady	</a>	</td>	<td>	Rimersburg	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+<tr>	<td>	09/21/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#easthuntingdon	">	East Huntingdon	</a>	</td>	<td>	Alverton	</td>	<td>	PA	</td>	<td>	Easter Shoot - Win a Ham!	</td>	</tr>					
+<tr>	<td>	09/21/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#eastbrady	">	East Brady	</a>	</td>	<td>	Rimersburg	</td>	<td>	PA	</td>	<td>	Benefit Shoot	</td>	</tr>					
+<tr>	<td>	09/21/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#lakemilton	">	Lake Milton	</a>	</td>	<td>	Berlin Center	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	09/21/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#guernsey	">	Guernsey County	</a>	</td>	<td>	Cambridge	</td>	<td>	OH	</td>	<td>		</td>	</tr>					
+<tr>	<td>	09/27/25	</td>	<td>	3D Shoot	</td>	<td>	<a href="	clubs.html#mcdonald	">	McDonald	</a>	</td>	<td>	Bulger	</td>	<td>	PA	</td>	<td>		</td>	</tr>					
+																												
+																												
+																												
+																												
+
+
+
+
+
+</table>
+     
+    
+    
+    <div class="container">
+
+        <!-- Club Announcement Section -->
+        <div class="row">
+
+    <!-- jQuery -->
+    
+
+    <!-- Bootstrap Core JavaScript -->
+    
+
+    <!-- Script to Activate the Carousel -->
+   <!-- -->
+<center><p>Last Update: March 19, 2025</p></center>
+</body>
+
+</html>

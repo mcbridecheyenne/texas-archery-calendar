@@ -1,0 +1,17 @@
+User-agent: *
+
+# WP Defender - Begin
+Disallow: /52e922459bc0ff4c
+# WP Defender - End
+
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+
+# START YOAST BLOCK
+# ---------------------------
+User-agent: *
+Disallow:
+
+Sitemap: https://www.visitpottertioga.com/sitemap_index.xml
+# ---------------------------
+# END YOAST BLOCK

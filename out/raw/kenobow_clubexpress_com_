@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+	<head id="page_head">   
+		<title id="page_title">Home - Kenosha Bowmen</title>
+		
+		
+		
+
+		
+			  
+
+			
+			<link type="text/css" href="/css/smoothness/jquery-ui.min.css?v=20221017" rel="Stylesheet" />	
+			<link rel="stylesheet" type="text/css" href="/css/common_ui.css?v=20260813" />
+			<link rel="stylesheet" type="text/css" href="/css/widget.css?v=20221117" />
+			<link rel="stylesheet" media="print" type="text/css" href="/css/printable.css?v=20221027" />
+			<meta id="description_meta_tag" name="description" content="Kenosha Bowmen Inc. was founded &quot;to foster, expand and perpetuate the practice of field archery and the spirit of good fellowship among all archers and to encourage the use of bow and arrow in hunting"></meta>
+			
+
+			<link rel='stylesheet' type='text/css' href='/clubs/506351/css/fonts.css?v=3' />
+<link rel='stylesheet' type='text/css' href='/css/layout/62/layout.css?v=11' />
+<link rel='stylesheet' type='text/css' href='/css/menu/35/menu.css?v=120521' />
+<link rel='stylesheet' type='text/css' href='/css/design/24/design.css?v=1' />
+<link rel='stylesheet' type='text/css' href='/css/color/23/color.css?v=120523' />
+<link rel='stylesheet' type='text/css' href='/css/color/23/layout/62/layout_color.css?v=11_120523' />
+<link rel='stylesheet' type='text/css' href='/css/color/23/menu/35/menu_color.css?v=120521_120523' />
+<link rel='stylesheet' type='text/css' href='/clubs/506351/css/club.css?v=29' />
+<link rel='stylesheet' type='text/css' href='/clubs/506351/css/custom.css?v=29' />
+	
+			<link rel="shortcut icon" href="favicon.ico?v=506351_438876687" type="image/x-icon" /> 
+			<meta id="keywords_meta_tag" name="keywords" content="archery; family activities; hunting, shooting, bow and arrow, "></meta>
+			<meta name="referrer" content="always" /> 
+			<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+
+		
+		
+		
+
+	</head>
+
+	<body onhelp="return false;">
+		<form method="post" action="./" id="form">
+<div class="aspNetHidden">
+<input type="hidden" name="style_sheet_manager_TSSM" id="style_sheet_manager_TSSM" value="" />
+<input type="hidden" name="script_manager_TSM" id="script_manager_TSM" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="[long]" />
+</div>
+
+
+
+
+
+
+
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="65E7F3AF" />
+</div>
+			
+			<a href="#page_content" id="skip_nav" tabindex="1">Skip to main content</a>
+			<a name="top"></a>
+			
+			<div class='cb-common cb-0'></div>
+			
+			
+			
+
+			
+
+			
+			
+
+			
+			
+			
+
+			
+
+			<input name="changes_pending" type="hidden" id="changes_pending" />
+			
+			
+			
+
+			
+			
+
+			
+
+			
+
+			
+<div id="sliding_page_tools">
+	
+	
+	<i class="material-icons slide-indicator">&#xE314;</i>
+	<ul>
+		<li><a class="print-link" title="Print" id="print_link" onclick="printPage(&#39;&#39;, &#39;&#39;, &#39;Kenosha Bowmen&#39;, &#39;www.kenoshabowmen.com&#39;); return false;" href="#"><i class='material-icons'></i>Print This Page</a></li>
+		<li><a href="#" id="text_size" onclick="toggleTextSize(); return false;" title="Text Size" aria-label="Change Text Size" rel="nofollow" ><i class="material-icons">&#xE262;</i>Text Size</a></li>
+		<li></li>
+		<li ><a href="#top" id="go_to_top" title="Go To Top" aria-label="Got To Top of Page" rel="nofollow"><i class="material-icons">&#xE55D;</i>Scroll To Top</a></li>
+		<li></li>
+	</ul>
+
+</div>
+
+
+
+		
+			
+		
+			<link rel="stylesheet" type="text/css" href="/script/galleria/themes/twelve/galleria.twelve.css" />	
+			
+			
+			
+			
+			
+		
+			<input name="hidden_button_for_address_verification" id="hidden_button_for_address_verification" type="button" onclick="handleAddressVerificationAfterSubmit()" style="display:none" />
+		
+
+<div class="static-bar">
+	<div class="layout-wrapper">
+			<div class="layout-social-container">
+				
+				<div id='social_panel'><a href='https://www.facebook.com/kenosha.bowmen/' target='_blank' title='Visit us on Facebook'  class='social-panel-icon'><img src='/images/social/facebook.png' border='0' alt='Facebook Logo' /></a><a href='https://twitter.com/kenoshabowmen' target='_blank' title='Visit us on X'  class='social-panel-icon'><img src='/images/social/x.png' border='0' alt='X Logo' /></a><a href='https://www.instagram.com/kenosha.bowmen/' target='_blank' title='Visit us on Instagram'  class='social-panel-icon'><img src='/images/social/instagram.png' border='0' alt='Instagram Logo' /></a><div id='share_hover_button'><div id='share_button_container' title='Click here for more sharing options'></div><div id='vistoggle'><div id='share_pop_out'><div class='social-title'>Share This Page</div><div id='social_close' title='Close Share Panel'></div><div class='social-objects-container'><div class='clear'></div><div class='a2a_kit a2a_kit_size_32 a2a_vertical_style' data-a2a-url='https://www.kenoshabowmen.com'><a class='a2a_button_facebook'></a><a class='a2a_button_linkedin'></a><a class='a2a_button_twitter'></a><a class='a2a_dd' href='https://www.addtoany.com/share'></a><div class='share-inst-container'><div class='share-inst'>Share this page on Facebook</div><div class='share-inst'>Share this page on Linkedin</div><div class='share-inst'>Share this page on X/Twitter</div></div></div><div class='clear'></div></div></div></div></div></div>
+				<a href="/content.aspx?page_id=230&club_id=506351" id="ctl00_add_me"  class="add-me-link"  rel='nofollow' >Add Me To Your Mailing List</a>
+			</div>
+
+			
+
+
+
+
+
+<div id="user_wrapper" class="horizontal">
+	<div id="important_icons" >
+		
+		
+		<div id="cart_link" onclick="showCart(false); return false;"><a rel="nofollow" href="/content.aspx?page_id=585&club_id=506351" class="cart-link important-cart-link"  style='display:none;'  title='Your cart is empty' ></a></div>
+		
+	</div>
+	<div id="user_bar" style="padding-right:2px;">
+		<div id="user_panel">
+			<div id="non_member_panel">
+				<a href="/content.aspx?page_id=31&club_id=506351&action=login&user=5&" class="login-link"  rel='nofollow'>Member Login</a>
+				<div id="cart_link_non_member" class="cart-link important-cart-link" onclick="showCart(this); return false;"><a rel="nofollow" href="/content.aspx?page_id=585&club_id=506351" class="cart-link cart-link-panel"  style='display:none;'  title='Your cart is empty' >My Shopping Cart</a></div>
+			</div>
+			 <!--END MEMBER PANEL -->
+		</div> <!--END USER PANEL -->
+	</div>
+	<div id="cart_tooltip">
+		<div class="cart-tooltip-title">Shopping Cart</div>
+		<a class="cart-close" href="javascript:;" onclick="closeCartTip();return false;"><span class="material-icons">cancel</span></a>
+		<div id="cart_tooltip_data"></div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+			
+
+			<div class="cp-holder">
+				
+			</div>
+		<div class="clear"></div>
+	</div>
+	<div class="clear"></div>
+</div>
+<div class="clear"></div>
+
+<div class="clear"></div>
+<div id="nav_header_container">
+	<div class="nav-logo-container" id="nav_logo"></div>
+	<header >
+		<div class="layout-wrapper">
+			<div id="header_cell">
+<img src="//s3.amazonaws.[long].png " alt="" class="toplogo"></div>
+		</div>
+	</header>
+	<div id="menu_container">
+		<div class="layout-wrapper">
+			<div class="menu-toggle"><i class="material-icons">&#xE5D2;</i>Menu</div>
+			<nav>
+				<div class="nav-container">
+					<ul class='site-menu horizontal'><li  aria-current='page'  class = 'selected-menu-item'><span><a href="/content.aspx?page_id=0&club_id=506351">Home</a></span></li><li class='sub-parent' role='button' tabindex='0'><span><span>About Us</span></span><ul class='sub-menu'><li> <span><a href="/content.aspx?page_id=22&club_id=506351&module_id=372904">About Us</a></span></li><li> <span><a href="/content.aspx?page_id=4&club_id=506351">Contact Us</a></span></li><li> <span><a href="/content.aspx?page_id=274&club_id=506351">FAQ</a></span></li></ul></li><li> <span><a href="/content.aspx?page_id=22&club_id=506351&module_id=372905">Membership</a></span></li><li> <span><a href="/content.aspx?page_id=4001&club_id=506351">Events</a></span></li><li> <span><a href='https://theletteringmachine.com/kenoshabowmen/shop/home'target='_blank'>KB Merchandise</a></span></li><li class='sub-parent' role='button' tabindex='0'><span><span>Youth Archery</span></span><ul class='sub-menu'><li> <span><a href="/content.aspx?page_id=22&club_id=506351&module_id=384965">Why Archery?</a></span></li><li> <span><a href="/content.aspx?page_id=22&club_id=506351&module_id=384961">S3DA</a></span></li></ul></li><li> <span><a href="/content.aspx?page_id=187&club_id=506351">Gallery</a></span></li><li> <span><a href="/content.aspx?page_id=22&club_id=506351&module_id=372907">Links</a></span></li><li> <span><a href="/content.aspx?page_id=22&club_id=506351&module_id=370048">Social</a></span></li><li> <span><a href="/content.aspx?page_id=22&club_id=506351&module_id=372903">Directions</a></span></li></ul> 
+				</div>
+				<div class="clear"></div>
+			</nav>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+
+<div class="layout-wrapper cb-container">
+	
+	<div class="clear"></div>
+</div>
+
+<div id="layout_wrapper" class="watermark">
+	<div id="content_column" >
+		<div id="inner_content">
+			<div id="ctl00_crumb_trail_container" class="crumb-trail-container"></div>
+			<div id="page_content"><div id="ctl00_ctl00_home_page_wrapper" class="home-page">
+	
+	<div class="build-row full-width " id="full_width-12797311" seq="1" type="0"><div class="build-column full "><div class='cell-item inner-column' cell="1" widgettype="2"><!-- BEGIN TOP ROW -->
+<link href="//s3.amazonaws.[long].css" rel="stylesheet" type="text/css">
+
+<table class="setuptable">
+    <tbody>
+        <tr>
+            <th>Slide #</th>
+            <th>Image URL</th>
+        </tr>
+        <tr>
+            <td>Slide 1</td>
+            <td id="slide1image">//s3.amazonaws.[long].jpg</td>
+        </tr>
+        <tr>
+            <td>Slide 2</td>
+            <td id="slide2image">//s3.amazonaws.[long].jpg</td>
+        </tr>
+        <tr>
+            <td>Slide 3</td>
+            <td id="slide3image">//s3.amazonaws.[long].jpg</td>
+        </tr>
+        <tr>
+            <td>Slide 4</td>
+            <td id="slide4image">//s3.amazonaws.[long].jpg</td>
+        </tr>
+        <tr>
+            <td>Slide 5</td>
+            <td id="slide5image">//s3.amazonaws.[long].jpg</td>
+        </tr>
+        <tr>
+            <td>Slide 6</td>
+            <td id="slide6image">none</td>
+        </tr>
+        <tr>
+            <td>Slide 7</td>
+            <td id="slide7image"><span>none</span></td>
+        </tr>
+        <tr>
+            <td>Slide 8</td>
+            <td id="slide8image"><span>none</span></td>
+        </tr>
+    </tbody>
+</table>
+<table class="navtable">
+    <tbody>
+        <tr>
+            <td class="showinst">Show Navigation Controls? Y/N</td>
+            <td id="shownav">Y</td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="position: relative;">
+<!-- CHANGE THE 7000 BELOW TO SECONDS * 1000 FOR TIMING BETWEEN SLIDES -->
+<div class="looper slide" id="bulletLooper" data-looper="go" data-interval="7000">
+<div class="looper-inner">
+<!-- SLIDE 1 -->
+<div class="item">
+<div class="black-overlay"></div>
+<div class="itemimage1" border="0">
+<div class="overlay-container">
+<div class="layout-wrapper">
+<div class="overlay">
+<div class="bbox1"></div>
+<div class="bbox2"></div>
+<h1>Kenosha Bowmen</h1>
+A 101% Wisconsin Bow Hunter's Association Member Club<br>
+<br>
+<a href="/content.aspx?page_id=22&amp;club_id=506351&amp;module_id=372904" class="ce-button">Learn More</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SLIDE 2 -->
+<div class="item">
+<div class="black-overlay"></div>
+<div class="itemimage2" border="0">
+<div class="overlay-container">
+<div class="layout-wrapper">
+<div class="overlay">
+<div class="bbox1"></div>
+<div class="bbox2"></div>
+<h1>Kenosha Bowmen</h1>
+All Memberships are Family Memberships!<br>
+<br>
+<a href="/content.aspx?page_id=22&amp;club_id=506351&amp;module_id=372905" class="ce-button">Membership Info</a>&nbsp;</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SLIDE 3 -->
+<div class="item">
+<div class="black-overlay"></div>
+<div class="itemimage3" border="0">
+<div class="overlay-container">
+<div class="layout-wrapper">
+<div class="overlay">
+<div class="bbox1"></div>
+<div class="bbox2"></div>
+<h1>Kenosha Bowmen</h1>
+Bringing the Forest Indoors!<br>
+<br>
+<br>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SLIDE 4 -->
+<div class="item optitem4">
+<div class="black-overlay"></div>
+<div class="itemimage4" border="0">
+<div class="overlay-container">
+<div class="layout-wrapper">
+<div class="overlay">
+<div class="bbox1"></div>
+<div class="bbox2"></div>
+<h1>Kenosha Bowmen</h1>
+Preserving tradition and raising the next generation of archers
+<br>
+<br>
+<a href="/content.aspx?page_id=22&amp;club_id=506351&amp;module_id=384965" class="ce-button">Why Archery?</a>&nbsp;</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SLIDE 5 -->
+<div class="item optitem5">
+<div class="black-overlay"></div>
+<div class="itemimage5" border="0">
+<div class="overlay-container">
+<div class="layout-wrapper">
+<div class="overlay">
+<div class="bbox1"></div>
+<div class="bbox2"></div>
+<h1>Kenosha Bowmen</h1>
+Competition and Improvement&nbsp;<br>
+<br>
+&nbsp;</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SLIDE 6 -->
+<div class="item optitem6">
+<div class="black-overlay"></div>
+<div class="itemimage6" border="0">
+<div class="overlay-container">
+<div class="layout-wrapper">
+<div class="overlay">
+<div class="bbox1"></div>
+<div class="bbox2"></div>
+<h1>Kenosha Bowmen</h1>
+Preserving tradition and raising the next generation of archers
+<br>
+<br>
+<a href="/content.aspx?page_id=22&amp;club_id=506351&amp;module_id=372904" class="ce-button">Learn More</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SLIDE 7 -->
+<div class="item optitem7">
+<div class="black-overlay"></div>
+<div class="itemimage7" border="0">
+<div class="overlay-container">
+<div class="layout-wrapper">
+<div class="overlay">
+<div class="bbox1"></div>
+<div class="bbox2"></div>
+<h1>Kenosha Bowmen</h1>
+Preserving tradition and raising the next generation of archers
+<br>
+<br>
+<a href="/content.aspx?page_id=22&amp;club_id=506351&amp;module_id=372904" class="ce-button">Learn More</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SLIDE 8 -->
+<div class="item optitem8">
+<div class="black-overlay"></div>
+<div class="itemimage8" border="0">
+<div class="overlay-container">
+<div class="layout-wrapper">
+<div class="overlay">
+<div class="bbox1"></div>
+<div class="bbox2"></div>
+<h1>Kenosha Bowmen</h1>
+Preserving tradition and raising the next generation of archers
+<br>
+<br>
+<a href="/content.aspx?page_id=22&amp;club_id=506351&amp;module_id=372904" class="ce-button">Learn More</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- END SLIDES PASTE BEFORE HERE -->
+</div>
+<div class="navdiv">
+<a class="looper-control" href="#bulletLooper" data-looper="prev">
+<img style="margin-top: 8px;" src="//s3.amazonaws.[long].png">
+</a>
+<a class="looper-control right" href="#bulletLooper" data-looper="next">
+<img style="margin-top: 8px;" alt="" src="//s3.amazonaws.[long].png" border="0">
+</a>
+<ul class="looper-nav">
+    <li class="op1"><a href="#bulletLooper" data-looper="to" data-args="1">•</a></li>
+    <li class="op2"><a href="#bulletLooper" data-looper="to" data-args="2">•</a></li>
+    <li class="op3"><a href="#bulletLooper" data-looper="to" data-args="3">•</a></li>
+    <li class="opt4"><a href="#bulletLooper" data-looper="to" data-args="4">•</a></li>
+    <li class="opt5"><a href="#bulletLooper" data-looper="to" data-args="5">•</a></li>
+    <li class="opt6"><a href="#bulletLooper" data-looper="to" data-args="6">•</a></li>
+    <li class="opt7"><a href="#bulletLooper" data-looper="to" data-args="7">•</a></li>
+    <li class="opt8"><a href="#bulletLooper" data-looper="to" data-args="8">•</a></li>
+</ul>
+</div>
+</div>
+
+
+<div class="clear"></div>
+<!-- END TOP ROW -->
+<div class="resp-row" style="display:none;">
+<div class="column full">
+<div class="inner-column">
+</div>
+</div>
+<div class="clear"></div>
+</div>
+</div></div></div><div class="clear"></div></div><div class="build-row full-width " id="full_width-12797312" seq="2" type="0"><div class="build-column full "><div class='cell-item inner-column' cell="1" widgettype="2">
+<div id="goldbox">
+<div id="gline"></div>
+<div class="layout-wrapper">
+<h1>Preserving tradition and raising the next generation of archers</h1>
+<img src="//images.clubexpress.com/506351/graphics/two_icons_196347825.jpg" alt="" border="0"><br>
+Kenosha Bowmen Inc. was founded "to foster, expand and perpetuate the practice of field archery and the spirit of good fellowship among all archers, to encourage the use of bow and arrow in hunting of all legal game birds, fish, and animals, and to cooperate with the Wisconsin Field Archery Association (WFAA) and the Wisconsin Bow Hunters Association (WBH) in securing the best hunting conditions and privileges for all bow hunters. To cooperate with the Wisconsin Conservation agencies for the propagation and conservation of all game, and to maintain field courses and an indoor range to conduct archery games and tournaments."
+</div>
+</div></div></div><div class="clear"></div></div><div class="build-row full-width " id="full_width-12797313" seq="3" style="color:#FFFFFF;background-color:#556B2F;font-size:14px;margin-top:0px;margin-bottom:10px;border-width:10px;border-color:#FFFFFF;border-style:solid;" data-color="#FFFFFF" data-bg="#556B2F" data-bw="10px" data-bc="#FFFFFF" data-lh="-1" type="0"><div class="build-column full " style="background-color:#556B2F;font-size:14px;padding:10px;margin-top:0px;margin-bottom:0px;border-color:#FFFFFF;" data-bg="#556B2F" data-bw="-1" data-bc="#FFFFFF" data-lh="-1"><div class='cell-item inner-column' cell="1" widgettype="8"><div id='e|60|26244,26245,26243|1|' class='ce-widget ue cards' contenteditable='false' style='width:100%; ' data-width='100%' title='Upcoming Events'><div class='widget-loading'><img src='images/loading3.gif'></div><div class='placeholder-type'>Upcoming Events</div><div class='placeholder-title'>Upcoming Events</div></div><div class='clear'></div></div></div><div class="clear"></div></div><div class="build-row full-width " id="full_width-12797314" seq="4" type="0"><div class="build-column full "><div class='cell-item inner-column' cell="1" widgettype="2">
+<div id="row4">
+<div class="row4overlay"></div>
+<div class="layout-wrapper">
+<div class="resp-row">
+<div class="column full">
+<div class="inner-column">
+<h1>As a member you have the following privileges</h1>
+Access to the grounds and clubhouse<br>
+Use of all of our ranges for you and your immediate family<br>
+Member discounts at some local shoots and leagues<br>
+<br>
+<a href="/content.aspx?page_id=60&amp;club_id=506351" class="ce-button">Join Now</a>&nbsp;</div>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+</div></div></div><div class="clear"></div></div><div class="build-row full-width " id="full_width-12797315" seq="5" type="0"><div class="build-column full "><div class='cell-item inner-column' cell="1" widgettype="2">
+<div id="row2">
+<div class="row2overlay"></div>
+<div class="layout-wrapper">
+<div class="resp-row">
+<div class="column third">
+<div class="inner-column"><img src="//images.clubexpress.com/506351/graphics/icon1_2035748589.png" alt="" border="0">About Us<br>
+<br>
+<a href="/content.aspx?page_id=22&amp;club_id=506351&amp;module_id=372904" class="ce-button">Read More</a>
+</div>
+</div>
+<div class="column third">
+<div class="inner-column"><img src="//images.clubexpress.com/506351/graphics/icon2_2093886805.png" alt="" border="0">FAQ<br>
+<br>
+<a href="/content.aspx?page_id=274&amp;club_id=506351" class="ce-button">Read More</a></div>
+</div>
+<div class="column third">
+<div class="inner-column"><img src="//images.clubexpress.com/506351/graphics/icon3_1451622858.png" alt="" border="0">Score Board<br>
+Results<br>
+<br>
+<a href="/content.aspx?page_id=86&amp;club_id=506351&amp;item_id=89150" class="ce-button">Read More</a></div>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+</div></div></div><div class="clear"></div></div><div class="build-row full-width " id="full_width-12797316" seq="6" type="0"><div class="build-column full "><div class='cell-item inner-column' cell="1" widgettype="2">
+<div id="row5">
+<div class="resp-row">
+<div class="column third">
+<div class="inner-column"><img src="//images.clubexpress.com/506351/graphics/bcol1_176308082.jpg" alt="" border="0"></div>
+</div>
+<div class="column third">
+<div class="inner-column"><img src="//images.clubexpress.com/506351/graphics/bcol2_339209320.jpg" alt="" border="0"></div>
+</div>
+<div class="column third">
+<div class="inner-column"><img src="//images.clubexpress.com/506351/graphics/bcol3_768090890.jpg" alt="" border="0"></div>
+</div>
+<div class="clear"></div>
+</div>
+</div></div></div><div class="clear"></div></div>
+</div>
+
+	
+
+</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="below-content">
+	<div class="layout-wrapper cb8-wrapper">
+		<div class='cb-common cb-8'>
+<div id="fkftr">
+<div class="layout-wrapper">
+<div class="textleft">
+Kenosha Bowmen Is Located 2 Miles West of I-94 on the South Side of Hwy 50 Across from the North Bristol Cemetery.<br>
+<br>
+15211 75th St. (37.96 Mi)<br>
+Bristol, Wisconsin 53104<br>
+<a href="mailto:Kenoshabowmen@gmail.Com">Kenoshabowmen@gmail.com</a><br>
+<strong>(262) 597-8491</strong></div>
+<div class="iright">
+<a href="https://www.facebook.com/kenosha.bowmen/" target="_blank">
+<img src="//s3.amazonaws.[long].png" alt="" border="0">
+</a>
+<a href="https://twitter.com/kenoshabowmen" target="_blank">
+<img src="//s3.amazonaws.[long].png" alt="" border="0">
+</a>
+<a href="https://www.instagram.com/kenosha_bowmen/" target="_blank">
+<img src="//s3.amazonaws.[long].png" alt="" border="0">
+</a>
+</div>
+<div class="clear"></div>
+</div>
+</div></div>
+	</div>
+</div>
+
+<div class="clear"></div>
+
+<div class="bottom-wrapper">
+	<footer>
+		<div class="layout-wrapper">
+			
+
+<div class="footer-container">
+	<a href="/">Home</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+	<a href="/content.aspx?page_id=4&club_id=506351" id="ctl00_footer_contact_us_link" >Contact Us</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+	<span id="ctl00_footer_copyright_panel">Copyright © 2026 - All Rights Reserved</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+	<a role='button' href='#' onclick="openModalPopup('/popup.aspx?page_id=126&club_id=506351', 600, 480, ''); return false;" id="ctl00_footer_terms_link"  aria-haspopup='dialog'  rel='nofollow'>Terms of Use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+	<a role='button' href='#' onclick="openModalPopup('/popup.aspx?page_id=125&club_id=506351', 600, 480, ''); return false;" id="ctl00_footer_privacy_link"  aria-haspopup='dialog'  rel='nofollow'>Privacy Policy</a>
+	<br />
+	<a href="https://www.clubexpress.com/landing.aspx?source=KenoBow" class="footer-link" rel="nofollow" target="_blank">Powered By&nbsp;<img src="/images/powered_by.png" alt="ClubExpress" align="absmiddle" border="0" /></a>
+</div>
+
+		</div>
+	</footer>
+	<div class="clear"></div>
+</div>
+
+
+
+
+</form>
+		
+		
+	</body>
+</html>
+
+

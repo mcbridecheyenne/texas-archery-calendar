@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html id="ie6" class="no-js ie6 oldie" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" class="no-js ie7 oldie" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" class="no-js ie8 oldie" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US" class="no-js" id="doc">
+<!--<![endif]-->
+<head>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- Print the <title> tag based on what is being viewed.
+    We filter the output of wp_title() a bit - see
+    agriflex_filter_wp_title() in functions.php.
+    -->
+  <title>
+    Events for October 2026 &#8211; Urban Program Bexar County  </title>
+
+  <link rel="profile" href="http://gmpg.org/xfn/11" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="https://bexar-tx.tamu.edu/wp-content/themes/AgriFlex2/style.css?v=100" />
+
+  <link rel="pingback" href="https://bexar-tx.tamu.edu/xmlrpc.php" />
+
+  <!-- Action hook to include some head stuff -->
+  <link rel="shortcut icon" href="https://bexar-tx.tamu.[long].ico" type="image/ico" />
+  <!--Always have wp_head() just before the closing </head>
+  tag of your theme, or you will break many plugins, which
+  generally use this hook to add elements to <head> such
+  as styles, scripts, and meta tags. -->
+      
+        
+    <link rel='stylesheet' id='[long]' href='https://bexar-tx.tamu.[long].standalone.min.css?ver=6.15.13.1' media='all' />
+<link rel='stylesheet' id='tec-variables-skeleton-css' href='https://bexar-tx.tamu.[long].css?ver=6.10.1' media='all' />
+<link rel='stylesheet' id='tribe-common-skeleton-style-css' href='https://bexar-tx.tamu.[long].css?ver=6.10.1' media='all' />
+<link rel='stylesheet' id='tribe-tooltipster-css-css' href='https://bexar-tx.tamu.[long].bundle.min.css?ver=6.10.1' media='all' />
+<link rel='stylesheet' id='tribe-events-views-v2-skeleton-css' href='https://bexar-tx.tamu.[long].css?ver=6.15.13.1' media='all' />
+<link rel='stylesheet' id='tec-variables-full-css' href='https://bexar-tx.tamu.[long].css?ver=6.10.1' media='all' />
+<link rel='stylesheet' id='tribe-common-full-style-css' href='https://bexar-tx.tamu.[long].css?ver=6.10.1' media='all' />
+<link rel='stylesheet' id='tribe-events-views-v2-full-css' href='https://bexar-tx.tamu.[long].css?ver=6.15.13.1' media='all' />
+<link rel='stylesheet' id='tribe-events-views-v2-print-css' href='https://bexar-tx.tamu.[long].css?ver=6.15.13.1' media='print' />
+<!--[if lt IE 9]><link rel="stylesheet" type="text/css" media="all" href="https://bexar-tx.tamu.[long].css?2" /><![endif]--><meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+	<!-- This site is optimized with the Yoast SEO plugin v26.7 - https://yoast.com/wordpress/plugins/seo/ -->
+	<link rel="canonical" href="https://bexar-tx.tamu.edu/calendar/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Events Archive - Urban Program Bexar County" />
+	<meta property="og:url" content="https://bexar-tx.tamu.edu/calendar/" />
+	<meta property="og:site_name" content="Urban Program Bexar County" />
+	<meta name="twitter:card" content="summary_large_image" />
+	
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//use.typekit.com' />
+<link rel='dns-prefetch' href='//static.addtoany.com' />
+<link rel="alternate" type="application/rss+xml" title="Urban Program Bexar County &raquo; Feed" href="https://bexar-tx.tamu.edu/feed/" />
+<link rel="alternate" type="text/calendar" title="Urban Program Bexar County &raquo; iCal Feed" href="https://bexar-tx.tamu.edu/calendar/?ical=1" />
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v9.11.1 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							
+			
+							<!-- / Google Analytics by MonsterInsights -->
+		
+
+
+
+
+
+
+<link rel='stylesheet' id='ag_social_media-css' href='https://bexar-tx.tamu.[long].css?ver=7.0.5' media='all' />
+<link rel='stylesheet' id='addtoany-css' href='https://bexar-tx.tamu.[long].min.css?ver=1.16' media='all' />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="https://api.w.org/" href="https://bexar-tx.tamu.edu/wp-json/" /><meta name="last-modified" content="2025-11-03T14:59:11" /><meta name="tec-api-version" content="v1"><meta name="tec-api-origin" content="https://bexar-tx.tamu.edu"><link rel="alternate" href="https://bexar-tx.tamu.edu/wp-json/tribe/events/v1/" />
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<!-- GTM Container placement set to footer -->
+
+
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->    
+                            
+  
+</head>
+
+<body class="archive post-type-archive post-type-archive-tribe_events wp-theme-AgriFlex2 not-active tribe-events-page-template tribe-no-js tribe-filter-live  extension extensiononly extensioncountytce" id="page-body">
+
+<!-- Action hook for inserting top navigation and other elements -->
+<div id="drop-section-nav"><div id="drop-nav"><ul><li class="top-agency tx-ext-item"><a href="http://agrilifeextension.tamu.edu/"><span class="top-level-hide">Texas A&amp;M AgriLife Extension Service</span></a></li><li class="top-agency tce"><a href="http://pvcep.pvamu.edu/"><span class="top-level-hide">Cooperative Extension Program</span></a></li></ul></div><!-- #drop-nav --></div><!-- #drop-section-nav -->
+<div id="wrapper" class="hfeed">
+
+  <!-- Action hook creating the site header -->
+  <div id="header"><header id="branding" role="banner"><hgroup><h1 id="site-title"><a href="https://bexar-tx.tamu.edu" title="Urban Program Bexar County"><span>Extension Education</span><em>in Bexar County</em></a></h1><h2 id="site-description">Improving Lives.  Improving Texas.</h2></hgroup><form method="get" class="searchform" action="https://bexar-tx.tamu.edu/" ><label><span class="screen-reader-text">Search for:</span><input type="text" value="Search" name="s" class="s" onfocus="if (this.value == 'Search') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search';}" /></label><input type="submit" class="searchsubmit" value="Go" /></form></header><!-- end #branding --></div><!-- end #header -->
+  <!-- Action hook for placing content below the site header -->
+  <div class="menu-button" id="menu-button">Menu</div>
+<nav id="access" role="navigation">		
+
+  <!-- Allow screen readers / text browsers to skip the navigation
+    menu and get right to the good stuff -->
+  <div class="skip-link screen-reader-text">
+    <a href="#content" title="Skip to content">
+      Skip to content    </a>
+  </div>
+
+  <!-- Our navigation menu.  If one isn't filled out, wp_nav_menu
+    falls back to wp_page_menu.  The menu assiged to the primary
+    position is the one used.  If none is assigned, the menu with the 
+    lowest ID is used. -->
+
+  <div class="menu-header"><ul id="menu-top-menu" class="sf-menu menu"><li id="menu-item-9406" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-9406"><a href="https://bexar-tx.tamu.edu/" title="home">Howdy!</a></li>
+<li id="menu-item-11015" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-11015"><a href="https://bexar-tx.tamu.edu/programs/">Programs</a>
+<ul class="sub-menu">
+	<li id="menu-item-9394" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9394"><a href="https://bexar-tx.tamu.edu/4h-youth-development/">4-H &#038; Youth Development</a></li>
+	<li id="menu-item-9395" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9395"><a href="https://bexar-tx.tamu.edu/agriculture-and-natural-resources/">Agriculture and Natural Resources</a></li>
+	<li id="menu-item-10777" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10777"><a href="http://efnep.tamu.edu/counties/bexar-county/">Expanded Food &#038; Nutrition Education Program</a></li>
+	<li id="menu-item-9398" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9398"><a href="https://bexar-tx.tamu.edu/family-and-consumer-sciences/">Family and Community Health</a></li>
+	<li id="menu-item-9519" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9519"><a href="https://bexar-tx.tamu.edu/homehort/">Horticulture</a></li>
+	<li id="menu-item-9518" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9518"><a href="https://bexar-tx.tamu.edu/insects-integrated-pest-management/">Insects &#038; Integrated Pest Management</a></li>
+	<li id="menu-item-9400" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9400"><a href="https://bexar-tx.tamu.edu/natural-resources/">Water and Natural Resources</a></li>
+</ul>
+</li>
+<li id="menu-item-16727" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16727"><a href="https://bexar-tx.tamu.edu/major-show-entry-help-page/">Major Show Entry Help Page</a></li>
+<li id="menu-item-9401" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9401"><a href="https://bexar-tx.tamu.edu/backyardbasics/">Backyard Basics</a></li>
+<li id="menu-item-9522" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current-menu-item current_page_item menu-item-9522"><a href="https://bexar-tx.tamu.edu/calendar/" aria-current="page">Events</a></li>
+<li id="menu-item-9404" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9404"><a href="https://bexar-tx.tamu.edu/social-networks/">Social</a></li>
+<li id="menu-item-9405" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9405"><a href="https://bexar-tx.tamu.edu/contact/">Contact Us</a></li>
+</ul></div>  
+
+</nav><!-- .access -->
+
+  <div id="content-wrap" role="document">
+          <div class="wrap">
+			  <div
+	 class="tribe-common tribe-events tribe-events-view tribe-events-view--month" 	data-js="tribe-events-view"
+	data-view-rest-url="https://bexar-tx.tamu.edu/wp-json/tribe/views/v2/html"
+	data-view-rest-method="GET"
+	data-view-manage-url="1"
+				data-view-breakpoint-pointer="ef3b00c4-1c84-464f-a960-1d64d8879da2"
+	 role="main">
+	<section class="tribe-common-l-container tribe-events-l-container">
+		<div
+	class="tribe-events-view-loader tribe-common-a11y-hidden"
+	role="alert"
+	aria-live="polite"
+>
+	<span class="tribe-events-view-loader__text tribe-common-a11y-visual-hide">
+		35 events found.	</span>
+	<div class="tribe-events-view-loader__dots tribe-common-c-loader">
+		<svg
+	 class="tribe-common-c-svgicon tribe-common-c-svgicon--dot tribe-common-c-loader__dot tribe-common-c-loader__dot--first" 	aria-hidden="true"
+	viewBox="0 0 15 15"
+	xmlns="http://www.w3.org/2000/svg"
+>
+	<circle cx="7.5" cy="7.5" r="7.5"/>
+</svg>
+		<svg
+	 class="tribe-common-c-svgicon tribe-common-c-svgicon--dot tribe-common-c-loader__dot tribe-common-c-loader__dot--second" 	aria-hidden="true"
+	viewBox="0 0 15 15"
+	xmlns="http://www.w3.org/2000/svg"
+>
+	<circle cx="7.5" cy="7.5" r="7.5"/>
+</svg>
+		<svg
+	 class="tribe-common-c-svgicon tribe-common-c-svgicon--dot tribe-common-c-loader__dot tribe-common-c-loader__dot--third" 	aria-hidden="true"
+	viewBox="0 0 15 15"
+	xmlns="http://www.w3.org/2000/svg"
+>
+	<circle cx="7.5" cy="7.5" r="7.5"/>
+</svg>
+	</div>
+</div>
+
+		
+		
+
+		
+		
+<header  class="tribe-events-header tribe-events-header--has-event-search" >
+	<div  class="tribe-events-header__messages tribe-events-c-messages tribe-common-b2 tribe-common-c-loader__dot tribe-common-c-loader__dot--third"  >
+			<div class="tribe-events-c-messages__message [long]" tabindex="0" role="alert" aria-live="assertive">
+										<div
+					 data-key="0" >
+					There are no upcoming events.				</div>
+					</div>
+	</div>
+
+	<div  class="tribe-events-header__messages tribe-events-c-messages tribe-common-b2 tribe-events-header__messages--mobile"  >
+			<div class="tribe-events-c-messages__message [long]" tabindex="0" role="alert" aria-live="assertive">
+										<div
+					 data-key="0" >
+					There are no upcoming events.				</div>
+					</div>
+	</div>
+
+	
+	
+	<div
+	 class="tribe-events-header__events-bar tribe-events-c-events-bar tribe-events-c-events-bar--border" 	data-js="tribe-events-events-bar"
+>
+
+	<h2 class="tribe-common-a11y-visual-hide">
+		Events Search and Views Navigation	</h2>
+
+			<button
+	class="[long]"
+	aria-controls="tribe-events-search-container"
+	aria-expanded="false"
+	data-js="tribe-events-search-button"
+>
+	<svg
+	 class="tribe-common-c-svgicon tribe-common-c-svgicon--search [long]" 	aria-hidden="true"
+	viewBox="0 0 16 16"
+	xmlns="http://www.w3.org/2000/svg"
+>
+	<path fill-rule="evenodd" clip-rule="evenodd" d="M11.164 10.133L16 14.97 14.969 16l-4.836-4.836a6.225 6.225 0 01-3.875 1.352 6.24 6.24 0 01-4.427-1.832A6.272 6.272 0 010 6.258 6.24 6.24 0 011.831 1.83 6.272 6.272 0 016.258 0c1.67 0 3.235.658 4.426 1.831a6.272 6.272 0 011.832 4.427c0 1.422-.48 2.773-1.352 3.875zM6.258 1.458c-1.28 0-2.49.498-3.396 1.404-1.866 1.867-1.866 4.925 0 6.791a4.774 4.774 0 003.396 1.405c1.28 0 2.489-.498 3.395-1.405 1.867-1.866 1.867-4.924 0-6.79a4.774 4.774 0 00-3.395-1.405z"/>
+</svg>
+	<span class="[long] tribe-common-a11y-visual-hide">
+		Search	</span>
+</button>
+
+		<div
+			class="[long]"
+			id="tribe-events-search-container"
+			data-js="tribe-events-search-container"
+		>
+			<div
+	class="tribe-events-c-events-bar__search"
+	id="tribe-events-events-bar-search"
+	data-js="tribe-events-events-bar-search"
+>
+	<form
+		class="tribe-events-c-search tribe-events-c-events-bar__search-form"
+		method="get"
+		data-js="tribe-events-view-form"
+		role="search"
+	>
+		<input type="hidden" name="tribe-events-views[url]" value="https://bexar-tx.tamu.edu/calendar/month/" />
+
+		<div class="tribe-events-c-search__input-group">
+			<div
+	class="tribe-common-form-control-text tribe-events-c-search__input-control [long]"
+	data-js="tribe-events-events-bar-input-control"
+>
+	<label class="tribe-common-form-control-text__label" for="tribe-events-events-bar-keyword">
+		Enter Keyword. Search for Events by Keyword.	</label>
+	<input
+		class="tribe-common-form-control-text__input tribe-events-c-search__input"
+		data-js="[long]"
+		type="text"
+		id="tribe-events-events-bar-keyword"
+		name="tribe-events-views[tribe-bar-search]"
+		value=""
+		placeholder="Search for events"
+		aria-label="Enter Keyword. Search for events by Keyword."
+	/>
+	<svg
+	 class="tribe-common-c-svgicon tribe-common-c-svgicon--search [long]" 	aria-hidden="true"
+	viewBox="0 0 16 16"
+	xmlns="http://www.w3.org/2000/svg"
+>
+	<path fill-rule="evenodd" clip-rule="evenodd" d="M11.164 10.133L16 14.97 14.969 16l-4.836-4.836a6.225 6.225 0 01-3.875 1.352 6.24 6.24 0 01-4.427-1.832A6.272 6.272 0 010 6.258 6.24 6.24 0 011.831 1.83 6.272 6.272 0 016.258 0c1.67 0 3.235.658 4.426 1.831a6.272 6.272 0 011.832 4.427c0 1.422-.48 2.773-1.352 3.875zM6.258 1.458c-1.28 0-2.49.498-3.396 1.404-1.866 1.867-1.866 4.925 0 6.791a4.774 4.774 0 003.396 1.405c1.28 0 2.489-.498 3.395-1.405 1.867-1.866 1.867-4.924 0-6.79a4.774 4.774 0 00-3.395-1.405z"/>
+</svg>
+</div>
+		</div>
+
+		<button
+	class="tribe-common-c-btn tribe-events-c-search__button"
+	type="submit"
+	name="submit-bar"
+>
+	Find Events</button>
+	</form>
+</div>
+		</div>
+	
+	<div class="tribe-events-c-events-bar__views">
+	<h3 class="tribe-common-a11y-visual-hide">
+		Event Views Navigation	</h3>
+	<div  class="tribe-events-c-view-selector tribe-events-c-view-selector--labels tribe-events-c-view-selector--tabs"  data-js="tribe-events-view-selector">
+		<button
+			class="tribe-events-c-view-selector__button tribe-common-c-btn__clear"
+			data-js="tribe-events-view-selector-button"
+			aria-current="true"
+			aria-description="Select Calendar View"
+		>
+			<span class="[long]">
+				<svg
+	 class="tribe-common-c-svgicon tribe-common-c-svgicon--month [long]" 	aria-hidden="true"
+	viewBox="0 0 18 19"
+	xmlns="http://www.w3.org/2000/svg"
+>
+	<path fill-rule="evenodd" clip-rule="evenodd" d="M0 .991v17.04c0 .236.162.428.361.428h17.175c.2 0 .361-.192.361-.429V.991c0-.237-.162-.428-.361-.428H.36C.161.563 0 .754 0 .99zm.985.803H16.89v2.301H.985v-2.3zM16.89 5.223H.985v12H16.89v-12zM6.31 7.366v.857c0 .237.192.429.429.429h.857a.429.429 0 00.428-.429v-.857a.429.429 0 00-.428-.429H6.74a.429.429 0 00-.429.429zm3.429.857v-.857c0-.237.191-.429.428-.429h.857c.237 0 .429.192.429.429v.857a.429.429 0 01-.429.429h-.857a.429.429 0 01-.428-.429zm3.428-.857v.857c0 .237.192.429.429.429h.857a.429.429 0 00.428-.429v-.857a.429.429 0 00-.428-.429h-.857a.429.429 0 00-.429.429zm-6.857 4.286v-.858c0-.236.192-.428.429-.428h.857c.236 0 .428.192.428.428v.858a.429.429 0 01-.428.428H6.74a.429.429 0 01-.429-.428zm3.429-.858v.858c0 .236.191.428.428.428h.857a.429.429 0 00.429-.428v-.858a.429.429 0 00-.429-.428h-.857a.428.428 0 00-.428.428zm3.428.858v-.858c0-.236.192-.428.429-.428h.857c.236 0 .428.192.428.428v.858a.429.429 0 01-.428.428h-.857a.429.429 0 01-.429-.428zm-10.286-.858v.858c0 .236.192.428.429.428h.857a.429.429 0 00.429-.428v-.858a.429.429 0 00-.429-.428h-.857a.429.429 0 00-.429.428zm0 4.286v-.857c0-.237.192-.429.429-.429h.857c.237 0 .429.192.429.429v.857a.429.429 0 01-.429.429h-.857a.429.429 0 01-.429-.429zm3.429-.857v.857c0 .237.192.429.429.429h.857a.429.429 0 00.428-.429v-.857a.429.429 0 00-.428-.429H6.74a.429.429 0 00-.429.429zm3.429.857v-.857c0-.237.191-.429.428-.429h.857c.237 0 .429.192.429.429v.857a.429.429 0 01-.429.429h-.857a.429.429 0 01-.428-.429z" class="tribe-common-c-svgicon__svg-fill"/>
+</svg>
+			</span>
+			<span class="[long] tribe-common-a11y-visual-hide">
+				Month			</span>
+			<svg
+	 class="tribe-common-c-svgicon tribe-common-c-svgicon--caret-down [long]" 	aria-hidden="true"
+	viewBox="0 0 10 7"
+	xmlns="http://www.w3.org/2000/svg"
+>
+	<path fill-rule="evenodd" clip-rule="evenodd" d="M1.008.609L5 4.6 8.992.61l.958.958L5 6.517.05 1.566l.958-.958z" class="tribe-common-c-svgicon__svg-fill"/>
+</svg>
+		</button>
+		<div
+	class="tribe-events-c-view-selector__content"
+	id="tribe-events-view-selector-content"
+	data-js="[long]"
+>
+	<ul class="tribe-events-c-view-selector__list">
+					<li
+	 class="tribe-events-c-view-selector__list-item [long]" >
+	<a
+		href="https://bexar-tx.tamu.edu/calendar/list/"
+		class="[long]"
+		data-js="tribe-events-view-link"
+		aria-label="Display Events in List View"
+			>
+		<span class="[long]">
+			<svg
+	 class="tribe-common-c-svgicon tribe-common-c-svgicon--list [long]" 	aria-hidden="true"
+	viewBox="0 0 19 19"
+	xmlns="http://www.w3.org/2000/svg"
+>
+	<path fill-rule="evenodd" clip-rule="evenodd" d="M.451.432V17.6c0 .238.163.432.364.432H18.12c.2 0 .364-.194.364-.432V.432c0-.239-.163-.432-.364-.432H.815c-.2 0-.364.193-.364.432zm.993.81h16.024V3.56H1.444V1.24zM17.468 3.56H1.444v13.227h16.024V3.56z" class="tribe-common-c-svgicon__svg-fill"/>
+	<g clip-path="url(#[long])" class="tribe-common-c-svgicon__svg-fill">
+		<path fill-rule="evenodd" clip-rule="evenodd" d="M11.831 4.912v1.825c0 .504.409.913.913.913h1.825a.913.913 0 00.912-.913V4.912A.913.913 0 0014.57 4h-1.825a.912.912 0 00-.913.912z"/>
+		<path d="M8.028 7.66a.449.449 0 00.446-.448v-.364c0-.246-.2-.448-.446-.448h-4.13a.449.449 0 00-.447.448v.364c0 .246.201.448.447.448h4.13zM9.797 5.26a.449.449 0 00.447-.448v-.364c0-.246-.201-.448-.447-.448h-5.9a.449.449 0 00-.446.448v.364c0 .246.201.448.447.448h5.9z"/>
+	</g>
+	<g clip-path="url(#[long])" class="tribe-common-c-svgicon__svg-fill">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M11.831 10.912v1.825c0 .505.409.913.913.913h1.825a.913.913 0 00.912-.912v-1.825A.913.913 0 0014.57 10h-1.825a.912.912 0 00-.913.912z"/>
+		<path d="M8.028 13.66a.449.449 0 00.446-.448v-.364c0-.246-.2-.448-.446-.448h-4.13a.449.449 0 00-.447.448v.364c0 .246.201.448.447.448h4.13zM9.797 11.26a.449.449 0 00.447-.448v-.364c0-.246-.201-.448-.447-.448h-5.9a.449.449 0 00-.446.448v.364c0 .246.201.448.447.448h5.9z"/>
+	</g>
+	<defs>
+		<clipPath id="[long]">
+			<path transform="translate(3.451 4)" d="M0 0h13v4H0z"/>
+		</clipPath>
+		<clipPath id="[long]">
+			<path transform="translate(3.451 10)" d="M0 0h13v4H0z"/>
+		</clipPath>
+	</defs>
+</svg>
+		</span>
+		<span class="[long]">
+			List		</span>
+	</a>
+</li>
+					<li
+	 class="tribe-events-c-view-selector__list-item [long] [long]" >
+	<a
+		href="https://bexar-tx.tamu.edu/calendar/month/"
+		class="[long]"
+		data-js="tribe-events-view-link"
+		aria-label="Display Events in Month View"
+				aria-current="true"
+			>
+		<span class="[long]">
+			<svg
+	 class="tribe-common-c-svgicon tribe-common-c-svgicon--month [long]" 	aria-hidden="true"
+	viewBox="0 0 18 19"
+	xmlns="http://www.w3.org/2000/svg"
+>
+	<path fill-rule="evenodd" clip-rule="evenodd" d="M0 .991v17.04c0 .236.162.428.361.428h17.175c.2 0 .361-.192.361-.429V.991c0-.237-.162-.428-.361-.428H.36C.161.563 0 .754 0 .99zm.985.803H16.89v2.301H.985v-2.3zM16.89 5.223H.985v12H16.89v-12zM6.31 7.366v.857c0 .237.192.429.429.429h.857a.429.429 0 00.428-.429v-.857a.429.429 0 00-.428-.429H6.74a.429.429 0 00-.429.429zm3.429.857v-.857c0-.237.191-.429.428-.429h.857c.237 0 .429.192.429.429v.857a.429.429 0 01-.429.429h-.857a.429.429 0 01-.428-.429zm3.428-.857v.857c0 .237.192.429.429.429h.857a.429.429 0 00.428-.429v-.857a.429.429 0 00-.428-.429h-.857a.429.429 0 00-.429.429zm-6.857 4.286v-.858c0-.236.192-.428.429-.428h.857c.236 0 .428.192.428.428v.858a.429.429 0 01-.428.428H6.74a.429.429 0 01-.429-.428zm3.429-.858v.858c0 .236.191.428.428.428h.857a.429.429 0 00.429-.428v-.858a.429.429 0 00-.429-.428h-.857a.428.428 0 00-.428.428zm3.428.858v-.858c0-.236.192-.428.429-.428h.857c.236 0 .428.192.428.428v.858a.429.429 0 01-.428.428h-.857a.429.429 0 01-.429-.428zm-10.286-.858v.858c0 .236.192.428.429.428h.857a.429.429 0 00.429-.428v-.858a.429.429 0 00-.429-.428h-.857a.429.429 0 00-.429.428zm0 4.286v-.857c0-.237.192-.429.429-.429h.857c.237 0 .429.192.429.429v.857a.429.429 0 01-.429.429h-.857a.429.429 0 01-.429-.429zm3.429-.857v.857c0 .237.192.429.429.429h.857a.429.429 0 00.428-.429v-.857a.429.429 0 00-.428-.429H6.74a.429.429 0 00-.429.429zm3.429.857v-.857c0-.237.191-.429.428-.429h.857c.237 0 .429.192.429.429v.857a.429.429 0 01-.429.429h-.857a.429.429 0 01-.428-.429z" class="tribe-common-c-svgicon__svg-fill"/>
+</svg>
+		</span>
+		<span class="[long]">
+			Month		</span>
+	</a>
+</li>
+			</ul>
+</div>
+	</div>
+</div>
+
+</div>
+
+	
+	<div class="tribe-events-c-top-bar tribe-events-header__top-bar">
+
+	<nav class="tribe-events-c-top-bar__nav tribe-common-a11y-hidden">
+	<ul class="tribe-events-c-top-bar__nav-list">
+		<li class="tribe-events-c-top-bar__nav-list-item">
+	<a
+		href="https://bexar-tx.tamu.edu/calendar/month/2026-09/"
+		class="tribe-common-c-btn-icon tribe-common-c-btn-icon--caret-left tribe-events-c-top-bar__nav-link tribe-events-c-top-bar__nav-link--prev"
+		aria-label="Previous month"
+		title="Previous month"
+		data-js="tribe-events-view-link"
+		rel="noindex"
+	>
+		<svg
+	 class="tribe-common-c-svgicon tribe-common-c-svgicon--caret-left tribe-common-c-btn-icon__icon-svg [long]" 	aria-hidden="true"
+	viewBox="0 0 10 16"
+	xmlns="http://www.w3.org/2000/svg"
+>
+	<path d="M9.7 14.4l-1.5 1.5L.3 8 8.2.1l1.5 1.5L3.3 8l6.4 6.4z"/>
+</svg>
+	</a>
+</li>
+
+			</ul>
+</nav>
+
+	<a
+	href="https://bexar-tx.tamu.edu/calendar/month/"
+	class="tribe-common-c-btn-border-small tribe-events-c-top-bar__today-button tribe-common-a11y-hidden"
+	data-js="tribe-events-view-link"
+	aria-description="Click to select the current month"
+>
+	This Month</a>
+
+	<div class="tribe-events-c-top-bar__datepicker">
+	<button
+		class="tribe-common-c-btn__clear tribe-common-h3 tribe-common-h--alt [long]"
+		data-js="tribe-events-top-bar-datepicker-button"
+		type="button"
+		aria-description="Click to toggle datepicker"
+	>
+		<time
+			datetime="2026-10"
+			class="tribe-events-c-top-bar__datepicker-time"
+		>
+			<span class="[long]">
+				2026-10-05			</span>
+			<span class="[long] tribe-common-a11y-hidden">
+				October 2026			</span>
+		</time>
+		<svg
+	 class="tribe-common-c-svgicon tribe-common-c-svgicon--caret-down [long]" 	aria-hidden="true"
+	viewBox="0 0 10 7"
+	xmlns="http://www.w3.org/2000/svg"
+>
+	<path fill-rule="evenodd" clip-rule="evenodd" d="M1.008.609L5 4.6 8.992.61l.958.958L5 6.517.05 1.566l.958-.958z" class="tribe-common-c-svgicon__svg-fill"/>
+</svg>
+	</button>
+	<label
+		class="[long] tribe-common-a11y-visual-hide"
+		for="tribe-events-top-bar-date"
+	>
+		Select date.	</label>
+	<input
+		type="text"
+		class="[long] tribe-common-a11y-visual-hide"
+		data-js="tribe-events-top-bar-date"
+		id="tribe-events-top-bar-date"
+		name="tribe-events-views[tribe-bar-date]"
+		value="2026-10-05"
+		tabindex="-1"
+		autocomplete="off"
+		readonly="readonly"
+			/>
+	<div class="[long]" data-js="[long]"></div>
+	<template class="[long]">
+		<svg
+	 class="tribe-common-c-svgicon tribe-common-c-svgicon--caret-left [long]" 	aria-hidden="true"
+	viewBox="0 0 10 16"
+	xmlns="http://www.w3.org/2000/svg"
+>
+	<path d="M9.7 14.4l-1.5 1.5L.3 8 8.2.1l1.5 1.5L3.3 8l6.4 6.4z"/>
+</svg>
+	</template>
+	<template class="[long]">
+		<svg
+	 class="tribe-common-c-svgicon tribe-common-c-svgicon--caret-right [long]" 	aria-hidden="true"
+	viewBox="0 0 10 16"
+	xmlns="http://www.w3.org/2000/svg"
+>
+	<path d="M.3 1.6L1.8.1 9.7 8l-7.9 7.9-1.5-1.5L6.7 8 .3 1.6z"/>
+</svg>
+	</template>
+</div>
+
+	
+	<div class="tribe-events-c-top-bar__actions tribe-common-a11y-hidden">
+	</div>
+
+</div>
+</header>
+
+		
+		<h2 class="tribe-common-a11y-visual-hide" id="tribe-events-calendar-header">
+						Calendar of Events		</h2>
+		<table
+			class="tribe-events-calendar-month"
+			data-js="tribe-events-month-grid"
+		>
+
+			
+			
+		</table>
+
+		<div  class="tribe-events-header__messages tribe-events-c-messages tribe-common-b2 tribe-events-header__messages--mobile"  >
+			<div class="tribe-events-c-messages__message [long]" tabindex="0" role="alert" aria-live="assertive">
+										<div
+					 data-key="0" >
+					There are no upcoming events.				</div>
+					</div>
+	</div>
+
+		
+		<div class="tribe-events-calendar-latest-past">
+
+	<h2 class="[long] tribe-common-h5 tribe-common-h3--min-medium">
+	Latest Past Events</h2>
+
+			
+		<div  class="tribe-common-g-row [long]" >
+
+	<div class="[long] tribe-common-g-col">
+	<time class="[long]" datetime="2025-12-12" aria-hidden="true">
+		<span class="[long]">
+			Dec		</span>
+		<span class="[long] tribe-common-h5 tribe-common-h4--min-medium">
+			12		</span>
+		<span class="[long]">
+			2025		</span>
+	</time>
+</div>
+
+	<div class="[long] tribe-common-g-col">
+		<article  class="[long] tribe-common-g-row tribe-common-g-row--gutters post-22844 tribe_events type-tribe_events status-publish hentry" >
+			
+			<div class="[long] tribe-common-g-col">
+
+				<header class="[long]">
+					<div class="[long] tribe-common-b2">
+		<time class="[long]" datetime="2025-12-12">
+		<span class="tribe-event-date-start">December 12, 2025 @ 8:00 am</span> - <span class="tribe-event-time">3:00 pm</span>	</time>
+	</div>
+					<h3 class="[long] tribe-common-h6 tribe-common-h4--min-medium">
+	<a
+		href="https://bexar-tx.tamu.edu/calendar/2025-winter-ceu-program/"
+		title="2025 Winter CEU Program"
+		rel="bookmark"
+		class="[long] tribe-common-anchor-thin"
+	>
+		2025 Winter CEU Program	</a>
+</h3>
+					<address class="[long] tribe-common-b2">
+	<span class="[long] tribe-common-b2--bold">
+		Hardberger Park	</span>
+	<span class="[long]">
+		8400 NW Military Hwy, 					San Antonio			</span>
+</address>
+				</header>
+
+								<div class="tribe-events-c-small-cta tribe-common-b3 [long]">
+	<span class="tribe-events-c-small-cta__price">
+		$60	</span>
+</div>
+
+			</div>
+		</article>
+	</div>
+
+</div>
+
+			
+		<div  class="tribe-common-g-row [long]" >
+
+	<div class="[long] tribe-common-g-col">
+	<time class="[long]" datetime="2025-11-12" aria-hidden="true">
+		<span class="[long]">
+			Nov		</span>
+		<span class="[long] tribe-common-h5 tribe-common-h4--min-medium">
+			12		</span>
+		<span class="[long]">
+			2025		</span>
+	</time>
+</div>
+
+	<div class="[long] tribe-common-g-col">
+		<article  class="[long] tribe-common-g-row tribe-common-g-row--gutters post-22710 tribe_events type-tribe_events status-publish hentry" >
+			
+			<div class="[long] tribe-common-g-col">
+
+				<header class="[long]">
+					<div class="[long] tribe-common-b2">
+		<time class="[long]" datetime="2025-11-12">
+		<span class="tribe-event-date-start">November 12, 2025 @ 10:00 am</span> - <span class="tribe-event-time">1:00 pm</span>	</time>
+	</div>
+					<h3 class="[long] tribe-common-h6 tribe-common-h4--min-medium">
+	<a
+		href="https://bexar-tx.tamu.[long]"
+		title="2025 Bexar County Kids Kows and More!"
+		rel="bookmark"
+		class="[long] tribe-common-anchor-thin"
+	>
+		2025 Bexar County Kids Kows and More!	</a>
+</h3>
+					<address class="[long] tribe-common-b2">
+	<span class="[long] tribe-common-b2--bold">
+		San Antonio Livestock Show Grounds	</span>
+	<span class="[long]">
+							San Antonio			</span>
+</address>
+				</header>
+
+				<div class="[long] tribe-common-b2 tribe-common-a11y-hidden">
+	<p>4th Grade Teachers – Don’t miss this opportunity for your students! Join us for Kids, Kows, and More on Wednesday, November 12th, 2025 at the San Antonio Stock Show &amp; Rodeo Grounds. This FREE hands-on field trip brings agriculture to life through engaging, educational sessions on dairy production, livestock, conservation, pollinators, forestry, and more. Schools must provide bus transportation and sack lunches. Space is limited! please contact Kennedy Green at kennedy.green@ag.tamu.edu by September 26th to apply. Schools will be notified of selection by October 1st.</p>
+</div>
+				<div class="tribe-events-c-small-cta tribe-common-b3 [long]">
+	<span class="tribe-events-c-small-cta__price">
+		Free	</span>
+</div>
+
+			</div>
+		</article>
+	</div>
+
+</div>
+
+			
+		<div  class="tribe-common-g-row [long]" >
+
+	<div class="[long] tribe-common-g-col">
+	<time class="[long]" datetime="2025-11-11" aria-hidden="true">
+		<span class="[long]">
+			Nov		</span>
+		<span class="[long] tribe-common-h5 tribe-common-h4--min-medium">
+			11		</span>
+		<span class="[long]">
+			2025		</span>
+	</time>
+</div>
+
+	<div class="[long] tribe-common-g-col">
+		<article  class="[long] tribe-common-g-row tribe-common-g-row--gutters post-22762 tribe_events type-tribe_events status-publish hentry" >
+			
+			<div class="[long] tribe-common-g-col">
+
+				<header class="[long]">
+					<div class="[long] tribe-common-b2">
+		<time class="[long]" datetime="2025-11-11">
+		<span class="tribe-event-date-start">November 11, 2025 @ 7:00 pm</span> - <span class="tribe-event-time">8:00 pm</span>	</time>
+	</div>
+					<h3 class="[long] tribe-common-h6 tribe-common-h4--min-medium">
+	<a
+		href="https://bexar-tx.tamu.edu/calendar/veteran-quilt-donation/"
+		title="Veteran Quilt Donation"
+		rel="bookmark"
+		class="[long] tribe-common-anchor-thin"
+	>
+		Veteran Quilt Donation	</a>
+</h3>
+									</header>
+
+				<div class="[long] tribe-common-b2 tribe-common-a11y-hidden">
+	<p>Veteran Quilt Donation Cost: FREE Date: November 11, 2025 Time:  7:00 p.m. Location: VFW Post 76 (10 10th St, San Antonio, TX 78215) Click Here to Register</p>
+</div>
+				
+			</div>
+		</article>
+	</div>
+
+</div>
+
+	
+</div>
+
+		<div class="tribe-events-after-html">
+	
+<!--
+This calendar is powered by The Events Calendar.
+http://evnt.is/18wn
+-->
+</div>
+<p class="tribe-events-promo tribe-common-b1 tribe-events-c-promo">Calendar powered by <a target="_blank" rel="noopener noreferrer" class="tribe-common-anchor-thin vcard url org fn" href="https://theeventscalendar.com/products/wordpress-events-calendar/?utm_medium=plugin-tec&#038;utm_source=banner&#038;utm_campaign=in-app">The Events Calendar</a></p>
+	</section>
+
+</div>
+
+
+    </div><!-- .wrap -->
+  </div><!-- #content-wrap -->
+</div><!-- #wrapper -->
+<footer id="footer" role="contentinfo">
+
+    <div class="wrap">
+
+    <div id="about"><div class="about"><h4>About</h4><a href="https://www.youtube.com/watch?v=ur_MnrrbU0E"><img src="https://bexar-tx.tamu.[long].jpg?v=100" alt="link to Extension about video" /></a><p>A unique education agency, the Texas A&amp;M AgriLife Extension Service teaches Texans wherever they live, extending research-based knowledge to benefit their families and communities.</p></div><!-- .about --></div><!-- #about -->	<div id="popular-links"><div class="popular-links"><h4>Popular Links</h4><a href="http://agrilifeextension.tamu.edu/"><img src="https://bexar-tx.tamu.[long].png?v=100" alt="Texas A&amp;M AgriLife Extension" /></a>	<ul><li><a href="http://county-tx.tamu.edu/">County Extension Offices</a></li><li><a href="http://agrilife.tamu.edu/locations-window/#centers">Research and Extension Centers</a></li><li><a href="https://agrilifepeople.tamu.edu/">Contact Directory</a></li><li><a href="http://agrilifetoday.tamu.edu/team/">Media Contacts</a></li><li><a href="http://texas4-h.tamu.edu/">Texas 4-H and Youth Dev.</a></li><li><a href="http://agrilife.tamu.edu/agrilife-agencies/extension-home/">Strategic Plan and Impacts</a></li><li class="last"><a href="https://agrilifeas.tamu.edu/hr/careers-employment/">Employment Opportunities</a></li></ul></div><!-- .popular-links --></div><!-- #popular-links --><div id="texas-a-m"><div class="texas-a-m"><h4>Required Links</h4><a href="http://www.tamus.edu"><img src="https://bexar-tx.tamu.[long].png?v=100" alt="Texas A&amp;M System image" /></a><ul><li><a href="https://www.tamu.edu/statements/compact-with-texans.html">Compact with Texans</a></li><li><a href="http://agrilife.tamu.edu/required-links/privacy/">Privacy and Security</a></li><li><a href="https://agrilife.tamu.edu/accessibility/">Accessibility Policy</a></li><li><a href="http://dir.texas.[long]">State Link Policy</a></li><li><a href="https://www.tsl.texas.gov/trail/index.html">Statewide Search</a></li><li><a href="https://agrilifeas.tamu.[long]">Equal Opportunity</a></li><li><a href="https://veterans.tamu.edu">Veterans Benefits</a></li><li><a href="https://fch.tamu.edu/programs/military-programs/">Military Families</a></li><li><a href="https://secure.ethicspoint.com/domain/media/en/gui/19681/">Risk, Fraud &amp; Misconduct Hotline</a></li><li><a href="https://gov.texas.gov/organization/hsgd">Texas Homeland Security</a></li><li><a href="http://veterans.portal.texas.gov/">Veteran&apos;s Portal</a></li><li><a href="http://www.tamus.[long]">Financial Disclosures</a></li><li class="last"><a href="http://agrilife.tamu.edu/required-links/orpi/">Open Records/Public Information</a></li></ul></div><!-- .texas-a-m --></div><!-- #texas-a-m --><div id="contact"><div class="contact"><h4>Contact</h4><img src="https://bexar-tx.tamu.[long].png?v=100" alt="Texas A&amp;M System image" /><ul><a href="https://www.google.com/maps/place/3355+Cherry+Ridge+Dr,+San+Antonio,+TX+78230/@29.5093367,-98.5511757,17z/data=!3m1!4b1!4m5!3m4!1s0x865c5e21ea71e18f:0xbbac6e909028b663!8m2!3d29.509332!4d-98.548987"><li>3355 Cherry Ridge Dr.<br />Suite 212<br />San Antonio, TX 78230</li></a><li>3355 Cherry Ridge Dr.<br />Suite #212<br />San Antonio, TX 78230</li><li>Monday-Friday: 8:00 a.m. - 12:00 noon and 1:00 p.m. - 5:00 p.m.</li><li><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#101;&#120;&#97;&#114;&#45;&#116;&#120;&#64;&#116;&#97;&#109;&#117;&#46;&#101;&#100;&#117;">&#98;&#101;&#120;&#97;&#114;&#45;&#116;&#120;&#64;&#116;&#97;&#109;&#117;&#46;&#101;&#100;&#117;</a></li><li><a href="tel:+1210.631.0400">Phone: 210.631.0400</a></li><li>Fax: 210.631.0429</li></ul></div><!-- .contact --></div><!-- #contact --><div id="agrilife-bookstore"><div class="agrilife-bookstore"><h4>AgriLife Bookstore</h4><a href="https://agrilifelearn.tamu.edu/"><img src="https://bexar-tx.tamu.[long].png?v=100" alt="AgriLife Bookstore image" /></a><p>AgriLife Extension&apos;s online Bookstore offers educational information and resources related to our many areas of expertise and programming; from agriculture, horticulture, and natural resources to nutrition, wellness for families and youth, and much more.</p></div><!-- .agrilife-bookstore --></div><!-- #agrilife-bookstore --> 
+
+  </div><!-- .wrap -->		
+  
+</footer><!-- #footer -->
+
+<!-- Always have wp_footer() just before the closing </body>
+tag of your theme, or you will break many plugins, which
+generally use this hook to reference JavaScript files. -->
+
+		
+		
+<!-- GTM Container placement set to footer -->
+<!-- Google Tag Manager (noscript) -->
+				<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKQZ2JD" height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+			
+</body>
+</html>

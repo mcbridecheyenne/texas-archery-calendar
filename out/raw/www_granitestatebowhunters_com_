@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head> 
+<meta charset="UTF-8" />
+
+<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v28.6 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>Granite State Bowhunters - 3D Archery &amp; Tournaments</title>
+<link data-rocket-preload as="style" href="https://fonts.googleapis.com/css?family=Poppins%3A500%2C300%2C400%2C700%7CTeko%3A400%2C600%2C700&#038;display=swap" rel="preload">
+<link href="https://fonts.googleapis.com/css?family=Poppins%3A500%2C300%2C400%2C700%7CTeko%3A400%2C600%2C700&#038;display=swap" media="print" onload="this.media=&#039;all&#039;" rel="stylesheet">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins%3A500%2C300%2C400%2C700%7CTeko%3A400%2C600%2C700&#038;display=swap"></noscript>
+	<meta name="description" content="Join Granite State Bowhunters for thrilling 3D archery tournaments. Click &#039;Learn More&#039; to start your adventure today." />
+	<link rel="canonical" href="https://granitestatebowhunters.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Granite State Bowhunters - 3D Archery &amp; Tournaments" />
+	<meta property="og:description" content="Join Granite State Bowhunters for thrilling 3D archery tournaments. Click &#039;Learn More&#039; to start your adventure today." />
+	<meta property="og:url" content="https://granitestatebowhunters.com/" />
+	<meta property="og:site_name" content="Granite State Bowhunters" />
+	<meta property="article:publisher" content="https://www.facebook.com/groups/194333180711900" />
+	<meta property="article:modified_time" content="2026-06-22T15:02:23+00:00" />
+	<meta property="og:image" content="https://granitestatebowhunters.[long].jpg" />
+	<meta property="og:image:width" content="1620" />
+	<meta property="og:image:height" content="1080" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Granite State Bowhunters &raquo; Feed" href="https://granitestatebowhunters.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Granite State Bowhunters &raquo; Comments Feed" href="https://granitestatebowhunters.com/comments/feed/" />
+<link rel="alternate" type="text/calendar" title="Granite State Bowhunters &raquo; iCal Feed" href="https://granitestatebowhunters.com/events/?ical=1" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://granitestatebowhunters.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fgranitestatebowhunters.com%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://granitestatebowhunters.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fgranitestatebowhunters.com%2F&#038;format=xml" />
+<link rel="preload" href="https://granitestatebowhunters.[long].15.4/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://granitestatebowhunters.[long].15.4/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://granitestatebowhunters.[long].15.4/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		
+		
+<link rel='stylesheet' id='[long]' href='https://granitestatebowhunters.[long].css?ver=7.8.3' media='all' />
+
+
+
+
+
+
+
+<link rel='stylesheet' id='fl-builder-layout-22-css' href='https://granitestatebowhunters.[long].css?ver=c5c075d54039b9a0b844a5222bf8839f' media='all' />
+<link rel='stylesheet' id='cookie-notice-front-css' href='https://granitestatebowhunters.[long].min.css?ver=3.1.12' media='all' />
+<link rel='stylesheet' id='wp-theme-css' href='https://granitestatebowhunters.[long].min.css?ver=7.1.2' media='all' />
+<link rel='stylesheet' id='wp-components-css' href='https://granitestatebowhunters.[long].min.css?ver=7.1.2' media='all' />
+<link rel='stylesheet' id='godaddy-styles-css' href='https://granitestatebowhunters.[long].css?ver=2.0.2' media='all' />
+<link rel='stylesheet' id='font-awesome-5-css' href='https://granitestatebowhunters.[long].15.4/css/all.min.css?ver=2.10.0.3' media='all' />
+<link rel='stylesheet' id='ultimate-icons-css' href='https://granitestatebowhunters.[long].css?ver=2.10.0.3' media='all' />
+<link rel='stylesheet' id='font-awesome-css' href='https://granitestatebowhunters.[long].15.4/css/v4-shims.min.css?ver=2.10.0.3' media='all' />
+<link rel='stylesheet' id='[long]' href='https://granitestatebowhunters.[long].css?ver=2.10.0.3-1.5.2.1-20251125200437' media='all' />
+<link rel='stylesheet' id='gd-core-css' href='https://granitestatebowhunters.[long].css?ver=4.1.0' media='all' />
+<link rel='stylesheet' id='jquery-magnificpopup-css' href='https://granitestatebowhunters.[long].magnificpopup.min.css?ver=2.10.0.3' media='all' />
+<link rel='stylesheet' id='base-4-css' href='https://granitestatebowhunters.[long].min.css?ver=1.7.14' media='all' />
+<link rel='stylesheet' id='fl-automator-skin-css' href='https://granitestatebowhunters.[long].css?ver=1.7.14' media='all' />
+<link rel='stylesheet' id='pp-animate-css' href='https://granitestatebowhunters.[long].min.css?ver=3.5.1' media='all' />
+
+
+
+
+
+
+<link rel="https://api.w.org/" href="https://granitestatebowhunters.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://granitestatebowhunters.com/wp-json/wp/v2/pages/22" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://granitestatebowhunters.com/xmlrpc.php?rsd" />
+<link rel='shortlink' href='https://granitestatebowhunters.com/' />
+		
+		<meta name="et-api-version" content="v1"><meta name="et-api-origin" content="https://granitestatebowhunters.com"><link rel="https://theeventscalendar.com/" href="https://granitestatebowhunters.com/wp-json/tribe/tickets/v1/" /><meta name="tec-api-version" content="v1"><meta name="tec-api-origin" content="https://granitestatebowhunters.com"><link rel="alternate" href="https://granitestatebowhunters.com/wp-json/tribe/events/v1/" />		
+		<link rel="icon" href="https://granitestatebowhunters.com/wp-content/uploads/2023/09/FAV.jpg" sizes="32x32" />
+<link rel="icon" href="https://granitestatebowhunters.com/wp-content/uploads/2023/09/FAV.jpg" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://granitestatebowhunters.com/wp-content/uploads/2023/09/FAV.jpg" />
+<meta name="msapplication-TileImage" content="https://granitestatebowhunters.com/wp-content/uploads/2023/09/FAV.jpg" />
+
+
+		
+		<meta name="generator" content="WP Rocket 3.20.1.2" data-wpr-features="wpr_delay_js wpr_defer_js wpr_minify_js wpr_image_dimensions wpr_preload_links wpr_desktop" /></head>
+<body class="home wp-singular page-template-default page page-id-22 wp-theme-bb-theme fl-builder fl-builder-2-10-0-3 fl-themer-1-5-2-1-20251125200437 fl-theme-1-7-14 fl-no-js cookies-not-set tribe-no-js tec-no-tickets-on-recurring tec-no-rsvp-on-recurring fl-theme-builder-header fl-theme-builder-header-header-sitewide fl-theme-builder-footer fl-theme-builder-footer-footer-sitewide fl-framework-base-4 fl-preset-default fl-full-width fl-scroll-to-top fl-search-active tribe-theme-bb-theme" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+<a aria-label="Skip to content" class="fl-screen-reader-text" href="#fl-main-content">Skip to content</a><div data-rocket-location-hash="d434d8484ca3c7ebe008e10ddf366009" class="fl-page">
+	<header data-rocket-location-hash="13954f954f8149e430dbfad6abe07b0a" class="fl-builder-content fl-builder-content-7098 fl-builder-global-templates-locked" data-post-id="7098" data-type="header" data-sticky="0" data-sticky-on="" data-sticky-breakpoint="medium" data-shrink="0" data-overlay="0" data-overlay-bg="transparent" data-shrink-image-height="50px" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader"><div data-rocket-location-hash="b85494b84fa4b57d23b81034e649dafa" class="fl-row fl-row-full-width fl-row-bg-color fl-node-qw2cedosrgj9 fl-row-default-height fl-row-align-center hrow" data-node="qw2cedosrgj9">
+	<div class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-l0pn7mi6w1be fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="l0pn7mi6w1be">
+			<div class="fl-col fl-node-fan8pq7zrdvx fl-col-bg-color fl-col-small fl-col-small-custom-width h-col-1" data-node="fan8pq7zrdvx">
+	<div class="fl-col-content fl-node-content"><div id="hlogo" class="fl-module fl-module-pp-image fl-node-4xobi5r2pvy0 logo img-front" data-node="4xobi5r2pvy0">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-photo-container">
+	<div class="pp-photo pp-photo-align-left pp-photo-align-responsive-left" itemscope itemtype="http://schema.org/ImageObject">
+		<div class="pp-photo-content">
+			<div class="pp-photo-content-inner">
+								<a href="https://granitestatebowhunters.com" target="_self" itemprop="url">
+									<img loading="lazy" decoding="async" class="pp-photo-img wp-image-13111 size-full" src="https://granitestatebowhunters.com/wp-content/uploads/2023/09/01.jpg" alt="The logo of granite state in black and white with white background" itemprop="image" height="232" width="174"  />
+					<div class="pp-overlay-bg"></div>
+													</a>
+							</div>
+					</div>
+	</div>
+</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-t9pe851zsyq6 fl-col-bg-color fl-col-small-custom-width h-col-2" data-node="t9pe851zsyq6">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-uabb-advanced-menu fl-node-cb4ntws68aqu hmenu" data-node="cb4ntws68aqu">
+	<div class="fl-module-content fl-node-content">
+			<div class="uabb-creative-menu
+	 uabb-creative-menu-accordion-collapse	uabb-menu-default">
+		<div class="[long]"><div class="uabb-creative-menu-mobile-toggle hamburger" tabindex="0"><div class="uabb-svg-container"><svg title="uabb-menu-toggle" version="1.1" class="hamburger-menu" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+<rect class="uabb-hamburger-menu-top" width="50" height="10"/>
+<rect class="uabb-hamburger-menu-middle" y="20" width="50" height="10"/>
+<rect class="uabb-hamburger-menu-bottom" y="40" width="50" height="10"/>
+</svg>
+</div></div></div>			<div class="uabb-clear"></div>
+					<ul id="menu-main" class="menu uabb-creative-menu-horizontal uabb-toggle-arrows"><li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-22 current_page_item uabb-creative-menu uabb-cm-style"><a href="https://granitestatebowhunters.com/"><span class="menu-item-text">Home</span></a></li>
+<li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://granitestatebowhunters.com/about/"><span class="menu-item-text">About</span></a></li>
+<li id="menu-item-13466" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children uabb-has-submenu uabb-creative-menu uabb-cm-style" aria-haspopup="true"><div class="uabb-has-submenu-container"><a href="#"><span class="menu-item-text">GSB Rules<span class="uabb-menu-toggle"></span></span></a></div>
+<ul class="sub-menu">
+	<li id="menu-item-13467" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://granitestatebowhunters.com/gsb-3-d-archery-rules/"><span class="menu-item-text">GSB 3-D ARCHERY RULES</span></a></li>
+	<li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://granitestatebowhunters.com/3-d-classes-defined/"><span class="menu-item-text">3-D Classes Defined</span></a></li>
+</ul>
+</li>
+<li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://granitestatebowhunters.com/calendar/"><span class="menu-item-text">Calendar</span></a></li>
+<li id="menu-item-31" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uabb-has-submenu uabb-creative-menu uabb-cm-style" aria-haspopup="true"><div class="uabb-has-submenu-container"><a href="https://granitestatebowhunters.com/results/"><span class="menu-item-text">Results<span class="uabb-menu-toggle"></span></span></a></div>
+<ul class="sub-menu">
+	<li id="menu-item-33" class="menu-item menu-item-type-custom menu-item-object-custom uabb-creative-menu uabb-cm-style"><a href="/results/#recentscore"><span class="menu-item-text">Recent Scores</span></a></li>
+	<li id="menu-item-34" class="menu-item menu-item-type-custom menu-item-object-custom uabb-creative-menu uabb-cm-style"><a href="/results/#submit-your-results"><span class="menu-item-text">Club Reps Submit Your Results</span></a></li>
+</ul>
+</li>
+<li id="menu-item-13759" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://granitestatebowhunters.com/shooter-of-the-year/"><span class="menu-item-text">Shooter of the Year</span></a></li>
+<li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://granitestatebowhunters.com/events/"><span class="menu-item-text">Events</span></a></li>
+<li id="menu-item-13573" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://granitestatebowhunters.com/club-information/"><span class="menu-item-text">Club Information</span></a></li>
+<li id="menu-item-38" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://granitestatebowhunters.com/gallery/"><span class="menu-item-text">Gallery</span></a></li>
+<li id="menu-item-40" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://granitestatebowhunters.com/contact/"><span class="menu-item-text">Contact</span></a></li>
+</ul>	</div>
+
+	<div class="[long]"><div class="uabb-creative-menu-mobile-toggle hamburger" tabindex="0"><div class="uabb-svg-container"><svg title="uabb-menu-toggle" version="1.1" class="hamburger-menu" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+<rect class="uabb-hamburger-menu-top" width="50" height="10"/>
+<rect class="uabb-hamburger-menu-middle" y="20" width="50" height="10"/>
+<rect class="uabb-hamburger-menu-bottom" y="40" width="50" height="10"/>
+</svg>
+</div></div></div>			<div class="uabb-creative-menu
+			 uabb-creative-menu-accordion-collapse			off-canvas">
+				<div class="uabb-clear"></div>
+				<div class="uabb-off-canvas-menu uabb-menu-right"> <div class="uabb-menu-close-btn">×</div>						<ul id="menu-main-1" class="menu uabb-creative-menu-horizontal uabb-toggle-arrows"><li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-22 current_page_item uabb-creative-menu uabb-cm-style"><a href="https://granitestatebowhunters.com/"><span class="menu-item-text">Home</span></a></li>
+<li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://granitestatebowhunters.com/about/"><span class="menu-item-text">About</span></a></li>
+<li id="menu-item-13466" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children uabb-has-submenu uabb-creative-menu uabb-cm-style" aria-haspopup="true"><div class="uabb-has-submenu-container"><a href="#"><span class="menu-item-text">GSB Rules<span class="uabb-menu-toggle"></span></span></a></div>
+<ul class="sub-menu">
+	<li id="menu-item-13467" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://granitestatebowhunters.com/gsb-3-d-archery-rules/"><span class="menu-item-text">GSB 3-D ARCHERY RULES</span></a></li>
+	<li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://granitestatebowhunters.com/3-d-classes-defined/"><span class="menu-item-text">3-D Classes Defined</span></a></li>
+</ul>
+</li>
+<li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://granitestatebowhunters.com/calendar/"><span class="menu-item-text">Calendar</span></a></li>
+<li id="menu-item-31" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uabb-has-submenu uabb-creative-menu uabb-cm-style" aria-haspopup="true"><div class="uabb-has-submenu-container"><a href="https://granitestatebowhunters.com/results/"><span class="menu-item-text">Results<span class="uabb-menu-toggle"></span></span></a></div>
+<ul class="sub-menu">
+	<li id="menu-item-33" class="menu-item menu-item-type-custom menu-item-object-custom uabb-creative-menu uabb-cm-style"><a href="/results/#recentscore"><span class="menu-item-text">Recent Scores</span></a></li>
+	<li id="menu-item-34" class="menu-item menu-item-type-custom menu-item-object-custom uabb-creative-menu uabb-cm-style"><a href="/results/#submit-your-results"><span class="menu-item-text">Club Reps Submit Your Results</span></a></li>
+</ul>
+</li>
+<li id="menu-item-13759" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://granitestatebowhunters.com/shooter-of-the-year/"><span class="menu-item-text">Shooter of the Year</span></a></li>
+<li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://granitestatebowhunters.com/events/"><span class="menu-item-text">Events</span></a></li>
+<li id="menu-item-13573" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://granitestatebowhunters.com/club-information/"><span class="menu-item-text">Club Information</span></a></li>
+<li id="menu-item-38" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://granitestatebowhunters.com/gallery/"><span class="menu-item-text">Gallery</span></a></li>
+<li id="menu-item-40" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://granitestatebowhunters.com/contact/"><span class="menu-item-text">Contact</span></a></li>
+</ul>				</div>
+			</div>
+				</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-hnlp0maftq15 fl-col-bg-color fl-col-small fl-col-small-custom-width" data-node="hnlp0maftq15">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-uabb-search fl-node-ekpac4gx3u18" data-node="ekpac4gx3u18">
+	<div class="fl-module-content fl-node-content">
+		
+<div class="uabb-search-form uabb-search-form-button uabb-search-form-inline uabb-search-button-fullscreen uabb-search-button-right uabb-search-form-width-full"
+	>
+	<div class="uabb-search-form-wrap">
+		<div class="uabb-search-form-fields">
+			<div class="uabb-search-form-input-wrap">
+				<form role="search" aria-label="Search form" method="get" action="https://granitestatebowhunters.com/" data-nonce=066aca5820>
+					<div class="uabb-form-field">
+											<i class="uabb-search-close fa fa-times"></i>
+																<input type="search" aria-label="Search input" class="uabb-search-text" placeholder="Search..." value="" name="s" />
+												</div>
+									</form>
+			</div>
+			
+<div class="uabb-module-content uabb-button-wrap uabb-creative-button-wrap uabb-button-width-auto uabb-creative-button-width-auto uabb-button-center uabb-creative-button-center uabb-button-reponsive-center uabb-creative-button-reponsive-center uabb-button-has-icon uabb-creative-button-has-icon uabb-creative-button-icon-no-text">
+			<a href="javascript:void(0)" title="Click Here" target="_self"  class="uabb-button ast-button uabb-creative-button uabb-creative-default-btn   " data-modal=ekpac4gx3u18  role="button" aria-label="">
+							<span class="uabb-button-text uabb-creative-button-text"></span>
+												<i class="uabb-button-icon uabb-creative-button-icon uabb-button-icon-after uabb-creative-button-icon-after ua-icon ua-icon-Search"></i>
+							
+						
+		</a>
+	</div>
+
+
+
+
+		</div>
+	</div>
+	<div class="uabb-search-overlay"></div>
+</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+</header><div data-rocket-location-hash="150ccf2f0d665cd8931005a49f855823" class="uabb-js-breakpoint" style="display: none;"></div>	<div data-rocket-location-hash="c26e363c19e5271755e0545f47c22497" id="fl-main-content" class="fl-page-content" itemprop="mainContentOfPage" role="main">
+
+		
+<div data-rocket-location-hash="f4da5fde169337afeecbec15e4a29aa6" class="fl-content-full container">
+	<div class="row">
+		<div class="fl-content col-md-12">
+			<article class="fl-post post-22 page type-page status-publish has-post-thumbnail hentry" id="fl-post-22" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+
+			<div class="fl-post-content clearfix" itemprop="text">
+		<div class="fl-builder-content fl-builder-content-22 fl-builder-content-primary fl-builder-global-templates-locked" data-post-id="22"><div class="fl-row fl-row-full-width fl-row-bg-color fl-node-23lhg5oun17y fl-row-default-height fl-row-align-center" data-node="23lhg5oun17y">
+	<div class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+						<div class="fl-row-content fl-row-full-width fl-node-content">
+		
+<div class="fl-col-group fl-node-tmvbh6loq08r" data-node="tmvbh6loq08r">
+			<div class="fl-col fl-node-48w1sj7fgm90 fl-col-bg-color" data-node="48w1sj7fgm90">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-heading fl-node-b0dz9g713qoa herotitle" data-node="b0dz9g713qoa">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-heading-content">
+		<div class="pp-heading  pp- pp-dual-heading">
+		
+		<div class="heading-title">
+
+			
+			<span class="title-text pp-primary-title">                      Where Precision Meets Passion</span>
+
+											<span class="title-text pp-secondary-title">Granite State Bowhunters</span>
+			
+			
+		</div>
+
+		
+	</div>
+
+			<div class="pp-sub-heading">
+			<p style="text-align: left;">Promoting Ethical Bowhunting, Preserving Hunting Heritage, and Advocating for Wildlife Conservation</p>		</div>
+	
+	</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-gcwr2ia9pdjh fl-col-bg-color fl-col-small" data-node="gcwr2ia9pdjh">
+	<div class="fl-col-content fl-node-content"><figure class="fl-module fl-module-photo fl-photo fl-photo-align-center fl-node-nxp98ui0h1jf" data-node="nxp98ui0h1jf" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-jpg">
+				<img decoding="async" class="fl-photo-img wp-image-13964 size-full no-lazyload" src="https://granitestatebowhunters.[long].jpg" alt="cd039283-e864-472f-bbd0-58712844939c" height="1024" width="1536" title="cd039283-e864-472f-bbd0-58712844939c" loading="lazy" srcset="https://granitestatebowhunters.[long].jpg 1536w, https://granitestatebowhunters.[long].jpg 300w, https://granitestatebowhunters.[long].jpg 1024w, https://granitestatebowhunters.[long].jpg 768w" sizes="auto, (max-width: 1536px) 100vw, 1536px" />
+					</div>
+	</figure>
+</div>
+</div>
+			<div class="fl-col fl-node-54ls3umiovkz fl-col-bg-color fl-col-small fl-col-has-cols" data-node="54ls3umiovkz">
+	<div class="fl-col-content fl-node-content">
+<div class="fl-col-group fl-node-5mcl9barnqio fl-col-group-nested fl-col-group-equal-height fl-col-group-align-center" data-node="5mcl9barnqio">
+			<div class="fl-col fl-node-o1gsczf0ql34 fl-col-bg-color" data-node="o1gsczf0ql34">
+	<div class="fl-col-content fl-node-content"><figure class="fl-module fl-module-photo fl-photo fl-photo-align-center fl-node-bs9kvnreio1j" data-node="bs9kvnreio1j" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-png">
+				<img width="3" height="2" decoding="async" class="fl-photo-img no-lazyload" src="https://granitestatebowhunters.[long].png" alt=""  loading="lazy" />
+					</div>
+	</figure>
+</div>
+</div>
+	</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-none fl-node-ncgtj63svfqb fl-row-default-height fl-row-align-center" data-node="ncgtj63svfqb">
+	<div class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-kw5m4cxsl1rz fl-col-group-custom-width" data-node="kw5m4cxsl1rz">
+			<div class="fl-col fl-node-f76lvg8pue53 fl-col-bg-color fl-col-small fl-col-small-custom-width" data-node="f76lvg8pue53">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-4onwyurihevm" data-node="4onwyurihevm">
+	<h1><strong>EXPERIENCE THE EXCITEMENT OF 3D ARCHERY</strong></h1>
+<h1><img width="98" height="25" decoding="async" class="aligncenter no-lazyload" src="https://granitestatebowhunters.com/wp-content/uploads/2023/09/05.png" /></h1>
+<p>At Granite State Bowhunters, we live and breathe the world of archery. In New England, we have carved out a space for those who enjoy the thrill of the competition and the satisfaction of a well-aimed shot.</p>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-n9pbdzc84yes fl-col-bg-color fl-col-small fl-col-small-custom-width" data-node="n9pbdzc84yes">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-hf8v3jm15sl9" data-node="hf8v3jm15sl9">
+	<h1><strong>NOT JUST ANOTHER ARCHERY ASSOCIATION</strong></h1>
+<h1><img width="98" height="25" decoding="async" class="aligncenter no-lazyload" src="https://granitestatebowhunters.com/wp-content/uploads/2023/09/05.png" /></h1>
+<p>We are a community of archers who come together to hone our skills, share our passion, and engage in friendly competition. Our 3D archery tournaments are a highlight of our events, offering challenges that test your precision and focus. And unlike many other archery venues, we shoot on Sundays, ensuring you can enjoy your hobby even on the weekend.</p>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-p65g2sjmwaou fl-col-bg-color fl-col-small fl-col-small-custom-width" data-node="p65g2sjmwaou">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-rich-text fl-rich-text fl-node-3wt2gniuoekc" data-node="3wt2gniuoekc">
+	<h1><strong>ARCHERY SHOOTS THAT EXCITE</strong></h1>
+<h1><img width="98" height="25" decoding="async" class="aligncenter no-lazyload" src="https://granitestatebowhunters.com/wp-content/uploads/2023/09/05.png" /></h1>
+<p>Our archery shoots aren't just about the competition, but about the camaraderie and the exhilarating experience of pitting your skills against fellow archers. These events offer a chance to learn, grow, and, most importantly, have fun.</p>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+</div><div data-rocket-location-hash="26d4f3428e255a772fc767a1b37edccd" class="uabb-js-breakpoint" style="display: none;"></div>	</div><!-- .fl-post-content -->
+	
+</article>
+
+<!-- .fl-post -->
+		</div>
+	</div>
+</div>
+
+
+	</div><!-- .fl-page-content -->
+	<footer data-rocket-location-hash="b4b3251d418f642ce93e9efb3a1d51c2" class="fl-builder-content fl-builder-content-7135 fl-builder-global-templates-locked" data-post-id="7135" data-type="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter"><div data-rocket-location-hash="c39d114428a93fe7508c7069a83283ae" class="fl-row fl-row-full-width fl-row-bg-color fl-node-17c3kqvfre50 fl-row-default-height fl-row-align-center footer-row" data-node="17c3kqvfre50">
+	<div class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-7y62k1tuh4al fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="7y62k1tuh4al">
+			<div class="fl-col fl-node-rbhp18nsa7cj fl-col-bg-color fl-col-small fl-col-small-custom-width fcol1" data-node="rbhp18nsa7cj">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-photo fl-node-v6ha2tmkfobj" data-node="v6ha2tmkfobj">
+	<div class="fl-module-content fl-node-content">
+		<div role="figure" class="fl-photo fl-photo-align-left" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-png">
+				<a href="https://granitestatebowhunters.com" target="_self" itemprop="url">
+				<img loading="lazy" decoding="async" class="fl-photo-img wp-image-13150 size-full" src="https://granitestatebowhunters.com/wp-content/uploads/2023/06/Layer-3.png" alt="Granite State Bowhunters logo on the display" height="129" width="91"  itemprop="image" />
+				</a>
+					</div>
+	</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-xsm56pwec2vf fl-col-bg-color fl-col-small-custom-width fcol2" data-node="xsm56pwec2vf">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-menu fl-node-dfnubtqhlz96 fmenu" data-node="dfnubtqhlz96">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-menu">
+		<div class="fl-clear"></div>
+	<nav role="navigation" aria-label="Menu" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement"><ul id="menu-footer-menu" class="menu fl-menu-horizontal fl-toggle-none"><li id="menu-item-13155" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-22 current_page_item"><a role="menuitem" href="https://granitestatebowhunters.com/" aria-current="page">Home</a></li><li id="menu-item-13156" class="menu-item menu-item-type-post_type menu-item-object-page"><a role="menuitem" href="https://granitestatebowhunters.com/about/">About</a></li><li id="menu-item-13469" class="menu-item menu-item-type-post_type menu-item-object-page"><a role="menuitem" href="https://granitestatebowhunters.com/gsb-3-d-archery-rules/">GSB 3-D ARCHERY RULES</a></li><li id="menu-item-13161" class="menu-item menu-item-type-post_type menu-item-object-page"><a role="menuitem" href="https://granitestatebowhunters.com/3-d-classes-defined/">3-D Classes Defined</a></li><li id="menu-item-13157" class="menu-item menu-item-type-post_type menu-item-object-page"><a role="menuitem" href="https://granitestatebowhunters.com/calendar/">Calendar</a></li><li id="menu-item-13162" class="menu-item menu-item-type-post_type menu-item-object-page"><a role="menuitem" href="https://granitestatebowhunters.com/results/">Results</a></li><li id="menu-item-13159" class="menu-item menu-item-type-post_type menu-item-object-page"><a role="menuitem" href="https://granitestatebowhunters.com/events/">Events</a></li><li id="menu-item-13572" class="menu-item menu-item-type-post_type menu-item-object-page"><a role="menuitem" href="https://granitestatebowhunters.com/club-information/">Club Information</a></li><li id="menu-item-13160" class="menu-item menu-item-type-post_type menu-item-object-page"><a role="menuitem" href="https://granitestatebowhunters.com/gallery/">Gallery</a></li><li id="menu-item-13158" class="menu-item menu-item-type-post_type menu-item-object-page"><a role="menuitem" href="https://granitestatebowhunters.com/contact/">Contact</a></li></ul></nav></div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-jigkt1lap026 fl-col-bg-color fl-col-small fl-col-small-custom-width f-col-3" data-node="jigkt1lap026">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-social-icons fl-node-2bn9s34qtez0" data-node="2bn9s34qtez0">
+	<div class="fl-module-content fl-node-content">
+		
+<div class="pp-social-icons pp-social-icons-horizontal">
+	<span class="pp-social-icon" itemscope itemtype="https://schema.org/Organization">
+		<link itemprop="url" href="https://granitestatebowhunters.com">
+		<a itemprop="sameAs" href="https://www.facebook.com/groups/194333180711900" target="_blank" title="Facebook" aria-label="Facebook" role="button" rel="noopener noreferrer external" >
+							<i class="fab fa-facebook"></i>
+					</a>
+	</span>
+	</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div data-rocket-location-hash="87140dbffb09e4783c8976ab3e27343e" class="fl-row fl-row-full-width fl-row-bg-color fl-node-ifsdy3butmhg fl-row-default-height fl-row-align-center footer-row" data-node="ifsdy3butmhg">
+	<div class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-tfplebn39uhg fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="tfplebn39uhg">
+			<div class="fl-col fl-node-py0w7cvqx6gt fl-col-bg-color fl-col-small-custom-width fcol1" data-node="py0w7cvqx6gt">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-rich-text fl-node-lmkc1thqyxzd" data-node="lmkc1thqyxzd">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<p>© 2026, Granite State Bowhunters. All Rights Reserved.</p>
+</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-3jaecnhvr9t1 fl-col-bg-color fl-col-small fl-col-small-custom-width f-col-3" data-node="3jaecnhvr9t1">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-rich-text fl-node-hr80ys7ilfde" data-node="hr80ys7ilfde">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<div><a href="https://www.godaddy.com/websites/web-design" target="_blank" rel="nofollow noopener"><img decoding="async" src="https://nebula.wsimg.com/aadc63d8e8dbd533470bdc4e350bc4af?AccessKeyId=B7351D786AE96FEF6EBB&amp;disposition=0&amp;alloworigin=1" alt="GoDaddy Web Design" /></a></div>
+</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+</footer><div class="uabb-js-breakpoint" style="display: none;"></div>	</div><!-- .fl-page -->
+
+		
+		<a href="#" id="fl-to-top"><span class="sr-only">Scroll To Top</span><i class="fas fa-chevron-up" aria-hidden="true"></i></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- Cookie Compliance for WordPress (formerly Compliance by Hu-manity.co) plugin v3.1.12 https://cookie-compliance.co/ -->
+		<div data-rocket-location-hash="dce9e7be75c7e2c2518cdb1817e93672" id="cookie-notice" role="dialog" class="cookie-notice-hidden cookie-revoke-hidden cn-position-bottom" aria-label="Cookie Compliance" style="background-color: rgba(50,50,58,1);"><div data-rocket-location-hash="8b5fb5767c669fdefa51965b39eeb495" class="cookie-notice-container" style="color: #fff"><span id="cn-notice-text" class="cn-text-container">We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.</span><span id="cn-notice-buttons" class="cn-buttons-container"><button id="cn-accept-cookie" data-cookie-set="accept" class="cn-set-cookie cn-button" aria-label="Ok" style="background-color: #00a99d">Ok</button></span><button type="button" id="cn-close-notice" data-cookie-set="accept" class="cn-close-icon" aria-label="No" tabindex="0"></button></div>
+			
+		</div>
+		<!-- / Cookie Compliance for WordPress plugin -->		
+		
+		
+		</body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1790966494 -->

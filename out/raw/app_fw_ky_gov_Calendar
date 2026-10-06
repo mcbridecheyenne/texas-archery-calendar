@@ -1,0 +1,448 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head1"><title>
+	Calendar | KDFWR
+</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="description" content="Calendar | KDFWR" /><link rel="stylesheet" type="text/css" href="https://app.fw.ky.gov/app_assets/css/app_2020.css" />
+    
+
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+          
+    <![endif]-->
+
+    
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.7.0/css/all.css" /></head>
+<body>
+
+    
+
+    <div class="topNavOneColNoNav">
+        
+
+        <nav class="navbar" id="mainNavContent">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="container">
+                <div class="top-row">
+                    <span class="agency-name">Kentucky Department of Fish &amp; Wildlife Resources</span>
+                    <ul class="nav-social list-inline pull-right">
+                        <li><a href="https://www.facebook.com/kdfwr/"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://twitter.com/kyfishwildlife?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fab">𝕏</i></a></li>
+                        <li><a href="https://www.instagram.com/kyfishwildlife/?hl=en"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCs-FM1E9Y_Q17jRxS_GPlVg"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+                        <li><a href="https://app.fw.ky.gov/Calendar/"><i class="fa fa-calendar-alt" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="https://fw.ky.gov/">
+                        <img src="https://app.fw.ky.gov/KI_IMAGES/KDFWR-Logo.png" alt="Kentucky Department of Fish and Wildlife Resources logo" />
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse" aria-expanded="false" id="navigation">
+                    <div class="visible-xs">
+                        <div class="mobile-search">
+                            <div class="input-group input-group-lg">
+                                <label for="modSearchInput" class="sr-only">Search</label>
+                                <input type="text" class="form-control " placeholder="Search fw.ky.gov" id="modSearchInput" autocomplete="off">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" id="modSearchBtn">Search</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right" id="navButtons">
+                        <li><a href="https://app.fw.ky.gov/myprofile/" class="btn-nav">MY PROFILE</a></li>
+                        <li><a href="https://fw.ky.gov/Licenses" class="btn-nav btn-orange">BUY LICENSE</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav" id="mainNav">
+                        <li><a href="https://fw.ky.gov/Hunt">HUNTING</a></li>
+                        <li><a href="https://fw.ky.gov/Fish">FISHING</a></li>
+                        <li><a href="https://fw.ky.gov/Boat">BOATING</a></li>
+                        <li><a href="https://fw.ky.gov/Wildlife">WILDLIFE</a></li>
+                        <li><a href="https://fw.ky.gov/Education">EDUCATION</a></li>
+                        <li><a href="https://fw.ky.gov/Enforcement">ENFORCEMENT</a></li>
+                        <li><a href="https://fw.ky.gov/More">MORE</a></li>
+                    </ul>
+                    <ul id="mobileSocial">
+                        <li><a href="https://www.facebook.com/kdfwr/"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="https://twitter.com/kyfishwildlife?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fab" aria-hidden="true">𝕏</i></a></li>
+                        <li><a href="https://www.instagram.com/kyfishwildlife/?hl=en"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCs-FM1E9Y_Q17jRxS_GPlVg"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+                        <li><a href="https://app.fw.ky.gov/Calendar/"><i class="far fa-calendar-alt" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+
+        <div id="outerMain" class="outerContainer bodyRow">
+            
+    <form method="post" action="./" id="formCalendar">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="[long]" />
+</div>
+
+
+
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B74DFF23" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="[long]" />
+</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 col-lg-3">
+                    <div class="well" style="margin-top:10px;">
+                        <h4>Search for Events</h4>
+
+                        <div class="form-group">
+                            <label for="DropDownListMonth">Month / Year</label>
+                            <select name="ctl00$MainContent$DropDownListMonth" id="MainContent_DropDownListMonth" class="form-control">
+	<option value="*">All Months</option>
+	<option selected="selected" value="10/1/2026">October 2026</option>
+	<option value="11/1/2026">November 2026</option>
+	<option value="12/1/2026">December 2026</option>
+	<option value="1/1/2027">January 2027</option>
+	<option value="2/1/2027">February 2027</option>
+	<option value="3/1/2027">March 2027</option>
+	<option value="4/1/2027">April 2027</option>
+	<option value="5/1/2027">May 2027</option>
+	<option value="6/1/2027">June 2027</option>
+	<option value="7/1/2027">July 2027</option>
+	<option value="8/1/2027">August 2027</option>
+	<option value="9/1/2027">September 2027</option>
+
+</select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="DropDownListCounty">Location</label>
+                            <select name="ctl00$MainContent$DropDownListCounty" id="MainContent_DropDownListCounty" class="form-control">
+	<option selected="selected" value="*">All Counties</option>
+	<option value="001">Adair</option>
+	<option value="002">Allen</option>
+	<option value="003">Anderson</option>
+	<option value="004">Ballard</option>
+	<option value="005">Barren</option>
+	<option value="006">Bath</option>
+	<option value="007">Bell</option>
+	<option value="008">Boone</option>
+	<option value="009">Bourbon</option>
+	<option value="010">Boyd</option>
+	<option value="011">Boyle</option>
+	<option value="012">Bracken</option>
+	<option value="013">Breathitt</option>
+	<option value="014">Breckinridge</option>
+	<option value="015">Bullitt</option>
+	<option value="016">Butler</option>
+	<option value="017">Caldwell</option>
+	<option value="018">Calloway</option>
+	<option value="019">Campbell</option>
+	<option value="020">Carlisle</option>
+	<option value="021">Carroll</option>
+	<option value="022">Carter</option>
+	<option value="023">Casey</option>
+	<option value="024">Christian</option>
+	<option value="025">Clark</option>
+	<option value="026">Clay</option>
+	<option value="027">Clinton</option>
+	<option value="028">Crittenden</option>
+	<option value="029">Cumberland</option>
+	<option value="030">Daviess</option>
+	<option value="031">Edmonson</option>
+	<option value="032">Elliott</option>
+	<option value="033">Estill</option>
+	<option value="034">Fayette</option>
+	<option value="035">Fleming</option>
+	<option value="036">Floyd</option>
+	<option value="037">Franklin</option>
+	<option value="038">Fulton</option>
+	<option value="039">Gallatin</option>
+	<option value="040">Garrard</option>
+	<option value="041">Grant</option>
+	<option value="042">Graves</option>
+	<option value="043">Grayson</option>
+	<option value="044">Green</option>
+	<option value="045">Greenup</option>
+	<option value="046">Hancock</option>
+	<option value="047">Hardin</option>
+	<option value="048">Harlan</option>
+	<option value="049">Harrison</option>
+	<option value="050">Hart</option>
+	<option value="051">Henderson</option>
+	<option value="052">Henry</option>
+	<option value="053">Hickman</option>
+	<option value="054">Hopkins</option>
+	<option value="055">Jackson</option>
+	<option value="056">Jefferson</option>
+	<option value="057">Jessamine</option>
+	<option value="058">Johnson</option>
+	<option value="059">Kenton</option>
+	<option value="060">Knott</option>
+	<option value="061">Knox</option>
+	<option value="062">LaRue</option>
+	<option value="063">Laurel</option>
+	<option value="064">Lawrence</option>
+	<option value="065">Lee</option>
+	<option value="066">Leslie</option>
+	<option value="067">Letcher</option>
+	<option value="068">Lewis</option>
+	<option value="069">Lincoln</option>
+	<option value="070">Livingston</option>
+	<option value="071">Logan</option>
+	<option value="072">Lyon</option>
+	<option value="073">McCracken</option>
+	<option value="074">McCreary</option>
+	<option value="075">McLean</option>
+	<option value="076">Madison</option>
+	<option value="077">Magoffin</option>
+	<option value="078">Marion</option>
+	<option value="079">Marshall</option>
+	<option value="080">Martin</option>
+	<option value="081">Mason</option>
+	<option value="082">Meade</option>
+	<option value="083">Menifee</option>
+	<option value="084">Mercer</option>
+	<option value="085">Metcalfe</option>
+	<option value="086">Monroe</option>
+	<option value="087">Montgomery</option>
+	<option value="088">Morgan</option>
+	<option value="089">Muhlenberg</option>
+	<option value="090">Nelson</option>
+	<option value="091">Nicholas</option>
+	<option value="092">Ohio</option>
+	<option value="093">Oldham</option>
+	<option value="094">Owen</option>
+	<option value="095">Owsley</option>
+	<option value="096">Pendleton</option>
+	<option value="097">Perry</option>
+	<option value="098">Pike</option>
+	<option value="099">Powell</option>
+	<option value="100">Pulaski</option>
+	<option value="101">Robertson</option>
+	<option value="102">Rockcastle</option>
+	<option value="103">Rowan</option>
+	<option value="104">Russell</option>
+	<option value="105">Scott</option>
+	<option value="106">Shelby</option>
+	<option value="107">Simpson</option>
+	<option value="108">Spencer</option>
+	<option value="109">Taylor</option>
+	<option value="110">Todd</option>
+	<option value="111">Trigg</option>
+	<option value="112">Trimble</option>
+	<option value="113">Union</option>
+	<option value="114">Warren</option>
+	<option value="115">Washington</option>
+	<option value="116">Wayne</option>
+	<option value="117">Webster</option>
+	<option value="118">Whitley</option>
+	<option value="119">Wolfe</option>
+	<option value="120">Woodford</option>
+
+</select>
+                            
+                        </div>
+
+                        <div class="form-group">
+                            <label for="DropDownListCategories">Category</label>
+                            <select name="ctl00$MainContent$DropDownListCategories" id="MainContent_DropDownListCategories" class="form-control">
+	<option selected="selected" value="*">All Categories</option>
+	<option value="34">Becoming An Outdoors Woman</option>
+	<option value="9">Boater Education</option>
+	<option value="10">Bow Hunter Education</option>
+	<option value="13">Bow Hunter Education Field Day</option>
+	<option value="5">Conservation Organizations / Sportsman Clubs</option>
+	<option value="2">Educational / Workshops / Seminars </option>
+	<option value="14">Explore Bowhunting</option>
+	<option value="15">Featured KDFWR Events</option>
+	<option value="32">Field To Fork</option>
+	<option value="12">Fishing Events (Non-boating)</option>
+	<option value="33">Hook And Cook</option>
+	<option value="16">Hunting Events (not Hunter Education)</option>
+	<option value="35">Kayak Fishing</option>
+	<option value="3">Kids Events</option>
+	<option value="6">Meetings / Banquets</option>
+	<option value="31">Mentored Hunt</option>
+	<option value="30">Other</option>
+	<option value="4">Outdoor Shows / Exhibitions / Festivals</option>
+	<option value="1">Salato Wildlife Education Center</option>
+	<option value="11">Volunteer Instructor Courses</option>
+
+</select>
+                            
+                        </div>
+
+                        <div class="form-group">
+                            <a id="MainContent_LinkButtonSearch" class="btn btn-primary btn-block" href="javascript:__doPostBack(&#39;ctl00$MainContent$LinkButtonSearch&#39;,&#39;&#39;)"><i class="fas fa-search"></i>&nbsp;Search</a>
+                        </div>
+
+                    </div>
+
+                    <div class="bs-callout bs-callout-info">
+                        <h3 style="margin-top:5px;">Submit Event</h3>
+                        <div class="form-group">
+                            <a class="btn btn-info btn-block" href="AddEvent-1.aspx"><i class="far fa-calendar-plus"></i>&nbsp;Add New Event</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-7 col-lg-9">
+                    <h2 class="cal-title"><i class="far fa-calendar-alt"></i>&nbsp;Calendar of Events</h2>
+                    <div class="bs-callout bs-callout-info" >
+                        <h4>Hunter Education</h4>
+                        <p>Our Hunter Education classes have been moved and can be viewed online at <a href="https://app.fw.ky.gov/edcourse" target="_blank">Education Course Events</a>.</p>
+                    </div>
+
+                    <span id="MainContent_LabelEvents"><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>3-D ACRHERY AT JONES-KEENEY WMA ARCHERY RANGE HOSTED BY CALDWELL  - <span style='color:#333;'>Caldwell County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=69879'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>30 target 3-D archery course located in the woods and hills of the Jones-Keeney WMA. Hosted by the Caldwell County Sportsman Club. Our targets range from a small armadillo to a buffalo. Your get a unique experience unlike any other, we have moving targets and at times a steel change target. We welcome all ages and skill levels. We use ASA scoring with club rules. We hope to see you sometime out there. We also shoot 3-D year around out side. Also, we are only club that shoot 3-D after 2pm. </p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>1/25/2026</div><div class='col-xs-4 col-md-2'>9/26/2026</div><div class='col-xs-4 col-md-2'>9/27/2026</div><div class='col-xs-4 col-md-2'>10/24/2026</div></div><p><strong>Categories:</strong><br />Kids Events, Conservation Organizations / Sportsman Clubs, Meetings / Banquets, Other</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>2nd Annual Night 3-D Archery Shoot at Jones Keeney WMA Range Host - <span style='color:#333;'>Caldwell County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=69887'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>You will be shooting  20 3-D archery targets at night at the Jones-Keeney WMA range through the woods and hills.  Bring your own light and fun</p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>10/10/2026</div><div class='col-xs-4 col-md-2'>10/11/2026</div></div><p><strong>Categories:</strong><br />Kids Events, Conservation Organizations / Sportsman Clubs, Other</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>Salato—Sensational Snakes  - <span style='color:#333;'>Franklin County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=71261'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>Discover the different species of snakes in Kentucky and their amazing abilities. This program may use live animals as well as shells, skins, and other props.</p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>10/1/2026</div></div><p><strong>Categories:</strong><br />Salato Wildlife Education Center, Featured KDFWR Events</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>Salato—Toxins Talk - <span style='color:#333;'>Franklin County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=71262'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>In this educator-led talk learn the key differences between venom and poison, bust myths about these toxins, and discover how wildlife with these fascinating adaptations use their chemical compounds for survival. A great program for those with curious minds!</p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>10/1/2026</div></div><p><strong>Categories:</strong><br />Salato Wildlife Education Center, Featured KDFWR Events</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>Salato--Owl Program  - <span style='color:#333;'>Franklin County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=71263'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>Let's learn about owls! Join one of our conservation educators to learn about Kentucky’s native owls and their adaptations. This program may feature props and a live animal.</p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>10/2/2026</div></div><p><strong>Categories:</strong><br />Salato Wildlife Education Center, Featured KDFWR Events</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>Salato—Reptiles of Kentucky  - <span style='color:#333;'>Franklin County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=71264'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>Let’s learn about reptiles! Reptiles include snakes, lizards, and turtles. They share unique traits called adaptations that help them survive in their environments. This program may include live animals as well as shells, skins, and other props.</p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>10/2/2026</div></div><p><strong>Categories:</strong><br />Salato Wildlife Education Center, Featured KDFWR Events</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>Salato--Wild Encounter - <span style='color:#333;'>Franklin County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=71265'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>Now is your chance to learn about some of the animals that call Salato home! We'll have staff on hand to answer questions and discuss species from our collection of native wildlife.</p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>10/3/2026</div></div><p><strong>Categories:</strong><br />Salato Wildlife Education Center, Featured KDFWR Events</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>Salato--Gnarly Natives: Plants & Critters to Watch Out For - <span style='color:#333;'>Franklin County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=71266'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>Join a conservation educator for an informative session on how to stay safe outdoors! Learn how to spot poison ivy, identify stinging insects, venomous snakes, and more! You’ll discover how to avoid harm while respecting the important role these species play in our ecosystem.</p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>10/3/2026</div></div><p><strong>Categories:</strong><br />Salato Wildlife Education Center, Featured KDFWR Events</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>NKSSA Thursday Night Trap Shoots - <span style='color:#333;'>Grant County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=69923'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>Trap range open. Weather permitting--over 45 degrees and not raining or snow on the ground.  Sponsored by the Northern Kentucky Straight Shooters Association.  </p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>1/29/2026</div><div class='col-xs-4 col-md-2'>2/5/2026</div><div class='col-xs-4 col-md-2'>2/12/2026</div><div class='col-xs-4 col-md-2'>2/19/2026</div><div class='col-xs-4 col-md-2'>2/26/2026</div><div class='col-xs-4 col-md-2'>3/5/2026</div><div class='col-xs-4 col-md-2'>3/12/2026</div><div class='col-xs-4 col-md-2'>3/19/2026</div><div class='col-xs-4 col-md-2'>3/26/2026</div><div class='col-xs-4 col-md-2'>4/2/2026</div><div class='col-xs-4 col-md-2'>4/9/2026</div><div class='col-xs-4 col-md-2'>4/16/2026</div><div class='col-xs-4 col-md-2'>4/23/2026</div><div class='col-xs-4 col-md-2'>4/30/2026</div><div class='col-xs-4 col-md-2'>5/7/2026</div><div class='col-xs-4 col-md-2'>5/14/2026</div><div class='col-xs-4 col-md-2'>5/21/2026</div><div class='col-xs-4 col-md-2'>5/28/2026</div><div class='col-xs-4 col-md-2'>6/4/2026</div><div class='col-xs-4 col-md-2'>6/11/2026</div><div class='col-xs-4 col-md-2'>6/18/2026</div><div class='col-xs-4 col-md-2'>6/25/2026</div><div class='col-xs-4 col-md-2'>7/2/2026</div><div class='col-xs-4 col-md-2'>7/9/2026</div><div class='col-xs-4 col-md-2'>7/16/2026</div><div class='col-xs-4 col-md-2'>7/23/2026</div><div class='col-xs-4 col-md-2'>7/30/2026</div><div class='col-xs-4 col-md-2'>8/6/2026</div><div class='col-xs-4 col-md-2'>8/13/2026</div><div class='col-xs-4 col-md-2'>8/20/2026</div><div class='col-xs-4 col-md-2'>8/27/2026</div><div class='col-xs-4 col-md-2'>9/3/2026</div><div class='col-xs-4 col-md-2'>9/10/2026</div><div class='col-xs-4 col-md-2'>9/17/2026</div><div class='col-xs-4 col-md-2'>9/24/2026</div><div class='col-xs-4 col-md-2'>10/1/2026</div><div class='col-xs-4 col-md-2'>10/8/2026</div><div class='col-xs-4 col-md-2'>10/15/2026</div><div class='col-xs-4 col-md-2'>10/22/2026</div><div class='col-xs-4 col-md-2'>10/29/2026</div><div class='col-xs-4 col-md-2'>11/5/2026</div><div class='col-xs-4 col-md-2'>11/12/2026</div><div class='col-xs-4 col-md-2'>11/19/2026</div><div class='col-xs-4 col-md-2'>11/26/2026</div><div class='col-xs-4 col-md-2'>12/3/2026</div><div class='col-xs-4 col-md-2'>12/10/2026</div><div class='col-xs-4 col-md-2'>12/17/2026</div></div><p><strong>Categories:</strong><br />Conservation Organizations / Sportsman Clubs</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>NKSSA Open Range - <span style='color:#333;'>Grant County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=69915'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>Rifle/Pistol Range open for target practice (weather permitting (over 40 degrees and not raining.) Bring your own targets and target stands. Sponsored by the Northern KY Straight Shooters Association.</p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>2/1/2026</div><div class='col-xs-4 col-md-2'>3/1/2026</div><div class='col-xs-4 col-md-2'>4/12/2026</div><div class='col-xs-4 col-md-2'>5/3/2026</div><div class='col-xs-4 col-md-2'>6/7/2026</div><div class='col-xs-4 col-md-2'>7/5/2026</div><div class='col-xs-4 col-md-2'>9/6/2026</div><div class='col-xs-4 col-md-2'>10/4/2026</div><div class='col-xs-4 col-md-2'>10/11/2026</div><div class='col-xs-4 col-md-2'>11/1/2026</div><div class='col-xs-4 col-md-2'>11/11/2026</div><div class='col-xs-4 col-md-2'>12/6/2026</div></div><p><strong>Categories:</strong><br />Conservation Organizations / Sportsman Clubs</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>NKSSA Tuesday Open Range - <span style='color:#333;'>Grant County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=69917'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>Rifle/Pistol Range open for target shooting. Bring your own targets and stands. Weather permitting--over 45 degrees and not raining or snow on the ground.  Sponsored by the Northern Kentucky Straight Shooters Association.  </p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>2/3/2026</div><div class='col-xs-4 col-md-2'>2/10/2026</div><div class='col-xs-4 col-md-2'>2/17/2026</div><div class='col-xs-4 col-md-2'>2/24/2026</div><div class='col-xs-4 col-md-2'>3/3/2026</div><div class='col-xs-4 col-md-2'>3/10/2026</div><div class='col-xs-4 col-md-2'>3/17/2026</div><div class='col-xs-4 col-md-2'>3/24/2026</div><div class='col-xs-4 col-md-2'>3/31/2026</div><div class='col-xs-4 col-md-2'>4/7/2026</div><div class='col-xs-4 col-md-2'>4/14/2026</div><div class='col-xs-4 col-md-2'>4/21/2026</div><div class='col-xs-4 col-md-2'>4/28/2026</div><div class='col-xs-4 col-md-2'>5/5/2026</div><div class='col-xs-4 col-md-2'>5/12/2026</div><div class='col-xs-4 col-md-2'>5/19/2026</div><div class='col-xs-4 col-md-2'>5/26/2026</div><div class='col-xs-4 col-md-2'>6/2/2026</div><div class='col-xs-4 col-md-2'>6/9/2026</div><div class='col-xs-4 col-md-2'>6/16/2026</div><div class='col-xs-4 col-md-2'>6/23/2026</div><div class='col-xs-4 col-md-2'>6/30/2026</div><div class='col-xs-4 col-md-2'>7/7/2026</div><div class='col-xs-4 col-md-2'>7/14/2026</div><div class='col-xs-4 col-md-2'>7/21/2026</div><div class='col-xs-4 col-md-2'>7/28/2026</div><div class='col-xs-4 col-md-2'>8/4/2026</div><div class='col-xs-4 col-md-2'>8/11/2026</div><div class='col-xs-4 col-md-2'>8/18/2026</div><div class='col-xs-4 col-md-2'>8/25/2026</div><div class='col-xs-4 col-md-2'>9/1/2026</div><div class='col-xs-4 col-md-2'>9/8/2026</div><div class='col-xs-4 col-md-2'>9/15/2026</div><div class='col-xs-4 col-md-2'>9/22/2026</div><div class='col-xs-4 col-md-2'>9/29/2026</div><div class='col-xs-4 col-md-2'>10/6/2026</div><div class='col-xs-4 col-md-2'>10/13/2026</div><div class='col-xs-4 col-md-2'>10/20/2026</div><div class='col-xs-4 col-md-2'>10/27/2026</div><div class='col-xs-4 col-md-2'>11/3/2026</div><div class='col-xs-4 col-md-2'>11/10/2026</div><div class='col-xs-4 col-md-2'>11/17/2026</div><div class='col-xs-4 col-md-2'>11/24/2026</div><div class='col-xs-4 col-md-2'>12/1/2026</div><div class='col-xs-4 col-md-2'>12/8/2026</div><div class='col-xs-4 col-md-2'>12/15/2026</div><div class='col-xs-4 col-md-2'>12/22/2026</div><div class='col-xs-4 col-md-2'>12/29/2026</div></div><p><strong>Categories:</strong><br />Conservation Organizations / Sportsman Clubs</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>NKSSA Saturday Open Range - <span style='color:#333;'>Grant County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=69921'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>
+Rifle/Pistol Range open for target shooting. Bring your own targets and stands. Weather permitting--over 45 degrees and not raining or snow on the ground.  Sponsored by the Northern Kentucky Straight Shooters Association.  
+</p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>2/7/2026</div><div class='col-xs-4 col-md-2'>3/7/2026</div><div class='col-xs-4 col-md-2'>4/4/2026</div><div class='col-xs-4 col-md-2'>5/2/2026</div><div class='col-xs-4 col-md-2'>6/6/2026</div><div class='col-xs-4 col-md-2'>7/4/2026</div><div class='col-xs-4 col-md-2'>8/1/2026</div><div class='col-xs-4 col-md-2'>9/5/2026</div><div class='col-xs-4 col-md-2'>10/3/2026</div><div class='col-xs-4 col-md-2'>11/7/2026</div><div class='col-xs-4 col-md-2'>12/5/2026</div></div><p><strong>Categories:</strong><br />Conservation Organizations / Sportsman Clubs</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>NKSSA Trap Shoot - <span style='color:#333;'>Grant County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=69922'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>Trap range open for shotguns.  Weather permitting--over 45 degrees and not raining or snow on the ground.  Sponsored by the Northern Kentucky Straight Shooters Association.  </p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>2/8/2026</div><div class='col-xs-4 col-md-2'>3/8/2026</div><div class='col-xs-4 col-md-2'>4/12/2026</div><div class='col-xs-4 col-md-2'>5/10/2026</div><div class='col-xs-4 col-md-2'>6/14/2026</div><div class='col-xs-4 col-md-2'>7/12/2026</div><div class='col-xs-4 col-md-2'>8/9/2026</div><div class='col-xs-4 col-md-2'>9/13/2026</div><div class='col-xs-4 col-md-2'>10/11/2026</div><div class='col-xs-4 col-md-2'>11/8/2026</div><div class='col-xs-4 col-md-2'>12/13/2026</div></div><p><strong>Categories:</strong><br />Conservation Organizations / Sportsman Clubs</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>NKSSA Open Range - <span style='color:#333;'>Grant County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=69916'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>Rifle/Pistol Range open for target shooting. Bring your own targets and stands. Weather permitting--over 40 degrees and not raining or snow on the ground.  Sponsored by the Northern Kentucky Straight Shooters Association.  </p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>2/8/2026</div><div class='col-xs-4 col-md-2'>3/8/2026</div><div class='col-xs-4 col-md-2'>5/10/2026</div><div class='col-xs-4 col-md-2'>6/14/2026</div><div class='col-xs-4 col-md-2'>7/12/2026</div><div class='col-xs-4 col-md-2'>8/9/2026</div><div class='col-xs-4 col-md-2'>10/13/2026</div><div class='col-xs-4 col-md-2'>11/8/2026</div><div class='col-xs-4 col-md-2'>12/13/2026</div></div><p><strong>Categories:</strong><br />Conservation Organizations / Sportsman Clubs</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>NKSSA Practical Rimfire Precision Rifle Match - <span style='color:#333;'>Grant County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=69931'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>Precision rifle match for rimfire rifles only sponsored by the Northern KY Straight Shooters Association. Weather permitting, over 40 degrees and not raining or snow on the ground.  </p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>2/15/2026</div><div class='col-xs-4 col-md-2'>3/15/2026</div><div class='col-xs-4 col-md-2'>4/19/2026</div><div class='col-xs-4 col-md-2'>5/17/2026</div><div class='col-xs-4 col-md-2'>7/19/2026</div><div class='col-xs-4 col-md-2'>8/16/2026</div><div class='col-xs-4 col-md-2'>9/20/2026</div><div class='col-xs-4 col-md-2'>10/18/2026</div><div class='col-xs-4 col-md-2'>11/15/2026</div><div class='col-xs-4 col-md-2'>12/20/2026</div></div><p><strong>Categories:</strong><br />Conservation Organizations / Sportsman Clubs</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>SCSA Style Matches - <span style='color:#333;'>Grant County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=69939'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>Steel Challenge Shooting Association style matches sponsored by the Northern KY Straight Shooters Association.</p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>2/28/2026</div><div class='col-xs-4 col-md-2'>3/28/2026</div><div class='col-xs-4 col-md-2'>4/25/2026</div><div class='col-xs-4 col-md-2'>5/23/2026</div><div class='col-xs-4 col-md-2'>6/27/2026</div><div class='col-xs-4 col-md-2'>7/18/2026</div><div class='col-xs-4 col-md-2'>8/29/2026</div><div class='col-xs-4 col-md-2'>9/26/2026</div><div class='col-xs-4 col-md-2'>10/24/2026</div><div class='col-xs-4 col-md-2'>11/28/2026</div><div class='col-xs-4 col-md-2'>12/19/2026</div></div><p><strong>Categories:</strong><br />Conservation Organizations / Sportsman Clubs</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>NKSSA 5 Stand - <span style='color:#333;'>Grant County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=69929'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>Five Stand shotgun sport shooting event held weather permitting, over 45 degrees and not raining. Sponsored by the Northern Kentucky Straight Shooters Association.  </p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>3/1/2026</div><div class='col-xs-4 col-md-2'>3/15/2026</div><div class='col-xs-4 col-md-2'>3/29/2026</div><div class='col-xs-4 col-md-2'>4/12/2026</div><div class='col-xs-4 col-md-2'>4/19/2026</div><div class='col-xs-4 col-md-2'>5/3/2026</div><div class='col-xs-4 col-md-2'>5/17/2026</div><div class='col-xs-4 col-md-2'>5/31/2026</div><div class='col-xs-4 col-md-2'>6/7/2026</div><div class='col-xs-4 col-md-2'>6/21/2026</div><div class='col-xs-4 col-md-2'>7/5/2026</div><div class='col-xs-4 col-md-2'>7/19/2026</div><div class='col-xs-4 col-md-2'>8/16/2026</div><div class='col-xs-4 col-md-2'>8/30/2026</div><div class='col-xs-4 col-md-2'>9/6/2026</div><div class='col-xs-4 col-md-2'>9/13/2026</div><div class='col-xs-4 col-md-2'>9/20/2026</div><div class='col-xs-4 col-md-2'>10/4/2026</div><div class='col-xs-4 col-md-2'>10/11/2026</div><div class='col-xs-4 col-md-2'>10/18/2026</div><div class='col-xs-4 col-md-2'>11/1/2026</div><div class='col-xs-4 col-md-2'>11/15/2026</div><div class='col-xs-4 col-md-2'>11/29/2026</div></div><p><strong>Categories:</strong><br />Conservation Organizations / Sportsman Clubs</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>SCSA Match - <span style='color:#333;'>Grant County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=69941'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>Steel Challenge Shooting Association match sponsored by the Northern KY Straight Shooters Association. Weather permitting , over 45 degrees and not raining.</p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>3/2/2026</div><div class='col-xs-4 col-md-2'>4/6/2026</div><div class='col-xs-4 col-md-2'>5/4/2026</div><div class='col-xs-4 col-md-2'>6/1/2026</div><div class='col-xs-4 col-md-2'>7/6/2026</div><div class='col-xs-4 col-md-2'>8/3/2026</div><div class='col-xs-4 col-md-2'>9/14/2026</div><div class='col-xs-4 col-md-2'>10/5/2026</div></div><p><strong>Categories:</strong><br />Educational / Workshops / Seminars </p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>NKSSA  Monday Open Range - <span style='color:#333;'>Grant County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=69918'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>Rifle/Pistol Range open for target shooting. Bring your own targets and stands. Weather permitting--over 45 degrees and not raining or snow on the ground.  Sponsored by the Northern Kentucky Straight Shooters Association.  </p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>3/9/2026</div><div class='col-xs-4 col-md-2'>3/16/2026</div><div class='col-xs-4 col-md-2'>3/23/2026</div><div class='col-xs-4 col-md-2'>3/30/2026</div><div class='col-xs-4 col-md-2'>4/6/2026</div><div class='col-xs-4 col-md-2'>4/13/2026</div><div class='col-xs-4 col-md-2'>4/20/2026</div><div class='col-xs-4 col-md-2'>4/27/2026</div><div class='col-xs-4 col-md-2'>5/4/2026</div><div class='col-xs-4 col-md-2'>5/11/2026</div><div class='col-xs-4 col-md-2'>5/18/2026</div><div class='col-xs-4 col-md-2'>5/25/2026</div><div class='col-xs-4 col-md-2'>6/1/2026</div><div class='col-xs-4 col-md-2'>6/8/2026</div><div class='col-xs-4 col-md-2'>6/15/2026</div><div class='col-xs-4 col-md-2'>6/22/2026</div><div class='col-xs-4 col-md-2'>6/29/2026</div><div class='col-xs-4 col-md-2'>7/6/2026</div><div class='col-xs-4 col-md-2'>7/13/2026</div><div class='col-xs-4 col-md-2'>7/20/2026</div><div class='col-xs-4 col-md-2'>7/27/2026</div><div class='col-xs-4 col-md-2'>8/3/2026</div><div class='col-xs-4 col-md-2'>8/10/2026</div><div class='col-xs-4 col-md-2'>8/17/2026</div><div class='col-xs-4 col-md-2'>8/24/2026</div><div class='col-xs-4 col-md-2'>8/31/2026</div><div class='col-xs-4 col-md-2'>9/7/2026</div><div class='col-xs-4 col-md-2'>9/14/2026</div><div class='col-xs-4 col-md-2'>9/21/2026</div><div class='col-xs-4 col-md-2'>9/28/2026</div><div class='col-xs-4 col-md-2'>10/5/2026</div><div class='col-xs-4 col-md-2'>10/12/2026</div><div class='col-xs-4 col-md-2'>10/19/2026</div><div class='col-xs-4 col-md-2'>10/26/2026</div></div><p><strong>Categories:</strong><br />Conservation Organizations / Sportsman Clubs</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>NKSSA Wednesday Open Range - <span style='color:#333;'>Grant County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=69919'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>Rifle/Pistol Range open for target shooting. Bring your own targets and stands. Weather permitting--over 45 degrees and not raining or snow on the ground.  Sponsored by the Northern Kentucky Straight Shooters Association.  </p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>3/11/2026</div><div class='col-xs-4 col-md-2'>3/18/2026</div><div class='col-xs-4 col-md-2'>4/8/2026</div><div class='col-xs-4 col-md-2'>4/22/2026</div><div class='col-xs-4 col-md-2'>5/13/2026</div><div class='col-xs-4 col-md-2'>5/27/2026</div><div class='col-xs-4 col-md-2'>6/10/2026</div><div class='col-xs-4 col-md-2'>6/24/2026</div><div class='col-xs-4 col-md-2'>7/8/2026</div><div class='col-xs-4 col-md-2'>7/22/2026</div><div class='col-xs-4 col-md-2'>8/12/2026</div><div class='col-xs-4 col-md-2'>8/26/2026</div><div class='col-xs-4 col-md-2'>9/9/2026</div><div class='col-xs-4 col-md-2'>9/23/2026</div><div class='col-xs-4 col-md-2'>10/14/2026</div><div class='col-xs-4 col-md-2'>10/28/2026</div></div><p><strong>Categories:</strong><br />Conservation Organizations / Sportsman Clubs</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>Practical Pistol Practice - <span style='color:#333;'>Grant County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=69942'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>Practice event for those participating in the SCSA events.  Sponsored by the Northern KY Straight Shooters Association.</p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>3/11/2026</div><div class='col-xs-4 col-md-2'>4/8/2026</div><div class='col-xs-4 col-md-2'>5/13/2026</div><div class='col-xs-4 col-md-2'>6/10/2026</div><div class='col-xs-4 col-md-2'>7/8/2026</div><div class='col-xs-4 col-md-2'>8/12/2026</div><div class='col-xs-4 col-md-2'>9/9/2026</div><div class='col-xs-4 col-md-2'>10/14/2026</div></div><p><strong>Categories:</strong><br />Conservation Organizations / Sportsman Clubs</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>SCSA Match - <span style='color:#333;'>Grant County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=69940'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>Steel Challenge Shooting Association match sponsored by the Northern KY Straight Shooters Association. Weather permitting, over 45 degrees and not raining.</p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>3/14/2026</div><div class='col-xs-4 col-md-2'>4/11/2026</div><div class='col-xs-4 col-md-2'>5/9/2026</div><div class='col-xs-4 col-md-2'>6/13/2026</div><div class='col-xs-4 col-md-2'>7/11/2026</div><div class='col-xs-4 col-md-2'>8/8/2026</div><div class='col-xs-4 col-md-2'>9/12/2026</div><div class='col-xs-4 col-md-2'>10/10/2026</div></div><p><strong>Categories:</strong><br />Conservation Organizations / Sportsman Clubs</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>NKSSA Thursday Open Range - <span style='color:#333;'>Grant County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=69920'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>Rifle/Pistol Range open for target shooting. Bring your own targets and stands. Weather permitting--over 45 degrees and not raining or snow on the ground.  Sponsored by the Northern Kentucky Straight Shooters Association.  </p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>3/19/2026</div><div class='col-xs-4 col-md-2'>4/2/2026</div><div class='col-xs-4 col-md-2'>4/16/2026</div><div class='col-xs-4 col-md-2'>5/7/2026</div><div class='col-xs-4 col-md-2'>5/21/2026</div><div class='col-xs-4 col-md-2'>6/4/2026</div><div class='col-xs-4 col-md-2'>6/8/2026</div><div class='col-xs-4 col-md-2'>7/2/2026</div><div class='col-xs-4 col-md-2'>7/16/2026</div><div class='col-xs-4 col-md-2'>8/6/2026</div><div class='col-xs-4 col-md-2'>8/20/2026</div><div class='col-xs-4 col-md-2'>9/3/2026</div><div class='col-xs-4 col-md-2'>9/17/2026</div><div class='col-xs-4 col-md-2'>10/1/2026</div><div class='col-xs-4 col-md-2'>10/15/2026</div></div><p><strong>Categories:</strong><br />Conservation Organizations / Sportsman Clubs</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>NKSSA Practical Pistol Practice - <span style='color:#333;'>Grant County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=69979'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>Practice day for those who are shooting in SCSA matches. Sponsored by the Northern KY Straight Shooters Assn.  Weather permitting--over 45 degrees and not raining.</p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>4/22/2026</div><div class='col-xs-4 col-md-2'>5/27/2026</div><div class='col-xs-4 col-md-2'>6/24/2026</div><div class='col-xs-4 col-md-2'>7/22/2026</div><div class='col-xs-4 col-md-2'>8/26/2026</div><div class='col-xs-4 col-md-2'>9/23/2026</div><div class='col-xs-4 col-md-2'>10/28/2026</div></div><p><strong>Categories:</strong><br />Conservation Organizations / Sportsman Clubs</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>IHMSA Sanctioned Metallic Silhouette Match - <span style='color:#333;'>Grant County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=69930'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>Metallic Silhouette match sanctioned by the International Handgun Metallic Silhouette Association.  Sponsored by the Northern Kentucky Straight Shooters Association. Weather permitting, over 50 degrees and not raining.</p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>5/31/2026</div><div class='col-xs-4 col-md-2'>6/21/2026</div><div class='col-xs-4 col-md-2'>8/30/2026</div><div class='col-xs-4 col-md-2'>9/27/2026</div><div class='col-xs-4 col-md-2'>10/25/2026</div></div><p><strong>Categories:</strong><br />Conservation Organizations / Sportsman Clubs</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>NRA Basic Instructor Training - <span style='color:#333;'>Grant County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=69980'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>NRA certified class that is a prerequisite for any instructor training classes. Sponsored by the Northern KY Straight Shooters Association. Pre-registration required.  Registration information is on our website: www.nkssa.org.
+</p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>10/3/2026</div></div><p><strong>Categories:</strong><br />Educational / Workshops / Seminars , Conservation Organizations / Sportsman Clubs</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>NRA Basic Rifle Course - <span style='color:#333;'>Grant County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=69982'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>NRA Approved Rifle course for anyone who would like to know more about how their rifle operates and how to improve their marksmanship.  Sponsored by the Northern Kentucky Straight Shooters Association.  Preregistration required.  Registration information is on our website: www.nkssa.org</p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>10/17/2026</div></div><p><strong>Categories:</strong><br />Educational / Workshops / Seminars , Conservation Organizations / Sportsman Clubs</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>United Trappers of Kentucky Fall Meet - <span style='color:#333;'>Lawrence County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=71182'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p>https://forum.kentuckytrappers.[long].gif</p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>10/2/2026</div><div class='col-xs-4 col-md-2'>10/3/2026</div></div><p><strong>Categories:</strong><br />Educational / Workshops / Seminars , Outdoor Shows / Exhibitions / Festivals, Hunting Events (not Hunter Education)</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>Deer Processing - Georgetown  - <span style='color:#333;'>Scott County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=71267'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p><p>This course will teach you about how to skin, process, and package a full deer. Whether you are a beginner or an experienced hunter this course can help sharpen skills and add tips and tricks to making the processing of game easier. This course will include a short classroom portion about hunting and deer as a whole before going outside to a covered patio to watch a processing demonstration. Depending on number of participants and how many deer are donated for this course there may be an optional hands on processing experience with the guided help of an instructor.</p>
+
+<p>Learn about:</p>
+
+<p>Safety, food processing, deer biology, hunting, tools, skinning, preserving meat safely, parts of the deer, muscle groups and uses for each, recipes for venison, and more!</p>
+</p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>10/10/2026</div></div><p><strong>Categories:</strong><br />Educational / Workshops / Seminars , Featured KDFWR Events, Hunting Events (not Hunter Education), Field To Fork</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>Muzzleloader 101 - Georgetown  - <span style='color:#333;'>Scott County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=71268'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p><p>This course will teach you a brief history of muzzleloaders and how they operate as well as give hands on experience loading and firing several. Whether you are new to muzzleloaders or want some additional practice before muzzleloader season this course has something to offer for everyone. This course will begin with a short classroom portion focused on safety, firearm handling, and muzzleloader parts and their functions. After this we will move to the range on site and practice what was taught in the classroom in a controlled environment.</p>
+
+<p>Learn about:</p>
+
+<p>Range procedures and safety, firearm history, firearms handling, muzzleloading rifle operation and safety, and more!</p>
+</p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>10/10/2026</div></div><p><strong>Categories:</strong><br />Educational / Workshops / Seminars , Featured KDFWR Events, Hunting Events (not Hunter Education), Field To Fork</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4> Field to Fork Mentor Squirrel Hunt - Georgetown  - <span style='color:#333;'>Scott County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=71269'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p><p>This course will teach you the basics of hunting squirrels in Kentucky. Whether you are an experienced sportsman or a first-time hunter, this course will teach you the skills and knowledge you need to get started in squirrel hunting. This course will begin with a classroom portion focused on squirrel biology and behavior, hunting regulations, safety, best practices, and processing. After the classroom portion there will be a range portion offered to familiarize new hunters with their firearms and certify anyone who needs their hunter education range day certification. Finally, participants will be paired with a mentor to go on the hunt at the same location as the rest of the course!</p>
+
+<p>You will learn: location selection, shooting techniques, firearm safety, field dressing demo, hunting methods, and more!</p>
+</p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>10/16/2026</div></div><p><strong>Categories:</strong><br />Educational / Workshops / Seminars , Featured KDFWR Events, Hunting Events (not Hunter Education), Mentored Hunt, Field To Fork</p></div></div><div class='panel panel-default'><div class='panel-heading'><div class='row'><div class='col-md-8 col-lg-9'><h4>Firearm Ownership and Maintenance  - <span style='color:#333;'>Scott County</span></h4></div><div class='col-md-4 col-lg-3 text-right'><a class='btn btn-primary btn-block' href='Detail.aspx?ID=71270'>View Event&nbsp;<i class='fas fa-arrow-alt-circle-right'></i></a></div></div></div><div class='panel-body'><p><p>This course will teach you about firearm ownership in regardless to legal possession, maintenance/repairs, and storage/transport. This course is for all firearm owners regardless of experience or age. This class will be in a classroom with a short powerpoint covering safety, firearm laws, and proper care of firearms. Afterward there will time to practice with a hands on portion disassembling and cleaning firearms.</p>
+
+<p>Learn about:</p>
+
+<p>firearm safety, laws regarding firearms, firearm storage, firearm transport, firearm cleaning, and more!</p>
+</p><p style='margin-bottom:0px;'><strong>Dates:</strong></p><div class='row' style='margin-bottom:15px;'><div class='col-xs-4 col-md-2'>10/28/2026</div></div><p><strong>Categories:</strong><br />Educational / Workshops / Seminars , Featured KDFWR Events, Hunting Events (not Hunter Education), Field To Fork</p></div></div><div class='bs-callout bs-callout-warning'><h4>Didn't find the event you were looking for?</h4><p>Try changing the Month/Year, Location, or the Category.</p></div></span>
+                    <div>
+                        <span id="MainContent_Label1"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+        </div>
+        <footer>
+            <!-- new footer start here -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-4 col-md-2">
+                        <span class="footer-title">Boating</span>
+                        <ul>
+                            <li><a href="https://fw.ky.gov/Boat/Pages/Boater-Education.aspx">Education Classes</a></li>
+                            <li><a href="https://app.fw.ky.gov/HECardLookup/default.aspx">Education Cards</a></li>
+                            <li><a href="https://apps.legislature.ky.gov/law/kar/TITLE301.HTM">Regulations</a></li>
+                            <li><a href="https://apps.legislature.ky.gov/law/statutes/chapter.aspx?id=38379">Boating Statutes</a></li>
+                            <li><a href="https://fw.ky.gov/Boat/Pages/Boat-Safety.aspx">Boating Safety</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-2">
+                        <span class="footer-title">Fishing</span>
+                        <ul>
+                            <li><a href="https://fw.ky.gov/Fish/Pages/Recreational-Fishing.aspx">Recreational</a></li>
+                            <li><a href="https://fw.ky.gov/Fish/Pages/Commercial-Fishing.aspx">Commercial</a></li>
+                            <li><a href="https://fw.ky.gov/Fish/Pages/Tournament-Fishing.aspx">Tournament</a></li>
+                            <li><a href="https://fw.ky.[long].pdf">Fishing Forecasts</a></li>
+                            <li><a href="https://fw.ky.gov/Fish/Pages/Monthly-Trout-Stocking.aspx">Trout Stocking</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-2">
+                        <span class="footer-title">Hunting</span>
+                        <ul>
+                            <li><a href="https://app.fw.ky.gov/myprofile/">Telecheck</a></li>
+                            <li><a href="https://fw.ky.gov/Education/Pages/Hunter-Education.aspx">Hunter Education</a></li>
+                            <li><a href="https://fw.ky.gov/Hunt/Pages/Game-Species.aspx">Game Species</a></li>
+                            <li><a href="https://app.fw.ky.gov/SeasonDates/Default.aspx">Season Dates</a></li>
+                            <li><a href="https://fw.ky.gov/Hunt/Pages/Quota-Hunts.aspx">Quota Hunts</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-2">
+                        <span class="footer-title">Wildlife</span>
+                        <ul>
+                            <li><a href="https://fw.ky.gov/Wildlife/Pages/Wildlife-Diversity.aspx">Wildlife Diversity</a></li>
+                            <li><a href="https://fw.ky.gov/Pages/Kentucky-Wild.aspx">Kentucky Wild</a></li>
+                            <li><a href="https://fw.ky.[long].aspx">WMAs</a></li>
+                            <li><a href="https://fw.ky.gov/Licenses/Pages/Special-Permits.aspx">Special Permits</a></li>
+                            <li><a href="https://fw.ky.gov/Wildlife/Pages/Landowner-Services.aspx">Landowner Services</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-2">
+                        <span class="footer-title">Education</span>
+                        <ul>
+
+                            <li><a href="https://fw.ky.gov/Education/Pages/default.aspx">Education and Outreach</a></li>
+                            <li><a href="https://fw.ky.[long].aspx">Salato</a></li>
+                            <li><a href="https://fw.ky.gov/Education/Pages/Summer-Camps.aspx">Summer Camps</a></li>
+                            <li><a href="https://fw.ky.gov/kentucky-afield/Pages/default.aspx">Kentucky Afield</a></li>
+                            <li><a href="https://fw.ky.gov/Education/Pages/NASP.aspx">NASP</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-2">
+                        <span class="footer-title">Connect</span>
+                        <ul>
+                            <li><a href="https://app.fw.ky.gov/WebContact/"><i class="fa fa-envelope"></i>&nbsp;Contact Us</a></li>
+                            <li><a href="https://www.facebook.com/kdfwr/"><i class="fab fa-facebook"></i>&nbsp;Facebook</a></li>
+                            <li><a href="https://twitter.com/kyfishwildlife?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fab">𝕏</i>&nbsp;Twitter</a></li>
+                            <li><a href="https://www.youtube.com/channel/UCs-FM1E9Y_Q17jRxS_GPlVg"><i class="fab fa-youtube"></i>&nbsp;Youtube</a></li>
+                            <li><a href="https://www.instagram.com/kyfishwildlife/?hl=en"><i class="fab fa-instagram"></i>&nbsp;Instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="footer-text copyRight"></p>
+                    </div>
+
+
+                    <div class="col-sm-6">
+                        <ul class="list-inline footer-links">
+                            <li><a href="https://fw.ky.gov/More/Pages/Careers.aspx">Careers</a></li>
+
+                            <li><a href="http://kentucky.gov/policies/Pages/default.aspx">Policies</a></li>
+                            <li><a href="http://kentucky.gov/policies/Pages/security.aspx">Security</a></li>
+                            <li><a href="http://kentucky.gov/policies/Pages/disclaimer.aspx">Disclaimer</a></li>
+                            <li><a href="http://kentucky.gov/policies/Pages/accessibility.aspx">Accessibility</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- new footer end here -->
+        </footer>
+
+
+        <!--end of hide me for email-->
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    [long] -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    
+
+
+     
+
+    
+    
+
+</body>
+</html>

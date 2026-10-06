@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en-US" data-website-id="1" data-main-object="ir.ui.view(252,)" dir="ltr">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="generator" content="Odoo"/>
+            
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Page Not Found | New Castle Hundred Archers "/>
+        <meta property="og:site_name" content="New Castle Hundred Archers "/>
+        <meta property="og:url" content="https://nc100archers.odoo.com/wp-json/tribe/events/v1/events"/>
+        <meta property="og:image" content="https://nc100archers.odoo.com/web/image/website/1/logo?unique=d208a23"/>
+            
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:title" content="Page Not Found | New Castle Hundred Archers "/>
+        <meta name="twitter:image" content="https://nc100archers.odoo.com/web/image/website/1/logo/300x300?unique=d208a23"/>
+        
+        <link rel="canonical" href="https://www.nc100archers.com/wp-json/tribe/events/v1/events"/>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""/>
+        <title>Page Not Found | New Castle Hundred Archers </title>
+        <link type="image/x-icon" rel="shortcut icon" href="/web/image/website/1/favicon?unique=d208a23"/>
+        <link rel="preload" href="[long].woff2?v=4.7.0" as="font" crossorigin=""/>
+        <link type="text/css" rel="stylesheet" href="/web/assets/1/0cace68/web.assets_frontend.min.css"/>
+        
+        
+        
+        
+        
+        
+    </head>
+    <body>
+        
+
+
+
+        <div id="wrapwrap" class="   ">
+            <a class="o_skip_to_content btn btn-primary rounded-0 visually-hidden-focusable position-absolute start-0" href="#wrap">Skip to Content</a>
+                <header id="top" data-anchor="true" data-name="Header" data-extra-items-toggle-aria-label="Extra items button" class="   o_header_standard" style=" ">
+    <nav data-name="Navbar" aria-label="Main" class="navbar navbar-expand-lg navbar-light o_colored_level o_cc d-none d-lg-block shadow-sm ">
+        
+
+            <div id="o_main_nav" class="o_main_nav container-fluid">
+                
+    <a data-name="Navbar Logo" href="/" class="navbar-brand logo me-4">
+            
+            <span role="img" aria-label="Logo of New Castle Hundred Archers " title="New Castle Hundred Archers "><img src="/web/image/website/1/logo/New%20Castle%20Hundred%20Archers%20?unique=d208a23" class="img img-fluid" width="95" height="40" alt="New Castle Hundred Archers " loading="lazy"/></span>
+        </a>
+    
+                
+    <ul role="menu" id="top_menu" class="nav navbar-nav top_menu o_menu_loading  me-auto ">
+        
+                    
+
+    <li role="presentation" class="nav-item ">
+        <a role="menuitem" href="/" class="nav-link ">
+            <span>Home</span>
+        </a>
+    </li>
+
+    <li role="presentation" class="nav-item ">
+        <a role="menuitem" href="/nc100-map" class="nav-link ">
+            <span>Map</span>
+        </a>
+    </li>
+
+    <li role="presentation" class="nav-item ">
+        <a role="menuitem" href="/about-us" class="nav-link ">
+            <span>About Us</span>
+        </a>
+    </li>
+
+    <li role="presentation" class="nav-item ">
+        <a role="menuitem" href="/memberships" class="nav-link ">
+            <span>Memberships</span>
+        </a>
+    </li>
+
+    <li role="presentation" class="nav-item ">
+        <a role="menuitem" href="/events-2" class="nav-link ">
+            <span>Club Event Calendar</span>
+        </a>
+    </li>
+
+    <li role="presentation" class="nav-item ">
+        <a role="menuitem" href="/lessons" class="nav-link ">
+            <span>Lessons</span>
+        </a>
+    </li>
+
+    <li role="presentation" class="nav-item ">
+        <a role="menuitem" href="/new-castle-hundred-scholarship" class="nav-link ">
+            <span>New Castle Hundred Scholarship</span>
+        </a>
+    </li>
+
+    <li role="presentation" class="nav-item   dropdown">
+        <a href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="menuitem" class="dropdown-toggle nav-link   ">
+            <span>Leagues &amp; Programs</span>
+        </a>
+        
+        
+        <ul role="menu" class="dropdown-menu ">
+
+    <li role="presentation" class=" ">
+        <a role="menuitem" href="/nc100-adult-leagues" class="dropdown-item ">
+            <span>NC100 Adult Leagues</span>
+        </a>
+    </li>
+
+    <li role="presentation" class=" ">
+        <a role="menuitem" href="/joad" class="dropdown-item ">
+            <span>JOAD</span>
+        </a>
+    </li>
+
+    <li role="presentation" class=" ">
+        <a role="menuitem" href="/usa-archery-shoots" class="dropdown-item ">
+            <span>Target Archery Competitions</span>
+        </a>
+    </li>
+
+    <li role="presentation" class=" ">
+        <a role="menuitem" href="/field-archery" class="dropdown-item ">
+            <span>Field Archery</span>
+        </a>
+    </li>
+
+    <li role="presentation" class=" ">
+        <a role="menuitem" href="/3d-archery" class="dropdown-item ">
+            <span>3D Archery</span>
+        </a>
+    </li>
+
+    <li role="presentation" class=" ">
+        <a role="menuitem" href="/outdoor-3d" class="dropdown-item ">
+            <span>Indoor and Outdoor 3D</span>
+        </a>
+    </li>
+
+    <li role="presentation" class=" ">
+        <a role="menuitem" href="/triathlon" class="dropdown-item ">
+            <span>Triathlon</span>
+        </a>
+    </li>
+        </ul>
+        
+    </li>
+                
+    </ul>
+                
+                <ul class="navbar-nav align-items-center gap-2 flex-shrink-0 justify-content-end ps-3">
+                    
+        <li class="">
+                <div class="modal fade css_editable_mode_hidden" id="o_search_modal" aria-hidden="true" tabindex="-1">
+                    <div class="modal-dialog modal-lg pt-5">
+                        <div class="modal-content mt-5">
+    <form method="get" class="o_searchbar_form s_searchbar_input " action="/website/search" data-snippet="s_searchbar_input">
+            <div role="search" class="input-group input-group-lg">
+        <input type="search" name="search" class="search-query form-control oe_search_box border border-end-0 p-3 border-0 bg-light" placeholder="Search..." data-search-type="all" data-limit="5" data-display-image="true" data-display-description="true" data-display-extra-link="true" data-display-detail="true" data-order-by="name asc"/>
+        <button type="submit" aria-label="Search" title="Search" class="btn oe_search_button border border-start-0 px-4 bg-o-color-4">
+            <i class="oi oi-search"></i>
+        </button>
+    </div>
+
+            <input name="order" type="hidden" class="o_search_order_by oe_unremovable" value="name asc"/>
+            
+        </form>
+                        </div>
+                    </div>
+                </div>
+                <a data-bs-target="#o_search_modal" data-bs-toggle="modal" role="button" title="Search" href="#" class="btn rounded-circle p-1 lh-1 o_navlink_background text-reset o_not_editable">
+                    <i class="oi oi-search fa-stack lh-lg"></i>
+                </a>
+        </li>
+                    
+        <li class="">
+                <div data-name="Text" class="s_text_block ">
+                    <a href="tel://(302) 722-7997" class="nav-link o_nav-link_secondary p-2" data-bs-original-title="" title="">
+                        <i class="fa fa-1x fa-fw fa-phone me-1"></i>
+                        <span class="o_force_ltr"><small><span class="o_force_ltr">(302) 722-7997</span></small></span>
+                    </a>
+                </div>
+        </li>
+                    
+                    
+                    
+            <li class=" o_no_autohide_item">
+                <a href="/web/login" class="o_nav_link_btn nav-link border px-3">Sign in</a>
+            </li>
+                    
+                    
+        <li class="">
+            <div class="oe_structure oe_structure_solo ">
+                <section class="oe_unremovable oe_unmovable s_text_block" data-snippet="s_text_block" data-name="Text">
+                    <div class="container">
+                        <a href="/contactus" class="oe_unremovable btn btn-primary btn_cta w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100">Contact Us</a>
+                    </div>
+                </section>
+            </div>
+        </li>
+                </ul>
+            </div>
+        
+    </nav>
+
+    <nav data-name="Navbar" aria-label="Mobile" class="navbar  navbar-light o_colored_level o_cc o_header_mobile d-block d-lg-none shadow-sm ">
+        
+
+        <div class="o_main_nav container flex-wrap justify-content-between">
+            <div class="d-flex flex-grow-1">
+                
+    <a data-name="Navbar Logo" href="/" class="navbar-brand logo ">
+            
+            <span role="img" aria-label="Logo of New Castle Hundred Archers " title="New Castle Hundred Archers "><img src="/web/image/website/1/logo/New%20Castle%20Hundred%20Archers%20?unique=d208a23" class="img img-fluid" width="95" height="40" alt="New Castle Hundred Archers " loading="lazy"/></span>
+        </a>
+    
+                <ul class="o_header_mobile_buttons_wrap navbar-nav d-flex flex-row align-items-center gap-2 mb-0 ms-auto"></ul>
+            </div>
+            <button class="nav-link btn p-2 o_not_editable" type="button" data-bs-toggle="offcanvas" data-bs-target="#top_menu_collapse_mobile" aria-controls="top_menu_collapse_mobile" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="top_menu_collapse_mobile" class="offcanvas offcanvas-end o_navbar_mobile">
+                <div class="offcanvas-header justify-content-end o_not_editable">
+                    <button type="button" class="nav-link btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body d-flex flex-column justify-content-between h-100 w-100 pt-0">
+                    <ul class="navbar-nav">
+                        
+        <li class="">
+    <form method="get" class="o_searchbar_form s_searchbar_input " action="/website/search" data-snippet="s_searchbar_input">
+            <div role="search" class="input-group mb-3">
+        <input type="search" name="search" class="search-query form-control oe_search_box rounded-start-pill text-bg-light ps-3 border-0 bg-light" placeholder="Search..." data-search-type="all" data-limit="0" data-display-image="true" data-display-description="true" data-display-extra-link="true" data-display-detail="true" data-order-by="name asc"/>
+        <button type="submit" aria-label="Search" title="Search" class="btn oe_search_button rounded-end-pill bg-o-color-3 pe-3">
+            <i class="oi oi-search"></i>
+        </button>
+    </div>
+
+            <input name="order" type="hidden" class="o_search_order_by oe_unremovable" value="name asc"/>
+            
+        </form>
+        </li>
+                        
+                        <li>
+    <ul role="menu" class="nav navbar-nav top_menu  o_mega_menu_is_offcanvas mx-n3  ">
+        
+                                
+
+    <li role="presentation" class="nav-item border-top  px-0">
+        <a role="menuitem" href="/" class="nav-link p-3 text-wrap ">
+            <span>Home</span>
+        </a>
+    </li>
+
+    <li role="presentation" class="nav-item border-top  px-0">
+        <a role="menuitem" href="/nc100-map" class="nav-link p-3 text-wrap ">
+            <span>Map</span>
+        </a>
+    </li>
+
+    <li role="presentation" class="nav-item border-top  px-0">
+        <a role="menuitem" href="/about-us" class="nav-link p-3 text-wrap ">
+            <span>About Us</span>
+        </a>
+    </li>
+
+    <li role="presentation" class="nav-item border-top  px-0">
+        <a role="menuitem" href="/memberships" class="nav-link p-3 text-wrap ">
+            <span>Memberships</span>
+        </a>
+    </li>
+
+    <li role="presentation" class="nav-item border-top  px-0">
+        <a role="menuitem" href="/events-2" class="nav-link p-3 text-wrap ">
+            <span>Club Event Calendar</span>
+        </a>
+    </li>
+
+    <li role="presentation" class="nav-item border-top  px-0">
+        <a role="menuitem" href="/lessons" class="nav-link p-3 text-wrap ">
+            <span>Lessons</span>
+        </a>
+    </li>
+
+    <li role="presentation" class="nav-item border-top  px-0">
+        <a role="menuitem" href="/new-castle-hundred-scholarship" class="nav-link p-3 text-wrap ">
+            <span>New Castle Hundred Scholarship</span>
+        </a>
+    </li>
+
+    <li role="presentation" class="nav-item border-top border-bottom   accordion accordion-flush">
+        
+        
+        <div class="accordion-item">
+            <a href="#" data-bs-toggle="collapse" aria-expanded="false" class="nav-link p-3 text-wrap accordion-button collapsed" data-bs-target=".o_accordion_target_24" aria-controls="o_accordion_target_24">
+                <span>Leagues &amp; Programs</span>
+            </a>
+            <div class="o_accordion_target_24 accordion-collapse collapse" aria-labelledby="o_accordion_target_24" data-bs-parent="#top_menu_collapse_mobile">
+                <ul class="show list-group list-unstyled py-0" role="menu">
+
+    <li role="presentation" class=" px-0">
+        <a role="menuitem" href="/nc100-adult-leagues" class="nav-link list-group-item list-group-item-action border-0 rounded-0 px-4 text-wrap ">
+            <span>NC100 Adult Leagues</span>
+        </a>
+    </li>
+
+    <li role="presentation" class=" px-0">
+        <a role="menuitem" href="/joad" class="nav-link list-group-item list-group-item-action border-0 rounded-0 px-4 text-wrap ">
+            <span>JOAD</span>
+        </a>
+    </li>
+
+    <li role="presentation" class=" px-0">
+        <a role="menuitem" href="/usa-archery-shoots" class="nav-link list-group-item list-group-item-action border-0 rounded-0 px-4 text-wrap ">
+            <span>Target Archery Competitions</span>
+        </a>
+    </li>
+
+    <li role="presentation" class=" px-0">
+        <a role="menuitem" href="/field-archery" class="nav-link list-group-item list-group-item-action border-0 rounded-0 px-4 text-wrap ">
+            <span>Field Archery</span>
+        </a>
+    </li>
+
+    <li role="presentation" class=" px-0">
+        <a role="menuitem" href="/3d-archery" class="nav-link list-group-item list-group-item-action border-0 rounded-0 px-4 text-wrap ">
+            <span>3D Archery</span>
+        </a>
+    </li>
+
+    <li role="presentation" class=" px-0">
+        <a role="menuitem" href="/outdoor-3d" class="nav-link list-group-item list-group-item-action border-0 rounded-0 px-4 text-wrap ">
+            <span>Indoor and Outdoor 3D</span>
+        </a>
+    </li>
+
+    <li role="presentation" class=" px-0">
+        <a role="menuitem" href="/triathlon" class="nav-link list-group-item list-group-item-action border-0 rounded-0 px-4 text-wrap ">
+            <span>Triathlon</span>
+        </a>
+    </li>
+                </ul>
+            </div>
+        </div>
+        
+    </li>
+                            
+    </ul>
+                        </li>
+                        
+        <li class="">
+                <div data-name="Text" class="s_text_block mt-2">
+                    <a href="tel://(302) 722-7997" class="nav-link o_nav-link_secondary p-2" data-bs-original-title="" title="">
+                        <i class="fa fa-1x fa-fw fa-phone me-1"></i>
+                        <span class="o_force_ltr"><small><span class="o_force_ltr">(302) 722-7997</span></small></span>
+                    </a>
+                </div>
+        </li>
+                        
+                    </ul>
+                    <ul class="navbar-nav gap-2 mt-3 w-100">
+                        
+                        
+            <li class=" o_no_autohide_item">
+                <a href="/web/login" class="nav-link o_nav_link_btn w-100 border text-center">Sign in</a>
+            </li>
+                        
+                        
+        <li class="">
+            <div class="oe_structure oe_structure_solo ">
+                <section class="oe_unremovable oe_unmovable s_text_block" data-snippet="s_text_block" data-name="Text">
+                    <div class="container">
+                        <a href="/contactus" class="oe_unremovable btn btn-primary btn_cta w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100 w-100">Contact Us</a>
+                    </div>
+                </section>
+            </div>
+        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+    </nav>
+    </header>
+                <main>
+                    
+            <div id="wrap">
+                
+                <div class="oe_structure oe_empty">
+                    <section class="s_text_image pt104 pb104" data-snippet="s_image_text" data-name="Image - Text">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-lg-4 pb32">
+                                    <img class="img img-fluid mx-auto" src="/html_editor/shape/http_routing/404.svg?c2=o-color-2" alt="" loading="lazy"/>
+                                </div>
+                                <div class="col-lg-8 text-lg-start text-center my-auto">
+                                    <h1 class="visually-hidden">Error 404</h1>
+                                    <h2>We couldn't find the page you're looking for!</h2>
+                                    <p></p>
+                                    <p><b>Don't panic.</b> If you think it's our mistake, please send us a message on <a href="/contactus">this page</a>.</p>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="s_hr pt32 pb48" data-snippet="s_hr" data-name="Separator">
+                                        <hr class="w-100 mx-auto" style="border-top-width: 1px; border-top-style: solid; border-top-color: var(--400);"/>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <p class="text-center">Maybe you were looking for one of these <b>popular pages?</b></p>
+                                    <ul class="list-inline text-center">
+                                        <li class="list-inline-item mb-2"><a href="/" class="btn btn-primary">Home</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        
+        <div id="o_shared_blocks" class="oe_unremovable"><div class="modal fade" id="o_search_modal" aria-hidden="true" tabindex="-1">
+                    <div class="modal-dialog modal-lg pt-5">
+                        <div class="modal-content mt-5">
+    <form method="get" class="o_searchbar_form s_searchbar_input" action="/website/search" data-snippet="s_searchbar_input">
+            <div role="search" class="input-group input-group-lg">
+        <input type="search" name="search" data-oe-model="ir.ui.view" data-oe-id="631" data-oe-field="arch" data-oe-xpath="/data/xpath[3]/form/t[1]/div[1]/input[1]" class="search-query form-control oe_search_box border-0 bg-light border border-end-0 p-3" placeholder="Search..." data-search-type="all" data-limit="5" data-display-image="true" data-display-description="true" data-display-extra-link="true" data-display-detail="true" data-order-by="name asc" autocomplete="off"/>
+        <button type="submit" aria-label="Search" title="Search" class="btn oe_search_button border border-start-0 px-4 bg-o-color-4">
+            <i class="oi oi-search o_editable_media" data-oe-model="ir.ui.view" data-oe-id="631" data-oe-field="arch" data-oe-xpath="/data/xpath[3]/form/t[1]/div[1]/button[1]/i[1]" contenteditable="false">​</i>
+        </button>
+    </div>
+
+            <input name="order" type="hidden" class="o_search_order_by" data-oe-model="ir.ui.view" data-oe-id="631" data-oe-field="arch" data-oe-xpath="/data/xpath[3]/form/input[1]" value="name asc"/>
+            
+    
+        </form>
+                        </div>
+                    </div>
+                </div></div>
+                </main>
+                <footer id="bottom" data-anchor="true" data-name="Footer" class="o_footer o_colored_level o_cc ">
+                    <div id="footer" class="oe_structure oe_structure_solo">
+            <section class="s_text_block pb0 pt40" data-snippet="s_text_block" data-name="Text">
+                <div class="container">
+                    <div class="row o_grid_mode" data-row-count="6">
+                        
+                        
+                        
+                    <div class="o_grid_item g-height-6 o_grid_item_image o_colored_level o_grid_item_image_contain g-col-lg-2 col-lg-2" style="z-index: 4; grid-area: 1 / 11 / 7 / 13;"><img src="[long].webp" alt="" class="img img-fluid mx-auto o_we_custom_image o_editable_media" data-mimetype="image/webp" data-original-id="883" data-original-src="[long].webp" data-mimetype-before-conversion="image/webp" data-resize-width="104" loading="lazy" data-attachment-id="883"/></div><div class="o_colored_level o_grid_item g-col-lg-2 g-height-5 col-lg-2" style="z-index: 1; grid-area: 1 / 1 / 6 / 3;">
+                            <h5 class="mb-3">Useful Links</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/about-us" data-bs-original-title="" title="">About us</a></li><li><a href="/contactus">Contact Us</a></li>
+                                <li><a href="/merchandise" data-bs-original-title="" title="">Merchandise</a></li>
+                                <li><a href="/lessons" data-bs-original-title="" title="">Services</a></li>
+                                <li><a href="/terms-conditions" data-bs-original-title="" title="">Terms and Conditions</a></li><li><a href="/privacy-policy">Privacy Policy</a></li>
+                            </ul>
+                        </div><div id="connect" class="o_colored_level o_grid_item g-col-lg-3 g-height-5 col-lg-3" style="z-index: 3; grid-area: 1 / 3 / 6 / 6;">
+                            <h5 class="mb-3">Connect with us</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fa fa-comment fa-fw me-2"></i><a href="/contactus" data-bs-original-title="" title="">Contact us</a></li>
+                                <li><span class="o_animated_text o_animate o_anim_fade_in o_visible"><i class="fa fa-envelope fa-fw me-2"></i><a href="mailto:lessonsnc100@gmail.com" class="o_translate_inline">lessonsnc100@gmail.com</a></span></li>
+                                <li><i class="fa fa-phone fa-fw me-2"></i><span class="o_force_ltr"><span class="o_force_ltr"><a href="tel:(302) 722-7997">(302) 722-7997</a>&nbsp;(general number)</span></span></li><li><span class="o_force_ltr"><i class="fa fa-phone fa-fw me-2"></i><span class="o_force_ltr"><span class="o_force_ltr"><a href="tel:(302)753-1554" class="o_translate_inline">(302) 753-1554</a>&nbsp;<span class="o_force_ltr"><span class="o_force_ltr">(lessons number)</span></span></span></span></span></li>
+                            </ul>
+                            <div class="s_social_media o_not_editable text-start" data-snippet="s_social_media" data-name="Social Media">
+                                <h5 class="s_social_media_title d-none">Follow us</h5>
+<a href="/website/social/facebook" class="s_social_media_facebook" target="_blank">
+                                    <i class="fa fa-facebook rounded-circle shadow-sm o_editable_media"></i>
+                                </a>
+<a href="/website/social/instagram" class="s_social_media_instagram" target="_blank">
+                                    <i class="fa rounded-circle shadow-sm o_editable_media fa-instagram"></i>
+                                </a>
+<a href="/website/social/twitter" class="s_social_media_twitter" target="_blank">
+                                    <i class="fa rounded-circle shadow-sm o_editable_media fa-twitter"></i>
+                                </a>
+</div>
+                        </div><div class="o_colored_level o_grid_item g-height-5 g-col-lg-4 col-lg-4" style="z-index: 2; grid-area: 1 / 7 / 6 / 11;">
+                            <h5 class="mb-3">About us</h5>
+                            <p>Welcome to New Castle Hundred Archers Club!</p><p>Established in 1953 as a Delaware Non-Profit, our mission is to advance archery. Since 1957, our 13-acre location has been a hub for improvement. We offer group and private lessons, coaching, tournaments, and promote good sportsmanship. Plus, we advocate for hunting, fishing, and conservation. Join us in celebrating archery and outdoor sports!</p></div><div class="o_grid_item g-col-lg-2 g-height-1 o_colored_level col-lg-2" style="z-index: 5; grid-area: 6 / 1 / 7 / 3;"><a href="#" class="btn btn-primary" data-bs-original-title="" title="">Archery Safety</a><a href="/web/content/1021?[long]&amp;download=true" title="[long].pdf" data-mimetype="application/pdf" class="o_image"></a><br/></div></div>
+                </div>
+            </section>
+        </div>
+    <div class="o_footer_copyright o_colored_level o_cc" data-name="Copyright">
+                        <div class="container py-3">
+                            <div class="row row-gap-2">
+                                <div class="col-sm text-center text-sm-start text-muted">
+                                    <span class="o_footer_copyright_name me-2">Copyright ©&nbsp;New Castle Hundred Archers Club</span>
+                                </div>
+                                <div class="text-center o_not_editable small col-md mt-auto mb-0 text-md-end">
+        <div class="o_brand_promotion">
+        Powered by 
+            <a target="_blank" class="badge text-bg-light" href="http://www.odoo.com?utm_source=db&amp;utm_medium=website">
+                <img alt="Odoo" src="/web/static/img/odoo_logo_tiny.png" width="62" height="20" style="width: auto; height: 1em; vertical-align: baseline;" loading="lazy"/>
+            </a>
+        - 
+            Create a <a target="_blank" href="http://www.odoo.com/app/website?utm_source=db&amp;utm_medium=website">free website</a>
+        
+    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        
+        </body>
+</html>

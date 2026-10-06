@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="pingback" href="https://arkansasbowhunters.org/xmlrpc.php" />
+
+	
+
+	<title>Arkansas Bowhunters Association | Protecting the Ancient Sport of Bowhunting</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//js.stripe.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="Arkansas Bowhunters Association &raquo; Feed" href="https://arkansasbowhunters.org/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Arkansas Bowhunters Association &raquo; Comments Feed" href="https://arkansasbowhunters.org/comments/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://arkansasbowhunters.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Farkansasbowhunters.org%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://arkansasbowhunters.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Farkansasbowhunters.org%2F&#038;format=xml" />
+<meta content="Divi v.4.27.4" name="generator"/>
+
+
+<link rel='stylesheet' id='wpsd-selectize-css' href='https://arkansasbowhunters.[long].bootstrap3.min.css?ver=3.3.2' media='' />
+<link rel='stylesheet' id='wpsd-front-css' href='https://arkansasbowhunters.[long].css?ver=3.3.2' media='' />
+<link rel='stylesheet' id='pmpro_frontend_base-css' href='https://arkansasbowhunters.[long].css?ver=3.4.3' media='all' />
+<link rel='stylesheet' id='pmpro_frontend_variation_1-css' href='https://arkansasbowhunters.[long].css?ver=3.4.3' media='all' />
+<link rel='stylesheet' id='woocommerce-layout-css' href='https://arkansasbowhunters.[long].css?ver=11.1.2' media='all' />
+<link rel='stylesheet' id='woocommerce-smallscreen-css' href='https://arkansasbowhunters.[long].css?ver=11.1.2' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='woocommerce-general-css' href='https://arkansasbowhunters.[long].css?ver=11.1.2' media='all' />
+
+<link rel='stylesheet' id='xoo-wsc-fonts-css' href='https://arkansasbowhunters.[long].css?ver=2.8.2' media='all' />
+<link rel='stylesheet' id='xoo-wsc-style-css' href='https://arkansasbowhunters.[long].css?ver=2.8.2' media='all' />
+
+<link rel='stylesheet' id='et-divi-open-sans-css' href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&#038;subset=latin,latin-ext&#038;display=swap' media='all' />
+<link rel='stylesheet' id='et-builder-googlefonts-cached-css' href='https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic|Teko:300,regular,500,600,700&#038;subset=latin,latin-ext&#038;display=swap' media='all' />
+<link rel='stylesheet' id='popup-maker-site-css' href='//arkansasbowhunters.[long].css?generated=1755178588&#038;ver=1.25.0' media='all' />
+<link rel='stylesheet' id='divi-style-pum-css' href='https://arkansasbowhunters.org/wp-content/themes/Divi/style-static.min.css?ver=4.27.4' media='all' />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="https://api.w.org/" href="https://arkansasbowhunters.org/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://arkansasbowhunters.org/wp-json/wp/v2/pages/9" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://arkansasbowhunters.org/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.1.2" />
+<meta name="generator" content="WooCommerce 11.1.2" />
+<link rel="canonical" href="https://arkansasbowhunters.org/" />
+<link rel='shortlink' href='https://arkansasbowhunters.org/' />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />	<noscript></noscript>
+	<link rel="icon" href="https://arkansasbowhunters.[long].png" sizes="32x32" />
+<link rel="icon" href="https://arkansasbowhunters.[long].png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://arkansasbowhunters.[long].png" />
+<meta name="msapplication-TileImage" content="https://arkansasbowhunters.[long].png" />
+<link rel="stylesheet" id="et-core-unified-9-cached-inline-styles" href="https://arkansasbowhunters.[long].min.css?ver=1785419215" /><link rel="stylesheet" id="[long]" href="https://arkansasbowhunters.[long].min.css?ver=1785419215" />
+
+
+
+
+
+<link rel='stylesheet' id='wpforms-full-css' href='https://arkansasbowhunters.[long].min.css?ver=1.6.7' media='all' />
+
+</head>
+<body class="pmpro-variation_1 home wp-singular page-template-default page page-id-9 wp-theme-Divi theme-Divi pmpro-body-has-access woocommerce-no-js et_pb_button_helper_class et_fullwidth_nav et_fixed_nav et_show_nav et_primary_nav_dropdown_animation_fade [long] et_header_style_left et_pb_footer_columns4 et_cover_background et_pb_gutter et_pb_gutters3 et_pb_pagebuilder_layout et_no_sidebar et_divi_theme et-db">
+	<div id="page-container">
+
+	
+	
+			<header id="main-header" data-height-onload="80">
+			<div class="container clearfix et_menu_container">
+							<div class="logo_container">
+					<span class="logo_helper"></span>
+					<a href="https://arkansasbowhunters.org/">
+						<img src="https://arkansasbowhunters.[long].png" width="250" height="100" alt="Arkansas Bowhunters Association" id="logo" data-height-percentage="80" />
+					</a>
+				</div>
+							<div id="et-top-navigation" data-height="80" data-fixed-height="40">
+											<nav id="top-menu-nav">
+						<ul id="top-menu" class="nav"><li id="menu-item-185" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-9 current_page_item menu-item-185"><a href="https://arkansasbowhunters.org/" aria-current="page">Home</a></li>
+<li id="menu-item-186" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-186"><a href="https://arkansasbowhunters.org/about/">About Us</a></li>
+<li id="menu-item-352" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-352"><a href="https://arkansasbowhunters.org/merchandise/">Merchandise</a></li>
+<li id="menu-item-211" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-211"><a href="https://arkansasbowhunters.org/abamemorialscholarship/">Scholarship Fund</a></li>
+<li id="menu-item-377" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-377"><a>Tournament Info</a>
+<ul class="sub-menu">
+	<li id="menu-item-376" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-376"><a href="https://arkansasbowhunters.org/tournament-schedule/">2026 Tournament Schedule</a></li>
+	<li id="menu-item-188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-188"><a href="https://arkansasbowhunters.org/tournament-rules/">Tournament Rules</a></li>
+	<li id="menu-item-381" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-381"><a target="_blank" href="https://arkansasbowhunters.[long].pdf">Tournament Scores</a></li>
+</ul>
+</li>
+<li id="menu-item-772" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-772"><a>Urban Hunt</a>
+<ul class="sub-menu">
+	<li id="menu-item-388" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-388"><a href="https://arkansasbowhunters.org/urban-hunt/">Urban Hunt Info</a></li>
+</ul>
+</li>
+<li id="menu-item-389" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-389"><a>Events</a>
+<ul class="sub-menu">
+	<li id="menu-item-737" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-737"><a target="_blank" href="https://arkansasbowhunters.[long].jpg">ABA Memorial Scholarship Fund Shoot</a></li>
+</ul>
+</li>
+<li id="menu-item-423" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-423"><a href="https://arkansasbowhunters.org/donate/">Donate</a></li>
+<li id="menu-item-187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-187"><a href="https://arkansasbowhunters.org/join/"><span style="background-color: #c10f1b; padding: 10px 20px;">Join Today!</span></a></li>
+<li id="menu-item-703" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-703"><a href="https://arkansasbowhunters.org/login/"><span style="background-color: #fff; color: #c10f1b !important; padding: 10px 20px;">Log In</span></a></li>
+</ul>						</nav>
+					
+					<a href="https://arkansasbowhunters.org/cart/" class="et-cart-info">
+				<span></span>
+			</a>
+					
+					
+					<div id="et_mobile_nav_menu">
+				<div class="mobile_nav closed">
+					<span class="select_page">Select Page</span>
+					<span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+				</div>
+			</div>				</div> <!-- #et-top-navigation -->
+			</div> <!-- .container -->
+					</header> <!-- #main-header -->
+			<div id="et-main-area">
+	
+<div id="main-content">
+
+
+			
+				<article id="post-9" class="post-9 page type-page status-publish hentry pmpro-has-access">
+
+				
+					<div class="entry-content">
+					<div class="et-l et-l--post">
+			<div class="et_builder_inner_content et_pb_gutters3">
+		<div class="et_pb_section et_pb_section_0 et_pb_section_parallax et_pb_with_background et_section_regular" >
+				
+				<span class="et_parallax_bg_wrap"><span
+						class="et_parallax_bg"
+						style="background-image: url(https://arkansasbowhunters.[long].jpg);"
+					></span><span
+						class="et_parallax_gradient"
+						style="background-image: linear-gradient( 180deg, rgba(27,31,37,0) 0%, #1b1f25 100% );"
+					></span></span>
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_0">
+				<div class="et_pb_column et_pb_column_2_3 et_pb_column_0  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_0  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h4>Preserving the Environment</h4></div>
+			</div><div class="et_pb_module et_pb_text et_pb_text_1 et_animated  et_pb_text_align_left et_pb_bg_layout_dark">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h1>Arkansas Bowhunters Association</h1></div>
+			</div><div class="et_pb_module et_pb_text et_pb_text_2  et_pb_text_align_left et_pb_bg_layout_dark">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><p>The <strong data-start="4" data-end="45">Arkansas Bowhunters Association (ABA)</strong> is committed to protecting and promoting the heritage of bowhunting while advocating for ethical hunting practices and conservation efforts in Arkansas.</p></div>
+			</div><div class="et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_button_alignment_left et_pb_module ">
+				<a class="et_pb_button et_pb_button_0 et_pb_bg_layout_dark" href="#about-us" data-icon="&#x24;">Learn More</a>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_3 et_pb_column_1  et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty">
+				
+				
+				
+				
+				
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div><div id="about-us" class="et_pb_section et_pb_section_1 et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_1 et_pb_equal_columns">
+				<div class="et_pb_column et_pb_column_1_2 et_pb_column_2  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_3  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h2>Arkansas Bowhunters Association</h2>
+<p>The <strong>Arkansas Bowhunters Association (ABA)</strong> is the leading organization dedicated to protecting, promoting, and preserving the tradition of bowhunting in Arkansas. Established in 1959, we work to ensure that bowhunters enjoy liberal hunting seasons and limits while maintaining sound game management practices.</p></div>
+			</div><div class="et_pb_button_module_wrapper et_pb_button_1_wrapper et_pb_button_alignment_left et_pb_module ">
+				<a class="et_pb_button et_pb_button_1 et_pb_bg_layout_dark" href="#why-join" data-icon="&#x24;">Why Should I Join?</a>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_3  et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty">
+				
+				
+				
+				
+				
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div><div id="our-mission" class="et_pb_section et_pb_section_2 et_pb_with_background et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_2">
+				<div class="et_pb_column et_pb_column_3_5 et_pb_column_4  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_4  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h2>Our Mission</h2>
+<p><span class="relative -mx-px my-&#091;-0.2rem&#093; rounded px-px py-&#091;0.2rem&#093;">At the <strong>ABA</strong>, we work closely with the Arkansas Game and Fish Commission to advocate for bowhunters&#8217; rights and opportunities.</span> <span class="relative -mx-px my-&#091;-0.2rem&#093; rounded px-px py-&#091;0.2rem&#093;">Our goal is to balance commerce and conservation, ensuring that future generations can enjoy bowhunting as we do today.</span></p></div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_2_5 et_pb_column_5  et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty">
+				
+				
+				
+				
+				
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div><div id="why-join" class="et_pb_section et_pb_section_3 et_pb_with_background et_section_regular section_has_divider et_pb_bottom_divider" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_3">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_6  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_5  et_pb_text_align_center et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h2>Why Should I Join?</h2></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_4">
+				<div class="et_pb_column et_pb_column_1_3 et_pb_column_7  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_blurb et_pb_blurb_0  et_pb_text_align_center  et_pb_blurb_position_top et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_blurb_content">
+					
+					<div class="et_pb_blurb_container">
+						<h4 class="et_pb_module_header"><span>Advocacy & Conservation</span></h4>
+						<div class="et_pb_blurb_description"><p>We work with the Arkansas Game and Fish Commission to ensure fair hunting regulations that protect bowhunters’ rights and wildlife. Our commitment to conservation and ethical hunting helps preserve Arkansas’s natural resources for future generations.</p></div>
+					</div>
+				</div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_3 et_pb_column_8  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_blurb et_pb_blurb_1  et_pb_text_align_center  et_pb_blurb_position_top et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_blurb_content">
+					
+					<div class="et_pb_blurb_container">
+						<h4 class="et_pb_module_header"><span>Exclusive Member Benefits</span></h4>
+						<div class="et_pb_blurb_description"><p>ABA members get access to exclusive bowhunting events, tournaments, and discounted educational programs. Joining also connects you with a network of experienced bowhunters who share your passion.</p></div>
+					</div>
+				</div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_3 et_pb_column_9  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_blurb et_pb_blurb_2  et_pb_text_align_center  et_pb_blurb_position_top et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_blurb_content">
+					
+					<div class="et_pb_blurb_container">
+						<h4 class="et_pb_module_header"><span>Education & Training</span></h4>
+						<div class="et_pb_blurb_description"><p>We offer the International Bowhunter Education Program (IBEP), providing essential skills and safety training. Graduates earn a certification recognized across the U.S., meeting Arkansas’s urban bowhunting requirements.</p></div>
+					</div>
+				</div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_5">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_10  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_button_module_wrapper et_pb_button_2_wrapper et_pb_button_alignment_center et_pb_module ">
+				<a class="et_pb_button et_pb_button_2 et_pb_bg_layout_dark" href="https://arkansasbowhunters.org/join/" data-icon="&#x24;">Join Now!</a>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				<div class="et_pb_bottom_inside_divider et-no-transition"></div>
+			</div><div id="education" class="et_pb_section et_pb_section_5 et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_6 et_pb_equal_columns">
+				<div class="et_pb_column et_pb_column_1_2 et_pb_column_11  et_pb_css_mix_blend_mode_passthrough et_pb_column_empty">
+				
+				
+				
+				
+				
+			</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_12  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_6  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h2>Tournament Info</h2>
+<p data-start="33" data-end="358">The <span class="relative -mx-px my-&#091;-0.2rem&#093; rounded px-px py-&#091;0.2rem&#093;"><strong data-start="4" data-end="45">Arkansas Bowhunters Association (ABA)</strong></span> hosts a variety of tournaments throughout the year, bringing together archers of all skill levels for friendly competition and skill-building. These events provide a great opportunity to test your accuracy, connect with fellow bowhunters, and enjoy the sport in a supportive environment.</p>
+<p data-start="360" data-end="601">Our <strong data-start="364" data-end="392">2025 Tournament Schedule</strong> includes multiple events across the state, with categories for youth, traditional archers, and compound bow users. Whether you’re a seasoned competitor or just getting started, there’s a tournament for you!</p></div>
+			</div><div class="et_pb_button_module_wrapper et_pb_button_3_wrapper et_pb_button_alignment_left et_pb_module ">
+				<a class="et_pb_button et_pb_button_3 et_pb_bg_layout_dark" href="https://arkansasbowhunters.org/tournament-schedule/" data-icon="&#x24;">Check Out the Schedule!</a>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div><div id="support" class="et_pb_section et_pb_section_6 et_pb_with_background et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_7">
+				<div class="et_pb_column et_pb_column_3_5 et_pb_column_13  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_7  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h2>Support &amp; Donations</h2>
+<p><span class="relative -mx-px my-&#091;-0.2rem&#093; rounded px-px py-&#091;0.2rem&#093;">As a self-funded organization, the ABA relies on membership participation, fees, and generous donations to fund our activities.</span> <span class="relative -mx-px my-&#091;-0.2rem&#093; rounded px-px py-&#091;0.2rem&#093;">Your support enables us to continue our advocacy, education, and community-building efforts.</span></p></div>
+			</div><div class="et_pb_button_module_wrapper et_pb_button_4_wrapper et_pb_button_alignment_left et_pb_module ">
+				<a class="et_pb_button et_pb_button_4 et_pb_bg_layout_dark" href="https://arkansasbowhunters.org/donate/" data-icon="&#x24;">Make a Donation</a>
+			</div>
+			</div><div class="et_pb_column et_pb_column_2_5 et_pb_column_14  et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty">
+				
+				
+				
+				
+				
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div><div id="education" class="et_pb_section et_pb_section_8 et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_8 et_pb_equal_columns">
+				<div class="et_pb_column et_pb_column_1_2 et_pb_column_15  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_8  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h2>Education &amp; Certification</h2>
+<p><span class="relative -mx-px my-&#091;-0.2rem&#093; rounded px-px py-&#091;0.2rem&#093;">We are committed to educating the public on the importance of ethical bowhunting.</span> <span class="relative -mx-px my-&#091;-0.2rem&#093; rounded px-px py-&#091;0.2rem&#093;">Through our <strong>International Bowhunter Education Program (IBEP)</strong>, we offer comprehensive courses that cover essential skills and knowledge.</span> <span class="relative -mx-px my-&#091;-0.2rem&#093; rounded px-px py-&#091;0.2rem&#093;">Graduates receive a Bowhunter Education card from the Arkansas Game and Fish Commission, valid for life and recognized in all states, meeting Arkansas Urban Bowhunting requirements.</span></p></div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_16  et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty">
+				
+				
+				
+				
+				
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div><div id="newsletter" class="et_pb_section et_pb_section_9 et_pb_with_background et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_9">
+				<div class="et_pb_column et_pb_column_3_5 et_pb_column_17  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_9  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h2>Scholarship Opportunities</h2>
+<p><span class="relative -mx-px my-&#091;-0.2rem&#093; rounded px-px py-&#091;0.2rem&#093;">In honor of our first president, Roger R. Maynard, we established the ABA Memorial Scholarship Program in 2001.</span> <span class="relative -mx-px my-&#091;-0.2rem&#093; rounded px-px py-&#091;0.2rem&#093;">This scholarship reflects our commitment to education and supports individuals pursuing higher education, ensuring the growth and sustainability of the bowhunting community.</span></p></div>
+			</div><div class="et_pb_button_module_wrapper et_pb_button_5_wrapper et_pb_button_alignment_left et_pb_module ">
+				<a class="et_pb_button et_pb_button_5 et_pb_bg_layout_dark" href="https://arkansasbowhunters.org/abamemorialscholarship/" data-icon="&#x24;">Learn More</a>
+			</div>
+			</div><div class="et_pb_column et_pb_column_2_5 et_pb_column_18  et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty">
+				
+				
+				
+				
+				
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div><div id="education" class="et_pb_section et_pb_section_11 et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_10 et_pb_equal_columns">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_19  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_10  et_pb_text_align_center et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h2>Frequently Asked Questions</h2>
+<p data-start="0" data-end="164">​Here are a handful of <span class="relative -mx-px my-&#091;-0.2rem&#093; rounded px-px py-&#091;0.2rem&#093;"><span>questions frequently asked of members of the executive committee concerning the ABA and its involvement in bowhunting in the state of Arkansas.</span></span><span class="relative -mx-px my-&#091;-0.2rem&#093; rounded px-px py-&#091;0.2rem&#093;"><span></span></span></p></div>
+			</div><div class="et_pb_module et_pb_accordion et_pb_accordion_0">
+				
+				
+				
+				
+				<div class="et_pb_toggle et_pb_module et_pb_accordion_item et_pb_accordion_item_0  et_pb_toggle_open">
+				
+				
+				
+				
+				<h5 class="et_pb_toggle_title">Is the ABA an archery or hunting club?</h5>
+				<div class="et_pb_toggle_content clearfix"><p>No. Although the ABA is made mostly of dedicated bowhunters and archers, it is not a hunting or archery club. It is a state-wide organization comprised of individuals and localized affiliated clubs with a common goal. That goal is to protect and enhance the bowhunting experience in this state and to pass it along to the next generation so that it may be sustained for years to come. This is done through thoughtful and diligent lobbying and monetary support where appropriate.</p></div>
+			</div><div class="et_pb_toggle et_pb_module et_pb_accordion_item et_pb_accordion_item_1  et_pb_toggle_close">
+				
+				
+				
+				
+				<h5 class="et_pb_toggle_title">What does the ABA do for me?</h5>
+				<div class="et_pb_toggle_content clearfix">The ABA, as a group, does what most individuals don&#8217;t have the time or resources to do on their own. As a member, you can rest assured that you will have a voice at all the Arkansas Game &#038; Fish meetings where policy and regulations are set for hunting seasons. We work with and assist organizations that are fighting against the ever-growing anti-hunting groups. Just like with the NRA, on a smaller scale obviously, there is strength in numbers. The fee is nominal and you will be a part of an organization fighting to keep our tradition alive and strong. Aside from that, you will also get a quarterly newsletter with lots of interesting articles about your sport. If you enjoyed having the last two weeks of February re-opened this past season, you can thank the ABA and some of the AGFC commissioners.</div>
+			</div><div class="et_pb_toggle et_pb_module et_pb_accordion_item et_pb_accordion_item_2  et_pb_toggle_close">
+				
+				
+				
+				
+				<h5 class="et_pb_toggle_title">Are the officers and field governors paid?</h5>
+				<div class="et_pb_toggle_content clearfix">No. They do it at their own expense because they love the sport and want to see it continue for generations to come. On occasion, when an officer or field governor is asked to perform a task that requires a long drive, that person may be reimbursed to help offset fuel and/or boarding expenses. All the money from your dues is used to protect your sport through lobbying, contributing to pro-hunting causes as needed, and producing your newsletter. Reimbursement to the people performing those functions is part of the expense of protecting our sport.</div>
+			</div><div class="et_pb_toggle et_pb_module et_pb_accordion_item et_pb_accordion_item_3  et_pb_toggle_close">
+				
+				
+				
+				
+				<h5 class="et_pb_toggle_title">How much are the dues?</h5>
+				<div class="et_pb_toggle_content clearfix">The current annual dues for a standard membership are $15. A lifetime membership is $350. Most people will spend that much per month on sodas. The rest of our funds come from the spring and fall shoots held each year and from the occasional private donation. If every bowhunter in Arkansas were a member, our voice with the AGFC would be many times stronger.</div>
+			</div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div><div id="newsletter" class="et_pb_section et_pb_section_13 et_pb_section_parallax et_pb_with_background et_section_regular section_has_divider et_pb_bottom_divider et_pb_top_divider" >
+				<div class="et_pb_top_inside_divider et-no-transition"></div>
+				<span class="et_parallax_bg_wrap"><span
+						class="et_parallax_bg"
+						style="background-image: url(https://arkansasbowhunters.org/wp-content/uploads/2025/03/bg-1.jpg);"
+					></span><span
+						class="et_parallax_gradient"
+						style="background-image: linear-gradient( 180deg, rgba(27,31,37,0.3) 0%, #171717 100% );"
+					></span></span>
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_11 et_animated  et_pb_css_mix_blend_mode">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_20  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_11  et_pb_text_align_center et_pb_bg_layout_dark">
+				
+				
+				
+				
+				<div class="et_pb_text_inner">ABA</div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_12 et_pb_row_fullwidth">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_21  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_12 et_animated  et_pb_text_align_center et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h2>Join Our Newsletter</h2></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_13">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_22  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_button_module_wrapper et_pb_button_6_wrapper et_pb_button_alignment_center et_pb_module ">
+				<a class="et_pb_button et_pb_button_6 newsletter et_pb_bg_layout_dark" href="" data-icon="&#x24;">Sign Up Now!</a>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div><div id="info-footer" class="et_pb_section et_pb_section_15 et_pb_with_background et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_14 et_pb_gutters3">
+				<div class="et_pb_column et_pb_column_1_2 et_pb_column_23  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_13 et_clickable  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h2>Rungu Dualie Double Wheel E-bikes</h2>
+<p>The Arkansas Bowhunter Association has partnered with Rungu Dualie Double Wheel E-bikes! We’re excited to be a referral affiliate for Rungu because we want you to get the best e-bike to take bow-hunting at the best price, and Rungu Dualie is head-and-shoulders above the pack! <a href="https://arkansasbowhunters.org/rungu-bike/" style="border-bottom: 1px #c10f1b dashed;">Click here to learn more!</a></p></div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_6 et_pb_column_24  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_14  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h2>More Information</h2>
+<ul>
+<li class=""><a href="https://arkansasbowhunters.org/donate" id="link338">Donations</a></li>
+<li class=""><a href="https://arkansasbowhunters.org/faqs" id="link360">FAQ's</a></li>
+<li class=""><a href="https://arkansasbowhunters.org/bylaws" id="link361">By-Laws</a></li>
+</ul></div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_6 et_pb_column_25  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_15  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h2>Tournament Info</h2>
+<ul>
+<li class=""><a href="https://arkansasbowhunters.org/tournament-schedule/" id="link341">Tournament Schedule</a></li>
+<li class=""><a href="https://arkansasbowhunters.org/tournament-rules" id="link342">Tournament Rules</a></li>
+<li class=""><a href="https://arkansasbowhunters.[long].pdf" id="link359" target="_blank">Tournament Scores</a></li>
+</ul></div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_6 et_pb_column_26  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_16  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><h2>Member Info</h2>
+<ul>
+<li class=""><a href="https://arkansasbowhunters.org/join/" id="link339">Become a Member</a></li>
+<li class=""><a href="https://arkansasbowhunters.org/login/" id="link344">Member Login</a></li>
+<li class=""><a href="https://arkansasbowhunters.org/contact-us/" id="link345">Contact Us</a></li>
+</ul></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_15 et_pb_gutters1">
+				<div class="et_pb_column et_pb_column_1_3 et_pb_column_27  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_icon et_pb_icon_0">
+				<a href="https://www.facebook.com/ArkansasBowhuntersAssociation/" target="_blank" ><span class="et_pb_icon_wrap "><span class="et-pb-icon"></span></span></a>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_3 et_pb_column_28  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_icon et_pb_icon_1">
+				<a href="https://twitter.com/ArkBowHunt1" target="_blank" ><span class="et_pb_icon_wrap "><span class="et-pb-icon"></span></span></a>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_3 et_pb_column_29  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_icon et_pb_icon_2">
+				<a href="https://arkansasbowhunters.org/contact" ><span class="et_pb_icon_wrap "><span class="et-pb-icon"></span></span></a>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div>		</div>
+	</div>
+						</div>
+
+				
+				</article>
+
+			
+
+</div>
+
+
+			<footer id="main-footer">
+				
+<div class="container">
+	<div id="footer-widgets" class="clearfix">
+		<div class="footer-widget"><div id="block-5" class="fwidget et_pb_widget widget_block"><div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow"><h2 class="wp-block-heading">Archives</h2><div class="wp-block-archives-list wp-block-archives">No archives to show.</div></div></div><div id="block-6" class="fwidget et_pb_widget widget_block"><div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow"><h2 class="wp-block-heading">Categories</h2><ul class="wp-block-categories-list wp-block-categories-taxonomy-category wp-block-categories"><li class="cat-item-none">No categories</li></ul></div></div></div><div class="footer-widget"></div><div class="footer-widget"></div><div class="footer-widget"></div>	</div>
+</div>
+
+
+		
+				<div id="footer-bottom">
+					<div class="container clearfix">
+				<div id="footer-info">© 2025, Arkansas Bowhunters Association.<br><a href="https://glossyfox.com" target="_blank">GlossyFox Web Design</a></div>					</div>
+				</div>
+			</footer>
+		</div>
+
+
+	</div>
+
+	
+		<!-- Memberships powered by Paid Memberships Pro v3.4.3. -->
+	<div 
+	id="pum-454" 
+	role="dialog" 
+	aria-modal="false"
+	class="pum pum-overlay pum-theme-448 pum-theme-hello-box popmake-overlay click_open" 
+	data-popmake="{&quot;id&quot;:454,&quot;slug&quot;:&quot;newsletter-popup&quot;,&quot;theme_id&quot;:448,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;cookie_name&quot;:&quot;&quot;,&quot;extra_selectors&quot;:&quot;.newsletter&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;small&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}">
+
+	<div id="popmake-454" class="pum-container popmake theme-448 pum-responsive pum-responsive-small responsive size-small">
+
+				
+				
+		
+				<div class="pum-content popmake-content" tabindex="0">
+			<h3>Sign up for our newsletter and stay informed!</h3>
+<div class="wpforms-container wpforms-container-full" id="wpforms-425"><form id="wpforms-form-425" class="wpforms-validate wpforms-form" data-formid="425" method="post" enctype="multipart/form-data" action="/" data-token="70c49307e1824157d4c61c40c9fc020f"><noscript class="wpforms-error-noscript">Please enable JavaScript in your browser to complete this form.</noscript><div class="wpforms-field-container"><div id="wpforms-425-field_0-container" class="wpforms-field wpforms-field-name" data-field-id="0"><label class="wpforms-field-label wpforms-label-hide" for="wpforms-425-field_0">Name <span class="wpforms-required-label">*</span></label><div class="wpforms-field-row wpforms-field-large"><div class="wpforms-field-row-block wpforms-first wpforms-one-half"><input type="text" id="wpforms-425-field_0" class="wpforms-field-name-first wpforms-field-required" name="wpforms[fields][0][first]" placeholder="First Name" required><label for="wpforms-425-field_0" class="wpforms-field-sublabel after wpforms-sublabel-hide">First</label></div><div class="wpforms-field-row-block wpforms-one-half"><input type="text" id="wpforms-425-field_0-last" class="wpforms-field-name-last wpforms-field-required" name="wpforms[fields][0][last]" placeholder="Last Name" required><label for="wpforms-425-field_0-last" class="wpforms-field-sublabel after wpforms-sublabel-hide">Last</label></div></div></div><div id="wpforms-425-field_1-container" class="wpforms-field wpforms-field-email" data-field-id="1"><label class="wpforms-field-label wpforms-label-hide" for="wpforms-425-field_1">Email <span class="wpforms-required-label">*</span></label><input type="email" id="wpforms-425-field_1" class="wpforms-field-large wpforms-field-required" name="wpforms[fields][1]" placeholder="Email Address" required></div></div><div class="wpforms-submit-container" ><input type="hidden" name="wpforms[id]" value="425"><input type="hidden" name="wpforms[author]" value="0"><input type="hidden" name="wpforms[post_id]" value="9"><button type="submit" name="wpforms[submit]" class="wpforms-submit " id="wpforms-submit-425" value="wpforms-submit" aria-live="assertive" data-alt-text="Sending..." data-submit-text="Submit">Submit</button></div></form></div>  <!-- .wpforms-container -->
+		</div>
+
+				
+							<button type="button" class="pum-close popmake-close" aria-label="Close">
+			×			</button>
+		
+	</div>
+
+</div>
+
+<div class="xoo-wsc-markup-notices">
+	</div>
+<div class="xoo-wsc-markup">
+	<div class="xoo-wsc-modal">
+
+		
+<div class="xoo-wsc-container">
+
+	<div class="xoo-wsc-basket">
+
+					<span class="xoo-wsc-items-count">0</span>
+		
+
+		<span class="xoo-wsc-bki xoo-wsc-icon-basket1"></span>
+
+		
+	</div>
+
+	<div class="xoo-wsc-header">
+
+		
+		
+<div class="xoo-wsch-top">
+
+		
+			<div class="xoo-wsch-basket">
+			<span class="xoo-wscb-icon xoo-wsc-icon-bag2"></span>
+			<span class="xoo-wscb-count">0</span>
+		</div>
+	
+			<span class="xoo-wsch-text">Your Cart</span>
+	
+			<span class="xoo-wsch-close xoo-wsc-icon-cross"></span>
+	
+</div>
+		
+	</div>
+
+
+	<div class="xoo-wsc-body">
+
+		
+		
+<div class="xoo-wsc-empty-cart"><span class="xoo-wsc-emp-txt">Your cart is empty</span><a class="xoo-wsc-btn" href="https://arkansasbowhunters.org/shop/">Return to Shop</a></div>
+		
+	</div>
+
+	<div class="xoo-wsc-footer">
+
+		<div class="xoo-wsc-info-cont"></div>
+		
+
+
+
+
+<div class="xoo-wsc-ft-buttons-cont">
+
+	<a href="#" class="xoo-wsc-ft-btn xoo-wsc-btn xoo-wsc-cart-close xoo-wsc-ft-btn-continue" >Continue Shopping</a>
+</div>
+
+
+		
+	</div>
+
+	<span class="xoo-wsc-loader"></span>
+	<span class="xoo-wsc-icon-spinner8 xoo-wsc-loader-icon"></span>
+
+</div>
+		<span class="xoo-wsc-opac"></span>
+
+	</div>
+</div>	
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

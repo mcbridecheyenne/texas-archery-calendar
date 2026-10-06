@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html lang="en" class="no-js ie6 "><![endif]-->
+<!--[if IE 7 ]><html lang="en" class="no-js ie7 "> <![endif]-->
+<!--[if IE 8 ]><html lang="en" class="no-js ie8 "> <![endif]-->
+<!--[if IE 9 ]><html lang="en" class="no-js ie9 "><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js "> <!--<![endif]-->
+  <head id="Head1">
+		<link rel="stylesheet" type="text/css" href="https://kit-pro.fontawesome.com/releases/latest/css/pro.min.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://sf.wildapricot.org/BuiltTheme/firma_stand_tall.v3.0/current/8e341401/Styles/combined.css" rel="stylesheet" type="text/css" /><link href="https://www.bowhuntersofwyoming.org/resources/theme/customStyles.css?t=639125555045100000" rel="stylesheet" type="text/css" /><link href="https://live-sf.wildapricot.org/WebUI/built9.19.[long].css" rel="stylesheet" type="text/css" /><link href="https://live-sf.wildapricot.org/WebUI/built9.19.[long].css" rel="stylesheet" type="text/css" /><title>Bowhunters of Wyoming - 3D-Shoots</title>
+<meta name="apple-itunes-app" content="app-id=1220348450, app-argument="><link rel="search" type="application/opensearchdescription+xml" title="www.bowhuntersofwyoming.org" href="/opensearch.ashx" /></head>
+  <body id="PAGEID_1075197" class="publicContentView LayoutMain">
+<div class="mLayout layoutMain state1" id="mLayout">
+<div class="mobilePanelContainer">
+<div id="id_MobilePanel" data-componentId="MobilePanel" class="WaPlaceHolder WaPlaceHolderMobilePanel" style=""><div style=""><div id="id_Thc55LG" class="WaGadgetOnly WaGadgetMobilePanel  gadgetStyleNone" style="" data-componentId="Thc55LG" ><div class="mobilePanel">
+	
+	<div class="mobilePanelButton buttonMenu" title="Menu">Menu</div>
+<div class="mobilePanelButton buttonLogin" title="Log in">Log in</div>
+<div class="menuInner">
+		<ul class="firstLevel">
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/" title="Home"><span>Home</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Upcoming-Events" title="Upcoming Events"><span>Upcoming Events</span></a>
+</div>
+</li>
+	
+<li class=" dir">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/About-Us" title="About Us"><span>About Us</span></a>
+<ul class="secondLevel">
+<li class=" dir">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Our-Work" title="Our Work"><span>Our Work</span></a>
+<ul class="secondLevel">
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/page-1075219" title="Funding Opportunity"><span>Funding Opportunity</span></a>
+</div>
+</li>
+	
+</ul>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Executive-Council" title="Executive Council"><span>Executive Council</span></a>
+</div>
+</li>
+	
+</ul>
+</div>
+</li>
+	
+<li class=" dir">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Membership" title="Membership"><span>Membership</span></a>
+<ul class="secondLevel">
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Membership-Application" title="Membership Application"><span>Membership Application</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Affiliate-Clubs" title="Affiliate Clubs"><span>Affiliate Clubs</span></a>
+</div>
+</li>
+	
+</ul>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Podcast" title="Podcast"><span>Podcast</span></a>
+</div>
+</li>
+	
+<li class=" dir">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Annual-Convention" title="Annual Convention"><span>Annual Convention</span></a>
+<ul class="secondLevel">
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Photo-Contest" title="Photo Contest"><span>Photo Contest</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/page-1075192" title="Big Game Awards"><span>Big Game Awards</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Awards" title="Awards"><span>Awards</span></a>
+</div>
+</li>
+	
+</ul>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Shop" title="Shop"><span>Shop</span></a>
+</div>
+</li>
+	
+<li class="sel ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/3D-Shoots" title="3D-Shoots"><span>3D-Shoots</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Bowhunting" title="Bowhunting Resources"><span>Bowhunting Resources</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Contact-Us" title="Contact Us"><span>Contact Us</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Blog" title="Blog"><span>Blog</span></a>
+</div>
+</li>
+	
+</ul>
+	</div>
+
+	<div class="loginInner">
+<div class="loginContainerForm oAuthIstrue">
+<div class="openAuthFormContainer">
+<form method="post" action="https://www.bowhuntersofwyoming.org/Sys/Login/ExternalLogin" id="id_Thc55LG_oAuthForm" class="oAuthForm"  data-disableInAdminMode="true">
+<div id="id_Thc55LG_container" class="oAuthButtonsContainer">
+			  <!--  <a class="wa-authenticateLoginLink facebook" provider="Facebook">
+					<span class="authenticateLoginIcon" provider="Facebook"></span>
+					<span class="authenticateLoginText" provider="Facebook">Log in with Facebook</span>
+			  </a> --> <a class="wa-authenticateLoginLink googlePlus" provider="GooglePlus">
+					<span class="authenticateLoginIcon" provider="GooglePlus"></span>
+					<span class="authenticateLoginText" provider="GooglePlus">Log in with Google</span>
+			  </a><a class="wa-authenticateLoginLink microsoft" provider="Microsoft">
+					<span class="authenticateLoginIcon" provider="Microsoft"></span>
+					<span class="authenticateLoginText" provider="Microsoft">Log in with Microsoft</span>
+			  </a> <a class="wa-authenticateLoginLink apple" provider="Apple">
+					<span class="authenticateLoginIcon" provider="Apple"></span>
+					<span class="authenticateLoginText" provider="Apple">Log in with Apple</span>
+			  </a>
+			  <input type="hidden" name="ReturnUrl" value="" />
+			  <input type="hidden" name="Provider" class="oAuthProvider" value="Undefined" />   
+              <input type="hidden" id="id_Thc55LG_browserCapabilities" name="browserCapabilities" />  
+			</div>
+</form></div>
+ 
+    
+<form method="post" action="https://www.bowhuntersofwyoming.org/Sys/Login" id="id_Thc55LG_form" class="generalLoginBox"  data-disableInAdminMode="true">
+<input type="hidden" name="ReturnUrl" id="id_Thc55LG_returnUrl" value="">
+				<input type="hidden" name="browserData" id="id_Thc55LG_browserField">
+<div class="loginUserName">
+<div class="loginUserNameTextBox">
+		<input name="email" type="text" maxlength="100" placeholder="Email"  id="id_Thc55LG_userName" tabindex="1" class="emailTextBoxControl"/>
+	</div>
+</div><div class="loginPassword">
+<div class="loginPasswordTextBox">
+		<input name="password" type="password" placeholder="Password" maxlength="50" id="id_Thc55LG_password" tabindex="2" class="passwordTextBoxControl" autocomplete="off"/>
+	</div>
+</div> 
+    <input id="g-recaptcha-invisible_Thc55LG" name="g-recaptcha-invisible" value="recaptcha" type="hidden"/> 
+    <div id="recapcha_placeholder_Thc55LG" style="display:none"></div>
+    <span id="idReCaptchaValidator_Thc55LG" errorMessage="Please verify that you are not a robot" style="display:none" validatorType="method" ></span>
+    
+	
+    
+
+ <div class="loginActionRememberMe">
+		<input id="id_Thc55LG_rememberMe" type="checkbox" name="rememberMe" tabindex="3" class="rememberMeCheckboxControl"/>
+		<label for="id_Thc55LG_rememberMe">Remember me</label>
+	</div>
+<div class="loginPasswordForgot">
+		<a href="https://www.bowhuntersofwyoming.org/Sys/ResetPasswordRequest">Forgot password</a>
+	</div>
+<div class="loginAction">
+	<input type="submit" name="ctl03$ctl02$loginViewControl$loginControl$Login" value="Log in" id="id_Thc55LG_loginAction" onclick="if (!browserInfo.clientCookiesEnabled()) {alert('Warning: browser cookies disabled. Please enable them to use this website.'); return false;}" tabindex="4" class="loginButton loginButtonControl"/>
+</div></form></div>
+</div>
+
+</div>
+
+</div></div>
+</div></div>
+
+		<!-- header zone -->
+		<div class="zoneHeaderOuter">
+			<div class="zoneHeader container_12">
+				<div class="zoneHeaderInner s1_grid_12 s2_grid_12 s3_grid_12">
+<div id="id_Header" data-componentId="Header" class="WaPlaceHolder WaPlaceHolderHeader" style=""><div style=""><div id="id_rswCEAr" data-componentId="rswCEAr" class="WaLayoutContainerOnly" style=""><table cellspacing="0" cellpadding="0" class="WaLayoutTable" style=""><tr data-componentId="rswCEAr_row" class="WaLayoutRow"><td id="id_u2zLDsR" data-componentId="u2zLDsR" class="WaLayoutItem" style="width:100%;"><div id="id_jdc1OkP" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="jdc1OkP" style=""><div style=""><div id="id_eZP1FJj" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="background-image:url(&#39;[long].jpeg&#39;);background-repeat:no-repeat;background-position:left top;background-size:100% auto;background-color:#FFFFFF;height:500px;" data-componentId="eZP1FJj" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p align="center" style="background-color: transparent; margin-bottom: 0px !important;"><strong style="font-size: 48px;"><br></strong></p><p align="center" style="background-color: transparent; margin-bottom: 0px !important;"><strong style="font-size: 48px;"></strong></p><p align="center" style="margin-bottom: 0px !important;"><span style=""><span style=""><strong style="font-size: 48px;"></strong></span></span></p><div align="center"><img class="artText" src="/Content/ArtText/25861.png?text=3d%20shoots%20you%20don%27t%20want%20to%20miss%21&amp;style=Camp%20Trip&amp;styleGroup=300&amp;tc1=FF0000&amp;tc2=FF9900&amp;fn=Viper%20Nora&amp;fs=50&amp;sid=2128788235731799" title="3d shoots you don&amp;#39;t want to miss!" alt="3d shoots you don&amp;#39;t want to miss!" border="0" id="" name="" width="888" height="49"></div><p align="center" style="margin-bottom: 0px !important;"><br></p><p align="center" style="line-height: 36px; margin-top: 0px;"><font style="font-size: 24px;"><span style=""><strong style=""></strong></span></font></p><p align="center" style="background-color: transparent; line-height: 36px; margin-top: 0px;"><font style="font-size: 24px;"><strong style=""></strong></font></p></div>
+
+</div></div></div></td></tr></table> </div></div>
+</div></div>
+			</div>
+		</div>
+
+		<div class="zoneHeader1Outer">
+			<div class="zoneHeader1 container_12">
+				<div class="zoneHeader1Inner s1_grid_12 s2_grid_12 s3_grid_12">
+					<div class="color"></div>
+<div id="id_Header1" data-componentId="Header1" class="WaPlaceHolder WaPlaceHolderHeader1" style=""><div style=""><div id="id_TQQtucI" class="WaGadgetFirst WaGadgetContent  gadgetStyleNone" style="background-color:#FFFFFF;" data-componentId="TQQtucI" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p align="center"><font style="font-size: 36px;"><strong style="">Shoots brought to you by our affiliate clubs around the state. </strong></font></p><p align="center"><font style="font-size: 24px;"><strong>Don't see your club listed? Please ask them to join BOW as an affiliate member to help support each other.</strong></font></p></div>
+</div><div id="id_OMTciP1" class="WaGadget WaGadgetContent  gadgetStyleNone" style="background-color:#A2D39C;" data-componentId="OMTciP1" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p align="center"><strong><font style="font-size: 60px;">BOW had a GREAT SHOOT at the Bighorn BearLodge Resort</font></strong><br></p></div>
+</div><div id="id_5IRdkuR" class="WaGadget WaGadgetSlideshow  gadgetStyleNone" style="" data-componentId="5IRdkuR" ><div class="gadgetStyleBody " style=""  data-areaHeight="auto">
+
+
+	<div class="camera_wrap camera_charcoal_skin" id="camera_wrap_5IRdkuR">
+<div data-link="" data-src="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_2180.CR2.jpg" data-target="" data-thumb="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_2180.CR2.jpg" data-title="">
+    </div><div data-link="" data-src="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_2206.CR2.jpg" data-target="" data-thumb="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_2206.CR2.jpg" data-title="">
+    </div><div data-link="" data-src="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_2309.JPG" data-target="" data-thumb="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_2309.JPG" data-title="">
+    </div><div data-link="" data-src="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_2365.CR2.jpg" data-target="" data-thumb="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_2365.CR2.jpg" data-title="">
+    </div><div data-link="" data-src="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_2411.CR2.jpg" data-target="" data-thumb="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_2411.CR2.jpg" data-title="">
+    </div><div data-link="" data-src="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_2413.JPG" data-target="" data-thumb="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_2413.JPG" data-title="">
+    </div><div data-link="" data-src="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_2419.JPG" data-target="" data-thumb="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_2419.JPG" data-title="">
+    </div><div data-link="" data-src="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_2421.JPG" data-target="" data-thumb="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_2421.JPG" data-title="">
+    </div><div data-link="" data-src="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_2423.JPG" data-target="" data-thumb="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_2423.JPG" data-title="">
+    </div><div data-link="" data-src="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_2427.CR2.jpg" data-target="" data-thumb="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_2427.CR2.jpg" data-title="">
+    </div><div data-link="" data-src="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_2431.JPG" data-target="" data-thumb="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_2431.JPG" data-title="">
+    </div><div data-link="" data-src="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_2433.CR2.jpg" data-target="" data-thumb="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_2433.CR2.jpg" data-title="">
+    </div><div data-link="" data-src="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_4975.jpeg" data-target="" data-thumb="https://www.bowhuntersofwyoming.org/resources/Pictures/2026%20BigHorn%20Shoot/IMG_4975.jpeg" data-title="">
+    </div></div>
+</div>
+</div><div id="id_wo6bCXv" class="WaGadget WaGadgetContent  gadgetStyleNone" style="background-color:#FFFFFF;" data-componentId="wo6bCXv" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p align="center"><strong><font style="font-size: 60px;">Bighorn Shoot Results</font></strong></p></div>
+</div><div id="id_FMh7yk5" data-componentId="FMh7yk5" class="WaLayoutContainer" style=""><table cellspacing="0" cellpadding="0" class="WaLayoutTable" style=""><tr data-componentId="FMh7yk5_row" class="WaLayoutRow"><td id="id_NtokO7I" data-componentId="NtokO7I" class="WaLayoutItem" style="width:50%;"><div id="id_B64AFI6" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="B64AFI6" style=""><div style=""><div id="id_a1hGmJm" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="background-color:#FFFFFF;" data-componentId="a1hGmJm" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">MENS SCORES -&nbsp;</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><strong><font color="#121212" face="Charter, serif">OPEN</font></strong> <font color="#121212" face="Charter, serif"><strong>CLASS</strong></font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">1 Tomas Casey 378 to 416</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">2 Weston Giesey 372 to 408</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">3 BJ Tilden 370 to 408</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">4 Jack Bluendgen 359 to 398</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><strong><font color="#121212" face="Charter, serif">Shoot off scores added to top 5 who were present.</font></strong></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">5 Dave Kelly 370</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">6 Austin Frazier 354</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">7 Zach Harnish 341</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">9 Tyler Harnish 322</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">10 Pat Ruland 322</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">11 Aaron Safford 316</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">12 Aaron Andeson 286</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">13 Mitch Holsinger 273</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><strong><font color="#121212" face="Charter, serif">BOWHUNTER CLASS</font></strong></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">1 Cory Hodge 370 to 404</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">2 Casen Willson 357 to 391</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">3 Sam Davis 353 to 387</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><strong><font color="#121212" face="Charter, serif">Shoot off scores added to top 5 who were present.</font></strong></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">4 Nate Allsup 360</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">5 Jerod Sharp &nbsp; &nbsp; 353</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">6 Joe Bernard 352</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">7 Justin Frey 350</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">8 Ryley Scott 345</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">9 Cory Pendley 345</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">10 Michael Mora 344</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">11 Joshua Kusser 340</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">12 Dalton Epperson 335</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">13 Westley Brians 331</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">14 NO NAME 329</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">15 Aaron Smith 323</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">16 Tate Anderson 322</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">17 Eli Hammett 322</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">18 Parker Filius 322</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">19 Chris Barnes 321</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">20 Allen Harnish 321</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">21 Larry Willson 319</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">22 Tyler Berlinger 319</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">23 Chance Marquart 318</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">24 Levi Miller 316</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">25 Derik Henderson 312</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">26 Coy Kaisler 298</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">27 Luke Leonhardt 294</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">28 Ty Harrison 290</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">29 Jace Joyner 276</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">30 Alex Record 275</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">31 Michael Bennett 273</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">32 Ivan Hart 267</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">33 Ray Fraizer 251</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">34 Tyler Trant 237</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">35 Trenton Fraizer 224</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">36 Gary George 218</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><strong><font color="#121212" face="Charter, serif">TRADITIONAL CLASS</font></strong></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">1 Paul Morrison Mens 289</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">2 Alex Bakken Mens 232</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">3 Krystioin Nielsen 91</font></font></p>
+
+<p><br></p></div>
+</div></div></div></td><td style="" data-componentId="NtokO7I_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_MILSMo6" data-componentId="MILSMo6" class="WaLayoutItem" style="width:50%;"><div id="id_JCecId9" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="JCecId9" style=""><div style=""><div id="id_Rx7rwEq" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="background-color:#FFFFFF;" data-componentId="Rx7rwEq" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">WOMENS SCORES-</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><strong><font color="#121212" face="Charter, serif">OPEN</font></strong> <font color="#121212" face="Charter, serif"><strong>CLASS</strong></font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">1 Jennifer Morris 314</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">2 Petra Trano 194</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><strong><font color="#121212" face="Charter, serif">BOWHUNTER CLASS</font></strong></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">1 Madison Pendley 342</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">2 Alisha Kusser 332</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">3 Hedi Widner 273</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">4 Payton Davis 267</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">5 Mary Christensen 256</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">6 Ashley Kluz 253</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">7 Laurie Kluz 241</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">8 Ali McNamara 234</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><strong><font color="#121212" face="Charter, serif">TRADITIONAL CLASS</font></strong></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">1 Marly Grahm 200</font></font></p>
+
+<p style="line-height: 19px;"><font color="#333333" face="PT Sans, sans-serif" style="font-size: 16px;">&nbsp;</font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">YOUTH SCORES</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><strong><font color="#121212" face="Charter, serif">YOUNG ADULT</font></strong></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">1 Cash Anderson 342</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">2 Sophia Harnish 309</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">3 Tyson Villmow 302</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">4 Cade Masters 277</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">5 Parker Harnish 232</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><strong><font color="#121212" face="Charter, serif">CUB</font></strong></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">1 Hunter&nbsp; Frazier 320</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">2 McCoy Harnish 218</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">3 Kaisen Kusser 200</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">4 Ammon Galovich 196</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">5 Lani Davis 177</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">6 Roanin Kusser 169</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">7 Griffin Harnish 155</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">8 Kooper Kecki 101</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">9 Brooklyn Bumenstock 48</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><strong><font color="#121212" face="Charter, serif">Pewee</font></strong></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">1 Ryker Johnson 137</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">2 Ryder Morrison 91</font></font></p>
+
+<p style="line-height: 19px;"><font style="font-size: 16px;" color="#000000" face="Aptos, sans-serif"><font color="#121212" face="Charter, serif">3 Lincoln Kecki 38</font></font></p>
+
+<p style="line-height: 19px; margin-bottom: 0px !important;"><br></p></div>
+</div></div></div></td></tr></table> </div><div id="id_OgmECBM" data-componentId="OgmECBM" class="WaLayoutContainerLast" style="background-color:#FFFFFF;"><table cellspacing="0" cellpadding="0" class="WaLayoutTable" style=""><tr data-componentId="OgmECBM_row" class="WaLayoutRow"><td id="id_lV3Ub74" data-componentId="lV3Ub74" class="WaLayoutItem" style="width:50%;"><div id="id_LPJjEW6" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="LPJjEW6" style=""><div style=""><div id="id_ImpFAEv" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="" data-componentId="ImpFAEv" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p align="center" style="background-color: rgb(255, 255, 255); font-weight: 700; margin-bottom: 0px !important; font-size: 36px;"><img src="/resources/Pictures/Convention%20Photos/Untitled%20design%20(10).png" alt="" title="" border="0" width="240" height="240" style="background-color: transparent; font-size: 16px; font-weight: normal;"><span style="background-color: transparent; font-size: 16px; font-weight: normal;">&nbsp;&nbsp;</span><br></p></div>
+</div></div></div></td><td style="" data-componentId="lV3Ub74_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_5Sy7tyU" data-componentId="5Sy7tyU" class="WaLayoutItem" style="width:50%;"><div id="id_EqhGhqZ" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="EqhGhqZ" style=""><div style=""><div id="id_x4MKAmc" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="background-color:#FFFFFF;" data-componentId="x4MKAmc" ><div class="gadgetStyleBody gadgetContentEditableArea" style="padding-top:40px;" data-editableArea="0" data-areaHeight="auto">
+<p align="center" style="margin-bottom: 0px !important;"><strong><font style="font-size: 30px;">Click this link to see the WSAA shoot calendar:&nbsp;&nbsp;</font></strong></p><p><strong><a href="https://wyoming-archery.org/archery_events/" target="_blank"><font style="font-size: 24px;">https://wyoming-archery.org/archery_events/</font></a></strong></p><p align="center"><strong><font style="font-size: 30px;">Follow them on <a href="https://www.facebook.com/groups/308236196054402" target="_blank">Facebook</a></font></strong></p><p><strong><font style="font-size: 24px;"></font><font style="font-size: 30px;"></font></strong></p></div>
+</div></div></div></td></tr></table> </div></div>
+</div></div>
+			</div>
+		</div>
+
+		<div class="zoneHeader2Outer">
+			<div class="zoneHeader2 container_12">
+				<div class="zoneHeader2Inner s1_grid_12 s2_grid_12 s3_grid_12">
+<div id="id_Header2" data-componentId="Header2" class="WaPlaceHolder WaPlaceHolderHeader2" style=""><div style=""><div id="id_l8NFmu9" data-componentId="l8NFmu9" class="WaLayoutContainerFirst" style=""><table cellspacing="0" cellpadding="0" class="WaLayoutTable" style=""><tr data-componentId="l8NFmu9_row" class="WaLayoutRow"><td id="id_FwdUqPv" data-componentId="FwdUqPv" class="WaLayoutItem" style="width:100%;"><div id="id_wzdYgsC" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="wzdYgsC" style=""><div style=""><div id="id_QyG1oCI" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="background-color:#251F1F;" data-componentId="QyG1oCI" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p><br></p></div>
+</div></div></div></td></tr></table> </div><div id="id_bOB4gxe" data-componentId="bOB4gxe" class="WaLayoutContainer" style="background-color:#FFFFFF;"><table cellspacing="0" cellpadding="0" class="WaLayoutTable" style=""><tr data-componentId="bOB4gxe_row" class="WaLayoutRow"><td id="id_c8DYQue" data-componentId="c8DYQue" class="WaLayoutItem" style="width:50%;"><div id="id_4njlqbo" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="4njlqbo" style=""><div style=""><div id="id_sreV24I" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="background-color:#FFFFFF;" data-componentId="sreV24I" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p align="center"><img src="/resources/Pictures/Convention%[long].jpeg" alt="" title="" border="0" width="240" height="240"><br></p></div>
+</div></div></div></td><td style="" data-componentId="c8DYQue_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_wKtPwB7" data-componentId="wKtPwB7" class="WaLayoutItem" style="width:50%;"><div id="id_ae13iBS" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="ae13iBS" style=""><div style=""><div id="id_roAnE1Q" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="" data-componentId="roAnE1Q" ><div class="gadgetStyleBody gadgetContentEditableArea" style="padding-top:70px;" data-editableArea="0" data-areaHeight="auto">
+<p align="center"><strong><font style="font-size: 30px;">Cambria Bowhunters Website:&nbsp; <a href="https://cambriabowhunters.squarespace.com/" target="_blank">LINK</a></font></strong></p><p align="center"><strong><font style="font-size: 30px;">Follow them on&nbsp;<a href="https://www.facebook.com/CambriaBowhuntersOfWyoming/" target="_blank">Facebook</a></font></strong></p></div>
+</div></div></div></td></tr></table> </div><div id="id_PWmVltp" class="WaGadget WaGadgetContent  gadgetStyleNone" style="background-color:#000000;" data-componentId="PWmVltp" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p><br></p></div>
+</div><div id="id_Y9qEHS8" data-componentId="Y9qEHS8" class="WaLayoutContainer" style=""><table cellspacing="0" cellpadding="0" class="WaLayoutTable" style=""><tr data-componentId="Y9qEHS8_row" class="WaLayoutRow"><td id="id_WBPFmyp" data-componentId="WBPFmyp" class="WaLayoutItem" style="width:50%;"><div id="id_ctLzxiE" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="ctLzxiE" style=""><div style=""><div id="id_16AY2k2" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="background-color:#FFFFFF;" data-componentId="16AY2k2" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p align="center"><img src="/resources/Pictures/Convention%[long].jpeg" alt="" title="" border="0" width="240" height="240"><br></p></div>
+</div></div></div></td><td style="" data-componentId="WBPFmyp_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_qYWuFYr" data-componentId="qYWuFYr" class="WaLayoutItem" style="width:50%;"><div id="id_3kTIcOI" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="3kTIcOI" style=""><div style=""><div id="id_TraSGlW" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="background-color:#FFFFFF;height:245px;" data-componentId="TraSGlW" ><div class="gadgetStyleBody gadgetContentEditableArea" style="padding-top:45px;" data-editableArea="0" data-areaHeight="auto">
+<p align="center"><font style="font-size: 30px;"><strong style="">Cheyenne Field Archers Website: <a href="http://cheyennefieldarchers.com/" target="_blank" style="">LINK</a></strong></font></p><p align="center"><font style="font-size: 30px;"><strong>Follow them on <a href="https://www.facebook.com/cheyennefieldarcherswy" target="_blank">Facebook</a></strong></font></p><p><font style="font-size: 24px;"><strong><br></strong></font></p></div>
+
+</div></div></div></td></tr></table> </div><div id="id_GB8VZDY" data-componentId="GB8VZDY" class="WaLayoutContainer" style=""><table cellspacing="0" cellpadding="0" class="WaLayoutTable" style=""><tr data-componentId="GB8VZDY_row" class="WaLayoutRow"><td id="id_Bs6pGcJ" data-componentId="Bs6pGcJ" class="WaLayoutItem" style="width:100%;"><div id="id_Xq6UPdg" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="Xq6UPdg" style=""><div style=""><div id="id_IuITZ4Y" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="background-color:#000000;" data-componentId="IuITZ4Y" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p><br></p></div>
+</div></div></div></td></tr></table> </div><div id="id_fLNvlNb" data-componentId="fLNvlNb" class="WaLayoutContainer" style=""><table cellspacing="0" cellpadding="0" class="WaLayoutTable" style=""><tr data-componentId="fLNvlNb_row" class="WaLayoutRow"><td id="id_auYajjo" data-componentId="auYajjo" class="WaLayoutItem" style="width:50%;"><div id="id_kMQqjYu" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="kMQqjYu" style=""><div style=""><div id="id_78W3X7P" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="background-color:#FFFFFF;" data-componentId="78W3X7P" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p align="center"><img src="/resources/Pictures/Convention%[long].png" alt="" title="" border="0" width="240" height="240"><br></p></div>
+</div></div></div></td><td style="" data-componentId="auYajjo_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_AMoYNE5" data-componentId="AMoYNE5" class="WaLayoutItem" style="width:50%;"><div id="id_BlFg3gu" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="BlFg3gu" style=""><div style=""><div id="id_fcBm7eK" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="background-color:#FFFFFF;height:245px;" data-componentId="fcBm7eK" ><div class="gadgetStyleBody gadgetContentEditableArea" style="padding-top:45px;" data-editableArea="0" data-areaHeight="auto">
+<p align="center"><font style="font-size: 30px;"><strong style="">Cody Archery Club Website: <a href="https://codyarcheryclub.com/" target="_blank">LINK</a></strong></font></p><p align="center"><font style="font-size: 30px;"><strong>Follow them on <a href="https://www.facebook.com/codyarcheryclub" target="_blank">Facebook</a></strong></font></p></div>
+
+</div></div></div></td></tr></table> </div><div id="id_jNhLR6m" data-componentId="jNhLR6m" class="WaLayoutContainer" style=""><table cellspacing="0" cellpadding="0" class="WaLayoutTable" style=""><tr data-componentId="jNhLR6m_row" class="WaLayoutRow"><td id="id_KI1K3vp" data-componentId="KI1K3vp" class="WaLayoutItem" style="width:100%;"><div id="id_BUxlHlL" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="BUxlHlL" style=""><div style=""><div id="id_71tNeDl" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="background-color:#251F1F;" data-componentId="71tNeDl" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p><br></p></div>
+</div></div></div></td></tr></table> </div><div id="id_SSdxK6J" data-componentId="SSdxK6J" class="WaLayoutContainer" style=""><table cellspacing="0" cellpadding="0" class="WaLayoutTable" style=""><tr data-componentId="SSdxK6J_row" class="WaLayoutRow"><td id="id_kcXSHY4" data-componentId="kcXSHY4" class="WaLayoutItem" style="width:50%;"><div id="id_Qa2rM6n" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="Qa2rM6n" style=""><div style=""><div id="id_W2nJWyc" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="background-color:#FFFFFF;" data-componentId="W2nJWyc" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p align="center"><img src="/resources/Pictures/Convention%[long].jpeg" alt="" title="" border="0"><br></p></div>
+</div></div></div></td><td style="" data-componentId="kcXSHY4_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_LEEcFUJ" data-componentId="LEEcFUJ" class="WaLayoutItem" style="width:50%;"><div id="id_wCGsLdO" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="wCGsLdO" style=""><div style=""><div id="id_ZhovWTK" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="background-color:#FFFFFF;height:230px;" data-componentId="ZhovWTK" ><div class="gadgetStyleBody gadgetContentEditableArea" style="padding-top:40px;" data-editableArea="0" data-areaHeight="auto">
+<p align="center"><font style="font-size: 30px;"><strong style="">Firehole&nbsp; Archers</strong></font></p><p align="center"><font style="font-size: 30px;"><strong>Follow them on <a href="https://www.facebook.com/groups/554497208715296/?mibextid=oMANbw" target="_blank">Facebook</a></strong></font></p><p><br></p></div>
+
+</div></div></div></td></tr></table> </div><div id="id_QFxAhNa" class="WaGadget WaGadgetContent  gadgetStyleNone" style="background-color:#251F1F;" data-componentId="QFxAhNa" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p><br></p></div>
+</div><div id="id_m3RnOz2" data-componentId="m3RnOz2" class="WaLayoutContainer" style=""><table cellspacing="0" cellpadding="0" class="WaLayoutTable" style=""><tr data-componentId="m3RnOz2_row" class="WaLayoutRow"><td id="id_P5cxa8M" data-componentId="P5cxa8M" class="WaLayoutItem" style="width:50%;"><div id="id_6oHlcbz" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="6oHlcbz" style=""><div style=""><div id="id_8z67Bye" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="background-color:#FFFFFF;" data-componentId="8z67Bye" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p align="center"><img src="/resources/Pictures/Convention%20Photos/Sheridan%20County%20Sportsmans%20Association.png" alt="" title="" border="0" width="240" height="240"><br></p></div>
+</div></div></div></td><td style="" data-componentId="P5cxa8M_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_zVBrJBi" data-componentId="zVBrJBi" class="WaLayoutItem" style="width:50%;"><div id="id_CFXzEA8" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="CFXzEA8" style=""><div style=""><div id="id_6f1ATWw" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="background-color:#FFFFFF;height:245px;" data-componentId="6f1ATWw" ><div class="gadgetStyleBody gadgetContentEditableArea" style="padding-top:45px;" data-editableArea="0" data-areaHeight="auto">
+<p align="center"><font style="font-size: 30px;"><strong style="">Sheridan County Sportsmen's Association Website: <a href="https://www.scsarange.org/" target="_blank">LINK</a></strong></font></p><p align="center"><font style="font-size: 30px;"><strong>Follow them on <a href="https://www.facebook.com/SCSA307" target="_blank">Facebook</a></strong></font></p><p><br></p></div>
+
+</div></div></div></td></tr></table> </div><div id="id_hdajjaN" data-componentId="hdajjaN" class="WaLayoutContainer" style=""><table cellspacing="0" cellpadding="0" class="WaLayoutTable" style=""><tr data-componentId="hdajjaN_row" class="WaLayoutRow"><td id="id_whOwzHF" data-componentId="whOwzHF" class="WaLayoutItem" style="width:100%;"><div id="id_dMyrvGV" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="dMyrvGV" style=""><div style=""><div id="id_AmYiUgN" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="background-color:#251F1F;" data-componentId="AmYiUgN" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p><br></p></div>
+</div></div></div></td></tr></table> </div><div id="id_BdvM7ZL" data-componentId="BdvM7ZL" class="WaLayoutContainer" style=""><table cellspacing="0" cellpadding="0" class="WaLayoutTable" style=""><tr data-componentId="BdvM7ZL_row" class="WaLayoutRow"><td id="id_isHf2Zb" data-componentId="isHf2Zb" class="WaLayoutItem" style="width:50%;"><div id="id_llM9Cbj" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="llM9Cbj" style=""><div style=""><div id="id_aMBa35x" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="background-color:#FFFFFF;" data-componentId="aMBa35x" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p><img src="https://chambermaster.blob.core.windows.[long]%20.jpg" alt="White Mountain Archers "></p></div>
+</div></div></div></td><td style="" data-componentId="isHf2Zb_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_u4HoEDl" data-componentId="u4HoEDl" class="WaLayoutItem" style="width:50%;"><div id="id_mYjCLQr" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="mYjCLQr" style=""><div style=""><div id="id_jcMVp4s" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="background-color:#FFFFFF;" data-componentId="jcMVp4s" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p align="center"><font style="font-size: 30px;"><strong style="">White Mountain Archers:</strong></font></p><p align="center"><font style="font-size: 30px;"><strong>Follow them on&nbsp;<a href="https://www.facebook.com/groups/83623420403/" target="_blank">Facebook</a></strong></font></p><p><br></p></div>
+</div></div></div></td></tr></table> </div><div id="id_IWpqXLi" data-componentId="IWpqXLi" class="WaLayoutContainer" style=""><table cellspacing="0" cellpadding="0" class="WaLayoutTable" style=""><tr data-componentId="IWpqXLi_row" class="WaLayoutRow"><td id="id_iykKvhz" data-componentId="iykKvhz" class="WaLayoutItem" style="width:100%;"><div id="id_cv55Ntr" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="cv55Ntr" style=""><div style=""><div id="id_Nc1FZbl" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="background-color:#251F1F;" data-componentId="Nc1FZbl" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p><br></p></div>
+</div></div></div></td></tr></table> </div><div id="id_oc9KV1J" data-componentId="oc9KV1J" class="WaLayoutContainer" style=""><table cellspacing="0" cellpadding="0" class="WaLayoutTable" style=""><tr data-componentId="oc9KV1J_row" class="WaLayoutRow"><td id="id_XVUTbJm" data-componentId="XVUTbJm" class="WaLayoutItem" style="width:50%;"><div id="id_O9dWEeP" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="O9dWEeP" style=""><div style=""><div id="id_nqTkKqw" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="background-color:#FFFFFF;" data-componentId="nqTkKqw" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p><img src="data:image/png;base64,[long]" alt="" width="319" height="267" align="left"></p></div>
+</div></div></div></td><td style="" data-componentId="XVUTbJm_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_W3NwgaD" data-componentId="W3NwgaD" class="WaLayoutItem" style="width:50%;"><div id="id_5JeWlXF" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="5JeWlXF" style=""><div style=""><div id="id_mDViUmv" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="background-color:#FFFFFF;" data-componentId="mDViUmv" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p align="center"><font style="font-size: 30px;"><strong style="">Bridger Valley Archers:</strong></font></p><p align="center"><font style="font-size: 30px;"><strong>Follow them on&nbsp;<a href="https://www.facebook.com/share/g/1BMWhnrD5J/?mibextid=wwXIfr" target="_blank">Facebook</a></strong></font></p><p><br></p></div>
+</div></div></div></td></tr></table> </div><div id="id_MGZvVH7" data-componentId="MGZvVH7" class="WaLayoutContainerLast" style=""><table cellspacing="0" cellpadding="0" class="WaLayoutTable" style=""><tr data-componentId="MGZvVH7_row" class="WaLayoutRow"><td id="id_8lldDW5" data-componentId="8lldDW5" class="WaLayoutItem" style="width:100%;"><div id="id_HHKZD39" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="HHKZD39" style=""><div style=""><div id="id_vLlJB8H" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="" data-componentId="vLlJB8H" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+</div>
+</div></div></div></td></tr></table> </div></div>
+</div></div>
+			</div>
+		</div>
+		<!-- /header zone -->
+
+<!-- content zone -->
+	<div class="zoneContentOuter">
+		<div class="zoneContent container_12">
+			<div class="zoneContentInner s1_grid_12 s2_grid_12 s3_grid_12">
+<div id="idPrimaryContentBlock1Content" data-componentId="Content" class="WaPlaceHolder WaPlaceHolderContent" style=""><div style=""><div id="id_kjDzhHC" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="" data-componentId="kjDzhHC" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p align="center">For more information please reach out to the clubs/organizations putting on each shoot.&nbsp;</p></div>
+</div></div>
+</div></div>
+		</div>
+	</div>
+	<!-- /content zone -->
+
+<!-- footer zone -->
+		<div class="zoneFooterOuter">
+			<div class="zoneFooter container_12">
+				<div class="zoneFooterInner s1_grid_12 s2_grid_12 s3_grid_12">
+</div>
+			</div>
+		</div>
+
+        <div class="zoneFooter1Outer">
+            <div class="zoneFooter1 container_12">
+                <div class="zoneFooter1Inner s1_grid_12 s2_grid_12 s3_grid_12">
+                    </div>
+            </div>
+        </div>
+		<!-- /footer zone -->
+
+		<!-- branding zone -->
+<div class="zoneBrandingOuter">
+			<div class="zoneBranding container_12">
+				<div class="zoneBrandingInner s1_grid_12 s2_grid_12 s3_grid_12">
+<div id="idFooterPoweredByContainer">
+	<span id="idFooterPoweredByWA">
+Powered by <a href="http://www.wildapricot.com" target="_blank">Wild Apricot</a> Membership Software</span>
+</div>
+</div>
+			</div>
+		</div>
+<!-- /branding zone -->
+<div id="idCustomJsContainer" class="cnCustomJsContainer">
+<!-- Meta Pixel Code -->
+
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1125390754291778&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+</div>
+</div></body>
+</html>

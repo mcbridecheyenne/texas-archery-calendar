@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en" class="region  region-new-england nav-active noscroll">
+	<head>
+		<base href="https://nfaausa.com/" />
+		<title>New England Section | National Field Archery Association USA</title>
+
+		<link rel="shortcut icon" href="/images/favicon2.png" type="image/x-icon" />
+
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="The New England section includes Connecticut, Maine, Massachusetts, New Hampshire, Rhode Island, and Vermont" />
+		<meta name="robots" content="index, follow">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+
+			<!-- Google tag (gtag.js) -->
+	
+	
+
+		<!--[if lt IE 9]>
+		
+		<![endif]-->
+
+		<link rel="stylesheet" href="/css/reset.css" media="screen" type="text/css" />
+		<link rel="stylesheet" href="https://use.typekit.net/urr1gzd.css" />
+		<link rel="stylesheet" href="/css/slick.css" media="screen" type="text/css" />
+		<link rel="stylesheet" href="/css/screen.css?v=20" media="screen" type="text/css" />
+
+		<meta property="og:url" content="https://nfaausa.com/sections/new-england" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="New England Section | National Field Archery Association USA" />
+		<meta property="og:description" content="The New England section includes Connecticut, Maine, Massachusetts, New Hampshire, Rhode Island, and Vermont" />
+		<meta property="og:image" content="https://nfaausa.com/images/og.jpeg" />
+
+		
+		
+		
+				
+	</head>
+	<body id="page_region">		<header>
+		<div class="topBar font0 navy-bg bold">
+			<div class="left">
+				<ul>
+					<li>
+						<a href="https://www.facebook.com/nfaausa" target="_blank">
+							<img src="/images/icons/facebook-blue.svg" alt="" />
+						</a>
+					</li>
+					<li>
+						<a href="http://instagram.com/nfaausa" target="_blank">
+							<img src="/images/icons/instagram-blue.svg" alt="" />
+						</a>
+					</li>
+					<li>
+						<a href="https://www.youtube.com/user/NFAAUSA" target="_blank">
+							<img src="/images/icons/youtube-blue.svg" alt="" />
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="right">
+				<ul class="uppercase white ls1">
+					<li>
+						<a class="font9" href="/about/frequently-asked-questions">
+							<img src="/images/icons/faq.svg" alt="" style="width:12px;height:12px;" />
+							FAQ
+						</a>
+					</li>
+					<li>
+						<a class="font9" href="https://nfaausa-donations.sport80.com/donation">
+							<img src="/images/icons/donate.svg" alt="" />
+							Donate
+						</a>
+					</li>
+					<li>
+						<a class="font9" href="https://shop.nfaausa.com/">
+							<img src="/images/icons/shop.svg" alt="" />
+							Shop
+						</a>
+					</li>
+					<li>
+						<a class="font9" href="https://nfaausa.sport80.com/">
+							<img src="/images/icons/login.svg" alt="" />
+							Log In
+						</a>
+					</li>
+					<li>
+						<a class="font9 searchLink" href="#">
+							<img src="/images/icons/search.svg" class="searchIcon" alt="" />
+							<img src="/images/icons/close.svg" class="closeIcon hide" alt="" />
+							<span>Search</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="mainNav title font0">
+			<a class="menuButton red-bg white font15 lh1" href="#"><span>Menu</span></a>
+			<ul class="navy text-center">
+				<li class="logo">
+					<a href="/">
+						<img src="/images/logo.svg" alt="" />
+					</a>
+				</li>
+				<li class="link">
+					<a href="/get-involved" class="font18 lh1 red-line">Get Involved</a>
+				</li>	
+				<li class="link">
+					<a href="/events" class="font18 lh1 blue-line">Events</a>
+				</li>
+				<li class="link hasSubNav">
+					<a href="#" class="font18 lh1 orange-line">I want to find&nbsp;&nbsp;<span>+</span></a>
+					<ul class="subnav">
+						<li><a class="font18 title navy" href="/events">Events</a></li>
+						<li><a class="font18 title navy" href="/get-involved/find-a-club">Clubs &amp; Shops</a></li>
+						<li><a class="font18 title navy" href="/get-involved/find-a-range">Ranges</a></li>
+						<li><a class="font18 title navy" href="/memberships/become-a-member">Memberships</a></li>
+						<li><a class="font18 title navy" href="/get-involved/archery-programs">Programs</a></li>
+						<li><a class="font18 title navy" href="/news">News</a></li>
+						<li><a class="font18 title navy" href="/get-involved/scholarship-opportunities">Scholarship Opportunities</a></li>
+						<li><a class="font18 title navy" href="/resources">Resources</a></li>
+						<li><a class="font18 title navy" href="/about/archery-magazine">Archery Magazine</a></li>
+						<li><a class="font18 title navy" href="/events/results-and-records">Results &amp; Records</a></li>
+						<li><a class="font18 title navy" href="/about/constitution">Constitution &amp; By-Laws</a></li>
+						<li><a class="font18 title navy" href="/contact">Contact Information</a></li>
+					</ul>
+				</li>
+				<li class="link">
+					<a href="/sections" class="font18 lh1 navy-line">NFAA Sections</a>
+				</li>
+				<li class="link hasSubNav red-bg">
+					<a href="#" class="font18 lh1">Join Us&nbsp;&nbsp;<span>+</span></a>
+					<ul class="subnav">
+						<li><a class="font18 title navy" href="/memberships/become-a-member">Become a Member</a></li>
+						<li><a class="font18 title navy" href="/memberships/become-a-club-or-shop">Build a Community</a></li>
+					</ul>
+				</li>
+			</ul>
+			<div class="mobileNav">
+				<div class="mobileLogo">
+					<a href="/">
+						<img src="/images/logo.svg" alt="" />
+					</a>
+				</div>
+				<div class="mobileSearch">
+					<a class="font9 searchLink navy-bg white font15 lh1" href="#">
+						<span>Search</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="overlayNav">
+			<div class="wrapper">
+				<div class="inner">
+					<ul>
+						<li>
+							<a class="title font30 white" href="/">Home</a>
+						</li>
+						<li>
+							<a class="title font30 white arrow">Events</a>
+							<ul class="subnav">
+								<li>
+									<a class="font18 blue title" href="/events">Events</a>
+								</li>
+											<li>
+				<a href="events/find-an-event" class="font18 white thin-title">Find an Event</a>
+			</li>			<li>
+				<a href="events/national-tournaments" class="font18 white thin-title">National Tournaments</a>
+			</li>			<li>
+				<a href="events/shooter-of-the-year" class="font18 white thin-title">Shooter of the Year</a>
+			</li>			<li>
+				<a href="events/results-and-records" class="font18 white thin-title">Results &amp; Records</a>
+			</li>			<li>
+				<a href="events/rules" class="font18 white thin-title">Rules</a>
+			</li>			<li>
+				<a href="events/trade-shows" class="font18 white thin-title">Trade Shows</a>
+			</li>
+							</ul>
+						</li>
+						<li>
+							<a class="title font30 white arrow">Get Involved</a>
+							<ul class="subnav">
+								<li>
+									<a class="font18 blue title" href="/get-involved">Get Involved</a>
+								</li>
+											<li>
+				<a href="get-involved/new-to-nfaa" class="font18 white thin-title">New to NFAA</a>
+			</li>			<li>
+				<a href="get-involved/find-a-club" class="font18 white thin-title">Find a Club or Shop</a>
+			</li>			<li>
+				<a href="get-involved/find-a-range" class="font18 white thin-title">Find a Range</a>
+			</li>			<li>
+				<a href="[long]" class="font18 white thin-title">Judge Certification Program</a>
+			</li>			<li>
+				<a href="get-involved/scholarship-opportunities" class="font18 white thin-title">Scholarship Opportunities</a>
+			</li>			<li>
+				<a href="get-involved/collegiate-archery" class="font18 white thin-title">Collegiate Archery</a>
+			</li>			<li>
+				<a href="get-involved/explore-bowhunting" class="font18 white thin-title">Explore Bowhunting</a>
+			</li>			<li>
+				<a href="get-involved/range-certifications" class="font18 white thin-title">Range Certifications</a>
+			</li>			<li>
+				<a href="get-involved/archery-programs" class="font18 white thin-title">Archery Programs</a>
+			</li>			<li>
+				<a href="get-involved/awards-programs" class="font18 white thin-title">Awards Programs</a>
+			</li>			<li>
+				<a href="get-involved/club-shop-referral-program" class="font18 white thin-title">Club/Shop Referral Program</a>
+			</li>			<li>
+				<a href="get-involved/volunteering-careers" class="font18 white thin-title">Volunteer &amp; Career Opportunities</a>
+			</li>
+							</ul>
+						</li>
+						<li>
+							<a class="title font30 white arrow">Memberships</a>
+							<ul class="subnav">
+								<li>
+									<a class="font18 blue title" href="/memberships">Memberships</a>
+								</li>
+											<li>
+				<a href="memberships/become-a-member" class="font18 white thin-title">Become a Member</a>
+			</li>			<li>
+				<a href="memberships/become-a-club-or-shop" class="font18 white thin-title">Build a Community</a>
+			</li>			<li>
+				<a href="[long]" class="font18 white thin-title">Become a Professional Archer</a>
+			</li>
+							</ul>
+						</li>
+						<li>
+							<a class="title font30 white arrow">NFAA Sections</a>
+							<ul class="subnav">
+								<li>
+									<a class="font18 blue title" href="/sections">All Sections</a>
+								</li>
+											<li>
+				<a href="/sections/northwest" class="font18 white thin-title">Northwest</a>
+			</li>			<li>
+				<a href="/sections/midwest" class="font18 white thin-title">Midwest</a>
+			</li>			<li>
+				<a href="/sections/great-lakes" class="font18 white thin-title">Great Lakes</a>
+			</li>			<li>
+				<a href="/sections/mid-atlantic" class="font18 white thin-title">Mid-Atlantic</a>
+			</li>			<li>
+				<a href="/sections/new-england" class="font18 white thin-title">New England</a>
+			</li>			<li>
+				<a href="/sections/southwest" class="font18 white thin-title">Southwest</a>
+			</li>			<li>
+				<a href="/sections/southern" class="font18 white thin-title">Southern</a>
+			</li>			<li>
+				<a href="/sections/southeast" class="font18 white thin-title">Southeast</a>
+			</li>
+							</ul>
+						</li>
+						<li>
+							<a class="title font30 white arrow">About</a>
+							<ul class="subnav">
+								<li>
+									<a class="font18 blue title" href="/about">About</a>
+								</li>
+											<li>
+				<a href="about/history" class="font18 white thin-title">History</a>
+			</li>			<li>
+				<a href="about/constitution" class="font18 white thin-title">Constitution &amp; By-Laws</a>
+			</li>			<li>
+				<a href="about/archery-magazine" class="font18 white thin-title">Archery Magazine</a>
+			</li>			<li>
+				<a href="about/partners-and-sponsors" class="font18 white thin-title">Partners &amp; Sponsors</a>
+			</li>			<li>
+				<a href="about/meet-the-team" class="font18 white thin-title">Meet the NFAA Team</a>
+			</li>			<li>
+				<a href="about/frequently-asked-questions" class="font18 white thin-title">Frequently Asked Questions</a>
+			</li>
+							</ul>
+						</li>
+						<li>
+							<a class="title font30 white" href="/contact">Contact us</a>
+						</li>
+						<li>
+							<a class="title font30 white" href="/resources">Resource Center</a>
+						</li>
+						<li>
+							<a class="title font30 white" href="/news">News</a>
+						</li>
+						<li>
+							<a class="title font30 white" href="/about/archery-magazine">Archery Magazine</a>
+						</li>
+						<li>
+							<a class="title font30 white" href="https://shop.nfaausa.com/" target="_blank">Shop</a>
+						</li>
+						<li>
+							<a class="title font30 white" href="https://nfaausa.sport80.com/" target="_blank">Login</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="searchBar">
+			<form id="search_form" method="GET" action="/search">
+				<input type="text" placeholder="What are you looking for?" id="term" name="term" class="title font18 white" />
+				<input type="hidden" id="token" name="token" value="" />
+				<button type="submit">
+					<img src="/images/icons/search.svg" />
+				</button>
+			</form>
+		</div>
+	</header><section class="content border-bottom">
+	<div class="stateWrapper">
+		<div class="regionPage statePage font0">
+			<div class="stateSidebar">
+				<div class="regionTitle">
+					<a href="/sections"><span class="grey thin-title font16">NFAA Sections</span></a>
+					<h1 class="font45 red title">New England <br />Section</h1>
+					<img src="[long] England.png" alt="Southwest NFAA Section" />
+				</div>
+				<div class='stateContacts'>
+								<div class="oneContact font0">
+				<div class="image" style="background-image:url('..[long].jpg');"></div>
+				<div class="text">
+					<small class="uppercase font9 regular grey">New England</small>
+					<h2 class="title navy font18">William Hall</h2>
+					<p class="font12 grey medium">1022 Grant Hill Rd, Coventry, CT, 06238</p>
+					<a href="mailto:inner10@yahoo.com" class="uppercase font9 regular red">inner10@yahoo.com</a>
+					<br /><a href='tel:860-987-2660' class='uppercase font9 regular red telephone'>860-987-2660</a>
+				</div>
+			</div>				</div>
+							<div class="sectionStateLinks">
+				<ul>
+					<li class="titleItem navy-bg">
+						<span class="title white font18">New England Section States</span>
+					</li>			<li>
+				<a href="/sections/new-england/connecticut">Connecticut</a>
+			</li>			<li>
+				<a href="/sections/new-england/maine">Maine</a>
+			</li>			<li>
+				<a href="/sections/new-england/massachusetts">Massachusetts</a>
+			</li>			<li>
+				<a href="/sections/new-england/new-hampshire">New Hampshire</a>
+			</li>			<li>
+				<a href="/sections/new-england/rhode-island">Rhode Island</a>
+			</li>			<li>
+				<a href="/sections/new-england/vermont">Vermont</a>
+			</li></ul></div>							<div class="regionLinks">
+				<ul>
+					<li class="titleItem red-bg">
+						<span class="title white font18">New England Section Links:</span>
+					</li>		<li>
+			<a style="text-transform:capitalize" href="/about/news-submission">Submit Section News</a>
+		</li></ul></div>				<a href="/sections" class="font12 red bold uppercase backLink">&lt; View all Sections</a>
+			</div>
+			<div class="pageContent stateContent">
+						<div class="stateNews">
+			<div class="wrapper font0 news">
+				<div class="top titleSection">
+					<div class="left">
+						<h2 class="title font30 red">New England News</h2>
+					</div>
+					<div class="right">
+						<a href="/news/section/new-england" class="uppercase font12 lh1 navy ls1 bold">View all New England news</a>
+					</div>
+				</div>
+				<div class="wrap-thirds">
+								<div class="oneNews third">
+				<a href="[long]" class="image" style="background-image:url('../images/news/6a973ce6d3803_weblogo.png');">
+					<div class="date smaller red-bg text-center">
+						<span class="month font9 bold white uppercase">Sep</span>
+						<span class="day clear-title white font18 lh1 ls1">01</span>
+					</div>
+				</a>
+				<div class="text">
+					<div class="inner">
+						<a href="[long]">
+							<h3 class="font18 navy title lh1">2026 MFAA State Field Championships Results</h3>
+						</a>
+						<a href="[long]">
+							<p class="font14">2026 MFAA State Field Championship was hosted by Lunenburg Sportsmen&#039;s Club on August 23rd, 2026</p>
+						</a>
+					</div>
+				</div>
+			</div>			<div class="oneNews third">
+				<a href="[long]" class="image" style="background-image:url('../images/news/6a79e87da0dda_clay.jpg');">
+					<div class="date smaller red-bg text-center">
+						<span class="month font9 bold white uppercase">Jul</span>
+						<span class="day clear-title white font18 lh1 ls1">22</span>
+					</div>
+				</a>
+				<div class="text">
+					<div class="inner">
+						<a href="[long]">
+							<h3 class="font18 navy title lh1">2026 Outdoor Field Sectionals Highlight Growth, Innovation, and New Opportunities</h3>
+						</a>
+						<a href="[long]">
+							<p class="font14">Held at 22 host clubs across the country, the 2026 NFAA Outdoor Field Sectionals &amp; National Series welcomed 570 archers. Competitors experienced the new Modern Field Round while earning national rankings and Shooter of the Year points for the first time.</p>
+						</a>
+					</div>
+				</div>
+			</div>			<div class="oneNews third">
+				<a href="[long]" class="image" style="background-image:url('../images/news/69e29f58ab5b5_R3X_2932.jpg');">
+					<div class="date smaller red-bg text-center">
+						<span class="month font9 bold white uppercase">Apr</span>
+						<span class="day clear-title white font18 lh1 ls1">17</span>
+					</div>
+				</a>
+				<div class="text">
+					<div class="inner">
+						<a href="[long]">
+							<h3 class="font18 navy title lh1">2026 Indoor Sectionals and National Series Wrap Up with Strong Participation Nationwide</h3>
+						</a>
+						<a href="[long]">
+							<p class="font14">The 2026 Indoor Sectionals and Indoor National Series concluded with a strong increase in participation across the country. Archers competed for sectional titles while also earning national honors and Shooter of the Year points.</p>
+						</a>
+					</div>
+				</div>
+			</div>
+				</div>
+			</div>
+		</div>				<div class="stateEvents">
+					<div class="wrapper font0 news">
+						<div class="top titleSection noSpaceBottom">
+							<div class="left">
+								<h2 class="title font30 red">New England Events</h2>
+							</div>
+							<div class="right">
+								<a href="/events/find-an-event" class="uppercase font12 lh1 navy ls1 bold">View all events</a>
+							</div>
+						</div>
+								<div class="eventsCalendar">
+			<table class="eventsTable">
+							<tr>
+				<td class="eventDate navy-bg">
+					<span class="num clear-title blue font45">27</span>
+				</td>
+				<td class="eventTitle">
+					<p>
+						<a href="/events/event-information/38610">
+							<small class="red font9 regular">Feb 27, 2027 - Feb 28, 2027</small>
+							<span class="navy title font22 lh1">New England Indoor Sectionals & National Series 2027 - X-Spot Archery</span>
+							<span class="grey font12 regular location">South Attleboro, Massachusetts</span>
+						</a>
+					</p>
+				</td>
+			</tr>
+			</table>
+		</div>					</div>
+				</div>
+						<div class="stateResources">
+			<div class="wrapper font0">
+				<div class="top titleSection noSpaceBottom">
+					<div class="left">
+						<h2 class="title font30 red">New England Resources</h2>
+					</div>
+					<div class="right">
+						<a href="/resources/new-england" class="uppercase font12 lh1 navy ls1 bold">View all New England resources</a>
+					</div>
+				</div>
+				<table class="resourcesTable" id="resource_results">						<tr>
+							<td class="resourceTitle font15">
+								<p>
+									<a target="_blank" href="[long].PDF">
+										<strong class="uppercase grey font14 regular">RIFAA CONSTITUTION AND BY-LAWS</strong>
+										<small class="font9 uppercase red">PDF</small>
+										<span class="font12"></span>
+									</a>
+								</p>
+							</td>
+							<td class="downloadLink">
+								<a href="[long].PDF" target="_blank" class="font14 lh1 thin-title red">Download</a>
+							</td>
+						</tr>						<tr>
+							<td class="resourceTitle font15">
+								<p>
+									<a target="_blank" href="[long].pdf">
+										<strong class="uppercase grey font14 regular">NFAA-CT Constitution</strong>
+										<small class="font9 uppercase red">pdf</small>
+										<span class="font12"></span>
+									</a>
+								</p>
+							</td>
+							<td class="downloadLink">
+								<a href="[long].pdf" target="_blank" class="font14 lh1 thin-title red">Download</a>
+							</td>
+						</tr>						<tr>
+							<td class="resourceTitle font15">
+								<p>
+									<a target="_blank" href="/files/nfaa-ct-by-laws-220425204333.pdf">
+										<strong class="uppercase grey font14 regular">NFAA CT By-Laws</strong>
+										<small class="font9 uppercase red">pdf</small>
+										<span class="font12"></span>
+									</a>
+								</p>
+							</td>
+							<td class="downloadLink">
+								<a href="/files/nfaa-ct-by-laws-220425204333.pdf" target="_blank" class="font14 lh1 thin-title red">Download</a>
+							</td>
+						</tr>						<tr>
+							<td class="resourceTitle font15">
+								<p>
+									<a target="_blank" href="[long].pdf">
+										<strong class="uppercase grey font14 regular">Massachusetts Field Archery Association (MFAA) Constitution and By-Laws</strong>
+										<small class="font9 uppercase red">pdf</small>
+										<span class="font12"></span>
+									</a>
+								</p>
+							</td>
+							<td class="downloadLink">
+								<a href="[long].pdf" target="_blank" class="font14 lh1 thin-title red">Download</a>
+							</td>
+						</tr>						<tr>
+							<td class="resourceTitle font15">
+								<p>
+									<a target="_blank" href="[long].pdf">
+										<strong class="uppercase grey font14 regular">CONSITUTION OF THE MAINE ARCHERY ASSOCIATION</strong>
+										<small class="font9 uppercase red">pdf</small>
+										<span class="font12"></span>
+									</a>
+								</p>
+							</td>
+							<td class="downloadLink">
+								<a href="[long].pdf" target="_blank" class="font14 lh1 thin-title red">Download</a>
+							</td>
+						</tr></table>
+			</div>
+		</div>
+						<div class="stateCtas">
+			<div class="wrapper font0">
+				<div class="wrap-thirds">
+					<a class="oneCta third" href="/memberships/become-a-member">
+						<div class="image" style="background-image:url('../images/cta/Become-a-Member.jpg');">
+							<span class="line red-bg"></span>
+						</div>
+						<div class="text">
+							<h4 class="font12 lh1 uppercase bold grey">Join Us</h4>
+							<h2 class="title font22 red">Become a member</h2>
+						</div>
+					</a>
+					<a class="oneCta third" href="/get-involved/find-a-club">
+						<div class="image" style="background-image:url('../images/cta/tournaments.jpg');">
+							<span class="line blue-bg"></span>
+						</div>
+						<div class="text">
+							<h4 class="font12 lh1 uppercase bold grey">Get Involved</h4>
+							<h2 class="title font22 blue">Find a club</h2>
+						</div>
+					</a>
+					<a class="oneCta third" href="/events/national-tournaments">
+						<div class="image" style="background-image:url('../images/cta/national-tourn.jpeg');">
+							<span class="line orange-bg"></span>
+						</div>
+						<div class="text">
+							<h4 class="font12 lh1 uppercase bold grey">Events</h4>
+							<h2 class="title font22 orange">National Tournaments</h2>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>			</div>
+		</div>
+	</div>
+</section>
+		<div class="partnersList">
+			<div class="wrapper font0 text-center">
+				<h2 class="red title font30">Our proud sponsors</h2>
+				<ul>
+								<li>
+				<a href="https://www.esdf.org/" target="_blank" class="onePartner">
+					<img src="[long].png" alt="Easton Foundation" />
+				</a>
+			</li>			<li>
+				<a href="https://eastonarchery.com/" target="_blank" class="onePartner">
+					<img src="/images/partners/easton-170124151359.png" alt="Easton" />
+				</a>
+			</li>			<li>
+				<a href="http://www.hoyt.com" target="_blank" class="onePartner">
+					<img src="/images/partners/hoyt-291222162232.png" alt="Hoyt" />
+				</a>
+			</li>			<li>
+				<a href="https://truball.com/" target="_blank" class="onePartner">
+					<img src="[long].png" alt="T.R.U. Ball" />
+				</a>
+			</li>			<li>
+				<a href="https://arizonaarchery.com/" target="_blank" class="onePartner">
+					<img src="[long].png" alt="Arizona Archery Enterprises" />
+				</a>
+			</li>			<li>
+				<a href="http://www.lancasterarchery.com/" target="_blank" class="onePartner">
+					<img src="[long].png" alt="Lancaster Archery Supply" />
+				</a>
+			</li>
+				</ul>
+				<a href="/about/partners-and-sponsors" class="button clear-red">View all sponsors</a>
+			</div>
+		</div>		<footer class="spaceTop">
+			<div class="wrapper font0">
+				<div class="top">
+					<div class="left">
+						<a href="/"><img class="logo" src="/images/logo.svg" alt="" /></a>
+						<div class="social">
+							<a href="https://www.facebook.com/nfaausa" target="_blank">
+								<img src="/images/icons/facebook-red.svg" alt="" />
+							</a>
+							<a href="http://instagram.com/nfaausa" target="_blank">
+								<img src="/images/icons/instagram-red.svg" alt="" />
+							</a>
+							<a href="https://www.youtube.com/user/NFAAUSA" target="_blank">
+								<img src="/images/icons/youtube-red.svg" alt="" />
+							</a>
+						</div>
+					</div>
+					<div class="lists">
+						<div class="oneList">
+							<h3 class="red uppercase font12 bold lh1 ls1"><a href="/events">Events</h3></a>
+							<ul class="font12">
+								<li>
+									<a href="/news">News</a>
+								</li>
+								<li>
+									<a href="/events/find-an-event">Find an Event</a>
+								</li>
+								<li>
+									<a href="/events/national-tournaments">National Tournaments</a>
+								</li>
+								<li>
+									<a href="/events/rules">Rules</a>
+								</li>
+							</ul>
+						</div>
+						<div class="oneList">
+							<h3 class="red uppercase font12 bold lh1 ls1"><a href="/about">About</h3></a>
+							<ul class="font12">
+								<li>
+									<a href="/about/meet-the-team">Meet the Team</a>
+								</li>
+								<li>
+									<a href="/about/constitution">Constitution &amp; By-Laws</a>
+								</li>
+								<li>
+									<a href="/about/history">History</a>
+								</li>
+								<li>
+									<a href="/about/frequently-asked-questions">FAQ's</a>
+								</li>
+							</ul>
+						</div>
+						<div class="oneList">
+							<h3 class="red uppercase font12 bold lh1 ls1"><a href="/memberships">Memberships</h3></a>
+							<ul class="font12">
+								<li>
+									<a href="/memberships/become-a-member">Become a Member</a>
+								</li>
+								<li>
+									<a href="/memberships/become-a-club-or-shop">Become a Club</a>
+								</li>
+								<li>
+									<a href="/memberships/become-a-club-or-shop">Become a Shop</a>
+								</li>
+								<li>
+									<a href="/memberships/become-a-member#membership-calculator">Membership Calculator</a>
+								</li>
+							</ul>
+						</div>
+						<div class="oneList">
+							<h3 class="red uppercase font12 bold lh1 ls1"><a href="/get-involved">Get Involved</h3></a>
+							<ul class="font12">
+								<li>
+									<a href="/get-involved/new-to-nfaa">New to NFAA</a>
+								</li>
+								<li>
+									<a href="/get-involved/archery-programs">Archery Programs</a>
+								</li>
+								<li>
+									<a href="/get-involved/awards-programs">Awards</a>
+								</li>
+								<li>
+									<a href="/get-involved/find-a-club">Find a Club or Shop</a>
+								</li>
+							</ul>
+						</div>
+						<div class="oneList">
+							<h3 class="red uppercase font12 bold lh1 ls1"><a href="/contact">Contact Us</h3></a>
+							<p class="font12">
+								800 Archery Lane<br />
+								Yankton, South Dakota<br />
+								SD 57078<br />
+								<a href="mailto:info@nfaausa.com">info@nfaausa.com</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="bottom">
+					<div class="left">
+						<p class="font9">&copy; 2026 National Field Archery Association. All rights reserved.
+							<br /><br /><a href="https://93ft.com" target="_blank">Website designed & developed by 93ft</a> in partnership with <a href="https://sport80.com" target="_blank">Sport:80</a>
+						</p>
+					</div>
+					<div class="right text-right">
+						<p class="font9"><a href="/about/privacy-policy">Privacy policy and terms</a></p>
+					</div>
+				</div>
+			</div>
+		</footer>
+				<div class="cookieBar">
+			<div class="cookieInfo">
+				<p>This website uses cookies to ensure you get the best experience on our website.</p>
+			</div>
+			<div class="cookieButton">
+				<a class="button clear-white" href="#">OK, got it.</a>
+			</div>
+		</div>
+	</body>
+</html>

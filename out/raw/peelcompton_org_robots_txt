@@ -1,0 +1,20 @@
+User-agent: *
+Disallow: /wp-content/uploads/wc-logs/
+Disallow: [long]
+Disallow: [long]
+Disallow: /*?add-to-cart=
+Disallow: /*?*add-to-cart=
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+
+User-agent: *
+Disallow: [long].json
+
+# START YOAST BLOCK
+# ---------------------------
+User-agent: *
+Disallow:
+
+Sitemap: https://peelcompton.org/sitemap_index.xml
+# ---------------------------
+# END YOAST BLOCK

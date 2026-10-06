@@ -1,0 +1,557 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head id="ctl00_Head1">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="This web site hosts registration, scoring, and result history for NASP® archery tournaments." /><link rel="Stylesheet" type="text/css" href="VTSite.css" /><link href="NavStyles.css" rel="stylesheet" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="[long]" crossorigin="anonymous" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" integrity="[long]" crossorigin="anonymous" /><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="[long]" crossorigin="anonymous" />
+
+    <!-- Google tag (gtag.js) -->
+    
+    
+    
+    
+    
+    
+<title>
+	NASP Tournaments
+</title></head>
+<body>
+    <form name="aspnetForm" method="post" action="./TournamentDetail.aspx?tid=16446" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="[long]" />
+</div>
+
+
+
+
+
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="761E746B" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="[long]" />
+</div>
+        <nav class="navbar navbar-expand-lg navbar-dark static-top sb-navbar bg-dark">
+            <div class="container">
+
+                <a class="navbar-brand" href="/">
+                    <img id="ctl00_Image1" class="img-fluid rounded" src="images/nasplogomenubar.png" alt="NASP Logo" style="border-width:0px;" /></a>
+                
+
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                
+
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+
+                    <ul class="navbar-nav mr-auto">
+
+                        
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tournaments</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a id="ctl00_HyperLink4" class="dropdown-item" href="TournamentExplorer.aspx">Tournament Explorer</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink23" class="dropdown-item" href="TournamentExplorerCalendarView.aspx">Tournament Explorer - Calendar</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink31" class="dropdown-item" href="MapView.aspx">Tournament Explorer - Map View</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink336" class="dropdown-item" href="ICTOURN">In-Class Tournament</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink7" class="dropdown-item" href="ListInfo.aspx">List A Tournament</a></li>
+                                
+                            </ul>
+
+
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Archer</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a id="ctl00_HyperLink6" class="dropdown-item" href="CompareScore">How Do I Rank</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink34" class="dropdown-item" href="Rank">Rankings</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink18" class="dropdown-item" href="archersearch.aspx">Archer Search</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink25" class="dropdown-item" href="AcademicArcher.aspx">Academic Archer</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink36" class="dropdown-item" href="records/300club.aspx">300 Club</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">School</a>
+                            <ul class="dropdown-menu">
+                                
+                                <li>
+                                    <a id="ctl00_HyperLink15" class="dropdown-item" href="Schoolmgr">School Manager</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink24" class="dropdown-item" href="schoolsearch.aspx">School Search</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink37" class="dropdown-item" href="SchoolMap.aspx">School Map</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink35" class="dropdown-item" href="Rank">Rankings</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink14" class="dropdown-item" href="ScoreSearch/TeamScores.aspx">Team Score Search</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Software</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a id="ctl00_HyperLink5" class="dropdown-item" href="ClientSoftware/">NASP&reg; Pro Web-Based</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLinkPortalAppScoring" class="dropdown-item" href="ClientSoftware/NASPPortalAppScoring.aspx">NASP&reg; Portal App Scoring</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLinkScannerSoftware" class="dropdown-item" href="ClientSoftware/Scanner.aspx">Apperson Scanner Software</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item  dropdown">
+                            <a id="ctl00_HyperLink38" class="nav-link" href="rules">Rules</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Help</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a id="ctl00_HyperLink9" class="dropdown-item" href="Contact.aspx">Contact</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink10" class="dropdown-item" href="UserUtilities/BAINumberLookup.aspx">BAI Number Lookup</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink33" class="dropdown-item" href="https://naspbai.org/baiverification.aspx">Verify a BAI's Certification Status</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink16" class="dropdown-item" href="help/tutorials.aspx">Tutorials</a></li>
+                                <li>
+                                    <a id="ctl00_HyperLink39" class="dropdown-item" href="help/LoginAccountDeletion.aspx">Delete a Login Account</a></li>
+
+                            </ul>
+                        </li>
+
+                        
+                        <li>
+                            <a id="ctl00_HyperLink3" class="nav-link" href="userutilities/login.aspx">Login</a></li>
+                        
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </nav>
+        <br />
+        <div class="container">
+            
+            <div class="ContentArea">
+                
+
+    <input type="hidden" name="ctl00$ContentPlaceHolder1$HiddenField_season" id="[long]" value="2025-2026" />
+    <input type="hidden" name="ctl00$ContentPlaceHolder1$HiddenField_finalized" id="[long]" value="1" />
+
+    <div class="row">
+        <div class="col-md-12">
+            <span id="ctl00_ContentPlaceHolder1_Label_title" class="PageHeaderBlack">MN NASP® Bullseye State Tournament 2026</span>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div></div>
+    <div class="accordion" id="accordion">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="btn btn-warning btn-lg">
+                        <i class="bi bi-list-ul"></i>&nbsp;
+                        <span id="[long]">Results & Info</span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse">
+                <div class="card-body">
+
+                    
+
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-lg-3 text-center" style="padding-top: 10px">
+                            <input type="submit" name="ctl00$ContentPlaceHolder1$Button_tourn_info" value="Registration Info" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$Button_tourn_info&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="[long]" class="btn btn-primary menu-btn" />
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3 text-center" style="padding-top: 10px">
+                            <div id="[long]">
+	
+                                <span style="background-color: Yellow; font-weight: bold; font-size: medium; display:inline-block; padding:2px 6px; border-radius:4px;">Log In for Registration</span>
+                                <div>
+                                    <input type="submit" name="ctl00$ContentPlaceHolder1$Button_login" value="Login" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$Button_login&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ctl00_ContentPlaceHolder1_Button_login" class="btn btn-success menu-btn" />
+                                </div>
+                            
+</div>
+                            
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3 text-center" style="padding-top: 10px">
+                            
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3 text-center" style="padding-top: 10px">
+                            
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        
+                        <div class="col-12 col-sm-6 col-lg-3 text-center" style="padding-top: 10px">
+                            <input type="submit" name="ctl00$ContentPlaceHolder1$Button_tournament_day_info" value="Tournament Day Info" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$Button_tournament_day_info&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="[long]" class="btn btn-primary menu-btn" />
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3 text-center" style="padding-top: 10px">
+                            
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3 text-center" style="padding-top: 10px">
+                            
+                            <div id="[long]">
+	
+                                <a id="[long]" class="btn btn-primary menu-btn" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$LinkButton_follow_now&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">
+                                    <i class="bi bi-heart"></i> Bookmark
+                                </a>
+                            
+</div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3 text-center" style="padding-top: 10px">
+                            <input type="submit" name="ctl00$ContentPlaceHolder1$Button_who_participated" value="Participating Groups" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$Button_who_participated&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="[long]" class="btn btn-primary menu-btn" />
+                        </div>
+                    </div>
+
+                    <div id="[long]">
+	
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-lg-3 text-center" style="padding-top: 10px">
+                                <a id="[long]" class="btn btn-info menu-btn" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$LinkButton_results_by_school&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">
+                                    Results By School
+                                </a>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3 text-center" style="padding-top: 10px">
+                                <a id="[long]" class="btn btn-info menu-btn" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$LinkButton_individual_standings&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">
+                                    Individual Standings
+                                </a>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3 text-center" style="padding-top: 10px">
+
+                                <div id="[long]">
+		
+                                    <a id="[long]" class="btn btn-info menu-btn" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$LinkButton_team_standings&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">
+                                        Team Standings
+                                    </a>
+                                
+	</div>
+                                
+
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3 text-center" style="padding-top: 10px">
+                                <a id="[long]" class="btn btn-info menu-btn" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$LinkButton_leaderboard&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">
+Leaderboard
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-lg-3 text-center" style="padding-top: 10px">
+                                <a id="[long]" class="btn btn-info menu-btn" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$LinkButton_analytics_by_grade&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">
+                                    Analytics By Grade
+                                </a>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3 text-center" style="padding-top: 10px">
+                                <a id="[long]" class="btn btn-info menu-btn" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$LinkButton_analytics_by_division&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">
+                                    Analytics By Division
+                                </a>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3 text-center" style="padding-top: 10px">
+                                <a id="[long]" class="btn btn-info menu-btn" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$LinkButton_analytics_by_team&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">
+                                    Analytics By Team
+                                </a>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3 text-center" style="padding-top: 10px">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-lg-3 text-center" style="padding-top: 10px">
+                                <a id="[long]" disabled="disabled" class="btn btn-success menu-btn disabled">
+                                    Archer Data Export
+                                </a>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3 text-center" style="padding-top: 10px">
+                                <a id="[long]" disabled="disabled" class="btn btn-success menu-btn disabled">
+                                    Team Data Export
+                                </a>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3 text-center" style="padding-top: 10px"></div>
+                            <div class="col-12 col-sm-6 col-lg-3 text-center" style="padding-top: 10px"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-center" style="padding-top: 5px">
+                                <span id="[long]" class="text-muted small">Export requires log in.</span>
+                            </div>
+                        </div>
+                    
+</div>
+
+                    
+                    <div style="padding-bottom: 50px"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- ************************************************************** -->
+    
+
+    <!-- ************************************************************** -->
+    <div id="[long]">
+	
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card"> <div class="card-body">
+                    <span style="font-weight: bold">
+                        <span id="[long]"></span>
+                        <span id="[long]" style="font-weight:bold;">The tournament has been completed and scores are finalized.</span>
+                    </span>
+                </div>
+            </div>
+        </div></div>
+    
+</div>
+
+    <!-- ************************************************************** -->
+    
+
+    <!-- ************************************************************** -->
+    
+
+    
+    
+    
+    
+    
+    
+
+    
+    <div id="[long]">
+	
+        <span id="ctl00_ContentPlaceHolder1_Label12" class="PageHeader1">Results By School</span>
+        
+
+        
+        
+        <div class="row">
+            <div class="col-md-5" style="padding-top: 4px">
+                <select name="ctl00$ContentPlaceHolder1$DropDownList_schools" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$DropDownList_schools\&#39;,\&#39;\&#39;)&#39;, 0)" id="[long]" class="form-control">
+		<option selected="selected" value="">Select a School</option>
+		<option value="349626">Albany Area Schools</option>
+		<option value="339480">Alexandria Area High School</option>
+		<option value="344879">ASSUMPTION CATHOLIC SCHOOL</option>
+		<option value="347365">Becker High School</option>
+		<option value="347366">Becker Intermediate School</option>
+		<option value="347364">Becker Middle School</option>
+		<option value="341457">Big Lake Elementary</option>
+		<option value="341432">Big Lake High School</option>
+		<option value="341447">Big Lake Middle School</option>
+		<option value="344302">Brandon - Evansville Isd#2908</option>
+		<option value="344304">Brandon-Evansville High School</option>
+		<option value="355969">Breckenridge Middle/High School</option>
+		<option value="357266">Cambridge Intermediate School</option>
+		<option value="357267">Cambridge Isanti High School</option>
+		<option value="357264">Cambridge Isanti Middle School</option>
+		<option value="355945">Cambridge-Isanti Area Online/Homeschool</option>
+		<option value="355966">Campbell -Tintah Public School</option>
+		<option value="357997">Central Middle School</option>
+		<option value="339675">Champlin Park High School</option>
+		<option value="359677">Chanhassen HS</option>
+		<option value="359678">Chaska HS</option>
+		<option value="357843">Chaska Middle School West</option>
+		<option value="350671">Cloquet High School</option>
+		<option value="351485">Concordia Academy</option>
+		<option value="344084">Cromwell-Wright</option>
+		<option value="339743">Crosslake Community School</option>
+		<option value="344294">Delano School</option>
+		<option value="343504">Discovery Middle School</option>
+		<option value="339808">Discovery Public School Faribault</option>
+		<option value="360142">Ely Public Schools</option>
+		<option value="339807">FARIBAULT HIGH SCHOOL</option>
+		<option value="339809">Faribault Home School Group</option>
+		<option value="341612">Faribault Lutheran School</option>
+		<option value="339802">Faribault Middle School</option>
+		<option value="350412">Foley High School</option>
+		<option value="350409">Foley Middle School</option>
+		<option value="344168">Grand Rapids High School</option>
+		<option value="339903">GREENWAY SCHOOLS</option>
+		<option value="351493">Hand In Hand Christian Montessori Academy</option>
+		<option value="336704">Hastings High School</option>
+		<option value="344525">Hawley Public School</option>
+		<option value="344881">HIBBING SCHOOL</option>
+		<option value="347355">Hill City School</option>
+		<option value="349627">Holdingford Public School</option>
+		<option value="355946">Isanti Intermediate School</option>
+		<option value="353283">Ismn Online/Homeschool</option>
+		<option value="339677">Jackson Middle School</option>
+		<option value="355335">Kennedy Secondary School</option>
+		<option value="362192">Lake Of The Woods School</option>
+		<option value="355684">Lake Park - Audubon</option>
+		<option value="359821">Lakes International Language Academy</option>
+		<option value="359822">Lakes International Language Academy Lower School</option>
+		<option value="359781">Lighthouse Christian Academy</option>
+		<option value="351484">Mahtomedi High School</option>
+		<option value="339542">Mahtomedi Middle School</option>
+		<option value="359685">Melrose Area Public Schools</option>
+		<option value="342072">Mesabi East Schools</option>
+		<option value="340678">MILACA WOLVES ARCHERY</option>
+		<option value="336905">MINNESOTA NEW COUNTRY SCHOOL</option>
+		<option value="357251">Minnetonka Archery</option>
+		<option value="351996">Mountain Iron-Buhl</option>
+		<option value="358965">Nashwauk-Keewatin School</option>
+		<option value="342249">New Prague Eagle View Elementary</option>
+		<option value="342247">New Prague Falcon Ridge Elementary</option>
+		<option value="343993">New Prague High School</option>
+		<option value="341858">New Prague Middle School</option>
+		<option value="342252">New Prague Raven Stream Elementary</option>
+		<option value="340077">Northern Lights Community School</option>
+		<option value="345858">Northwoods School</option>
+		<option value="340539">Open World Learning Community</option>
+		<option value="343980">Osakis High School</option>
+		<option value="346346">Pierz Schools</option>
+		<option value="349555">Princeton High School</option>
+		<option value="349556">Princeton Intermediate School</option>
+		<option value="349557">Princeton Middle School</option>
+		<option value="343972">Red Lake Elementary School</option>
+		<option value="343981">Riverside Christian School</option>
+		<option value="359054">Riverview Intermediate School</option>
+		<option value="348442">Robert J Elkington Middle School</option>
+		<option value="349639">Rock Ridge - High School</option>
+		<option value="349640">Rock Ridge - Laurentian Elementary</option>
+		<option value="339321">Rothsay Public School</option>
+		<option value="359686">Sacred Heart School</option>
+		<option value="358222">Sartell High School</option>
+		<option value="359137">Sartell Middle School</option>
+		<option value="359697">Sauk Centre Public Schools</option>
+		<option value="359086">St. Croix Homeschool</option>
+		<option value="343873">St. Croix Preparatory Academy</option>
+		<option value="336703">ST. Elizabeth Ann Seton School</option>
+		<option value="362293">Ulen-Hitterdal School</option>
+		<option value="357994">White Bear Area High School - North Campus</option>
+		<option value="340332">Woodbury Leadership Academy</option>
+		<option value="337021">Zimmerman Mshs</option>
+
+	</select>
+            </div>
+            <div class="col-md-4" style="padding-top: 4px">
+                <input type="submit" name="ctl00$ContentPlaceHolder1$Button_refresh_results_by_team" value="Refresh" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$Button_refresh_results_by_team&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="[long]" class="btn btn-secondary" style="width:100px;background-color: lightgray; padding-top: 4px" />
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3 text-center" style="padding-top: 4px"></div>
+            <br />
+        </div>
+
+        
+    
+</div>
+
+    
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+            </div>
+            <hr>
+        </div>
+        <!-- /container -->
+
+
+        <div style="background-color: #383838; padding-bottom: 20px">
+            <footer class="footer">
+                <br />
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <strong>Site Links</strong>
+                            <div style="padding-top: 5px; padding-bottom: 5px">
+                                <a id="ctl00_HyperLink12" href="tournamentexplorer.aspx">Tournaments</a>
+                            </div>
+                            <div style="padding-top: 5px; padding-bottom: 5px">
+                                <a id="ctl00_HyperLink13" href="ClientSoftware/">Software</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <strong>Contact</strong><br />
+                            <div style="padding-top: 5px; padding-bottom: 5px">
+                                <a id="ctl00_HyperLink17" href="Contact.aspx">support@nasptournaments.org</a>
+                            </div>
+                            <div style="padding-top: 5px; padding-bottom: 5px">
+                                &nbsp;&nbsp;  
+                                <a id="ctl00_HyperLink26" href="https://www.facebook.com/naspschools/."><img src="icons/FB-flogo-Blue-40px.png" alt="Facebook" style="border-width:0px;" /></a>
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-3">
+                            <strong>Links</strong>
+                            <div style="padding-top: 5px; padding-bottom: 5px"><a href="https://naspschools.org">NASP&reg; - https://naspschools.org</a></div>
+                            <div style="padding-top: 5px; padding-bottom: 5px"><a href="https://naspbai.org">BAI - https://naspbai.org</a></div>
+                            <div style="padding-top: 5px; padding-bottom: 5px"><a href="https://naspbai.org/classsearch.aspx">BAI Classes - https://naspbai.org</a></div>
+
+
+                        </div>
+                        <div class="col-md-3">
+                            <strong>Administrative</strong>
+
+                            
+                            <div id="ctl00_Panel_admin_links_not_logged_in">
+	
+                                <div style="padding-top: 5px; padding-bottom: 5px">Login Required</div>
+                            
+</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        Copyright &copy; 2009-<span id="ctl00_Label_footer_year">2026</span>
+                        NASP&reg;
+                    </div>
+                </div>
+                <!-- /container -->
+            </footer>
+        </div>
+    </form>
+    
+    
+    
+</body>
+</html>
+
+
+
+
+
+

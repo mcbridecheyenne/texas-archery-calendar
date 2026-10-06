@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>404</title>
+    
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="top-bar"></div>
+        <div class="welcome-container">
+            <div class="frowny-face">:(</div>
+            <h1>
+                404: Page Not Found
+            </h1>
+            <h4>
+                The page you.re looking for isn't here.<br /><br />
+                <a href="#" onclick='redirectToHomePage();'>Home page</a>
+            </h4>
+        </div>
+    </div>
+    
+    <div class="footer">
+        Copyright &copy; website.com
+    </div>
+  
+</body>
+</html>
+

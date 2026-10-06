@@ -1,0 +1,55 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<table border="1" cellpadding="1" cellspacing="1" style="width:100%;">
+	<thead>
+		<tr>
+			<th scope="col" style="background-color: rgb(0, 53, 148);"><img alt="" src="https://www.pitt.[long].png" style="width:
+ 250px; height: 75px; float: left;" /></th>
+		</tr>
+	</thead>
+	<tbody>
+	</tbody>
+</table>
+
+<h1 class="title" id="page-title" style="color: rgb(0, 53, 148); margin-right: 0px; margin-left: 0px; font-size: 3.1rem; background-color: rgb(253, 253, 253); box-shadow: none !impor
+tant; font-family: Rubik, Helvetica, Arial, sans-serif !important; font-weight: normal !important; margin-top: 35px !important; margin-bottom: 40px !important; padding: 0px !importan
+t; line-height: 1.2 !important;">Error: 404 Page Not Found</h1>
+
+<article class="node-2 node node-page view-mode-full clearfix" style="color: rgb(43, 43, 43); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica,
+Arial, sans-serif; font-size: 15px; background-color: rgb(253, 253, 253); box-shadow: none !important;">
+<header style="box-shadow: none !important;">&nbsp;</header>
+
+<section class="field-body" style="box-shadow: none !important;">
+<p style="box-shadow: none !important; margin: 0px 0px 12px;">We&#39;re sorry! <span style="color: rgb(43, 43, 43); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, He
+lvetica, Arial, sans-serif; font-size: 15px; background-color: rgb(255, 255, 255);">The page you are looking for might have been removed, had its named changed, or is temporarily unavailable.</span></p>
+
+<p style="background-color: rgb(255, 255, 255);">&nbsp;</p>
+
+<p style="background-color: rgb(255, 255, 255);">Please try the following:</p>
+
+<ul style="background-color: rgb(255, 255, 255);">
+	<li>If you typed the page address in the address bar, make sure that it is spelled correctly.</li>
+	<li>Open the&nbsp;<a href="https://pitt.edu">Pitt</a>&nbsp;home page, and then look for links to the information you want.</li>
+	<li>Click the&nbsp;<a>Back</a>&nbsp;button to try another link.</li>
+</ul>
+
+<div class="footer">
+<table bgcolor="#003594" border="0" style="border: 1px dotted rgb(211, 211, 211); font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-s
+ize: 15px; color: rgb(0, 0, 0);" width="100%">
+	<tbody>
+		<tr>
+			<td style="border: 2px dotted rgb(211, 211, 211); text-align: center; vertical-align: baseline;"><a href="https://www.pitt.edu"><font color="#FFB81C">Pitt Home</font></a></td>
+			<td style="border: 1px dotted rgb(211, 211, 211); text-align: center; vertical-align: baseline;"><a href="https://technology.pitt.edu"><font color="#FFB81C">Technology Web Site</font></a></td>
+			<td style="border: 1px dotted rgb(211, 211, 211); text-align: center; vertical-align: baseline;"><a href="https://www.technology.pitt.edu/247-it-help-desk"><font color="#FFB81C">Get Help</font></a></td>
+			<td style="border: 1px dotted rgb(211, 211, 211); text-align: center; vertical-align: baseline;"><font color="#FFB81C">Copyright (C) 2020, University of Pittsburgh</font></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</section>
+</article>
+</body>
+</html>

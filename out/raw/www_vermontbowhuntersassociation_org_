@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html class="html" lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- This site is optimized with the Yoast SEO plugin v24.9 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Vermont Bowhunters Association | Archery &amp; Bowhunting</title>
+	<meta name="description" content="A Vermont non-profit uniting the Bowhunters of Vermont to foster, protect, and preserve the sport of bowhunting and archery." />
+	<link rel="canonical" href="https://www.vermontbowhuntersassociation.org/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Vermont Bowhunters Association | Archery &amp; Bowhunting" />
+	<meta property="og:description" content="A Vermont non-profit uniting the Bowhunters of Vermont to foster, protect, and preserve the sport of bowhunting and archery." />
+	<meta property="og:url" content="https://www.vermontbowhuntersassociation.org/" />
+	<meta property="og:site_name" content="Vermont Bowhunters Association | Archery &amp; Bowhunting" />
+	<meta property="article:modified_time" content="2022-12-20T22:13:53+00:00" />
+	<meta property="og:image" content="https://www.vermontbowhuntersassociation.[long].jpg" />
+	<meta property="og:image:width" content="2185" />
+	<meta property="og:image:height" content="1776" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="Vermont Bowhunters Association | Archery &amp; Bowhunting &raquo; Feed" href="https://www.vermontbowhuntersassociation.org/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Vermont Bowhunters Association | Archery &amp; Bowhunting &raquo; Comments Feed" href="https://www.vermontbowhuntersassociation.org/comments/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.vermontbowhuntersassociation.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.vermontbowhuntersassociation.org%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.vermontbowhuntersassociation.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.vermontbowhuntersassociation.org%2F&#038;format=xml" />
+
+
+
+
+
+
+<link rel='stylesheet' id='oceanwp-style-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=07.21' media='all' />
+<link rel='stylesheet' id='child-style-css' href='https://www.vermontbowhuntersassociation.[long].css?ver=6266c01fa4af46551e60012cb08d0104' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=3.30.2' media='all' />
+<link rel='stylesheet' id='elementor-post-26-css' href='https://www.vermontbowhuntersassociation.[long].css?ver=1756640480' media='all' />
+<link rel='stylesheet' id='elementor-post-127-css' href='https://www.vermontbowhuntersassociation.[long].css?ver=1756640480' media='all' />
+<link rel='stylesheet' id='font-awesome-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=6.4.2' media='all' />
+<link rel='stylesheet' id='simple-line-icons-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=2.4.0' media='all' />
+<link rel='stylesheet' id='oceanwp-google-font-poppins-css' href='//fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&#038;subset=latin&#038;display=swap&#038;ver=7.1.2' media='all' />
+<link rel='stylesheet' id='oceanwp-google-font-amaranth-css' href='//fonts.googleapis.com/css?family=Amaranth:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&#038;subset=latin&#038;display=swap&#038;ver=7.1.2' media='all' />
+<link rel='stylesheet' id='elementor-icons-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=5.43.0' media='all' />
+<link rel='stylesheet' id='elementor-post-5-css' href='https://www.vermontbowhuntersassociation.[long].css?ver=1756640480' media='all' />
+<link rel='stylesheet' id='elementor-pro-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=3.24.3' media='all' />
+<link rel='stylesheet' id='e-shapes-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=3.30.2' media='all' />
+<link rel='stylesheet' id='widget-heading-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=3.30.2' media='all' />
+<link rel='stylesheet' id='e-animation-float-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=3.30.2' media='all' />
+<link rel='stylesheet' id='e-animation-fadeInLeft-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=3.30.2' media='all' />
+<link rel='stylesheet' id='e-animation-fadeInRight-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=3.30.2' media='all' />
+<link rel='stylesheet' id='widget-image-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=3.30.2' media='all' />
+<link rel='stylesheet' id='widget-spacer-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=3.30.2' media='all' />
+<link rel='stylesheet' id='e-animation-fadeInUp-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=3.30.2' media='all' />
+<link rel='stylesheet' id='widget-social-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=3.24.3' media='all' />
+<link rel='stylesheet' id='widget-gallery-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=3.24.3' media='all' />
+<link rel='stylesheet' id='elementor-gallery-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=1.2.0' media='all' />
+<link rel='stylesheet' id='elementor-post-7-css' href='https://www.vermontbowhuntersassociation.[long].css?ver=1756640481' media='all' />
+<link rel='stylesheet' id='oe-widgets-style-css' href='https://www.vermontbowhuntersassociation.[long].css?ver=6266c01fa4af46551e60012cb08d0104' media='all' />
+<link rel='stylesheet' id='oss-social-share-style-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=6266c01fa4af46551e60012cb08d0104' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-poppins-css' href='https://www.vermontbowhuntersassociation.[long].css?ver=1742395660' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-rowdies-css' href='https://www.vermontbowhuntersassociation.[long].css?ver=1742395660' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-robotoslab-css' href='https://www.vermontbowhuntersassociation.[long].css?ver=1742395662' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-roboto-css' href='https://www.vermontbowhuntersassociation.[long].css?ver=1742395666' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-amaranth-css' href='https://www.vermontbowhuntersassociation.[long].css?ver=1742395666' media='all' />
+<link rel='stylesheet' id='elementor-icons-shared-0-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=5.15.3' media='all' />
+<link rel='stylesheet' id='elementor-icons-fa-regular-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=5.15.3' media='all' />
+<link rel='stylesheet' id='elementor-icons-fa-solid-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=5.15.3' media='all' />
+<link rel='stylesheet' id='elementor-icons-fa-brands-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=5.15.3' media='all' />
+
+
+<link rel="https://api.w.org/" href="https://www.vermontbowhuntersassociation.org/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.vermontbowhuntersassociation.org/wp-json/wp/v2/pages/7" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.vermontbowhuntersassociation.org/xmlrpc.php?rsd" />
+<meta name="generator" content="Elementor 3.30.2; features: additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
+			
+			<meta name="generator" content="Powered by Slider Revolution 6.6.18 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+<link rel="icon" href="https://www.vermontbowhuntersassociation.[long].png" sizes="32x32" />
+<link rel="icon" href="https://www.vermontbowhuntersassociation.[long].png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.vermontbowhuntersassociation.[long].png" />
+<meta name="msapplication-TileImage" content="https://www.vermontbowhuntersassociation.[long].png" />
+
+
+<!-- OceanWP CSS -->
+<link rel='stylesheet' id='widget-icon-box-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=3.30.2' media='all' />
+<link rel='stylesheet' id='widget-social-icons-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=3.30.2' media='all' />
+<link rel='stylesheet' id='e-apple-webkit-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=3.30.2' media='all' />
+<link rel='stylesheet' id='swiper-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=8.4.5' media='all' />
+<link rel='stylesheet' id='e-swiper-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=3.30.2' media='all' />
+<link rel='stylesheet' id='widget-nav-menu-css' href='https://www.vermontbowhuntersassociation.[long].min.css?ver=3.24.3' media='all' />
+<link rel='stylesheet' id='rs-plugin-settings-css' href='https://www.vermontbowhuntersassociation.[long].css?ver=6.6.18' media='all' />
+
+
+</head>
+
+<body data-rsssl=1 class="home wp-singular page-template-default page page-id-7 wp-embed-responsive wp-theme-oceanwp wp-child-theme-oogly-custom-theme oceanwp-theme fullscreen-mobile no-header-border default-breakpoint content-full-width content-max-width has-topbar page-with-background-title page-header-disabled has-blog-grid has-fixed-footer no-margins elementor-default elementor-kit-5 elementor-page elementor-page-7" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+
+	
+	
+	<div id="outer-wrap" class="site clr">
+
+		<a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+		
+		<div id="wrap" class="clr">
+
+			
+
+<div id="top-bar-wrap" class="clr">
+
+	<div id="top-bar" class="clr container has-no-content">
+
+		
+		<div id="top-bar-inner" class="clr">
+
+			
+
+		</div><!-- #top-bar-inner -->
+
+		
+	</div><!-- #top-bar -->
+
+</div><!-- #top-bar-wrap -->
+
+
+			
+<header id="site-header" class="custom-header effect-seven clr" data-height="68" itemscope="itemscope" itemtype="https://schema.org/WPHeader" role="banner">
+
+	
+		
+
+<div id="site-header-inner" class="clr container">
+
+			<div data-elementor-type="wp-post" data-elementor-id="26" class="elementor elementor-26" data-elementor-post-type="oceanwp_library">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-abf1f91 elementor-section-stretched elementor-hidden-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="abf1f91" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-aa1be65" data-id="aa1be65" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-7c5b456 elementor-widget elementor-widget-image" data-id="7c5b456" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+																<a href="https://www.vermontbowhuntersassociation.org">
+							<img fetchpriority="high" width="450" height="257" src="https://www.vermontbowhuntersassociation.org/wp-content/uploads/2022/10/logo.png" class="attachment-large size-large wp-image-33" alt="" srcset="https://www.vermontbowhuntersassociation.org/wp-content/uploads/2022/10/logo.png 450w, https://www.vermontbowhuntersassociation.[long].png 300w" sizes="(max-width: 450px) 100vw, 450px" />								</a>
+															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-70a1ac9" data-id="70a1ac9" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-d551ff0 elementor-position-left elementor-vertical-align-middle elementor-widget__width-auto elementor-view-default elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="d551ff0" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<a href="mailto:info@vermontbowhuntersassociation.org" class="elementor-icon" tabindex="-1" aria-label="info@vermontbowhuntersassociation.org">
+				<i aria-hidden="true" class="far fa-envelope"></i>				</a>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+									<h3 class="elementor-icon-box-title">
+						<a href="mailto:info@vermontbowhuntersassociation.org" >
+							info@vermontbowhuntersassociation.org						</a>
+					</h3>
+				
+				
+			</div>
+			
+		</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-842cadd elementor-position-left elementor-vertical-align-middle elementor-widget__width-auto elementor-view-default elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="842cadd" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<a href="tel:(802)%20579-8471" class="elementor-icon" tabindex="-1" aria-label="(802) 579-8471">
+				<i aria-hidden="true" class="fas fa-mobile-alt"></i>				</a>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+									<h3 class="elementor-icon-box-title">
+						<a href="tel:(802)%20579-8471" >
+							(802) 579-8471						</a>
+					</h3>
+				
+				
+			</div>
+			
+		</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-b5f8d36 elementor-widget__width-auto elementor-shape-rounded elementor-grid-0 e-grid-align-center elementor-widget elementor-widget-social-icons" data-id="b5f8d36" data-element_type="widget" data-widget_type="social-icons.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-social-icons-wrapper elementor-grid" role="list">
+							<span class="elementor-grid-item" role="listitem">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-d9aaa1e" target="_blank">
+						<span class="elementor-screen-only">Facebook</span>
+						<i class="fab fa-facebook"></i>					</a>
+				</span>
+							<span class="elementor-grid-item" role="listitem">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-6b47840" target="_blank">
+						<span class="elementor-screen-only">Instagram</span>
+						<i class="fab fa-instagram"></i>					</a>
+				</span>
+					</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-d0d6981 elementor-widget [long]" data-id="d0d6981" data-element_type="widget" data-widget_type="wp-widget-ocean_custom_header_nav.default">
+				<div class="elementor-widget-container">
+					
+				<div class="custom-header-nav clr right">
+
+								<div id="site-navigation-wrap" class="clr">
+			
+			
+			
+			<nav id="site-navigation" class="navigation main-navigation clr" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement" role="navigation" >
+
+				<ul id="menu-main-navigation" class="main-menu dropdown-menu sf-menu"><li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-7 current_page_item menu-item-21"><a href="https://www.vermontbowhuntersassociation.org/" class="menu-link"><span class="text-wrap">Home</span></a></li><li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="https://www.vermontbowhuntersassociation.org/history/" class="menu-link"><span class="text-wrap">History</span></a></li><li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23"><a href="https://www.vermontbowhuntersassociation.org/membership/" class="menu-link"><span class="text-wrap">Become a Member</span></a></li><li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a href="https://www.vermontbowhuntersassociation.org/news-events/" class="menu-link"><span class="text-wrap">News &#038; Events</span></a></li><li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="https://www.vermontbowhuntersassociation.org/contact-us/" class="menu-link"><span class="text-wrap">Contact Us</span></a></li></ul>
+			</nav><!-- #site-navigation -->
+
+			
+			
+					</div><!-- #site-navigation-wrap -->
+			
+		
+	
+	
+	<div class="oceanwp-mobile-menu-icon clr mobile-right">
+
+		
+		
+		
+		<a href="https://www.vermontbowhuntersassociation.org/#mobile-menu-toggle" class="mobile-menu"  aria-label="Mobile Menu">
+							<i class="fa fa-bars" aria-hidden="true"></i>
+								<span class="oceanwp-text">Menu</span>
+				<span class="oceanwp-close-text">Close</span>
+						</a>
+
+		
+		
+		
+	</div><!-- #oceanwp-mobile-menu-navbar -->
+
+	
+
+				</div>
+
+							</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-f44eb52 elementor-section-stretched elementor-section-content-middle elementor-hidden-desktop elementor-hidden-tablet elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="f44eb52" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-10b5428" data-id="10b5428" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-3635aba elementor-widget elementor-widget-image" data-id="3635aba" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+																<a href="https://www.vermontbowhuntersassociation.org">
+							<img fetchpriority="high" width="450" height="257" src="https://www.vermontbowhuntersassociation.org/wp-content/uploads/2022/10/logo.png" class="attachment-large size-large wp-image-33" alt="" srcset="https://www.vermontbowhuntersassociation.org/wp-content/uploads/2022/10/logo.png 450w, https://www.vermontbowhuntersassociation.[long].png 300w" sizes="(max-width: 450px) 100vw, 450px" />								</a>
+															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-351ee62" data-id="351ee62" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-44359ad elementor-position-left elementor-vertical-align-middle elementor-widget__width-auto elementor-view-default elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="44359ad" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<a href="https://goo.gl/maps/sCbiRcCsYzC8cJde8" target="_blank" class="elementor-icon" tabindex="-1">
+				<i aria-hidden="true" class="fas fa-map-marker-alt"></i>				</a>
+			</div>
+			
+			
+		</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-bac1644 elementor-position-left elementor-vertical-align-middle elementor-widget__width-auto elementor-view-default elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="bac1644" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<a href="mailto:info@vermontbowhuntersassociation.org" class="elementor-icon" tabindex="-1">
+				<i aria-hidden="true" class="far fa-envelope"></i>				</a>
+			</div>
+			
+			
+		</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-4468fc5 elementor-position-left elementor-vertical-align-middle elementor-widget__width-auto elementor-view-default elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="4468fc5" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<a href="tel:(802)%20579-8471" class="elementor-icon" tabindex="-1">
+				<i aria-hidden="true" class="fas fa-mobile-alt"></i>				</a>
+			</div>
+			
+			
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-9764996" data-id="9764996" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-040fdf4 elementor-widget [long]" data-id="040fdf4" data-element_type="widget" data-widget_type="wp-widget-ocean_custom_header_nav.default">
+				<div class="elementor-widget-container">
+					
+				<div class="custom-header-nav clr right">
+
+								<div id="site-navigation-wrap" class="clr">
+			
+			
+			
+			<nav id="site-navigation" class="navigation main-navigation clr" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement" role="navigation" >
+
+				<ul id="menu-main-navigation-1" class="main-menu dropdown-menu sf-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-7 current_page_item menu-item-21"><a href="https://www.vermontbowhuntersassociation.org/" class="menu-link"><span class="text-wrap">Home</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="https://www.vermontbowhuntersassociation.org/history/" class="menu-link"><span class="text-wrap">History</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23"><a href="https://www.vermontbowhuntersassociation.org/membership/" class="menu-link"><span class="text-wrap">Become a Member</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a href="https://www.vermontbowhuntersassociation.org/news-events/" class="menu-link"><span class="text-wrap">News &#038; Events</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="https://www.vermontbowhuntersassociation.org/contact-us/" class="menu-link"><span class="text-wrap">Contact Us</span></a></li></ul>
+			</nav><!-- #site-navigation -->
+
+			
+			
+					</div><!-- #site-navigation-wrap -->
+			
+		
+	
+	
+	<div class="oceanwp-mobile-menu-icon clr mobile-right">
+
+		
+		
+		
+		<a href="https://www.vermontbowhuntersassociation.org/#mobile-menu-toggle" class="mobile-menu"  aria-label="Mobile Menu">
+							<i class="fa fa-bars" aria-hidden="true"></i>
+								<span class="oceanwp-text">Menu</span>
+				<span class="oceanwp-close-text">Close</span>
+						</a>
+
+		
+		
+		
+	</div><!-- #oceanwp-mobile-menu-navbar -->
+
+	
+
+				</div>
+
+							</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+		
+</div>
+
+
+
+		
+		
+</header><!-- #site-header -->
+
+
+			
+			<main id="main" class="site-main clr"  role="main">
+
+				
+	
+	<div id="content-wrap" class="container clr">
+
+		
+		<div id="primary" class="content-area clr">
+
+			
+			<div id="content" class="site-content clr">
+
+				
+				
+<article class="single-page-article clr">
+
+	
+<div class="entry clr" itemprop="text">
+
+	
+			<div data-elementor-type="wp-page" data-elementor-id="7" class="elementor elementor-7" data-elementor-post-type="page">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-ab0527b elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="ab0527b" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;shape_divider_bottom&quot;:&quot;mountains&quot;}">
+					<div class="elementor-shape elementor-shape-bottom" aria-hidden="true" data-negative="false">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+	<path class="elementor-shape-fill" opacity="0.33" d="M473,67.3c-203.9,88.3-263.1-34-320.3,0C66,119.1,0,59.7,0,59.7V0h1000v59.7 c0,0-62.1,26.1-94.9,29.3c-32.8,3.3-62.8-12.3-75.8-22.1C806,49.6,745.3,8.7,694.9,4.7S492.4,59,473,67.3z"/>
+	<path class="elementor-shape-fill" opacity="0.66" d="M734,67.3c-45.5,0-77.2-23.2-129.1-39.1c-28.6-8.7-150.3-10.1-254,39.1 s-91.7-34.4-149.2,0C115.7,118.3,0,39.8,0,39.8V0h1000v36.5c0,0-28.2-18.5-92.1-18.5C810.2,18.1,775.7,67.3,734,67.3z"/>
+	<path class="elementor-shape-fill" d="M766.1,28.9c-200-57.5-266,65.5-395.1,19.5C242,1.8,242,5.4,184.8,20.6C128,35.8,132.3,44.9,89.9,52.5C28.6,63.7,0,0,0,0 h1000c0,0-9.9,40.9-83.6,48.1S829.6,47,766.1,28.9z"/>
+</svg>		</div>
+					<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-efbd6e6" data-id="efbd6e6" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-a12d6e5 elementor-widget elementor-widget-slider_revolution" data-id="a12d6e5" data-element_type="widget" data-widget_type="slider_revolution.default">
+				<div class="elementor-widget-container">
+					
+		<div class="wp-block-themepunch-revslider">
+			<!-- START Slider 1 REVOLUTION SLIDER 6.6.18 --><p class="rs-p-wp-fix"></p>
+			<rs-module-wrap id="rev_slider_1_1_wrapper" data-source="gallery" style="visibility:hidden;background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
+				<rs-module id="rev_slider_1_1" style="" data-version="6.6.18">
+					<rs-slides style="overflow: hidden; position: absolute;">
+						<rs-slide style="position: absolute;" data-key="rs-1" data-title="Slide" data-thumb="//www.vermontbowhuntersassociation.[long].jpg" data-in="o:0;" data-out="a:false;">
+							<img decoding="async" src="//www.vermontbowhuntersassociation.[long].png" alt="" title="slide3" width="2048" height="1202" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="//www.vermontbowhuntersassociation.[long].jpg" data-no-retina>
+<!---->						</rs-slide>
+						<rs-slide style="position: absolute;" data-key="rs-2" data-title="Slide" data-thumb="//www.vermontbowhuntersassociation.[long].jpg" data-in="o:0;" data-out="a:false;">
+							<img decoding="async" src="//www.vermontbowhuntersassociation.[long].png" alt="" title="Owner-hunter 2" width="1706" height="1392" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="//www.vermontbowhuntersassociation.[long].jpg" data-bg="p:center top;" data-no-retina>
+<!---->						</rs-slide>
+						<rs-slide style="position: absolute;" data-key="rs-8" data-title="Slide" data-thumb="//www.vermontbowhuntersassociation.[long].jpg" data-in="o:0;" data-out="a:false;">
+							<img loading="lazy" decoding="async" src="//www.vermontbowhuntersassociation.[long].png" alt="" title="Ghost 802 WCC Shoot" width="1462" height="1145" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="//www.vermontbowhuntersassociation.[long].jpg" data-bg="p:center top;" data-no-retina>
+<!---->						</rs-slide>
+					</rs-slides>
+					<rs-static-layers><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-0" 
+								class="rs-layer-static"
+								data-type="shape"
+								data-rsp_ch="on"
+								data-text="w:normal;s:20,20,15,9;l:0,0,18,11;"
+								data-dim="w:100%;h:100%;"
+								data-basealign="slide"
+								data-onslides="s:1;"
+								data-frame_999="o:0;st:w;"
+								style="z-index:5;background-color:rgba(0,0,0,0.34);"
+							> 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-1" 
+								class="rs-layer-static"
+								data-type="text"
+								data-rsp_ch="on"
+								data-xy="x:c;yo:395px,395px,263px,212px;"
+								data-text="w:normal;s:40,40,40,35;l:50,50,45,40;a:center;"
+								data-dim="w:525px,525px,430px,351px;"
+								data-onslides="s:1;"
+								data-frame_1="e:power4.inOut;sp:1200;"
+								data-frame_1_sfx="se:blocktoleft;"
+								data-frame_999="o:0;st:w;"
+								style="z-index:6;font-family:'Amaranth';"
+							>Working <span style="color: #f59320;">together</span> for better bowhunting! 
+							</rs-layer><!--
+					--></rs-static-layers>
+				</rs-module>
+				
+			</rs-module-wrap>
+			<!-- END REVOLUTION SLIDER -->
+</div>
+
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-b05be01 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b05be01" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-wider">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-a3b7613 animated-slow elementor-invisible" data-id="a3b7613" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeInLeft&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-b127bb4 elementor-widget elementor-widget-heading" data-id="b127bb4" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Welcome to...</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-fff3eed elementor-widget elementor-widget-heading" data-id="fff3eed" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Vermont Bowhunters Association</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-7ad1510 elementor-widget elementor-widget-text-editor" data-id="7ad1510" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p>The Vermont Bowhunters Association, VBA, was established as a Vermont Non-Profit Corporation on April 28, 2011, and as a Federal 501(C)(3) in 2019 but its official beginning was September 12, 2010. Six bowhunters met in Danville to discuss the need for a statewide organization that would unite Vermont’s bowhunters and represent their views and concerns about topics that were important to bowhunting. At that meeting the six decided to form the VBA and to get as many people involved in the process as they could. Soon more hunters joined the group, working on the process of forming a legitimate state and federally recognized association. Even during that process, the founders were working on the issues.</p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-5fea839 elementor-tablet-align-center elementor-widget elementor-widget-button" data-id="5fea839" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-md elementor-animation-float" href="https://www.vermontbowhuntersassociation.org/membership/">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Become a Member</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-da877bd elementor-hidden-mobile" data-id="da877bd" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-c6abdf8 elementor-widget__width-initial elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-image" data-id="c6abdf8" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInRight&quot;,&quot;_animation_delay&quot;:100}" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<picture><source srcset="https://www.vermontbowhuntersassociation.[long].jpg.webp 1024w, https://www.vermontbowhuntersassociation.[long].jpg.webp 300w, https://www.vermontbowhuntersassociation.[long].jpg.webp 768w, https://www.vermontbowhuntersassociation.[long].jpg.webp 1536w, https://www.vermontbowhuntersassociation.[long].jpg.webp 1630w" sizes="(max-width: 1024px) 100vw, 1024px" type="image/webp"><img loading="lazy" decoding="async" width="1024" height="792" src="https://www.vermontbowhuntersassociation.[long].jpg" class="elementor-animation-float attachment-large size-large wp-image-80 webpexpress-processed" alt="" srcset="https://www.vermontbowhuntersassociation.[long].jpg 1024w, https://www.vermontbowhuntersassociation.[long].jpg 300w, https://www.vermontbowhuntersassociation.[long].jpg 768w, https://www.vermontbowhuntersassociation.[long].jpg 1536w, https://www.vermontbowhuntersassociation.[long].jpg 1630w" sizes="(max-width: 1024px) 100vw, 1024px"></picture>															</div>
+				</div>
+				<div class="elementor-element elementor-element-98ab6a2 elementor-widget__width-initial elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-image" data-id="98ab6a2" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<picture><source srcset="https://www.vermontbowhuntersassociation.[long].jpg.webp 768w, https://www.vermontbowhuntersassociation.[long].jpg.webp 200w, https://www.vermontbowhuntersassociation.[long].jpg.webp 683w, https://www.vermontbowhuntersassociation.org/wp-content/uploads/2022/11/IMG000.jpg.webp 1024w" sizes="(max-width: 768px) 100vw, 768px" type="image/webp"><img loading="lazy" decoding="async" width="768" height="1152" src="https://www.vermontbowhuntersassociation.[long].jpg" class="elementor-animation-float attachment-medium_large size-medium_large wp-image-346 webpexpress-processed" alt="" srcset="https://www.vermontbowhuntersassociation.[long].jpg 768w, https://www.vermontbowhuntersassociation.[long].jpg 200w, https://www.vermontbowhuntersassociation.[long].jpg 683w, https://www.vermontbowhuntersassociation.org/wp-content/uploads/2022/11/IMG000.jpg 1024w" sizes="(max-width: 768px) 100vw, 768px"></picture>															</div>
+				</div>
+				<div class="elementor-element elementor-element-7a3938c elementor-widget__width-initial elementor-absolute animated-slow elementor-invisible elementor-widget elementor-widget-image" data-id="7a3938c" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInLeft&quot;,&quot;_animation_delay&quot;:200}" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<picture><source srcset="https://www.vermontbowhuntersassociation.[long].jpg.webp" type="image/webp"><img loading="lazy" decoding="async" width="1024" height="901" src="https://www.vermontbowhuntersassociation.[long].jpg" class="elementor-animation-float attachment-large size-large wp-image-82 webpexpress-processed" alt=""></picture>															</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-c405ab7 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="c405ab7" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_top&quot;:&quot;tilt&quot;,&quot;shape_divider_bottom&quot;:&quot;arrow&quot;}">
+							<div class="elementor-background-overlay"></div>
+						<div class="elementor-shape elementor-shape-top" aria-hidden="true" data-negative="false">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+	<path class="elementor-shape-fill" d="M0,6V0h1000v100L0,6z"/>
+</svg>		</div>
+				<div class="elementor-shape elementor-shape-bottom" aria-hidden="true" data-negative="false">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 10" preserveAspectRatio="none">
+	<path class="elementor-shape-fill" d="M350,10L340,0h20L350,10z"/>
+</svg>		</div>
+					<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-f130e81" data-id="f130e81" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-f178fce elementor-widget elementor-widget-spacer" data-id="f178fce" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-d0b8d9f animated-slow elementor-invisible" data-id="d0b8d9f" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-60d152e elementor-widget elementor-widget-heading" data-id="60d152e" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default"><a href="https://www.vermontbowhuntersassociation.org/membership/">What is the Vermont Bowhunters Association doing for you?</a></h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-934662e elementor-align-right elementor-widget elementor-widget-button" data-id="934662e" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-md elementor-animation-float" href="https://www.vermontbowhuntersassociation.org/membership/">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Find Out!</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-26f8b78" data-id="26f8b78" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-a93947b elementor-widget elementor-widget-spacer" data-id="a93947b" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-6a20ed3 elementor-section-stretched elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6a20ed3" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-wider">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-b9a2586 animated-slow elementor-invisible" data-id="b9a2586" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeInLeft&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-0d158ec elementor-widget elementor-widget-heading" data-id="0d158ec" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Our Mission</h2>				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-aae1737 animated-slow elementor-invisible" data-id="aae1737" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeInRight&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-1d4c055 elementor-widget elementor-widget-spacer" data-id="1d4c055" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-121205e elementor-widget elementor-widget-text-editor" data-id="121205e" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p>To unite the Bowhunters of Vermont and to use their collective strength to work on behalf of current and future generations of Bowhunters, and to foster, protect, and preserve the sport of bowhunting and archery.</p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-2cf16fa elementor-widget elementor-widget-spacer" data-id="2cf16fa" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-8028c50 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="8028c50" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-wider">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-9b0025e" data-id="9b0025e" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-f04d5f0 elementor-widget elementor-widget-facebook-page" data-id="f04d5f0" data-element_type="widget" data-widget_type="facebook-page.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-facebook-widget fb-page" data-href="https://www.facebook.[long]" data-tabs="timeline" data-height="466px" data-width="500px" data-small-header="true" data-hide-cover="false" data-show-facepile="true" data-hide-cta="false" style="min-height: 1px;height:466px"></div>				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-2cc18bd" data-id="2cc18bd" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-110dfb4 elementor-widget elementor-widget-gallery" data-id="110dfb4" data-element_type="widget" data-settings="{&quot;gallery_layout&quot;:&quot;justified&quot;,&quot;ideal_row_height&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:235,&quot;sizes&quot;:[]},&quot;gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:5,&quot;sizes&quot;:[]},&quot;lazyload&quot;:&quot;yes&quot;,&quot;ideal_row_height_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:150,&quot;sizes&quot;:[]},&quot;ideal_row_height_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:150,&quot;sizes&quot;:[]},&quot;gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;link_to&quot;:&quot;file&quot;,&quot;overlay_background&quot;:&quot;yes&quot;,&quot;content_hover_animation&quot;:&quot;fade-in&quot;}" data-widget_type="gallery.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-gallery__container">
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="https://www.vermontbowhuntersassociation.org/wp-content/uploads/2022/10/1st-deer.jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="110dfb4" data-elementor-lightbox-title="1st deer" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%[long]">
+					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="https://www.vermontbowhuntersassociation.org/wp-content/uploads/2022/10/1st-deer.jpg" data-width="1003" data-height="1157" aria-label="" role="img" ></div>
+											<div class="elementor-gallery-item__overlay"></div>
+														</a>
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="https://www.vermontbowhuntersassociation.[long].jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="110dfb4" data-elementor-lightbox-title="P10100032" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%[long]%3D%3D">
+					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="https://www.vermontbowhuntersassociation.[long].jpg" data-width="1200" data-height="900" aria-label="" role="img" ></div>
+											<div class="elementor-gallery-item__overlay"></div>
+														</a>
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="https://www.vermontbowhuntersassociation.[long].jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="110dfb4" data-elementor-lightbox-title="802 firing line" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%[long]%3D%3D">
+					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="https://www.vermontbowhuntersassociation.[long].jpg" data-width="1005" data-height="1235" aria-label="" role="img" ></div>
+											<div class="elementor-gallery-item__overlay"></div>
+														</a>
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="https://www.vermontbowhuntersassociation.[long].jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="110dfb4" data-elementor-lightbox-title="action" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%[long]%3D">
+					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="https://www.vermontbowhuntersassociation.[long].jpg" data-width="2329" data-height="2560" aria-label="" role="img" ></div>
+											<div class="elementor-gallery-item__overlay"></div>
+														</a>
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="https://www.vermontbowhuntersassociation.org/wp-content/uploads/2022/11/closer.jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="110dfb4" data-elementor-lightbox-title="OLYMPUS DIGITAL CAMERA" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%[long]%3D%3D">
+					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="https://www.vermontbowhuntersassociation.org/wp-content/uploads/2022/11/closer.jpg" data-width="1879" data-height="1408" aria-label="" role="img" ></div>
+											<div class="elementor-gallery-item__overlay"></div>
+														</a>
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="https://www.vermontbowhuntersassociation.[long].jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="110dfb4" data-elementor-lightbox-title="4 pointer" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%[long]">
+					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="https://www.vermontbowhuntersassociation.[long].jpg" data-width="1510" data-height="1600" aria-label="" role="img" ></div>
+											<div class="elementor-gallery-item__overlay"></div>
+														</a>
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="https://www.vermontbowhuntersassociation.org/wp-content/uploads/2022/12/Brent-1.jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="110dfb4" data-elementor-lightbox-title="Brent 1" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%[long]%3D">
+					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="https://www.vermontbowhuntersassociation.org/wp-content/uploads/2022/12/Brent-1.jpg" data-width="640" data-height="480" aria-label="" role="img" ></div>
+											<div class="elementor-gallery-item__overlay"></div>
+														</a>
+					</div>
+					</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+		
+	
+</div>
+
+</article>
+
+				
+			</div><!-- #content -->
+
+			
+		</div><!-- #primary -->
+
+		
+	</div><!-- #content-wrap -->
+
+	
+
+	</main><!-- #main -->
+
+	
+	
+	
+		
+<footer id="footer" class="site-footer" itemscope="itemscope" itemtype="https://schema.org/WPFooter" role="contentinfo">
+
+	
+	<div id="footer-inner" class="clr">
+
+		
+
+<div id="footer-widgets" class="oceanwp-row clr">
+
+	
+	<div class="footer-widgets-inner container">
+
+				<div data-elementor-type="wp-post" data-elementor-id="127" class="elementor elementor-127" data-elementor-post-type="oceanwp_library">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-4b1ab72 elementor-section-full_width elementor-section-stretched elementor-section-height-default elementor-section-height-default" data-id="4b1ab72" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3d5ac1f" data-id="3d5ac1f" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-cd62697 elementor-widget elementor-widget-spacer" data-id="cd62697" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-36701af elementor-nav-menu__align-center elementor-nav-menu--dropdown-none elementor-hidden-mobile elementor-widget elementor-widget-nav-menu" data-id="36701af" data-element_type="widget" data-settings="{&quot;layout&quot;:&quot;horizontal&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;i class=\&quot;fas fa-caret-down\&quot;&gt;&lt;\/i&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;}}" data-widget_type="nav-menu.default">
+				<div class="elementor-widget-container">
+								<nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-none">
+				<ul id="menu-1-36701af" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-7 current_page_item menu-item-21"><a href="https://www.vermontbowhuntersassociation.org/" aria-current="page" class="elementor-item elementor-item-active">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="https://www.vermontbowhuntersassociation.org/history/" class="elementor-item">History</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23"><a href="https://www.vermontbowhuntersassociation.org/membership/" class="elementor-item">Become a Member</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a href="https://www.vermontbowhuntersassociation.org/news-events/" class="elementor-item">News &#038; Events</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="https://www.vermontbowhuntersassociation.org/contact-us/" class="elementor-item">Contact Us</a></li>
+</ul>			</nav>
+						<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
+				<ul id="menu-2-36701af" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-7 current_page_item menu-item-21"><a href="https://www.vermontbowhuntersassociation.org/" aria-current="page" class="elementor-item elementor-item-active" tabindex="-1">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="https://www.vermontbowhuntersassociation.org/history/" class="elementor-item" tabindex="-1">History</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23"><a href="https://www.vermontbowhuntersassociation.org/membership/" class="elementor-item" tabindex="-1">Become a Member</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a href="https://www.vermontbowhuntersassociation.org/news-events/" class="elementor-item" tabindex="-1">News &#038; Events</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="https://www.vermontbowhuntersassociation.org/contact-us/" class="elementor-item" tabindex="-1">Contact Us</a></li>
+</ul>			</nav>
+						</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-2d4b4ef elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2d4b4ef" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-wide">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-1a33f50" data-id="1a33f50" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-04a645b elementor-widget__width-initial elementor-widget-tablet__width-initial elementor-widget-mobile__width-initial elementor-widget elementor-widget-image" data-id="04a645b" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+																<a href="https://www.vermontbowhuntersassociation.org">
+							<img width="450" height="257" src="https://www.vermontbowhuntersassociation.org/wp-content/uploads/2022/10/logo.png" class="attachment-large size-large wp-image-33" alt="" srcset="https://www.vermontbowhuntersassociation.org/wp-content/uploads/2022/10/logo.png 450w, https://www.vermontbowhuntersassociation.[long].png 300w" sizes="(max-width: 450px) 100vw, 450px" />								</a>
+															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-d27f948" data-id="d27f948" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-29b2d4c elementor-position-left elementor-vertical-align-middle elementor-mobile-position-left elementor-view-default elementor-widget elementor-widget-icon-box" data-id="29b2d4c" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<a href="mailto:info@vermontbowhuntersassociation.org" class="elementor-icon" tabindex="-1" aria-label="info@vermontbowhuntersassociation.org">
+				<i aria-hidden="true" class="far fa-envelope"></i>				</a>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+									<h3 class="elementor-icon-box-title">
+						<a href="mailto:info@vermontbowhuntersassociation.org" >
+							info@vermontbowhuntersassociation.org						</a>
+					</h3>
+				
+				
+			</div>
+			
+		</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-bc67f2c elementor-position-left elementor-vertical-align-middle elementor-mobile-position-left elementor-view-default elementor-widget elementor-widget-icon-box" data-id="bc67f2c" data-element_type="widget" data-widget_type="icon-box.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-icon-box-wrapper">
+
+						<div class="elementor-icon-box-icon">
+				<a href="tel:(802)%20579-8471" class="elementor-icon" tabindex="-1" aria-label="(802) 579-8471">
+				<i aria-hidden="true" class="fas fa-mobile-alt"></i>				</a>
+			</div>
+			
+						<div class="elementor-icon-box-content">
+
+									<h3 class="elementor-icon-box-title">
+						<a href="tel:(802)%20579-8471" >
+							(802) 579-8471						</a>
+					</h3>
+				
+				
+			</div>
+			
+		</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-3a80afa e-grid-align-left e-grid-align-mobile-center elementor-shape-rounded elementor-grid-0 elementor-widget elementor-widget-social-icons" data-id="3a80afa" data-element_type="widget" data-widget_type="social-icons.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-social-icons-wrapper elementor-grid" role="list">
+							<span class="elementor-grid-item" role="listitem">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-d9aaa1e" target="_blank">
+						<span class="elementor-screen-only">Facebook</span>
+						<i class="fab fa-facebook"></i>					</a>
+				</span>
+							<span class="elementor-grid-item" role="listitem">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-6b47840" target="_blank">
+						<span class="elementor-screen-only">Instagram</span>
+						<i class="fab fa-instagram"></i>					</a>
+				</span>
+					</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-6a06dc4 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="6a06dc4" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-83765df" data-id="83765df" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-2b0583a elementor-widget elementor-widget-text-editor" data-id="2b0583a" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p>COPYRIGHT © VERMONT BOWHUNTERS ASSOCIATION, ALL RIGHTS RESERVED | WEBSITE BY <a href="https://www.ooglyeyes.com" target="_blank" rel="noopener">OOGLY EYES DESIGNS</a></p>								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+		
+	</div><!-- .container -->
+
+	
+</div><!-- #footer-widgets -->
+
+
+	</div><!-- #footer-inner -->
+
+	
+</footer><!-- #footer -->
+
+	
+	
+</div><!-- #wrap -->
+
+
+</div><!-- #outer-wrap -->
+
+
+
+<a aria-label="Scroll to the top of the page" href="#" id="scroll-top" class="scroll-top-right"><i class=" fa fa-angle-up" aria-hidden="true" role="img"></i></a>
+
+
+
+
+<div id="mobile-fullscreen" class="clr" >
+
+	<div id="mobile-fullscreen-inner" class="clr">
+
+		<a href="https://www.vermontbowhuntersassociation.org/#mobile-fullscreen-menu" class="close" aria-label="Close mobile menu" >
+			<div class="close-icon-wrap">
+				<div class="close-icon-inner"></div>
+			</div>
+		</a>
+
+		<nav class="clr" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement" role="navigation">
+
+			<ul id="menu-main-navigation-2" class="fs-dropdown-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-7 current_page_item menu-item-21"><a href="https://www.vermontbowhuntersassociation.org/" aria-current="page">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="https://www.vermontbowhuntersassociation.org/history/">History</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23"><a href="https://www.vermontbowhuntersassociation.org/membership/">Become a Member</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a href="https://www.vermontbowhuntersassociation.org/news-events/">News &#038; Events</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="https://www.vermontbowhuntersassociation.org/contact-us/">Contact Us</a></li>
+</ul>
+		</nav>
+
+	</div>
+
+</div>
+
+
+		
+		
+			
+			<link href="https://fonts.googleapis.com/css?family=Roboto:400%7CAmaranth:400&display=swap" rel="stylesheet" property="stylesheet" media="all" type="text/css" >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

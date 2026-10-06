@@ -1,0 +1,879 @@
+<!doctype html >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      class="ios-preview-native-scroll">
+<head>
+    <meta charset="utf-8">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Injecting site-wide to the head -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- End Injecting site-wide to the head -->
+
+
+
+
+
+<meta name="d-service-worker" content="register">
+
+
+
+<link rel="canonical" href="http://www.goal.org/clubevents">
+
+<meta id="view" name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>ClubEvents
+</title>
+
+
+
+<link rel="icon" type="image/x-icon" href="https://static.cdn-website.com/runtime/favicon_d1_res.ico"/>
+
+
+<link rel="preconnect" href="https://irp.cdn-website.com"/>
+<link rel="preconnect" href="https://irp.cdn-website.com" crossorigin/>
+<link rel="preconnect" href="https://static.cdn-website.com"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/fonts/css2?family=Amiko:wght@400;600;700&family=Cardo:wght@400;700&family=Red+Hat+Display:wght@300..900&family=Varela+Round:wght@400&family=Alegreya:wght@400..900&family=Amiri:wght@400;700&family=Barlow:wght@100;200;300;400;500;600;700;800;900&family=Bebas+Neue:wght@400&family=Be+Vietnam:wght@100;200;300;400;600;700;800;900&family=Comfortaa:wght@300..700&family=Dancing+Script:wght@400..700&family=DM+Sans:wght@100..1000&family=DM+Serif+Display:wght@400&family=Droid+Sans:wght@400;700&family=Droid+Sans+Mono:wght@400&family=Droid+Serif:wght@400;700&family=Epilogue:wght@100..900&family=Fjalla+One:wght@400&family=Heebo:wght@100..900&family=Inter:wght@100..900&family=Jost:wght@100..900&family=Lato:wght@100;300;400;700;900&family=Lora:wght@400..700&family=Merriweather:wght@300;400;700;900&amp;subset=latin-ext&amp;display=swap"  />
+
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/fonts/css2?family=Montserrat:wght@100..900&family=Muli:wght@200;300;400;600;700;800;900&family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif:wght@100..900&family=Nunito+Sans:wght@200..1000&family=Old+Standard+TT:wght@400;700&family=Open+Sans:wght@300..800&family=Oswald:wght@200..700&family=Playfair+Display:wght@400..900&family=Petit+Formal+Script:wght@400&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Prata:wght@400&family=Prompt:wght@100;200;300;400;500;600;700;800;900&family=PT+Sans:wght@400;700&family=Quicksand:wght@300..700&family=Raleway:wght@100..900&family=Roboto:wght@100;300;400;500;700;900&family=Roboto+Mono:wght@100..700&family=Roboto+Slab:wght@100..900&family=Rubik:wght@300..900&family=Rock+Salt:wght@400&family=Shadows+Into+Light:wght@400&family=Slabo+27px:wght@400&family=Source+Sans+Pro:wght@200;300;400;600;700;900&amp;subset=latin-ext&amp;display=swap"  />
+
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/fonts/css2?family=Spartan:wght@100;200;300;400;600;700;800;900&family=Sulphur+Point:wght@300;400;700&family=Ubuntu:wght@300;400;500;700&family=Vidaloka:wght@400&family=Work+Sans:wght@100..900&family=Yeseva+One:wght@400&family=Mulish:wght@200..1000&family=Red+Rose:wght@300..700&family=Abril+Fatface:wght@400&family=Fraunces:wght@100..900&family=Albert+Sans:wght@100..900&family=Libre+Baskerville:wght@400;700&family=Space+Grotesk:wght@300..700&family=Outfit:wght@100..900&family=Aboreto:wght@400&family=Arapey:wght@400&family=Questrial:wght@400&family=Marcellus:wght@400&family=Red+Hat+Display:wght@300..900&family=Red+Hat+Text:wght@300..700&family=Quattrocento+Sans:wght@400;700&family=Hedvig+Letters+Serif:wght@400&amp;subset=latin-ext&amp;display=swap"  />
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://static.cdn-website.[long].min.css" />
+
+
+
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.[long].css" id="widgetCSS" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="https://irp.cdn-website.com/7a261750/files/7a261750_1.min.css?v=07501f85f0644fd0ca94b315a5393c2b" id="siteGlobalCss" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link type="application/rss+xml" rel="alternate" href="http://www.goal.org/feed/rss2"/>
+  <link type="application/atom+xml" rel="alternate" href="http://www.goal.org/feed/atom"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="http://www.goal.org/clubevents"/>
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+
+<!-- SYS- VVNfRElSRUNUX1BST0RVQ1RJT04= -->
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="dmRoot" data-page-alias="clubevents"  class="dmRoot dmDesktopBody fix-mobile-scrolling addCanvasBorder dmResellerSite dmLargeBody "
+      style="padding:0;margin:0;"
+      
+    >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="dm" class='dmwr'>
+    
+    <div class="dm_wrapper standard-var5 widgetStyle-3 standard">
+         <div dmwrapped="true" id="1901957768" class="dm-home-page" themewaschanged="true"> <div dmtemplateid="StandardLayoutMultiD" class="standardHeaderLayout dm-bfs dm-layout-sec hasAnimations rows-1200 inMiniHeaderMode hasStickyHeader layout-drawer_push-content dmPageBody d-page-1716942098 inputs-css-clean dmFreeHeader" id="dm-outer-wrapper" data-page-class="1716942098" data-soch="true" data-background-parallax-selector=".dmHomeSection1, .dmSectionParallex"> <div id="dmStyle_outerContainer" class="dmOuter"> <div id="dmStyle_innerContainer" class="dmInner" data-auto="page-inner"> <div class="dmLayoutWrapper standard-var dmStandardDesktop"> <div> <div id="iscrollBody"> <div id="site_content"> <div class="dmHeaderContainer fHeader d-header-wrapper"> <div id="hcontainer" class="u_hcontainer dmHeader p_hfcontainer" freeheader="true" headerlayout="721" secondary-image="https://lirp.cdn-website.[long].png" has-secondary-image="true" layout="[long]" data-scrollable-target="body" data-scrollable-target-threshold="1" data-scroll-responder-id="1" logo-size-target="100%" mini-header-show-only-navigation-row="true" data-auto="header"> <div dm:templateorder="85" class="dmHeaderResp dmHeaderStack noSwitch" id="1709005236"> <div class="dmRespRow dmDefaultListContentRow u_1791905300" style="text-align:center" id="1791905300"> <div class="dmRespColsWrapper" id="1820909262"> <div class="u_1956031919 small-12 dmRespCol large-2 medium-2" id="1956031919"> <div class="u_1536432976 imageWidget align-center" data-widget-type="image" id="1536432976" data-element-type="image"><img src="https://lirp.cdn-website.[long].png" id="1255844847" class="" data-dm-image-path="https://lirp.cdn-website.[long].png" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+ <div class="u_1229677845 dmRespCol small-12 large-10 medium-10" id="1229677845"> <nav class="u_1334818782 effect-text-fill main-navigation unifiednav dmLinksMenu" data-auto="links-menu" role="navigation" layout-main="horizontal_nav_layout_1" layout-sub="submenu_horizontal_1" data-show-vertical-sub-items="HOVER" id="1334818782" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container unav-top  " data-auto="navigation-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/" class="unifiednav__item unav-item unav-top-item  dmUDNavigationItem_010101854927  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Home" data-auto="page-text-style">Home<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" aria-haspopup="true" aria-expanded="false" data-sub-nav-menu="true" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/member-services" class="unifiednav__item unav-item unav-top-item  dmUDNavigationItem_010101473471  unifiednav__item_has-sub-nav" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Contact & Membership Services" data-auto="page-text-style">Contact &amp; Membership Services<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+ <ul role="menu" class="unifiednav__container unifiednav__container_sub-nav unav-sub" data-depth="0" data-auto="sub-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/membership-status" class="unifiednav__item unav-item   dmUDNavigationItem_010101430030  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Membership Status" data-auto="page-text-style">Membership Status<span class="icon icon-angle-right" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/paper-application" class="unifiednav__item unav-item   dmUDNavigationItem_010101613982  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Paper Application" data-auto="page-text-style">Paper Application<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/donations" class="unifiednav__item unav-item unav-top-item  dmUDNavigationItem_010101204402  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Donations" data-auto="page-text-style">Donations<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" aria-haspopup="true" aria-expanded="false" data-sub-nav-menu="true" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/AdvocacyLegislation" class="unifiednav__item unav-item unav-top-item  dmUDNavigationItem_010101158621  unifiednav__item_has-sub-nav" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Advocacy & Legislation" data-auto="page-text-style">Advocacy &amp; Legislation<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+ <ul role="menu" class="unifiednav__container unifiednav__container_sub-nav unav-sub" data-depth="0" data-auto="sub-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/fcab" class="unifiednav__item unav-item   dmUDNavigationItem_010101224470  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="FCAB" data-auto="page-text-style">FCAB<span class="icon icon-angle-right" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/microstamping" class="unifiednav__item unav-item   dmUDNavigationItem_010101897551  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Microstamping" data-auto="page-text-style">Microstamping<span class="icon icon-angle-right" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/registrationregs" class="unifiednav__item unav-item   dmUDNavigationItem_010101547487  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Registration Regs" data-auto="page-text-style">Registration Regs<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</li> 
+ <li role="menuitem" aria-haspopup="true" aria-expanded="false" data-sub-nav-menu="true" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/events-training" class="unifiednav__item unav-item unav-top-item  dmUDNavigationItem_010101101473  unifiednav__item_has-sub-nav" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Events & Training" data-auto="page-text-style">Events &amp; Training<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+ <ul role="menu" class="unifiednav__container unifiednav__container_sub-nav unav-sub" data-depth="0" data-auto="sub-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/training" class="unifiednav__item unav-item   dmUDNavigationItem_010101309849  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Training" data-auto="page-text-style">Training<span class="icon icon-angle-right" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/lawseminar" class="unifiednav__item unav-item   dmUDNavigationItem_010101877743  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Chapter 135 Law Seminars" data-auto="page-text-style">Chapter 135 Law Seminars<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/no-on-9" class="unifiednav__item unav-item unav-top-item  dmUDNavigationItem_010101100956  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="NO on 9" data-auto="page-text-style">NO on 9<span class="icon icon-angle-down" data-hidden-on-mobile="" data-hidden-on-desktop="" data-hidden-on-tablet=""></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" aria-haspopup="true" aria-expanded="false" data-sub-nav-menu="true" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/goal-news" class="unifiednav__item unav-item unav-top-item  dmUDNavigationItem_010101465250  unifiednav__item_has-sub-nav" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="GOAL News" data-auto="page-text-style">GOAL News<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+ <ul role="menu" class="unifiednav__container unifiednav__container_sub-nav unav-sub" data-depth="0" data-auto="sub-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/call-for-more-laws" class="unifiednav__item unav-item   dmUDNavigationItem_010101512398  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Call for more laws" data-auto="page-text-style">Call for more laws<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/large-cap-carry" class="unifiednav__item unav-item   dmUDNavigationItem_010101192801  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Large Cap Carry" data-auto="page-text-style">Large Cap Carry<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/2-court-wins" class="unifiednav__item unav-item   dmUDNavigationItem_010101928899  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="2 Court Wins" data-auto="page-text-style">2 Court Wins<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/registration-deadline" class="unifiednav__item unav-item   dmUDNavigationItem_010101861833  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Registration Deadline" data-auto="page-text-style">Registration Deadline<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</li> 
+ <li role="menuitem" aria-haspopup="true" aria-expanded="false" data-sub-nav-menu="true" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/clubs" class="unifiednav__item unav-item unav-top-item  dmUDNavigationItem_010101648660  unifiednav__item_has-sub-nav" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Clubs" data-auto="page-text-style">Clubs<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+ <ul role="menu" class="unifiednav__container unifiednav__container_sub-nav unav-sub" data-depth="0" data-auto="sub-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/clubevents" class="unifiednav__item unav-item   dmNavItemSelected  dmUDNavigationItem_010101616441  " target="" data-target-page-alias="" aria-current="page" data-auto="selected-page"> <span class="nav-item-text " data-link-text="ClubEvents" data-auto="page-text-style">ClubEvents<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/find-a-club" class="unifiednav__item unav-item   dmUDNavigationItem_010101663641  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Find a Club" data-auto="page-text-style">Find a Club<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/juniors" class="unifiednav__item unav-item unav-top-item  dmUDNavigationItem_010101139066  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Juniors" data-auto="page-text-style">Juniors<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" aria-haspopup="true" aria-expanded="false" data-sub-nav-menu="true" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/legal" class="unifiednav__item unav-item unav-top-item  dmUDNavigationItem_01010166257  unifiednav__item_has-sub-nav" target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="GOAL Legal" data-auto="page-text-style">GOAL Legal<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+ <ul role="menu" class="unifiednav__container unifiednav__container_sub-nav unav-sub" data-depth="0" data-auto="sub-pages"> <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="1"> <a href="/2a-attorneys" class="unifiednav__item unav-item   dmUDNavigationItem_010101696042  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="2A Attorneys" data-auto="page-text-style">2A Attorneys<span class="icon icon-angle-right"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/GOALstore" class="unifiednav__item unav-item unav-top-item  dmUDNavigationItem_010101776859  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="GOAL Store" data-auto="page-text-style">GOAL Store<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/log-in" class="unifiednav__item unav-item unav-top-item  dmUDNavigationItem_010101333265  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Log In" data-auto="page-text-style">Log In<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/processmatters" class="unifiednav__item unav-item unav-top-item  dmUDNavigationItem_010101624133  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="ProcessMatters" data-auto="page-text-style">ProcessMatters<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/topsfield-fair-2026" class="unifiednav__item unav-item unav-top-item  dmUDNavigationItem_010101132835  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Topsfield Fair 2026" data-auto="page-text-style">Topsfield Fair 2026<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/elections-2026" class="unifiednav__item unav-item unav-top-item  dmUDNavigationItem_010101271221  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Elections 2026" data-auto="page-text-style">Elections 2026<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/ruger-hornady-raffle" class="unifiednav__item unav-item unav-top-item  dmUDNavigationItem_010101840839  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Ruger Hornady Raffle" data-auto="page-text-style">Ruger Hornady Raffle<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+ <li role="menuitem" class=" unifiednav__item-wrap " data-auto="more-pages" data-depth="0"> <a href="/search-goal" class="unifiednav__item unav-item unav-top-item  dmUDNavigationItem_010101468900  " target="" data-target-page-alias=""> <span class="nav-item-text " data-link-text="Search GOAL" data-auto="page-text-style">Search GOAL<span class="icon icon-angle-down"></span> 
+</span> 
+</a> 
+</li> 
+</ul> 
+</nav> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="stickyHeaderSpacer" id="stickyHeaderSpacer" data-auto="sticky-header-spacer" data-new="true"></div> 
+ <div class="dmRespRow dmRespRowStable dmRespRowNoPadding dmPageTitleRow "> <div class="dmRespColsWrapper"> <div class="large-12 dmRespCol"> <div id="innerBar" class="innerBar lineInnerBar dmDisplay_None"> <div class="titleLine display_None"><hr/></div> 
+<!-- Page title is hidden in css for new responsive sites. It is left here only so we don't break old sites. Don't copy it to new layouts --> <div id="pageTitleText"> <div class="innerPageTitle">ClubEvents</div> 
+</div> 
+ <div class="titleLine display_None"><hr/></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div dmwrapped="true" id="dmFirstContainer" class="dmBody u_dmStyle_template_clubevents dm-home-page" themewaschanged="true"> <div id="allWrapper" class="allWrapper" data-auto="all-wrapper"><!-- navigation placeholders --> <div id="dm_content" class="dmContent" role="main"> <div dm:templateorder="170" class="dmHomeRespTmpl mainBorder dmRespRowsWrapper dmFullRowRespTmpl" id="1716942098"> <div class="dmRespRow" id="1441923066"> <div class="dmRespColsWrapper" id="1932486032"> <div class="dmRespCol large-12 medium-12 small-12" id="1117134102"> <div class="u_1110731555 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1110731555"><img src="https://irp.cdn-website.[long].png" alt="" id="1718355386" class="" width="1920" height="768" data-dm-image-path="https://irp.cdn-website.com/7a261750/dms3rep/multi/Club+Events.png" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow" id="1246788013"> <div class="dmRespColsWrapper" id="1670748181"> <div class="dmRespCol large-12 medium-12 small-12" id="1390886657"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1468765778" style="transition: opacity 1s ease-in-out;"><p class="text-align-center"><span style="display: initial;"><span style="display: initial;">Send event information and links to:</span> 
+</span><a href="mailto:Jim@goal.org " runtime_url="mailto:Jim@goal.org " type="email" style="display: initial;">Jim@goal.org</a><span style="display: initial;" single-space="true"> <span style="display: initial;"></span> 
+</span></p><p class="text-align-center"><span style="display: initial;"><br/></span></p><p class="text-align-center"><span style="display: initial;">GOAL Affiliated Clubs are welcome to submit events to be published on this page in two categories:</span></p><p class="text-align-center"><span style="display: initial;"><br/></span></p><p class="text-align-center"><span style="display: initial;">Recurring events such as Wednesday trap shooting or Saturday high power, etc.</span></p><p class="text-align-center"><span style="display: initial;">Special events such as a dinner, a special training opportunity, or a youth fishing derby.</span></p><p class="text-align-center"><span style="display: initial;"><br/></span></p><p class="text-align-center"><span style="display: initial;">A link to the page appears at the bottom of every Friday News.</span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1194206572 dmRespRow" id="1194206572" data-page-element-type="section" data-page-element-id="1173027993"> <div class="dmRespColsWrapper" id="1464118810"> <div class="dmRespCol large-12 medium-12 small-12 u_1581582938" id="1581582938"> <div class="u_1856414756 dmRespRow" id="1856414756"> <div class="dmRespColsWrapper" id="1658770027"> <div class="dmRespCol large-6 medium-6 small-12 u_1711511384" id="1711511384"> <div class="u_1328396377 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1328396377" data-ai-tag="Card 1: Paragraph"><p><span style="display: unset;">Also check out our junior's page for a host of opportunities for junior hunters and shooters.</span></p></div> 
+ <a data-display-type="block" class="u_1813122329 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient" file="false" href="/juniors" data-element-type="dButtonLinkId" id="1813122329"> <span class="iconBg" aria-hidden="true" id="1161894435"> <span class="icon hasFontIcon icon-star" id="1733408252"></span> 
+</span> 
+ <span class="text" id="1956367469" data-ai-tag="Card 1:  Short button text">Learn more</span> 
+</a> 
+</div> 
+ <div class="dmRespCol empty-column large-6 medium-6 small-12 u_1376340763" id="1376340763"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1006243762 dmRespRow" id="1006243762" data-page-element-type="section" data-page-element-id="1135587307"> <div class="dmRespColsWrapper" id="1866745939"> <div class="dmRespCol large-12 medium-12 small-12 u_1762017104" id="1762017104"> <div class="dmNewParagraph u_1053597798" data-element-type="paragraph" data-version="5" id="1053597798" data-ai-tag="Tagline"><p class="text-align-center" style="letter-spacing: 0.2em;"><span style="text-transform: uppercase; display: unset;">goal affiliated</span></p></div> 
+ <div class="u_1387022040 dmNewParagraph" data-element-type="paragraph" data-version="5" id="1387022040" style="transition: none 0s ease 0s; text-align: left; display: block;" data-ai-tag="Section title"> <h2 class="text-align-center"><span style="display: unset;">Club Special Events</span></h2> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1579263500 dmRespRow fullBleedChanged fullBleedMode" id="1579263500" data-page-element-type="section" data-page-element-id="1470692057"> <div class="dmRespColsWrapper" id="1549634996"> <div class="dmRespCol large-12 medium-12 small-12 u_1270081379" id="1270081379"> <div class="u_1058419387 dmPhotoGallery newPhotoGallery dmPhotoGalleryResp hasFullWidth button_2 photo-gallery-done text-layout-bottom captionAlignment-top_center photoGallery" galleryoptionsparams="{thumbnailsPerRow: 3, rowsToShow: 3, imageScaleMethod: true}" data-desktop-layout="square" data-desktop-columns="4" data-element-type="dPhotoGalleryId" data-desktop-text-layout="bottom" id="1058419387" data-desktop-caption-alignment="top_center" data-image-hover-effect="shine" data-rows-to-show="100" data-mobile-columns="1" data-mobile-caption-alignment="top_left" data-mobile-layout="square" data-placeholder="false"> <div class="dmPhotoGalleryHolder clearfix gallery shadowEffectToChildren gallery4inArow" id="1362986591"></div> 
+ <div class="layout-container square"> <div class="photogallery-row " data-index=""> <div class="photogallery-column column-4" data-index="0"> <div index="0" class="photoGalleryThumbs animated  " data-index="0"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" data-dm-force-device="mobile" class="u_1780559542" data-image-url="https://irp.cdn-website.[long].png" style="background-image: url('https://irp.cdn-website.[long].png');"><img id="1970262994" data-src="https://irp.cdn-website.[long].png" alt="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1552206487" class="caption-container u_1552206487" style="display:none"> <span class="caption-inner"> <a id="1716480849" class="caption-button dmWidget  clearfix u_1716480849" data-auto="caption-button" href="" style=""> <span class="iconBg" data-auto="button-icon-bg"> <span class="icon hasFontIcon " data-auto="button-icon"></span> 
+</span> 
+ <span class="text" data-auto="button-text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-4" data-index="1"> <div index="1" class="photoGalleryThumbs animated  " data-index="1"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1688071716" data-dm-force-device="mobile" class="u_1759780111" data-image-url="https://irp.cdn-website.[long].png" style="background-image: url('https://irp.cdn-website.[long].png');"><img id="1065774935" data-src="https://irp.cdn-website.[long].png" alt="" aria-labelledby="1688071716" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1644677157" class="caption-container u_1644677157" style="display:none"> <span class="caption-inner"> <h3 id="1688071716" class="caption-title u_1688071716">Springfield Match</h3> 
+ <div id="1366401449" class="caption-text u_1366401449"><p class="rteBlock" data-auto="rte-block">October 4, 2026</p></div> 
+ <a id="1726629704" class="caption-button dmWidget  clearfix u_1726629704" data-auto="caption-button" href="" style=""> <span class="iconBg" data-auto="button-icon-bg"> <span class="icon hasFontIcon " data-auto="button-icon"></span> 
+</span> 
+ <span class="text" data-auto="button-text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-4" data-index="2"> <div index="2" class="photoGalleryThumbs animated  " data-index="2"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1598362938" data-dm-force-device="mobile" class="u_1890097201" data-image-url="https://irp.cdn-website.[long].png" style="background-image: url('https://irp.cdn-website.[long].png');"><img id="1837789396" data-src="https://irp.cdn-website.[long].png" alt="" aria-labelledby="1598362938" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1180163724" class="caption-container u_1180163724" style="display:none"> <span class="caption-inner"> <h3 id="1598362938" class="caption-title u_1598362938">Lowell - Open House</h3> 
+ <div id="1312433724" class="caption-text u_1312433724"><p class="rteBlock"><strong>October 3, 2026</strong></p><br/><br/></div> 
+ <a id="1682075659" class="caption-button dmWidget  clearfix u_1682075659" data-auto="caption-button" href="https://lowellsc.org/events/event/open-house-2026/" target="_blank" style=""> <span class="iconBg" data-auto="button-icon-bg"> <span class="icon hasFontIcon " data-auto="button-icon"></span> 
+</span> 
+ <span class="text" data-auto="button-text">Learn More</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-4" data-index="3"> <div index="3" class="photoGalleryThumbs animated  " data-index="3"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1903928222" data-dm-force-device="mobile" class="u_1597550478" data-image-url="https://irp.cdn-website.[long].png" style="background-image: url('https://irp.cdn-website.[long].png');"><img id="1511891974" data-src="https://irp.cdn-website.[long].png" alt="" aria-labelledby="1903928222" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1244212588" class="caption-container u_1244212588" style="display:none"> <span class="caption-inner"> <h3 id="1903928222" class="caption-title u_1903928222">Memorial Shoot</h3> 
+ <div id="1836820147" class="caption-text u_1836820147"><p class="rteBlock" data-auto="rte-block"><strong>October 10 - 11, 2026</strong></p></div> 
+ <a id="1912406042" class="caption-button dmWidget  clearfix u_1912406042" data-auto="caption-button" href="" style=""> <span class="iconBg" data-auto="button-icon-bg"> <span class="icon hasFontIcon " data-auto="button-icon"></span> 
+</span> 
+ <span class="text" data-auto="button-text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-row " data-index=""> <div class="photogallery-column column-4" data-index="4"> <div index="4" class="photoGalleryThumbs animated  " data-index="4"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1091562072" data-dm-force-device="mobile" class="u_1250109491" data-image-url="https://irp.cdn-website.com/7a261750/dms3rep/multi/RSO-101c7d47.png" style="background-image: url('https://irp.cdn-website.[long].png');"><img id="1453305973" data-src="https://irp.cdn-website.[long].png" alt="" aria-labelledby="1091562072" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1364799803" class="caption-container u_1364799803" style="display:none"> <span class="caption-inner"> <h3 id="1091562072" class="caption-title u_1091562072">Franklin - NRA RSO</h3> 
+ <div id="1603891998" class="caption-text u_1603891998"><p class="rteBlock"><strong>October 17 - 18, 2026</strong></p><br/><p class="rteBlock">NRA Range Safety Officer course.&nbsp;</p><p class="rteBlock">Jon Green Instructor</p></div> 
+ <a id="1037206088" class="caption-button dmWidget  clearfix u_1037206088" data-auto="caption-button" href="mailto:Jon@GOAL.org" style=""> <span class="iconBg" data-auto="button-icon-bg"> <span class="icon hasFontIcon " data-auto="button-icon"></span> 
+</span> 
+ <span class="text" data-auto="button-text">Contact Jon</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-4" data-index="5"> <div index="5" class="photoGalleryThumbs animated  " data-index="5"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1112195694" data-dm-force-device="mobile" class="u_1402235465" data-image-url="https://irp.cdn-website.[long].png" style="background-image: url('https://irp.cdn-website.[long].png');"><img id="1007876931" data-src="https://irp.cdn-website.[long].png" alt="" aria-labelledby="1112195694" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1993432333" class="caption-container u_1993432333" style="display:none"> <span class="caption-inner"> <h3 id="1112195694" class="caption-title u_1112195694">Riverside Course</h3> 
+ <div id="1447603695" class="caption-text u_1447603695"><p class="rteBlock" data-auto="rte-block"><strong>October 17, 2026</strong></p></div> 
+ <a id="1629116536" class="caption-button dmWidget  clearfix u_1629116536" data-auto="caption-button" href="" style=""> <span class="iconBg" data-auto="button-icon-bg"> <span class="icon hasFontIcon " data-auto="button-icon"></span> 
+</span> 
+ <span class="text" data-auto="button-text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-4" data-index="6"> <div index="6" class="photoGalleryThumbs animated  " data-index="6"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1254984345" data-dm-force-device="mobile" class="u_1253345349" data-image-url="https://irp.cdn-website.com/7a261750/dms3rep/multi/Garand.png" style="background-image: url('https://irp.cdn-website.[long].png');"><img id="1532315043" data-src="https://irp.cdn-website.[long].png" alt="" aria-labelledby="1254984345" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1790624959" class="caption-container u_1790624959" style="display:none"> <span class="caption-inner"> <h3 id="1254984345" class="caption-title u_1254984345">M1 Garand Rifle Match</h3> 
+ <a id="1046091732" class="caption-button dmWidget  clearfix u_1046091732" data-auto="caption-button" href="" style=""> <span class="iconBg" data-auto="button-icon-bg"> <span class="icon hasFontIcon " data-auto="button-icon"></span> 
+</span> 
+ <span class="text" data-auto="button-text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-4" data-index="7"> <div index="7" class="photoGalleryThumbs animated  " data-index="7"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1773392571" data-dm-force-device="mobile" class="u_1528249997" data-image-url="https://irp.cdn-website.[long].png" style="background-image: url('https://irp.cdn-website.[long].png');"><img id="1109534393" data-src="https://irp.cdn-website.[long].png" alt="" aria-labelledby="1773392571" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1383147870" class="caption-container u_1383147870" style="display:none"> <span class="caption-inner"> <h3 id="1773392571" class="caption-title u_1773392571">Nipmuc - Porketta &amp; Patriots</h3> 
+ <div id="1867963756" class="caption-text u_1867963756"><p class="rteBlock" data-auto="rte-block"><strong>Sunday, November 1, 2026</strong></p></div> 
+ <a id="1804076999" class="caption-button dmWidget  clearfix u_1804076999" data-auto="caption-button" href="" style=""> <span class="iconBg" data-auto="button-icon-bg"> <span class="icon hasFontIcon " data-auto="button-icon"></span> 
+</span> 
+ <span class="text" data-auto="button-text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-row " data-index=""> <div class="photogallery-column column-4" data-index="8"> <div index="8" class="photoGalleryThumbs animated  " data-index="8"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" aria-labelledby="1850798384" data-dm-force-device="mobile" class="u_1611471152" data-image-url="https://irp.cdn-website.[long].png" style="background-image: url('https://irp.cdn-website.[long].png');"><img id="1584609974" data-src="https://irp.cdn-website.[long].png" alt="" aria-labelledby="1850798384" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1727290041" class="caption-container u_1727290041" style="display:none"> <span class="caption-inner"> <h3 id="1850798384" class="caption-title u_1850798384">Danvers - Know the Law</h3> 
+ <div id="1272579991" class="caption-text u_1272579991"><p class="rteBlock"><strong>October 17, 2026</strong></p></div> 
+ <a id="1413536334" class="caption-button dmWidget  clearfix u_1413536334" data-auto="caption-button" href="https://dfgc.club/content.aspx?page_id=4091&club_id=611443&item_id=3012609" target="_blank" style=""> <span class="iconBg" data-auto="button-icon-bg"> <span class="icon hasFontIcon " data-auto="button-icon"></span> 
+</span> 
+ <span class="text" data-auto="button-text">Register</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow" id="1536878256"> <div class="dmRespColsWrapper" id="1300327788"> <div class="dmRespCol large-12 medium-12 small-12" id="1591965491"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1678629216" style="transition: opacity 1s ease-in-out;"><p class="text-align-center m-size-24 size-30"><strong class="font-size-30 m-font-size-24" style="display: initial;">Recurring Club Activities</strong></p><p class="text-align-center" style="line-height: normal;"><span style="display: initial;"><br/></span></p> <ul class="defaultList bullet"><li><a href="https://lrgc1947.org/" target="_blank" runtime_url="https://lrgc1947.org/" type="url" style="display: initial;">Lawrence Rod &amp; Gun Club</a><span style="display: initial;"><br/></span></li><li class="ql-indent-1"><a href="https://lrgc1947.org/trap/" target="_blank" runtime_url="https://lrgc1947.org/trap/" type="url" style="display: initial;">Trap</a></li><li class="ql-indent-1"><span style="display: initial;">Friday @9am</span></li><li class="ql-indent-1"><span style="display: initial;">Saturday @12pm</span></li><li class="ql-indent-1"><span style="display: initial;">Sunday @10am</span></li><li class="ql-indent-1"><span style="display: initial;">A $4.00 fee is charged per round.<br/></span></li><li class="ql-indent-1"><span style="display: initial;">Anyone with an LTC. Open to the Public</span></li></ul> 
+<p style="direction: ltr;"><span style="display: initial;"><br/></span></p> <ul class="defaultList bullet"><li style="direction: ltr;"><a href="https://nipmucrodandgun.org/" target="_blank" runtime_url="https://nipmucrodandgun.org/" type="url" style="display: initial;">Nipmuc Rod &amp; Gun</a><span style="display: initial;">&nbsp;The club also shoots clays every Thursday and Sunday from 10 am - noon and is open to the public.</span></li></ul> 
+<p style="direction: ltr;"><span style="display: initial;"><br/></span></p> <ul class="defaultList bullet"><li style="direction: ltr;"><a href="http://www.old-colony.org/disciplines-rifle/#rifle-JR." target="_blank" runtime_url="http://www.old-colony.org/disciplines-rifle/#rifle-JR." type="url" style="display: initial;">Old Colony Junior Rifle</a><span style="display: initial;"> <span style="display: initial;">program is for people 10-20 years of age. The program works with experienced instructors and mainly uses .22 cal rifles on our 50ft indoor range. You do not need to be a club member to participate. There is a $5 per session fee to cover some operational costs. Students should bring their own eye and ear protection. If there is sufficient interest, some travel to other clubs for matches may be available. Jr. Rifle is held on Wednesday nights 4:30-6:00PM beginning September 17, 2025 thru June 2026 at the indoor range.</span></span></li></ul> 
+<p class="ql-indent-1"><strong style="display: initial;">Old Colony&nbsp;Indoor Archery:&nbsp;</strong><span style="display: initial;">Archery practice and training available on Tuesday nights in the indoor range. First session 6-7pm and if there are enough people, second session 7-8pm. Lessons are available so come on down and try it for free. If you want to continue, it's 9 lessons for $100. Minimum age is 8 years old. If you want to just come down and shoot it's $2.00 for a target. Entrance to the indoor range will only be from the clubhouse hall. The range is closed to other uses during this.</span></p><p><span style="display: initial;"><br/><br/></span></p> <ul class="defaultList bullet"><li><a href="https://www.brookfieldrodandgunclub.com/" target="_blank" runtime_url="https://www.brookfieldrodandgunclub.com/" type="url" style="display: initial;">Brookfield Rod &amp; Gun Club</a><span style="display: initial;"> <span style="display: initial;">&ndash; SUNDAY TURKEY SHOOTS &ndash; 2025-2026 - Turkey Shoots are Open to the Public and run from Sunday, December 7, 2025, through Sunday March 29, 2026. Shoots begin at 10AM! CLICK the Club link &ndash; Select EVENTS/TURKEY SHOOTS for details!</span></span></li></ul> 
+<p><span style="display: initial;"><br/></span></p> <ul class="defaultList bullet"><li><a href="https://www.franklinrodandgun.org/" target="_blank" runtime_url="https://www.franklinrodandgun.org/" type="url" style="display: initial;">Franklin Rod &amp; Gun Club</a><span style="display: initial;"> <span style="display: initial;">:&nbsp;</span></span></li></ul> 
+<p class="ql-indent-1"><span style="display: initial;"><span style="display: initial;">The club provides firearms training for all skill levels, ranging from introductory courses, initial (LTC) licensing, multi-state (Utah) permit, personal protection, NRA instructor certification, and a comprehensive series of five concealed carry classes teaching more advanced techniques. Come check out our latest classes</span> 
+</span><a href="https://www.franklinrodandgun.org/firearmsclasses.html" target="_blank" runtime_url="https://www.franklinrodandgun.org/firearmsclasses.html" type="url" style="display: initial;">Firearms Classes</a><span style="display: initial;"><span style="display: initial;">&nbsp;</span> 
+</span></p><p class="ql-indent-1"><span style="display: initial;"><span style="display: initial;">Follow us on Facebook</span> 
+</span><a href="https://www.facebook.com/Franklin.RodandGun.Club" runtime_url="https://www.facebook.com/Franklin.RodandGun.Club" type="url" style="display: initial;">https://www.facebook.com/Franklin.RodandGun.Club</a></p><p class="ql-indent-1"><span style="display: initial;"><span style="display: initial;">Contact us at</span> 
+</span><a href="mailto:frgc.range@gmail.com" target="_blank" type="email" style="display: initial;">frgc.range@gmail.com</a></p><p style="line-height: 1.2;"><span style="display: initial;"><br/></span></p> <ul class="defaultList bullet"><li style="line-height: 1.2;"><a href="https://www.fitchburgsportsmensclub.org/" target="_blank" runtime_url="https://www.fitchburgsportsmensclub.org/" type="url" style="display: initial;">Fitchburg Sportsmen's Club</a><span style="display: initial;">: Trap shooting every Wednesday from 5pm to dark. Now through mid-November. Our fields are lit so we can go deeper into the evening. $4.00 per round. Public welcome.</span></li></ul> 
+<p style="line-height: 1.2;"><span style="display: initial;"><br/></span></p> <ul class="defaultList bullet"><li class="m-size-14" style="line-height: 1.2;"><span class="m-font-size-14" style="display: initial;">Methuen Rod and Gun: Open trap shooting every Saturday 9:00-11:00. Also monthly NRA Home Firearm Safety classes are held. Website is&nbsp;</span><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__methuenrodandgunglub.org&d=DwMFaQ&[long]&r=SZoEb5wObbvBwDvNG-1KhQ&[long]&[long]&e=" target="_blank" runtime_url="https://urldefense.proofpoint.com/v2/url?u=http-3A__methuenrodandgunglub.org&d=DwMFaQ&[long]&r=SZoEb5wObbvBwDvNG-1KhQ&[long]&[long]&e=" class="m-font-size-14" style="display: initial;">methuenrodandgunglub.org</a><span class="m-font-size-14" style="display: initial;">.</span></li></ul> 
+<p style="line-height: 1.2;"><span style="display: initial;"><br/></span></p> <ul class="defaultList bullet"><li class="m-size-14" style="line-height: 1.2;"><a href="https://hsc1.wildapricot.org/" target="_blank" runtime_url="https://hsc1.wildapricot.org/" type="url" class="m-font-size-14" style="display: initial;">Holbrook Sportsmen's Club</a><span class="m-font-size-14" style="display: initial;">&nbsp;- 3 D Archery Events May 25th 2025, June 1st 2025, September 14th 2025, Sundays start at sunrise till 12:30pm Holbrook Sportsmens Club 150 Quincy St Holbrook MA 02343 - We are part of the Tri-County 3 D Archery League Cell 617-640-3307 Holbrook Sportsmans Club hosts a Juniors program on Wednesday evenings from 6 to 7:30pm. Intrested young adults aged 12 to 20 can participate at no charge. We provide all firearms safety equipment and ammunition. We follow the NRA marksmanship qualification for basic pistol, 4 position rifle and basic shotgun (trap). The focus is learning safety first and a foundation of good shooting skills. Taught by certified NRA instructors and range safety officers. If interested, come by and check it out. For questions emails can be sent to&nbsp;</span><a href="mailto:smith.nick.hsc@gmail.com" target="_blank" class="m-font-size-14" style="display: initial;">smith.nick.hsc@gmail.com</a></li></ul> 
+<p style="line-height: 1.2;"><span style="display: initial;"><br/></span></p> <ul class="defaultList bullet"><li class="m-size-14" style="line-height: 1.2;"><span class="m-font-size-14" style="display: initial;">HOPKINTON SPORTSMEN'S ASSOCIATION&nbsp;</span><a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__www.hsasports.com&d=DwMCaQ&[long]&r=sPFcdQKfDcrLkcl4eG5qJA&[long]&[long]&e=" target="_blank" runtime_url="https://urldefense.proofpoint.com/v2/url?u=https-3A__www.hsasports.com&d=DwMCaQ&[long]&r=sPFcdQKfDcrLkcl4eG5qJA&[long]&[long]&e=" class="m-font-size-14" style="display: initial;">www.hsasports.com</a><span class="m-font-size-14" style="display: initial;">&nbsp;Skeet/Trap: Tuesday evening 630PM-900PM; Sunday 930A-100PM. 5 Stand on demand. Highpower rifle, smallbore prone, Precision Rifle, Maspenock Pistol League as shown on calendar at above link.</span></li></ul> 
+<p style="line-height: 1.2;"><span style="display: initial;"><br/></span></p> <ul class="defaultList bullet"><li class="m-size-14" style="line-height: normal;"><span class="m-font-size-14" style="display: initial;">Danvers Fish &amp; Game -&nbsp;</span><a href="https://www.dfgc.club/content.aspx?page_id=4001&club_id=611443" target="_blank" runtime_url="https://www.dfgc.club/content.aspx?page_id=4001&club_id=611443" type="url" class="m-font-size-14" style="display: initial;">Calendar of Events</a></li></ul> 
+<p style="line-height: normal;"><span style="display: initial;"><br/></span></p> <ul class="defaultList bullet"><li class="m-size-14" style="line-height: normal;"><a href="https://wmbdc.com/events/" target="_blank" runtime_url="https://wmbdc.com/events/" type="url" class="m-font-size-14" style="display: initial;">Western Mass Bird Dog Club - Calendar of Events.</a></li></ul> 
+<p style="line-height: normal;"><span style="display: initial;"><br/></span></p> <ul class="defaultList bullet"><li class="m-size-14" style="line-height: normal;"><a href="https://www.facebook.[long]" target="_blank" runtime_url="https://www.facebook.[long]" type="url" class="m-font-size-14" style="display: initial;">Wickaboag Sportsmens Club,</a><span class="m-font-size-14" style="display: initial;">&nbsp;West Brookfield Ma. will be having 2025 - Safari League 3 D shoots on Sunday , May 25 and Aug 17 . Registration from 7 - noon, kitchen will be open. Follow us on Facebook.</span></li></ul> 
+<p style="line-height: normal;"><span style="display: initial;"><br/></span></p> <ul class="defaultList bullet"><li style="line-height: normal;" class="m-size-14"><a href="http://www.southboroughrodandgun.com" target="_blank" runtime_url="http://www.southboroughrodandgun.com" type="url" class="m-font-size-14" style="display: initial;">Southborough Rod &amp; Gun Club</a><span class="m-font-size-14" style="display: initial;">&nbsp;<br/>Southborough Rod &amp; Gun Club has trap and skeet shooting on Sundays at 12 noon year-round except for some holiday weekends. Also on Thursday evenings at 6PM from May through September. Sporting Clays and 5 Stand are held periodically. See the events calendar at</span> 
+<a href="https://www.southboroughrodandgun.com/calendar" runtime_url="https://www.southboroughrodandgun.com/calendar" type="url" class="m-font-size-14" style="display: initial;">https://www.southboroughrodandgun.com/calendar</a></li></ul> 
+<p style="line-height: normal;"><span style="display: initial;"><br/></span></p> <ul class="defaultList bullet"><li class="m-size-14" style="line-height: normal;"><a href="http://www.lowellsc.org" target="_blank" runtime_url="http://www.lowellsc.org" type="url" class="m-font-size-14" style="display: initial;">Lowell Sportsmen's Club</a><span class="m-font-size-14" style="display: initial;">&nbsp;- Trap and Skeet every Sunday at 1pm and Wednesday at 10am; all-ages Archery every Thursday night at 6:30pm; Indoor Range Fun Shoot every Friday at 7pm. Visit&nbsp;</span><a href="http://www.lowellsc.org" target="_blank" runtime_url="http://www.lowellsc.org" type="url" class="m-font-size-14" style="display: initial;">http://www.lowellsc.org</a><span class="m-font-size-14" style="display: initial;">&nbsp;for more information.</span></li></ul> 
+<p style="line-height: normal;"><span style="display: initial;"><br/></span></p> <ul class="defaultList bullet"><li class="m-size-14" style="line-height: normal;"><a href="https://www.wprclub.com/" target="_blank" runtime_url="https://www.wprclub.com/" type="url" class="m-font-size-14" style="display: initial;">Worcester Pistol and Rifle Club</a><span class="m-font-size-14" style="display: initial;">&nbsp;- WPRC holds IDPA matches on the second Saturday of most every month throughout the year, with an IDPA practice on the Sunday before the match. We also hold Pin Shoot matches on the last Sunday of the non-winter months.</span></li></ul> 
+<p style="line-height: normal;"><span style="display: initial;"><br/></span></p> <ul class="defaultList bullet"><li class="m-size-14" style="line-height: normal;"><a href="https://www.norco.club/" target="_blank" runtime_url="https://www.norco.club/" type="url" class="m-font-size-14" style="display: initial;">Norco Sportsman's Club</a><span class="m-font-size-14" style="display: initial;">&nbsp;All event details can be found at&nbsp;</span><a href="/" target="_blank" runtime_url="/" type="url" class="m-font-size-14" style="display: initial;">https://www.norco.club/events/</a></li></ul> 
+<p style="line-height: normal;"><span style="display: initial;"><br/></span></p> <ul class="defaultList bullet"><li class="m-size-14" style="line-height: normal;"><a href="https://riversidegc.org/Calendar.shtml" target="_blank" runtime_url="https://riversidegc.org/Calendar.shtml" type="url" class="m-font-size-14" style="display: initial;">Riverside Gun Club</a><span class="m-font-size-14" style="display: initial;">&nbsp;- Skeet &amp; Trap open to the public. Basic skeet/trap Instruction available by appointment. Five Stand one Sunday per month. Special holiday shoots. High power team hosts. For more information, visit&nbsp;</span><a href="https://riversidegc.org/Calendar.shtml" target="_blank" runtime_url="https://riversidegc.org/Calendar.shtml" type="url" class="m-font-size-14" style="display: initial;">https://riversidegc.org/Calendar.shtml</a></li></ul> 
+<p style="line-height: normal;"><span style="display: initial;"><br/></span></p> <ul class="defaultList bullet"><li class="m-size-14" style="line-height: normal;"><a href="http://www.cscdracut.org" target="_blank" runtime_url="http://www.cscdracut.org" type="url" class="m-font-size-14" style="display: initial;">Centralville​ Sportsmen's Club</a><span class="m-font-size-14" style="display: initial;">&nbsp;- Trap every Sunday at 1 PM and Monday at 5 PM. Monthly NRA Home Firearms Safety Class. Females With Firearms Day every June. Check website for other events and registration&nbsp;</span><a href="http://www.cscdracut.org" target="_blank" runtime_url="http://www.cscdracut.org" type="url" class="m-font-size-14" style="display: initial;">www.cscdracut.org</a></li></ul> 
+<p style="line-height: normal;"><span style="display: initial;"><br/></span></p> <ul class="defaultList bullet"><li class="m-size-14" style="line-height: normal;"><a href="https://www.hamiltonrg.org/" target="_blank" runtime_url="https://www.hamiltonrg.org/" type="url" class="m-font-size-14" style="display: initial;">Hamilton Rod &amp; Gun Club</a><span class="m-font-size-14" style="display: initial;">&nbsp;&ndash; Trap is open to the public every Sunday at 9:30AM and 2nd/4th Fridays of the month at 5:30PM</span></li></ul> 
+<p style="line-height: normal;"><span style="display: initial;"><br/></span></p> <ul class="defaultList bullet"><li class="m-size-14" style="line-height: normal;"><a href="https://www.lsa-ma.org/" target="_blank" runtime_url="https://www.lsa-ma.org/" type="url" class="m-font-size-14" style="display: initial;">Leominster Sportsmen's</a><span class="m-font-size-14" style="display: initial;">&nbsp;Winter Rifle Matches on Sunday mornings, December 1st through the end of March - 8:30-11am at the Lower Range. It's any rifle/any sights or scope, 20 shots in 20 minutes at 100 yards on SR-1 targets, in the standing position, cost $5. This is a great way to improve your marksmanship skills for hunting, competition, or just to be &quot;well regulated.&quot; We'll have the wood stove going! Come on down before or after church. All are welcome!</span></li></ul> 
+<p style="line-height: normal;"><span style="display: initial;"><br/></span></p> <ul class="defaultList bullet"><li class="m-size-14" style="line-height: normal;"><a href="https://www.8pt.org/" target="_blank" runtime_url="https://www.8pt.org/" type="url" class="m-font-size-14" style="display: initial;">Eight Point Sportsman's Club</a><span class="m-font-size-14" style="display: initial;">&nbsp;has Trap/Skeet on Thursdays 5-9pm and Sundays 12-3pm. Public is welcome.</span></li></ul> 
+<p style="line-height: normal;"><span style="display: initial;"><br/></span></p> <ul class="defaultList bullet"><li class="m-size-14" style="line-height: normal;"><a href="https://midwaytrapandskeetclub.com/" target="_blank" runtime_url="https://midwaytrapandskeetclub.com/" type="url" class="m-font-size-14" style="display: initial;">Midway Trap and Skeet</a><span class="m-font-size-14" style="display: initial;"><span class="m-font-size-14" style="display: initial;">&nbsp;- Trap every Sunday at 10am, except on the Sundays we have a 3D archery event Calendar -&nbsp;</span> 
+</span><a href="https://midwaytrapandskeetclub.com/calendar" target="_blank" runtime_url="https://midwaytrapandskeetclub.com/calendar" type="url" class="m-font-size-14" style="display: initial;">https://midwaytrapandskeetclub.com/calendar</a></li></ul> 
+<p style="line-height: normal;"><span style="display: initial;"><br/></span></p> <ul class="defaultList bullet"><li style="line-height: normal;"><a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__old-2Dcolony.org_&d=DwMFaQ&[long]&r=KoEupY88Y-j8-5FvlmdKOg&[long]&[long]&e=" target="_blank" runtime_url="https://urldefense.proofpoint.com/v2/url?u=https-3A__old-2Dcolony.org_&d=DwMFaQ&[long]&r=KoEupY88Y-j8-5FvlmdKOg&[long]&[long]&e=" type="url" style="display: initial;">Old Colony Sportsmen's Association</a><span style="display: initial;">&nbsp;- We offer skeet, Trap, 5-Stand, CMP Rifle, Jr. Rifle, Schuetzen Rifle, Winter and Summer Rifle Leagues, Pistol, Precision Pistol League, IDPA, Black Powder, and Archery. Our club kitchen serves weekend Breakfast and Lunch. We host monthly events and competitions open to members &amp; non-members along with our monthly new member orientation classes. Our facilities are handicap accessible. All event details can be found at&nbsp;</span><a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__old-2Dcolony.org_club_calendar&d=DwMFaQ&[long]&r=KoEupY88Y-j8-5FvlmdKOg&[long]&[long]&e=" target="_blank" runtime_url="https://urldefense.proofpoint.com/v2/url?u=https-3A__old-2Dcolony.org_club_calendar&d=DwMFaQ&[long]&r=KoEupY88Y-j8-5FvlmdKOg&[long]&[long]&e=" type="url" style="display: initial;">https://old-colony.org/club/calendar</a></li></ul> 
+<p style="line-height: normal;"><span style="display: initial;"><br/></span></p> <ul class="defaultList bullet"><li class="m-size-14" style="line-height: normal;"><span class="m-font-size-14" style="display: initial;">Harvard Sportsmen's Club MetroWest Tactical group holds Defensive Action (DA) matches throughout the year. https://metrowesttactical.com/calendar/ We also offer free and open to public Defensive Action practices.&nbsp;</span><a href="https://metrowesttactical.com/practice-schedule/" target="_blank" runtime_url="https://metrowesttactical.com/practice-schedule/" type="url" class="m-font-size-14" style="display: initial;">https://metrowesttactical.com/practice-schedule/</a></li></ul> 
+<p style="line-height: normal;"><span style="display: initial;"><br/></span></p> <ul class="defaultList bullet"><li class="m-size-14" style="line-height: normal;"><span class="m-font-size-14" style="display: initial;">The Harvard Ghost Riders runs Cowboy Action Shooting (CAS) competitions. Find more information here:&nbsp;</span><a href="/" target="_blank" runtime_url="/" type="url" class="m-font-size-14" style="display: initial;">http://www.harvardghostriders.com./</a><span class="m-font-size-14" style="display: initial;">&nbsp;<br/>New England Regional IDPA holds IDPA matches on the 4th Saturday of the month. Match Schedule. Click here for the public IDPA practice schedule.</span></li></ul> 
+<p><span style="display: initial;"><br/></span></p></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="sticky-widgets-container-global" id="1608673715"></div> 
+ <div class="dmFooterContainer"> <div id="fcontainer" class="u_fcontainer f_hcontainer dmFooter p_hfcontainer"> <div dm:templateorder="250" class="dmFooterResp generalFooter" id="1943048428"> <div class="u_1536000181 dmRespRow" id="1536000181"> <div class="dmRespColsWrapper" id="1657302242"> <div class="dmRespCol small-12 medium-12 large-12" id="1531082667"> <div class="u_1964388251 dmDividerWrapper clearfix" data-element-type="dDividerId" data-layout="divider-style-1" data-widget-version="2" id="1964388251"><hr class="dmDivider" style="border-width:2px; border-top-style:solid; color:grey;" id="1379090814"/></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1294473577" style="transition: opacity 1s ease-in-out;"><p class="text-align-center size-14 m-size-11"><span style="color: rgb(0, 0, 0); display: initial;" class="font-size-14 m-font-size-11">&copy; 2024 GUN OWNERS' ACTION LEAGUE. 287 TURNPIKE RD., SUITE 115, WESTBORO MA 01581 ALL RIGHTS RESERVED - POWERED BY ASSOCIATIONSHPERE</span></p><p class="text-align-center"><span style="color: rgb(0, 0, 0); display: initial;" class="font-size-14 m-font-size-11"><br/></span></p><p style="line-height: 1.5;" class="text-align-center size-14 m-size-11"><a href="/privacy-policy" runtime_url="/privacy-policy" type="page" style="color: rgb(54, 37, 231); display: initial;" class="font-size-14 m-font-size-11">GOAL Privacy Policy</a><span style="color: rgb(54, 37, 231); display: initial;" class="font-size-14 m-font-size-11">&nbsp;</span></p><p style="line-height: 1.5;" class="text-align-center size-14 m-size-11"><a href="/shipping-policy" runtime_url="/shipping-policy" type="page" style="color: rgb(54, 37, 231); display: initial;" class="font-size-14 m-font-size-11">GOAL Shipping Policy</a><span style="color: rgb(54, 37, 231); display: initial;" class="font-size-14 m-font-size-11">&nbsp;</span></p><p style="line-height: 1.5;" class="text-align-center size-14 m-size-11"><span style="color: rgb(54, 37, 231); display: initial;" class="font-size-14 m-font-size-11">GOAL Return Policy&nbsp;</span></p><p style="line-height: 1.5;" class="text-align-center size-14 m-size-11"><span style="color: rgb(54, 37, 231); display: initial;" class="font-size-14 m-font-size-11">Student Re-booking and Cancellation Policy<br/></span></p><p style="line-height: 1.5;" class="text-align-center size-14 m-size-11"><span style="color: rgb(54, 37, 231); display: initial;" class="font-size-14 m-font-size-11">Terms</span></p><p><span style="display: initial;"><br/></span></p></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div id="1236746004" dmle_extension="powered_by" data-element-type="powered_by" icon="true" surround="false"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Injecting site-wide before scripts -->
+
+<!-- End Injecting site-wide to the head -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="display:none;" id="P6iryBW0Wu"></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" data-auto="pswp-close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" data-auto="pswp-share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="fb-root"
+        data-locale="en"></div>
+<!-- Alias: 7a261750 -->
+<div class="dmPopupMask" id="dmPopupMask"></div>
+<div id="dmPopup" class="dmPopup" data-auto="popup">
+	<div class="dmPopupCloseWrapper"> <div class="dmPopupClose dm-common-icons-close oneIcon" data-auto="popup-close" onclick="dmHidePopup(event);"></div> </div>
+ 	<div class="dmPopupTitle"> <span></span> Share by:</div> 
+	<div class="data"></div>
+</div>
+
+<!--  Site Wide Html Markup -->
+<!--  Site Wide Html Markup -->
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | SDAA</title>
+    <meta name="description" content="The page you were looking for could not be found on the South Dakota Archers Association website.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://sdarchers.com/wp-json/tribe/events/v1/events">
+    <meta name="theme-color" content="#00263E">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="South Dakota Archers Association">
+    <meta property="og:title" content="Page Not Found | SDAA">
+    <meta property="og:description" content="The page you were looking for could not be found on the South Dakota Archers Association website.">
+    <meta property="og:url" content="https://sdarchers.com/wp-json/tribe/events/v1/events">
+    <meta property="og:image" content="https://sdarchers.com/assets/img/sdaalogo.png">
+        <meta property="og:image:secure_url" content="https://sdarchers.com/assets/img/sdaalogo.png">
+        <meta property="og:image:alt" content="Page Not Found | SDAA">
+        <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
+        <meta property="og:locale" content="en_US">
+        
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Page Not Found | SDAA">
+    <meta name="twitter:description" content="The page you were looking for could not be found on the South Dakota Archers Association website.">
+    <meta name="twitter:image" content="https://sdarchers.com/assets/img/sdaalogo.png">
+    <meta name="twitter:image:alt" content="Page Not Found | SDAA">
+
+    <link href="https://sdarchers.com/assets/css/styles.css?v=1786396624" rel="stylesheet">
+        <link rel="preload" as="font" type="font/woff2" crossorigin href="https://sdarchers.com/assets/fonts/rift-700.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="https://sdarchers.com/assets/fonts/rift-700-italic.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="https://sdarchers.com/assets/fonts/roboto-latin.woff2">
+        <link rel="icon" href="https://sdarchers.com/assets/img/favicon-32.png?v=1785789532" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="https://sdarchers.com/assets/img/sdaalogo-mark.png?v=1785773760">
+        
+                </head>
+<body class="font-secondary text-nfaa-navy bg-nfaa-shell">
+<div class="min-h-screen flex flex-col">
+
+    <header class="site-header bg-nfaa-navy text-white shadow-lg py-4 px-6 md:px-8 sticky top-0 z-50">
+      <div class="container mx-auto flex items-center justify-between flex-wrap">
+        <a href="https://sdarchers.com/" class="flex items-center group min-w-0" aria-label="South Dakota Archers Association — Home">
+                              <picture class="mr-3 shrink-0">
+            <source type="image/webp" srcset="https://sdarchers.com/assets/img/sdaalogo-mark-128.webp?v=1785789532">
+            <img src="https://sdarchers.com/assets/img/sdaalogo-mark.png?v=1785773760" alt="" width="64" height="64" class="h-12 w-12 md:h-16 md:w-16" onerror="this.onerror=null;this.src='https://placehold.co/60x60/D7D2CB/00263E?text=SDAA';">
+          </picture>
+          <p class="font-primary text-lg sm:text-xl md:text-2xl font-bold text-nfaa-yellow group-hover:text-white transition">
+            <span class="sm:hidden">SD Archers</span>
+            <span class="hidden sm:inline">South Dakota Archers Association</span>
+          </p>
+        </a>
+        <div class="md:hidden">
+          <button id="menu-btn" type="button" class="text-white p-2 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-nfaa-yellow" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+          </button>
+        </div>
+        <nav id="menu" class="w-full md:w-auto hidden md:flex mt-4 md:mt-0" aria-label="Main navigation">
+          <ul class="flex flex-col md:flex-row md:space-x-2">
+            <li><a href="https://sdarchers.com/" class="block py-2 px-3 text-white font-primary text-lg transition duration-300 ease-in-out rounded-md hover:bg-nfaa-cyan-blue">Home</a></li><li><a href="https://sdarchers.com/events" class="block py-2 px-3 text-white font-primary text-lg transition duration-300 ease-in-out rounded-md hover:bg-nfaa-cyan-blue">Events</a></li><li><a href="https://sdarchers.com/results" class="block py-2 px-3 text-white font-primary text-lg transition duration-300 ease-in-out rounded-md hover:bg-nfaa-cyan-blue">Results</a></li><li><a href="https://sdarchers.com/news" class="block py-2 px-3 text-white font-primary text-lg transition duration-300 ease-in-out rounded-md hover:bg-nfaa-cyan-blue">News</a></li><li><a href="https://sdarchers.com/clubs" class="block py-2 px-3 text-white font-primary text-lg transition duration-300 ease-in-out rounded-md hover:bg-nfaa-cyan-blue">Clubs</a></li><li><a href="https://sdarchers.com/resources" class="block py-2 px-3 text-white font-primary text-lg transition duration-300 ease-in-out rounded-md hover:bg-nfaa-cyan-blue">Resources</a></li><li><a href="https://sdarchers.com/about" class="block py-2 px-3 text-white font-primary text-lg transition duration-300 ease-in-out rounded-md hover:bg-nfaa-cyan-blue">About Us</a></li>          </ul>
+        </nav>
+      </div>
+    </header>
+
+<main class="flex-grow band band-white">
+    <div class="container mx-auto px-4">
+        <section class="max-w-2xl mx-auto text-center">
+            <span class="section-rule bg-nfaa-red mx-auto"></span>
+            <div class="flex justify-center mb-6">
+                <img src="https://sdarchers.com/assets/img/sdaalogo-mark.png" alt="SDAA Logo" class="h-20 w-20 md:h-24 md:w-24" onerror="this.onerror=null;this.src='https://placehold.co/96x96/D7D2CB/00263E?text=SDAA';">
+            </div>
+            <p class="font-primary text-6xl md:text-7xl font-bold text-nfaa-yellow leading-none mb-2">404</p>
+            <h1 class="title text-display-sm text-nfaa-navy mb-3">Page Not Found</h1>
+            <p class="font-secondary text-base md:text-lg text-gray-700 leading-relaxed mb-8">
+                We couldn't find the page you were looking for. It may have been moved, removed, or the link might be incorrect.
+                Let's get you back on target.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://sdarchers.com/" class="btn-cyan py-3 px-8 rounded-full shadow-lg transform hover:scale-105">Back to Home</a>
+                <a href="https://sdarchers.com/events" class="border-2 border-nfaa-navy text-nfaa-navy hover:bg-nfaa-navy hover:text-white font-primary font-bold py-3 px-8 rounded-full transition duration-300">View Events</a>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer class="bg-nfaa-navy text-white py-4 px-6 mt-auto">
+    <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center">
+                                <picture class="mr-3 shrink-0">
+                    <source type="image/webp" srcset="https://sdarchers.com/assets/img/nfaa.webp?v=1785789532">
+                    <img src="https://sdarchers.com/assets/img/nfaa.png?v=1780074035" alt="NFAA Logo" width="292" height="129" class="h-8 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/60x60/D7D2CB/00263E?text=SDAA';">
+                </picture>
+                <div class="text-left">
+                    <p class="font-primary text-nfaa-yellow text-sm">South Dakota Archers Association</p>
+                    <p class="text-xs text-gray-400">Affiliated with the NFAA</p>
+                </div>
+            </div>
+             <nav>
+            <ul class="flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs">
+                <li><a href="https://sdarchers.com/" class="text-gray-300 hover:text-nfaa-yellow transition duration-300">Home</a></li><li><a href="https://sdarchers.com/events" class="text-gray-300 hover:text-nfaa-yellow transition duration-300">Events</a></li><li><a href="https://sdarchers.com/results" class="text-gray-300 hover:text-nfaa-yellow transition duration-300">Results</a></li><li><a href="https://sdarchers.com/news" class="text-gray-300 hover:text-nfaa-yellow transition duration-300">News</a></li><li><a href="https://sdarchers.com/clubs" class="text-gray-300 hover:text-nfaa-yellow transition duration-300">Clubs</a></li><li><a href="https://sdarchers.com/resources" class="text-gray-300 hover:text-nfaa-yellow transition duration-300">Resources</a></li><li><a href="https://sdarchers.com/about" class="text-gray-300 hover:text-nfaa-yellow transition duration-300">About Us</a></li><li><a href="https://sdarchers.com/admin/" class="text-gray-300 hover:text-nfaa-yellow transition duration-300">Admin Login</a></li>            </ul>
+        </nav>
+
+            <div class="flex space-x-3">
+                <a href="https://www.facebook.com/groups/2149507752034446/" aria-label="Facebook" class="text-white hover:text-nfaa-yellow transition duration-300"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.65H8.05V12h2.388V9.35c0-2.356 1.432-3.656 3.543-3.656 1.056 0 1.956.078 2.229.113v2.43h-1.472c-1.154 0-1.378.547-1.378 1.354V12h2.73l-.447 2.65h-2.283v6.229C18.343 21.128 22 16.991 22 12c0-5.523-4.477-10-10-10z"></path></svg></a>
+                <a href="https://x.com/NFAAusa" aria-label="X (Twitter)" class="text-white hover:text-nfaa-yellow transition duration-300"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.344-1.59.577-2.45.68.89-.533 1.57-1.377 1.89-2.396-.83.493-1.75.85-2.72 1.04-.78-.83-1.89-1.35-3.13-1.35-2.37 0-4.3 1.93-4.3 4.3 0 .34.04.67.11.98C8.75 9.71 5.8 8.15 3.82 5.56c-.36.62-.57 1.34-.57 2.12 0 1.49.76 2.81 1.91 3.59-.7-.02-1.36-.21-1.93-.53v.05c0 2.09 1.49 3.82 3.47 4.22-.36.1-.74.15-1.13.15-.27 0-.53-.03-.79-.07.55 1.72 2.14 2.97 4.02 3.01-1.48 1.16-3.34 1.86-5.37 1.86-.35 0-.69-.02-1.03-.06C4.09 20.21 6.3 21 8.64 21c7.76 0 12-6.4 12-12 0-.18-.01-.36-.01-.54.8-.58 1.49-1.29 2.04-2.11z"></path></svg></a>
+                <a href="https://www.instagram.com/nfaausa/" aria-label="Instagram" class="text-white hover:text-nfaa-yellow transition duration-300"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.071 1.17.055 1.81.249 2.227.414.409.16.74.376 1.012.648.272.272.488.603.648 1.012.165.417.359 1.057.414 2.227.059 1.266.071 1.646.071 4.85s-.012 3.584-.071 4.85c-.055 1.17-.249 1.81-.414 2.227-.16.409-.376.74-.648 1.012-.272.272-.488.603-.648 1.012-.417.165-1.057.359-2.227.414-1.266.059-1.646.071-4.85.071s-3.584-.012-4.85-.071c-1.17-.055-1.81-.249-2.227-.414-.409-.16-.74-.376-1.012-.648-.272-.272-.488.603-.648 1.012-.165-.417-.359-1.057-.414-2.227-.059-1.266-.071-1.646-.071-4.85s.012-3.584.071-4.85c.055-1.17.249 1.81.414 2.227.16-.409.376-.74.648-1.012.272-.272.603-.488 1.012-.648.417-.165 1.057-.359 2.227-.414C8.416 2.175 8.796 2.163 12 2.163zm0 1.412c-3.116 0-3.48.01-4.71.069-1.07.05-1.46.21-1.78.337-.32.127-.58.297-.78.497-.2.2-.37.46-.497.78-.127.32-.287.71-.337 1.78-.059 1.23-.069 1.594-.069 4.71s.01 3.48.069 4.71c.05 1.07.21 1.46.337 1.78.127.32.297.58.497.78.2.2.46.37.78.497.32.127.71.287 1.78.337 1.23.059 1.594.069 4.71.069s3.48-.01 4.71-.069c1.07-.05 1.46-.21 1.78-.337.32-.127.58-.297.78-.497.2-.2.37-.46.497-.78-.127-.32-.297-.71-.337-1.78-.059-1.23-.069-1.594-.069-4.71s-.01-3.48-.069-4.71c-.05-1.07-.21-1.46-.337-1.78-.127-.32-.297-.58-.497-.78-.2-.2-.46-.37-.78-.497-.32-.127-.71-.287-1.78-.337-1.23-.059-1.594-.069-4.71-.069zm0 2.875c2.27 0 4.112 1.842 4.112 4.112s-1.842 4.112-4.112 4.112-4.112-1.842-4.112-4.112 1.842-4.112 4.112-4.112zm0 1.412c-1.488 0-2.698 1.21-2.698 2.698s1.21 2.698 2.698 2.698 2.698-1.21 2.698-2.698-1.21-2.698-2.698-2.698zm5.725-4.112c-.52 0-.942.422-.942.942s.422.942.942.942.942-.422.942-.942-.422-.942-.942-.942z"></path></svg></a>
+            </div>
+        </div>
+
+        <div class="text-center text-xs text-gray-400 mt-4">
+            &copy; 2026 South Dakota Archers Association. All rights reserved. Managed by Lalit Jain
+        </div>
+    </div>
+</footer>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+Sitemap: http://illinoistargetarchery.org/sitemap.xml
+Sitemap: http://illinoistargetarchery.org/news-sitemap.xml
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php

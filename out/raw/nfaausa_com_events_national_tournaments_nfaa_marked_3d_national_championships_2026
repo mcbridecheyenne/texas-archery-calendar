@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en" class="national-tournament  [long] nav-active noscroll">
+	<head>
+		<base href="https://nfaausa.com/" />
+		<title>NFAA Marked 3D National Championships</title>
+
+		<link rel="shortcut icon" href="/images/favicon2.png" type="image/x-icon" />
+
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Learn more about the NFAA Marked 3D National Championships &amp; Western Classic Trail Shoot." />
+		<meta name="robots" content="index, follow">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+
+			<!-- Google tag (gtag.js) -->
+	
+	
+
+		<!--[if lt IE 9]>
+		
+		<![endif]-->
+
+		<link rel="stylesheet" href="/css/reset.css" media="screen" type="text/css" />
+		<link rel="stylesheet" href="https://use.typekit.net/urr1gzd.css" />
+		<link rel="stylesheet" href="/css/slick.css" media="screen" type="text/css" />
+		<link rel="stylesheet" href="/css/screen.css?v=20" media="screen" type="text/css" />
+
+		<meta property="og:url" content="https://nfaausa.[long]" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="NFAA Marked 3D National Championships" />
+		<meta property="og:description" content="Learn more about the NFAA Marked 3D National Championships &amp; Western Classic Trail Shoot." />
+		<meta property="og:image" content="https://nfaausa.[long] WCTS.jpg" />
+
+		
+		
+		
+				
+	</head>
+	<body id="page_national-tournament">		<header>
+		<div class="topBar font0 navy-bg bold">
+			<div class="left">
+				<ul>
+					<li>
+						<a href="https://www.facebook.com/nfaausa" target="_blank">
+							<img src="/images/icons/facebook-blue.svg" alt="" />
+						</a>
+					</li>
+					<li>
+						<a href="http://instagram.com/nfaausa" target="_blank">
+							<img src="/images/icons/instagram-blue.svg" alt="" />
+						</a>
+					</li>
+					<li>
+						<a href="https://www.youtube.com/user/NFAAUSA" target="_blank">
+							<img src="/images/icons/youtube-blue.svg" alt="" />
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="right">
+				<ul class="uppercase white ls1">
+					<li>
+						<a class="font9" href="/about/frequently-asked-questions">
+							<img src="/images/icons/faq.svg" alt="" style="width:12px;height:12px;" />
+							FAQ
+						</a>
+					</li>
+					<li>
+						<a class="font9" href="https://nfaausa-donations.sport80.com/donation">
+							<img src="/images/icons/donate.svg" alt="" />
+							Donate
+						</a>
+					</li>
+					<li>
+						<a class="font9" href="https://shop.nfaausa.com/">
+							<img src="/images/icons/shop.svg" alt="" />
+							Shop
+						</a>
+					</li>
+					<li>
+						<a class="font9" href="https://nfaausa.sport80.com/">
+							<img src="/images/icons/login.svg" alt="" />
+							Log In
+						</a>
+					</li>
+					<li>
+						<a class="font9 searchLink" href="#">
+							<img src="/images/icons/search.svg" class="searchIcon" alt="" />
+							<img src="/images/icons/close.svg" class="closeIcon hide" alt="" />
+							<span>Search</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="mainNav title font0">
+			<a class="menuButton red-bg white font15 lh1" href="#"><span>Menu</span></a>
+			<ul class="navy text-center">
+				<li class="logo">
+					<a href="/">
+						<img src="/images/logo.svg" alt="" />
+					</a>
+				</li>
+				<li class="link">
+					<a href="/get-involved" class="font18 lh1 red-line">Get Involved</a>
+				</li>	
+				<li class="link">
+					<a href="/events" class="font18 lh1 blue-line">Events</a>
+				</li>
+				<li class="link hasSubNav">
+					<a href="#" class="font18 lh1 orange-line">I want to find&nbsp;&nbsp;<span>+</span></a>
+					<ul class="subnav">
+						<li><a class="font18 title navy" href="/events">Events</a></li>
+						<li><a class="font18 title navy" href="/get-involved/find-a-club">Clubs &amp; Shops</a></li>
+						<li><a class="font18 title navy" href="/get-involved/find-a-range">Ranges</a></li>
+						<li><a class="font18 title navy" href="/memberships/become-a-member">Memberships</a></li>
+						<li><a class="font18 title navy" href="/get-involved/archery-programs">Programs</a></li>
+						<li><a class="font18 title navy" href="/news">News</a></li>
+						<li><a class="font18 title navy" href="/get-involved/scholarship-opportunities">Scholarship Opportunities</a></li>
+						<li><a class="font18 title navy" href="/resources">Resources</a></li>
+						<li><a class="font18 title navy" href="/about/archery-magazine">Archery Magazine</a></li>
+						<li><a class="font18 title navy" href="/events/results-and-records">Results &amp; Records</a></li>
+						<li><a class="font18 title navy" href="/about/constitution">Constitution &amp; By-Laws</a></li>
+						<li><a class="font18 title navy" href="/contact">Contact Information</a></li>
+					</ul>
+				</li>
+				<li class="link">
+					<a href="/sections" class="font18 lh1 navy-line">NFAA Sections</a>
+				</li>
+				<li class="link hasSubNav red-bg">
+					<a href="#" class="font18 lh1">Join Us&nbsp;&nbsp;<span>+</span></a>
+					<ul class="subnav">
+						<li><a class="font18 title navy" href="/memberships/become-a-member">Become a Member</a></li>
+						<li><a class="font18 title navy" href="/memberships/become-a-club-or-shop">Build a Community</a></li>
+					</ul>
+				</li>
+			</ul>
+			<div class="mobileNav">
+				<div class="mobileLogo">
+					<a href="/">
+						<img src="/images/logo.svg" alt="" />
+					</a>
+				</div>
+				<div class="mobileSearch">
+					<a class="font9 searchLink navy-bg white font15 lh1" href="#">
+						<span>Search</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="overlayNav">
+			<div class="wrapper">
+				<div class="inner">
+					<ul>
+						<li>
+							<a class="title font30 white" href="/">Home</a>
+						</li>
+						<li>
+							<a class="title font30 white arrow">Events</a>
+							<ul class="subnav">
+								<li>
+									<a class="font18 blue title" href="/events">Events</a>
+								</li>
+											<li>
+				<a href="events/find-an-event" class="font18 white thin-title">Find an Event</a>
+			</li>			<li>
+				<a href="events/national-tournaments" class="font18 white thin-title">National Tournaments</a>
+			</li>			<li>
+				<a href="events/shooter-of-the-year" class="font18 white thin-title">Shooter of the Year</a>
+			</li>			<li>
+				<a href="events/results-and-records" class="font18 white thin-title">Results &amp; Records</a>
+			</li>			<li>
+				<a href="events/rules" class="font18 white thin-title">Rules</a>
+			</li>			<li>
+				<a href="events/trade-shows" class="font18 white thin-title">Trade Shows</a>
+			</li>
+							</ul>
+						</li>
+						<li>
+							<a class="title font30 white arrow">Get Involved</a>
+							<ul class="subnav">
+								<li>
+									<a class="font18 blue title" href="/get-involved">Get Involved</a>
+								</li>
+											<li>
+				<a href="get-involved/new-to-nfaa" class="font18 white thin-title">New to NFAA</a>
+			</li>			<li>
+				<a href="get-involved/find-a-club" class="font18 white thin-title">Find a Club or Shop</a>
+			</li>			<li>
+				<a href="get-involved/find-a-range" class="font18 white thin-title">Find a Range</a>
+			</li>			<li>
+				<a href="[long]" class="font18 white thin-title">Judge Certification Program</a>
+			</li>			<li>
+				<a href="get-involved/scholarship-opportunities" class="font18 white thin-title">Scholarship Opportunities</a>
+			</li>			<li>
+				<a href="get-involved/collegiate-archery" class="font18 white thin-title">Collegiate Archery</a>
+			</li>			<li>
+				<a href="get-involved/explore-bowhunting" class="font18 white thin-title">Explore Bowhunting</a>
+			</li>			<li>
+				<a href="get-involved/range-certifications" class="font18 white thin-title">Range Certifications</a>
+			</li>			<li>
+				<a href="get-involved/archery-programs" class="font18 white thin-title">Archery Programs</a>
+			</li>			<li>
+				<a href="get-involved/awards-programs" class="font18 white thin-title">Awards Programs</a>
+			</li>			<li>
+				<a href="get-involved/club-shop-referral-program" class="font18 white thin-title">Club/Shop Referral Program</a>
+			</li>			<li>
+				<a href="get-involved/volunteering-careers" class="font18 white thin-title">Volunteer &amp; Career Opportunities</a>
+			</li>
+							</ul>
+						</li>
+						<li>
+							<a class="title font30 white arrow">Memberships</a>
+							<ul class="subnav">
+								<li>
+									<a class="font18 blue title" href="/memberships">Memberships</a>
+								</li>
+											<li>
+				<a href="memberships/become-a-member" class="font18 white thin-title">Become a Member</a>
+			</li>			<li>
+				<a href="memberships/become-a-club-or-shop" class="font18 white thin-title">Build a Community</a>
+			</li>			<li>
+				<a href="[long]" class="font18 white thin-title">Become a Professional Archer</a>
+			</li>
+							</ul>
+						</li>
+						<li>
+							<a class="title font30 white arrow">NFAA Sections</a>
+							<ul class="subnav">
+								<li>
+									<a class="font18 blue title" href="/sections">All Sections</a>
+								</li>
+											<li>
+				<a href="/sections/northwest" class="font18 white thin-title">Northwest</a>
+			</li>			<li>
+				<a href="/sections/midwest" class="font18 white thin-title">Midwest</a>
+			</li>			<li>
+				<a href="/sections/great-lakes" class="font18 white thin-title">Great Lakes</a>
+			</li>			<li>
+				<a href="/sections/mid-atlantic" class="font18 white thin-title">Mid-Atlantic</a>
+			</li>			<li>
+				<a href="/sections/new-england" class="font18 white thin-title">New England</a>
+			</li>			<li>
+				<a href="/sections/southwest" class="font18 white thin-title">Southwest</a>
+			</li>			<li>
+				<a href="/sections/southern" class="font18 white thin-title">Southern</a>
+			</li>			<li>
+				<a href="/sections/southeast" class="font18 white thin-title">Southeast</a>
+			</li>
+							</ul>
+						</li>
+						<li>
+							<a class="title font30 white arrow">About</a>
+							<ul class="subnav">
+								<li>
+									<a class="font18 blue title" href="/about">About</a>
+								</li>
+											<li>
+				<a href="about/history" class="font18 white thin-title">History</a>
+			</li>			<li>
+				<a href="about/constitution" class="font18 white thin-title">Constitution &amp; By-Laws</a>
+			</li>			<li>
+				<a href="about/archery-magazine" class="font18 white thin-title">Archery Magazine</a>
+			</li>			<li>
+				<a href="about/partners-and-sponsors" class="font18 white thin-title">Partners &amp; Sponsors</a>
+			</li>			<li>
+				<a href="about/meet-the-team" class="font18 white thin-title">Meet the NFAA Team</a>
+			</li>			<li>
+				<a href="about/frequently-asked-questions" class="font18 white thin-title">Frequently Asked Questions</a>
+			</li>
+							</ul>
+						</li>
+						<li>
+							<a class="title font30 white" href="/contact">Contact us</a>
+						</li>
+						<li>
+							<a class="title font30 white" href="/resources">Resource Center</a>
+						</li>
+						<li>
+							<a class="title font30 white" href="/news">News</a>
+						</li>
+						<li>
+							<a class="title font30 white" href="/about/archery-magazine">Archery Magazine</a>
+						</li>
+						<li>
+							<a class="title font30 white" href="https://shop.nfaausa.com/" target="_blank">Shop</a>
+						</li>
+						<li>
+							<a class="title font30 white" href="https://nfaausa.sport80.com/" target="_blank">Login</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="searchBar">
+			<form id="search_form" method="GET" action="/search">
+				<input type="text" placeholder="What are you looking for?" id="term" name="term" class="title font18 white" />
+				<input type="hidden" id="token" name="token" value="" />
+				<button type="submit">
+					<img src="/images/icons/search.svg" />
+				</button>
+			</form>
+		</div>
+	</header><section class="content">
+	<div class="pageHeader">
+		<div class="wrapper">
+			<span class="font15 thin-title navy">May 01, 2026 - May 03, 2026</span>
+			<h1 class="font65 red title">NFAA Marked 3D National Championships 2026</h1>
+		</div>
+	</div>
+	<div class="wrapper">
+		<div class="tournamentPage">
+			<div class="sidebar">
+				<div class="desktopTabs tabList">
+					<ul>
+								<li class="active">
+			<a href="#home">Home</a>
+		</li>		<li class="">
+			<a href="#registration">Registration</a>
+		</li>		<li class="">
+			<a href="#tournament-rules">Tournament Rules</a>
+		</li>					</ul>
+				</div>
+						<div class="tournamentLinks">
+			<ul>
+				<li class="titleItem">
+					<span class="title white font18">Tournament Links:</span>
+				</li>
+							<li>
+				<a href="https://straightarrowbowhunters.com/WesternClassic" target="_blank">Tournament Website</a>
+			</li>			<li>
+				<a href="https://cam.smugmug.[long]" target="_blank">2026 Event Pictures</a>
+			</li>			<li>
+				<a href="https://nfaausa.com/events/results-and-records" target="_blank">Tournament Results</a>
+			</li>			<li>
+				<a href="https://nfaausa.[long].pdf" target="_blank">Targets & Distances</a>
+			</li>			<li>
+				<a href="https://nfaausa.[long].pdf" target="_blank">Quick Guide to NFAA Age Divisions & Shooting Styles</a>
+			</li>			<li>
+				<a href="https://www.lucidtravel.com/event/20420" target="_blank">Book Discounted Hotel Accommodations</a>
+			</li>
+			</ul>
+		</div>						<div class="latestNews">
+			<h3>National Tournament News</h3>
+			<ul></ul></div>				<a href="/events/national-tournaments/year/2026" class="font12 red bold uppercase backTournamentLink">
+					< View 2026 National Tournaments</a>
+				<a href="/events/national-tournaments" class="font12 red bold uppercase backTournamentLink">
+					< View all National Tournaments</a>
+			</div>
+			<div class="pageContent nationalTournamentContent">
+				<div class="mobileTabs tabList">
+					<ul>
+								<li class="active">
+			<a href="#home">Home</a>
+		</li>		<li class="">
+			<a href="#registration">Registration</a>
+		</li>		<li class="">
+			<a href="#tournament-rules">Tournament Rules</a>
+		</li>					</ul>
+				</div>
+						<div class="tabContent active" id="home">
+			<p>In partnership with Straight Arrow Bow Hunters, NFAA will host the <strong>32nd Annual Marked 3D National Championship</strong> in conjunction with the 42nd annual Western Classic Trail Shoot, May 1 - 3, 2026. The Western Classic is the world&rsquo;s largest marked 3D archery competition and draws archers of all skill levels from around the world, looking to compete in the tournament that has been dubbed one of the go-to shoots of the year.</p>
+<p><a class="button red" href="https://straightarrowbowhunters.com/WesternClassic" target="_blank" rel="noopener">view event website</a></p>
+<p><img src="../../../images/tinymce/221025170947-2026 WCTS (1).png" alt="" width="1219" height="813" /></p>
+		</div>		<div class="tabContent " id="registration">
+			<h2>Registration opens February 1, 2026</h2>
+<p><a class="button red" href="https://nfaausa.sport80.com/public/wizard/e/38458">Register Now</a></p>
+<p>All archers registering in the NFAA Marked 3D Nationals must also register in the Western Classic Trail Shoot. <a href="../files/2026-wcts-flyer-141125184025.pdf" target="_blank" rel="noopener">Click to view the 2026 Western Classic Trail Shoot flyer</a> with additional registration information.</p>
+<p>All registrants of the NFAA Marked 3D Nationals must be NFAA members in good standing through the date of the event.</p>
+<p>Register early! Western Classic Trail Shoot registration fees increase $20 after the Early Registration Deadline.&nbsp;</p>
+<h3>Early Registration Deadline: April 15, 2026</h3>
+<p>&nbsp;</p>
+<h2>Target Selection</h2>
+<p>Unsure of which targets have available slots? <a href="https://tinyurl.com/5n744jpw" target="_blank" rel="noopener">Click to view a quick tutorial</a> to learn how you can check!</p>
+<hr />
+<h2>Adult &amp; Senior Divisions</h2>
+<h3>$35 nfaa portion</h3>
+<p><strong>Adult (18+ years)</strong><br /><strong>Senior (50+ years)</strong><br /><strong>Silver Senior (60+ years)</strong><br /><strong>Master Senior (70+ years)</strong></p>
+<p>Barebow Compound<br />Barebow Recurve&nbsp;<br />Bowhunter Freestyle<br />Modern Bowhunter Freestyle<br />Freestyle<br />Freestyle Limited<br />Freestyle Limited Recurve<br />Longbow (Adult Division Only)<br />Traditional</p>
+<p>&nbsp;</p>
+<h2>Junior Divisions</h2>
+<h3>$35 nfaa portion</h3>
+<p><strong>Cub (11 &amp; under)<br /></strong><strong>Youth (12-14)<br />Young Adult (15-17)<br /><br /></strong>Barebow Compound<br />Barebow Recurve<br />Bowhunter Freestyle<br />Modern Bowhunter Freestyle<br />Freestyle<br />Freestyle Limited Recurve</p>
+<p>&nbsp;</p>
+<h2>Professional Divisions</h2>
+<h3>$175 nfaa portion</h3>
+<p><strong>Professional (15+)<br />Professional Senior (50+)<br />Professional Silver Senior (60+)</strong></p>
+<p>Freestyle</p>
+<p>&nbsp;</p>
+<h2>Collegiate add-on</h2>
+<h3>free add-on to existing nfaa registration</h3>
+<p>Bowhunter<br />Freestyle<br />Freestyle Limited Recurve<br />Recurve Barebow</p>
+<p>Collegiate archers will compete in their regular division and scores will also count toward their collegiate placement. Participants will be eligible for additional collegiate prizes.&nbsp;</p>
+<p><strong>IMPORTANT!&nbsp;</strong>To be eligible for the collegiate competition, the archer must first hold a valid NFAA Collegiate Membership or NFAA Collegiate Add-On Membership (for Professional/Life members). Learn more on the&nbsp;<a href="../get-involved/collegiate-archery" target="_blank" rel="noopener">NFAA Collegiate Program page</a>.&nbsp;</p>
+<hr />
+<h3>REGISTRATION CANCELLATION POLICY</h3>
+<p>All registrations are subject to a $25 cancellation fee. Cancellations must be made in writing on or before the Early Registration Deadline. No refunds will be issued after the Early Registration Deadline. Please email all cancellation requests to info@nfaausa.com.</p>
+		</div>		<div class="tabContent " id="tournament-rules">
+			<h2>course format &amp; assignment</h2>
+<ol>
+<li>Archers will shoot 25 targets on Friday, 25 targets on Saturday and 20 targets on Sunday. Targets must be shot in order; archers may not skip targets.<span style="color: #ff0000;"> </span></li>
+<li>ARCHERS MUST START ON THE TARGET ASSIGNED ON THEIR SCORECARD. Changing targets without prior approval from the Registration Chairman will result in disqualification.</li>
+<li>The first target as designated on the scorecard will be for SCORE. There is no practice target.</li>
+<li>Shoot from the Western Classic stakes corresponding to your age division (Youth-Yellow; Cub-Red; PeeWee-Orange; All Other Divisions-Blue).</li>
+<li>The maximum number of archers per target is 24; archers must be split into two groups with no more than 12 archers per group unless approved by a tournament official.&nbsp;</li>
+</ol>
+<hr />
+<h2>shooting procedures &amp; Safety</h2>
+<ol>
+<li>The archer must stand along an imaginary shooting line as designated by the distance stakes.</li>
+<li class="li1">If an archer draws their bow in an unsafe manner that could result in injury as determined by the Tournament Committee, or if their arrow lands outside of the&nbsp;targets&nbsp;safety zone, that archer may be subject to disqualification.</li>
+<li class="li1">No archer shall draw a bow with the bow hand above the top of the head when drawing on a horizontal plane, parallel to the ground. This act is referred to as &ldquo;high drawing&rdquo; or &ldquo;sky jacking.&rdquo; Any archer drawing a bow in such a manner is subject to immediate disqualification.</li>
+<li>A &ldquo;3 Let Down&rdquo; rule will be enforced. A fourth let down will be counted as a shot arrow.</li>
+</ol>
+<hr />
+<h2>scoring rules</h2>
+<ol>
+<li>Two arrows are shot per target. Scoring is 11-spot, 10-kill and 8-wound. Pin-on targets without a kill ring will be scored 11-spot and 10 for body hits unless marked otherwise.</li>
+<li>Scoring is determined by the position of the arrow shaft. An arrow shaft need only touch the edge of the spot, scoring line, or animal to gain the higher value. In the event the edge of the spot or scoring line has become distorted or missing from arrow impacts, the scorer must visually reconstruct the natural arc of the spot or scoring ring to determine the value of the arrow in question.</li>
+<li>Arrows which are not visible that have passed through the animal&rsquo;s scoring area may be pushed back and scored so long as part of the arrow is still in the animal or backstop in which the animal is attached.</li>
+<li>No archer may advance to the target before all arrows in the group have been shot, except for targets with distances of 32 yards or less.</li>
+<li>No archer shall advance to the target and then return to the stake to shoot again unless an arrow is found to have obviously passed through the animal.</li>
+<li>Bounce outs, glance offs, and off-ground skids or glances into the target WILL NOT count. If witnessed, arrows striking an object over the shooting lanes may be re-shot.</li>
+<li class="li1">Any archer who shoots arrows at the target in excess of the prescribed number (2) shall lose the arrow or arrows of the higher value. Repeated arrows such as a test arrow or arrows for a bet shall deem the archer subject to disqualification. Any arrow shot into two separate targets loses the arrow of higher value.&nbsp;</li>
+<li>A shot arrow is an arrow that has been propelled by the string. A shot arrow may not be reshot.</li>
+<li>A dropped arrow is an arrow that is inadvertently dropped while being transferred from the quiver to the bow or one which falls from the bow. A dropped arrow may be reshot. An arrow that is accidentally released in preparation of a shot or during a controlled let down and has landed 10 feet or less from the shooting position may also be reshot.</li>
+<li>No archer will go behind a target to look for lost arrows unless the arrow can be seen at the time of scoring. If the archer cannot see the arrow, make a note and return with a range official after the round.</li>
+<li>For doubtful arrow calls, if there is a disagreement with score callers, a third caller from the group (other than the archer whose arrow is in question) will make the final call. In all cases, the third call is final.</li>
+<li>In the case of equipment failure, the archer may have the needed time, as granted by a tournament official, for equipment repair or replacement and may shoot arrows required to assure that the proper sight settings are accurate, within the 45 minute time limit. Then, in the presence of the tournament official, be allowed to shoot the targets missed. This occurrence may not happen more than once in any tournament day.</li>
+<li>Tie-breaker procedures for the <strong>NFAA Marked 3D National Championships</strong> shall be as follows:</li>
+</ol>
+<ul>
+<li>Ties in the amateur division will be broken using the following criteria in order, (1) highest number of bonus rings, (2) highest number of 22s, (3) highest number of 21s, (4) the highest score during regular competition on a pre-designated target selected by the Tournament Director prior to the start of competition. If the tie persists after all tie-breaking measures have been applied, dual winners shall be declared. No shoot-offs will be conducted for any placement in the amateur divisions.</li>
+<li>Ties in the professional divisions will be broken by the number of 12 Rings; except in the case of a first place tie. &nbsp;When this occurs, a sudden death shoot-off will take place. &nbsp;All shooters tied for 1st place will shoot one (1) arrow. &nbsp;The arrow which is determined to be the closest to the 12 ring will be declared the winner. &nbsp;If two shooters tie by being the same distance to the 12 ring, they will shoot until the tie is broken.</li>
+</ul>
+<hr />
+<h2>equipment rules</h2>
+<ol>
+<li>All shooting styles will abide&nbsp;with&nbsp;the Western Classic and <a href="..[long]&amp;term=" target="_blank" rel="noopener">current NFAA equipment rules</a>. In the event of a conflict, the Western Classic rules prevail. Tournament Officials will judge any equipment rulings.&nbsp;</li>
+<li>Tripods for spotting scopes and tripods for binoculars shall not be permitted.</li>
+</ol>
+<p><a class="button orange" href="..[long]&amp;term=" target="_blank" rel="noopener">NFAA Shooting Style Rules</a></p>
+<hr />
+<h2>scorecards &amp; results</h2>
+<ol>
+<li>Both sets of scorecards must be turned in all three days. Scores will be posted online via IANSEO. The scorekeepers for each group need to pick up scorecards by 7:30am on Saturday and Sunday. (<em>Note: scorecards will be filed under the FRIDAY starting target.)</em> On Sunday, scorecards must be turned in with both scorekeepers and archer initials. Anyone signing an incorrect scorecard is subject to disqualification.</li>
+<li>Scorecards must be turned in on Friday and Saturday within 30 minutes after the last group finishes shooting. After the announcement Sunday afternoon to end shooting, you will have 30 minutes to turn in your scores. Scorecards turned in after that time will not be posted.</li>
+<li>Both Team Shooters must sign their scorecards. Scorecards will not be accepted without proper signatures.</li>
+<li>It is the archer's responsibility to verify the information listed on their scorecards. Be sure to check the name, style and class as printed. If a correction is necessary, the archer must notify the registration desk. Corrections will not be accepted after 3:00 pm Saturday.</li>
+</ol>
+<hr />
+<h2>conduct &amp; Range etiquette</h2>
+<ol>
+<li>In order to keep the tournament flowing smoothly, maximize the shooting line. If there are one or more open targets in front and two or more groups back up, the delaying group shall allow backed up groups to shoot through.</li>
+<li>Absolutely no alcoholic beverages may be carried or consumed on any range during shooting hours. Anyone caught breaking this rule will be immediately disqualified and removed from the course.</li>
+<li>Please be courteous to other archers. Keep conversations low while others are shooting.</li>
+</ol>
+<hr />
+<h2>protests &amp; official authority</h2>
+<ol>
+<li>All rules are subject to the interpretation of the Tournament Committee. Rulings affecting the NFAA Marked 3D National Championships are subject to review and validation by the NFAA Protest Committee, consisting of the Tournament Director, NFAA President, one (1) Councilman, and two (2) Directors present at the tournament. If this full composition is not available, the NFAA President may appoint alternate members at their discretion to fulfill the committee.</li>
+<li>Protests must be submitted in writing accompanied by a $50 protest fee to the registration desk within 30 minutes following the end of the day&rsquo;s shooting.</li>
+</ol>
+<p>The <strong>NFAA Marked 3D National Championships</strong> will will be conducted in accordance with the <a href="..[long]&amp;term=" target="_blank" rel="noopener">NFAA Bylaws, Article I</a>, and <a href="..[long]&amp;term=" target="_blank" rel="noopener">NFAA Bylaws, Article VI, Section K</a>. <span style="text-decoration: underline;">In the event of a conflict between those bylaws and the Tournament Rules published on this page, the Tournament Rules shall prevail.&nbsp;</span></p>
+		</div>			</div>
+		</div>
+	</div>
+</section>
+		<footer class="spaceTop">
+			<div class="wrapper font0">
+				<div class="top">
+					<div class="left">
+						<a href="/"><img class="logo" src="/images/logo.svg" alt="" /></a>
+						<div class="social">
+							<a href="https://www.facebook.com/nfaausa" target="_blank">
+								<img src="/images/icons/facebook-red.svg" alt="" />
+							</a>
+							<a href="http://instagram.com/nfaausa" target="_blank">
+								<img src="/images/icons/instagram-red.svg" alt="" />
+							</a>
+							<a href="https://www.youtube.com/user/NFAAUSA" target="_blank">
+								<img src="/images/icons/youtube-red.svg" alt="" />
+							</a>
+						</div>
+					</div>
+					<div class="lists">
+						<div class="oneList">
+							<h3 class="red uppercase font12 bold lh1 ls1"><a href="/events">Events</h3></a>
+							<ul class="font12">
+								<li>
+									<a href="/news">News</a>
+								</li>
+								<li>
+									<a href="/events/find-an-event">Find an Event</a>
+								</li>
+								<li>
+									<a href="/events/national-tournaments">National Tournaments</a>
+								</li>
+								<li>
+									<a href="/events/rules">Rules</a>
+								</li>
+							</ul>
+						</div>
+						<div class="oneList">
+							<h3 class="red uppercase font12 bold lh1 ls1"><a href="/about">About</h3></a>
+							<ul class="font12">
+								<li>
+									<a href="/about/meet-the-team">Meet the Team</a>
+								</li>
+								<li>
+									<a href="/about/constitution">Constitution &amp; By-Laws</a>
+								</li>
+								<li>
+									<a href="/about/history">History</a>
+								</li>
+								<li>
+									<a href="/about/frequently-asked-questions">FAQ's</a>
+								</li>
+							</ul>
+						</div>
+						<div class="oneList">
+							<h3 class="red uppercase font12 bold lh1 ls1"><a href="/memberships">Memberships</h3></a>
+							<ul class="font12">
+								<li>
+									<a href="/memberships/become-a-member">Become a Member</a>
+								</li>
+								<li>
+									<a href="/memberships/become-a-club-or-shop">Become a Club</a>
+								</li>
+								<li>
+									<a href="/memberships/become-a-club-or-shop">Become a Shop</a>
+								</li>
+								<li>
+									<a href="/memberships/become-a-member#membership-calculator">Membership Calculator</a>
+								</li>
+							</ul>
+						</div>
+						<div class="oneList">
+							<h3 class="red uppercase font12 bold lh1 ls1"><a href="/get-involved">Get Involved</h3></a>
+							<ul class="font12">
+								<li>
+									<a href="/get-involved/new-to-nfaa">New to NFAA</a>
+								</li>
+								<li>
+									<a href="/get-involved/archery-programs">Archery Programs</a>
+								</li>
+								<li>
+									<a href="/get-involved/awards-programs">Awards</a>
+								</li>
+								<li>
+									<a href="/get-involved/find-a-club">Find a Club or Shop</a>
+								</li>
+							</ul>
+						</div>
+						<div class="oneList">
+							<h3 class="red uppercase font12 bold lh1 ls1"><a href="/contact">Contact Us</h3></a>
+							<p class="font12">
+								800 Archery Lane<br />
+								Yankton, South Dakota<br />
+								SD 57078<br />
+								<a href="mailto:info@nfaausa.com">info@nfaausa.com</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="bottom">
+					<div class="left">
+						<p class="font9">&copy; 2026 National Field Archery Association. All rights reserved.
+							<br /><br /><a href="https://93ft.com" target="_blank">Website designed & developed by 93ft</a> in partnership with <a href="https://sport80.com" target="_blank">Sport:80</a>
+						</p>
+					</div>
+					<div class="right text-right">
+						<p class="font9"><a href="/about/privacy-policy">Privacy policy and terms</a></p>
+					</div>
+				</div>
+			</div>
+		</footer>
+				<div class="cookieBar">
+			<div class="cookieInfo">
+				<p>This website uses cookies to ensure you get the best experience on our website.</p>
+			</div>
+			<div class="cookieButton">
+				<a class="button clear-white" href="#">OK, got it.</a>
+			</div>
+		</div>
+	</body>
+</html>

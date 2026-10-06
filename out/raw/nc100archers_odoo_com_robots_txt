@@ -1,0 +1,12 @@
+
+
+User-agent: *
+Allow: /social_instagram/
+Sitemap: https://nc100archers.odoo.com/sitemap.xml
+
+
+##############
+#   custom   #
+##############
+
+

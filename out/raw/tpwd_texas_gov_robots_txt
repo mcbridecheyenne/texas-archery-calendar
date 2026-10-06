@@ -1,0 +1,23 @@
+#Link to sitemap
+Sitemap: http://tpwd.texas.gov/sitemap.xml
+
+#Don't crawl the tours folder, they are listed in the park pages.
+User-agent: *
+Disallow: /tours/
+Disallow: /files/
+Disallow: /API/
+Disallow: /@@API/
+Disallow: /8415465
+Disallow: /state-parks/find-a-park-redirect.phtml
+Disallow: [long]
+Disallow: /s$
+Disallow: /s?
+Disallow: /s/
+
+User-agent: Yahoo-MMCrawler
+Disallow: /
+
+# This user agent caused a slowdown and brief outage, see
+# http://www.80legs.com/webcrawler.html - bschwegm
+User-agent: 008
+Disallow: /  
