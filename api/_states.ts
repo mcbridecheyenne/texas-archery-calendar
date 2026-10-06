@@ -73,6 +73,7 @@ const NOT_A_SHOOT = /hunter ed|education|class\b|classes|clinic|lesson|course|in
 
 /** Whether an event from a feed belongs in a tournament calendar. */
 export function looksLikeShoot(name: string, archeryOnly: boolean): boolean {
+  console.log(`  [debug] ${archeryOnly ? "club" : "general"}: ${name}`);
   if (NOT_A_SHOOT.test(name)) return false;
   if (archeryOnly) return true;
   return ARCHERY.test(name) && SHOOT.test(name);
