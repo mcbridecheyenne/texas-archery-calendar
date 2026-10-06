@@ -202,7 +202,7 @@ export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra
   );
 }
 
-// Typical nightly prices near the shoot (an estimate) and a button that searches hotels
+// Nightly hotel prices in the shoot's town (when we have them) and a button that searches hotels
 // for the shoot's dates. Hidden for shoots that are over or have no place.
 function HotelCard({ event, config, theme }: { event: TournamentEvent; config: HotelsConfig; theme: CalendarTheme }) {
   const table = useCityPrices(config.pricesUrl);
@@ -221,9 +221,7 @@ function HotelCard({ event, config, theme }: { event: TournamentEvent; config: H
           </Text>
           <Text style={[styles.rowValue, { color: theme.text }]}>About ${prices.typical} a night on average</Text>
           <Text style={[styles.hotelNote, { color: theme.muted }]}>
-            {prices.scope === "city"
-              ? `${pricesWhen(prices)} They change with dates and go up on big shoot weekends, so book early.`
-              : `Typical for ${prices.place}, not prices for this town. Prices go up on big shoot weekends, so book early.`}
+            {`${pricesWhen(prices)} They change with dates and go up on big shoot weekends, so book early.`}
           </Text>
         </>
       ) : null}
