@@ -1,0 +1,34 @@
+# Scratch: runs the collectors and commits the list of shoot towns to this branch.
+name: Hotel cities (scratch)
+on:
+  push:
+    branches: [scratch/hotel-cities]
+permissions:
+  contents: write
+jobs:
+  cities:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci --ignore-scripts
+      - run: node --experimental-strip-types script/collect-events.ts out/events.json || true
+      - run: node --experimental-strip-types script/collect-usa-events.ts out/events-usa.json || true
+      - run: |
+          curl -sf https://mcbridecheyenne.github.io/texas-archery-calendar/events-usa.json -o out/live-usa.json || true
+          curl -sf https://mcbridecheyenne.github.io/texas-archery-calendar/events.json -o out/live-tx.json || true
+          node -e '
+            const fs=require("fs"); const out={};
+            for (const f of ["out/events.json","out/events-usa.json","out/live-usa.json","out/live-tx.json"]) {
+              if (!fs.existsSync(f)) continue;
+              for (const e of JSON.parse(fs.readFileSync(f,"utf8")).events) {
+                if (e.endDate < "2026-10-06") continue;
+                const k=[(e.city||"").trim(),(e.state||"").trim(),(e.location||"").trim()].join("|");
+                out[k]=(out[k]||0)+1;
+              }
+            }
+            fs.writeFileSync("cities.json", JSON.stringify(out,null,1));
+          '
+          git config user.name github-actions; git config user.email actions@github.com
+          git add cities.json && git commit -m "cities" && git push
