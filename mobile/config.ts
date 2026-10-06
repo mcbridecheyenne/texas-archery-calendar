@@ -41,7 +41,7 @@ export const ADS = {
 
 // ---- Hotels near each shoot (Stay22 affiliate link) ----
 // Each shoot's details show nightly hotel prices for the shoot's town (from
-// hotel-prices.json on the website; a state-wide estimate for towns not in it) and a
+// hotel-prices.json on the website; no prices for towns not in it) and a
 // "Find hotels" button. Stay22 (stay22.com) pays a commission when someone books a stay
 // from that button. Sign up free at stay22.com, then paste your affiliate id ("aid",
 // shown in the Stay22 dashboard under Links) below. While it's blank the button opens a

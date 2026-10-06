@@ -5,8 +5,8 @@
 // nightly price found for each shoot town in a real hotel search for the nights of that
 // town's next shoot. A Claude routine refreshes them every day on the hotel-data branch
 // (see .github/workflows/hotel-towns.yml on main); client/public/hotel-prices.json is the
-// fallback copy. The card says which nights were searched and when. Towns not in that file fall back to a typical range for the state (an estimate,
-// spot-checked against live prices in Oct 2026). Edit PRICE_TIERS / STATE_TIER to adjust it.
+// fallback copy. The card says which nights were searched and when. Towns not in that file
+// show no prices, just the "Find hotels" button.
 //
 // The link goes through Stay22, which shows hotels from Booking.com, Expedia, Hotels.com
 // and Vrbo and pays a commission on stays booked from it. Until the Stay22 affiliate id is
@@ -34,27 +34,6 @@ export interface PriceRange {
   high: number;
 }
 
-// Per night, before taxes, for 2 adults. "low" is an economy motel, "high" a newer
-// upper-midscale chain hotel (Hampton, Holiday Inn Express), "typical" in between.
-const PRICE_TIERS: Record<"budget" | "middle" | "pricey" | "island", PriceRange> = {
-  budget: { low: 75, typical: 120, high: 190 },
-  middle: { low: 85, typical: 140, high: 230 },
-  pricey: { low: 105, typical: 170, high: 290 },
-  island: { low: 150, typical: 250, high: 420 },
-};
-
-const STATE_TIER: Record<string, keyof typeof PRICE_TIERS> = {
-  AL: "budget", AR: "budget", IA: "budget", IN: "budget", KS: "budget", KY: "budget", LA: "budget",
-  MO: "budget", MS: "budget", ND: "budget", NE: "budget", NM: "budget", OH: "budget", OK: "budget",
-  SD: "budget", WV: "budget",
-  AZ: "middle", DE: "middle", GA: "middle", ID: "middle", IL: "middle", MI: "middle", MN: "middle",
-  MT: "middle", NC: "middle", NH: "middle", NV: "middle", OR: "middle", PA: "middle", SC: "middle",
-  TN: "middle", TX: "middle", UT: "middle", VA: "middle", WI: "middle", WY: "middle", ME: "middle",
-  CA: "pricey", CO: "pricey", CT: "pricey", DC: "pricey", FL: "pricey", MA: "pricey", MD: "pricey",
-  NJ: "pricey", NY: "pricey", RI: "pricey", VT: "pricey", WA: "pricey",
-  AK: "island", HI: "island",
-};
-
 /** A town's prices from hotel-prices.json. */
 export interface CityPrices extends PriceRange {
   /** The date the search was run (YYYY-MM-DD). */
@@ -72,9 +51,7 @@ export interface CityPriceTable {
   cities: Record<string, CityPrices>;
 }
 
-export type HotelPriceInfo =
-  | ({ scope: "city"; place: string } & CityPrices)
-  | ({ scope: "state"; place: string } & PriceRange);
+export type HotelPriceInfo = { place: string } & CityPrices;
 
 /** "brownwood, tx": how a town is looked up in hotel-prices.json. Null without a real town. */
 export function cityKey(e: Pick<TournamentEvent, "city" | "state">): string | null {
@@ -84,10 +61,7 @@ export function cityKey(e: Pick<TournamentEvent, "city" | "state">): string | nu
   return `${city}, ${code}`.toLowerCase();
 }
 
-/**
- * Nightly hotel prices near a shoot: the town's own prices when hotel-prices.json has them,
- * otherwise the state's typical range. Null when neither the town nor the state is known.
- */
+/** Nightly hotel prices in a shoot's town from hotel-prices.json, or null when the town has none. */
 export function hotelPrices(
   e: Pick<TournamentEvent, "city" | "state">,
   table?: CityPriceTable | null
@@ -95,9 +69,7 @@ export function hotelPrices(
   const code = stateCode(e.state);
   const key = cityKey(e);
   const city = key ? table?.cities[key] : undefined;
-  if (city && isRange(city)) return { scope: "city", place: `${(e.city ?? "").trim()}, ${code}`, ...city };
-  const tier = code ? STATE_TIER[code] : undefined;
-  return tier ? { scope: "state", place: stateName(code) ?? code!, ...PRICE_TIERS[tier] } : null;
+  return city && isRange(city) ? { place: `${(e.city ?? "").trim()}, ${code}`, ...city } : null;
 }
 
 function isRange(v: unknown): v is CityPrices {
@@ -124,14 +96,14 @@ function loadTable(url: string): Promise<CityPriceTable | null> {
         }
       }
     } catch {
-      // Offline or the file isn't there: keep the saved copy (or the state estimates).
+      // Offline or the file isn't there: keep the saved copy, if any.
     }
     return latest;
   })();
   return loading;
 }
 
-/** The town price table, or null while loading / when there's none (state estimates are used then). */
+/** The town price table, or null while loading / when there's none (the card then shows just the button). */
 export function useCityPrices(url: string | undefined): CityPriceTable | null {
   const [table, setTable] = useState<CityPriceTable | null>(latest);
   useEffect(() => {
