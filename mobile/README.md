@@ -110,6 +110,10 @@ friends and add-a-tournament features stay hidden, and the schedule still works.
 - **Remove a listing:** in `listings`, set its `status` to `removed`. The seller can't undo it.
 - **Ban someone:** in `profiles`, set `is_banned` to true. Their listings disappear and they
   can't post or message. They can't change it back themselves.
+- **Old listings expire:** a listing leaves the market 60 days after it was posted or last
+  renewed (the `renewed_at` column). The seller still sees it in My listings with a
+  "Still for sale? Renew" button, and their phone reminds them a week before. To give a
+  listing more time yourself, set its `renewed_at` to today in the Table Editor.
 - **Filtered words:** `src/features/marketplace/moderation.ts` blocks profanity and
   non-archery items like firearms. Add words there as needed.
 
@@ -196,7 +200,9 @@ Needs a Google Play developer account ($25 one-time).
 
 ## Archery in the USA update: before shipping
 
-- **Supabase:** re-run `supabase/schema.sql` (adds `home_state` and `age_confirmed_at` to profiles). Safe to re-run.
+- **Supabase:** re-run `supabase/schema.sql` (adds `home_state` and `age_confirmed_at` to profiles, and
+  `renewed_at` to listings so old listings expire after 60 days; listings already posted get a fresh 60
+  days from the day you run it). Do this before the new app version goes out. Safe to re-run.
 - **Store age rating:** set 13+ in App Store Connect and the Google Play content rating questionnaire.
   The app asks for birth month and year at sign-up and doesn't create accounts for anyone under 13.
 - **Store listing:** rename to Archery in the USA. Keep the 10% scholarship line out of the listing and screenshots.

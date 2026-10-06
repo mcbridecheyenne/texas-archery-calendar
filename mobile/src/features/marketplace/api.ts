@@ -3,10 +3,11 @@ import { decode } from "base64-arraybuffer";
 import * as ImageManipulator from "expo-image-manipulator";
 import { approxHere, boxAround, placeCoords, type Coords } from "../../lib/location";
 import { db, PHOTO_BUCKET } from "../../lib/supabase";
+import { cancelExpiryReminder, LISTING_DAYS, remindBeforeExpiry } from "./expiry";
 import type { Category, Condition, Conversation, Listing, Message, ReportReason } from "./types";
 
 const LISTING_FIELDS =
-  "id, seller_id, title, description, price_cents, category, condition, city, lat, lng, handoff_event_id, handoff_event_name, handoff_event_date, photos, status, created_at, updated_at, seller:profiles(id, display_name, city, created_at)";
+  "id, seller_id, title, description, price_cents, category, condition, city, lat, lng, handoff_event_id, handoff_event_name, handoff_event_date, photos, status, created_at, updated_at, renewed_at, seller:profiles(id, display_name, city, created_at)";
 
 export const PAGE_SIZE = 24;
 
@@ -24,6 +25,8 @@ export async function fetchListings(q: ListingQuery): Promise<Listing[]> {
     .from("listings")
     .select(LISTING_FIELDS)
     .eq("status", "active")
+    // The database already hides other people's expired listings; this also hides your own.
+    .gt("renewed_at", new Date(Date.now() - LISTING_DAYS * 86_400_000).toISOString())
     .order("created_at", { ascending: false })
     .range(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE - 1);
   if (q.category) req = req.eq("category", q.category);
@@ -139,23 +142,50 @@ export async function saveListing(userId: string, input: ListingInput, existing?
     const dropped = existing.photos.filter((p) => !paths.includes(p));
     if (dropped.length) await db().storage.from(PHOTO_BUCKET).remove(dropped);
   } else {
-    const { error } = await db().from("listings").insert({ id: listingId, seller_id: userId, ...row });
+    const { data, error } = await db()
+      .from("listings")
+      .insert({ id: listingId, seller_id: userId, ...row })
+      .select("created_at, renewed_at")
+      .single();
     if (error) {
       if (paths.length) await db().storage.from(PHOTO_BUCKET).remove(paths);
       throw error;
     }
+    // A reminder a week before it expires. Not awaited: it may ask for permission.
+    const saved = data as { created_at: string; renewed_at: string | null };
+    remindBeforeExpiry({ id: listingId, title: row.title, status: "active", ...saved });
   }
   return listingId;
 }
 
-export async function setListingStatus(id: string, status: "active" | "sold"): Promise<void> {
-  const { error } = await db().from("listings").update({ status }).eq("id", id);
+export async function setListingStatus(listing: Listing, status: "active" | "sold"): Promise<void> {
+  const { error } = await db().from("listings").update({ status }).eq("id", listing.id);
   if (error) throw error;
+  // Sold: no more "still selling?" reminder. Available again: bring it back.
+  if (status === "sold") cancelExpiryReminder(listing.id);
+  else remindBeforeExpiry({ ...listing, status });
+}
+
+// "Still for sale? Renew": restarts the 60-day clock. The database sets the time
+// itself and only lets the seller renew their own listing while it's for sale.
+// Returns the new renewed_at.
+export async function renewListing(listing: Listing): Promise<string> {
+  const { data, error } = await db()
+    .from("listings")
+    .update({ renewed_at: new Date().toISOString() })
+    .eq("id", listing.id)
+    .select("renewed_at")
+    .single();
+  if (error) throw error;
+  const renewedAt = (data as { renewed_at: string }).renewed_at;
+  remindBeforeExpiry({ ...listing, renewed_at: renewedAt });
+  return renewedAt;
 }
 
 export async function deleteListing(listing: Listing): Promise<void> {
   const { error } = await db().from("listings").delete().eq("id", listing.id);
   if (error) throw error;
+  cancelExpiryReminder(listing.id);
   if (listing.photos.length) await db().storage.from(PHOTO_BUCKET).remove(listing.photos);
 }
 

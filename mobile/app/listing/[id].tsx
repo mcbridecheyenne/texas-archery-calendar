@@ -5,7 +5,8 @@ import { useCallback, useLayoutEffect, useState } from "react";
 import { ActivityIndicator, Alert, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { fmtRange } from "../../src/features/calendar/dates";
-import { deleteListing, fetchListing, openConversation, setListingStatus } from "../../src/features/marketplace/api";
+import { deleteListing, fetchListing, openConversation, renewListing, setListingStatus } from "../../src/features/marketplace/api";
+import { expiryLabel, isExpired } from "../../src/features/marketplace/expiry";
 import { PhotoCarousel } from "../../src/features/marketplace/components/PhotoCarousel";
 import { askToReport, memberSince, timeAgo, useRequireMember } from "../../src/features/marketplace/helpers";
 import { categoryLabel, conditionLabel, formatPrice, type Listing } from "../../src/features/marketplace/types";
@@ -98,10 +99,23 @@ export default function ListingScreen() {
     const next = listing.status === "sold" ? "active" : "sold";
     setBusy("sold");
     try {
-      await setListingStatus(listing.id, next);
+      await setListingStatus(listing, next);
       setListing({ ...listing, status: next });
     } catch (e) {
       Alert.alert("Couldn't update", errorText(e));
+    } finally {
+      setBusy(null);
+    }
+  }
+
+  async function renew() {
+    if (!listing) return;
+    setBusy("renew");
+    try {
+      const renewedAt = await renewListing(listing);
+      setListing({ ...listing, renewed_at: renewedAt });
+    } catch (e) {
+      Alert.alert("Couldn't renew", errorText(e));
     } finally {
       setBusy(null);
     }
@@ -151,6 +165,20 @@ export default function ListingScreen() {
                 {listing.handoff_event_name}
                 {listing.handoff_event_date ? ` · ${fmtRange(listing.handoff_event_date, listing.handoff_event_date)}` : ""}
               </Text>
+            </View>
+          ) : null}
+
+          {mine && listing.status === "active" ? (
+            // Only the seller sees this. Listings drop out of the market 60 days after
+            // they're posted or renewed; renewing starts the 60 days over.
+            <View style={[styles.expiry, { backgroundColor: t.card, borderColor: isExpired(listing) ? t.warning : t.border }]}>
+              <View style={{ flex: 1 }}>
+                <Text style={[styles.handoffTitle, { color: isExpired(listing) ? t.warning : t.text }]}>{expiryLabel(listing)}</Text>
+                <Text style={[styles.meta, { color: t.muted }]}>
+                  {isExpired(listing) ? "Buyers can't see it right now." : "Listings leave the market after 60 days."}
+                </Text>
+              </View>
+              <Button title="Still for sale? Renew" kind="secondary" small onPress={renew} busy={busy === "renew"} />
             </View>
           ) : null}
 
@@ -217,6 +245,7 @@ const styles = StyleSheet.create({
   handoff: { borderRadius: 12, borderWidth: StyleSheet.hairlineWidth, padding: 12, marginTop: 8, gap: 2 },
   handoffTitle: { fontSize: 14, fontWeight: "700" },
   handoffBody: { fontSize: 14 },
+  expiry: { flexDirection: "row", alignItems: "center", gap: 10, borderRadius: 12, borderWidth: StyleSheet.hairlineWidth, padding: 12, marginTop: 8 },
   description: { fontSize: 16, lineHeight: 23, marginTop: 8 },
   seller: { flexDirection: "row", alignItems: "center", gap: 12, borderTopWidth: StyleSheet.hairlineWidth, borderBottomWidth: StyleSheet.hairlineWidth, paddingVertical: 14, marginTop: 12 },
   avatar: { width: 44, height: 44, borderRadius: 22, alignItems: "center", justifyContent: "center" },

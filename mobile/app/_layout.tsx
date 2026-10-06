@@ -1,6 +1,7 @@
 // Root of the app: shared providers plus the screens that slide over the tabs.
 import * as Notifications from "expo-notifications";
-import { Stack } from "expo-router";
+import { Stack, useRouter } from "expo-router";
+import { useEffect, useRef } from "react";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { AuthProvider } from "../src/lib/auth";
@@ -22,8 +23,25 @@ Notifications.setNotificationHandler({
   }),
 });
 
+// Tapping a "Still selling …?" reminder opens that listing, where the seller can renew it.
+// This also works when the tap is what started the app.
+function useOpenListingFromReminder() {
+  const router = useRouter();
+  const response = Notifications.useLastNotificationResponse();
+  const handled = useRef<string | null>(null);
+  useEffect(() => {
+    if (!response || response.actionIdentifier !== Notifications.DEFAULT_ACTION_IDENTIFIER) return;
+    const listingId = response.notification.request.content.data?.listingId;
+    const key = response.notification.request.identifier;
+    if (typeof listingId !== "string" || handled.current === key) return;
+    handled.current = key;
+    router.push(`/listing/${listingId}`);
+  }, [response, router]);
+}
+
 export default function RootLayout() {
   const t = useTheme();
+  useOpenListingFromReminder();
   return (
     <SafeAreaProvider>
       <PremiumProvider>
