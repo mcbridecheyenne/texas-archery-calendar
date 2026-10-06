@@ -120,6 +120,16 @@ jobs:
             core.setOutput("checked", "true");
             if (names.length) core.warning(`Unhealthy event sources: ${names.join(", ")}`);
 
+      # Hotel prices refreshed daily by a Claude routine on the hotel-data branch (see
+      # hotel-towns.yml). Falls back to client/public/hotel-prices.json if that branch has none.
+      - name: Latest hotel prices
+        continue-on-error: true
+        run: |
+          git fetch --depth 1 origin hotel-data
+          git show FETCH_HEAD:hotel-prices.json > hotel-prices.json
+          node -e 'const d=require("./hotel-prices.json"); if (!d.cities || !Object.keys(d.cities).length) process.exit(1)'
+          cp hotel-prices.json dist/public/hotel-prices.json
+
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
