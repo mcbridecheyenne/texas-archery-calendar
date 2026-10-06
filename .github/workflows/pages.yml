@@ -21,6 +21,11 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      checked: ${{ steps.health.outputs.checked }}
+      problem: ${{ steps.health.outputs.problem }}
+      failing: ${{ steps.health.outputs.failing }}
+      report: ${{ steps.health.outputs.report }}
     steps:
       - uses: actions/checkout@v4
 
@@ -36,6 +41,7 @@ jobs:
         run: npm run build:client
 
       - name: Collect events
+        id: collect_texas
         run: node --experimental-strip-types script/collect-events.ts dist/public/events.json
         env:
           PREVIOUS_EVENTS_URL: https://mcbridecheyenne.github.io/texas-archery-calendar/events.json
@@ -43,10 +49,76 @@ jobs:
       # Nationwide feed for the USA version of the app. Its own step, so a problem here
       # never stops events.json from publishing.
       - name: Collect nationwide events
+        id: collect_usa
         continue-on-error: true
         run: node --experimental-strip-types script/collect-usa-events.ts dist/public/events-usa.json
         env:
           PREVIOUS_EVENTS_URL: https://mcbridecheyenne.github.io/texas-archery-calendar/events-usa.json
+
+      # Lists every source that isn't healthy (status other than "ok", or 0 events) so the
+      # alert job below can open or close a GitHub issue. Never fails the build.
+      - name: Check source health
+        id: health
+        if: always()
+        continue-on-error: true
+        uses: actions/github-script@v7
+        env:
+          TEXAS_OUTCOME: ${{ steps.collect_texas.outcome }}
+          USA_OUTCOME: ${{ steps.collect_usa.outcome }}
+        with:
+          script: |
+            const fs = require("fs");
+            const feeds = [
+              { label: "Texas", file: "dist/public/events.json", outcome: process.env.TEXAS_OUTCOME },
+              { label: "Nationwide", file: "dist/public/events-usa.json", outcome: process.env.USA_OUTCOME },
+            ];
+            const cell = (v) => String(v ?? "").replace(/\|/g, "\\|").replace(/\r?\n/g, " ");
+            const rows = [];
+            const failing = new Set();
+            let total = 0;
+            for (const feed of feeds) {
+              const name = feed.file.split("/").pop();
+              let sources;
+              try {
+                sources = JSON.parse(fs.readFileSync(feed.file, "utf8")).sources;
+                if (!Array.isArray(sources)) throw new Error("no sources list in file");
+              } catch (err) {
+                const why = err.code === "ENOENT" ? "file was not written" : `could not read file: ${err.message}`;
+                failing.add(`${name} missing`);
+                rows.push(`| ${feed.label} | ${name} | missing | - | ${cell(why)} (collector step: ${feed.outcome || "did not run"}) |`);
+                continue;
+              }
+              for (const s of sources) {
+                total++;
+                if (s.status === "ok" && s.eventCount > 0) continue;
+                failing.add(s.name);
+                rows.push(`| ${feed.label} | ${cell(s.name)} | ${cell(s.status)} | ${cell(s.eventCount)} | ${cell(s.message)} |`);
+              }
+            }
+            const steps = `Collector steps: Texas \`${process.env.TEXAS_OUTCOME || "did not run"}\`, nationwide \`${process.env.USA_OUTCOME || "did not run"}\`.`;
+            let report;
+            if (rows.length) {
+              report = [
+                `### Event feed problems (${rows.length})`,
+                "",
+                steps,
+                "",
+                "| Feed | Source | Status | Events | Message |",
+                "|---|---|---|---|---|",
+                ...rows,
+              ].join("\n");
+            } else {
+              report = `### Event feeds healthy\n\nAll ${total} sources returned events.\n\n${steps}`;
+            }
+            const MAX = 50000; // GitHub issue bodies cap at 65536 characters
+            if (report.length > MAX) report = report.slice(0, MAX) + "\n\n_(report truncated)_";
+            await core.summary.addRaw(report + "\n").write();
+            const names = [...failing].sort();
+            core.setOutput("problem", names.length ? "true" : "false");
+            core.setOutput("failing", names.join(","));
+            core.setOutput("report", report);
+            core.setOutput("checked", "true");
+            if (names.length) core.warning(`Unhealthy event sources: ${names.join(", ")}`);
 
       - uses: actions/configure-pages@v5
 
@@ -63,3 +135,123 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # Opens a "feed-health" issue when a source breaks (GitHub emails the repo owner), comments
+  # only when the set of broken sources changes, and closes the issue once everything recovers.
+  alert:
+    needs: build
+    if: always() && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Open, update or close the feed-health issue
+        uses: actions/github-script@v7
+        env:
+          BUILD_RESULT: ${{ needs.build.result }}
+          CHECKED: ${{ needs.build.outputs.checked }}
+          FAILING: ${{ needs.build.outputs.failing }}
+          REPORT: ${{ needs.build.outputs.report }}
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const LABEL = "feed-health";
+            const runUrl = `${context.serverUrl}/${owner}/${repo}/actions/runs/${context.runId}`;
+            const buildResult = process.env.BUILD_RESULT;
+
+            if (buildResult === "cancelled") {
+              core.info("Build was cancelled; leaving feed-health issues alone.");
+              return;
+            }
+
+            let failing = (process.env.FAILING || "").split(",").map((s) => s.trim()).filter(Boolean);
+            let report = process.env.REPORT || "";
+            if (process.env.CHECKED !== "true") {
+              report = `The source health check didn't produce a report (build job result: \`${buildResult}\`). See the run log.`;
+              if (!failing.length) failing = ["feed check"];
+            } else if (buildResult !== "success") {
+              report = `Build job result: \`${buildResult}\` (nothing was published).\n\n${report}`;
+              if (!failing.length) failing = ["build job"];
+            }
+            failing = [...new Set(failing)].sort();
+            const problem = failing.length > 0;
+            const marker = (names) => `<!-- failing: ${names.join(",")} -->`;
+
+            const open = (await github.paginate(github.rest.issues.listForRepo, {
+              owner, repo, state: "open", labels: LABEL, per_page: 100,
+            })).filter((i) => !i.pull_request);
+            const issue = open[0];
+
+            if (!problem) {
+              if (!issue) { core.info("All sources healthy; no open feed-health issue."); return; }
+              await github.rest.issues.createComment({
+                owner, repo, issue_number: issue.number,
+                body: `All sources healthy again. ${runUrl}\n\n${marker([])}`,
+              });
+              await github.rest.issues.update({
+                owner, repo, issue_number: issue.number, state: "closed", state_reason: "completed",
+              });
+              core.info(`Closed #${issue.number}.`);
+              return;
+            }
+
+            if (!issue) {
+              try {
+                await github.rest.issues.getLabel({ owner, repo, name: LABEL });
+              } catch (err) {
+                if (err.status !== 404) throw err;
+                await github.rest.issues.createLabel({
+                  owner, repo, name: LABEL, color: "d73a4a",
+                  description: "A tournament event source is failing",
+                });
+              }
+              let title = `Event feed problem: ${failing.join(", ")}`;
+              if (title.length > 200) title = title.slice(0, 197) + "...";
+              const { data: created } = await github.rest.issues.create({
+                owner, repo, title, labels: [LABEL],
+                body: [
+                  `The scheduled event collection found a problem. Run: ${runUrl}`,
+                  "",
+                  report,
+                  "",
+                  "This issue closes itself when every source is healthy again.",
+                  "",
+                  marker(failing),
+                ].join("\n"),
+              });
+              // Assigning the owner makes sure the alert counts as "participating" for notifications.
+              try {
+                await github.rest.issues.addAssignees({ owner, repo, issue_number: created.number, assignees: [owner] });
+              } catch (err) {
+                core.info(`Could not assign ${owner}: ${err.message}`);
+              }
+              core.info(`Opened #${created.number}.`);
+              return;
+            }
+
+            // Issue already open: comment only if the set of failing sources changed.
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner, repo, issue_number: issue.number, per_page: 100,
+            });
+            let last = null;
+            for (const text of [issue.body || "", ...comments.map((c) => c.body || "")]) {
+              for (const m of text.matchAll(/<!-- failing: (.*?) -->/g)) last = m[1];
+            }
+            const previous = (last || "").split(",").map((s) => s.trim()).filter(Boolean).sort();
+            if (last !== null && previous.join(",") === failing.join(",")) {
+              core.info(`#${issue.number} already reports ${failing.join(", ")}; not commenting.`);
+              return;
+            }
+            await github.rest.issues.createComment({
+              owner, repo, issue_number: issue.number,
+              body: [
+                `Failing sources changed: now **${failing.join(", ")}**` +
+                  (previous.length ? ` (was ${previous.join(", ")}).` : "."),
+                `Run: ${runUrl}`,
+                "",
+                report,
+                "",
+                marker(failing),
+              ].join("\n"),
+            });
+            core.info(`Commented on #${issue.number}.`);
