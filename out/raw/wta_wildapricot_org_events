@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html lang="en" class="no-js ie6 "><![endif]-->
+<!--[if IE 7 ]><html lang="en" class="no-js ie7 "> <![endif]-->
+<!--[if IE 8 ]><html lang="en" class="no-js ie8 "> <![endif]-->
+<!--[if IE 9 ]><html lang="en" class="no-js ie9 "><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js "> <!--<![endif]-->
+  <head id="Head1">
+		<link rel="stylesheet" type="text/css" href="https://kit-pro.fontawesome.com/releases/latest/css/pro.min.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://sf.wildapricot.org/BuiltTheme/showcase_orange.v3.0/current/95c58a5e/Styles/combined.css" rel="stylesheet" type="text/css" /><link href="https://live-sf.wildapricot.org/WebUI/built9.19.0-ac0ee25/scripts/public/react/index-84b33b4.css" rel="stylesheet" type="text/css" /><link href="https://live-sf.wildapricot.org/WebUI/built9.19.0-ac0ee25/css/shared/ui/shared-ui-compiled.css" rel="stylesheet" type="text/css" /><title>Wisconsin Traditional Archers - Page not found (404)</title>
+<link rel="search" type="application/opensearchdescription+xml" title="wta.wildapricot.org" href="/opensearch.ashx" /></head>
+  <body id="PAGEID_18015" class="publicContentView LayoutMain">
+<div class="mLayout layoutMain state1" id="mLayout">
+<!-- header zone -->
+		<div class="zoneHeaderOuter zoneOuter">
+			<div class="zoneHeader container_12">
+				<div class="zoneHeaderInner zoneInner s1_grid_12 s2_grid_12 s3_grid_12">
+<div id="id_Header" data-componentId="Header" class="WaPlaceHolder WaPlaceHolderHeader" style=""><div style=""><div id="id_NLvPt4W" data-componentId="NLvPt4W" class="WaLayoutContainerFirst" style="margin-right:20px;margin-bottom:25px;margin-left:20px;"><table cellspacing="0" cellpadding="0" class="WaLayoutTable" style=""><tr data-componentId="NLvPt4W_row" class="WaLayoutRow"><td id="id_IDxEBFH" data-componentId="IDxEBFH" class="WaLayoutItem" style="width:27%;"><div id="id_zI5fiqi" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="zI5fiqi" style=""><div style=""><div id="id_wJXCbK3" class="WaGadgetOnly WaGadgetSiteSearch  gadgetStyleNone" style="" data-componentId="wJXCbK3" ><div class="gadgetStyleBody " style=""  data-areaHeight="auto">
+<div class="searchBoxOuter alignCenter">
+	<div class="searchBox">
+<form method="post" action="https://wta.wildapricot.org/Sys/Search" id="id_wJXCbK3_form" class="generalSearchBox"  data-disableInAdminMode="true">
+<span class="searchBoxFieldContainer"><input class="searchBoxField" type="text" name="searchString" id="idid_wJXCbK3_searchBox" value="" maxlength="300" autocomplete="off"  placeholder="Enter search string"></span>
+<div class="autoSuggestionBox" id="idid_wJXCbK3_resultDiv"></div>
+</form></div>
+	</div>
+	
+</div>
+</div></div></div></td><td style="" data-componentId="IDxEBFH_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_gBSHl9X" data-componentId="gBSHl9X" class="WaLayoutItem" style="width:45%;"><div id="id_DbVKIN6" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="DbVKIN6" style=""><div style=""><div id="id_G7VHF9v" class="WaGadgetFirst WaGadgetContent  gadgetStyleNone" style="" data-componentId="G7VHF9v" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+</div>
+</div><div id="id_KxbYLDm" class="WaGadgetLast WaGadgetContent  gadgetStyleNone" style="" data-componentId="KxbYLDm" ><div class="gadgetStyleBody gadgetContentEditableArea" style="padding-bottom:5px;" data-editableArea="0" data-areaHeight="auto">
+<h2 style="margin-top: 5px"><span style="white-space:pre">		</span><img src="/resources/Pictures/WTA%20Logo%20Sm%20White.jpg" alt="" title="" border="0" width="127" height="123">&nbsp;&nbsp;<br></h2></div>
+</div></div></div></td><td style="" data-componentId="gBSHl9X_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_Ia9ojMH" data-componentId="Ia9ojMH" class="WaLayoutItem" style="width:27%;"><div id="id_g7Tmh78" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="g7Tmh78" style=""><div style=""><div id="id_Y3YQQ4g" class="WaGadgetOnly WaGadgetLoginForm  gadgetStyleNone" style="" data-componentId="Y3YQQ4g" ><div class="gadgetStyleBody " style=""  data-areaHeight="auto">
+<div class="loginContainerWrapper alignCenter">
+    <div class="loginContainerInnerWrapper">
+      <a id="id_Y3YQQ4g_loginLink" class="loginLink">Log in</a>
+      <div id="id_Y3YQQ4g_loginContainer" class="loginContainer orientationHorizontal">
+        <div class="loginContainerForm orientationHorizontal oAuthIstrue">
+          <div class="loginContainerShadowBox">
+            <div class="openAuthFormContainer">
+<form method="post" action="https://wta.wildapricot.org/Sys/Login/ExternalLogin" id="id_Y3YQQ4g_oAuthForm" class="oAuthForm"  data-disableInAdminMode="true">
+<div id="id_Y3YQQ4g_container" class="oAuthButtonsContainer">
+			  <!--  <a class="wa-authenticateLoginLink facebook" provider="Facebook">
+					<span class="authenticateLoginIcon" provider="Facebook"></span>
+					<span class="authenticateLoginText" provider="Facebook">Log in with Facebook</span>
+			  </a> --> <a class="wa-authenticateLoginLink googlePlus" provider="GooglePlus">
+					<span class="authenticateLoginIcon" provider="GooglePlus"></span>
+					<span class="authenticateLoginText" provider="GooglePlus">Log in with Google</span>
+			  </a><a class="wa-authenticateLoginLink microsoft" provider="Microsoft">
+					<span class="authenticateLoginIcon" provider="Microsoft"></span>
+					<span class="authenticateLoginText" provider="Microsoft">Log in with Microsoft</span>
+			  </a> <a class="wa-authenticateLoginLink apple" provider="Apple">
+					<span class="authenticateLoginIcon" provider="Apple"></span>
+					<span class="authenticateLoginText" provider="Apple">Log in with Apple</span>
+			  </a>
+			  <input type="hidden" name="ReturnUrl" value="" />
+			  <input type="hidden" name="Provider" class="oAuthProvider" value="Undefined" />   
+              <input type="hidden" id="id_Y3YQQ4g_browserCapabilities" name="browserCapabilities" />  
+			</div>
+</form></div>
+ 
+    
+<form method="post" action="https://wta.wildapricot.org/Sys/Login" id="id_Y3YQQ4g_form" class="generalLoginBox"  data-disableInAdminMode="true">
+<input type="hidden" name="ReturnUrl" id="id_Y3YQQ4g_returnUrl" value="">
+              <input type="hidden" name="CurrentUrl" id="id_Y3YQQ4g_currentUrl" value="/Sys/Error/404">
+              <input type="hidden" name="browserData" id="id_Y3YQQ4g_browserField">
+              <div>
+                <div class="loginUserName">
+<div class="loginUserNameTextBox">
+		<input name="email" type="text" maxlength="100" placeholder="Email"  id="id_Y3YQQ4g_userName" tabindex="1" class="emailTextBoxControl"/>
+	</div>
+</div><div class="loginPassword">
+    <div class="loginPasswordTextBox">
+		<div class="password-wrapper">
+			<input 
+				name="password" 
+				type="password" 
+placeholder="Password" 
+				maxlength="50" 
+				id="id_Y3YQQ4g_password" 
+				tabindex="2" 
+				class="passwordTextBoxControl" 
+				autocomplete="off"
+			/>
+			<i class="fa fa-eye-slash toggle-password" toggle="#id_Y3YQQ4g_password"></i>
+		</div>
+    </div>
+</div>
+
+ 
+    <input id="g-recaptcha-invisible_Y3YQQ4g" name="g-recaptcha-invisible" value="recaptcha" type="hidden"/> 
+    <div id="recapcha_placeholder_Y3YQQ4g" style="display:none"></div>
+    <span id="idReCaptchaValidator_Y3YQQ4g" errorMessage="Please verify that you are not a robot" style="display:none" validatorType="method" ></span>
+    
+	
+    
+
+ <div class="loginAction">
+	<input type="submit" onclick="if (!WA.isWidgetMode && !browserInfo.clientCookiesEnabled()) {alert('Warning: browser cookies disabled. Please enable them to use this website.'); return false;}"  name="ctl03$ctl02$loginViewControl$loginControl$Login" value="Log in" id="id_Y3YQQ4g_loginAction"  tabindex="4" class="loginButton loginButtonControl"/>	
+</div>  
+              </div>
+              <div>
+                <div class="loginActionRememberMe"><input id="id_Y3YQQ4g_rememberMe" type="checkbox" name="rememberMe" tabindex="3" class="rememberMeCheckboxControl"/><label for="id_Y3YQQ4g_rememberMe">Remember me</label></div><div class="loginPasswordForgot">
+		<a rel="nofollow" href="https://wta.wildapricot.org/Sys/ResetPasswordRequest">Forgot password</a>
+	</div>
+</div>
+            </form></div>
+        </div>
+        </div>
+    </div>
+  </div>
+    
+  </div>
+</div></div></div></td></tr></table> </div><div id="id_yOhi7Wr" class="WaGadget WaGadgetMenuHorizontal  menuStyle001" style="" data-componentId="yOhi7Wr" ><div class="als-container id_yOhi7Wr" id="Hor-menu-id_yOhi7Wr">
+  <span class="als-prev-wrap"><span class="als-prev"></span></span>
+  <div class="als-viewport">
+  	<ul class="als-wrapper">
+<li class="als-item ">
+	<a href="https://wta.wildapricot.org/" title="Home" class="">
+    <div class="als-item-wrap">
+        <span>Home</span>
+	</div>
+    </a>
+</li>
+	
+<li class="als-item ">
+	<a href="https://wta.wildapricot.org/BOD" title="Board of Directors" class="">
+    <div class="als-item-wrap">
+        <span>Board of Directors</span>
+	</div>
+    </a>
+</li>
+	
+<li class="als-item ">
+	<a href="https://wta.wildapricot.org/news" title="History" class="">
+    <div class="als-item-wrap">
+        <span>History</span>
+	</div>
+    </a>
+</li>
+	
+<li class="als-item ">
+	<a href="https://wta.wildapricot.org/Membership-Renewal" title="Membership Renewal" class="">
+    <div class="als-item-wrap">
+        <span>Membership Renewal</span>
+	</div>
+    </a>
+</li>
+	
+<li class="als-item ">
+	<a href="https://wta.wildapricot.org/Shoots" title="Shoots" class="">
+    <div class="als-item-wrap">
+        <span>Shoots</span>
+	</div>
+    </a>
+</li>
+	
+<li class="als-item ">
+	<a href="https://wta.wildapricot.org/Banquet" title="Banquet" class="">
+    <div class="als-item-wrap">
+        <span>Banquet</span>
+	</div>
+    </a>
+</li>
+	
+<li class="als-item ">
+	<a href="https://wta.wildapricot.org/State-Shoot-Rules-&amp;-Regs" title="State Shoot Rules and Application for Hosting" class="">
+    <div class="als-item-wrap">
+        <span>State Shoot Rules and Application for Hosting</span>
+	</div>
+    </a>
+</li>
+	
+<li class="als-item ">
+	<a href="https://wta.wildapricot.org/Scholarship-Form" title="Scholarship Application" class="">
+    <div class="als-item-wrap">
+        <span>Scholarship Application</span>
+	</div>
+    </a>
+</li>
+	
+<li class="als-item ">
+	<a href="https://wta.wildapricot.org/Bow-Loaner-Application" title="Bow Loaner Application" class="">
+    <div class="als-item-wrap">
+        <span>Bow Loaner Application</span>
+	</div>
+    </a>
+</li>
+	
+<li class="als-item ">
+	<a href="https://wta.wildapricot.org/Member-Info" title="Member Meeting Info" class="">
+    <div class="als-item-wrap">
+        <span>Member Meeting Info</span>
+	</div>
+    </a>
+</li>
+	
+<li class="als-item ">
+	<a href="https://wta.wildapricot.org/By-Laws" title="By-Laws" class="">
+    <div class="als-item-wrap">
+        <span>By-Laws</span>
+	</div>
+    </a>
+</li>
+	
+<li class="als-item ">
+	<a href="https://wta.wildapricot.org/Last-Arrow-Memorials" title="Last Arrow Memorials" class="">
+    <div class="als-item-wrap">
+        <span>Last Arrow Memorials</span>
+	</div>
+    </a>
+</li>
+	
+</ul>
+  </div>
+  <span class="als-next-wrap"><span class="als-next"></span></span>
+  	
+</div>
+</div><div id="id_GsQDnbD" class="WaGadgetLast WaGadgetBreadcrumbs  gadgetStyle001" style="margin-right:20px;margin-left:20px;" data-componentId="GsQDnbD" ><div class="gadgetStyleBody " style=""  data-areaHeight="auto">
+<ul>
+<li><a href="https://wta.wildapricot.org/">Home</a></li>
+<li class="last">Page not found (404)</li>
+</ul>
+</div>
+</div></div>
+</div></div>
+			</div>
+		</div>
+		<div class="zoneHeader1Outer zoneOuter">
+			<div class="zoneHeader1 container_12">
+				<div class="zoneHeader1Inner zoneInner s1_grid_12 s2_grid_12 s3_grid_12">
+					<div class="color"></div>
+<div id="id_Header1" data-componentId="Header1" class="WaPlaceHolder WaPlaceHolderHeader1" style=""><div style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;"><div id="id_vlh3xHd" data-componentId="vlh3xHd" class="WaLayoutContainerOnly" style=""><table cellspacing="0" cellpadding="0" class="WaLayoutTable" style=""><tr data-componentId="vlh3xHd_row" class="WaLayoutRow"><td id="id_N5sM6af" data-componentId="N5sM6af" class="WaLayoutItem" style="width:100%;"></td></tr></table> </div></div>
+</div></div>
+			</div>
+		</div>
+		<div class="zoneHeader2Outer zoneOuter">
+			<div class="zoneHeader12 container_12">
+				<div class="zoneHeader2Inner zoneInner s1_grid_12 s2_grid_12 s3_grid_12">
+</div>
+			</div>
+		</div>
+		<!-- /header zone -->
+
+<!-- content zone -->
+	<div class="zoneContentOuter zoneOuter">
+		<div class="zoneContent container_12">
+			<div class="zoneContentInner s1_grid_12 s2_grid_12 s3_grid_12 zoneInner zoneRoundedCorners">
+<div id="id_Content" data-componentId="Content" class="WaPlaceHolder WaPlaceHolderContent" style=""><div style=""><div id="id_7eUhj13" class="WaGadgetFirst WaGadgetCustomMenu  gadgetStyleNone" style="" data-componentId="7eUhj13" ><div class="gadgetStyleBody " style="padding-top:0px;padding-right:0px;padding-bottom:24px;padding-left:0px;"  data-areaHeight="auto">
+<div class="customMenuWrapper alignLeft">
+	<ul class="orientationVertical">
+
+<li>
+				<a href="/" title="Home">Home</a>
+			</li>
+<li>
+				<a href="/site-is-under-construction" title="Join us">Join us</a>
+			</li>
+<li>
+				<a href="/site-is-under-construction" title="Donate">Donate</a>
+			</li>
+<li>
+				<a href="https://gethelp.wildapricot.com/en" title="Help">Help</a>
+			</li>
+</ul>
+</div>
+</div>
+</div><div id="id_nJBHJaY" class="WaGadget WaGadgetContent  gadgetStyle002" style="" data-componentId="nJBHJaY" ><div class="gadgetStyleBody gadgetContentEditableArea" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;" data-editableArea="0" data-areaHeight="auto">
+<h2><font color="#ffa045">Follow Us</font></h2></div>
+</div><div id="id_GJx6RfF" class="WaGadget WaGadgetFacebookPagePlugin  gadgetStyleNone" style="" data-componentId="GJx6RfF" ><div class="gadgetStyleBody " style="padding-bottom:24px;"  data-areaHeight="auto">
+
+
+<div id="facebook_GJx6RfF">  
+<div class="fb-page" style="width: 100%;" 
+  data-href="https://www.facebook.com/wildapricot"
+  data-width="280"
+  data-height="600"
+  data-hide-cover="false" 
+  data-show-facepile="true" 
+  data-show-posts="true"></div>
+</div>
+
+</div>
+</div><div id="id_c77M4Ws" class="WaGadgetLast WaGadgetContent  gadgetStyleNone" style="" data-componentId="c77M4Ws" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<h1 class="contStyleHeading1" align="center">Page not found (error 404)</h1>
+
+<h3 align="center">Sorry, but the page you are trying to access either does not exist or is not available.</h3><div><br></div>
+
+<div align="center">
+  <a href="/" class="stylizedButton buttonStyle003">Home</a>&nbsp; &nbsp; &nbsp;<a href="/javascript:history.back()" class="stylizedButton buttonStyle004">Back</a>&nbsp; &nbsp; &nbsp;
+</div>
+</div>
+</div></div>
+</div></div>
+		</div>
+	</div>
+	<!-- /content zone -->
+
+<!-- footer zone -->
+		<div class="zoneFooterOuter zoneOuter">
+			<div class="zoneFooter container_12">
+				<div class="zoneFooterInner zoneInner s1_grid_12 s2_grid_12 s3_grid_12 zoneRoundedCorners">
+<div id="id_Footer" data-componentId="Footer" class="WaPlaceHolder WaPlaceHolderFooter" style=""><div style=""><div id="id_ezXYAgS" class="WaGadgetFirst WaGadgetContent  gadgetStyleNone" style="margin-bottom:7px;" data-componentId="ezXYAgS" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p>Replace this text with your copyright information and address.<br>
+"Your name" is a 501(c)6 non-profit organization. Street Address, City, State 123456</p>
+</div>
+</div><div id="id_H4c9dPi" class="WaGadgetLast WaGadgetSocialProfile  gadgetStyleNone" style="margin-top:0px;margin-bottom:0px;" data-componentId="H4c9dPi" ><div class="gadgetStyleBody " style=""  data-areaHeight="auto">
+<div class="socialProfileWrapper alignLeft">
+	<ul class="orientationHorizontal">
+    <li>
+				<a href="https://www.facebook.com/wildapricot" title="Facebook" class="Facebook" target="_blank"></a>
+			</li>
+<li>
+				<a href="https://x.com/wildapricot" title="X" class="X" target="_blank"></a>
+			</li>
+<li>
+				<a href="http://www.linkedin.com/company/wild-apricot" title="LinkedIn" class="LinkedIn" target="_blank"></a>
+			</li>
+<li>
+				<a href="http://www.youtube.com/wildapricotcom" title="YouTube" class="YouTube" target="_blank"></a>
+			</li>
+		
+ 
+	</ul>
+</div>
+</div>
+</div></div>
+</div></div>
+			</div>
+		</div>
+		<div class="zoneFooter1Outer zoneOuter">
+			<div class="zoneFooter1 container_12">
+				<div class="zoneFooter1Inner zoneInner s1_grid_12 s2_grid_12 s3_grid_12">
+</div>
+			</div>
+		</div>
+		<!-- /footer zone -->
+		
+		<!-- branding zone -->
+<div class="zoneBrandingOuter zoneOuter">
+			<div class="zoneBranding container_12">
+				<div class="zoneBrandingInner zoneInner s1_grid_12 s2_grid_12 s3_grid_12">
+<div id="idFooterPoweredByContainer">
+	<span id="idFooterPoweredByWA">
+Powered by <a href="http://www.wildapricot.com" target="_blank">Wild Apricot</a> Membership Software</span>
+</div>
+</div>
+			</div>
+		</div>
+<!-- /branding zone -->
+</div></body>
+</html>

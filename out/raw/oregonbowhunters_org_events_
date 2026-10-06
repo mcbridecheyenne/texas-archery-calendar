@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html  xmlns:fb="https://www.facebook.com/2008/fbml"  xmlns:og="http://ogp.me/ns#" lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+<link rel="pingback" href="https://oregonbowhunters.org/xmlrpc.php">
+
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.1.0/600.min.css" rel="stylesheet">
+
+<title>Events from August 1, 2025 &#8211; March 26 &#8211; Oregon Bow Hunters</title>
+<link rel='stylesheet' id='[long]' href='https://oregonbowhunters.org/wp-content/plugins/the-events-calendar/vendor/bootstrap-datepicker/css/bootstrap-datepicker.standalone.min.css?ver=6.17.1' media='all' />
+<link rel='stylesheet' id='tec-variables-skeleton-css' href='https://oregonbowhunters.org/wp-content/plugins/the-events-calendar/common/build/css/variables-skeleton.css?ver=6.12.1' media='all' />
+<link rel='stylesheet' id='tribe-common-skeleton-style-css' href='https://oregonbowhunters.org/wp-content/plugins/the-events-calendar/common/build/css/common-skeleton.css?ver=6.12.1' media='all' />
+<link rel='stylesheet' id='tribe-tooltipster-css-css' href='https://oregonbowhunters.org/wp-content/plugins/the-events-calendar/common/vendor/tooltipster/tooltipster.bundle.min.css?ver=6.12.1' media='all' />
+<link rel='stylesheet' id='tribe-events-views-v2-skeleton-css' href='https://oregonbowhunters.org/wp-content/plugins/the-events-calendar/build/css/views-skeleton.css?ver=6.17.1' media='all' />
+<link rel='stylesheet' id='tec-variables-full-css' href='https://oregonbowhunters.org/wp-content/plugins/the-events-calendar/common/build/css/variables-full.css?ver=6.12.1' media='all' />
+<link rel='stylesheet' id='tribe-common-full-style-css' href='https://oregonbowhunters.org/wp-content/plugins/the-events-calendar/common/build/css/common-full.css?ver=6.12.1' media='all' />
+<link rel='stylesheet' id='tribe-events-views-v2-full-css' href='https://oregonbowhunters.org/wp-content/plugins/the-events-calendar/build/css/views-full.css?ver=6.17.1' media='all' />
+<link rel='stylesheet' id='tribe-events-views-v2-print-css' href='https://oregonbowhunters.org/wp-content/plugins/the-events-calendar/build/css/views-print.css?ver=6.17.1' media='print' />
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Oregon Bow Hunters &raquo; Feed" href="https://oregonbowhunters.org/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Oregon Bow Hunters &raquo; Comments Feed" href="https://oregonbowhunters.org/comments/feed/" />
+<link rel="alternate" type="text/calendar" title="Oregon Bow Hunters &raquo; iCal Feed" href="https://oregonbowhunters.org/events/?ical=1" />
+<link rel="alternate" type="application/rss+xml" title="Oregon Bow Hunters &raquo; Events Feed" href="https://oregonbowhunters.org/events/feed/" />
+
+<link rel='stylesheet' id='givewp-campaign-blocks-fonts-css' href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&#038;display=swap&#038;ver=7.1.2' media='all' />
+
+
+
+
+
+
+
+<link rel='stylesheet' id='wc-blocks-style-css' href='https://oregonbowhunters.org/wp-content/plugins/woocommerce/assets/client/blocks/wc-blocks.css?ver=wc-10.9.4' media='all' />
+
+<link rel='stylesheet' id='wc-blocks-packages-style-css' href='https://oregonbowhunters.org/wp-content/plugins/woocommerce/assets/client/blocks/packages-style.css?ver=wc-10.9.4' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-mini-cart-css' href='https://oregonbowhunters.org/wp-content/plugins/woocommerce/assets/client/blocks/mini-cart.css?ver=wc-10.9.4' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-mini-cart-contents-css' href='https://oregonbowhunters.org/wp-content/plugins/woocommerce/assets/client/blocks/mini-cart-contents.css?ver=wc-10.9.4' media='all' />
+
+
+
+<link rel='stylesheet' id='woocommerce-layout-css' href='https://oregonbowhunters.org/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=10.9.4' media='all' />
+<link rel='stylesheet' id='woocommerce-smallscreen-css' href='https://oregonbowhunters.org/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=10.9.4' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='woocommerce-general-css' href='https://oregonbowhunters.org/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=10.9.4' media='all' />
+
+<link rel='stylesheet' id='give-styles-css' href='https://oregonbowhunters.org/wp-content/plugins/give/build/assets/dist/css/give.css?ver=4.16.5' media='all' />
+<link rel='stylesheet' id='givewp-design-system-foundation-css' href='https://oregonbowhunters.org/wp-content/plugins/give/build/assets/dist/css/design-system/foundation.css?ver=1.2.0' media='all' />
+<link rel='stylesheet' id='wcsatt-css-css' href='https://oregonbowhunters.org/wp-content/plugins/woocommerce-subscriptions/build/apfs-frontend.css?ver=9.0.1' media='all' />
+<link rel='stylesheet' id='fwf-css-css' href='https://oregonbowhunters.org/wp-content/themes/fwf-2024/style.css?ver=7.1.2' media='all' />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="https://api.w.org/" href="https://oregonbowhunters.org/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://oregonbowhunters.org/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.1.2" />
+<meta name="generator" content="WooCommerce 10.9.4" />
+<meta name="tec-api-version" content="v1"><meta name="tec-api-origin" content="https://oregonbowhunters.org"><link rel="alternate" href="https://oregonbowhunters.org/wp-json/tribe/events/v1/" /><meta name="generator" content="Give v4.16.5" />
+	
+		<noscript></noscript>
+	<meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
+<link rel="icon" href="https://oregonbowhunters.org/wp-content/uploads/2025/06/cropped-target-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://oregonbowhunters.org/wp-content/uploads/2025/06/cropped-target-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://oregonbowhunters.org/wp-content/uploads/2025/06/cropped-target-180x180.png" />
+<meta name="msapplication-TileImage" content="https://oregonbowhunters.org/wp-content/uploads/2025/06/cropped-target-270x270.png" />
+
+	<!-- Fonts Plugin CSS - https://fontsplugin.com/ -->
+	
+	<!-- Fonts Plugin CSS -->
+	<noscript></noscript><link rel='stylesheet' id='wc-stripe-blocks-checkout-style-css' href='https://oregonbowhunters.org/wp-content/plugins/woocommerce-gateway-stripe/build/upe-blocks.css?ver=47fa3695454c5c4f96b5' media='all' />
+
+
+</head>
+<body class="archive post-type-archive post-type-archive-tribe_events wp-theme-fwf-2024 theme-fwf-2024 woocommerce-no-js tribe-events-page-template tribe-no-js tribe-filter-live wpb-js-composer js-comp-ver-8.4.1 vc_responsive" id="relative">
+	
+    
+<header class="header-01 relative">
+  <div class="container">
+    <a href="https://oregonbowhunters.org">
+      <img src="https://oregonbowhunters.org/wp-content/uploads/2025/05/logo-1.svg" />
+    </a>
+    <nav class="center">
+      <div class="menu-primary-navigation-container"><ul id="menu-primary-navigation" class="menu"><li id="menu-item-1697" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1697"><a href="#">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-1245" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1245"><a href="https://oregonbowhunters.org/about/">History</a></li>
+	<li id="menu-item-1568" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1568"><a href="https://oregonbowhunters.org/contact-us/">Contact Us</a></li>
+	<li id="menu-item-1696" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1696"><a href="https://oregonbowhunters.org/board-leadership/">Board &#038; Leadership</a></li>
+</ul>
+</li>
+<li id="menu-item-1191" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1191"><a href="#">Join</a>
+<ul class="sub-menu">
+	<li id="menu-item-1577" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1577"><a href="https://oregonbowhunters.org/membership-benefits/">Membership Benefits</a></li>
+	<li id="menu-item-2321" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2321"><a href="https://oregonbowhunters.org/join/">Join/Renew</a></li>
+	<li id="menu-item-1674" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1674"><a href="https://oregonbowhunters.org/login">Member Login</a></li>
+</ul>
+</li>
+<li id="menu-item-1192" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-1192"><a href="#">Events</a>
+<ul class="sub-menu">
+	<li id="menu-item-1569" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current-menu-item current_page_item menu-item-1569"><a href="https://oregonbowhunters.org/events/" aria-current="page">Upcoming Events</a></li>
+	<li id="menu-item-2111" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2111"><a href="https://oregonbowhunters.org/tournaments-competitions/">Tournaments &#038; Competitions</a></li>
+	<li id="menu-item-2127" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2127"><a href="https://oregonbowhunters.org/tournament-results/">Tournament Results</a></li>
+	<li id="menu-item-1545" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1545"><a href="https://oregonbowhunters.org/convention-game-awards/">Convention &#038; Game Awards</a></li>
+	<li id="menu-item-1542" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1542"><a href="https://oregonbowhunters.org/obh-annual-convention/">OBH Annual Convention</a></li>
+	<li id="menu-item-2782" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2782"><a href="https://oregonbowhunters.org/tournament-registration/">Event Registration</a></li>
+</ul>
+</li>
+<li id="menu-item-1193" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1193"><a href="#">Education</a>
+<ul class="sub-menu">
+	<li id="menu-item-1503" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1503"><a href="https://oregonbowhunters.org/youth-education/">Youth Education</a></li>
+	<li id="menu-item-1525" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1525"><a href="https://oregonbowhunters.org/safety-ethics/">Safety &#038; Ethics</a></li>
+	<li id="menu-item-2082" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2082"><a href="https://oregonbowhunters.org/hunter-education/">Hunter Education</a></li>
+	<li id="menu-item-2749" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2749"><a href="https://oregonbowhunters.org/ohsal/">Oregon High School Archery League</a></li>
+</ul>
+</li>
+<li id="menu-item-1194" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1194"><a href="#">Advocacy</a>
+<ul class="sub-menu">
+	<li id="menu-item-1505" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1505"><a href="https://oregonbowhunters.org/legislative-alerts/">Legislative Alerts</a></li>
+	<li id="menu-item-1504" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1504"><a href="https://oregonbowhunters.org/public-land-issues/">Public Land Issues</a></li>
+	<li id="menu-item-1521" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1521"><a href="https://oregonbowhunters.org/get-involved/">Get Involved</a></li>
+</ul>
+</li>
+<li id="menu-item-1195" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1195"><a href="#">Clubs &#038; Ranges</a>
+<ul class="sub-menu">
+	<li id="menu-item-1928" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1928"><a href="https://oregonbowhunters.org/find-a-club/">Find A Club</a></li>
+	<li id="menu-item-1710" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1710"><a href="https://oregonbowhunters.org/start-a-club/">Start A Club</a></li>
+</ul>
+</li>
+<li id="menu-item-1676" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1676"><a href="#">News &#038; Resources</a>
+<ul class="sub-menu">
+	<li id="menu-item-1596" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1596"><a href="https://oregonbowhunters.org/blog/">News Articles</a></li>
+	<li id="menu-item-1752" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1752"><a href="https://oregonbowhunters.org/archery-tips/">Archery Tips</a></li>
+	<li id="menu-item-2467" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2467"><a href="https://oregonbowhunters.org/documents/">Official Documents</a></li>
+	<li id="menu-item-1678" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1678"><a href="https://oregonbowhunters.org/#newsletter">OBH Newsletter</a></li>
+</ul>
+</li>
+<li id="menu-item-1197" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1197"><a href="#">Shop &#038; Donate</a>
+<ul class="sub-menu">
+	<li id="menu-item-1601" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1601"><a href="https://oregonbowhunters.org/shop/">Shop OBH</a></li>
+	<li id="menu-item-1736" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1736"><a href="https://oregonbowhunters.org/donate/">Support Us</a></li>
+</ul>
+</li>
+</ul></div>    </nav>
+    <div class="widgets">
+      		
+			<div data-block-name="woocommerce/mini-cart"
+				data-wp-interactive="woocommerce/mini-cart"
+				data-wp-init="callbacks.setupJQueryEventBridge"
+				[long]"woocommerce::actions.refreshCartItems"
+				[long]"woocommerce::actions.refreshCartItems"
+								data-wp-watch="callbacks.disableScrollingOnBody"
+				data-wp-init--mark-as-hydrated="callbacks.markAsHydrated"
+								data-wp-context='{"productCountVisibility":"greater_than_zero"}'				class="wc-block-mini-cart wp-block-woocommerce-mini-cart "
+				style=""
+			>
+				<button aria-label="Number of items in the cart: 0"
+					data-wp-on--click="actions.openDrawer"
+					data-wp-bind--aria-label="state.buttonAriaLabel"
+					class="wc-block-mini-cart__button"
+									>
+					<span class="wc-block-mini-cart__quantity-badge">
+																					<span hidden
+									data-wp-style--background-color="state.badgeBackgroundColor"
+									data-wp-style--color="state.badgeTextColor"
+									data-wp-bind--hidden="!state.badgeIsVisible"
+									data-wp-text="state.totalItemsInCart"
+									class="wc-block-mini-cart__badge"
+									style=""
+								>0</span>
+											</span>
+									</button>
+			</div>
+			    </div>
+    <button class="mobile-trigger">
+      <i class="fa-sharp fa-bars"></i>
+    </button>
+  </div>
+</header>
+	
+<div class="mobile-navigation">
+  <nav class="center">
+    <div class="menu-primary-navigation-container"><ul id="menu-primary-navigation-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1697"><a href="#">About</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1245"><a href="https://oregonbowhunters.org/about/">History</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1568"><a href="https://oregonbowhunters.org/contact-us/">Contact Us</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1696"><a href="https://oregonbowhunters.org/board-leadership/">Board &#038; Leadership</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1191"><a href="#">Join</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1577"><a href="https://oregonbowhunters.org/membership-benefits/">Membership Benefits</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2321"><a href="https://oregonbowhunters.org/join/">Join/Renew</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1674"><a href="https://oregonbowhunters.org/login">Member Login</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-1192"><a href="#">Events</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current-menu-item current_page_item menu-item-1569"><a href="https://oregonbowhunters.org/events/" aria-current="page">Upcoming Events</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2111"><a href="https://oregonbowhunters.org/tournaments-competitions/">Tournaments &#038; Competitions</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2127"><a href="https://oregonbowhunters.org/tournament-results/">Tournament Results</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1545"><a href="https://oregonbowhunters.org/convention-game-awards/">Convention &#038; Game Awards</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1542"><a href="https://oregonbowhunters.org/obh-annual-convention/">OBH Annual Convention</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2782"><a href="https://oregonbowhunters.org/tournament-registration/">Event Registration</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1193"><a href="#">Education</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1503"><a href="https://oregonbowhunters.org/youth-education/">Youth Education</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1525"><a href="https://oregonbowhunters.org/safety-ethics/">Safety &#038; Ethics</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2082"><a href="https://oregonbowhunters.org/hunter-education/">Hunter Education</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2749"><a href="https://oregonbowhunters.org/ohsal/">Oregon High School Archery League</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1194"><a href="#">Advocacy</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1505"><a href="https://oregonbowhunters.org/legislative-alerts/">Legislative Alerts</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1504"><a href="https://oregonbowhunters.org/public-land-issues/">Public Land Issues</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1521"><a href="https://oregonbowhunters.org/get-involved/">Get Involved</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1195"><a href="#">Clubs &#038; Ranges</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1928"><a href="https://oregonbowhunters.org/find-a-club/">Find A Club</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1710"><a href="https://oregonbowhunters.org/start-a-club/">Start A Club</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1676"><a href="#">News &#038; Resources</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1596"><a href="https://oregonbowhunters.org/blog/">News Articles</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1752"><a href="https://oregonbowhunters.org/archery-tips/">Archery Tips</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2467"><a href="https://oregonbowhunters.org/documents/">Official Documents</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1678"><a href="https://oregonbowhunters.org/#newsletter">OBH Newsletter</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1197"><a href="#">Shop &#038; Donate</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1601"><a href="https://oregonbowhunters.org/shop/">Shop OBH</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1736"><a href="https://oregonbowhunters.org/donate/">Support Us</a></li>
+</ul>
+</li>
+</ul></div>  </nav>
+  <div class="widgets">
+    		
+			<div data-block-name="woocommerce/mini-cart"
+				data-wp-interactive="woocommerce/mini-cart"
+				data-wp-init="callbacks.setupJQueryEventBridge"
+				[long]"woocommerce::actions.refreshCartItems"
+				[long]"woocommerce::actions.refreshCartItems"
+								data-wp-watch="callbacks.disableScrollingOnBody"
+				data-wp-init--mark-as-hydrated="callbacks.markAsHydrated"
+								data-wp-context='{"productCountVisibility":"greater_than_zero"}'				class="wc-block-mini-cart wp-block-woocommerce-mini-cart "
+				style=""
+			>
+				<button aria-label="Number of items in the cart: 0"
+					data-wp-on--click="actions.openDrawer"
+					data-wp-bind--aria-label="state.buttonAriaLabel"
+					class="wc-block-mini-cart__button"
+									>
+					<span class="wc-block-mini-cart__quantity-badge">
+																					<span hidden
+									data-wp-style--background-color="state.badgeBackgroundColor"
+									data-wp-style--color="state.badgeTextColor"
+									data-wp-bind--hidden="!state.badgeIsVisible"
+									data-wp-text="state.totalItemsInCart"
+									class="wc-block-mini-cart__badge"
+									style=""
+								>0</span>
+											</span>
+									</button>
+			</div>
+			  </div>
+</div>
+
+
+
+<div
+	 class="tribe-common tribe-events tribe-events-view tribe-events-view--list" 	data-js="tribe-events-view"
+	data-view-rest-url="https://oregonbowhunters.org/wp-json/tribe/views/v2/html"
+	data-view-rest-method="GET"
+	data-view-manage-url="1"
+				data-view-breakpoint-pointer="508193fd-a16e-46bb-8443-dfabb41fe03e"
+	 role="main">
+	<section class="tribe-common-l-container tribe-events-l-container">
+		<div
+	class="tribe-events-view-loader tribe-common-a11y-hidden"
+	role="alert"
+	aria-live="polite"
+>
+	<span class="tribe-events-view-loader__text tribe-common-a11y-visual-hide">
+		0 events found.	</span>
+	<div class="tribe-events-view-loader__dots tribe-common-c-loader">
+		
+		
+		
+	</div>
+</div>
+
+		
+		
+
+		
+		
+<header  class="tribe-events-header tribe-events-header--has-event-search" >
+	
+	<div  class="tribe-events-header__messages tribe-events-c-messages tribe-common-b2 tribe-common-c-loader__dot tribe-common-c-loader__dot--third"  >
+			<div class="tribe-events-c-messages__message [long]" tabindex="0" role="alert" aria-live="assertive">
+										<div
+					 data-key="0" >
+					There are no upcoming events.				</div>
+					</div>
+	</div>
+
+	<div  class="tribe-events-header__messages tribe-events-c-messages tribe-common-b2 tribe-events-header__messages--mobile"  >
+			<div class="tribe-events-c-messages__message [long]" tabindex="0" role="alert" aria-live="assertive">
+										<div
+					 data-key="0" >
+					There are no upcoming events.				</div>
+					</div>
+	</div>
+
+	<div
+	 class="tribe-events-header__events-bar tribe-events-c-events-bar tribe-events-c-events-bar--border" 	data-js="tribe-events-events-bar"
+>
+
+	<h2 class="tribe-common-a11y-visual-hide">
+		Events Search and Views Navigation	</h2>
+
+			<button
+	class="[long]"
+	aria-controls="tribe-events-search-container"
+	aria-expanded="false"
+	data-js="tribe-events-search-button"
+>
+	
+	<span class="[long] tribe-common-a11y-visual-hide">
+		Search	</span>
+</button>
+
+		<div
+			class="[long]"
+			id="tribe-events-search-container"
+			data-js="tribe-events-search-container"
+		>
+			<div
+	class="tribe-events-c-events-bar__search"
+	id="tribe-events-events-bar-search"
+	data-js="tribe-events-events-bar-search"
+>
+	<form
+		class="tribe-events-c-search tribe-events-c-events-bar__search-form"
+		method="get"
+		data-js="tribe-events-view-form"
+		role="search"
+	>
+		<input type="hidden" name="tribe-events-views[url]" value="https://oregonbowhunters.org/events/list/" />
+
+		<div class="tribe-events-c-search__input-group">
+			<div
+	class="tribe-common-form-control-text tribe-events-c-search__input-control [long]"
+	data-js="tribe-events-events-bar-input-control"
+>
+	<label class="tribe-common-form-control-text__label" for="tribe-events-events-bar-keyword">
+		Enter Keyword. Search for Events by Keyword.	</label>
+	<input
+		class="tribe-common-form-control-text__input tribe-events-c-search__input"
+		data-js="[long]"
+		type="text"
+		id="tribe-events-events-bar-keyword"
+		name="tribe-events-views[tribe-bar-search]"
+		value=""
+		placeholder="Search for events"
+		aria-label="Enter Keyword. Search for events by Keyword."
+	/>
+	
+</div>
+		</div>
+
+		<button
+	class="tribe-common-c-btn tribe-events-c-search__button"
+	type="submit"
+	name="submit-bar"
+>
+	Find Events</button>
+	</form>
+</div>
+		</div>
+	
+	<div class="tribe-events-c-events-bar__views">
+	<h3 class="tribe-common-a11y-visual-hide">
+		Event Views Navigation	</h3>
+	<div  class="tribe-events-c-view-selector tribe-events-c-view-selector--labels tribe-events-c-view-selector--tabs"  data-js="tribe-events-view-selector">
+		<button
+			class="tribe-events-c-view-selector__button tribe-common-c-btn__clear"
+			data-js="tribe-events-view-selector-button"
+			aria-current="true"
+			aria-description="Select Calendar View"
+		>
+			<span class="[long]">
+				
+			</span>
+			<span class="[long] tribe-common-a11y-visual-hide">
+				List			</span>
+			
+		</button>
+		<div
+	class="tribe-events-c-view-selector__content"
+	id="tribe-events-view-selector-content"
+	data-js="[long]"
+>
+	<ul class="tribe-events-c-view-selector__list">
+					<li
+	 class="tribe-events-c-view-selector__list-item [long] [long]" >
+	<a
+		href="https://oregonbowhunters.org/events/list/"
+		class="[long]"
+		data-js="tribe-events-view-link"
+		aria-label="Display Events in List View"
+				aria-current="true"
+			>
+		<span class="[long]">
+			
+		</span>
+		<span class="[long]">
+			List		</span>
+	</a>
+</li>
+					<li
+	 class="tribe-events-c-view-selector__list-item [long]" >
+	<a
+		href="https://oregonbowhunters.org/events/month/"
+		class="[long]"
+		data-js="tribe-events-view-link"
+		aria-label="Display Events in Month View"
+			>
+		<span class="[long]">
+			
+		</span>
+		<span class="[long]">
+			Month		</span>
+	</a>
+</li>
+					<li
+	 class="tribe-events-c-view-selector__list-item [long]" >
+	<a
+		href="https://oregonbowhunters.org/events/today/"
+		class="[long]"
+		data-js="tribe-events-view-link"
+		aria-label="Display Events in Day View"
+			>
+		<span class="[long]">
+			
+		</span>
+		<span class="[long]">
+			Day		</span>
+	</a>
+</li>
+			</ul>
+</div>
+	</div>
+</div>
+
+</div>
+
+	<div class="tribe-events-c-top-bar tribe-events-header__top-bar">
+
+	<nav class="tribe-events-c-top-bar__nav tribe-common-a11y-hidden" aria-label="Top events list pagination">
+	<ul class="tribe-events-c-top-bar__nav-list">
+		<li class="tribe-events-c-top-bar__nav-list-item">
+	<a
+		href="https://oregonbowhunters.org/events/list/?eventDisplay=past"
+		class="tribe-common-c-btn-icon tribe-common-c-btn-icon--caret-left tribe-events-c-top-bar__nav-link tribe-events-c-top-bar__nav-link--prev"
+		aria-label="Previous Events"
+		title="Previous Events"
+		data-js="tribe-events-view-link"
+	>
+		
+	</a>
+</li>
+
+		<li class="tribe-events-c-top-bar__nav-list-item">
+	<button
+		class="tribe-common-c-btn-icon tribe-common-c-btn-icon--caret-right tribe-events-c-top-bar__nav-link tribe-events-c-top-bar__nav-link--next"
+		aria-label="Next Events"
+		title="Next Events"
+		disabled
+	>
+		
+	</button>
+</li>
+	</ul>
+</nav>
+
+	<a
+	href="https://oregonbowhunters.org/events/list/"
+	class="tribe-common-c-btn-border-small tribe-events-c-top-bar__today-button tribe-common-a11y-hidden"
+	data-js="tribe-events-view-link"
+	aria-description="Click to select today&#039;s date"
+>
+	Today</a>
+
+	<div class="tribe-events-c-top-bar__datepicker">
+	<button
+		class="tribe-common-c-btn__clear tribe-common-h3 tribe-common-h--alt [long]"
+		data-js="tribe-events-top-bar-datepicker-button"
+		type="button"
+		aria-description="Click to toggle datepicker"
+	>
+		<time
+			datetime="2026-10-05"
+			class="tribe-events-c-top-bar__datepicker-time"
+		>
+							<span class="[long]">
+					Upcoming				</span>
+				<span class="[long] tribe-common-a11y-hidden">
+					Upcoming				</span>
+					</time>
+				
+	</button>
+	<label
+		class="[long] tribe-common-a11y-visual-hide"
+		for="tribe-events-top-bar-date"
+	>
+		Select date.	</label>
+	<input
+		type="text"
+		class="[long] tribe-common-a11y-visual-hide"
+		data-js="tribe-events-top-bar-date"
+		id="tribe-events-top-bar-date"
+		name="tribe-events-views[tribe-bar-date]"
+		value="10/5/2026"
+		tabindex="-1"
+		autocomplete="off"
+		readonly="readonly"
+	/>
+	<div class="[long]" data-js="[long]"></div>
+	<template class="[long]">
+		
+	</template>
+	<template class="[long]">
+		
+	</template>
+</div>
+
+	
+	<div class="tribe-events-c-top-bar__actions tribe-common-a11y-hidden">
+	</div>
+
+</div>
+</header>
+
+		
+		<ul
+			class="tribe-events-calendar-list"
+			aria-label="
+			List of Events			"
+		>
+
+			
+		</ul>
+
+		
+		<div class="tribe-events-calendar-latest-past">
+
+	<h2 class="[long] tribe-common-h5 tribe-common-h3--min-medium">
+	Latest Past Events</h2>
+
+			
+		<div  class="tribe-common-g-row [long]" >
+
+	<div class="[long] tribe-common-g-col">
+	<time class="[long]" datetime="2026-07-11" aria-hidden="true">
+		<span class="[long]">
+			Jul		</span>
+		<span class="[long] tribe-common-h5 tribe-common-h4--min-medium">
+			11		</span>
+		<span class="[long]">
+			2026		</span>
+	</time>
+</div>
+
+	<div class="[long] tribe-common-g-col">
+		<article  class="[long] tribe-common-g-row tribe-common-g-row--gutters post-2935 tribe_events type-tribe_events status-publish has-post-thumbnail hentry" >
+			<div class="[long] tribe-common-g-col">
+	<a
+		href="https://oregonbowhunters.org/event/oregon-state-3d-championship/"
+		title="Oregon State 3D Championship"
+		rel="bookmark"
+		class="[long]"
+		tabindex="-1"
+		aria-hidden="true"
+	>
+		<img
+			src="https://oregonbowhunters.org/wp-content/uploads/2026/02/logo-01-scaled.png"
+							srcset="https://oregonbowhunters.org/wp-content/uploads/2026/02/logo-01-300x300.png 300w, https://oregonbowhunters.org/wp-content/uploads/2026/02/logo-01-1024x1024.png 1024w, https://oregonbowhunters.org/wp-content/uploads/2026/02/logo-01-150x150.png 150w, https://oregonbowhunters.org/wp-content/uploads/2026/02/logo-01-768x768.png 768w, https://oregonbowhunters.org/wp-content/uploads/2026/02/logo-01-1536x1536.png 1536w, https://oregonbowhunters.org/wp-content/uploads/2026/02/logo-01-2048x2048.png 2048w, https://oregonbowhunters.org/wp-content/uploads/2026/02/logo-01-600x600.png 600w, https://oregonbowhunters.org/wp-content/uploads/2026/02/logo-01-100x100.png 100w"
+										alt=""
+										title="logo-01"
+						class="[long]"
+							width="2560"
+				height="2560"
+					/>
+	</a>
+</div>
+
+			<div class="[long] tribe-common-g-col">
+
+				<header class="[long]">
+					<div class="[long] tribe-common-b2">
+		<time class="[long]" datetime="2026-07-11">
+		<span class="tribe-event-date-start">July 11</span> - <span class="tribe-event-date-end">July 12</span>	</time>
+	</div>
+					<h3 class="[long] tribe-common-h6 tribe-common-h4--min-medium">
+	<a
+		href="https://oregonbowhunters.org/event/oregon-state-3d-championship/"
+		title="Oregon State 3D Championship"
+		rel="bookmark"
+		class="[long] tribe-common-anchor-thin"
+	>
+		Oregon State 3D Championship	</a>
+</h3>
+					<address class="[long] tribe-common-b2">
+	<span class="[long] tribe-common-b2--bold">
+		Wapiti Bowmen	</span>
+	<span class="[long]">
+		34861 Richardson Gap Rd, 					Lebanon			</span>
+</address>
+				</header>
+
+				<div class="[long] tribe-common-b2 tribe-common-a11y-hidden">
+	<p>State Indoor and the State Field - NFAA Rules, Divisions &amp; Class's Apply – Must have a current Oregon Bow Hunter and National Field Archery Association memberships to qualify for [&hellip;]</p>
+</div>
+				
+			</div>
+		</article>
+	</div>
+
+</div>
+
+			
+		<div  class="tribe-common-g-row [long]" >
+
+	<div class="[long] tribe-common-g-col">
+	<time class="[long]" datetime="2026-07-04" aria-hidden="true">
+		<span class="[long]">
+			Jul		</span>
+		<span class="[long] tribe-common-h5 tribe-common-h4--min-medium">
+			4		</span>
+		<span class="[long]">
+			2026		</span>
+	</time>
+</div>
+
+	<div class="[long] tribe-common-g-col">
+		<article  class="[long] tribe-common-g-row tribe-common-g-row--gutters post-2949 tribe_events type-tribe_events status-publish has-post-thumbnail hentry tribe_events_cat-competition tribe_events_cat-outdoor cat_competition cat_outdoor" >
+			<div class="[long] tribe-common-g-col">
+	<a
+		href="https://oregonbowhunters.org/event/37th-greater-oregon-safari/"
+		title="37th Greater Oregon Safari"
+		rel="bookmark"
+		class="[long]"
+		tabindex="-1"
+		aria-hidden="true"
+	>
+		<img
+			src="https://oregonbowhunters.org/wp-content/uploads/2026/03/oregon-safari.jpeg"
+							srcset="https://oregonbowhunters.org/wp-content/uploads/2026/03/oregon-safari-300x300.jpeg 300w, https://oregonbowhunters.org/wp-content/uploads/2026/03/oregon-safari-150x150.jpeg 150w, https://oregonbowhunters.org/wp-content/uploads/2026/03/oregon-safari-100x100.jpeg 100w, https://oregonbowhunters.org/wp-content/uploads/2026/03/oregon-safari.jpeg 564w"
+										alt=""
+										title="oregon-safari"
+						class="[long]"
+							width="564"
+				height="564"
+					/>
+	</a>
+</div>
+
+			<div class="[long] tribe-common-g-col">
+
+				<header class="[long]">
+					<div class="[long] tribe-common-b2">
+		<time class="[long]" datetime="2026-07-04">
+		<span class="tribe-event-date-start">July 4 @ 6:00 am</span> - <span class="tribe-event-date-end">July 5 @ 2:00 pm</span>	</time>
+	</div>
+					<h3 class="[long] tribe-common-h6 tribe-common-h4--min-medium">
+	<a
+		href="https://oregonbowhunters.org/event/37th-greater-oregon-safari/"
+		title="37th Greater Oregon Safari"
+		rel="bookmark"
+		class="[long] tribe-common-anchor-thin"
+	>
+		37th Greater Oregon Safari	</a>
+</h3>
+					<address class="[long] tribe-common-b2">
+	<span class="[long] tribe-common-b2--bold">
+		Cascadian Bowmen	</span>
+	<span class="[long]">
+		91714 Poodle Creek Rd, 					Noti			</span>
+</address>
+				</header>
+
+				<div class="[long] tribe-common-b2 tribe-common-a11y-hidden">
+	<p>Hosted by the Cascadian Bowmen of Eugene, this event features a 2-arrow, marked yardage shoot with 40 targets Saturday, and 20 targets Sunday (60 total). Awards will be presented on [&hellip;]</p>
+</div>
+				
+			</div>
+		</article>
+	</div>
+
+</div>
+
+			
+		<div  class="tribe-common-g-row [long]" >
+
+	<div class="[long] tribe-common-g-col">
+	<time class="[long]" datetime="2026-06-27" aria-hidden="true">
+		<span class="[long]">
+			Jun		</span>
+		<span class="[long] tribe-common-h5 tribe-common-h4--min-medium">
+			27		</span>
+		<span class="[long]">
+			2026		</span>
+	</time>
+</div>
+
+	<div class="[long] tribe-common-g-col">
+		<article  class="[long] tribe-common-g-row tribe-common-g-row--gutters post-2931 tribe_events type-tribe_events status-publish has-post-thumbnail hentry tribe_events_cat-competition cat_competition" >
+			<div class="[long] tribe-common-g-col">
+	<a
+		href="https://oregonbowhunters.org/event/oregon-state-outdoor-field-championship/"
+		title="Oregon State Outdoor (Field) Championship"
+		rel="bookmark"
+		class="[long]"
+		tabindex="-1"
+		aria-hidden="true"
+	>
+		<img
+			src="https://oregonbowhunters.org/wp-content/uploads/2026/02/logo-02-scaled.png"
+							srcset="https://oregonbowhunters.org/wp-content/uploads/2026/02/logo-02-300x300.png 300w, https://oregonbowhunters.org/wp-content/uploads/2026/02/logo-02-1024x1024.png 1024w, https://oregonbowhunters.org/wp-content/uploads/2026/02/logo-02-150x150.png 150w, https://oregonbowhunters.org/wp-content/uploads/2026/02/logo-02-768x768.png 768w, https://oregonbowhunters.org/wp-content/uploads/2026/02/logo-02-1536x1536.png 1536w, https://oregonbowhunters.org/wp-content/uploads/2026/02/logo-02-2048x2048.png 2048w, https://oregonbowhunters.org/wp-content/uploads/2026/02/logo-02-600x600.png 600w, https://oregonbowhunters.org/wp-content/uploads/2026/02/logo-02-100x100.png 100w"
+										alt=""
+										title="logo-02"
+						class="[long]"
+							width="2560"
+				height="2560"
+					/>
+	</a>
+</div>
+
+			<div class="[long] tribe-common-g-col">
+
+				<header class="[long]">
+					<div class="[long] tribe-common-b2">
+		<time class="[long]" datetime="2026-06-27">
+		<span class="tribe-event-date-start">June 27</span> - <span class="tribe-event-date-end">June 28</span>	</time>
+	</div>
+					<h3 class="[long] tribe-common-h6 tribe-common-h4--min-medium">
+	<a
+		href="https://oregonbowhunters.org/event/oregon-state-outdoor-field-championship/"
+		title="Oregon State Outdoor (Field) Championship"
+		rel="bookmark"
+		class="[long] tribe-common-anchor-thin"
+	>
+		Oregon State Outdoor (Field) Championship	</a>
+</h3>
+					<address class="[long] tribe-common-b2">
+	<span class="[long] tribe-common-b2--bold">
+		Sylvan Archers	</span>
+	<span class="[long]">
+		15930 SW Bell Road, 					Sherwood			</span>
+</address>
+				</header>
+
+				<div class="[long] tribe-common-b2 tribe-common-a11y-hidden">
+	<p>State Indoor and the State Field - NFAA Rules, Divisions &amp; Class's Apply – Must have a current Oregon Bow Hunter and National Field Archery Association memberships to qualify for [&hellip;]</p>
+</div>
+				
+			</div>
+		</article>
+	</div>
+
+</div>
+
+	
+</div>
+
+		<div class="tribe-events-after-html">
+	
+<!--
+This calendar is powered by The Events Calendar.
+http://evnt.is/18wn
+-->
+</div>
+
+	</section>
+</div>
+
+
+  <footer class="footer-01">
+  <div class="container">
+	        <div>
+        
+<figure class="wp-block-image size-full is-resized"><a href="https://oregonbowhunters.org/"><img loading="lazy" decoding="async" width="103" height="32" src="https://oregonbowhunters.org/wp-content/uploads/2025/05/logo-1.svg" alt="" class="wp-image-992" style="width:217px;height:auto"/></a></figure>
+<div>
+  <a href="https://www.facebook.com/profile.php?id=100063723965662&ref=hl#" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-facebook"></i></a>
+</div>      </div>
+	  	        <div>
+        <h3 class="footer-title">About &#038; Join</h3><div class="menu-footer-01-container"><ul id="menu-footer-01" class="menu"><li id="menu-item-1829" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1829"><a href="https://oregonbowhunters.org/about/">OBH History</a></li>
+<li id="menu-item-1831" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1831"><a href="https://oregonbowhunters.org/board-leadership/">Board &#038; Leadership</a></li>
+<li id="menu-item-1832" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1832"><a href="https://oregonbowhunters.org/membership-benefits/">Membership Benefits</a></li>
+<li id="menu-item-2322" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2322"><a href="https://oregonbowhunters.org/join/">Join/Renew</a></li>
+<li id="menu-item-1834" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1834"><a href="#">Member Login</a></li>
+</ul></div>      </div>
+	  	        <div>
+        <h3 class="footer-title">Events &#038; Education</h3><div class="menu-footer-02-container"><ul id="menu-footer-02" class="menu"><li id="menu-item-1835" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current-menu-item current_page_item menu-item-1835"><a href="https://oregonbowhunters.org/events/" aria-current="page">Upcoming Tournaments</a></li>
+<li id="menu-item-1836" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1836"><a href="https://oregonbowhunters.org/convention-game-awards/">Convention &#038; Game Awards</a></li>
+<li id="menu-item-1837" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1837"><a href="https://oregonbowhunters.org/obh-annual-convention/">OBH Annual Convention</a></li>
+<li id="menu-item-1838" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1838"><a href="https://oregonbowhunters.org/youth-education/">Youth Education</a></li>
+<li id="menu-item-1839" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1839"><a href="https://oregonbowhunters.org/safety-ethics/">Safety &#038; Ethics</a></li>
+</ul></div>      </div>
+	  	        <div>
+        <h3 class="footer-title">Clubs &#038; News</h3><div class="menu-footer-03-container"><ul id="menu-footer-03" class="menu"><li id="menu-item-1840" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1840"><a href="https://oregonbowhunters.org/find-a-club/">Find A Club</a></li>
+<li id="menu-item-1841" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1841"><a href="https://oregonbowhunters.org/start-a-club/">Start A Club</a></li>
+<li id="menu-item-1842" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1842"><a href="https://oregonbowhunters.org/blog/">News &#038; Articles</a></li>
+<li id="menu-item-1843" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1843"><a href="https://oregonbowhunters.org/archery-tips/">Archery Tips</a></li>
+<li id="menu-item-1846" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1846"><a href="https://oregonbowhunters.org/shop/">Our Products</a></li>
+<li id="menu-item-1845" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1845"><a href="https://oregonbowhunters.org/donate/">Donate</a></li>
+</ul></div>      </div>
+	  	        <div>
+        <h3 class="footer-title">Advocacy</h3><div class="menu-footer-04-container"><ul id="menu-footer-04" class="menu"><li id="menu-item-1847" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1847"><a href="https://oregonbowhunters.org/public-land-issues/">Public Land Issues</a></li>
+<li id="menu-item-1848" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1848"><a href="https://oregonbowhunters.org/legislative-alerts/">Legislative Alerts</a></li>
+<li id="menu-item-1849" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1849"><a href="https://oregonbowhunters.org/get-involved/">Get Involved</a></li>
+<li id="menu-item-1850" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1850"><a href="https://oregonbowhunters.org/contact-us/">Contact OBH</a></li>
+</ul></div>      </div>
+	  	    </div>
+  <div class="footer-bottom">
+      <span>Copyright ©  Oregon Bow Hunters. All Rights Reserved.</span>
+      <span><a href="https://oregonbowhunters.org/privacy-policy/">Privacy Policy</a></span>
+      <span><a href="https://oregonbowhunters.org/terms-conditions/">Terms Of Use</a></span>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+		
+		
+
+<link rel="modulepreload" href="https://oregonbowhunters.org/wp-includes/js/dist/script-modules/interactivity/index.min.js?ver=efaa5193bbad9c60ffd1" id="@wordpress/interactivity-js-modulepreload" data-wp-fetchpriority="low">
+<link rel="modulepreload" href="https://oregonbowhunters.org/wp-content/plugins/woocommerce/assets/client/blocks/@woocommerce/stores/store-notices.js?ver=c1eae8d5e518e3fbcf40" id="@woocommerce/stores/store-notices-js-modulepreload">
+<link rel="modulepreload" href="https://oregonbowhunters.org/wp-content/plugins/woocommerce/assets/client/blocks/@woocommerce/stores/woocommerce/products.js?ver=d2328963c7e9ed84708e" id="@woocommerce/stores/woocommerce/products-js-modulepreload">
+<link rel="modulepreload" href="https://oregonbowhunters.org/wp-content/plugins/woocommerce/assets/client/blocks/@woocommerce/stores/woocommerce/cart.js?ver=6ef41e00d2939992b95c" id="@woocommerce/stores/woocommerce/cart-js-modulepreload">
+
+	
+			<div class="[long] [long] [long]"
+			data-wp-interactive="woocommerce/mini-cart"
+			data-wp-router-region='{ "id": "woocommerce/mini-cart-overlay", "attachTo": "body" }'
+			data-wp-key="wc-mini-cart-overlay"
+			data-wp-on--click="actions.overlayCloseDrawer"
+			data-wp-on--keydown="actions.handleOverlayKeydown"
+			data-wp-watch="callbacks.focusFirstElement"
+			data-wp-bind--class="state.drawerOverlayClass"
+		>
+			<div aria-hidden="true" aria-modal="false"
+				data-wp-bind--role="state.drawerRole"
+				data-wp-bind--aria-modal="state.isOpen"
+				data-wp-bind--aria-hidden="!state.isOpen"
+				data-wp-bind--tabindex="state.drawerTabIndex"
+				class="wc-block-mini-cart__drawer wc-block-components-drawer is-mobile"
+			>
+				<div class="wc-block-components-drawer__content">
+					<div class="wc-block-mini-cart__template-part">
+								<div data-block-name="woocommerce/mini-cart-contents" class="wp-block-woocommerce-mini-cart-contents" data-wp-interactive="woocommerce/mini-cart-contents" data-wp-style--background-color="woocommerce/mini-cart::state.contentsBackgroundColor">
+			<div class="[long]">
+				<button data-wp-on--click="woocommerce/mini-cart::actions.closeDrawer" class="wc-block-components-button wp-element-button wc-block-components-drawer__close contained" aria-label="Close" type="button">
+					
+				</button>
+			</div>
+					<div data-block-name="woocommerce/filled-mini-cart-contents-block" class="[long]" data-wp-interactive="woocommerce/mini-cart" data-wp-context="woocommerce/store-notices::{&quot;notices&quot;:[]}" data-wp-bind--hidden="state.cartIsEmpty">
+			<div
+				class="wc-block-components-notices"
+				data-wp-interactive="woocommerce/store-notices"
+			><template
+					data-wp-each--notice="context.notices"
+					data-wp-each-key="context.notice.id"
+				>
+					<div
+						class="wc-block-components-notice-banner"
+						data-wp-class--is-error="state.isError"
+						data-wp-class--is-success="state.isSuccess"
+						data-wp-class--is-info="state.isInfo"
+						data-wp-class--is-dismissible="context.notice.dismissible"
+						data-wp-bind--role="state.role"
+						data-wp-watch="callbacks.injectIcon"
+					>
+						<div class="[long]">
+							<span data-wp-init="callbacks.renderNoticeContent"></span>
+						</div>
+						<button
+							data-wp-bind--hidden="!context.notice.dismissible"
+							class="wc-block-components-button wp-element-button [long] contained"
+							aria-label="Dismiss this notice"
+							data-wp-on--click="actions.removeNotice"
+						>
+							
+						</button>
+					</div>
+				</template>
+			</div>
+						<h2 data-block-name="woocommerce/mini-cart-title-block" class="wc-block-mini-cart__title [long]">
+						<span data-block-name="woocommerce/mini-cart-title-label-block" class="[long]">
+			Your cart		</span>
+				<span data-block-name="woocommerce/mini-cart-title-items-counter-block" class="[long]" data-wp-text="state.itemsInCartText" data-wp-interactive="woocommerce/mini-cart-title-items-counter-block">(items: 0)</span>
+					</h2>
+				<div data-block-name="woocommerce/mini-cart-items-block" class="wc-block-mini-cart__items [long]" tabindex="-1">
+					<div data-block-name="woocommerce/mini-cart-products-table-block" class="wc-block-mini-cart__products-table [long]" data-wp-interactive="woocommerce/mini-cart-products-table-block">
+			<table class="wc-block-cart-items wc-block-mini-cart-items" tabindex="-1">
+				<caption class="screen-reader-text">
+					<h2>
+						Products in cart					</h2>
+				</caption>
+				<thead>
+					<tr class="wc-block-cart-items__header">
+						<th class="wc-block-cart-items__header-image">
+							<span>Product</span>
+						</th>
+						<th class="wc-block-cart-items__header-product">
+							<span>Details</span>
+						</th>
+						<th class="wc-block-cart-items__header-total">
+							<span>Total</span>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<template
+						data-wp-each--cart-item="woocommerce::state.cart.items"
+						data-wp-each-key="state.cartItem.key"
+					>
+						<tr
+							class="wc-block-cart-items__row"
+							data-wp-bind--hidden="!state.cartItem.key"
+							data-wp-run="callbacks.filterCartItemClass"
+							tabindex="-1"
+						>
+							<td data-wp-context='{ "isImageHidden": false }' class="wc-block-cart-item__image" aria-hidden="true">
+								<img
+									data-wp-bind--hidden="!state.isProductHiddenFromCatalog"
+									data-wp-bind--src="state.itemThumbnail"
+									data-wp-bind--alt="state.cartItemName"
+									data-wp-bind--srcset="state.itemSrcset"
+									data-wp-bind--sizes="state.itemSizes"
+									data-wp-on--error="actions.hideImage"
+								>
+								<a data-wp-bind--hidden="state.isProductHiddenFromCatalog" data-wp-bind--href="state.cartItem.permalink" tabindex="-1">
+									<img
+										data-wp-bind--hidden="context.isImageHidden"
+										data-wp-bind--src="state.itemThumbnail"
+										data-wp-bind--alt="state.cartItemName"
+										data-wp-bind--srcset="state.itemSrcset"
+										data-wp-bind--sizes="state.itemSizes"
+										data-wp-on--error="actions.hideImage"
+									>
+								</a>
+							</td>
+							<td class="wc-block-cart-item__product">
+								<div class="wc-block-cart-item__wrap">
+									<span data-wp-bind--hidden="!state.isProductHiddenFromCatalog" data-wp-text="state.cartItemName" class="wc-block-components-product-name"></span>
+									<a data-wp-bind--hidden="state.isProductHiddenFromCatalog" data-wp-text="state.cartItemName" data-wp-bind--href="state.cartItem.permalink" class="wc-block-components-product-name"></a>
+									<div data-wp-bind--hidden="!state.cartItem.show_backorder_badge" class="wc-block-components-product-badge [long]">
+										Available on backorder									</div>
+									<div class="wc-block-cart-item__prices">
+										<span data-wp-bind--hidden="!state.cartItemHasDiscount" class="price wc-block-components-product-price">
+											<span data-wp-text="state.beforeItemPrice"></span>
+											<span class="screen-reader-text">
+												Previous price:											</span>
+											<del data-wp-text="state.priceWithoutDiscount" class="[long] notranslate" translate="no"></del>
+											<span class="screen-reader-text">
+												Discounted price:											</span>
+											<ins data-wp-text="state.itemPrice" class="[long] is-discounted notranslate" translate="no"></ins>
+											<span data-wp-text="state.afterItemPrice"></span>
+										</span>
+										<span data-wp-bind--hidden="state.cartItemHasDiscount" class="price wc-block-components-product-price">
+											<span data-wp-text="state.beforeItemPrice"></span>
+											<span data-wp-text="state.itemPrice" class="wc-block-formatted-money-amount [long] [long] notranslate" translate="no">
+											</span>
+											<span data-wp-text="state.afterItemPrice"></span>
+										</span>
+									</div>
+									<div class="wc-block-components-product-metadata">
+										<div data-wp-watch="callbacks.itemShortDescription" >
+											<div class="[long]"></div>
+										</div>
+												<div
+			data-wp-context='{"dataProperty":"item_data"}'			class="wc-block-components-product-details"
+			data-wp-bind--hidden="state.shouldHideProductDetails"
+		>
+			<template
+				data-wp-each--item-data="state.cartItem.item_data"
+				data-wp-each-key="state.cartItemDataKey"
+			>
+						<span
+			data-wp-bind--hidden="state.cartItemDataAttrHidden"
+			data-wp-bind--class="state.cartItemDataAttr.className"
+		>
+					<span class="[long]" data-wp-watch="callbacks.itemDataNameInnerHTML"></span>
+			<span class="[long]" data-wp-watch="callbacks.itemDataValueInnerHTML"></span>
+					<span aria-hidden="true" data-wp-bind--hidden="state.isLastCartItemDataAttr"> / </span>
+		</span>
+					</template>
+		</div>
+														<div
+			data-wp-context='{"dataProperty":"variation"}'			class="wc-block-components-product-details"
+			data-wp-bind--hidden="state.shouldHideProductDetails"
+		>
+			<template
+				data-wp-each--item-data="state.cartItem.variation"
+				data-wp-each-key="state.cartItemDataKey"
+			>
+						<span
+			data-wp-bind--hidden="state.cartItemDataAttrHidden"
+			data-wp-bind--class="state.cartItemDataAttr.className"
+		>
+					<span class="[long]" data-wp-text="state.cartItemDataAttr.name"></span>
+			<span class="[long]" data-wp-text="state.cartItemDataAttr.value"></span>
+					<span aria-hidden="true" data-wp-bind--hidden="state.isLastCartItemDataAttr"> / </span>
+		</span>
+					</template>
+		</div>
+											</div>
+									<div class="wc-block-cart-item__quantity">
+										<div class="wc-block-components-quantity-selector" data-wp-bind--hidden="state.cartItem.sold_individually">
+											<input
+												data-wp-on--input="actions.overrideInvalidQuantity"
+												data-wp-on--change="actions.changeQuantity"
+												data-wp-bind--aria-label="state.quantityDescriptionLabel"
+												data-wp-bind--min="state.cartItem.quantity_limits.minimum"
+												data-wp-bind--max="state.cartItem.quantity_limits.maximum"
+												data-wp-bind--value="state.cartItem.quantity"
+												data-wp-bind--readonly="!state.cartItem.quantity_limits.editable"
+												class="[long]"
+												type="number"
+												step="1"
+											>
+											<button
+												data-wp-bind--disabled="state.minimumReached"
+												data-wp-on--click="actions.decrementQuantity"
+												data-wp-bind--aria-label="state.reduceQuantityLabel"
+												data-wp-bind--hidden="!state.cartItem.quantity_limits.editable"
+												class="[long] [long]"
+											>
+												−
+											</button>
+											<button
+												data-wp-bind--disabled="state.maximumReached"
+												data-wp-on--click="actions.incrementQuantity"
+												data-wp-bind--aria-label="state.increaseQuantityLabel"
+												data-wp-bind--hidden="!state.cartItem.quantity_limits.editable"
+												class="[long] [long]"
+											>
+												＋
+											</button>
+										</div>
+										<button
+											data-wp-bind--hidden="!state.itemShowRemoveItemLink"
+											data-wp-on--click="actions.removeItemFromCart"
+											data-wp-bind--aria-label="state.removeFromCartLabel"
+											class="wc-block-cart-item__remove-link"
+										>
+											
+										</button>
+									</div>
+								</div>
+							</td>
+							<td class="wc-block-cart-item__total">
+								<div class="[long]">
+									<span class="price wc-block-components-product-price">
+										<span data-wp-text="state.lineItemTotal" class="wc-block-formatted-money-amount [long] [long] notranslate" translate="no">
+										</span>
+									</span>
+									<div
+										data-wp-bind--hidden="!state.cartItemHasDiscount"
+										class="wc-block-components-product-badge wc-block-components-sale-badge"
+									>
+									Save <span data-wp-text="state.lineItemDiscount" class="wc-block-formatted-money-amount [long]"></span>									</div>
+								</div>
+							</td>
+						</tr>
+					</template>
+				</tbody>
+			</table>
+		</div>
+				</div>
+				<div data-block-name="woocommerce/mini-cart-footer-block" class="wc-block-mini-cart__footer [long]" data-wp-interactive="woocommerce/mini-cart-footer-block">
+			<div class="wc-block-components-totals-item wc-block-mini-cart__footer-subtotal">
+				<span class="wc-block-components-totals-item__label">
+					Subtotal				</span>
+				<span data-wp-text="woocommerce/mini-cart::state.formattedSubtotal" class="wc-block-formatted-money-amount [long] wc-block-components-totals-item__value notranslate">$0.00</span>
+				<div class="[long]">
+					Shipping and discounts calculated at checkout.				</div>
+			</div>
+			<div class="wc-block-mini-cart__footer-actions">
+						<a data-block-name="woocommerce/mini-cart-cart-button-block" class="wc-block-components-button wp-element-button wc-block-mini-cart__footer-cart is-style-outline [long]" href="https://oregonbowhunters.org/cart/">
+			<div class="wc-block-components-button__text">
+				View my cart			</div>
+		</a>
+				<a data-block-name="woocommerce/mini-cart-checkout-button-block" class="wc-block-components-button wp-element-button wc-block-mini-cart__footer-checkout [long]" href="https://oregonbowhunters.org/checkout/">
+			<div class="wc-block-components-button__text">
+				Go to checkout			</div>
+		</a>
+					</div>
+		</div>
+				</div>
+				<div aria-hidden="true" hidden data-block-name="woocommerce/empty-mini-cart-contents-block" class="[long]" data-wp-bind--aria-hidden="!state.cartIsEmpty" data-wp-bind--hidden="!state.cartIsEmpty" data-wp-interactive="woocommerce/mini-cart">
+			<div class="wc-block-mini-cart__empty-cart-wrapper">
+				<p class="has-text-align-center wp-block-paragraph"><strong>Your cart is currently empty!</strong></p>		<div data-block-name="woocommerce/mini-cart-shopping-button-block" class="wp-block-button has-text-align-center">
+			<a
+				href="https://oregonbowhunters.org/shop/"
+				class="wc-block-components-button wp-element-button wc-block-mini-cart__shopping-button [long]"			>
+				<div class="wc-block-components-button__text">
+					Start shopping				</div>
+			</a>
+		</div>
+					</div>
+		</div>
+				</div>
+		
+					</div>
+				</div>
+			</div>
+		</div>				
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="position:absolute;margin:-1px;padding:0;height:1px;width:1px;overflow:hidden;clip-path:inset(50%);border:0;word-wrap:normal !important;"><p id="a11y-speak-intro-text" class="a11y-speak-intro-text" hidden>Notifications</p><div id="a11y-speak-assertive" class="a11y-speak-region" aria-live="assertive" aria-relevant="additions text" aria-atomic="true"></div><div id="a11y-speak-polite" class="a11y-speak-region" aria-live="polite" aria-relevant="additions text" aria-atomic="true"></div></div>
+</body>
+</html>

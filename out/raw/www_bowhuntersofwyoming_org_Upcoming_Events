@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html lang="en" class="no-js ie6 "><![endif]-->
+<!--[if IE 7 ]><html lang="en" class="no-js ie7 "> <![endif]-->
+<!--[if IE 8 ]><html lang="en" class="no-js ie8 "> <![endif]-->
+<!--[if IE 9 ]><html lang="en" class="no-js ie9 "><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js "> <!--<![endif]-->
+  <head id="Head1">
+		<link rel="stylesheet" type="text/css" href="https://kit-pro.fontawesome.com/releases/latest/css/pro.min.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://sf.wildapricot.org/BuiltTheme/firma_stand_tall.v3.0/current/8e341401/Styles/combined.css" rel="stylesheet" type="text/css" /><link href="https://www.bowhuntersofwyoming.org/resources/theme/customStyles.css?t=639125555045100000" rel="stylesheet" type="text/css" /><link href="https://live-sf.wildapricot.org/WebUI/built9.19.0-ac0ee25/scripts/public/react/index-84b33b4.css" rel="stylesheet" type="text/css" /><link href="https://live-sf.wildapricot.org/WebUI/built9.19.0-ac0ee25/css/shared/ui/shared-ui-compiled.css" rel="stylesheet" type="text/css" /><link href="https://www.bowhuntersofwyoming.org/Upcoming-Events/RSS" rel="alternate" type="application/rss+xml" title="Events RSS feed" /><title>Bowhunters of Wyoming - Upcoming Events</title>
+<meta name="apple-itunes-app" content="app-id=1220348450, app-argument="><link rel="search" type="application/opensearchdescription+xml" title="www.bowhuntersofwyoming.org" href="/opensearch.ashx" /></head>
+  <body id="PAGEID_1075231" class="publicContentView LayoutMain">
+<div class="mLayout layoutMain state1" id="mLayout">
+<div class="mobilePanelContainer">
+<div id="id_MobilePanel" data-componentId="MobilePanel" class="WaPlaceHolder WaPlaceHolderMobilePanel" style=""><div style=""><div id="id_xaBsq8r" class="WaGadgetOnly WaGadgetMobilePanel  gadgetStyleNone" style="" data-componentId="xaBsq8r" ><div class="mobilePanel">
+	
+	<div class="mobilePanelButton buttonMenu" title="Menu">Menu</div>
+<div class="mobilePanelButton buttonLogin" title="Log in">Log in</div>
+<div class="menuInner">
+		<ul class="firstLevel">
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/" title="Home"><span>Home</span></a>
+</div>
+</li>
+	
+<li class="sel ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Upcoming-Events" title="Upcoming Events"><span>Upcoming Events</span></a>
+</div>
+</li>
+	
+<li class=" dir">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/About-Us" title="About Us"><span>About Us</span></a>
+<ul class="secondLevel">
+<li class=" dir">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Our-Work" title="Our Work"><span>Our Work</span></a>
+<ul class="secondLevel">
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/page-1075219" title="Funding Opportunity"><span>Funding Opportunity</span></a>
+</div>
+</li>
+	
+</ul>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Executive-Council" title="Executive Council"><span>Executive Council</span></a>
+</div>
+</li>
+	
+</ul>
+</div>
+</li>
+	
+<li class=" dir">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Membership" title="Membership"><span>Membership</span></a>
+<ul class="secondLevel">
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Membership-Application" title="Membership Application"><span>Membership Application</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Affiliate-Clubs" title="Affiliate Clubs"><span>Affiliate Clubs</span></a>
+</div>
+</li>
+	
+</ul>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Podcast" title="Podcast"><span>Podcast</span></a>
+</div>
+</li>
+	
+<li class=" dir">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Annual-Convention" title="Annual Convention"><span>Annual Convention</span></a>
+<ul class="secondLevel">
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Photo-Contest" title="Photo Contest"><span>Photo Contest</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/page-1075192" title="Big Game Awards"><span>Big Game Awards</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Awards" title="Awards"><span>Awards</span></a>
+</div>
+</li>
+	
+</ul>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Shop" title="Shop"><span>Shop</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/3D-Shoots" title="3D-Shoots"><span>3D-Shoots</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Bowhunting" title="Bowhunting Resources"><span>Bowhunting Resources</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Contact-Us" title="Contact Us"><span>Contact Us</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Blog" title="Blog"><span>Blog</span></a>
+</div>
+</li>
+	
+</ul>
+	</div>
+
+	<div class="loginInner">
+<div class="loginContainerForm oAuthIstrue">
+<div class="openAuthFormContainer">
+<form method="post" action="https://www.bowhuntersofwyoming.org/Sys/Login/ExternalLogin" id="id_xaBsq8r_oAuthForm" class="oAuthForm"  data-disableInAdminMode="true">
+<div id="id_xaBsq8r_container" class="oAuthButtonsContainer">
+			  <!--  <a class="wa-authenticateLoginLink facebook" provider="Facebook">
+					<span class="authenticateLoginIcon" provider="Facebook"></span>
+					<span class="authenticateLoginText" provider="Facebook">Log in with Facebook</span>
+			  </a> --> <a class="wa-authenticateLoginLink googlePlus" provider="GooglePlus">
+					<span class="authenticateLoginIcon" provider="GooglePlus"></span>
+					<span class="authenticateLoginText" provider="GooglePlus">Log in with Google</span>
+			  </a><a class="wa-authenticateLoginLink microsoft" provider="Microsoft">
+					<span class="authenticateLoginIcon" provider="Microsoft"></span>
+					<span class="authenticateLoginText" provider="Microsoft">Log in with Microsoft</span>
+			  </a> <a class="wa-authenticateLoginLink apple" provider="Apple">
+					<span class="authenticateLoginIcon" provider="Apple"></span>
+					<span class="authenticateLoginText" provider="Apple">Log in with Apple</span>
+			  </a>
+			  <input type="hidden" name="ReturnUrl" value="" />
+			  <input type="hidden" name="Provider" class="oAuthProvider" value="Undefined" />   
+              <input type="hidden" id="id_xaBsq8r_browserCapabilities" name="browserCapabilities" />  
+			</div>
+</form></div>
+ 
+    
+<form method="post" action="https://www.bowhuntersofwyoming.org/Sys/Login" id="id_xaBsq8r_form" class="generalLoginBox"  data-disableInAdminMode="true">
+<input type="hidden" name="ReturnUrl" id="id_xaBsq8r_returnUrl" value="">
+				<input type="hidden" name="browserData" id="id_xaBsq8r_browserField">
+<div class="loginUserName">
+<div class="loginUserNameTextBox">
+		<input name="email" type="text" maxlength="100" placeholder="Email"  id="id_xaBsq8r_userName" tabindex="1" class="emailTextBoxControl"/>
+	</div>
+</div><div class="loginPassword">
+<div class="loginPasswordTextBox">
+		<input name="password" type="password" placeholder="Password" maxlength="50" id="id_xaBsq8r_password" tabindex="2" class="passwordTextBoxControl" autocomplete="off"/>
+	</div>
+</div> 
+    <input id="g-recaptcha-invisible_xaBsq8r" name="g-recaptcha-invisible" value="recaptcha" type="hidden"/> 
+    <div id="recapcha_placeholder_xaBsq8r" style="display:none"></div>
+    <span id="idReCaptchaValidator_xaBsq8r" errorMessage="Please verify that you are not a robot" style="display:none" validatorType="method" ></span>
+    
+	
+    
+
+ <div class="loginActionRememberMe">
+		<input id="id_xaBsq8r_rememberMe" type="checkbox" name="rememberMe" tabindex="3" class="rememberMeCheckboxControl"/>
+		<label for="id_xaBsq8r_rememberMe">Remember me</label>
+	</div>
+<div class="loginPasswordForgot">
+		<a href="https://www.bowhuntersofwyoming.org/Sys/ResetPasswordRequest">Forgot password</a>
+	</div>
+<div class="loginAction">
+	<input type="submit" name="ctl03$ctl02$loginViewControl$loginControl$Login" value="Log in" id="id_xaBsq8r_loginAction" onclick="if (!browserInfo.clientCookiesEnabled()) {alert('Warning: browser cookies disabled. Please enable them to use this website.'); return false;}" tabindex="4" class="loginButton loginButtonControl"/>
+</div></form></div>
+</div>
+
+</div>
+
+</div></div>
+</div></div>
+
+		<!-- header zone -->
+		<div class="zoneHeaderOuter">
+			<div class="zoneHeader container_12">
+				<div class="zoneHeaderInner s1_grid_12 s2_grid_12 s3_grid_12">
+<div id="id_Header" data-componentId="Header" class="WaPlaceHolder WaPlaceHolderHeader" style=""><div style="padding-top:0px;padding-bottom:0px;"><div id="id_H8b9tTl" class="WaGadgetFirst WaGadgetMenuHorizontal  menuStyle003" style="margin-bottom:0px;" data-componentId="lZym5lv" ><div data-sticky-wrapper="true">
+    <div class="stickness">
+        <div class="menuBackground"></div>
+        <div class="menuInner">
+            <ul class="firstLevel">
+                <li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/" title="Home"><span>Home</span></a>
+</div>
+</li>
+	
+<li class="sel ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Upcoming-Events" title="Upcoming Events"><span>Upcoming Events</span></a>
+</div>
+</li>
+	
+<li class=" dir">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/About-Us" title="About Us"><span>About Us</span></a>
+<ul class="secondLevel">
+<li class=" dir">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Our-Work" title="Our Work"><span>Our Work</span></a>
+<ul class="secondLevel">
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/page-1075219" title="Funding Opportunity"><span>Funding Opportunity</span></a>
+</div>
+</li>
+	
+</ul>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Executive-Council" title="Executive Council"><span>Executive Council</span></a>
+</div>
+</li>
+	
+</ul>
+</div>
+</li>
+	
+<li class=" dir">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Membership" title="Membership"><span>Membership</span></a>
+<ul class="secondLevel">
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Membership-Application" title="Membership Application"><span>Membership Application</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Affiliate-Clubs" title="Affiliate Clubs"><span>Affiliate Clubs</span></a>
+</div>
+</li>
+	
+</ul>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Podcast" title="Podcast"><span>Podcast</span></a>
+</div>
+</li>
+	
+<li class=" dir">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Annual-Convention" title="Annual Convention"><span>Annual Convention</span></a>
+<ul class="secondLevel">
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Photo-Contest" title="Photo Contest"><span>Photo Contest</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/page-1075192" title="Big Game Awards"><span>Big Game Awards</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Awards" title="Awards"><span>Awards</span></a>
+</div>
+</li>
+	
+</ul>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Shop" title="Shop"><span>Shop</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/3D-Shoots" title="3D-Shoots"><span>3D-Shoots</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Bowhunting" title="Bowhunting Resources"><span>Bowhunting Resources</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Contact-Us" title="Contact Us"><span>Contact Us</span></a>
+</div>
+</li>
+	
+<li class=" ">
+	<div class="item">
+		<a href="https://www.bowhuntersofwyoming.org/Blog" title="Blog"><span>Blog</span></a>
+</div>
+</li>
+	
+</ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+</div><div id="id_qaISEe5" class="WaGadget WaGadgetLoginButton  gadgetStyle001" style="margin-bottom:0px;" data-componentId="jrZvuWm" ><div class="loginButtonBackground"></div>
+<div class="loginButtonWrapper alignRight">
+  <div class="loginBoxLinkContainer">
+    <a class="loginBoxLinkButton" href="https://www.bowhuntersofwyoming.org/Sys/Login">Log in</a>
+  </div>
+  </div>
+
+</div><div id="id_eAlxkwd" class="WaGadgetLast WaGadgetContent  gadgetStyleNone" style="background-image:url(&#39;/resources/Site/Gemini_Generated_Image_r13v0xr13v0xr13v.png&#39;);background-repeat:no-repeat;background-position:left center;background-size:cover;background-color:#005E20;" data-componentId="Yvq3L3R" ><div class="gadgetStyleBody gadgetContentEditableArea" style="padding-top:20px;padding-bottom:20px;" data-editableArea="0" data-areaHeight="auto">
+<h1 class="titlePage" align="center"><strong><font style="font-size: 48px;" face="Roboto Condensed"><font color="#000000"><img src="/resources/Pictures/BOW%20Logo%20BW.png" alt="" title="" border="0" width="74" height="50"></font><font color="#e6e6e6">&nbsp;BOWHUNTERS OF WYOMING</font></font></strong></h1></div>
+</div></div>
+</div></div>
+			</div>
+		</div>
+
+		<div class="zoneHeader1Outer">
+			<div class="zoneHeader1 container_12">
+				<div class="zoneHeader1Inner s1_grid_12 s2_grid_12 s3_grid_12">
+					<div class="color"></div>
+<div id="id_Header1" data-componentId="Header1" class="WaPlaceHolder WaPlaceHolderHeader1" style=""><div style=""><div id="id_gY4jmNf" class="WaGadgetOnly WaGadgetSocialProfile  gadgetStyleNone" style="" data-componentId="XdFBUvl" ><div class="gadgetStyleBody " style=""  data-areaHeight="auto">
+<div class="socialProfileWrapper alignLeft fixedtrue">
+	<ul class="orientationHorizontal"><li><a href="https://www.facebook.com/bowhuntersofwy/" title="Facebook" class="Facebook" target="_blank"></a></li><li><a href="https://www.instagram.com/bowhuntersofwyoming/" title="Instagram" class="Instagram" target="_blank"></a></li></ul>
+</div>
+</div>
+
+</div></div>
+</div></div>
+			</div>
+		</div>
+
+		<div class="zoneHeader2Outer">
+			<div class="zoneHeader2 container_12">
+				<div class="zoneHeader2Inner s1_grid_12 s2_grid_12 s3_grid_12">
+</div>
+			</div>
+		</div>
+		<!-- /header zone -->
+
+<!-- content zone -->
+	<div class="zoneContentOuter">
+		<div class="zoneContent container_12">
+			<div class="zoneContentInner s1_grid_12 s2_grid_12 s3_grid_12">
+<div id="id_Content" data-componentId="Content" class="WaPlaceHolder WaPlaceHolderContent" style="background-color:#FDC68A;"><div style=""><div id="id_SjOlktW" class="WaGadgetFirst WaGadgetBreadcrumbs  gadgetStyleNone" style="margin-bottom:20px;" data-componentId="BVW3CIv" ><div class="gadgetStyleBody " style=""  data-areaHeight="auto">
+<ul>
+<li><a href="https://www.bowhuntersofwyoming.org/">Home</a></li>
+<li class="last"><span>Upcoming Events</span></li>
+</ul>
+</div>
+</div><div id="id_daOOaPp" class="WaGadget WaGadgetEvents  gadgetStyleNone WaGadgetEventsStateCalendar" style="" data-componentId="daOOaPp" >
+
+
+
+<form method="post" action="" id="form">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="Ws0KBvK4l574NZznR49wxehSNGw/H1Zw3Xm0Z4E6mrtKjKPul1JCKXTvA9IMbLSJFvnHW7z0/cwARLy0VToEKsNG7SpYt4q7vrLj1meb4Uq9F7XBWjiA9Gq4d4LVosNrAvDLvCnKm7R9ucrOgdC6SCCX4DLHLNS/Y4OE199+[long]/TaChukdczDIwSA+Tqqi7FMASdyb" />
+</div>
+
+    
+    <input type="hidden" name="FunctionalBlock1$contentModeHidden" id="FunctionalBlock1_contentModeHidden" value="1" />
+
+
+<div id="idEventListCalendar" class="monthViewType usWeekOrder">
+    <h3 class="sectionTitle">Month: October 2026</h3>
+    
+    
+<h1 class="pageTitle SystemPageTitle">
+    
+    <a href="https://www.bowhuntersofwyoming.org/Upcoming-Events/RSS" id="[long]" target="_top" class="rssFeedLabel" rel="nofollow">
+      <img id="[long]" title="RSS feed" src="https://sf.wildapricot.org/ThemeSharedRes/images/rss.png" alt="RSS feed" />
+    </a>
+</h1>
+
+
+<div class="pageTitleOuterContainer idEventsTitleMainContainer">
+      <div id="idEventViewSwitcher" class="pageViewSwitcherOuterContainer">
+
+<div class="cornersContainer"><div class="topCorners"><div class="c1"></div><div class="c2"></div><div class="c3"></div><div class="c4"></div><div class="c5"></div></div></div>
+  <div class="pageViewSwitcherContainer"><div class="d1"><div class="d2"><div class="d3"><div class="d4"><div class="d5"><div class="d6"><div class="d7"><div class="d8"><div class="d9"><div class="inner">
+
+    <img id="[long]" class="listModeIcon" src="/Admin/html_res/images/calendar-list.gif" /><a id="[long]" class="listModeLink" rel="nofollow" href="https://www.bowhuntersofwyoming.org/Upcoming-Events?EventViewMode=1&amp;EventListViewMode=1">Switch to List View</a>
+    
+
+  </div></div></div></div></div></div></div></div></div></div></div>
+<div class="cornersContainer"><div class="bottomCorners"><div class="c5"></div><div class="c4"></div><div class="c3"></div><div class="c2"></div><div class="c1"></div></div></div>
+
+</div>
+</div>
+    
+	
+    
+      <div id="idViewSwitchersTable" class="viewSwitchersTable">
+        <div id="group1" class="switchersGroup1">
+          <div id="weekButton" class="weekButton">
+            <a id="[long]" class="weekButtonLink" rel="nofollow" href="https://www.bowhuntersofwyoming.org/Upcoming-Events?EventViewMode=1&amp;EventListViewMode=2&amp;SelectedDate=10/5/2026&amp;CalendarViewType=4">Week</a>
+          </div>
+          <div id="monthButton" class="monthButton">
+            <span id="[long]" class="monthButtonLabel">Month</span>
+          </div>
+          <div id="yearButton" class="yearButton">
+            <a id="[long]" class="yearButtonLink" rel="nofollow" href="https://www.bowhuntersofwyoming.org/Upcoming-Events?EventViewMode=1&amp;EventListViewMode=2&amp;SelectedDate=10/5/2026&amp;CalendarViewType=0">Year</a>
+          </div>
+        </div>
+        <div id="group2" class="switchersGroup2">
+          <div id="decButton" class="decButton">
+            <a id="[long]" class="DecDateButton" rel="nofollow" href="https://www.bowhuntersofwyoming.org/Upcoming-Events?EventViewMode=1&amp;EventListViewMode=2&amp;SelectedDate=9/5/2026&amp;CalendarViewType=1">< Previous Month</a>
+          </div>
+          <div id="todayButton" class="todayButton">
+            <a id="[long]" class="todayButton" rel="nofollow" href="https://www.bowhuntersofwyoming.org/Upcoming-Events?EventViewMode=1&amp;EventListViewMode=2&amp;SelectedDate=10/5/2026&amp;CalendarViewType=1">Today</a>
+          </div>
+          <div id="incButton" class="incButton">
+            <a id="[long]" class="incDateButton" rel="nofollow" href="https://www.bowhuntersofwyoming.org/Upcoming-Events?EventViewMode=1&amp;EventListViewMode=2&amp;SelectedDate=11/5/2026&amp;CalendarViewType=1">Next Month ></a>
+          </div>
+        </div>
+      </div>
+    
+    <table id="[long]" class="EventListCalendar" cellspacing="0" cellpadding="5" style="border-collapse:collapse;">
+	<tr>
+		<td class="EventListCalendarHeader" height="17" style="border-bottom-style:solid;border-bottom-width:1px;">Sunday</td><td class="EventListCalendarHeader" height="17" style="border-bottom-style:solid;border-bottom-width:1px;">Monday</td><td class="EventListCalendarHeader" height="17" style="border-bottom-style:solid;border-bottom-width:1px;">Tuesday</td><td class="EventListCalendarHeader" height="17" style="border-bottom-style:solid;border-bottom-width:1px;">Wednesday</td><td class="EventListCalendarHeader" height="17" style="border-bottom-style:solid;border-bottom-width:1px;">Thursday</td><td class="EventListCalendarHeader" height="17" style="border-bottom-style:solid;border-bottom-width:1px;">Friday</td><td class="EventListCalendarHeader" height="17" style="border-bottom-style:solid;border-bottom-width:1px;">Saturday</td>
+	</tr><tr>
+		<td class="EventListCalendarItemInactive" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemInactive" valign="top" style="width:14%;"><a class="calendarDate"><nobr>27</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemInactive" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemInactive" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemInactive" valign="top" style="width:14%;"><a class="calendarDate"><nobr>28</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemInactive" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemInactive" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemInactive" valign="top" style="width:14%;"><a class="calendarDate"><nobr>29</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemInactive" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemInactive" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemInactive" valign="top" style="width:14%;"><a class="calendarDate"><nobr>30</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemInactive" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>Oct 1</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>2</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>3</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td>
+	</tr><!-- space cell --><tr>
+		<td class="EventListCalendarItemInactive" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemInactive" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemInactive" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemInactive" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td>
+	</tr><!-- end: space cell --><tr>
+		<td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>4</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemSelected" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemSelected" valign="top" style="width:14%;"><a class="calendarDate"><nobr>5</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemSelected" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>6</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>7</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>8</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>9</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>10</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td>
+	</tr><!-- space cell --><tr>
+		<td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemSelected" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td>
+	</tr><!-- end: space cell --><tr>
+		<td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>11</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>12</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>13</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>14</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>15</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>16</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>17</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td>
+	</tr><!-- space cell --><tr>
+		<td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td>
+	</tr><!-- end: space cell --><tr>
+		<td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>18</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>19</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>20</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>21</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>22</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>23</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>24</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td>
+	</tr><!-- space cell --><tr>
+		<td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td>
+	</tr><!-- end: space cell --><tr>
+		<td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>25</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>26</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>27</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>28</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>29</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>30</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemDefault" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemDefault" valign="top" style="width:14%;"><a class="calendarDate"><nobr>31</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemDefault" valign="top" style="width:14%;"></td>
+		</table></td>
+	</tr><!-- space cell --><tr>
+		<td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemDefault" valign="top" height="70" style="width:14%;"></td>
+	</tr><!-- end: space cell --><tr>
+		<td class="EventListCalendarItemInactive" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemInactive" valign="top" style="width:14%;"><a class="calendarDate"><nobr>Nov 1</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemInactive" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemInactive" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemInactive" valign="top" style="width:14%;"><a class="calendarDate"><nobr>2</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemInactive" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemInactive" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemInactive" valign="top" style="width:14%;"><a class="calendarDate"><nobr>3</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemInactive" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemInactive" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemInactive" valign="top" style="width:14%;"><a class="calendarDate"><nobr>4</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemInactive" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemInactive" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemInactive" valign="top" style="width:14%;"><a class="calendarDate"><nobr>5</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemInactive" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemInactive" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemInactive" valign="top" style="width:14%;"><a class="calendarDate"><nobr>6</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemInactive" valign="top" style="width:14%;"></td>
+		</table></td><td class="EventListCalendarItemInactive" valign="top" height="" style="width:14%;border-top-style:solid;border-top-width:1px;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<td align="left" width="10" class="EventListCalendarItemInactive" valign="top" style="width:14%;"><a class="calendarDate"><nobr>7</nobr></a></td><td width="100%" align="right" class="EventListCalendarItemInactive" valign="top" style="width:14%;"></td>
+		</table></td>
+	</tr><!-- space cell --><tr>
+		<td class="EventListCalendarItemInactive" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemInactive" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemInactive" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemInactive" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemInactive" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemInactive" valign="top" height="70" style="width:14%;"></td><td class="EventListCalendarItemInactive" valign="top" height="70" style="width:14%;"></td>
+	</tr><!-- end: space cell -->
+</table>
+</div>
+
+
+
+
+ 
+
+  
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="2AE9EEA8" />
+	<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+	<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+</div>
+
+
+</form></div><div id="id_6GgvLEr" class="WaGadgetLast WaGadgetContent  gadgetStyleNone" style="" data-componentId="6GgvLEr" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<p><img src="/resources/Pictures/2026%20Website%20update/pexels-dick-hoskins-22993523-7082795.jpg" alt="" title="" border="0"><br></p></div>
+</div></div>
+</div></div>
+		</div>
+	</div>
+	<!-- /content zone -->
+
+<!-- footer zone -->
+		<div class="zoneFooterOuter">
+			<div class="zoneFooter container_12">
+				<div class="zoneFooterInner s1_grid_12 s2_grid_12 s3_grid_12">
+</div>
+			</div>
+		</div>
+
+        <div class="zoneFooter1Outer">
+            <div class="zoneFooter1 container_12">
+                <div class="zoneFooter1Inner s1_grid_12 s2_grid_12 s3_grid_12">
+                    <div id="id_Footer1" data-componentId="Footer1" class="WaPlaceHolder WaPlaceHolderFooter1" style="background-color:#000000;"><div style="padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;"><div id="id_rtgMQMd" data-componentId="LT3pskn" class="WaLayoutContainerOnly" style="background-color:#005E20;"><table cellspacing="0" cellpadding="0" class="WaLayoutTable" style=""><tr data-componentId="rtgMQMd_row" class="WaLayoutRow"><td id="id_QJqwRY1" data-componentId="QoUj8PI" class="WaLayoutItem" style="background-color:#005E20;width:33%;"><div id="id_uo5FUuk" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="BjWIkqk" style=""><div style=""><div id="id_ZWYAtlU" class="WaGadgetFirst WaGadgetContent  gadgetStyleNone" style="background-color:#005E20;" data-componentId="4seNMPU" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<h4><font style="font-size: 18px;" face="Open Sans" color="#e6e6e6"><strong style="">Bowhunters of Wyoming</strong></font></h4><p class="alternativeText"><font color="#e6e6e6">An organization for bowhunters, by bowhunters.</font></p></div>
+</div><div id="id_v3ImJ24" class="WaGadgetLast WaGadgetSocialProfile  gadgetStyleNone" style="" data-componentId="Zfn2DmX" ><div class="gadgetStyleBody " style=""  data-areaHeight="auto">
+<div class="socialProfileWrapper alignLeft fixedfalse">
+	<ul class="orientationHorizontal"><li><a href="https://www.facebook.com/bowhuntersofwy/" title="Facebook" class="Facebook" target="_blank"></a></li><li><a href="https://www.instagram.com/bowhuntersofwyoming/" title="Instagram" class="Instagram" target="_blank"></a></li></ul>
+</div>
+</div>
+
+</div></div></div></td><td style="width:2px;" data-componentId="QoUj8PI_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_pCJjclk" data-componentId="NJTBDwS" class="WaLayoutItem" style="width:33%;"><div id="id_TJLJpdT" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="7DqKxNA" style=""><div style=""><div id="id_x9VXGFe" class="WaGadgetFirst WaGadgetContent  gadgetStyleNone" style="" data-componentId="asbE6zp" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<h4><font style="font-size: 18px;" face="Open Sans" color="#e6e6e6"><strong style="">Site Navigation</strong></font></h4></div>
+</div><div id="id_g59zymj" class="WaGadgetLast WaGadgetNavigationLinks  gadgetStyleNone" style="" data-componentId="ctk6A1l" ><div class="gadgetStyleBody " style=""  data-areaHeight="auto">
+<ul class="orientationHorizontal">
+<li>
+	<a href="https://www.bowhuntersofwyoming.org/">Home</a>
+
+</li><li>
+	<a href="https://www.bowhuntersofwyoming.org/Upcoming-Events">Upcoming Events</a>
+
+</li><li>
+	<a href="https://www.bowhuntersofwyoming.org/About-Us">About Us</a>
+
+</li><li>
+	<a href="https://www.bowhuntersofwyoming.org/Membership">Membership</a>
+
+</li><li>
+	<a href="https://www.bowhuntersofwyoming.org/Podcast">Podcast</a>
+
+</li><li>
+	<a href="https://www.bowhuntersofwyoming.org/Annual-Convention">Annual Convention</a>
+
+</li><li>
+	<a href="https://www.bowhuntersofwyoming.org/Shop">Shop</a>
+
+</li><li>
+	<a href="https://www.bowhuntersofwyoming.org/3D-Shoots">3D-Shoots</a>
+
+</li><li>
+	<a href="https://www.bowhuntersofwyoming.org/Bowhunting">Bowhunting Resources</a>
+
+</li><li>
+	<a href="https://www.bowhuntersofwyoming.org/Contact-Us">Contact Us</a>
+
+</li><li>
+	<a href="https://www.bowhuntersofwyoming.org/Blog">Blog</a>
+
+</li></ul>
+
+
+</div>
+</div></div></div></td><td style="width:2px;" data-componentId="NJTBDwS_separator" class="WaLayoutSeparator"><div style="width: inherit;"></div></td><td id="id_UyffHZ8" data-componentId="Ae1FjaD" class="WaLayoutItem" style="background-color:#005E20;width:33%;"><div id="id_FGtF9hu" class="WaLayoutPlaceHolder placeHolderContainer" data-componentId="pXDJpak" style=""><div style=""><div id="id_RUfarq3" class="WaGadgetOnly WaGadgetContent  gadgetStyleNone" style="" data-componentId="GlHSEr7" ><div class="gadgetStyleBody gadgetContentEditableArea" style="" data-editableArea="0" data-areaHeight="auto">
+<h4><font face="Open Sans" style="font-size: 18px;" color="#e6e6e6"><strong style="">Contact Us</strong></font></h4><p class="alternativeText"><a href="mailto:info@bowhuntersofwyoming.org" target="_blank"><font color="#e6e6e6">info@bowhuntersofwyoming.org</font></a></p><p class="alternativeText"><font color="#e6e6e6">PO Box 126<br>Dayton, WY 82836</font></p></div>
+</div></div></div></td></tr></table> </div></div>
+</div></div>
+            </div>
+        </div>
+		<!-- /footer zone -->
+
+		<!-- branding zone -->
+<div class="zoneBrandingOuter">
+			<div class="zoneBranding container_12">
+				<div class="zoneBrandingInner s1_grid_12 s2_grid_12 s3_grid_12">
+<div id="idFooterPoweredByContainer">
+	<span id="idFooterPoweredByWA">
+Powered by <a href="http://www.wildapricot.com" target="_blank">Wild Apricot</a> Membership Software</span>
+</div>
+</div>
+			</div>
+		</div>
+<!-- /branding zone -->
+<div id="idCustomJsContainer" class="cnCustomJsContainer">
+<!-- Meta Pixel Code -->
+
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1125390754291778&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+</div>
+</div></body>
+</html>

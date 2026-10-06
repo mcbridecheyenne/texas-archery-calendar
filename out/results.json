@@ -1,0 +1,1325 @@
+[
+ {
+  "url": "http://illinoistargetarchery.org/category/events/itaa-events/feed/",
+  "status": 200,
+  "finalUrl": "http://illinoistargetarchery.org/category/events/itaa-events/feed/",
+  "type": "application/rss+xml; charset=UTF-8",
+  "bytes": 147193,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "http://illinoistargetarchery.org/upcoming-events/",
+  "status": 200,
+  "finalUrl": "http://illinoistargetarchery.org/upcoming-events/",
+  "type": "text/html; charset=UTF-8",
+  "bytes": 50562,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://arkansasbowhunters.org/robots.txt",
+  "status": 200,
+  "finalUrl": "https://arkansasbowhunters.org/robots.txt",
+  "type": "text/plain; charset=utf-8",
+  "bytes": 364,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [],
+  "text": "User-agent: *\nDisallow: /wp-content/uploads/wc-logs/\nDisallow: /wp-content/uploads/woocommerce_transient_files/\nDisallow: /wp-content/uploads/woocommerce_uploads/\nDisallow: /*?add-to-cart=\nDisallow: /*?*add-to-cart=\nDisallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php\nDisallow: /wp-content/uploads/wpforms/\n\nSitemap: https://arkansasbowhunters.org/wp-sitemap.xml\n"
+ },
+ {
+  "url": "https://arkansasbowhunters.org/tournament-schedule/",
+  "status": 200,
+  "finalUrl": "https://arkansasbowhunters.org/tournament-schedule/",
+  "type": "text/html; charset=UTF-8",
+  "bytes": 81378,
+  "vevents": 0,
+  "googleLinks": [
+   "https://docs.google.com/spreadsheets/d/e/2PACX-1vTgqfy4Bjv_nHyw44E3s-Z_FhXTzJ6OamHCHmMx7nNa3GK1Z2YFer6wfneC3wIin-MQkBjTXDc1dJg2/pubhtml?gid=503202722&#038;chrome=false&#038;single=true&#038;range=A1:D158&#038;headers=false"
+  ],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://beoutdoorsarizona.org/wp-json/tribe/events/v1/events?categories=archery&per_page=50&start_date=2026-10-06",
+  "status": 200,
+  "finalUrl": "https://beoutdoorsarizona.org/wp-json/tribe/events/v1/events?categories=archery&per_page=50&start_date=2026-10-06",
+  "type": "application/json; charset=UTF-8",
+  "bytes": 216,
+  "vevents": 0,
+  "json": {
+   "total": 0,
+   "events": []
+  },
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://beoutdoorsarizona.org/wp-json/tribe/events/v1/events?search=archery&per_page=50&start_date=2026-10-06",
+  "status": 200,
+  "finalUrl": "https://beoutdoorsarizona.org/wp-json/tribe/events/v1/events?search=archery&per_page=50&start_date=2026-10-06",
+  "type": "application/json; charset=UTF-8",
+  "bytes": 231,
+  "vevents": 0,
+  "json": {
+   "total": 0,
+   "events": []
+  },
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://coloradobowhunters.org/",
+  "error": "EAI_AGAIN"
+ },
+ {
+  "url": "https://coloradobowhunters.org/robots.txt",
+  "error": "EAI_AGAIN"
+ },
+ {
+  "url": "https://coloradobowhunters.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "error": "EAI_AGAIN"
+ },
+ {
+  "url": "https://dwr.virginia.gov/events/category/shooting-sports/",
+  "status": 200,
+  "finalUrl": "https://dwr.virginia.gov/events/category/shooting-sports/",
+  "type": "text/html; charset=UTF-8",
+  "bytes": 77502,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://dwr.virginia.gov/wp-json/",
+  "status": 200,
+  "finalUrl": "https://dwr.virginia.gov/wp-json/",
+  "type": "application/json; charset=UTF-8",
+  "bytes": 479538,
+  "vevents": 0,
+  "json": {
+   "routes": [
+    "/",
+    "/batch/v1",
+    "/ithemes-security/rpc",
+    "/ithemes-security/rpc/ban-users/add-many",
+    "/ithemes-security/rpc/global/detect-ip",
+    "/ithemes-security/rpc/notification-center/notifications",
+    "/ithemes-security/rpc/notification-center/available-users-roles",
+    "/ithemes-security/rpc/file-writing/get-config-rules",
+    "/ithemes-security/v1",
+    "/ithemes-security/v1/bans",
+    "/ithemes-security/v1/bans/(?P<source>database)",
+    "/ithemes-security/v1/bans/(?P<source>database)/(?P<id>\\d+)",
+    "/ithemes-security/v1/modules",
+    "/ithemes-security/v1/modules/(?P<id>[\\w-]+)",
+    "/ithemes-security/v1/settings",
+    "/ithemes-security/v1/settings/(?P<id>[\\w-]+)",
+    "/ithemes-security/v1/site-types",
+    "/ithemes-security/v1/site-types/(?P<id>[\\w-]+)",
+    "/ithemes-security/v1/tools",
+    "/ithemes-security/v1/tools/(?P<tool>[\\w\\-]+)",
+    "/ithemes-security/rpc/discover",
+    "/oembed/1.0",
+    "/oembed/1.0/embed",
+    "/oembed/1.0/proxy",
+    "/cooltimeline/v1",
+    "/cooltimeline/v1/categories",
+    "/redirection/v1",
+    "/redirection/v1/redirect",
+    "/redirection/v1/redirect/(?P<id>[\\d]+)",
+    "/redirection/v1/redirect/post",
+    "/redirection/v1/bulk/redirect/(?P<bulk>delete|enable|disable|reset)",
+    "/redirection/v1/group",
+    "/redirection/v1/group/(?P<id>[\\d]+)",
+    "/redirection/v1/bulk/group/(?P<bulk>delete|enable|disable)",
+    "/redirection/v1/log",
+    "/redirection/v1/bulk/log/(?P<bulk>delete)",
+    "/redirection/v1/404",
+    "/redirection/v1/bulk/404/(?P<bulk>delete)",
+    "/redirection/v1/setting",
+    "/redirection/v1/plugin",
+    "/redirection/v1/plugin/delete",
+    "/redirection/v1/plugin/test",
+    "/redirection/v1/plugin/data",
+    "/redirection/v1/import/file/(?P<group_id>\\d+)",
+    "/redirection/v1/import/plugin",
+    "/redirection/v1/export/(?P<module>1|2|3|all)/(?P<format>csv|apache|nginx|json)",
+    "/wp-super-cache/v1",
+    "/wp-super-cache/v1/settings",
+    "/wp-super-cache/v1/status",
+    "/wp-super-cache/v1/stats",
+    "/wp-super-cache/v1/cache",
+    "/wp-super-cache/v1/preload",
+    "/wp-super-cache/v1/cache/test",
+    "/wp-super-cache/v1/plugins",
+    "/aam/v2",
+    "/aam/v2/service/roles",
+    "/aam/v2/service/role/(?P<role_slug>[\\w\\-%+]+)",
+    "/aam/v2/service/users",
+    "/aam/v2/service/user/(?P<id>[\\d]+)",
+    "/aam/v2/service",
+    "/aam/v2/service/configs",
+    "/aam/v2/service/config",
+    "/aam/v2/service/configpress",
+    "/aam/v2/service/settings",
+    "/aam/v2/service/backend-menu",
+    "/aam/v2/service/backend-menu/(?P<id>[\\d]+)",
+    "/aam/v2/service/capabilities",
+    "/aam/v2/service/capability/(?P<slug>.+)",
+    "/aam/v2/service/content/types",
+    "/aam/v2/service/content/taxonomies",
+    "/aam/v2/service/content/posts",
+    "/aam/v2/service/content/terms",
+    "/aam/v2/service/content/post/(?P<id>[\\d]+)",
+    "/aam/v2/service/redirect/access-denied",
+    "/aam/v2/service/jwts",
+    "/aam/v2/service/jwt/(?P<id>[\\dA-Za-z\\-]+)",
+    "/aam/v2/jwt/validate",
+    "/aam/v1",
+    "/aam/v1/validate-jwt",
+    "/aam/v2/jwt/refresh",
+    "/aam/v1/refresh-jwt",
+    "/aam/v2/jwt/revoke",
+    "/aam/v2/service/redirect/login",
+    "/aam/v2/service/redirect/logout",
+    "/aam/v2/service/components",
+    "/aam/v2/service/component/(?P<id>[\\d]+)",
+    "/aam/v2/service/redirect/not-found",
+    "/aam/v2/service/api-routes",
+    "/aam/v2/service/api-route/(?P<id>[\\d]+)",
+    "/aam/v2/authenticate",
+    "/aam/v1/authenticate",
+    "/aam/v2/service/audit",
+    "/aam/v2/service/audit/report",
+    "/aam/v2/service/audit/summary",
+    "/aam/v2/service/admin-toolbar",
+    "/aam/v2/service/admin-toolbar/(?P<id>[\\d]+)",
+    "/aam/v2/service/urls",
+    "/aam/v2/service/url/(?P<id>[\\d]+)",
+    "/ithemes-security/v1/dashboard-available-cards",
+    "/ithemes-security/v1/dashboard-available-cards/(?P<card>[\\w_-]+)",
+    "/ithemes-security/v1/dashboard-static",
+    "/ithemes-security/v1/actors",
+    "/ithemes-security/v1/actors/(?P<type>[\\w\\-\\_]+)/search",
+    "/ithemes-security/v1/admin-notices",
+    "/ithemes-security/v1/admin-notices/(?P<notice>[\\w\\-\\.]+)/(?P<action>[\\w\\-]+)",
+    "/ithemes-security/v1/admin-notices/settings",
+    "/wp-mail-smtp/v1",
+    "/wp-mail-smtp/v1/e/(?P<data>.+)",
+    "/gf/v2",
+    "/gf/v2/entries",
+    "/gf/v2/entries/(?P<entry_id>[\\d]+)",
+    "/gf/v2/entries/(?P<entry_id>[\\d]+)/properties",
+    "/gf/v2/entries/(?P<entry_id>[\\d]+)/notifications",
+    "/gf/v2/notes",
+    "/gf/v2/notes/(?P<note_id>[\\d]+)",
+    "/gf/v2/entries/(?P<entry_id>[\\d]+)/notes",
+    "/gf/v2/forms/(?P<form_id>[\\d]+)/entries",
+    "/gf/v2/forms/(?P<form_id>[\\d]+)/results",
+    "/gf/v2/forms/(?P<form_id>[\\d]+)/results/schema",
+    "/gf/v2/forms/(?P<form_id>[\\d]+)/submissions"
+   ]
+  },
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://events.dcnr.pa.gov/api/2/events?days=365&pp=100&keyword=3D",
+  "status": 200,
+  "finalUrl": "https://events.dcnr.pa.gov/api/2/events?days=365&pp=100&keyword=3D",
+  "type": "application/json; charset=utf-8",
+  "bytes": 159,
+  "vevents": 0,
+  "json": {
+   "events": []
+  },
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://events.dcnr.pa.gov/api/2/events/search?search=archery&days=365",
+  "status": 200,
+  "finalUrl": "https://events.dcnr.pa.gov/api/2/events/search?search=archery&days=365",
+  "type": "application/json; charset=utf-8",
+  "bytes": 3301,
+  "vevents": 0,
+  "json": {
+   "events": [
+    " |  |  |  |  |  |  |  | "
+   ]
+  },
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [
+   "localist"
+  ]
+ },
+ {
+  "url": "https://granitestatebowhunters.com/events/?ical=1",
+  "status": 200,
+  "finalUrl": "https://granitestatebowhunters.com/events/?ical=1",
+  "type": "text/html; charset=UTF-8",
+  "bytes": 0,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://oregonbowhunters.org/events/",
+  "status": 200,
+  "finalUrl": "https://oregonbowhunters.org/events/",
+  "type": "text/html; charset=UTF-8",
+  "bytes": 323489,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [
+   "https://oregonbowhunters.org/events/?ical=1"
+  ],
+  "platform": [
+   "tribe-events"
+  ]
+ },
+ {
+  "url": "https://oregonbowhunters.org/events/?ical=1",
+  "status": 200,
+  "finalUrl": "https://oregonbowhunters.org/events/?ical=1",
+  "type": "text/html; charset=UTF-8",
+  "bytes": 0,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://oregonbowhunters.org/events/list/?ical=1",
+  "status": 200,
+  "finalUrl": "https://oregonbowhunters.org/events/list/?ical=1",
+  "type": "text/html; charset=UTF-8",
+  "bytes": 0,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://oregonbowhunters.org/robots.txt",
+  "status": 200,
+  "finalUrl": "https://oregonbowhunters.org/robots.txt",
+  "type": "text/plain; charset=utf-8",
+  "bytes": 323,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [],
+  "text": "User-agent: *\nDisallow: /wp-content/uploads/wc-logs/\nDisallow: /wp-content/uploads/woocommerce_transient_files/\nDisallow: /wp-content/uploads/woocommerce_uploads/\nDisallow: /*?add-to-cart=\nDisallow: /*?*add-to-cart=\nDisallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php\n\nSitemap: https://oregonbowhunters.org/wp-sitemap.xml\n"
+ },
+ {
+  "url": "https://oregonbowhunters.org/tournaments-competitions/",
+  "status": 200,
+  "finalUrl": "https://oregonbowhunters.org/tournaments-competitions/",
+  "type": "text/html; charset=UTF-8",
+  "bytes": 330222,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [
+   "https://oregonbowhunters.org/events/?ical=1"
+  ],
+  "platform": [
+   "tribe-events"
+  ]
+ },
+ {
+  "url": "https://oregonbowhunters.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "status": 200,
+  "finalUrl": "https://oregonbowhunters.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "type": "application/json; charset=UTF-8",
+  "bytes": 215,
+  "vevents": 0,
+  "json": {
+   "total": 0,
+   "events": []
+  },
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://sandiegoarchers.com/category/keyevents/feed/",
+  "status": 200,
+  "finalUrl": "https://sandiegoarchers.com/category/keyevents/feed/",
+  "type": "application/rss+xml; charset=UTF-8",
+  "bytes": 26041,
+  "vevents": 0,
+  "googleLinks": [
+   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQXjNEAfvNIR70P-BCp1STAvqfK-w54kg_FViMnC_UAZ00eL7EpXHkDJYkNOddTbooqkMRhAeMwBz85/pubhtml?gid=63985410&#38;single=true",
+   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQXjNEAfvNIR70P-BCp1STAvqfK-w54kg_FViMnC_UAZ00eL7EpXHkDJYkNOddTbooqkMRhAeMwBz85/pubhtml?gid=163983900&#38;single=true",
+   "https://docs.google.com/forms/d/e/1FAIpQLScNQY47XmTqKwFxqc5argHULXa-6nDQUOKZXxAptLDTfy0o5A/viewform",
+   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQXjNEAfvNIR70P-BCp1STAvqfK-w54kg_FViMnC_UAZ00eL7EpXHkDJYkNOddTbooqkMRhAeMwBz85/pubhtml?gid=63985410&amp;single=true",
+   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQXjNEAfvNIR70P-BCp1STAvqfK-w54kg_FViMnC_UAZ00eL7EpXHkDJYkNOddTbooqkMRhAeMwBz85/pubhtml?gid=163983900&amp;single=true",
+   "https://docs.google.com/forms/d/e/1FAIpQLSdcLHZFQxLTN9fU4yXYeFJ86zmiJO0Whn2qzipbg36MY-eVyQ/viewform"
+  ],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://sandiegoarchers.com/feed/",
+  "status": 200,
+  "finalUrl": "https://sandiegoarchers.com/feed/",
+  "type": "application/rss+xml; charset=UTF-8",
+  "bytes": 25982,
+  "vevents": 0,
+  "googleLinks": [
+   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQXjNEAfvNIR70P-BCp1STAvqfK-w54kg_FViMnC_UAZ00eL7EpXHkDJYkNOddTbooqkMRhAeMwBz85/pubhtml?gid=63985410&#38;single=true",
+   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQXjNEAfvNIR70P-BCp1STAvqfK-w54kg_FViMnC_UAZ00eL7EpXHkDJYkNOddTbooqkMRhAeMwBz85/pubhtml?gid=163983900&#38;single=true",
+   "https://docs.google.com/forms/d/e/1FAIpQLScNQY47XmTqKwFxqc5argHULXa-6nDQUOKZXxAptLDTfy0o5A/viewform",
+   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQXjNEAfvNIR70P-BCp1STAvqfK-w54kg_FViMnC_UAZ00eL7EpXHkDJYkNOddTbooqkMRhAeMwBz85/pubhtml?gid=63985410&amp;single=true",
+   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQXjNEAfvNIR70P-BCp1STAvqfK-w54kg_FViMnC_UAZ00eL7EpXHkDJYkNOddTbooqkMRhAeMwBz85/pubhtml?gid=163983900&amp;single=true",
+   "https://docs.google.com/forms/d/e/1FAIpQLSdcLHZFQxLTN9fU4yXYeFJ86zmiJO0Whn2qzipbg36MY-eVyQ/viewform"
+  ],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://sdarchers.com/events",
+  "status": 200,
+  "finalUrl": "https://sdarchers.com/events",
+  "type": "text/html; charset=UTF-8",
+  "bytes": 31387,
+  "vevents": 1,
+  "ics": [
+   " |  |  |  |  | "
+  ],
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://thecmp.org/wp-json/tribe/events/v1/categories?per_page=100",
+  "status": 200,
+  "finalUrl": "https://thecmp.org/wp-json/tribe/events/v1/categories?per_page=100",
+  "type": "application/json; charset=UTF-8",
+  "bytes": 178417,
+  "vevents": 0,
+  "json": {
+   "categories": [
+    "254 airpistol (11)",
+    "239 airrifle (9)",
+    "372 airpistol60shot (20)",
+    "370 airrifle3p (106)",
+    "373 airrifle60shot (27)",
+    "246 carbine (54)",
+    "253 clinic (10)",
+    "382 featured-events (1)",
+    "240 garand (214)",
+    "245 gsm (178)",
+    "255 infantry (1)",
+    "305 longrange (48)",
+    "238 match (941)",
+    "326 matchpistol (115)",
+    "393 midrange (30)",
+    "244 mmilitary (181)",
+    "315 other (4)",
+    "251 pistol (95)",
+    "371 revolver (61)",
+    "250 rifle (241)",
+    "249 rimfire (56)",
+    "252 rimfirepistol (78)",
+    "258 smallbore (4)",
+    "324 smallbore3p (17)",
+    "325 smallboreprone (18)",
+    "242 springfield (190)",
+    "241 ugarand (126)",
+    "248 ummilitary (130)",
+    "243 vmilitary (193)",
+    "247 vsniper (35)"
+   ]
+  },
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://thecmp.org/wp-json/tribe/events/v1/events?search=archery&per_page=50&start_date=2026-10-06",
+  "status": 200,
+  "finalUrl": "https://thecmp.org/wp-json/tribe/events/v1/events?search=archery&per_page=50&start_date=2026-10-06",
+  "type": "application/json; charset=UTF-8",
+  "bytes": 220,
+  "vevents": 0,
+  "json": {
+   "total": 0,
+   "events": []
+  },
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://washingtonarchery.org/calendars",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://washingtonarchery.org/robots.txt",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://wildlife.dgf.nm.gov/wp-json/tribe/events/v1/events?search=archery&per_page=50&start_date=2026-01-01",
+  "status": 200,
+  "finalUrl": "https://wildlife.dgf.nm.gov/wp-json/tribe/events/v1/events?search=archery&per_page=50&start_date=2026-01-01",
+  "type": "application/json; charset=UTF-8",
+  "bytes": 61745,
+  "vevents": 0,
+  "json": {
+   "total": 10,
+   "events": [
+    "10000690 | 2026-02-06 00:00:00 | 2026-02-06 23:59:59 | NMDOW NASP State Bullseye Archery Championship | recreation-events | Rio Rancho Events Center | Rio Rancho | NM | https://wildlife.dgf.nm.gov/event/nmdow-nasp-state-bullseye-archery-championship/2026-02-06/",
+    "10000691 | 2026-02-07 08:00:00 | 2026-02-07 17:00:00 | NMDOW NASP State Bullseye Archery Championship | recreation-events | Rio Rancho Events Center | Rio Rancho | NM | https://wildlife.dgf.nm.gov/event/nmdow-nasp-state-bullseye-archery-championship/2026-02-07/",
+    "10000688 | 2026-02-14 00:00:00 | 2026-02-14 23:59:59 | NMDOW State 3-D Archery Championship | recreation-events | Expo New Mexico | Albuquerque | New Mexico | https://wildlife.dgf.nm.gov/event/nmdow-state-3-d-archery-championship/2026-02-14/",
+    "10000689 | 2026-02-15 08:00:00 | 2026-02-15 17:00:00 | NMDOW State 3-D Archery Championship | recreation-events | Expo New Mexico | Albuquerque | New Mexico | https://wildlife.dgf.nm.gov/event/nmdow-state-3-d-archery-championship/2026-02-15/",
+    "54535 | 2026-05-02 09:00:00 | 2026-05-02 15:00:00 | Bowhunter Skills Camp | education-events,hunting-events | Manzano Mountains State Park | Mountainair | New Mexico | https://wildlife.dgf.nm.gov/event/bowhunter-skills-camp-4/",
+    "55257 | 2026-06-06 07:30:00 | 2026-06-06 13:00:00 | Sixth Annual Outdoor Adventure Day at Liam Knight Pond | fishing-events,recreation-events | Liam Knight Pond | Corrales | New Mexico | https://wildlife.dgf.nm.gov/event/sixth-annual-outdoor-adventure-day-at-liam-knight-pond/",
+    "55322 | 2026-06-27 09:00:00 | 2026-06-27 16:00:00 | Catron County 3D Archery Shoot | education-events,recreation-events | Apache Creek Campground |  |  | https://wildlife.dgf.nm.gov/event/catron-county-3d-archery-shoot-2/",
+    "55646 | 2026-07-25 07:00:00 | 2026-07-25 12:00:00 | 3D Archery Shoot | education-events,recreation-events | Monica Cabin | Magdalena | NM | https://wildlife.dgf.nm.gov/event/3d-archery-shoot/",
+    "56228 | 2026-09-18 00:00:00 | 2026-09-19 23:59:59 | Women in the Outdoors Archery Bow Shoot Weekend | recreation-events,shooting-events | Sacramento Mountain Retreat | Mayhill | NM | https://wildlife.dgf.nm.gov/event/women-in-the-outdoors-archery-bow-shoot-weekend/",
+    "56211 | 2026-09-26 00:00:00 | 2026-09-26 23:59:59 | Second Annual Tiger Pond Fishing Derby | education-events,fishing-events,law-enforcement-events,ohv-events,recreation-events | Tiger Pond | Aztec | New Mexico | https://wildlife.dgf.nm.gov/event/second-annual-tiger-pond-fishing-derby/"
+   ]
+  },
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://wta.wildapricot.org/events",
+  "status": 404,
+  "finalUrl": "https://wta.wildapricot.org/Sys/Error/404",
+  "type": "text/html; charset=utf-8",
+  "bytes": 25150,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [
+   "wildapricot"
+  ]
+ },
+ {
+  "url": "https://wta.wildapricot.org/robots.txt",
+  "status": 200,
+  "finalUrl": "https://wta.wildapricot.org/robots.txt",
+  "type": "text/plain",
+  "bytes": 707,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [],
+  "text": "User-agent: *\r\nDisallow: /Captcha/\r\nDisallow: /Admin/\r\nDisallow: /Content/Pictures/PageThumb.ashx\r\nDisallow: /Content/Pictures/tempUserPicture.ashx\r\nDisallow: /Common/Editor/ExternalLink/\r\nDisallow: /Content/Members/MemberDirectoryWebService.asmx\r\nDisallow: /Content/Members/SubscriptionWebService.asmx\r\nDisallow: /Sys/MemberDirectory/LoadMembers\r\nDisallow: /ScriptResource.axd\r\nDisallow: /WebResource.axd\r\nDisallow: /CustomUrlHandler.ashx\r\nDisallow: /*CheckHttpsAuthentication\r\nDisallow: /Sys/FinDocument/\r\nDisallow: /widget/Sys/FinDocument/\r\nDisallow: /Sys/Login\r\nDisallow: /Sys/Search\r\nDisallow: /Sys/Token/Process\r\nDisallow: /Sys/Api/*\r\nDisallow: /*&SelectedDate=*\r\nRequest-rate: 1/60\r\nCrawl-delay: 10\r\n"
+ },
+ {
+  "url": "https://wta.wildapricot.org/Shoots",
+  "status": 200,
+  "finalUrl": "https://wta.wildapricot.org/Shoots",
+  "type": "text/html; charset=utf-8",
+  "bytes": 167790,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [
+   "wildapricot"
+  ]
+ },
+ {
+  "url": "https://www.bowhuntersofwyoming.org/Upcoming-Events",
+  "status": 200,
+  "finalUrl": "https://www.bowhuntersofwyoming.org/Upcoming-Events",
+  "type": "text/html; charset=utf-8",
+  "bytes": 67139,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [
+   "wildapricot"
+  ]
+ },
+ {
+  "url": "https://www.cbhsaa.org/",
+  "error": "CERT_HAS_EXPIRED"
+ },
+ {
+  "url": "https://www.cbhsaa.org/robots.txt",
+  "error": "CERT_HAS_EXPIRED"
+ },
+ {
+  "url": "https://www.cbhsaa.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "error": "CERT_HAS_EXPIRED"
+ },
+ {
+  "url": "https://www.coloradoarchery.org/",
+  "status": 200,
+  "finalUrl": "https://www.coloradoarchery.org/",
+  "type": "text/html; charset=UTF-8",
+  "bytes": 143589,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://www.coloradoarchery.org/robots.txt",
+  "status": 200,
+  "finalUrl": "https://www.coloradoarchery.org/robots.txt",
+  "type": "text/plain; charset=utf-8",
+  "bytes": 181,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [],
+  "text": "# START YOAST BLOCK\n# ---------------------------\nUser-agent: *\nDisallow:\n\nSitemap: https://www.coloradoarchery.org/sitemap_index.xml\n# ---------------------------\n# END YOAST BLOCK"
+ },
+ {
+  "url": "https://www.coloradoarchery.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "status": 404,
+  "finalUrl": "https://www.coloradoarchery.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "type": "application/json; charset=UTF-8",
+  "bytes": 114,
+  "vevents": 0,
+  "json": {
+   "keys": [
+    "code",
+    "message",
+    "data"
+   ],
+   "sample": "{\"code\":\"rest_no_route\",\"message\":\"No route was found matching the URL and request method.\",\"data\":{\"status\":404}}"
+  },
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://www.floridaarchery.org/robots.txt",
+  "status": 200,
+  "finalUrl": "https://www.floridaarchery.org/robots.txt",
+  "type": "text/plain",
+  "bytes": 1590,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [],
+  "text": "# $Id: robots.txt,v 1.9.2.1 2008/12/10 20:12:19 goba Exp $\n#\n# robots.txt\n#\n# This file is to prevent the crawling and indexing of certain parts\n# of your site by web crawlers and spiders run by sites like Yahoo!\n# and Google. By telling these \"robots\" where not to go on your site,\n# you save bandwidth and server resources.\n#\n# This file will be ignored unless it is at the root of your host:\n# Used:    http://example.com/robots.txt\n# Ignored: http://example.com/site/robots.txt\n#\n# For more information about the robots.txt standard, see:\n# http://www.robotstxt.org/wc/robots.html\n#\n# For syntax checking, see:\n# http://www.sxw.org.uk/computing/robots/check.html\n\nUser-agent: *\nCrawl-delay: 10\n# Directories\nDisallow: /includes/\nDisallow: /misc/\nDisallow: /modules/\nDisallow: /profiles/\nDisallow: /scripts/\nDisallow: /sites/\nDisallow: /themes/\n# Files\nDisallow: /CHANGELOG.txt\nDisallow: /cron.php\nDisallow: /INSTALL.mysql.txt\nDisallow: /INSTALL.pgsql.txt\nDisallow: /install.php\nDisallow: /INSTALL.txt\nDisallow: /LICENSE.txt\nDisallow: /MAINTAINERS.txt\nDisallow: /update.php\nDisallow: /UPGRADE.txt\nDisallow: /xmlrpc.php\n# Paths (clean URLs)\nDisallow: /admin/\nDisallow: /comment/reply/\nDisallow: /contact/\nDisallow: /logout/\nDisallow: /node/add/\nDisallow: /search/\nDisallow: /user/register/\nDisallow: /user/password/\nDisallow: /user/login/\n# Paths (no clean URLs)\nDisallow: /?q=admin/\nDisallow: /?q=comment/reply/\nDisallow: /?q=contact/\nDisallow: /?q=logout/\nDisallow: /?q=node/add/\nDisallow: /?q=search/\nDisallow: /?q=user/password/\nDisallow: /?q=user/register/\nDisallow: /?q=user/login/\n"
+ },
+ {
+  "url": "https://www.floridaarchery.org/schedule.htm",
+  "error": "ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR"
+ },
+ {
+  "url": "https://www.georgiabowhunters.org/",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.georgiabowhunters.org/robots.txt",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.georgiabowhunters.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.heart-md-bowhunters.com/new-page-1?format=json",
+  "status": 200,
+  "finalUrl": "https://www.heart-md-bowhunters.com/new-page-1?format=json",
+  "type": "application/json;charset=utf-8",
+  "bytes": 19036,
+  "vevents": 0,
+  "json": {
+   "squarespace": true,
+   "collection": 10,
+   "n": 0,
+   "past": 0,
+   "items": []
+  },
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [
+   "squarespace"
+  ]
+ },
+ {
+  "url": "https://www.heart-md-bowhunters.com/new-page-2?format=json",
+  "status": 200,
+  "finalUrl": "https://www.heart-md-bowhunters.com/new-page-2?format=json",
+  "type": "application/json;charset=utf-8",
+  "bytes": 18992,
+  "vevents": 0,
+  "json": {
+   "squarespace": true,
+   "collection": 10,
+   "n": 0,
+   "past": 0,
+   "items": []
+  },
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [
+   "squarespace"
+  ]
+ },
+ {
+  "url": "https://www.idahobowhunters.org/",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.idahobowhunters.org/robots.txt",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.idahobowhunters.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.idahostatebowhunters.org/",
+  "status": 404,
+  "finalUrl": "https://www.idahostatebowhunters.org/",
+  "type": "application/xml; charset=UTF-8",
+  "bytes": 227,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://www.idahostatebowhunters.org/robots.txt",
+  "status": 200,
+  "finalUrl": "https://www.idahostatebowhunters.org/robots.txt",
+  "type": "text/plain",
+  "bytes": 13,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [],
+  "text": "User-agent: *"
+ },
+ {
+  "url": "https://www.idahostatebowhunters.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "status": 404,
+  "finalUrl": "https://www.idahostatebowhunters.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "type": "application/xml; charset=UTF-8",
+  "bytes": 225,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://www.iowabowhunters.org/",
+  "status": 200,
+  "finalUrl": "https://iowabowhunters.org/",
+  "type": "text/html; charset=UTF-8",
+  "bytes": 137358,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://www.iowabowhunters.org/robots.txt",
+  "status": 200,
+  "finalUrl": "https://iowabowhunters.org/robots.txt",
+  "type": "text/plain",
+  "bytes": 183,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [],
+  "text": "# START YOAST BLOCK\r\n# ---------------------------\r\nUser-agent: *\r\nDisallow:\r\n\r\nSitemap: https://iowabowhunters.org/sitemap_index.xml\r\n# ---------------------------\r\n# END YOAST BLOCK"
+ },
+ {
+  "url": "https://www.iowabowhunters.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "status": 404,
+  "finalUrl": "https://iowabowhunters.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "type": "application/json; charset=UTF-8",
+  "bytes": 114,
+  "vevents": 0,
+  "json": {
+   "keys": [
+    "code",
+    "message",
+    "data"
+   ],
+   "sample": "{\"code\":\"rest_no_route\",\"message\":\"No route was found matching the URL and request method.\",\"data\":{\"status\":404}}"
+  },
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://www.kansasbowhunters.org/",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.kansasbowhunters.org/robots.txt",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.kansasbowhunters.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.mainearchery.org/",
+  "status": 200,
+  "finalUrl": "https://www.mainearchery.org/",
+  "type": "text/html;charset=utf-8",
+  "bytes": 113207,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [
+   "squarespace"
+  ]
+ },
+ {
+  "url": "https://www.mainearchery.org/robots.txt",
+  "status": 200,
+  "finalUrl": "https://www.mainearchery.org/robots.txt",
+  "type": "text/plain;charset=utf-8",
+  "bytes": 1511,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [
+   "squarespace"
+  ],
+  "text": "# Squarespace Robots Txt\n\nUser-agent: AI2Bot\nUser-agent: Ai2Bot-Dolma\nUser-agent: aiHitBot\nUser-agent: Amazonbot\nUser-agent: anthropic-ai\nUser-agent: Applebot-Extended\nUser-agent: Bytespider\nUser-agent: CCBot\nUser-agent: ClaudeBot\nUser-agent: cohere-ai\nUser-agent: cohere-training-data-crawler\nUser-agent: DuckAssistBot\nUser-agent: FacebookBot\nUser-agent: Google-Extended\nUser-agent: GoogleOther\nUser-agent: GoogleOther-Image\nUser-agent: GoogleOther-Video\nUser-agent: GPTBot\nUser-agent: img2dataset\nUser-agent: Meta-ExternalAgent\nUser-agent: MyCentralAIScraperBot\nUser-agent: omgili\nUser-agent: omgilibot\nUser-agent: Quora-Bot\nUser-agent: TikTokSpider\nUser-agent: YouBot\nUser-agent: AdsBot-Google\nUser-agent: AdsBot-Google-Mobile\nUser-agent: AdsBot-Google-Mobile-Apps\nUser-agent: *\nDisallow: /config\nDisallow: /search\nDisallow: /account$\nDisallow: /account/\nDisallow: /commerce/digital-download/\nDisallow: /api/\nAllow: /api/ui-extensions/\nDisallow: /static/\nDisallow:/*?author=*\nDisallow:/*&author=*\nDisallow:/*?tag=*\nDisallow:/*&tag=*\nDisallow:/*?month=*\nDisallow:/*&month=*\nDisallow:/*?view=*\nDisallow:/*&view=*\nDisallow:/*?format=json\nDisallow:/*&format=json\nDisallow:/*?format=page-context\nDisallow:/*&format=page-context\nDisallow:/*?format=main-content\nDisallow:/*&format=main-content\nDisallow:/*?format=json-pretty\nDisallow:/*&format=json-pretty\nDisallow:/*?format=ical\nDisallow:/*&format=ical\nDisallow:/*?reversePaginate=*\nDisallow:/*&reversePaginate=*\n\nSitemap: https://www.mainearchery.org/sitemap.xml\n"
+ },
+ {
+  "url": "https://www.mainearchery.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "status": 404,
+  "finalUrl": "https://www.mainearchery.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "type": "text/html;charset=utf-8",
+  "bytes": 68481,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [
+   "squarespace"
+  ]
+ },
+ {
+  "url": "https://www.massbowhunters.org/",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.massbowhunters.org/robots.txt",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.massbowhunters.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.michiganlongbow.org/events?format=json",
+  "status": 200,
+  "finalUrl": "https://www.michiganlongbow.org/upcoming",
+  "type": "text/html;charset=utf-8",
+  "bytes": 137131,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [
+   "squarespace"
+  ]
+ },
+ {
+  "url": "https://www.michiganlongbow.org/robots.txt",
+  "status": 200,
+  "finalUrl": "https://www.michiganlongbow.org/robots.txt",
+  "type": "text/plain;charset=utf-8",
+  "bytes": 1514,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [
+   "squarespace"
+  ],
+  "text": "# Squarespace Robots Txt\n\nUser-agent: AI2Bot\nUser-agent: Ai2Bot-Dolma\nUser-agent: aiHitBot\nUser-agent: Amazonbot\nUser-agent: anthropic-ai\nUser-agent: Applebot-Extended\nUser-agent: Bytespider\nUser-agent: CCBot\nUser-agent: ClaudeBot\nUser-agent: cohere-ai\nUser-agent: cohere-training-data-crawler\nUser-agent: DuckAssistBot\nUser-agent: FacebookBot\nUser-agent: Google-Extended\nUser-agent: GoogleOther\nUser-agent: GoogleOther-Image\nUser-agent: GoogleOther-Video\nUser-agent: GPTBot\nUser-agent: img2dataset\nUser-agent: Meta-ExternalAgent\nUser-agent: MyCentralAIScraperBot\nUser-agent: omgili\nUser-agent: omgilibot\nUser-agent: Quora-Bot\nUser-agent: TikTokSpider\nUser-agent: YouBot\nUser-agent: AdsBot-Google\nUser-agent: AdsBot-Google-Mobile\nUser-agent: AdsBot-Google-Mobile-Apps\nUser-agent: *\nDisallow: /config\nDisallow: /search\nDisallow: /account$\nDisallow: /account/\nDisallow: /commerce/digital-download/\nDisallow: /api/\nAllow: /api/ui-extensions/\nDisallow: /static/\nDisallow:/*?author=*\nDisallow:/*&author=*\nDisallow:/*?tag=*\nDisallow:/*&tag=*\nDisallow:/*?month=*\nDisallow:/*&month=*\nDisallow:/*?view=*\nDisallow:/*&view=*\nDisallow:/*?format=json\nDisallow:/*&format=json\nDisallow:/*?format=page-context\nDisallow:/*&format=page-context\nDisallow:/*?format=main-content\nDisallow:/*&format=main-content\nDisallow:/*?format=json-pretty\nDisallow:/*&format=json-pretty\nDisallow:/*?format=ical\nDisallow:/*&format=ical\nDisallow:/*?reversePaginate=*\nDisallow:/*&reversePaginate=*\n\nSitemap: https://www.michiganlongbow.org/sitemap.xml\n"
+ },
+ {
+  "url": "https://www.michiganlongbow.org/upcoming?format=json",
+  "status": 200,
+  "finalUrl": "https://www.michiganlongbow.org/upcoming?format=json",
+  "type": "application/json;charset=utf-8",
+  "bytes": 31048,
+  "vevents": 0,
+  "json": {
+   "squarespace": true,
+   "collection": 10,
+   "n": 0,
+   "past": 0,
+   "items": []
+  },
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [
+   "squarespace"
+  ]
+ },
+ {
+  "url": "https://www.ncbowhunters.org/",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.ncbowhunters.org/robots.txt",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.ncbowhunters.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.nebraskabowhunters.org/",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.nebraskabowhunters.org/robots.txt",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.nebraskabowhunters.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.nysarchery.org/upcoming-events",
+  "status": 200,
+  "finalUrl": "https://www.nysarchery.org/upcoming-events",
+  "type": "text/html; charset=UTF-8",
+  "bytes": 456200,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [
+   "wix.com"
+  ]
+ },
+ {
+  "url": "https://www.ohiobowhunters.org/",
+  "status": 200,
+  "finalUrl": "https://www.ohiobowhunters.org/",
+  "type": "text/html; charset=utf-8",
+  "bytes": 19619,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [
+   "clubexpress"
+  ]
+ },
+ {
+  "url": "https://www.ohiobowhunters.org/robots.txt",
+  "status": 200,
+  "finalUrl": "https://www.ohiobowhunters.org/robots.txt",
+  "type": "text/plain",
+  "bytes": 115,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [],
+  "text": "User-agent: *\r\nDisallow: /ScriptResource.axd  \r\nDisallow: /combinescriptshandler.axd  \r\nDisallow: /WebResource.axd "
+ },
+ {
+  "url": "https://www.ohiobowhunters.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "status": 403,
+  "finalUrl": "https://www.ohiobowhunters.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "type": "text/html",
+  "bytes": 118,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://www.pabowhunters.org/",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.pabowhunters.org/robots.txt",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.pabowhunters.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.psaa.net/state-championships",
+  "status": 200,
+  "finalUrl": "https://www.psaa.net/state-championships",
+  "type": "text/html; charset=UTF-8",
+  "bytes": 741255,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [
+   "wix.com"
+  ]
+ },
+ {
+  "url": "https://www.tnbowhunters.org/",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.tnbowhunters.org/robots.txt",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.tnbowhunters.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.utahbowmen.org/archery-events",
+  "status": 200,
+  "finalUrl": "https://www.utaharchery.org/event-calendar",
+  "type": "text/html;charset=utf-8",
+  "bytes": 58613,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [
+   "squarespace"
+  ]
+ },
+ {
+  "url": "https://www.utahbowmen.org/archery-events?format=json",
+  "status": 200,
+  "finalUrl": "https://www.utaharchery.org/event-calendar",
+  "type": "text/html;charset=utf-8",
+  "bytes": 58613,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [
+   "squarespace"
+  ]
+ },
+ {
+  "url": "https://www.utahbowmen.org/event-calendar?format=json",
+  "status": 200,
+  "finalUrl": "https://www.utaharchery.org/event-calendar?format=json",
+  "type": "application/json;charset=utf-8",
+  "bytes": 13366,
+  "vevents": 0,
+  "json": {
+   "squarespace": true,
+   "collection": 1,
+   "n": 3,
+   "past": 0,
+   "items": [
+    "6966c2ac3b05ce7d694bad7f | 2026/10/24/eslac-halloween-shoot | 2026-10-24T15:00:00.338Z | 2026-10-24T21:00:00.338Z | ESLAC HALLOWEEN SHOOT | Utah Archery Association |  |  | /event-calendar/2026/10/24/eslac-halloween-shoot",
+    "6966bfb0b2058f471ea69683 | 2026/10/24/2026-utah-state-formal | 2026-10-24T14:00:00.763Z | 2026-10-24T21:00:00.763Z | 2026 UTAH STATE FORMAL | Utah Archery Association |  |  | /event-calendar/2026/10/24/2026-utah-state-formal",
+    "6966b99f9c18b751ecfc132f | 2026/10/24/be-a-girl-shoot | 2026-10-24T14:00:00.542Z | 2026-10-24T19:00:00.542Z | BE A GIRL SHOOT | Utah Archery Association |  |  | /event-calendar/2026/10/24/be-a-girl-shoot"
+   ]
+  },
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [
+   "squarespace"
+  ]
+ },
+ {
+  "url": "https://www.utahbowmen.org/robots.txt",
+  "status": 200,
+  "finalUrl": "https://www.utahbowmen.org/robots.txt",
+  "type": "text/plain;charset=utf-8",
+  "bytes": 1510,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [
+   "squarespace"
+  ],
+  "text": "# Squarespace Robots Txt\n\nUser-agent: AI2Bot\nUser-agent: Ai2Bot-Dolma\nUser-agent: aiHitBot\nUser-agent: Amazonbot\nUser-agent: anthropic-ai\nUser-agent: Applebot-Extended\nUser-agent: Bytespider\nUser-agent: CCBot\nUser-agent: ClaudeBot\nUser-agent: cohere-ai\nUser-agent: cohere-training-data-crawler\nUser-agent: DuckAssistBot\nUser-agent: FacebookBot\nUser-agent: Google-Extended\nUser-agent: GoogleOther\nUser-agent: GoogleOther-Image\nUser-agent: GoogleOther-Video\nUser-agent: GPTBot\nUser-agent: img2dataset\nUser-agent: Meta-ExternalAgent\nUser-agent: MyCentralAIScraperBot\nUser-agent: omgili\nUser-agent: omgilibot\nUser-agent: Quora-Bot\nUser-agent: TikTokSpider\nUser-agent: YouBot\nUser-agent: AdsBot-Google\nUser-agent: AdsBot-Google-Mobile\nUser-agent: AdsBot-Google-Mobile-Apps\nUser-agent: *\nDisallow: /config\nDisallow: /search\nDisallow: /account$\nDisallow: /account/\nDisallow: /commerce/digital-download/\nDisallow: /api/\nAllow: /api/ui-extensions/\nDisallow: /static/\nDisallow:/*?author=*\nDisallow:/*&author=*\nDisallow:/*?tag=*\nDisallow:/*&tag=*\nDisallow:/*?month=*\nDisallow:/*&month=*\nDisallow:/*?view=*\nDisallow:/*&view=*\nDisallow:/*?format=json\nDisallow:/*&format=json\nDisallow:/*?format=page-context\nDisallow:/*&format=page-context\nDisallow:/*?format=main-content\nDisallow:/*&format=main-content\nDisallow:/*?format=json-pretty\nDisallow:/*&format=json-pretty\nDisallow:/*?format=ical\nDisallow:/*&format=ical\nDisallow:/*?reversePaginate=*\nDisallow:/*&reversePaginate=*\n\nSitemap: https://www.utaharchery.org/sitemap.xml\n"
+ },
+ {
+  "url": "https://www.vermontbowhuntersassociation.org/news-events/",
+  "status": 200,
+  "finalUrl": "https://www.vermontbowhuntersassociation.org/news-events/",
+  "type": "text/html; charset=UTF-8",
+  "bytes": 114404,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://www.vermontbowhuntersassociation.org/robots.txt",
+  "status": 200,
+  "finalUrl": "https://www.vermontbowhuntersassociation.org/robots.txt",
+  "type": "text/plain",
+  "bytes": 42,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [],
+  "text": "user-agent: * \ndisallow: \ncrawl-delay: 60\n"
+ },
+ {
+  "url": "https://www.visitpottertioga.com/wp-json/tribe/events/v1/events?search=3D&per_page=50&start_date=2026-10-06",
+  "status": 200,
+  "finalUrl": "https://www.visitpottertioga.com/wp-json/tribe/events/v1/events?search=3D&per_page=50&start_date=2026-10-06",
+  "type": "application/json; charset=UTF-8",
+  "bytes": 229,
+  "vevents": 0,
+  "json": {
+   "total": 0,
+   "events": []
+  },
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://www.visitpottertioga.com/wp-json/tribe/events/v1/events?search=archery&per_page=50&start_date=2026-01-01",
+  "status": 200,
+  "finalUrl": "https://www.visitpottertioga.com/wp-json/tribe/events/v1/events?search=archery&per_page=50&start_date=2026-01-01",
+  "type": "application/json; charset=UTF-8",
+  "bytes": 5846,
+  "vevents": 0,
+  "json": {
+   "total": 1,
+   "events": [
+    "26723 | 2026-08-06 00:00:00 | 2026-08-09 23:59:59 | The Denton 3D Classic with Shot the 3D Experience | general | Denton Hill State Park | Ulysses | PA | https://www.visitpottertioga.com/event/the-denton-3d-classic-with-shot-the-3d-experience"
+   ]
+  },
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://www.washingtonarchery.org/calendars",
+  "error": "ENOTFOUND"
+ },
+ {
+  "url": "https://www.wisconsinbowhunters.org/",
+  "status": 200,
+  "finalUrl": "https://www.wisconsinbowhunters.org/",
+  "type": "text/html; charset=UTF-8",
+  "bytes": 1095093,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [
+   "wix.com"
+  ]
+ },
+ {
+  "url": "https://www.wisconsinbowhunters.org/robots.txt",
+  "status": 200,
+  "finalUrl": "https://www.wisconsinbowhunters.org/robots.txt",
+  "type": "text/plain; charset=utf-8",
+  "bytes": 501,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [],
+  "text": "User-agent: *\nAllow: /\nDisallow: *?lightbox=\n\n# Optimization for Google Ads Bot\nUser-agent: AdsBot-Google-Mobile\nUser-agent: AdsBot-Google\nDisallow: /_partials*\nDisallow: /pro-gallery-webapp/v1/galleries/*\n\n# Block PetalBot\nUser-agent: PetalBot\nDisallow: /\n\n# Crawl delay for overly enthusiastic bots\nUser-agent: dotbot\nCrawl-delay: 10\nUser-agent: AhrefsBot\nCrawl-delay: 10\n\nSitemap: https://www.wisconsinbowhunters.org/sitemap.xml\n\n# Auto generated, go to SEO Tools > Robots.txt Editor to change this"
+ },
+ {
+  "url": "https://www.wisconsinbowhunters.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "status": 404,
+  "finalUrl": "https://www.wisconsinbowhunters.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "type": "text/html; charset=UTF-8",
+  "bytes": 865286,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [
+   "wix.com"
+  ]
+ },
+ {
+  "url": "https://wyoming-archery.org/archery_events/",
+  "status": 200,
+  "finalUrl": "https://wyoming-archery.org/archery_events/",
+  "type": "text/html; charset=UTF-8",
+  "bytes": 95532,
+  "vevents": 0,
+  "googleLinks": [
+   "https://calendar.google.com/calendar/embed?height=600&#038;wkst=1&#038;ctz=America%2FDenver&#038;showPrint=0&#038;src=d3lvbWluZ3N0YXRlYXJjaGVyeWFzc29jaWF0aW9uQGdtYWlsLmNvbQ&#038;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&#038;src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&#038;color=%23039BE5&#038;color=%2333B679&#038;color=%230B8043"
+  ],
+  "icalLinks": [],
+  "platform": [
+   "godaddy"
+  ]
+ },
+ {
+  "url": "https://wyoming-archery.org/robots.txt",
+  "status": 200,
+  "finalUrl": "https://wyoming-archery.org/robots.txt",
+  "type": "text/plain",
+  "bytes": 24,
+  "vevents": 0,
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": [],
+  "text": "User-Agent: *\nDisallow:\n"
+ },
+ {
+  "url": "https://wyoming-archery.org/wp-json/",
+  "status": 200,
+  "finalUrl": "https://wyoming-archery.org/wp-json/",
+  "type": "application/json; charset=UTF-8",
+  "bytes": 221324,
+  "vevents": 0,
+  "json": {
+   "routes": [
+    "/",
+    "/batch/v1",
+    "/oembed/1.0",
+    "/oembed/1.0/embed",
+    "/oembed/1.0/proxy",
+    "/two-factor",
+    "/two-factor/toggle",
+    "/two-factor/status",
+    "/two-factor/methods-status",
+    "/two-factor/google-authenticator-toggle",
+    "/two-factor/generate-app-code",
+    "/two-factor/validate-app-code",
+    "/two-factor/disable-authenticator-app",
+    "/two-factor/send-verification-email",
+    "/two-factor/verify-email-code",
+    "/two-factor/set-email-template",
+    "/two-factor/test-email-template",
+    "/two-factor/get-email-template",
+    "/two-factor/yubikey-toggle",
+    "/two-factor/setup-yubikey",
+    "/two-factor/validate-yubikey",
+    "/two-factor/disable-yubikey",
+    "/two-factor/user-filter",
+    "/two-factor/bulk-action",
+    "/two-factor/user-search",
+    "/two-factor/user-roles",
+    "/two-factor/user-info",
+    "/wp-site-designer/v1",
+    "/wp-site-designer/v1/activate",
+    "/wp-site-designer/v1/deactivate",
+    "/wp-site-designer/v1/status",
+    "/wp-site-designer/v1/media/sideload",
+    "/wpaas/v1",
+    "/wpaas/v1/toggle-xmlrpc",
+    "/wpaas/v1/toggle-llms",
+    "/wpaas/v1/flush-cache",
+    "/wpaas/v1/flush-cache/status",
+    "/wpaas/v1/dismiss-notice",
+    "/wpaas/v1/dismiss-whats-new",
+    "/wpaas/v1/diagnostics",
+    "/wpaas/v1/feature_flag",
+    "/wpaas/v1/activity-logs",
+    "/wpaas/v1/2fa-status",
+    "/wpaas/v1/toggle-trusted-site",
+    "/wpaas/v1/trusted-site-sso",
+    "/wpaas/v1/nps-form-configuration",
+    "/wpaas/v1/nps-form-submit",
+    "/wpaas/v1/nps-form-dismiss",
+    "/wpaas/v1/form-submit",
+    "/wpaas/v1/smart-updates",
+    "/wpaas/v1/smart-updates/dismiss",
+    "/wpaas/v1/plugin-updates",
+    "/wp-site-designer/v1/scheduled-tasks",
+    "/wp-site-designer/v1/scheduled-tasks/catalog",
+    "/wp-site-designer/v1/scheduled-tasks/(?P<id>\\d+)",
+    "/objectcache/v1",
+    "/objectcache/v1/analytics",
+    "/objectcache/v1/commands",
+    "/objectcache/v1/groups",
+    "/objectcache/v1/latency",
+    "/objectcache/v1/options",
+    "/objectcache/v1/relay/adaptive",
+    "/objectcache/v1/slowlog",
+    "/wp-site-designer/v1/font-pairing",
+    "/wp-site-designer/v1/palette",
+    "/wp-site-designer/v1/palette-options",
+    "/wp-site-designer/v1/site-looks",
+    "/wp-site-designer/v1/posts/(?P<post_type>[a-z_]+)/(?P<post_id>\\d+)/revisions/(?P<revision_id>\\d+)/restore",
+    "/wp-site-designer/v1/style-kit",
+    "/wp-site-designer/v1/style-kit-library",
+    "/wp-site-designer/v1/style-kit-library/(?P<id>[1-9]\\d*)",
+    "/wp-site-designer/v1/reset-theme",
+    "/wp-site-designer/v1/chose-blank",
+    "/wp-site-designer/v1/block-map",
+    "/wp/v2",
+    "/wp/v2/posts",
+    "/wp/v2/posts/(?P<id>[\\d]+)",
+    "/wp/v2/posts/(?P<parent>[\\d]+)/revisions",
+    "/wp/v2/posts/(?P<parent>[\\d]+)/revisions/(?P<id>[\\d]+)",
+    "/wp/v2/posts/(?P<id>[\\d]+)/autosaves",
+    "/wp/v2/posts/(?P<parent>[\\d]+)/autosaves/(?P<id>[\\d]+)",
+    "/wp/v2/pages",
+    "/wp/v2/pages/(?P<id>[\\d]+)",
+    "/wp/v2/pages/(?P<parent>[\\d]+)/revisions",
+    "/wp/v2/pages/(?P<parent>[\\d]+)/revisions/(?P<id>[\\d]+)",
+    "/wp/v2/pages/(?P<id>[\\d]+)/autosaves",
+    "/wp/v2/pages/(?P<parent>[\\d]+)/autosaves/(?P<id>[\\d]+)",
+    "/wp/v2/categories",
+    "/wp/v2/categories/(?P<id>[\\d]+)",
+    "/wp/v2/tags",
+    "/wp/v2/tags/(?P<id>[\\d]+)",
+    "/wp/v2/wp_pattern_category",
+    "/wp/v2/wp_pattern_category/(?P<id>[\\d]+)",
+    "/wp/v2/pattern-directory/patterns",
+    "/wp-site-health/v1",
+    "/wp-site-health/v1/tests/background-updates",
+    "/wp-site-health/v1/tests/loopback-requests",
+    "/wp-site-health/v1/tests/https-status",
+    "/wp-site-health/v1/tests/dotorg-communication",
+    "/wp-site-health/v1/tests/authorization-header",
+    "/wp-site-health/v1/directory-sizes",
+    "/wp-site-health/v1/tests/page-cache",
+    "/wp-block-editor/v1",
+    "/wp-block-editor/v1/url-details",
+    "/wp-block-editor/v1/export",
+    "/wp-block-editor/v1/navigation-fallback",
+    "/wp-abilities/v1",
+    "/wp-abilities/v1/categories",
+    "/wp-abilities/v1/categories/(?P<slug>[a-z0-9]+(?:-[a-z0-9]+)*)",
+    "/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\\-\\/]+?)/run",
+    "/wp-abilities/v1/abilities",
+    "/wp-abilities/v1/abilities/(?P<name>[a-zA-Z0-9\\-\\/]+)",
+    "/wp/v2/icons",
+    "/wp/v2/icons/(?P<collection>[a-z0-9](?:[a-z0-9_-]*[a-z0-9])?)",
+    "/wp/v2/icons/(?P<name>[a-z0-9](?:[a-z0-9_-]*[a-z0-9])?/[a-z0-9](?:[a-z0-9_-]*[a-z0-9])?)",
+    "/wp/v2/icon-collections",
+    "/wp/v2/icon-collections/(?P<slug>[a-z0-9](?:[a-z0-9_-]*[a-z0-9])?)",
+    "/wp/v2/view-config"
+   ]
+  },
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ },
+ {
+  "url": "https://wyoming-archery.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "status": 404,
+  "finalUrl": "https://wyoming-archery.org/wp-json/tribe/events/v1/events?per_page=50&start_date=2026-10-06",
+  "type": "application/json; charset=UTF-8",
+  "bytes": 114,
+  "vevents": 0,
+  "json": {
+   "keys": [
+    "code",
+    "message",
+    "data"
+   ],
+   "sample": "{\"code\":\"rest_no_route\",\"message\":\"No route was found matching the URL and request method.\",\"data\":{\"status\":404}}"
+  },
+  "googleLinks": [],
+  "icalLinks": [],
+  "platform": []
+ }
+]
