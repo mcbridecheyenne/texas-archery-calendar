@@ -6,6 +6,8 @@ on:
   pull_request:
     paths: ["api/**", "script/collect-*.ts", "data/**", ".github/workflows/check-feeds.yml"]
   workflow_dispatch:
+  schedule:
+    - cron: "41 13 * * 1" # weekly, Mondays 13:41 UTC
 
 permissions:
   contents: read

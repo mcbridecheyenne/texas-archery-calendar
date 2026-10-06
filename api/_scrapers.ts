@@ -283,9 +283,7 @@ function parseTSAAEvents(rows: TSAARawEvent[]): TournamentEvent[] {
     const relevanceText = [name, location, row.organizer, row.notes].filter(Boolean).join(" ");
     const isTexasRelevant = row.is_tsaa === true || /\b(TX|Texas|TFAA|TOTS|TSAA)\b/i.test(relevanceText);
     if (!isTexasRelevant) continue;
-    const locParts = (location || "").split(",").map((s) => s.trim());
-    const city = locParts.length > 1 ? locParts[locParts.length - 4] || locParts[0] : locParts[0] || null;
-    const state = locParts.find((part) => /^[A-Z]{2}$/.test(part)) || null;
+    const { city, state } = parseTSAALocation(location);
     const url = (row.registration_url || "").trim();
     out.push({
       id: `tsaa-${row.id || hash(`${name}|${start}|${end}|${location}`)}`,
@@ -298,7 +296,32 @@ function parseTSAAEvents(rows: TSAARawEvent[]): TournamentEvent[] {
   return out;
 }
 
+// TSAA locations come as "Venue, City, ST", "City, ST" or a full street address
+// ("Venue, 123 Main St, City, ST, 75042, United States"). The city is the part just
+// before the two-letter state code; with no state code, a lone part is taken as the city.
+// Placeholders like "Texas" or "Texas (TBD)" aren't cities.
+export function parseTSAALocation(location: string | null): { city: string | null; state: string | null } {
+  const parts = (location || "").split(",").map((s) => s.trim());
+  const stateIdx = parts.findIndex((part) => /^[A-Z]{2}$/.test(part));
+  const state = stateIdx >= 0 ? parts[stateIdx] : null;
+  const candidate = stateIdx > 0 ? parts[stateIdx - 1] : stateIdx === -1 && parts.length === 1 ? parts[0] : null;
+  const city = candidate && !/^texas\b/i.test(candidate) ? candidate : null;
+  return { city, state };
+}
+
 // --- Dedup + combine ---
+function addDays(iso: string, days: number): string {
+  const d = new Date(`${iso}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + days);
+  return d.toISOString().slice(0, 10);
+}
+
+// True when the TSAA listing starts during the other event (allowing a day either side),
+// e.g. TSAA lists "TFAA Legacy Archery-1" on Saturday while TFAA lists it Friday–Sunday.
+function datesOverlap(tsaaEvent: TournamentEvent, event: TournamentEvent): boolean {
+  return tsaaEvent.startDate >= addDays(event.startDate, -1) && tsaaEvent.startDate <= addDays(event.endDate, 1);
+}
+
 function normalizeForMatch(value: string | null | undefined): string {
   return (value || "").toLowerCase()
     .replace(/\b(tfaa|texas asa qualifier|qualifier|round|sywat|outdoor)\b/g, " ")
@@ -310,14 +333,23 @@ function sameOrSimilarTSAAEvent(tsaaEvent: TournamentEvent, primaryEvents: Tourn
   const tsaaName = normalizeForMatch(tsaaEvent.name);
   const tsaaLocation = normalizeForMatch(tsaaEvent.location);
   return primaryEvents.some((event) => {
-    if (event.startDate !== tsaaEvent.startDate) return false;
     const eventName = normalizeForMatch(event.name);
-    const eventLocation = normalizeForMatch(event.location);
-    const nameMatches = tsaaName.includes(eventName) || eventName.includes(tsaaName) ||
-      (eventName.length > 8 && tsaaName.includes(eventName.slice(0, 12)));
-    const locationMatches = tsaaLocation && eventLocation &&
-      (tsaaLocation.includes(eventLocation) || eventLocation.includes(tsaaLocation));
-    return nameMatches || locationMatches;
+    const fullNameMatch = Boolean(tsaaName && eventName) &&
+      (tsaaName.includes(eventName) || eventName.includes(tsaaName));
+    if (event.startDate === tsaaEvent.startDate) {
+      const eventLocation = normalizeForMatch(event.location);
+      const nameMatches = fullNameMatch ||
+        (eventName.length > 8 && tsaaName.includes(eventName.slice(0, 12)));
+      const locationMatches = tsaaLocation && eventLocation &&
+        (tsaaLocation.includes(eventLocation) || eventLocation.includes(tsaaLocation));
+      return Boolean(nameMatches || locationMatches);
+    }
+    // Different start dates (TSAA often lists only one day of a multi-day shoot): only call
+    // it the same shoot when the dates overlap, the whole name matches, and the cities agree.
+    if (!datesOverlap(tsaaEvent, event) || !fullNameMatch) return false;
+    const a = (tsaaEvent.city || "").toLowerCase().replace(/^ft\.?\s/, "fort ");
+    const b = (event.city || "").toLowerCase().replace(/^ft\.?\s/, "fort ");
+    return !a || !b || a === b;
   });
 }
 
