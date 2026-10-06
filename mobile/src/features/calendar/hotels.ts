@@ -1,10 +1,11 @@
 // "Hotels near the shoot": nightly hotel prices in the shoot's town, and a link to search
 // hotels for the shoot's dates.
 //
-// Town prices come from hotel-prices.json on the website (client/public/hotel-prices.json
-// on main): the lowest, highest and middle nightly price we found for each shoot town in a
-// real hotel search. Prices change with dates and demand, so the card says when they were
-// checked. Towns not in that file fall back to a typical range for the state (an estimate,
+// Town prices come from hotel-prices.json on the website: the lowest, highest and average
+// nightly price found for each shoot town in a real hotel search for the nights of that
+// town's next shoot. A Claude routine refreshes them every day on the hotel-data branch
+// (see .github/workflows/hotel-towns.yml on main); client/public/hotel-prices.json is the
+// fallback copy. The card says which nights were searched and when. Towns not in that file fall back to a typical range for the state (an estimate,
 // spot-checked against live prices in Oct 2026). Edit PRICE_TIERS / STATE_TIER to adjust it.
 //
 // The link goes through Stay22, which shows hotels from Booking.com, Expedia, Hotels.com
@@ -60,6 +61,9 @@ export interface CityPrices extends PriceRange {
   checked: string;
   /** How many hotels the prices came from. */
   hotels?: number;
+  /** The nights searched (YYYY-MM-DD): the night before the town's next shoot through its last day. */
+  checkin?: string;
+  checkout?: string;
 }
 
 /** hotel-prices.json: keyed by cityKey(), e.g. "brownwood, tx". */
