@@ -2,11 +2,10 @@ import { useState, type ReactNode } from "react";
 import { Alert, Image, Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { addToPhoneCalendar, callHost, emailHost, openDirections, openUrl } from "../actions";
-import { daysUntil, fmtRange } from "../dates";
+import { daysUntil, fmtDayLong, fmtRange } from "../dates";
 import type { CalendarTheme } from "../theme";
 import { listedBy, type TournamentEvent } from "../types";
 import { hotelPlace, hotelPrices, hotelSearchUrl, useCityPrices, type HotelsConfig } from "../hotels";
-import { fmtMonthYear, parseISODate } from "../dates";
 import { shareShoot, shootMessage } from "../share";
 import { useShareCard, type ShareCardInfo } from "./ShareCard";
 import { SourcePill } from "./SourcePill";
@@ -223,7 +222,7 @@ function HotelCard({ event, config, theme }: { event: TournamentEvent; config: H
           <Text style={[styles.rowValue, { color: theme.text }]}>About ${prices.typical} a night on average</Text>
           <Text style={[styles.hotelNote, { color: theme.muted }]}>
             {prices.scope === "city"
-              ? `Prices we found for hotels in ${prices.place} (checked ${checkedMonth(prices.checked)}). They change with dates and go up on big shoot weekends, so book early.`
+              ? `${pricesWhen(prices)} They change with dates and go up on big shoot weekends, so book early.`
               : `Typical for ${prices.place}, not prices for this town. Prices go up on big shoot weekends, so book early.`}
           </Text>
         </>
@@ -240,9 +239,12 @@ function HotelCard({ event, config, theme }: { event: TournamentEvent; config: H
   );
 }
 
-function checkedMonth(iso: string): string {
-  const d = parseISODate(iso);
-  return isNaN(d.getTime()) ? iso : fmtMonthYear({ year: d.getFullYear(), month: d.getMonth() });
+// "Hotel prices in Brownwood, TX for Fri, Nov 6 to Sun, Nov 8, checked today."
+function pricesWhen(p: { place: string; checked: string; checkin?: string; checkout?: string }): string {
+  const day = (iso: string) => (/^\d{4}-\d{2}-\d{2}$/.test(iso) ? fmtDayLong(iso) : iso);
+  const nights = p.checkin ? ` for ${day(p.checkin)}${p.checkout ? ` to ${day(p.checkout)}` : ""}` : "";
+  const checked = daysUntil(p.checked) === 0 ? "today" : day(p.checked);
+  return `Hotel prices in ${p.place}${nights}, checked ${checked}.`;
 }
 
 function Action({ label, onPress, theme }: { label: string; onPress: () => void; theme: CalendarTheme }) {
