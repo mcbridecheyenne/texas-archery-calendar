@@ -1,6 +1,7 @@
 import { memo } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { fmtRange, monthShort, parseISODate } from "../dates";
+import { fmtMiles } from "../distances";
 import type { CalendarTheme } from "../theme";
 import type { TournamentEvent } from "../types";
 import { SourcePill } from "./SourcePill";
@@ -10,11 +11,13 @@ interface Props {
   theme: CalendarTheme;
   going: boolean;
   note?: string | null;
+  /** Miles from the archer, when both places are known. */
+  miles?: number | null;
   onPress: (event: TournamentEvent) => void;
   onToggleGoing: (event: TournamentEvent) => void;
 }
 
-export const EventRow = memo(function EventRow({ event, theme, going, note, onPress, onToggleGoing }: Props) {
+export const EventRow = memo(function EventRow({ event, theme, going, note, miles, onPress, onToggleGoing }: Props) {
   const d = parseISODate(event.startDate);
   return (
     <Pressable
@@ -35,7 +38,10 @@ export const EventRow = memo(function EventRow({ event, theme, going, note, onPr
         <Text style={[styles.name, { color: theme.text }]} numberOfLines={2}>
           {event.name}
         </Text>
-        <Text style={[styles.meta, { color: theme.muted }]}>{fmtRange(event.startDate, event.endDate)}</Text>
+        <Text style={[styles.meta, { color: theme.muted }]}>
+          {fmtRange(event.startDate, event.endDate)}
+          {miles != null ? ` · ${fmtMiles(miles)}` : ""}
+        </Text>
         {event.location ? (
           <Text style={[styles.meta, { color: theme.muted }]} numberOfLines={1}>
             📍 {event.location}
