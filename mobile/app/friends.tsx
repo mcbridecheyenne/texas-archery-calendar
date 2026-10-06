@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ActivityIndicator, Alert, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { ARCHERY_CLASSES, addResultMessage, cleanCode, searchArchers, shareInvite, useFriends, type Friend, type SearchResult } from "../src/features/friends";
 import { useAuth } from "../src/lib/auth";
+import { askForPushNotifications } from "../src/lib/push";
 import { Button, Chip, Empty, Field, SectionLabel, confirm, errorText, showMenu, useTheme } from "../src/ui";
 
 export default function FriendsScreen() {
@@ -39,6 +40,11 @@ export default function FriendsScreen() {
     }, 350);
     return () => clearTimeout(timer);
   }, [q, klass, auth.profile, friendKey]);
+
+  // Ask (once) to send notifications for new friend requests.
+  useEffect(() => {
+    if (auth.profile) askForPushNotifications(auth.userId);
+  }, [auth.userId, auth.profile]);
 
   if (!auth.enabled) return <Empty title="Friends" body="Friends open with accounts." />;
   if (!auth.userId)

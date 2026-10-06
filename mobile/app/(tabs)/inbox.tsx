@@ -1,11 +1,12 @@
 // Messages tab: every conversation about a listing, newest first.
 import { useRouter } from "expo-router";
 import { FlatList, Pressable, RefreshControl, StyleSheet, Text, View } from "react-native";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { timeAgo } from "../../src/features/marketplace/helpers";
 import { useInbox } from "../../src/features/marketplace/inbox";
 import { isUnread, type Conversation } from "../../src/features/marketplace/types";
 import { useAuth } from "../../src/lib/auth";
+import { askForPushNotifications } from "../../src/lib/push";
 import { Button, Empty, useTheme } from "../../src/ui";
 
 export default function InboxTab() {
@@ -14,6 +15,11 @@ export default function InboxTab() {
   const { enabled, userId, profile } = useAuth();
   const { conversations, refresh, loading } = useInbox();
   const [refreshing, setRefreshing] = useState(false);
+
+  // First time they open Messages, ask to send notifications for new messages.
+  useEffect(() => {
+    if (profile) askForPushNotifications(userId);
+  }, [userId, profile]);
 
   if (!enabled) return <Empty title="Messages" body="Messaging opens with the marketplace." />;
   if (!userId)

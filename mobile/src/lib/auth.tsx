@@ -6,6 +6,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState, t
 import { Platform } from "react-native";
 import type { Session } from "@supabase/supabase-js";
 import type { Profile } from "../features/marketplace/types";
+import { forgetPushToken } from "./push";
 import { PHOTO_BUCKET, supabase } from "./supabase";
 
 export interface AuthState {
@@ -170,6 +171,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   );
 
   const signOut = useCallback(async () => {
+    await forgetPushToken(); // stop message notifications to this phone
     await supabase?.auth.signOut();
   }, []);
 
@@ -185,6 +187,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
     const { error } = await supabase.rpc("delete_my_account");
     if (error) throw error;
+    await forgetPushToken(); // the database already removed this account's tokens
     await supabase.auth.signOut();
   }, [userId]);
 
