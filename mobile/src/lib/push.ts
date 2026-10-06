@@ -86,10 +86,14 @@ export async function forgetPushToken(): Promise<void> {
 }
 
 // Only paths the database sends; anything else in a notification is ignored.
-function openFrom(response: Notifications.NotificationResponse | null) {
+function pushUrl(response: Notifications.NotificationResponse | null): string | null {
   const url = (response?.notification.request.content.data as { url?: unknown } | undefined)?.url;
-  if (typeof url !== "string") return;
-  if (/^\/chat\/[0-9a-f-]{36}$/i.test(url) || url === "/friends") router.push(url);
+  return typeof url === "string" && (/^\/chat\/[0-9a-f-]{36}$/i.test(url) || url === "/friends") ? url : null;
+}
+
+function openFrom(response: Notifications.NotificationResponse | null) {
+  const url = pushUrl(response);
+  if (url) router.push(url);
 }
 
 /**
@@ -104,14 +108,17 @@ export function usePushNotifications(userId: string | null) {
 
   useEffect(() => {
     // Tapped while the app was closed: the tap that opened it.
+    // Only our own message/friend notifications; reminders (tournaments, listings) are
+    // opened by their own code, which also reads the last tapped notification.
     const first = Notifications.getLastNotificationResponse();
-    if (first) {
+    if (first && pushUrl(first)) {
       Notifications.clearLastNotificationResponse();
       // Give the screens a moment to load before moving to the chat.
       setTimeout(() => openFrom(first), 300);
     }
     // Tapped while the app was open or in the background.
     const sub = Notifications.addNotificationResponseReceivedListener((r) => {
+      if (!pushUrl(r)) return;
       openFrom(r);
       Notifications.clearLastNotificationResponse();
     });
