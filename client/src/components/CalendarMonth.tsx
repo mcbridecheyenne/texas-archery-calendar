@@ -28,18 +28,21 @@ const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 function sourceLabel(source: TournamentEvent["source"]): string {
   if (source === "TFAA") return "TFAA";
   if (source === "ASA") return "Texas ASA";
+  if (source === "CLUB") return "Club shoot";
   return "TSAA";
 }
 
 function sourcePillClass(source: TournamentEvent["source"]): string {
   if (source === "TFAA") return "pill-tfaa";
   if (source === "ASA") return "pill-asa";
+  if (source === "CLUB") return "pill-club";
   return "pill-tsaa";
 }
 
 function sourceBarClass(source: TournamentEvent["source"]): string {
   if (source === "TFAA") return "event-bar-tfaa";
   if (source === "ASA") return "event-bar-asa";
+  if (source === "CLUB") return "event-bar-club";
   return "event-bar-tsaa";
 }
 

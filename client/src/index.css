@@ -50,6 +50,8 @@
   --asa-soft: 150 28% 90%;
   --tsaa: 214 58% 36%;                 /* TSAA blue */
   --tsaa-soft: 214 48% 92%;
+  --club: 40 76% 31%;                  /* club-submitted shoots, gold */
+  --club-soft: 42 62% 90%;
 
   --chart-1: 18 78% 42%;
   --chart-2: 150 38% 26%;
@@ -114,6 +116,8 @@
   --asa-soft: 150 25% 18%;
   --tsaa: 214 70% 62%;
   --tsaa-soft: 214 32% 20%;
+  --club: 42 66% 55%;
+  --club-soft: 40 40% 16%;
 
   --chart-1: 22 85% 55%;
   --chart-2: 150 40% 50%;
@@ -163,6 +167,11 @@
   color: hsl(var(--tsaa));
   border: 1px solid hsl(var(--tsaa) / 0.25);
 }
+.pill-club {
+  background-color: hsl(var(--club-soft));
+  color: hsl(var(--club));
+  border: 1px solid hsl(var(--club) / 0.25);
+}
 
 /* Calendar day cell event bar */
 .event-bar-tfaa {
@@ -175,6 +184,10 @@
 }
 .event-bar-tsaa {
   background-color: hsl(var(--tsaa));
+  color: hsl(var(--primary-foreground));
+}
+.event-bar-club {
+  background-color: hsl(var(--club));
   color: hsl(var(--primary-foreground));
 }
 

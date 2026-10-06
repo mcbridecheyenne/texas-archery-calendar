@@ -1,6 +1,6 @@
 import type { TournamentEvent } from "@shared/schema";
 import { fmtRange, parseISODate } from "@/lib/dates";
-import { MapPin, ExternalLink, Calendar } from "lucide-react";
+import { MapPin, ExternalLink, Calendar, FileImage } from "lucide-react";
 
 interface Props {
   events: TournamentEvent[];
@@ -9,12 +9,14 @@ interface Props {
 function sourceLabel(source: TournamentEvent["source"]): string {
   if (source === "TFAA") return "TFAA";
   if (source === "ASA") return "Texas ASA";
+  if (source === "CLUB") return "Club shoot";
   return "TSAA";
 }
 
 function sourcePillClass(source: TournamentEvent["source"]): string {
   if (source === "TFAA") return "pill-tfaa";
   if (source === "ASA") return "pill-asa";
+  if (source === "CLUB") return "pill-club";
   return "pill-tsaa";
 }
 
@@ -82,6 +84,18 @@ export function UpcomingList({ events }: Props) {
                       <MapPin className="h-3.5 w-3.5" />
                       <span>{ev.location}</span>
                     </p>
+                  )}
+                  {ev.flyerUrl && (
+                    <a
+                      href={ev.flyerUrl}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="mt-1 text-sm text-primary inline-flex items-center gap-1 hover:underline underline-offset-2"
+                      data-testid={`link-flyer-${ev.id}`}
+                    >
+                      <FileImage className="h-3.5 w-3.5" />
+                      View flyer
+                    </a>
                   )}
                 </div>
                 <a

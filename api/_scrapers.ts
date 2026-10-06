@@ -2,7 +2,8 @@
 
 export interface TournamentEvent {
   id: string;
-  source: "TFAA" | "ASA" | "TSAA";
+  // CLUB rows are added by script/collect-events.ts, never by the scrapers.
+  source: "TFAA" | "ASA" | "TSAA" | "CLUB";
   name: string;
   startDate: string;
   endDate: string;
@@ -15,6 +16,7 @@ export interface TournamentEvent {
   phone: string | null;
   email: string | null;
   sourceUrl: string;
+  flyerUrl?: string | null; // club shoots only
 }
 
 export interface SourceStatus {
