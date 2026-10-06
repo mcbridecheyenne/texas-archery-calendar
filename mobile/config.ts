@@ -45,10 +45,9 @@ export const ADS = {
 // from that button. Sign up free at stay22.com, then paste your affiliate id ("aid",
 // shown in the Stay22 dashboard under Links) below. While it's blank the button opens a
 // plain Booking.com search, which works but earns nothing.
-// TODO(Cheyenne): paste your Stay22 affiliate id.
 export const HOTELS = {
   enabled: true,
-  stay22Aid: "", // PLACEHOLDER: e.g. "archeryusa"
+  stay22Aid: "archeryintheusa", // Cheyenne's Stay22 affiliate id
   campaign: "app", // shows app clicks separately from the website in Stay22's reports
 };
 
