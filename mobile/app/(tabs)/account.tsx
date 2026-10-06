@@ -4,7 +4,8 @@ import { useFocusEffect, useRouter } from "expo-router";
 import { useCallback, useState } from "react";
 import { ActivityIndicator, Alert, Image, Linking, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { PRIVACY_URL, RULES_URL } from "../../config";
-import { fetchMyListings } from "../../src/features/marketplace/api";
+import { fetchMyListings, renewListing } from "../../src/features/marketplace/api";
+import { expiryLabel, isExpired, syncExpiryReminders } from "../../src/features/marketplace/expiry";
 import { formatPrice, type Listing } from "../../src/features/marketplace/types";
 import { useFriends } from "../../src/features/friends";
 import { useAuth } from "../../src/lib/auth";
@@ -23,13 +24,34 @@ export default function AccountTab() {
   const [mine, setMine] = useState<Listing[] | null>(null);
   const [deleting, setDeleting] = useState(false);
   const [tipping, setTipping] = useState<string | null>(null);
+  const [renewing, setRenewing] = useState<string | null>(null);
 
   useFocusEffect(
     useCallback(() => {
-      if (auth.userId && auth.profile) fetchMyListings(auth.userId).then(setMine).catch(() => setMine([]));
+      if (auth.userId && auth.profile)
+        fetchMyListings(auth.userId)
+          .then((list) => {
+            setMine(list);
+            // Keep this phone's "still selling?" reminders in step with the listings.
+            syncExpiryReminders(list);
+          })
+          .catch(() => setMine([]));
       else setMine(null);
     }, [auth.userId, auth.profile])
   );
+
+  // "Still for sale? Renew": gives the listing another 60 days in the market.
+  async function renew(l: Listing) {
+    setRenewing(l.id);
+    try {
+      const renewedAt = await renewListing(l);
+      setMine((list) => list?.map((x) => (x.id === l.id ? { ...x, renewed_at: renewedAt } : x)) ?? list);
+    } catch (e) {
+      Alert.alert("Couldn't renew", errorText(e));
+    } finally {
+      setRenewing(null);
+    }
+  }
 
   function deleteAccount() {
     confirm(
@@ -122,11 +144,16 @@ export default function AccountTab() {
                       <Text style={[styles.rowTitle, { color: t.text }]} numberOfLines={1}>
                         {l.title}
                       </Text>
-                      <Text style={[styles.p, { color: l.status === "active" ? t.muted : t.warning }]}>
-                        {formatPrice(l.price_cents)} · {l.status === "active" ? "Active" : l.status === "sold" ? "Sold" : "Removed by moderator"}
+                      <Text style={[styles.p, { color: l.status === "active" && !isExpired(l) ? t.muted : t.warning }]}>
+                        {formatPrice(l.price_cents)} ·{" "}
+                        {l.status === "active" ? expiryLabel(l) : l.status === "sold" ? "Sold" : "Removed by moderator"}
                       </Text>
                     </View>
-                    <Ionicons name="chevron-forward" size={18} color={t.muted} />
+                    {l.status === "active" ? (
+                      <Button title="Still for sale? Renew" kind="secondary" small onPress={() => renew(l)} busy={renewing === l.id} />
+                    ) : (
+                      <Ionicons name="chevron-forward" size={18} color={t.muted} />
+                    )}
                   </Pressable>
                 ))}
               </View>

@@ -65,6 +65,9 @@ export interface Listing {
   status: "active" | "sold" | "removed";
   created_at: string;
   updated_at: string;
+  // When it was posted or last renewed. It drops out of the market 60 days after this.
+  // Missing only until the database has the column (see supabase/schema.sql).
+  renewed_at?: string | null;
   seller?: Pick<Profile, "id" | "display_name" | "city" | "created_at"> | null;
 }
 

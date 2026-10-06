@@ -98,17 +98,26 @@ create table if not exists public.listings (
   updated_at timestamptz not null default now()
 );
 
+-- Listings expire so the market doesn't fill up with old gear. A listing is hidden
+-- from browsing 60 days after it was posted or last renewed ("Still for sale? Renew").
+-- renewed_at is that clock. When this line first runs on a database that already has
+-- listings, they all get today's date, so they get a fresh 60 days instead of vanishing.
+-- (Re-running it does nothing once the column exists.)
+alter table public.listings add column if not exists renewed_at timestamptz not null default now();
+
 create index if not exists listings_feed on public.listings (status, created_at desc);
 create index if not exists listings_seller on public.listings (seller_id);
+create index if not exists listings_fresh on public.listings (renewed_at) where status = 'active';
 
 alter table public.listings enable row level security;
 
--- Everyone (even signed out) can browse active listings from members in good standing.
--- Sellers also see their own sold/removed listings.
+-- Everyone (even signed out) can browse active listings from members in good standing,
+-- as long as the listing was posted or renewed in the last 60 days.
+-- Sellers also see their own sold, removed and expired listings.
 drop policy if exists "browse listings" on public.listings;
 create policy "browse listings" on public.listings
   for select using (
-    (status = 'active' and public.is_active_member(seller_id))
+    (status = 'active' and renewed_at > now() - interval '60 days' and public.is_active_member(seller_id))
     or seller_id = auth.uid()
   );
 
@@ -138,6 +147,30 @@ end $$;
 drop trigger if exists listings_touch on public.listings;
 create trigger listings_touch before update on public.listings
   for each row execute function public.touch_updated_at();
+
+-- The 60-day clock can't be faked from the app. A new listing always starts today.
+-- Renewing (changing renewed_at) always sets it to right now, and only works on a
+-- listing that's still for sale. Who can renew is the "edit own listings" rule above:
+-- only the seller. Your dashboard edits aren't limited by this.
+create or replace function public.protect_listing_renewal()
+returns trigger language plpgsql as $$
+begin
+  if current_user in ('authenticated', 'anon') then
+    if tg_op = 'INSERT' then
+      new.renewed_at := now();
+    elsif new.renewed_at is distinct from old.renewed_at then
+      if old.status <> 'active' or new.status <> 'active' then
+        raise exception 'Only listings that are still for sale can be renewed';
+      end if;
+      new.renewed_at := now();
+    end if;
+  end if;
+  return new;
+end $$;
+
+drop trigger if exists protect_listing_renewal on public.listings;
+create trigger protect_listing_renewal before insert or update on public.listings
+  for each row execute function public.protect_listing_renewal();
 
 -- ============================================================
 -- Blocks: hide someone's listings and stop their messages.
@@ -200,7 +233,7 @@ drop policy if exists "see own conversations" on public.conversations;
 create policy "see own conversations" on public.conversations
   for select using (auth.uid() in (buyer_id, seller_id));
 
--- A buyer can start a conversation about someone else's active listing.
+-- A buyer can start a conversation about someone else's active, not-expired listing.
 drop policy if exists "start conversations" on public.conversations;
 create policy "start conversations" on public.conversations
   for insert with check (
@@ -210,6 +243,7 @@ create policy "start conversations" on public.conversations
     and exists (
       select 1 from public.listings l
       where l.id = listing_id and l.seller_id = conversations.seller_id and l.status = 'active'
+        and l.renewed_at > now() - interval '60 days'
     )
   );
 
