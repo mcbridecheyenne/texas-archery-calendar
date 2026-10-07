@@ -99,7 +99,7 @@ export default function Home() {
               Archery in the USA
             </h1>
             <p className="text-[11px] text-muted-foreground leading-tight">
-              Texas schedule (TFAA, Texas ASA, TSAA) · every state in the app
+              Texas schedule (TFAA, Texas ASA, TSAA) · shoots across the United States in the app
             </p>
           </div>
           <div className="ml-auto flex items-center gap-2">
