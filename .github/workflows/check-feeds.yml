@@ -49,7 +49,9 @@ jobs:
               const { sources } = JSON.parse(fs.readFileSync(f, "utf8"));
               for (const s of sources) {
                 const line = `${s.name}: ${s.status}, ${s.eventCount} events${s.message ? ` (${s.message})` : ""} [${f}]`;
-                if (!s.eventCount) { bad++; console.log(`::error::${line}`); }
+                // Individual state calendars may legitimately have nothing scheduled; only errors count.
+                const perFeed = String(s.name).startsWith("State calendar: ");
+                if (s.status !== "ok" || (!s.eventCount && !perFeed)) { bad++; console.log(`::error::${line}`); }
                 else console.log(`::notice::${line}`);
               }
             }

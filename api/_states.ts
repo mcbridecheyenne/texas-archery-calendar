@@ -7,6 +7,7 @@
 //
 // General outdoor calendars list hunter education, classes and kids' days next to the
 // shoots, so those sources keep only events whose name reads like an archery shoot.
+import { fetchWithTimeout } from "./_http.ts";
 import {
   blankEvent, decodeEntities, hash, isoDay, normalizeState, stateFromText,
   type UsaEvent, type UsaSourceStatus,
@@ -118,7 +119,7 @@ async function fetchTribe(feed: StateFeed): Promise<UsaEvent[]> {
   let next: string | null = `${feed.feedUrl}${join}start_date=${today}&per_page=50`;
   const rows: TribeEvent[] = [];
   for (let page = 0; next && page < 10; page++) {
-    const res: Response = await fetch(next, { headers: { "User-Agent": UA, Accept: "application/json" } });
+    const res: Response = await fetchWithTimeout(next, { headers: { "User-Agent": UA, Accept: "application/json" } });
     // The plugin answers 404 "no events" when nothing is scheduled.
     if (res.status === 404 && page === 0) return [];
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -153,7 +154,7 @@ export function parseLocalist(feed: StateFeed, rows: { event?: LocalistEvent }[]
 }
 
 async function fetchLocalist(feed: StateFeed): Promise<UsaEvent[]> {
-  const res = await fetch(feed.feedUrl, { headers: { "User-Agent": UA, Accept: "application/json" } });
+  const res = await fetchWithTimeout(feed.feedUrl, { headers: { "User-Agent": UA, Accept: "application/json" } });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const data = (await res.json()) as { events?: { event?: LocalistEvent }[] };
   return parseLocalist(feed, data.events ?? []);
@@ -214,10 +215,13 @@ export function parseIcsPage(feed: StateFeed, html: string): UsaEvent[] {
 }
 
 async function fetchIcsPage(feed: StateFeed): Promise<UsaEvent[]> {
-  const res = await fetch(feed.feedUrl, { headers: { "User-Agent": UA } });
+  const res = await fetchWithTimeout(feed.feedUrl, { headers: { "User-Agent": UA } });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return parseIcsPage(feed, await res.text());
 }
+
+/** Prefix of the per-feed source names; the workflow's health check keys off it. */
+export const STATE_FEED_PREFIX = "State calendar: ";
 
 const FETCHERS: Record<Kind, (feed: StateFeed) => Promise<UsaEvent[]>> = {
   tribe: fetchTribe, localist: fetchLocalist, "ics-page": fetchIcsPage,
@@ -228,7 +232,7 @@ const FETCHERS: Record<Kind, (feed: StateFeed) => Promise<UsaEvent[]>> = {
  * site that's down for a day) doesn't read as the whole source failing. The message lists
  * each feed's count.
  */
-export async function collectStateCalendars(): Promise<{ events: UsaEvent[]; status: UsaSourceStatus }> {
+export async function collectStateCalendars(): Promise<{ events: UsaEvent[]; status: UsaSourceStatus; feedStatuses: UsaSourceStatus[] }> {
   const fetchedAt = new Date().toISOString();
   const results = await Promise.all(STATE_FEEDS.map(async (feed) => {
     try {
@@ -243,8 +247,20 @@ export async function collectStateCalendars(): Promise<{ events: UsaEvent[]; sta
     for (const e of r.events.slice(0, 8)) console.log(`  [${r.feed.key}] ${e.startDate} ${e.name} @ ${e.location ?? "?"}`);
   }
   const allFailed = results.every((r) => r.error);
+  // One status line per feed, so a single broken state calendar shows up in the feed-health
+  // report instead of hiding inside the combined "State calendars" line. A feed that loaded
+  // but has nothing scheduled is "ok" with 0 events (the health check allows that for these).
+  const feedStatuses: UsaSourceStatus[] = results.map((r) => ({
+    name: `${STATE_FEED_PREFIX}${r.feed.organization} (${r.feed.state})`,
+    url: r.feed.feedUrl,
+    status: r.error ? "error" : "ok",
+    message: r.error ? `Feed failed: ${r.error}` : null,
+    eventCount: r.events.length,
+    fetchedAt,
+  }));
   return {
     events,
+    feedStatuses,
     status: {
       name: "State calendars", url: "api/_states.ts",
       status: allFailed ? "error" : events.length ? "ok" : "partial",

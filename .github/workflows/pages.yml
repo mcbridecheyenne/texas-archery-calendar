@@ -21,11 +21,13 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     outputs:
       checked: ${{ steps.health.outputs.checked }}
       problem: ${{ steps.health.outputs.problem }}
       failing: ${{ steps.health.outputs.failing }}
       report: ${{ steps.health.outputs.report }}
+      usa_failed: ${{ steps.carry.outputs.usa_failed }}
     steps:
       - uses: actions/checkout@v4
 
@@ -55,6 +57,33 @@ jobs:
         env:
           PREVIOUS_EVENTS_URL: https://mcbridecheyenne.github.io/texas-archery-calendar/events-usa.json
 
+      # If the nationwide collector failed (or refused a near-empty run), publish the last good
+      # events-usa.json from the live site instead of publishing nothing. The run is still marked
+      # red by the "nationwide-verdict" job below, and the health report flags it.
+      - name: Keep last good nationwide feed if collection failed
+        id: carry
+        if: always()
+        env:
+          USA_OUTCOME: ${{ steps.collect_usa.outcome }}
+        run: |
+          if [ "$USA_OUTCOME" = "success" ]; then
+            echo "usa_failed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "usa_failed=true" >> "$GITHUB_OUTPUT"
+          echo "::error::Nationwide collection did not succeed (outcome: $USA_OUTCOME). Carrying forward the previous events-usa.json."
+          mkdir -p dist/public
+          if curl -sSf --max-time 30 --retry 2 \
+               "https://mcbridecheyenne.github.io/texas-archery-calendar/events-usa.json?t=$(date +%s)" \
+               -o dist/public/events-usa.json.prev \
+             && node -e 'const d=JSON.parse(require("fs").readFileSync("dist/public/events-usa.json.prev","utf8")); if(!Array.isArray(d.events)||!d.events.length) process.exit(1)'; then
+            mv dist/public/events-usa.json.prev dist/public/events-usa.json
+            echo "Kept the previous events-usa.json."
+          else
+            rm -f dist/public/events-usa.json.prev
+            echo "::error::Could not fetch a usable previous events-usa.json; nationwide feed will not be updated."
+          fi
+
       # Lists every source that isn't healthy (status other than "ok", or 0 events) so the
       # alert job below can open or close a GitHub issue. Never fails the build.
       - name: Check source health
@@ -65,6 +94,7 @@ jobs:
         env:
           TEXAS_OUTCOME: ${{ steps.collect_texas.outcome }}
           USA_OUTCOME: ${{ steps.collect_usa.outcome }}
+          USA_FAILED: ${{ steps.carry.outputs.usa_failed }}
         with:
           script: |
             const fs = require("fs");
@@ -90,10 +120,16 @@ jobs:
               }
               for (const s of sources) {
                 total++;
-                if (s.status === "ok" && s.eventCount > 0) continue;
+                // Individual state calendars may legitimately have nothing scheduled; only errors count.
+                const perFeed = String(s.name).startsWith("State calendar: ");
+                if (s.status === "ok" && (s.eventCount > 0 || perFeed)) continue;
                 failing.add(s.name);
                 rows.push(`| ${feed.label} | ${cell(s.name)} | ${cell(s.status)} | ${cell(s.eventCount)} | ${cell(s.message)} |`);
               }
+            }
+            if (process.env.USA_FAILED === "true") {
+              failing.add("Nationwide collector");
+              rows.unshift(`| Nationwide | Collector | ${cell(process.env.USA_OUTCOME)} | - | Collection failed or returned too few events; the previous events-usa.json was published instead. |`);
             }
             const steps = `Collector steps: Texas \`${process.env.TEXAS_OUTCOME || "did not run"}\`, nationwide \`${process.env.USA_OUTCOME || "did not run"}\`.`;
             let report;
@@ -136,9 +172,21 @@ jobs:
         with:
           path: dist/public
 
+  # Deploys the last good nationwide file above, then turns the run red so the failure is seen.
+  nationwide-verdict:
+    needs: build
+    if: needs.build.outputs.usa_failed == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - run: |
+          echo "::error::Nationwide event collection failed. The site deployed the previous events-usa.json."
+          exit 1
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -152,6 +200,7 @@ jobs:
     needs: build
     if: always() && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     permissions:
       issues: write
     steps:
