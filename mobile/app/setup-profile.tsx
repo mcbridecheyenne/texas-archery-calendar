@@ -61,6 +61,21 @@ export default function SetupProfileScreen() {
         return;
       }
       if (ageFrom(m, y) < 13) {
+        if (!firstTime) {
+          // They already have an account, so a typo here would wipe it. Make them confirm.
+          const ok = await new Promise<boolean>((resolve) =>
+            Alert.alert(
+              "This will delete your account",
+              "That birth year makes you under 13, and accounts are for archers 13 and older. If it was a typo, tap Cancel and fix it. Otherwise your account and everything in it will be deleted.",
+              [
+                { text: "Cancel", style: "cancel", onPress: () => resolve(false) },
+                { text: "Delete", style: "destructive", onPress: () => resolve(true) },
+              ],
+              { cancelable: true, onDismiss: () => resolve(false) }
+            )
+          );
+          if (!ok) return;
+        }
         await markUnder13();
         setUnder13(true);
         // Remove the sign-in they just made, so nothing about them is kept.
@@ -90,8 +105,8 @@ export default function SetupProfileScreen() {
       <View style={[styles.content, { backgroundColor: t.background, flex: 1 }]}>
         <Text style={[styles.title, { color: t.text }]}>Sorry!</Text>
         <Text style={[styles.lead, { color: t.muted, marginTop: 0 }]}>
-          Accounts are for archers 13 and older. You can still look up tournaments, mark the ones you're going to, and get
-          reminders without an account.
+          Accounts are for archers 13 and older, so we can't make one for you, and nothing about you was kept. You can
+          still look up tournaments, mark the ones you're going to, and get reminders without an account.
         </Text>
         <Button title="Back to tournaments" onPress={() => router.replace("/")} />
       </View>
