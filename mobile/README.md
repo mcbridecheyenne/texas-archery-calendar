@@ -167,16 +167,11 @@ npm run ios:upload        # same, then uploads it to App Store Connect → TestF
 ```
 Bundle ID: `com.cheyennemcbride.archeryintexas`.
 
-## Updating the app without the App Store
+## Updating the app
 
-Design changes and bug fixes in the app's code can go straight to phones:
-
-```bash
-eas update:configure      # one time, after eas init
-npm run publish-update    # sends the current code to every installed copy
-```
-Phones pick it up the next time the app opens. Changes that add a new permission or a
-new native library still need a new build through the App Store / Google Play.
+Every change reaches phones through a new build on the Mac mini (`npm run ios:upload`,
+then TestFlight / the App Store). Over-the-air updates are turned off on purpose, so an
+update can never reach a phone whose build can't run it.
 
 ## Ads and the ad-free subscription
 

@@ -9,7 +9,6 @@
     "android": "expo start --android",
     "typecheck": "tsc --noEmit",
     "upgrade-sdk": "npx expo install expo@latest && npx expo install --fix",
-    "publish-update": "eas update --channel production",
     "ios:build": "./scripts/ios-release.sh",
     "ios:upload": "./scripts/ios-release.sh --upload",
     "android:build": "./scripts/android-release.sh"
@@ -35,7 +34,6 @@
     "expo-sharing": "~14.0.8",
     "expo-status-bar": "~3.0.8",
     "expo-store-review": "~9.0.9",
-    "expo-updates": "~29.0.11",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-native": "0.81.5",
