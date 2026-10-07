@@ -328,6 +328,9 @@ export default function Home() {
             <a className="underline underline-offset-2 hover:text-foreground" href="support.html" data-testid="link-support">
               Support &amp; Contact
             </a>
+            <a className="underline underline-offset-2 hover:text-foreground" href="delete-account.html" data-testid="link-delete-account">
+              Delete my account
+            </a>
           </nav>
         </div>
       </footer>
