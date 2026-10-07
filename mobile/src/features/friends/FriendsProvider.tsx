@@ -100,7 +100,7 @@ export function FriendsProvider({ children }: { children: ReactNode }) {
     try {
       const [list, code] = await Promise.all([
         api.fetchFriendships(userId),
-        api.fetchMyFriendCode(userId),
+        api.fetchMyFriendCode(),
         syncGoing().catch(() => {}),
       ]);
       setAll(list);

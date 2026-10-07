@@ -6,8 +6,15 @@ import { db, PHOTO_BUCKET } from "../../lib/supabase";
 import { cancelExpiryReminder, LISTING_DAYS, remindBeforeExpiry } from "./expiry";
 import type { Category, Condition, Conversation, Listing, Message, ReportReason } from "./types";
 
-const LISTING_FIELDS =
-  "id, seller_id, title, description, price_cents, category, condition, city, lat, lng, handoff_event_id, handoff_event_name, handoff_event_date, photos, status, created_at, updated_at, renewed_at, seller:profiles(id, display_name, city, created_at)";
+const LISTING_COLUMNS =
+  "id, seller_id, title, description, price_cents, category, condition, city, lat, lng, handoff_event_id, handoff_event_name, handoff_event_date, photos, status, created_at, updated_at, renewed_at";
+const LISTING_FIELDS = `${LISTING_COLUMNS}, seller:profiles(id, display_name, city, created_at)`;
+
+// Signed-out visitors can't read profiles, so they see listings without the seller's name.
+async function listingFields(): Promise<string> {
+  const { data } = await db().auth.getSession();
+  return data.session ? LISTING_FIELDS : LISTING_COLUMNS;
+}
 
 export const PAGE_SIZE = 24;
 
@@ -21,9 +28,10 @@ export interface ListingQuery {
 
 export async function fetchListings(q: ListingQuery): Promise<Listing[]> {
   const page = q.page ?? 0;
+  const fields = await listingFields();
   let req = db()
     .from("listings")
-    .select(LISTING_FIELDS)
+    .select(fields)
     .eq("status", "active")
     // The database already hides other people's expired listings; this also hides your own.
     .gt("renewed_at", new Date(Date.now() - LISTING_DAYS * 86_400_000).toISOString())
@@ -44,7 +52,7 @@ export async function fetchListings(q: ListingQuery): Promise<Listing[]> {
 }
 
 export async function fetchListing(id: string): Promise<Listing | null> {
-  const { data, error } = await db().from("listings").select(LISTING_FIELDS).eq("id", id).maybeSingle();
+  const { data, error } = await db().from("listings").select(await listingFields()).eq("id", id).maybeSingle();
   if (error) throw error;
   return (data as unknown as Listing) ?? null;
 }

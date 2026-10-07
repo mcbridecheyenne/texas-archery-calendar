@@ -29,10 +29,11 @@ export async function fetchFriendships(me: string): Promise<Friend[]> {
   });
 }
 
-export async function fetchMyFriendCode(me: string): Promise<string | null> {
-  const { data, error } = await db().from("profiles").select("friend_code").eq("id", me).maybeSingle();
+// Friend codes are private, so your own comes from a database function.
+export async function fetchMyFriendCode(): Promise<string | null> {
+  const { data, error } = await db().rpc("my_friend_code");
   if (error) throw error;
-  return (data as { friend_code: string | null } | null)?.friend_code ?? null;
+  return (data as string | null) ?? null;
 }
 
 export async function sendFriendRequest(code: string): Promise<AddFriendResult> {
