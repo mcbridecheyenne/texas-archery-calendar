@@ -44,17 +44,23 @@ function saveKnown() {
   writeJSON(CACHE_KEY, Object.fromEntries(known));
 }
 
-// The towns waiting to be looked up, most important first. Each new request replaces the
-// list, so switching from one state to another doesn't wait on the old state's towns.
+// The towns waiting to be looked up, most important first. Each screen using miles (the
+// shoot list, the season plan) has its own request; the newest request goes first, and a
+// screen's new request replaces its old one, so switching from one state to another
+// doesn't wait on the old state's towns.
 let queue: string[] = [];
+const requests = new Map<symbol, string[]>(); // newest last
 let working = false;
 let gaveUp = false;
 const listeners = new Set<() => void>();
 const tell = () => listeners.forEach((fn) => fn());
 const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-function want(keys: string[]) {
-  queue = keys.filter((k) => !known.has(k));
+function want(who: symbol, keys: string[] | null) {
+  requests.delete(who);
+  if (keys) requests.set(who, keys);
+  const order = [...requests.values()].reverse().flat();
+  queue = [...new Set(order)].filter((k) => !known.has(k));
   if (!working && !gaveUp && queue.length) work();
 }
 
@@ -106,6 +112,7 @@ export interface Distances {
  */
 export function useDistances(events: TournamentEvent[], origin: Coords | null, wanted: TournamentEvent[]): Distances {
   const [version, setVersion] = useState(0);
+  const [who] = useState(() => Symbol("distances"));
 
   useEffect(() => {
     const bump = () => setVersion((v) => v + 1);
@@ -127,9 +134,10 @@ export function useDistances(events: TournamentEvent[], origin: Coords | null, w
   }, [wanted]);
   const keysSig = keys.join("|");
 
+  useEffect(() => () => want(who, null), [who]);
   useEffect(() => {
     if (!origin) return;
-    loadKnown().then(() => want(keys));
+    loadKnown().then(() => want(who, keys));
     // keysSig stands in for keys, so a new list with the same towns doesn't restart anything.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [origin, keysSig]);

@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, type ReactNode } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { fmtRange, monthShort, parseISODate } from "../dates";
 import { fmtMiles } from "../distances";
@@ -15,9 +15,11 @@ interface Props {
   miles?: number | null;
   onPress: (event: TournamentEvent) => void;
   onToggleGoing: (event: TournamentEvent) => void;
+  /** More lines under the shoot, e.g. its trip cost in My Season. */
+  extra?: ReactNode;
 }
 
-export const EventRow = memo(function EventRow({ event, theme, going, note, miles, onPress, onToggleGoing }: Props) {
+export const EventRow = memo(function EventRow({ event, theme, going, note, miles, onPress, onToggleGoing, extra }: Props) {
   const d = parseISODate(event.startDate);
   return (
     <Pressable
@@ -52,6 +54,7 @@ export const EventRow = memo(function EventRow({ event, theme, going, note, mile
             👥 {note}
           </Text>
         ) : null}
+        {extra}
       </View>
       <Pressable
         onPress={() => onToggleGoing(event)}

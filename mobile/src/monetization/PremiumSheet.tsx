@@ -58,7 +58,7 @@ export function PremiumSheet({ visible, onClose }: { visible: boolean; onClose: 
 
         <Text style={[styles.title, { color: theme.text }]}>Go ad-free</Text>
         <Text style={[styles.lead, { color: theme.muted }]}>
-          Remove the banner and help keep Archery in the USA running. Everything else stays free.
+          Remove the ads in the shoot list and help keep Archery in the USA running. Everything else stays free.
         </Text>
 
         {isPremium ? (
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
   link: { fontSize: 14, fontWeight: "600" },
 });
 
-// Renders the sheet wherever the app opens it from (banner link, Account tab).
+// Renders the sheet wherever the app opens it from (the "Remove ads" link on an ad, Account tab).
 export function PremiumSheetHost() {
   const { sheetOpen, closeSheet } = usePremium();
   return <PremiumSheet visible={sheetOpen} onClose={closeSheet} />;

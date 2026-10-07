@@ -27,9 +27,11 @@ import { organizationOf, organizationsOf, statesOf, type CalendarSocial, type Or
 import { NEIGHBORS, isNationalChampionship, matchesSearch, searchText, searchWords, statesAround } from "./browse";
 import { useDistances } from "./distances";
 import type { FlightsConfig } from "./flights";
-import type { HotelsConfig } from "./hotels";
+import { useCityPrices, type HotelsConfig } from "./hotels";
+import { clashes, openStretches, seasonTotals, tripFor, useSeasonSettings } from "./season";
+import { SeasonPlan, TripLine } from "./components/SeasonPlan";
 import { readJSON, writeJSON } from "./storage";
-import { approxHere, regionAt, type Coords } from "../../lib/location";
+import { approxHere, placeCoords, regionAt, type Coords } from "../../lib/location";
 import { useShareCard, type ShareCardInfo } from "./components/ShareCard";
 import { shootsMessage } from "./share";
 import { useEvents } from "./useEvents";
@@ -59,6 +61,10 @@ export interface CalendarScreenProps {
   hotels?: HotelsConfig;
   /** "Flights to the shoot" in each shoot's details (Expedia search link). */
   flights?: FlightsConfig;
+  /** Something shown in the Upcoming list after every `adEvery` shoots, e.g. an ad card.
+   *  `slot` counts them from 0 down the list. Return null to show nothing there. */
+  listAd?: (slot: number) => ReactNode;
+  adEvery?: number;
 }
 
 // Club shoots and archer-added tournaments go after the governing bodies.
@@ -71,7 +77,7 @@ const NEAR_KEY = "nearMe";
 // people actually scroll to), so picking "All states" doesn't look up every town in the country.
 const MILES_FOR_FIRST = 80;
 
-export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery in the USA", bottomInset, footer, social, sharePlug, shareAs, homeState, hotels, flights }: CalendarScreenProps) {
+export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery in the USA", bottomInset, footer, social, sharePlug, shareAs, homeState, hotels, flights, listAd, adEvery = 8 }: CalendarScreenProps) {
   const card = useShareCard();
   const theme = useCalendarTheme();
   const insets = useSafeAreaInsets();
@@ -276,6 +282,52 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
 
   const counts = useMemo(() => ({ all: inState.length, going: myShoots.length }), [inState, myShoots]);
 
+  // ---- My Season: trip costs, clashes and open stretches for the starred shoots ----
+  const [season, changeSeason] = useSeasonSettings();
+  // Miles in the season plan are from the archer's home town when they set one, else from the phone.
+  const [homeCoords, setHomeCoords] = useState<Coords | null>(null);
+  useEffect(() => {
+    let live = true;
+    setHomeCoords(null);
+    if (season.homeTown) placeCoords(season.homeTown).then((c) => live && setHomeCoords(c));
+    return () => {
+      live = false;
+    };
+  }, [season.homeTown]);
+  const seasonOrigin = season.homeTown ? homeCoords : origin;
+  // Shoots worth suggesting for open stretches: in the archer's state and the states around it.
+  const seasonCenter = homeState ?? originState ?? null;
+  const roughGaps = useMemo(() => openStretches(myShoots, [], new Map(), todayIso), [myShoots, todayIso]);
+  const gapCandidates = useMemo(() => {
+    if (!roughGaps.length) return [];
+    const around = seasonCenter ? statesAround(seasonCenter, 1) : null;
+    return upcomingAll
+      .filter((e) => !going.has(e.id) && roughGaps.some((g) => e.startDate >= g.from && e.endDate <= g.to))
+      .filter((e) => !around || statesOf(e).some((st) => around.has(st)))
+      .slice(0, 60);
+  }, [roughGaps, seasonCenter, upcomingAll, going]);
+  const seasonWanted = useMemo(() => (view === "mine" ? [...myShoots, ...gapCandidates] : myShoots), [view, myShoots, gapCandidates]);
+  const seasonMiles = useDistances(allEvents, seasonOrigin, seasonWanted);
+  const cityPrices = useCityPrices(view === "mine" ? hotels?.pricesUrl : undefined);
+  const trips = useMemo(
+    () => new Map(myShoots.map((e) => [e.id, tripFor(e, seasonMiles.miles.get(e.id), season, cityPrices)])),
+    [myShoots, seasonMiles.miles, season, cityPrices]
+  );
+  const totals = useMemo(() => seasonTotals([...trips.values()]), [trips]);
+  const seasonClashes = useMemo(() => clashes(myShoots), [myShoots]);
+  const clashName = useMemo(() => {
+    const m = new Map<string, string>();
+    for (const [a, b] of seasonClashes) {
+      if (!m.has(a.id)) m.set(a.id, b.name);
+      if (!m.has(b.id)) m.set(b.id, a.name);
+    }
+    return m;
+  }, [seasonClashes]);
+  const gaps = useMemo(
+    () => (view === "mine" ? openStretches(myShoots, gapCandidates, seasonMiles.miles, todayIso) : []),
+    [view, myShoots, gapCandidates, seasonMiles.miles, todayIso]
+  );
+
   const eventsByDay = useMemo(() => {
     const map = new Map<string, TournamentEvent[]>();
     for (const ev of filtered) {
@@ -338,6 +390,15 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
     return out;
   }, [upcoming, myShoots, view]);
 
+  // Where each shoot sits in the Upcoming list (counting across months), for placing listAd.
+  const listPosition = useMemo(() => new Map(upcoming.map((e, i) => [e.id, i])), [upcoming]);
+  const adAfter = (ev: TournamentEvent): ReactNode => {
+    if (!listAd || view !== "list" || adEvery < 1) return null;
+    const pos = listPosition.get(ev.id);
+    if (pos === undefined || (pos + 1) % adEvery !== 0 || pos === upcoming.length - 1) return null;
+    return listAd((pos + 1) / adEvery - 1);
+  };
+
   const refreshControl = (
     <RefreshControl refreshing={refreshing} onRefresh={refresh} tintColor={theme.primary} colors={[theme.primary]} />
   );
@@ -352,6 +413,20 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
       onPress={setOpenEvent}
       onToggleGoing={onToggleGoing}
       miles={distances.miles.get(ev.id)}
+    />
+  );
+  // My Season rows carry their trip line (cost, registration deadline, hotel button).
+  const renderSeasonRow = (ev: TournamentEvent) => (
+    <EventRow
+      key={ev.id}
+      event={ev}
+      theme={theme}
+      going={isGoing(ev.id)}
+      note={social?.rowNote?.(ev) ?? null}
+      onPress={setOpenEvent}
+      onToggleGoing={onToggleGoing}
+      miles={seasonMiles.miles.get(ev.id)}
+      extra={<TripLine trip={trips.get(ev.id)} theme={theme} hotels={hotels} clashWith={clashName.get(ev.id)} />}
     />
   );
 
@@ -408,7 +483,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
           accessibilityState={{ selected: view === v }}
         >
           <Text style={[styles.segmentText, { color: view === v ? theme.text : theme.muted }]}>
-            {v === "list" ? "Upcoming" : v === "calendar" ? "Calendar" : `★ My Shoots${counts.going ? ` ${counts.going}` : ""}`}
+            {v === "list" ? "Upcoming" : v === "calendar" ? "Calendar" : `★ My Season${counts.going ? ` ${counts.going}` : ""}`}
           </Text>
         </Pressable>
       ))}
@@ -435,16 +510,22 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
   const mineHeader = (
     <View style={styles.controls}>
       {segment}
-      {myShoots.length ? (
-        <Pressable
-          onPress={() => card.shareCard(myShoots, shareAs ?? {}, shootsMessage(myShoots, sharePlug)).catch(() => {})}
-          style={({ pressed }) => [styles.shareBtn, { backgroundColor: theme.primary, opacity: pressed ? 0.85 : 1 }]}
-          accessibilityRole="button"
-        >
-          <Text style={[styles.shareText, { color: theme.onPrimary }]}>Share my shoots</Text>
-          <Text style={[styles.shareSub, { color: theme.onPrimary }]}>Text, Facebook, Instagram, WhatsApp and more</Text>
-        </Pressable>
-      ) : null}
+      <SeasonPlan
+        theme={theme}
+        shoots={myShoots}
+        totals={totals}
+        settings={season}
+        onSettings={changeSeason}
+        hasOrigin={!!seasonOrigin}
+        measuring={!!seasonOrigin && seasonMiles.pending > 0 && !seasonMiles.stuck}
+        clashes={seasonClashes}
+        gaps={gaps}
+        miles={seasonMiles.miles}
+        isGoing={isGoing}
+        onOpen={setOpenEvent}
+        onToggleGoing={onToggleGoing}
+        onShare={() => card.shareCard(myShoots, shareAs ?? {}, shootsMessage(myShoots, sharePlug)).catch(() => {})}
+      />
     </View>
   );
 
@@ -574,7 +655,16 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
         <SectionList
           sections={sections}
           keyExtractor={(ev) => ev.id}
-          renderItem={({ item }) => renderRow(item)}
+          renderItem={({ item }) =>
+            view === "mine" ? (
+              renderSeasonRow(item)
+            ) : (
+              <>
+                {renderRow(item)}
+                {adAfter(item)}
+              </>
+            )
+          }
           renderSectionHeader={({ section }) => (
             <Text style={[styles.sectionTitle, styles.listSection, { color: theme.muted, backgroundColor: theme.background }]}>
               {section.title.toUpperCase()}
@@ -596,7 +686,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
                 theme={theme}
                 text={
                   view === "mine"
-                    ? "Tap ☆ on a tournament to add it to My Shoots. Then you can share them with friends."
+                    ? "Tap ☆ on the shoots you want to make this season. Your season plan shows up here: trip costs, clashing dates, open weekends and shoots to fill them."
                     : stillMeasuring
                     ? "Working out how far away shoots are…"
                     : filter === "Added by archers"
@@ -786,9 +876,6 @@ const styles = StyleSheet.create({
   addText: { fontSize: 14, fontWeight: "700" },
   segmentBtn: { flex: 1, paddingVertical: 7, borderRadius: 8, alignItems: "center" },
   segmentText: { fontSize: 14, fontWeight: "600" },
-  shareBtn: { borderRadius: 12, paddingVertical: 12, paddingHorizontal: 14, alignItems: "center", gap: 2 },
-  shareText: { fontSize: 16, fontWeight: "800" },
-  shareSub: { fontSize: 12, opacity: 0.9 },
   notice: { borderRadius: 10, borderWidth: StyleSheet.hairlineWidth, padding: 10, gap: 4 },
   noticeText: { fontSize: 13 },
   belowHeader: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: 18, marginBottom: 8 },
