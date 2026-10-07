@@ -313,6 +313,22 @@ export default function Home() {
               </span>
             </p>
           )}
+          <p className="basis-full" data-testid="text-footer-about">
+            Archery in the USA is a free calendar of archery tournaments,
+            3D shoots and club events, run by an independent archer and not
+            affiliated with any association.
+          </p>
+          <nav className="basis-full flex flex-wrap gap-4">
+            <a className="underline underline-offset-2 hover:text-foreground" href="app.html" data-testid="link-get-app">
+              Get the app
+            </a>
+            <a className="underline underline-offset-2 hover:text-foreground" href="privacy.html" data-testid="link-privacy">
+              Privacy Policy
+            </a>
+            <a className="underline underline-offset-2 hover:text-foreground" href="support.html" data-testid="link-support">
+              Support &amp; Contact
+            </a>
+          </nav>
         </div>
       </footer>
     </div>
