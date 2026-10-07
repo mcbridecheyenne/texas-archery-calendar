@@ -196,7 +196,7 @@ export default function AccountTab() {
 
       <SectionLabel>App</SectionLabel>
       <View style={[styles.group, { backgroundColor: t.card, borderColor: t.border }]}>
-        {premium.available || premium.isPremium ? (
+        {premium.storeEnabled || premium.isPremium ? (
           <Row
             icon="sparkles-outline"
             label={premium.isPremium ? "Ad-free — thank you!" : "Go ad-free"}
@@ -204,8 +204,8 @@ export default function AccountTab() {
             first
           />
         ) : null}
-        {auth.profile ? <Row icon="hand-left-outline" label="Blocked people" onPress={() => router.push("/blocked")} first={!premium.available && !premium.isPremium} /> : null}
-        <Row icon="document-text-outline" label="Marketplace rules" onPress={() => Linking.openURL(RULES_URL)} first={!premium.available && !premium.isPremium && !auth.profile} />
+        {auth.profile ? <Row icon="hand-left-outline" label="Blocked people" onPress={() => router.push("/blocked")} first={!premium.storeEnabled && !premium.isPremium} /> : null}
+        <Row icon="document-text-outline" label="Marketplace rules" onPress={() => Linking.openURL(RULES_URL)} first={!premium.storeEnabled && !premium.isPremium && !auth.profile} />
         <Row icon="lock-closed-outline" label="Privacy policy" onPress={() => Linking.openURL(PRIVACY_URL)} />
       </View>
 

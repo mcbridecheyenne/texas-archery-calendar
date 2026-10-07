@@ -237,6 +237,9 @@ function HotelCard({ event, config, theme }: { event: TournamentEvent; config: H
       >
         <Text style={[styles.hotelBtnText, { color: theme.onPrimary }]}>Find hotels{place ? ` near ${place}` : ""}</Text>
       </Pressable>
+      {config.stay22Aid.trim() ? (
+        <Text style={[styles.hotelNote, { color: theme.muted }]}>Opens Stay22. The app may earn a commission if you book.</Text>
+      ) : null}
     </View>
   );
 }

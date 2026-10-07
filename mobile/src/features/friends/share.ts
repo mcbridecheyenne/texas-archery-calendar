@@ -52,5 +52,6 @@ export function addResultMessage(r: AddFriendResult): [string, string] {
   if (r.status === "accepted") return ["You're friends!", `You and ${r.name} are now friends.`];
   if (r.status === "already_friends") return ["Already friends", `You and ${r.name} are already friends.`];
   if (r.status === "already_sent") return ["Request already sent", `Waiting for ${r.name} to accept.`];
+  if (r.status === "already_received") return ["They already asked you", `${r.name} already sent you a request. Accept it from Friends.`];
   return ["Request sent", `${r.name} will see your request next time they open the app.`];
 }

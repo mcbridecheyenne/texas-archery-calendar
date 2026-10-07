@@ -32,7 +32,8 @@
       [
         "expo-calendar",
         {
-          "calendarPermission": "Archery in the USA adds the tournaments you pick to your calendar."
+          "calendarPermission": "Archery in the USA adds the tournaments you pick to your calendar.",
+          "remindersPermission": false
         }
       ],
       "expo-notifications",
@@ -47,7 +48,10 @@
       [
         "expo-location",
         {
-          "locationWhenInUsePermission": "Archery in the USA uses your approximate location to show used gear you can pick up nearby and to check which state you're in for state-specific features."
+          "locationWhenInUsePermission": "Archery in the USA uses your approximate location to show tournaments and used gear near you.",
+          "locationAlwaysAndWhenInUsePermission": false,
+          "locationAlwaysPermission": false,
+          "isIosBackgroundLocationEnabled": false
         }
       ],
       [

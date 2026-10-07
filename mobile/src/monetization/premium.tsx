@@ -31,6 +31,9 @@ export interface Tip {
 
 export interface PremiumState {
   available: boolean; // subscriptions are set up and the store is reachable
+  storeEnabled: boolean; // purchases are set up in this build, even if prices haven't loaded
+  plansFailed: boolean; // the store didn't return prices; offer a retry
+  reloadPlans: () => void;
   isPremium: boolean; // ad-free
   showAdsAnyway: boolean; // an ad-free archer chose to see the ads again on this phone
   setShowAdsAnyway: (on: boolean) => void;
@@ -47,6 +50,9 @@ export interface PremiumState {
 
 const PremiumContext = createContext<PremiumState>({
   available: false,
+  storeEnabled: false,
+  plansFailed: false,
+  reloadPlans: () => {},
   isPremium: false,
   showAdsAnyway: false,
   setShowAdsAnyway: () => {},
@@ -82,6 +88,22 @@ export function PremiumProvider({ children }: { children: ReactNode }) {
   const openSheet = useCallback(() => setSheetOpen(true), []);
   const closeSheet = useCallback(() => setSheetOpen(false), []);
   const [showAdsAnyway, setShowAds] = useState(false);
+  const [plansFailed, setPlansFailed] = useState(false);
+
+  // In RevenueCat, the current offering holds a Monthly and an Annual package.
+  const loadPlans = useCallback(async () => {
+    setPlansFailed(false);
+    try {
+      const current = (await Purchases.getOfferings())?.current;
+      const found: Plan[] = [];
+      if (current?.monthly) found.push(toPlan(current.monthly, "month"));
+      if (current?.annual) found.push(toPlan(current.annual, "year"));
+      setPlans(found);
+      setPlansFailed(found.length === 0);
+    } catch {
+      setPlansFailed(true);
+    }
+  }, []);
 
   useEffect(() => {
     AsyncStorage.getItem(SHOW_ADS_KEY)
@@ -117,14 +139,7 @@ export function PremiumProvider({ children }: { children: ReactNode }) {
         apply(await Purchases.getCustomerInfo());
       } catch {}
       if (!cancelled) setReady(true);
-      try {
-        // In RevenueCat, the current offering holds a Monthly and an Annual package.
-        const current = (await Purchases.getOfferings())?.current;
-        const found: Plan[] = [];
-        if (current?.monthly) found.push(toPlan(current.monthly, "month"));
-        if (current?.annual) found.push(toPlan(current.annual, "year"));
-        if (!cancelled) setPlans(found);
-      } catch {}
+      if (!cancelled) await loadPlans();
       try {
         // One-time tips are consumable products, fetched directly (no offering needed).
         const products: any[] = await Purchases.getProducts(PURCHASES.tipProductIds, Purchases.PRODUCT_CATEGORY?.NON_SUBSCRIPTION);
@@ -139,7 +154,7 @@ export function PremiumProvider({ children }: { children: ReactNode }) {
       cancelled = true;
       Purchases.removeCustomerInfoUpdateListener?.(apply);
     };
-  }, [enabled, apply]);
+  }, [enabled, apply, loadPlans]);
 
   const purchase = useCallback(async (plan: Plan) => {
     try {
@@ -173,6 +188,9 @@ export function PremiumProvider({ children }: { children: ReactNode }) {
   const value = useMemo<PremiumState>(
     () => ({
       available: enabled && plans.length > 0,
+      storeEnabled: enabled,
+      plansFailed,
+      reloadPlans: loadPlans,
       isPremium,
       showAdsAnyway,
       setShowAdsAnyway,
@@ -186,7 +204,7 @@ export function PremiumProvider({ children }: { children: ReactNode }) {
       openSheet,
       closeSheet,
     }),
-    [enabled, plans, isPremium, showAdsAnyway, setShowAdsAnyway, ready, purchase, restore, tips, sendTip, sheetOpen, openSheet, closeSheet]
+    [enabled, plans, plansFailed, loadPlans, isPremium, showAdsAnyway, setShowAdsAnyway, ready, purchase, restore, tips, sendTip, sheetOpen, openSheet, closeSheet]
   );
 
   return <PremiumContext.Provider value={value}>{children}</PremiumContext.Provider>;

@@ -5,7 +5,7 @@ import { Alert } from "react-native";
 import { useAuth } from "../../lib/auth";
 import { report } from "./api";
 import type { ReportReason } from "./types";
-import { showMenu } from "../../ui";
+import { confirm, errorText, showMenu } from "../../ui";
 
 // Returns a function that checks the person can post/message, sending them to
 // sign in or finish their profile first. Resolves true when they're ready.
@@ -59,6 +59,21 @@ export function askToReport(reporterId: string | null, target: { listingId?: str
       },
     }))
   );
+}
+
+// Report or block a person: from a friend request, a Going list or an archer-added tournament.
+export function askAboutPerson(name: string, personId: string, reporterId: string | null, block: (id: string) => Promise<void>) {
+  showMenu(name, [
+    { label: `Report ${name}`, onPress: () => askToReport(reporterId, { userId: personId }) },
+    {
+      label: `Block ${name}`,
+      destructive: true,
+      onPress: () =>
+        confirm(`Block ${name}?`, "You won't see their tournaments, listings or messages, and they can't add you as a friend.", "Block", () =>
+          block(personId).catch((e) => Alert.alert("Couldn't block", errorText(e)))
+        ),
+    },
+  ]);
 }
 
 export function timeAgo(iso: string): string {
