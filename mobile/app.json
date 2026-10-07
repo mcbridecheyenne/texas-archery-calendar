@@ -61,9 +61,6 @@
       "./plugins/withPodsDeploymentTarget",
       "./plugins/withSceneLifecycle"
     ],
-    "runtimeVersion": {
-      "policy": "appVersion"
-    },
     "scheme": "archeryintexas",
     "experiments": {
       "typedRoutes": false
@@ -73,12 +70,6 @@
         "projectId": "0405b8fd-8dd8-47a5-a1d9-f7588cf8450f"
       }
     },
-    "owner": "cmprograms",
-    "updates": {
-      "url": "https://u.expo.dev/0405b8fd-8dd8-47a5-a1d9-f7588cf8450f",
-      "requestHeaders": {
-        "expo-channel-name": "production"
-      }
-    }
+    "owner": "cmprograms"
   }
 }
