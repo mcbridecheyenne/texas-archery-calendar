@@ -23,7 +23,7 @@ export interface Attendee {
 }
 
 export type AddFriendResult = {
-  status: "sent" | "accepted" | "already_sent" | "already_friends";
+  status: "sent" | "accepted" | "already_sent" | "already_received" | "already_friends";
   name: string;
 };
 
