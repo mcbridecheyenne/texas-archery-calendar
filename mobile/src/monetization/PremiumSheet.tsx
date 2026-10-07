@@ -1,7 +1,7 @@
 // "Remove ads" screen. Apple requires the price, renewal period, a restore button,
 // and links to the terms and privacy policy on this screen.
 import { useEffect, useState } from "react";
-import { ActivityIndicator, Alert, Linking, Modal, Pressable, StyleSheet, Switch, Text, View } from "react-native";
+import { ActivityIndicator, Alert, Linking, Modal, Platform, Pressable, StyleSheet, Switch, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { PRIVACY_URL, TERMS_URL } from "../../config";
 import { useCalendarTheme } from "../features/calendar";
@@ -43,7 +43,7 @@ export function PremiumSheet({ visible, onClose }: { visible: boolean; onClose: 
       onClose();
       Alert.alert("Restored", "Your ad-free subscription is active on this phone.");
     } else {
-      Alert.alert("Nothing to restore", "We couldn't find an active ad-free subscription for this Apple ID or Google account.");
+      Alert.alert("Nothing to restore", `We couldn't find an active ad-free subscription for this ${Platform.select({ ios: "Apple ID", default: "Google account" })}.`);
     }
   }
 
@@ -140,7 +140,7 @@ export function PremiumSheet({ visible, onClose }: { visible: boolean; onClose: 
             </Pressable>
             <Text style={[styles.fine, { color: theme.muted }]}>
               Renews automatically each {chosen?.period ?? "period"} until you cancel. Cancel anytime in your
-              App Store or Google Play subscriptions, at least 24 hours before it renews.
+              {Platform.select({ ios: "App Store", default: "Google Play" })} subscriptions, at least 24 hours before it renews.
             </Text>
           </>
         ) : null}

@@ -86,7 +86,7 @@ export default function ListingScreen() {
     setBusy("message");
     try {
       const conversationId = await openConversation(listing, userId!);
-      router.push(`/chat/${conversationId}`);
+      router.push(`/chat/${conversationId}`, { dangerouslySingular: true });
     } catch (e) {
       Alert.alert("Couldn't start a message", errorText(e));
     } finally {

@@ -3,7 +3,7 @@
 // and messaging do.
 import * as AppleAuthentication from "expo-apple-authentication";
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
-import { Platform } from "react-native";
+import { AppState, Platform } from "react-native";
 import type { Session } from "@supabase/supabase-js";
 import type { Profile } from "../features/marketplace/types";
 import { forgetPushToken } from "./push";
@@ -17,6 +17,8 @@ export interface AuthState {
   profile: Profile | null; // null until they finish setup
   suggestedName: string | null; // from Sign in with Apple, to prefill setup
   blocked: Set<string>;
+  loadError: boolean; // the profile or block list couldn't be loaded (weak signal); profile is NOT "missing"
+  retryLoad: () => void;
   appleAvailable: boolean;
   signInWithApple: () => Promise<"ok" | "cancelled">;
   sendEmailCode: (email: string) => Promise<void>;
@@ -56,6 +58,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loadedFor, setLoadedFor] = useState<string | null>(null); // whose profile is loaded
   const [suggestedName, setSuggestedName] = useState<string | null>(null);
   const [appleAvailable, setAppleAvailable] = useState(false);
+  const [loadError, setLoadError] = useState(false);
+  const [retryTick, setRetryTick] = useState(0); // bump to load the profile and block list again
   const userId = session?.user.id ?? null;
 
   useEffect(() => {
@@ -79,23 +83,41 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setProfile(null);
       setBlocked(new Set());
       setLoadedFor(null);
+      setLoadError(false);
       return;
     }
     let cancelled = false;
     (async () => {
-      const [{ data: p }, { data: b }] = await Promise.all([
+      const [{ data: p, error: profileError }, { data: b, error: blocksError }] = await Promise.all([
         fetchMyProfile(),
         supabase!.from("blocks").select("blocked_id").eq("blocker_id", userId),
       ]);
       if (cancelled) return;
-      setProfile((p as Profile) ?? null);
-      setBlocked(new Set((b ?? []).map((r: { blocked_id: string }) => r.blocked_id)));
+      // A failed load is not "no profile": keep what we had and let it be retried.
+      if (!profileError) setProfile((p as Profile) ?? null);
+      if (!blocksError) setBlocked(new Set((b ?? []).map((r: { blocked_id: string }) => r.blocked_id)));
+      setLoadError(!!profileError || !!blocksError);
       setLoadedFor(userId);
-    })();
+    })().catch(() => {
+      if (cancelled) return;
+      setLoadError(true);
+      setLoadedFor(userId);
+    });
     return () => {
       cancelled = true;
     };
-  }, [userId]);
+  }, [userId, retryTick]);
+
+  const retryLoad = useCallback(() => setRetryTick((n) => n + 1), []);
+
+  // Back on screen after a weak-signal start: try the profile and block list again.
+  useEffect(() => {
+    if (!loadError) return;
+    const sub = AppState.addEventListener("change", (state) => {
+      if (state === "active") retryLoad();
+    });
+    return () => sub.remove();
+  }, [loadError, retryLoad]);
 
   const signInWithApple = useCallback(async () => {
     try {
@@ -210,6 +232,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       profile,
       suggestedName,
       blocked,
+      loadError,
+      retryLoad,
       appleAvailable,
       signInWithApple,
       sendEmailCode,
@@ -220,7 +244,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       signOut,
       deleteAccount,
     }),
-    [loading, session, userId, profile, suggestedName, blocked, appleAvailable, signInWithApple, sendEmailCode, verifyEmailCode, saveProfile, block, unblock, signOut, deleteAccount]
+    [loading, session, userId, profile, suggestedName, blocked, loadError, retryLoad, appleAvailable, signInWithApple, sendEmailCode, verifyEmailCode, saveProfile, block, unblock, signOut, deleteAccount]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

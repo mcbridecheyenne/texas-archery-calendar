@@ -74,14 +74,27 @@ export function mergeDuplicates(events: TournamentEvent[]): TournamentEvent[] {
   return out;
 }
 
+// A row with no name or no start date can't be shown; skip it rather than lose the whole schedule.
+const isUsableRow = (e: unknown): e is TournamentEvent => {
+  const r = e as Partial<TournamentEvent> | null;
+  return !!r && typeof r.name === "string" && !!r.name.trim() && typeof r.startDate === "string" && !!r.startDate;
+};
+
 function normalize(data: EventsResponse): EventsResponse {
-  const events = mergeDuplicates(data.events.map(normalizeEvent));
+  const rows = data.events.filter(isUsableRow).map((e) => (typeof e.endDate === "string" && e.endDate ? e : { ...e, endDate: e.startDate }));
+  const events = mergeDuplicates(rows.map(normalizeEvent));
   events.sort((a, b) => a.startDate.localeCompare(b.startDate) || a.name.localeCompare(b.name));
   return { ...data, events };
 }
 
+// The request itself failed (no signal, no route): the only case we call "offline".
+class NetworkError extends Error {}
+
 async function fetchFeed(url: string, signal: AbortSignal): Promise<EventsResponse | null> {
-  const res = await fetch(url, { headers: { Accept: "application/json" }, signal });
+  const res = await fetch(url, { headers: { Accept: "application/json" }, signal }).catch((e) => {
+    if (e?.name === "AbortError") throw e;
+    throw new NetworkError();
+  });
   if (res.status === 404) return null;
   if (!res.ok) throw new Error(`The schedule server returned an error (${res.status}).`);
   const data: unknown = await res.json();
@@ -97,19 +110,26 @@ export async function fetchEvents(apiBaseUrl: string, forceRefresh = false): Pro
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
     let data: EventsResponse | null = null;
+    let usedFallback = false;
     for (const feed of FEEDS) {
       data = await fetchFeed(`${base}/${feed}${forceRefresh ? `?t=${Date.now()}` : ""}`, controller.signal);
       if (data) break;
+      usedFallback = true;
     }
     if (!data) throw new Error("The schedule server returned an error (404).");
     const out = normalize(data);
+    if (usedFallback) {
+      // The nationwide file is missing: the Texas-only feed must not replace a good saved copy.
+      const saved = await readCachedEvents().catch(() => null);
+      if (saved) return saved;
+    }
     await writeJSON(CACHE_KEY, out);
     return out;
   } catch (err) {
     if ((err as Error)?.name === "AbortError") {
       throw new Error("The schedule took too long to load. Check your signal and try again.");
     }
-    if (err instanceof TypeError) {
+    if (err instanceof NetworkError) {
       throw new Error("Couldn't reach the schedule. You might be offline.");
     }
     throw err;

@@ -25,7 +25,7 @@ export default function TournamentsTab() {
   const community = useCommunity();
   const theme = useCalendarTheme();
   const { ready, homeState, setHomeState } = useHomeState();
-  // First launch on a new phone: ask where they shoot. "Cancel" shows every state for now.
+  // First launch on a new phone: ask where they shoot. "Cancel" shows every state for now, and we ask again next launch.
   const [skipped, setSkipped] = useState(false);
   const { openSheet } = usePremium();
 

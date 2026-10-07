@@ -11,7 +11,7 @@ import { Button, Field, errorText, useTheme } from "../src/ui";
 export default function SignInScreen() {
   const t = useTheme();
   const router = useRouter();
-  const { appleAvailable, signInWithApple, sendEmailCode, verifyEmailCode, session, profile, loading } = useAuth();
+  const { appleAvailable, signInWithApple, sendEmailCode, verifyEmailCode, session, profile, loading, loadError, retryLoad } = useAuth();
   const [email, setEmail] = useState("");
   const [code, setCode] = useState("");
   const [step, setStep] = useState<"email" | "code">("email");
@@ -28,9 +28,10 @@ export default function SignInScreen() {
   // Once signed in and the profile has loaded: new people set up a profile, others go back.
   useEffect(() => {
     if (!signedIn || !session || loading) return;
+    if (loadError && !profile) return; // couldn't load it: wait for a retry rather than treating them as new
     if (profile) router.back();
     else router.replace("/setup-profile");
-  }, [signedIn, session, profile, loading, router]);
+  }, [signedIn, session, profile, loading, loadError, router]);
 
   async function apple() {
     try {
@@ -78,6 +79,13 @@ export default function SignInScreen() {
         <Text style={[styles.lead, { color: t.muted }]}>
           An account lets you add friends, share the shoots you're going to, add tournaments, and buy or sell gear. Browsing the schedule never needs one.
         </Text>
+
+        {signedIn && loadError && !profile ? (
+          <View style={styles.form}>
+            <Text style={{ color: t.text, fontSize: 15 }}>Couldn't load your account. Check your signal and try again.</Text>
+            <Button title="Try again" onPress={retryLoad} />
+          </View>
+        ) : null}
 
         {appleAvailable && step === "email" ? (
           <>

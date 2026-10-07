@@ -40,13 +40,20 @@ export function useEvents(apiBaseUrl: string): EventsState {
   useEffect(() => {
     mounted.current = true;
     (async () => {
-      const cached = await readCachedEvents();
-      if (cached && mounted.current) {
-        setData(cached);
-        setLoading(false);
+      try {
+        const cached = await readCachedEvents();
+        if (cached && mounted.current) {
+          setData(cached);
+          setLoading(false);
+        }
+      } catch {
+        // A bad saved copy: ignore it and load fresh.
       }
-      await load(false);
-      if (mounted.current) setLoading(false);
+      try {
+        await load(false);
+      } finally {
+        if (mounted.current) setLoading(false);
+      }
     })();
     return () => {
       mounted.current = false;

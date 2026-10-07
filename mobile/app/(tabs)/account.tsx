@@ -2,13 +2,15 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useFocusEffect, useRouter } from "expo-router";
 import { useCallback, useState } from "react";
-import { ActivityIndicator, Alert, Image, Linking, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
-import { PRIVACY_URL, RULES_URL } from "../../config";
+import { ActivityIndicator, Alert, Image, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { PRIVACY_URL, RULES_URL, SUPPORT_URL } from "../../config";
+import { StatePicker, stateName, useCalendarTheme } from "../../src/features/calendar";
 import { fetchMyListings, renewListing } from "../../src/features/marketplace/api";
 import { expiryLabel, isExpired, syncExpiryReminders } from "../../src/features/marketplace/expiry";
 import { formatPrice, type Listing } from "../../src/features/marketplace/types";
 import { useFriends } from "../../src/features/friends";
 import { useAuth } from "../../src/lib/auth";
+import { useHomeState } from "../../src/lib/homeState";
 import { photoUrl } from "../../src/lib/supabase";
 import { usePremium } from "../../src/monetization/premium";
 import { ScholarshipNote } from "../../src/monetization/ScholarshipNote";
@@ -21,6 +23,9 @@ export default function AccountTab() {
   const auth = useAuth();
   const premium = usePremium();
   const friends = useFriends();
+  const home = useHomeState();
+  const calendarTheme = useCalendarTheme();
+  const [pickingState, setPickingState] = useState(false);
   const [mine, setMine] = useState<Listing[] | null>(null);
   const [deleting, setDeleting] = useState(false);
   const [tipping, setTipping] = useState<string | null>(null);
@@ -53,10 +58,18 @@ export default function AccountTab() {
     }
   }
 
+  // Works signed out (saved on the phone); signed in, it's saved to the profile too.
+  async function pickHomeState(code: string) {
+    setPickingState(false);
+    await home.setHomeState(code);
+    const p = auth.profile;
+    if (p) await auth.saveProfile(p.display_name, p.city ?? "", p.archery_class ?? "", undefined, { homeState: code }).catch((e) => Alert.alert("Couldn't save", errorText(e)));
+  }
+
   function deleteAccount() {
     confirm(
       "Delete your account?",
-      "This permanently deletes your profile, listings, photos and messages. Your ad-free subscription is separate: cancel it in your App Store or Google Play settings.",
+      `This permanently deletes your profile, listings, photos and messages. Your ad-free subscription is separate: cancel it in your ${Platform.select({ ios: "App Store", default: "Google Play" })} settings.`,
       "Delete everything",
       async () => {
         setDeleting(true);
@@ -85,6 +98,12 @@ export default function AccountTab() {
           </View>
         ) : auth.loading ? (
           <ActivityIndicator color={t.primary} style={{ marginVertical: 24 }} />
+        ) : auth.loadError && !auth.profile ? (
+          <View style={[styles.card, { backgroundColor: t.card, borderColor: t.border }]}>
+            <Text style={[styles.h, { color: t.text }]}>Couldn't load your account</Text>
+            <Text style={[styles.p, { color: t.muted }]}>Check your signal and try again.</Text>
+            <Button title="Try again" onPress={auth.retryLoad} />
+          </View>
         ) : !auth.profile ? (
           <View style={[styles.card, { backgroundColor: t.card, borderColor: t.border }]}>
             <Text style={[styles.h, { color: t.text }]}>Finish your profile</Text>
@@ -207,6 +226,8 @@ export default function AccountTab() {
         {auth.profile ? <Row icon="hand-left-outline" label="Blocked people" onPress={() => router.push("/blocked")} first={!premium.storeEnabled && !premium.isPremium} /> : null}
         <Row icon="document-text-outline" label="Marketplace rules" onPress={() => Linking.openURL(RULES_URL)} first={!premium.storeEnabled && !premium.isPremium && !auth.profile} />
         <Row icon="lock-closed-outline" label="Privacy policy" onPress={() => Linking.openURL(PRIVACY_URL)} />
+        <Row icon="help-circle-outline" label="Help and contact" onPress={() => Linking.openURL(SUPPORT_URL)} />
+        <Row icon="location-outline" label={`Home state: ${stateName(home.homeState) ?? "Choose your state"}`} onPress={() => setPickingState(true)} />
       </View>
 
       {auth.userId ? (
@@ -215,6 +236,15 @@ export default function AccountTab() {
           <Button title="Delete account" kind="danger" onPress={deleteAccount} busy={deleting} />
         </View>
       ) : null}
+
+      <StatePicker
+        visible={pickingState}
+        value={home.homeState}
+        theme={calendarTheme}
+        title="Your home state"
+        onClose={() => setPickingState(false)}
+        onPick={pickHomeState}
+      />
     </ScrollView>
   );
 }

@@ -67,8 +67,8 @@ export interface CalendarScreenProps {
   adEvery?: number;
 }
 
-// Club shoots and archer-added tournaments go after the governing bodies.
-const LAST_ORGS = ["Other", "Club shoots", "Added by archers"];
+// Archer-added and emailed-in shoots go after the governing bodies.
+const LAST_ORGS = ["Other", "Added by archers"];
 
 // "Near me" distances, the same as the Marketplace tab. The last choice is kept on the phone.
 const NEAR_MILES = [25, 50, 100, 250] as const;
