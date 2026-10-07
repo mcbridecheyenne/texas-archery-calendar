@@ -8,6 +8,7 @@
 // (read from PREVIOUS_EVENTS_URL).
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
+import { fetchWithTimeout } from "../api/_http.ts";
 import { getUsaEvents, type UsaResult } from "../api/_national.ts";
 
 const args = process.argv.slice(2);
@@ -27,7 +28,7 @@ async function loadPrevious(): Promise<UsaResult | null> {
       const data = JSON.parse(readFileSync(previousUrl, "utf8")) as UsaResult;
       return Array.isArray(data?.events) ? data : null;
     }
-    const res = await fetch(`${previousUrl}?t=${Date.now()}`, { signal: AbortSignal.timeout(20_000) });
+    const res = await fetchWithTimeout(`${previousUrl}?t=${Date.now()}`);
     if (!res.ok) return null;
     const data = (await res.json()) as UsaResult;
     return Array.isArray(data?.events) ? data : null;

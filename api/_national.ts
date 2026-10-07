@@ -1,5 +1,6 @@
 // Nationwide event sources for the USA version of the app. Kept separate from
 // _scrapers.ts so the Texas feed (events.json) the current app reads is unchanged.
+import { fetchWithTimeout } from "./_http.ts";
 import { readFileSync } from "node:fs";
 import { getEvents, type TournamentEvent, type SourceStatus } from "./_scrapers.ts";
 import { collectStateCalendars } from "./_states.ts";
@@ -152,7 +153,7 @@ export async function collectS3DA(): Promise<UsaEvent[]> {
   const rows: S3DARawEvent[] = [];
   let next: string | null = `${S3DA_API}?start_date=${today}&per_page=50`;
   for (let page = 0; next && page < 20; page++) {
-    const res = await fetch(next, { headers: { "User-Agent": UA, Accept: "application/json" } });
+    const res = await fetchWithTimeout(next, { headers: { "User-Agent": UA, Accept: "application/json" } });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = (await res.json()) as { events?: S3DARawEvent[]; next_rest_url?: string };
     rows.push(...(data.events ?? []));
@@ -187,7 +188,7 @@ export function parseWorldArchery(rows: WARawCompetition[]): UsaEvent[] {
 
 async function collectWorldArchery(): Promise<UsaEvent[]> {
   const today = new Date().toISOString().slice(0, 10);
-  const res = await fetch(`${WA_API}?Country=USA&StartDate=${today}&RBP=100`, {
+  const res = await fetchWithTimeout(`${WA_API}?Country=USA&StartDate=${today}&RBP=100`, {
     headers: { "User-Agent": UA, Accept: "application/json" },
   });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -304,12 +305,12 @@ export function mergeAsaProAm(menu: AsaMenuEvent[], feed: AsaFeedEvent[]): UsaEv
 
 async function collectAsaProAm(): Promise<UsaEvent[]> {
   const headers = { "User-Agent": UA };
-  const pageRes = await fetch(ASA_PROAM_URL, { headers });
+  const pageRes = await fetchWithTimeout(ASA_PROAM_URL, { headers });
   if (!pageRes.ok) throw new Error(`HTTP ${pageRes.status}`);
   const menu = parseAsaProAmMenu(await pageRes.text());
   let feed: AsaFeedEvent[] = [];
   try {
-    const res = await fetch(ASA_FEED, { headers: { ...headers, Accept: "application/json" } });
+    const res = await fetchWithTimeout(ASA_FEED, { headers: { ...headers, Accept: "application/json" } });
     if (res.ok) feed = (await res.json()) as AsaFeedEvent[];
   } catch {
     // Venues are optional; the page alone still gives names, dates and cities.

@@ -7,6 +7,7 @@
 //
 // General outdoor calendars list hunter education, classes and kids' days next to the
 // shoots, so those sources keep only events whose name reads like an archery shoot.
+import { fetchWithTimeout } from "./_http.ts";
 import {
   blankEvent, decodeEntities, hash, isoDay, normalizeState, stateFromText,
   type UsaEvent, type UsaSourceStatus,
@@ -118,7 +119,7 @@ async function fetchTribe(feed: StateFeed): Promise<UsaEvent[]> {
   let next: string | null = `${feed.feedUrl}${join}start_date=${today}&per_page=50`;
   const rows: TribeEvent[] = [];
   for (let page = 0; next && page < 10; page++) {
-    const res: Response = await fetch(next, { headers: { "User-Agent": UA, Accept: "application/json" } });
+    const res: Response = await fetchWithTimeout(next, { headers: { "User-Agent": UA, Accept: "application/json" } });
     // The plugin answers 404 "no events" when nothing is scheduled.
     if (res.status === 404 && page === 0) return [];
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -153,7 +154,7 @@ export function parseLocalist(feed: StateFeed, rows: { event?: LocalistEvent }[]
 }
 
 async function fetchLocalist(feed: StateFeed): Promise<UsaEvent[]> {
-  const res = await fetch(feed.feedUrl, { headers: { "User-Agent": UA, Accept: "application/json" } });
+  const res = await fetchWithTimeout(feed.feedUrl, { headers: { "User-Agent": UA, Accept: "application/json" } });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const data = (await res.json()) as { events?: { event?: LocalistEvent }[] };
   return parseLocalist(feed, data.events ?? []);
@@ -214,7 +215,7 @@ export function parseIcsPage(feed: StateFeed, html: string): UsaEvent[] {
 }
 
 async function fetchIcsPage(feed: StateFeed): Promise<UsaEvent[]> {
-  const res = await fetch(feed.feedUrl, { headers: { "User-Agent": UA } });
+  const res = await fetchWithTimeout(feed.feedUrl, { headers: { "User-Agent": UA } });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return parseIcsPage(feed, await res.text());
 }

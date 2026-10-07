@@ -8,6 +8,7 @@
 // kept (read from PREVIOUS_EVENTS_URL) so a temporary outage doesn't empty the calendar.
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
+import { fetchWithTimeout } from "../api/_http.ts";
 import { getEvents, type CombinedResult } from "../api/_scrapers.ts";
 
 const outPath = process.argv[2] ?? "dist/public/events.json";
@@ -16,7 +17,7 @@ const previousUrl = process.env.PREVIOUS_EVENTS_URL;
 async function loadPrevious(): Promise<CombinedResult | null> {
   if (!previousUrl) return null;
   try {
-    const res = await fetch(`${previousUrl}?t=${Date.now()}`);
+    const res = await fetchWithTimeout(`${previousUrl}?t=${Date.now()}`);
     if (!res.ok) return null;
     const data = (await res.json()) as CombinedResult;
     return Array.isArray(data?.events) ? data : null;

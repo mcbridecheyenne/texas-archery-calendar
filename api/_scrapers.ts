@@ -1,4 +1,5 @@
 // Shared types for Vercel serverless functions (no zod dependency needed at runtime)
+import { fetchWithTimeout } from "./_http.ts";
 
 export interface TournamentEvent {
   id: string;
@@ -89,7 +90,7 @@ function stripTags(s: string): string {
 async function scrapeTFAA(): Promise<{ events: TournamentEvent[]; status: SourceStatus }> {
   const fetchedAt = new Date().toISOString();
   try {
-    const res = await fetch(TFAA_URL, { headers: { "User-Agent": UA } });
+    const res = await fetchWithTimeout(TFAA_URL, { headers: { "User-Agent": UA } });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const html = await res.text();
     const events = parseTFAAHtml(html);
@@ -153,7 +154,7 @@ function parseTFAAHtml(html: string): TournamentEvent[] {
 async function scrapeASA(): Promise<{ events: TournamentEvent[]; status: SourceStatus }> {
   const fetchedAt = new Date().toISOString();
   try {
-    const res = await fetch(ASA_CSV_URL, { headers: { "User-Agent": UA } });
+    const res = await fetchWithTimeout(ASA_CSV_URL, { headers: { "User-Agent": UA } });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const csv = await res.text();
     const events = parseASACsv(csv);
@@ -247,7 +248,7 @@ interface TSAARawEvent {
 async function scrapeTSAA(): Promise<{ events: TournamentEvent[]; status: SourceStatus }> {
   const fetchedAt = new Date().toISOString();
   try {
-    const res = await fetch(TSAA_EVENTS_URL, { headers: { "User-Agent": UA } });
+    const res = await fetchWithTimeout(TSAA_EVENTS_URL, { headers: { "User-Agent": UA } });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const raw = (await res.json()) as TSAARawEvent[];
     const events = parseTSAAEvents(raw);
