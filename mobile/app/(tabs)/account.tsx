@@ -3,7 +3,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { useFocusEffect, useRouter } from "expo-router";
 import { useCallback, useState } from "react";
 import { ActivityIndicator, Alert, Image, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
-import { PRIVACY_URL, RULES_URL } from "../../config";
+import { PRIVACY_URL, RULES_URL, SUPPORT_URL } from "../../config";
 import { fetchMyListings, renewListing } from "../../src/features/marketplace/api";
 import { expiryLabel, isExpired, syncExpiryReminders } from "../../src/features/marketplace/expiry";
 import { formatPrice, type Listing } from "../../src/features/marketplace/types";
@@ -207,6 +207,7 @@ export default function AccountTab() {
         {auth.profile ? <Row icon="hand-left-outline" label="Blocked people" onPress={() => router.push("/blocked")} first={!premium.available && !premium.isPremium} /> : null}
         <Row icon="document-text-outline" label="Marketplace rules" onPress={() => Linking.openURL(RULES_URL)} first={!premium.available && !premium.isPremium && !auth.profile} />
         <Row icon="lock-closed-outline" label="Privacy policy" onPress={() => Linking.openURL(PRIVACY_URL)} />
+        <Row icon="help-circle-outline" label="Help and contact" onPress={() => Linking.openURL(SUPPORT_URL)} />
       </View>
 
       {auth.userId ? (

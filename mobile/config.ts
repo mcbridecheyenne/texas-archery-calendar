@@ -20,6 +20,7 @@ export const SUPABASE = {
 export const EMAIL_SIGN_IN_ENABLED = false;
 
 export const PRIVACY_URL = `${API_BASE_URL}/privacy.html`;
+export const SUPPORT_URL = `${API_BASE_URL}/support.html`;
 export const RULES_URL = `${API_BASE_URL}/marketplace-rules.html`;
 
 // Link added to shared shoots ("Get the Archery in the USA app"). It's a page on the website
