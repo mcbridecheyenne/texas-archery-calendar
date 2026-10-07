@@ -2,6 +2,7 @@
 // profile, and who they've blocked. Browsing never needs an account; posting
 // and messaging do.
 import * as AppleAuthentication from "expo-apple-authentication";
+import { REVIEW_ACCOUNT_EMAIL } from "../../config";
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { AppState, Platform } from "react-native";
 import type { Session } from "@supabase/supabase-js";
@@ -48,6 +49,10 @@ export function useAuth(): AuthState {
   const ctx = useContext(AuthContext);
   if (!ctx) throw new Error("useAuth must be used inside <AuthProvider>");
   return ctx;
+}
+
+function isReviewAccount(email: string) {
+  return email.trim().toLowerCase() === REVIEW_ACCOUNT_EMAIL.toLowerCase();
 }
 
 export function AuthProvider({ children }: { children: ReactNode }) {
@@ -140,12 +145,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const sendEmailCode = useCallback(async (email: string) => {
+    if (isReviewAccount(email)) return; // the reviewer types a password instead of a code
     const { error } = await supabase!.auth.signInWithOtp({ email: email.trim(), options: { shouldCreateUser: true } });
     if (error) throw error;
   }, []);
 
   const verifyEmailCode = useCallback(async (email: string, code: string) => {
-    const { error } = await supabase!.auth.verifyOtp({ email: email.trim(), token: code.trim(), type: "email" });
+    const { error } = isReviewAccount(email)
+      ? await supabase!.auth.signInWithPassword({ email: email.trim(), password: code.trim() })
+      : await supabase!.auth.verifyOtp({ email: email.trim(), token: code.trim(), type: "email" });
     if (error) throw error;
   }, []);
 

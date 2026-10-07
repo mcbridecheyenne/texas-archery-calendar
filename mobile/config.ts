@@ -90,3 +90,8 @@ export const PURCHASES = {
   // App Store Connect and Google Play and added to RevenueCat. Hidden until they exist.
   tipProductIds: ["tip_small", "tip_medium", "tip_large"],
 };
+
+// App Store reviewers can't receive our emailed codes, so this one account signs in with a
+// password typed into the Code box instead (no email is sent for it). The account is a plain
+// member with sample content; its password lives only in App Store Connect and Supabase.
+export const REVIEW_ACCOUNT_EMAIL = "mcbridecheyenne81+applereview@icloud.com";
