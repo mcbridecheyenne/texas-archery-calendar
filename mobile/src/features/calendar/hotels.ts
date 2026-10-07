@@ -14,7 +14,7 @@
 // so it still works, but nothing is earned.
 import { useEffect, useState } from "react";
 import { parseISODate, toIso } from "./dates";
-import { stateCode, stateName } from "./states";
+import { stateCode } from "./states";
 import { readJSON, writeJSON } from "./storage";
 import type { TournamentEvent } from "./types";
 
@@ -53,11 +53,21 @@ export interface CityPriceTable {
 
 export type HotelPriceInfo = { place: string } & CityPrices;
 
+/**
+ * True when a shoot's "city" isn't a real town: empty, "TBA", "Multiple", "Various", or a range or
+ * event title like "College Station Texas - Aggie Invite". Same rule as the hotel price job
+ * (script/hotel-towns.mjs on main), so the app and the prices agree on which towns exist.
+ */
+export function isPlaceholderTown(city: string | null | undefined): boolean {
+  const c = (city ?? "").trim().replace(/\s+/g, " ");
+  return !c || /^(tba|multiple|various)$/i.test(c) || /\s-\s/.test(c);
+}
+
 /** "brownwood, tx": how a town is looked up in hotel-prices.json. Null without a real town. */
 export function cityKey(e: Pick<TournamentEvent, "city" | "state">): string | null {
   const city = (e.city ?? "").trim().replace(/\s+/g, " ");
   const code = stateCode(e.state);
-  if (!city || /^tba$/i.test(city) || !code) return null;
+  if (isPlaceholderTown(city) || !code) return null;
   return `${city}, ${code}`.toLowerCase();
 }
 
@@ -117,14 +127,12 @@ export function useCityPrices(url: string | undefined): CityPriceTable | null {
   return table;
 }
 
-/** "Brownwood, TX", or the state name when there's no town; null when there's nothing to search. */
-export function hotelPlace(e: Pick<TournamentEvent, "city" | "state" | "location">): string | null {
+/** "Brownwood, TX"; null when the shoot has no real town, so no hotel or flight search is offered. */
+export function hotelPlace(e: Pick<TournamentEvent, "city" | "state">): string | null {
+  const city = (e.city ?? "").trim().replace(/\s+/g, " ");
+  if (isPlaceholderTown(city)) return null;
   const code = stateCode(e.state);
-  const city = (e.city ?? "").trim();
-  if (city && !/^tba$/i.test(city)) return code ? `${city}, ${code}` : city;
-  const loc = (e.location ?? "").trim();
-  if (loc && !/^tba\b/i.test(loc)) return loc;
-  return stateName(code);
+  return code ? `${city}, ${code}` : city;
 }
 
 /**
