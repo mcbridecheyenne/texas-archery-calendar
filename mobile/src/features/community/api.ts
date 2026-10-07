@@ -5,9 +5,15 @@ import { decode } from "base64-arraybuffer";
 import { db, PHOTO_BUCKET, photoUrl } from "../../lib/supabase";
 import type { TournamentEvent } from "../calendar";
 
-const FIELDS =
-  "id, created_by, name, start_date, end_date, location, city, state, flyer_path, host, phone, email, url, details, status, created_at, " +
-  "creator:profiles!community_events_created_by_fkey(display_name)";
+const COLUMNS =
+  "id, created_by, name, start_date, end_date, location, city, state, flyer_path, host, phone, email, url, details, status, created_at";
+const FIELDS = `${COLUMNS}, creator:profiles!community_events_created_by_fkey(display_name)`;
+
+// Signed-out visitors can't read profiles, so they get the tournaments without who added them.
+async function fields(): Promise<string> {
+  const { data } = await db().auth.getSession();
+  return data.session ? FIELDS : COLUMNS;
+}
 
 export interface CommunityEventInput {
   name: string;
@@ -82,7 +88,7 @@ async function removeFlyer(path: string | null | undefined) {
 export async function fetchCommunityEvents(fromDate: string): Promise<TournamentEvent[]> {
   const { data, error } = await db()
     .from("community_events")
-    .select(FIELDS)
+    .select(await fields())
     .eq("status", "active")
     .gte("end_date", fromDate)
     .order("start_date")
@@ -92,7 +98,7 @@ export async function fetchCommunityEvents(fromDate: string): Promise<Tournament
 }
 
 export async function fetchCommunityEvent(id: string): Promise<TournamentEvent | null> {
-  const { data, error } = await db().from("community_events").select(FIELDS).eq("id", id).maybeSingle();
+  const { data, error } = await db().from("community_events").select(await fields()).eq("id", id).maybeSingle();
   if (error) throw error;
   return data ? toEvent(data) : null;
 }

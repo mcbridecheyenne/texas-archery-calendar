@@ -31,7 +31,7 @@ function weekAgoIso(): string {
 }
 
 export function CommunityProvider({ children }: { children: ReactNode }) {
-  const { enabled, blocked } = useAuth();
+  const { enabled, blocked, userId } = useAuth();
   const [raw, setRaw] = useState<TournamentEvent[]>([]);
 
   const refresh = useCallback(async () => {
@@ -41,7 +41,9 @@ export function CommunityProvider({ children }: { children: ReactNode }) {
     } catch {
       // Keep the last list; pull to refresh retries.
     }
-  }, [enabled]);
+    // userId: signing in or out changes what can be read (who added each one), so reload.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [enabled, userId]);
 
   useEffect(() => {
     refresh();
