@@ -98,6 +98,12 @@ export default function AccountTab() {
           </View>
         ) : auth.loading ? (
           <ActivityIndicator color={t.primary} style={{ marginVertical: 24 }} />
+        ) : auth.loadError && !auth.profile ? (
+          <View style={[styles.card, { backgroundColor: t.card, borderColor: t.border }]}>
+            <Text style={[styles.h, { color: t.text }]}>Couldn't load your account</Text>
+            <Text style={[styles.p, { color: t.muted }]}>Check your signal and try again.</Text>
+            <Button title="Try again" onPress={auth.retryLoad} />
+          </View>
         ) : !auth.profile ? (
           <View style={[styles.card, { backgroundColor: t.card, borderColor: t.border }]}>
             <Text style={[styles.h, { color: t.text }]}>Finish your profile</Text>
