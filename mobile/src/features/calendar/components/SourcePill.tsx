@@ -7,7 +7,7 @@ export function SourcePill({ event, theme }: { event: Pick<TournamentEvent, "sou
   const { source } = event;
   const c = theme.source[source] ?? theme.source.OTHER;
   const label =
-    source === "USER" ? "Added by archer" : source === "OTHER" && event.organization ? event.organization : sourceLabel(source);
+    source === "USER" || source === "CLUB" ? "Added by archer" : source === "OTHER" && event.organization ? event.organization : sourceLabel(source);
   const state = isOutOfState(event) ? event.state!.trim().toUpperCase() : null;
   return (
     <View style={[styles.pill, { backgroundColor: c.soft, borderColor: c.solid + "40" }]}>

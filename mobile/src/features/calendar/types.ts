@@ -68,8 +68,7 @@ export function isOutOfState(e: Pick<TournamentEvent, "state">): boolean {
  * (TFAA, Texas ASA, TSAA) rather than folding into their national bodies.
  */
 export function organizationOf(e: Pick<TournamentEvent, "source" | "organization">): string {
-  if (e.source === "CLUB") return "Club shoots";
-  if (e.source === "USER") return "Added by archers";
+  if (e.source === "CLUB" || e.source === "USER") return "Added by archers";
   if (e.source === "TFAA" || e.source === "ASA" || e.source === "TSAA") return sourceLabel(e.source);
   return e.organization?.trim() || "Other";
 }
@@ -114,8 +113,7 @@ export function sourceLabel(source: EventSource): string {
   if (source === "S3DA") return "S3DA";
   if (source === "WA") return "World Archery";
   if (source === "OTHER") return "National";
-  if (source === "CLUB") return "Club shoots";
-  return "Added by archers";
+  return "Added by archers"; // USER and CLUB (emailed-in shoots) share one group
 }
 
 /** Who lists a tournament, e.g. "TFAA" or, for the hand-kept national list, "USA Archery". */

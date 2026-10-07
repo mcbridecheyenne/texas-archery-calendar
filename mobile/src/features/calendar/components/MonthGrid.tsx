@@ -50,7 +50,6 @@ const SHORT_ORG: Record<string, string> = {
   "Texas ASA": "ASA",
   "USA Archery": "USAA",
   "World Archery": "WA",
-  "Club shoots": "Club",
   "Added by archers": "Archer",
 };
 
