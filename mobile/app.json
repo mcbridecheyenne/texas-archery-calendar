@@ -14,7 +14,7 @@
     },
     "ios": {
       "bundleIdentifier": "com.cheyennemcbride.archeryintexas",
-      "supportsTablet": true,
+      "supportsTablet": false,
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       },
