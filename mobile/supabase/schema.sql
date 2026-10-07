@@ -17,11 +17,10 @@ create table if not exists public.profiles (
 
 alter table public.profiles enable row level security;
 
--- Signed-out visitors can't read profiles at all.
+-- Signed-out visitors can't read profiles at all. Signed-in archers see a profile only
+-- when there is a reason to (can_see_profile, defined near the end of this file);
+-- the policy is created there, after the tables it looks at exist.
 drop policy if exists "profiles are public" on public.profiles;
-drop policy if exists "signed-in archers see profiles" on public.profiles;
-create policy "signed-in archers see profiles" on public.profiles
-  for select to authenticated using (true);
 
 drop policy if exists "create own profile" on public.profiles;
 create policy "create own profile" on public.profiles
@@ -434,8 +433,12 @@ $$;
 revoke all on function public.are_friends(uuid, uuid) from public, anon;
 grant execute on function public.are_friends(uuid, uuid) to authenticated;
 
--- Add a friend by their friend code. If they already asked you, this accepts.
--- Returns {"status": "sent" | "accepted" | "already_sent" | "already_friends", "name": "..."}.
+-- Add a friend by their friend code. This never accepts on your behalf.
+-- If the other person already asked you, you get "already_received" and accept it
+-- yourself from Friends. send_friend_request_to() calls this, so it gets the same rule.
+-- Returns {"status": "sent" | "already_sent" | "already_received" | "already_friends", "name": "..."}.
+-- ("accepted" is no longer returned; the app still understands it.)
+-- ============================================================
 create or replace function public.send_friend_request(code text)
 returns json language plpgsql security definer set search_path = public as $$
 declare
@@ -471,9 +474,9 @@ begin
     elsif existing.requester_id = me then
       return json_build_object('status', 'already_sent', 'name', their_name);
     else
-      update public.friendships set status = 'accepted', accepted_at = now()
-      where requester_id = them and addressee_id = me;
-      return json_build_object('status', 'accepted', 'name', their_name);
+      -- They asked you first. Never accept on the person's behalf (an invite link could
+      -- otherwise be used to get accepted without a tap); they accept from Friends.
+      return json_build_object('status', 'already_received', 'name', their_name);
     end if;
   end if;
 
@@ -710,6 +713,9 @@ returns void language plpgsql security definer set search_path = public as $$
 begin
   if auth.uid() is null then
     raise exception 'not signed in';
+  end if;
+  if exists (select 1 from public.profiles where id = auth.uid() and is_banned) then
+    perform public.record_banned_identity(auth.uid());
   end if;
   delete from auth.users where id = auth.uid();
 end $$;
@@ -1201,3 +1207,186 @@ revoke all on function public.limit_friend_requests() from public, anon, authent
 drop trigger if exists limit_friend_requests on public.friendships;
 create trigger limit_friend_requests before insert on public.friendships
   for each row execute function public.limit_friend_requests();
+
+-- ============================================================
+-- Banned people can't come back by deleting their account and signing up again.
+--
+-- How it works: when a profile is banned, we copy the person's sign-in identities
+-- (Sign in with Apple: provider 'apple' + Apple's stable "sub" id) into
+-- banned_identities. Email sign-ins are stored only as a SHA-256 hash of the
+-- lower-cased address. That list lives outside the profile, so deleting the account
+-- doesn't erase it. A trigger then refuses to create a profile for any new account
+-- whose identity is on the list. Unbanning removes the person from the list.
+-- Limit: a person with a different Apple ID or email can still start over.
+-- ============================================================
+create table if not exists public.banned_identities (
+  provider text not null,
+  provider_id text not null,
+  banned_user_id uuid, -- the account that was banned (no foreign key: that account may be deleted)
+  banned_at timestamptz not null default now(),
+  primary key (provider, provider_id)
+);
+
+alter table public.banned_identities enable row level security;
+
+-- Nobody reaches this table from the app. Triggers and the dashboard (admin) do.
+revoke all on public.banned_identities from anon, authenticated;
+drop policy if exists "no app access" on public.banned_identities;
+create policy "no app access" on public.banned_identities
+  for all to anon, authenticated using (false) with check (false);
+
+create index if not exists banned_identities_user on public.banned_identities (banned_user_id);
+
+-- Copies one account's identities into the list.
+create or replace function public.record_banned_identity(uid uuid)
+returns void language plpgsql security definer set search_path = public as $$
+begin
+  insert into public.banned_identities (provider, provider_id, banned_user_id)
+  select i.provider, i.provider_id, uid
+  from auth.identities i
+  where i.user_id = uid and i.provider <> 'email' -- an email identity's id is just the user id
+  union
+  select 'email', encode(sha256(convert_to(lower(u.email), 'UTF8')), 'hex'), uid
+  from auth.users u
+  where u.id = uid and u.email is not null
+  on conflict (provider, provider_id) do nothing;
+end $$;
+
+revoke all on function public.record_banned_identity(uuid) from public, anon, authenticated;
+
+-- Is any identity of this account on the list?
+create or replace function public.identity_is_banned(uid uuid)
+returns boolean language sql stable security definer set search_path = public as $$
+  select exists (
+    select 1
+    from auth.identities i
+    join public.banned_identities b on b.provider = i.provider and b.provider_id = i.provider_id
+    where i.user_id = uid and i.provider <> 'email'
+  ) or exists (
+    select 1
+    from auth.users u
+    join public.banned_identities b
+      on b.provider = 'email'
+     and b.provider_id = encode(sha256(convert_to(lower(u.email), 'UTF8')), 'hex')
+    where u.id = uid and u.email is not null
+  );
+$$;
+
+revoke all on function public.identity_is_banned(uuid) from public, anon, authenticated;
+
+-- Ban in the Table Editor -> remember the identities. Unban -> forget them.
+create or replace function public.sync_banned_identity()
+returns trigger language plpgsql security definer set search_path = public as $$
+begin
+  if new.is_banned and not old.is_banned then
+    perform public.record_banned_identity(new.id);
+  elsif old.is_banned and not new.is_banned then
+    delete from public.banned_identities where banned_user_id = new.id;
+  end if;
+  return new;
+end $$;
+
+drop trigger if exists sync_banned_identity on public.profiles;
+create trigger sync_banned_identity after update of is_banned on public.profiles
+  for each row when (old.is_banned is distinct from new.is_banned)
+  execute function public.sync_banned_identity();
+
+revoke all on function public.sync_banned_identity() from public, anon, authenticated;
+
+-- A new profile for a banned identity is refused.
+create or replace function public.refuse_banned_identity()
+returns trigger language plpgsql security definer set search_path = public as $$
+begin
+  if public.identity_is_banned(new.id) then
+    raise exception 'This account can''t be set up.';
+  end if;
+  return new;
+end $$;
+
+drop trigger if exists refuse_banned_identity on public.profiles;
+create trigger refuse_banned_identity before insert on public.profiles
+  for each row execute function public.refuse_banned_identity();
+
+revoke all on function public.refuse_banned_identity() from public, anon, authenticated;
+
+-- People who are already banned today.
+select public.record_banned_identity(id) from public.profiles where is_banned;
+
+-- ============================================================
+-- No full directory download.
+-- Before, any signed-in archer could list every name, town and class. Now a profile
+-- row is readable only when there is a reason to see it (can_see_profile below).
+-- search_archers() is the only way to find people you have no link to, and it
+-- honors "Let other archers find me by name".
+-- ============================================================
+create or replace function public.can_see_profile(target uuid)
+returns boolean language plpgsql stable security definer set search_path = public as $$
+declare
+  me uuid := auth.uid();
+begin
+  if me is null or target is null then
+    return false;
+  end if;
+
+  -- yourself
+  if target = me then
+    return true;
+  end if;
+
+  -- friends, and people you have a pending request with (either direction)
+  if exists (
+    select 1 from public.friendships f
+    where (f.requester_id = me and f.addressee_id = target)
+       or (f.requester_id = target and f.addressee_id = me)
+  ) then
+    return true;
+  end if;
+
+  -- the other person in one of your conversations
+  if exists (
+    select 1 from public.conversations c
+    where (c.buyer_id = me and c.seller_id = target)
+       or (c.seller_id = me and c.buyer_id = target)
+  ) then
+    return true;
+  end if;
+
+  -- anyone else is visible only while in good standing
+  if not public.is_active_member(target) then
+    return false;
+  end if;
+
+  -- sellers whose listing is for sale right now (what the marketplace shows)
+  if exists (
+    select 1 from public.listings l
+    where l.seller_id = target and l.status = 'active' and l.renewed_at > now() - interval '60 days'
+  ) then
+    return true;
+  end if;
+
+  -- creators of an active archer-added tournament (what the calendar shows)
+  if exists (
+    select 1 from public.community_events e
+    where e.created_by = target and e.status = 'active'
+  ) then
+    return true;
+  end if;
+
+  -- archers who shared a shoot with "Everyone" (the attendee list on that shoot;
+  -- shoots shared with friends only are covered by the friends rule above)
+  if exists (
+    select 1 from public.going g
+    where g.user_id = target and g.visibility = 'public'
+  ) and not public.either_blocked(me, target) then
+    return true;
+  end if;
+
+  return false;
+end $$;
+
+revoke all on function public.can_see_profile(uuid) from public, anon;
+grant execute on function public.can_see_profile(uuid) to authenticated;
+
+drop policy if exists "signed-in archers see profiles" on public.profiles;
+create policy "signed-in archers see profiles" on public.profiles
+  for select to authenticated using (public.can_see_profile(id));
