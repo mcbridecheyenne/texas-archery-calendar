@@ -370,7 +370,7 @@ export async function getUsaEvents(): Promise<UsaResult> {
     .sort((a, b) => a.startDate.localeCompare(b.startDate) || a.name.localeCompare(b.name));
   return {
     events,
-    sources: [...texas.sources, wa.status, asa.status, manual.status, states.status],
+    sources: [...texas.sources, wa.status, asa.status, manual.status, states.status, ...states.feedStatuses],
     lastUpdated: new Date().toISOString(),
   };
 }

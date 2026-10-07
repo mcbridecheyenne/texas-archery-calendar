@@ -120,7 +120,9 @@ jobs:
               }
               for (const s of sources) {
                 total++;
-                if (s.status === "ok" && s.eventCount > 0) continue;
+                // Individual state calendars may legitimately have nothing scheduled; only errors count.
+                const perFeed = String(s.name).startsWith("State calendar: ");
+                if (s.status === "ok" && (s.eventCount > 0 || perFeed)) continue;
                 failing.add(s.name);
                 rows.push(`| ${feed.label} | ${cell(s.name)} | ${cell(s.status)} | ${cell(s.eventCount)} | ${cell(s.message)} |`);
               }
