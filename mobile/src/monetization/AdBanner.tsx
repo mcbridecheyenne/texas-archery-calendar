@@ -36,8 +36,8 @@ export function startAds(): Promise<boolean> {
 }
 
 export function useAdsVisible(): boolean {
-  const { isPremium, ready } = usePremium();
-  return !!Ads && ADS.enabled && ready && !isPremium;
+  const { isPremium, showAdsAnyway, ready } = usePremium();
+  return !!Ads && ADS.enabled && ready && (!isPremium || showAdsAnyway);
 }
 
 // padBottom: add the phone's bottom safe area (off when a tab bar sits underneath).

@@ -1,6 +1,7 @@
 // Ad-free subscription state, shared by the banner, the ads in the shoot list and the "Remove ads" sheet.
 // Uses RevenueCat, which runs Apple and Google subscriptions from one setup.
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Platform } from "react-native";
 import { PURCHASES } from "../../config";
 
@@ -31,6 +32,8 @@ export interface Tip {
 export interface PremiumState {
   available: boolean; // subscriptions are set up and the store is reachable
   isPremium: boolean; // ad-free
+  showAdsAnyway: boolean; // an ad-free archer chose to see the ads again on this phone
+  setShowAdsAnyway: (on: boolean) => void;
   ready: boolean; // finished checking the store, so it's safe to decide whether to show ads
   plans: Plan[]; // monthly first, then yearly
   purchase: (plan: Plan) => Promise<"purchased" | "cancelled" | "failed">;
@@ -45,6 +48,8 @@ export interface PremiumState {
 const PremiumContext = createContext<PremiumState>({
   available: false,
   isPremium: false,
+  showAdsAnyway: false,
+  setShowAdsAnyway: () => {},
   ready: true,
   plans: [],
   purchase: async () => "failed",
@@ -61,6 +66,7 @@ export function usePremium(): PremiumState {
 }
 
 let configured = false;
+const SHOW_ADS_KEY = "premium.showAdsAnyway";
 
 function toPlan(pkg: any, period: Plan["period"]): Plan {
   return { id: pkg.identifier, period, price: pkg.product?.priceString ?? "", pkg };
@@ -75,6 +81,18 @@ export function PremiumProvider({ children }: { children: ReactNode }) {
   const [sheetOpen, setSheetOpen] = useState(false);
   const openSheet = useCallback(() => setSheetOpen(true), []);
   const closeSheet = useCallback(() => setSheetOpen(false), []);
+  const [showAdsAnyway, setShowAds] = useState(false);
+
+  useEffect(() => {
+    AsyncStorage.getItem(SHOW_ADS_KEY)
+      .then((v) => setShowAds(v === "1"))
+      .catch(() => {});
+  }, []);
+
+  const setShowAdsAnyway = useCallback((on: boolean) => {
+    setShowAds(on);
+    AsyncStorage.setItem(SHOW_ADS_KEY, on ? "1" : "0").catch(() => {});
+  }, []);
 
   const apply = useCallback((info: any) => {
     setIsPremium(!!info?.entitlements?.active?.[PURCHASES.entitlement]);
@@ -156,6 +174,8 @@ export function PremiumProvider({ children }: { children: ReactNode }) {
     () => ({
       available: enabled && plans.length > 0,
       isPremium,
+      showAdsAnyway,
+      setShowAdsAnyway,
       ready,
       plans,
       purchase,
@@ -166,7 +186,7 @@ export function PremiumProvider({ children }: { children: ReactNode }) {
       openSheet,
       closeSheet,
     }),
-    [enabled, plans, isPremium, ready, purchase, restore, tips, sendTip, sheetOpen, openSheet, closeSheet]
+    [enabled, plans, isPremium, showAdsAnyway, setShowAdsAnyway, ready, purchase, restore, tips, sendTip, sheetOpen, openSheet, closeSheet]
   );
 
   return <PremiumContext.Provider value={value}>{children}</PremiumContext.Provider>;

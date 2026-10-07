@@ -1,7 +1,7 @@
 // "Remove ads" screen. Apple requires the price, renewal period, a restore button,
 // and links to the terms and privacy policy on this screen.
 import { useEffect, useState } from "react";
-import { ActivityIndicator, Alert, Linking, Modal, Pressable, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, Alert, Linking, Modal, Pressable, StyleSheet, Switch, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { PRIVACY_URL, TERMS_URL } from "../../config";
 import { useCalendarTheme } from "../features/calendar";
@@ -11,7 +11,7 @@ import { ScholarshipNote } from "./ScholarshipNote";
 export function PremiumSheet({ visible, onClose }: { visible: boolean; onClose: () => void }) {
   const theme = useCalendarTheme();
   const insets = useSafeAreaInsets();
-  const { plans, isPremium, purchase, restore } = usePremium();
+  const { plans, isPremium, showAdsAnyway, setShowAdsAnyway, purchase, restore } = usePremium();
   const [busy, setBusy] = useState<string | null>(null);
   const [chosen, setChosen] = useState<Plan | null>(null);
 
@@ -62,7 +62,19 @@ export function PremiumSheet({ visible, onClose }: { visible: boolean; onClose: 
         </Text>
 
         {isPremium ? (
-          <Text style={[styles.lead, { color: theme.primary, fontWeight: "700" }]}>You're already ad-free. Thank you!</Text>
+          <>
+            <Text style={[styles.lead, { color: theme.primary, fontWeight: "700" }]}>You're already ad-free. Thank you!</Text>
+            {/* Lets an ad-free archer (or the owner checking the app) see the ads again on this phone. */}
+            <View style={[styles.plan, { backgroundColor: theme.card, borderColor: theme.border, marginTop: 16 }]}>
+              <Text style={[styles.planName, { color: theme.text, flex: 1 }]}>Show ads anyway</Text>
+              <Switch
+                value={showAdsAnyway}
+                onValueChange={setShowAdsAnyway}
+                trackColor={{ true: theme.primary }}
+                accessibilityLabel="Show ads anyway"
+              />
+            </View>
+          </>
         ) : plans.length === 0 ? (
           <ActivityIndicator color={theme.primary} style={{ marginTop: 24 }} />
         ) : (
