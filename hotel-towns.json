@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-06",
+ "updated": "2026-10-07",
  "towns": [
   {
    "key": "allen, tx",
@@ -104,14 +104,6 @@
    "checkin": "2026-11-06",
    "checkout": "2026-11-08",
    "shoot": "Armstrong County 4H-1"
-  },
-  {
-   "key": "college station texas - aggie invite, tx",
-   "city": "College Station Texas - Aggie Invite",
-   "state": "TX",
-   "checkin": "2026-11-06",
-   "checkout": "2026-11-07",
-   "shoot": "Judge's Seminar"
   },
   {
    "key": "college station, tx",
@@ -338,14 +330,6 @@
    "shoot": "North Caddo Shooting Club-1"
   },
   {
-   "key": "multiple, tx",
-   "city": "Multiple",
-   "state": "TX",
-   "checkin": "2027-01-15",
-   "checkout": "2027-01-17",
-   "shoot": "NFAA So. Sectionals (SYWAT - Texas Only)"
-  },
-  {
    "key": "new braunfels, tx",
    "city": "New Braunfels",
    "state": "TX",
@@ -400,6 +384,14 @@
    "checkin": "2026-10-23",
    "checkout": "2026-10-25",
    "shoot": "Gray County 4H-Clyde Carruth Livestock Pavilion-1"
+  },
+  {
+   "key": "perry hall, md",
+   "city": "Perry Hall",
+   "state": "MD",
+   "checkin": "2026-11-19",
+   "checkout": "2026-11-22",
+   "shoot": "2026 Mid Atlantic Indoor Star FITA I"
   },
   {
    "key": "phoenix, az",
