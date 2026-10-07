@@ -1,7 +1,7 @@
 import { useRouter } from "expo-router";
 import { useMemo, useState } from "react";
 import { Alert } from "react-native";
-import { API_BASE_URL, HOTELS, SHARE_PLUG } from "../../config";
+import { API_BASE_URL, FLIGHTS, HOTELS, SHARE_PLUG } from "../../config";
 import { CalendarScreen, StatePicker, useCalendarTheme, type CalendarSocial, type TournamentEvent } from "../../src/features/calendar";
 import { CommunityActions, useCommunity } from "../../src/features/community";
 import { GoingWith, askShareLevel, useFriends } from "../../src/features/friends";
@@ -70,6 +70,7 @@ export default function TournamentsTab() {
         shareAs={{ name: profile?.display_name, archeryClass: profile?.archery_class }}
         homeState={homeState}
         hotels={HOTELS}
+        flights={FLIGHTS}
       />
       <StatePicker
         visible={ready && !homeState && !skipped}

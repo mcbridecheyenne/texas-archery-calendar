@@ -5,6 +5,7 @@ import { addToPhoneCalendar, callHost, emailHost, openDirections, openUrl } from
 import { daysUntil, fmtDayLong, fmtRange } from "../dates";
 import type { CalendarTheme } from "../theme";
 import { listedBy, type TournamentEvent } from "../types";
+import { flightSearchUrl, type FlightsConfig } from "../flights";
 import { hotelPlace, hotelPrices, hotelSearchUrl, useCityPrices, type HotelsConfig } from "../hotels";
 import { shareShoot, shootMessage } from "../share";
 import { useShareCard, type ShareCardInfo } from "./ShareCard";
@@ -22,6 +23,8 @@ interface Props {
   shareAs?: ShareCardInfo;
   /** Shows "Hotels near the shoot" with a price range and a search link. */
   hotels?: HotelsConfig;
+  /** Shows "Flights to the shoot" with an Expedia search link. */
+  flights?: FlightsConfig;
 }
 
 function countdown(event: TournamentEvent): string | null {
@@ -33,7 +36,7 @@ function countdown(event: TournamentEvent): string | null {
   return null;
 }
 
-export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra, sharePlug, shareAs, hotels }: Props) {
+export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra, sharePlug, shareAs, hotels, flights }: Props) {
   const card = useShareCard();
   const [flyerOpen, setFlyerOpen] = useState(false);
   const win = useWindowDimensions();
@@ -150,6 +153,7 @@ export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra
             </View>
 
             {hotels?.enabled ? <HotelCard event={event} config={hotels} theme={theme} /> : null}
+            {flights?.enabled ? <FlightCard event={event} config={flights} theme={theme} /> : null}
 
             {event.flyerUrl ? (
               <Pressable
@@ -233,6 +237,30 @@ function HotelCard({ event, config, theme }: { event: TournamentEvent; config: H
       >
         <Text style={[styles.hotelBtnText, { color: theme.onPrimary }]}>Find hotels{place ? ` near ${place}` : ""}</Text>
       </Pressable>
+    </View>
+  );
+}
+
+// A button that searches round-trip flights to the shoot's town on Expedia for the shoot's
+// dates. Hidden for shoots that are over or have no place.
+function FlightCard({ event, config, theme }: { event: TournamentEvent; config: FlightsConfig; theme: CalendarTheme }) {
+  const url = flightSearchUrl(event, config);
+  if (!url) return null;
+  const place = hotelPlace(event);
+  return (
+    <View style={[styles.card, { backgroundColor: theme.card, borderColor: theme.border, paddingVertical: 12, gap: 6 }]}>
+      <Text style={[styles.rowLabel, { color: theme.muted }]}>FLIGHTS TO THE SHOOT</Text>
+      <Pressable
+        onPress={() => openUrl(url)}
+        accessibilityRole="link"
+        accessibilityLabel={`Find flights to ${place ?? "the shoot"}`}
+        style={({ pressed }) => [styles.hotelBtn, { backgroundColor: theme.primary, opacity: pressed ? 0.8 : 1 }]}
+      >
+        <Text style={[styles.hotelBtnText, { color: theme.onPrimary }]}>Find flights{place ? ` to ${place}` : ""}</Text>
+      </Pressable>
+      {config.expediaCamref.trim() ? (
+        <Text style={[styles.hotelNote, { color: theme.muted }]}>Opens Expedia. The app may earn a commission if you book.</Text>
+      ) : null}
     </View>
   );
 }

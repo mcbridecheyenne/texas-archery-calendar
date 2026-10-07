@@ -53,6 +53,17 @@ export const HOTELS = {
   pricesUrl: `${API_BASE_URL}/hotel-prices.json`, // edit client/public/hotel-prices.json on main
 };
 
+// ---- Flights to each shoot (Expedia Travel Creator Program) ----
+// Each shoot's details show a "Find flights" button that opens an Expedia round-trip flight
+// search to the shoot's town for the shoot's dates. Expedia pays a commission on bookings
+// made from it. The id below is Cheyenne's Travel Creator Program id ("camref", from
+// creator.expediagroup.com). While it's blank the button opens a plain Expedia search,
+// which works but earns nothing. Hotels stay on Stay22 (above).
+export const FLIGHTS = {
+  enabled: true,
+  expediaCamref: "1101l440244", // Cheyenne's Expedia creator id
+};
+
 // ---- Texas Field Archery Scholarship Fund ----
 // A "Donate" button (opens the fund's own page in the browser; never an in-app purchase)
 // and the line "10% of the app's net proceeds ... is donated". Both only show to archers
