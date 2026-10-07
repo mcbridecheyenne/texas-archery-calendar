@@ -41,12 +41,12 @@ export default function TabsLayout() {
       }}
     >
       <Tabs.Screen name="index" options={{ title: "Tournaments", headerShown: false, tabBarIcon: icon("calendar-outline") }} />
-      <Tabs.Screen name="market" options={{ title: "Marketplace", tabBarIcon: icon("pricetags-outline") }} />
+      {/* Messages live inside the Marketplace (button at the top right), so its badge shows unread messages. */}
       <Tabs.Screen
-        name="inbox"
+        name="market"
         options={{
-          title: "Messages",
-          tabBarIcon: icon("chatbubbles-outline"),
+          title: "Marketplace",
+          tabBarIcon: icon("pricetags-outline"),
           tabBarBadge: unreadCount > 0 ? unreadCount : undefined,
           tabBarBadgeStyle: { backgroundColor: t.primary, color: t.onPrimary },
         }}

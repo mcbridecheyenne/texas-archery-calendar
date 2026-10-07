@@ -79,6 +79,7 @@ export default function RootLayout() {
                     <Stack.Screen name="listing/[id]" options={{ title: "" }} />
                     <Stack.Screen name="listing/new" options={{ title: "Sell gear", presentation: "modal" }} />
                     <Stack.Screen name="listing/edit/[id]" options={{ title: "Edit listing", presentation: "modal" }} />
+                    <Stack.Screen name="messages" options={{ title: "Messages" }} />
                     <Stack.Screen name="chat/[id]" options={{ title: "Messages" }} />
                     <Stack.Screen name="sign-in" options={{ title: "Sign in", presentation: "modal" }} />
                     <Stack.Screen name="setup-profile" options={{ title: "Your profile", presentation: "modal" }} />
