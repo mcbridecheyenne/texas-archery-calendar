@@ -40,7 +40,7 @@ export default function MessagesScreen() {
       style={{ backgroundColor: t.background }}
       data={conversations}
       keyExtractor={(c) => c.id}
-      renderItem={({ item }) => <Row c={item} me={userId} onPress={() => router.push(`/chat/${item.id}`)} />}
+      renderItem={({ item }) => <Row c={item} me={userId} onPress={() => router.push(`/chat/${item.id}`, { dangerouslySingular: true })} />}
       ItemSeparatorComponent={() => <View style={[styles.sep, { backgroundColor: t.border }]} />}
       ListEmptyComponent={
         loading ? null : <Empty title="No messages yet" body="When you message a seller, or someone asks about your gear, it shows up here." />

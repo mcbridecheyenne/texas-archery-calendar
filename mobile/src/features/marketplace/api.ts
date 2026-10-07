@@ -286,10 +286,14 @@ export async function markRead(c: Conversation, me: string): Promise<void> {
   await db().from("conversations").update({ [field]: new Date().toISOString() }).eq("id", c.id);
 }
 
+// Every listener gets its own channel name: asking for a name that is already in use hands back
+// the old, already-subscribed channel, and adding a listener to it throws.
+let channelCount = 0;
+
 // Calls back on every new message in one conversation.
 export function subscribeToMessages(conversationId: string, onMessage: (m: Message) => void): () => void {
   const channel = db()
-    .channel(`messages:${conversationId}`)
+    .channel(`messages:${conversationId}:${++channelCount}`)
     .on(
       "postgres_changes",
       { event: "INSERT", schema: "public", table: "messages", filter: `conversation_id=eq.${conversationId}` },
@@ -304,7 +308,7 @@ export function subscribeToMessages(conversationId: string, onMessage: (m: Messa
 // Calls back whenever any of the person's conversations changes (new message, read).
 export function subscribeToInbox(onChange: () => void): () => void {
   const channel = db()
-    .channel("inbox")
+    .channel(`inbox:${++channelCount}`)
     .on("postgres_changes", { event: "*", schema: "public", table: "conversations" }, () => onChange())
     .subscribe();
   return () => {
