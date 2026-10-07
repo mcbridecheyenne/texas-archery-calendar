@@ -5,6 +5,7 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } fr
 import { ActivityIndicator, FlatList, Pressable, RefreshControl, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import { useGoing } from "../../src/features/calendar";
 import { fetchListings, PAGE_SIZE } from "../../src/features/marketplace/api";
+import { useInbox } from "../../src/features/marketplace/inbox";
 import { ListingCard } from "../../src/features/marketplace/components/ListingCard";
 import { useRequireMember } from "../../src/features/marketplace/helpers";
 import { CATEGORIES, type Category, type Listing } from "../../src/features/marketplace/types";
@@ -24,6 +25,7 @@ export default function MarketTab() {
   const requireMember = useRequireMember();
   const { blocked, profile } = useAuth();
   const { going, reload: reloadGoing } = useGoing();
+  const { unreadCount } = useInbox();
 
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState(""); // search applied after a short pause
@@ -48,12 +50,27 @@ export default function MarketTab() {
     navigation.setOptions({
       headerRight: () =>
         marketplaceConfigured ? (
-          <Pressable onPress={sell} hitSlop={10} style={{ paddingHorizontal: 16 }} accessibilityRole="button" accessibilityLabel="Sell gear">
-            <Text style={{ color: t.primary, fontSize: 16, fontWeight: "700" }}>+ Sell</Text>
-          </Pressable>
+          <View style={styles.headerButtons}>
+            <Pressable
+              onPress={() => router.push("/messages")}
+              hitSlop={10}
+              accessibilityRole="button"
+              accessibilityLabel={unreadCount > 0 ? `Messages, ${unreadCount} unread` : "Messages"}
+            >
+              <Ionicons name="chatbubbles-outline" size={24} color={t.primary} />
+              {unreadCount > 0 ? (
+                <View style={[styles.badge, { backgroundColor: t.primary }]}>
+                  <Text style={[styles.badgeText, { color: t.onPrimary }]}>{unreadCount > 99 ? "99+" : unreadCount}</Text>
+                </View>
+              ) : null}
+            </Pressable>
+            <Pressable onPress={sell} hitSlop={10} accessibilityRole="button" accessibilityLabel="Sell gear">
+              <Text style={{ color: t.primary, fontSize: 16, fontWeight: "700" }}>+ Sell</Text>
+            </Pressable>
+          </View>
         ) : null,
     });
-  }, [navigation, sell, t.primary]);
+  }, [navigation, sell, router, unreadCount, t.primary, t.onPrimary]);
 
   useEffect(() => {
     const id = setTimeout(() => setQuery(search), 350);
@@ -246,6 +263,9 @@ export default function MarketTab() {
 
 const styles = StyleSheet.create({
   fill: { flex: 1 },
+  headerButtons: { flexDirection: "row", alignItems: "center", gap: 20, paddingHorizontal: 16 },
+  badge: { position: "absolute", top: -6, right: -10, minWidth: 18, height: 18, borderRadius: 9, paddingHorizontal: 4, alignItems: "center", justifyContent: "center" },
+  badgeText: { fontSize: 11, fontWeight: "800" },
   list: { paddingHorizontal: 11, paddingBottom: 24 },
   row: { gap: 0 },
   cell: { flex: 1 / 2 },

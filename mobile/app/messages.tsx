@@ -1,15 +1,15 @@
-// Messages tab: every conversation about a listing, newest first.
+// Messages: every conversation about a listing, newest first. Opened from the Marketplace tab.
 import { useRouter } from "expo-router";
 import { FlatList, Pressable, RefreshControl, StyleSheet, Text, View } from "react-native";
 import { useEffect, useState } from "react";
-import { timeAgo } from "../../src/features/marketplace/helpers";
-import { useInbox } from "../../src/features/marketplace/inbox";
-import { isUnread, type Conversation } from "../../src/features/marketplace/types";
-import { useAuth } from "../../src/lib/auth";
-import { askForPushNotifications } from "../../src/lib/push";
-import { Button, Empty, useTheme } from "../../src/ui";
+import { timeAgo } from "../src/features/marketplace/helpers";
+import { useInbox } from "../src/features/marketplace/inbox";
+import { isUnread, type Conversation } from "../src/features/marketplace/types";
+import { useAuth } from "../src/lib/auth";
+import { askForPushNotifications } from "../src/lib/push";
+import { Button, Empty, useTheme } from "../src/ui";
 
-export default function InboxTab() {
+export default function MessagesScreen() {
   const t = useTheme();
   const router = useRouter();
   const { enabled, userId, profile } = useAuth();
