@@ -1,18 +1,18 @@
 // In an archer-added tournament's detail sheet: Edit/Delete for whoever added it,
-// Report for everyone else.
+// Report (and Block the person who added it) for everyone else.
 import { useRouter } from "expo-router";
 import { Alert, Pressable, StyleSheet, Text, View } from "react-native";
 import { useAuth } from "../../lib/auth";
 import { confirm, errorText, useTheme } from "../../ui";
 import type { TournamentEvent } from "../calendar";
-import { askToReport } from "../marketplace/helpers";
+import { askAboutPerson, askToReport } from "../marketplace/helpers";
 import { communityId, deleteCommunityEvent } from "./api";
 import { useCommunity } from "./CommunityProvider";
 
 export function CommunityActions({ event, close }: { event: TournamentEvent; close: () => void }) {
   const t = useTheme();
   const router = useRouter();
-  const { userId } = useAuth();
+  const { userId, block } = useAuth();
   const { refresh } = useCommunity();
   const id = communityId(event);
   const mine = !!userId && event.addedById === userId;
@@ -42,11 +42,25 @@ export function CommunityActions({ event, close }: { event: TournamentEvent; clo
           <Link label="Delete" color={t.danger} onPress={remove} />
         </>
       ) : (
-        <Link
-          label="Report this tournament"
-          color={t.muted}
-          onPress={() => askToReport(userId, { communityEventId: id, userId: event.addedById ?? undefined })}
-        />
+        <>
+          <Link
+            label="Report this tournament"
+            color={t.muted}
+            onPress={() => askToReport(userId, { communityEventId: id, userId: event.addedById ?? undefined })}
+          />
+          {userId && event.addedById ? (
+            <Link
+              label={`Block ${event.addedBy ?? "this archer"}`}
+              color={t.muted}
+              onPress={() =>
+                askAboutPerson(event.addedBy ?? "this archer", event.addedById!, userId, async (who) => {
+                  await block(who);
+                  close();
+                })
+              }
+            />
+          ) : null}
+        </>
       )}
     </View>
   );

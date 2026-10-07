@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { ActivityIndicator, Alert, Pressable, StyleSheet, Text, View } from "react-native";
 import { useAuth } from "../../lib/auth";
 import { errorText, useTheme } from "../../ui";
+import { askAboutPerson } from "../marketplace/helpers";
 import type { TournamentEvent } from "../calendar";
 import { fetchAttendees } from "./api";
 import { useFriends } from "./FriendsProvider";
@@ -74,7 +75,7 @@ export function GoingWith({ event, going, close }: { event: TournamentEvent; goi
       {people === null ? (
         <ActivityIndicator color={t.primary} style={{ alignSelf: "flex-start" }} />
       ) : friends.length ? (
-        <Names list={friends} />
+        <Names list={friends} onPerson={(p) => askAboutPerson(p.name, p.userId, auth.userId, auth.block)} />
       ) : (
         <Text style={[styles.p, { color: t.muted }]}>
           {fr.friends.length ? "None of your friends have shared this one yet." : "Add friends to see who's going."}
@@ -84,7 +85,7 @@ export function GoingWith({ event, going, close }: { event: TournamentEvent; goi
       {others.length ? (
         <>
           <Text style={[styles.h, { color: t.text, marginTop: 6 }]}>Other archers going ({others.length})</Text>
-          <Names list={others} />
+          <Names list={others} onPerson={(p) => askAboutPerson(p.name, p.userId, auth.userId, auth.block)} />
         </>
       ) : null}
 
@@ -95,12 +96,19 @@ export function GoingWith({ event, going, close }: { event: TournamentEvent; goi
   );
 }
 
-function Names({ list }: { list: Attendee[] }) {
+// Tap a name to report or block that archer.
+function Names({ list, onPerson }: { list: Attendee[]; onPerson: (p: Attendee) => void }) {
   const t = useTheme();
   return (
     <View style={styles.names}>
       {list.map((p) => (
-        <View key={p.userId} style={[styles.person, { backgroundColor: t.subtle }]}>
+        <Pressable
+          key={p.userId}
+          onPress={() => onPerson(p)}
+          accessibilityRole="button"
+          accessibilityLabel={`${p.name}. Report or block`}
+          style={[styles.person, { backgroundColor: t.subtle }]}
+        >
           <View style={[styles.avatar, { backgroundColor: t.primary }]}>
             <Text style={{ color: t.onPrimary, fontWeight: "800", fontSize: 12 }}>{p.name.charAt(0).toUpperCase()}</Text>
           </View>
@@ -108,7 +116,7 @@ function Names({ list }: { list: Attendee[] }) {
             {p.name}
             {p.archeryClass ? <Text style={{ color: t.muted, fontWeight: "500" }}> · {p.archeryClass}</Text> : null}
           </Text>
-        </View>
+        </Pressable>
       ))}
     </View>
   );

@@ -11,7 +11,7 @@ import { ScholarshipNote } from "./ScholarshipNote";
 export function PremiumSheet({ visible, onClose }: { visible: boolean; onClose: () => void }) {
   const theme = useCalendarTheme();
   const insets = useSafeAreaInsets();
-  const { plans, isPremium, showAdsAnyway, setShowAdsAnyway, purchase, restore } = usePremium();
+  const { plans, plansFailed, reloadPlans, isPremium, showAdsAnyway, setShowAdsAnyway, purchase, restore } = usePremium();
   const [busy, setBusy] = useState<string | null>(null);
   const [chosen, setChosen] = useState<Plan | null>(null);
 
@@ -75,6 +75,13 @@ export function PremiumSheet({ visible, onClose }: { visible: boolean; onClose: 
               />
             </View>
           </>
+        ) : plans.length === 0 && plansFailed ? (
+          <View style={{ marginTop: 24, gap: 10, alignItems: "flex-start" }}>
+            <Text style={[styles.lead, { color: theme.text }]}>Couldn't load the prices. Check your connection and try again.</Text>
+            <Pressable onPress={reloadPlans} hitSlop={8} accessibilityRole="button">
+              <Text style={[styles.close, { color: theme.primary }]}>Try again</Text>
+            </Pressable>
+          </View>
         ) : plans.length === 0 ? (
           <ActivityIndicator color={theme.primary} style={{ marginTop: 24 }} />
         ) : (

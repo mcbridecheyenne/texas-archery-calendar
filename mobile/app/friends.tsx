@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ActivityIndicator, Alert, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { ARCHERY_CLASSES, addResultMessage, cleanCode, searchArchers, shareInvite, useFriends, type Friend, type SearchResult } from "../src/features/friends";
 import { useAuth } from "../src/lib/auth";
+import { askAboutPerson } from "../src/features/marketplace/helpers";
 import { askForPushNotifications } from "../src/lib/push";
 import { Button, Chip, Empty, Field, SectionLabel, confirm, errorText, showMenu, useTheme } from "../src/ui";
 
@@ -181,6 +182,14 @@ export default function FriendsScreen() {
             <Person key={f.id} f={f}>
               <Button small title="Accept" onPress={() => fr.accept(f.id).catch((e) => Alert.alert("Couldn't accept", errorText(e)))} />
               <Button small kind="secondary" title="Decline" onPress={() => fr.remove(f.id).catch(() => {})} />
+              <Pressable
+                onPress={() => askAboutPerson(f.name, f.id, auth.userId, auth.block)}
+                hitSlop={10}
+                accessibilityRole="button"
+                accessibilityLabel={`Report or block ${f.name}`}
+              >
+                <Text style={{ color: t.muted, fontSize: 18 }}>•••</Text>
+              </Pressable>
             </Person>
           ))}
         </>

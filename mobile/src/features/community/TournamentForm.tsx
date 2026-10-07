@@ -63,7 +63,7 @@ export function TournamentForm({
   const [end, setEnd] = useState(initial && initial.endDate !== initial.startDate ? toUS(initial.endDate) : "");
   const [location, setLocation] = useState(initial?.location ?? "");
   const [city, setCity] = useState(initial?.city ?? "");
-  const [stateCode, setStateCode] = useState((initial?.state ?? homeState ?? "TX").toUpperCase());
+  const [stateCode, setStateCode] = useState((initial?.state ?? homeState ?? "").toUpperCase());
   const [host, setHost] = useState(initial?.contact ?? "");
   const [phone, setPhone] = useState(initial?.phone ?? "");
   const [email, setEmail] = useState(initial?.email ?? "");
@@ -111,7 +111,7 @@ export function TournamentForm({
     if (location.trim().length < 2) return "Add where it is: the range or club name, and the address if you have it.";
     if (city.trim().length < 2) return "Add the town.";
     const st = stateCode.trim().toUpperCase();
-    if (!US_STATES.has(st)) return "Enter the state as two letters, like TX or OK.";
+    if (!US_STATES.has(st)) return "Enter the state as two letters, like TX or PA.";
     let link = url.trim();
     if (link && !/^https?:\/\//i.test(link)) link = `https://${link}`;
     if (link && !/^https?:\/\/[^\s.]+\.[^\s]+$/i.test(link)) return "That website link doesn't look right.";
@@ -156,8 +156,7 @@ export function TournamentForm({
       <View style={[styles.note, { backgroundColor: t.source.USER.soft, borderColor: t.source.USER.solid + "55" }]}>
         <Text style={[styles.noteText, { color: t.text }]}>
           Tournaments you add show under <Text style={{ fontWeight: "700" }}>Added by archers</Text> with your name, so everyone
-          knows they aren't from the TFAA, Texas ASA or TSAA schedules. Shoots outside Texas go under{" "}
-          <Text style={{ fontWeight: "700" }}>Out of state</Text>.
+          knows they aren't from an official schedule. They show to archers browsing that state.
         </Text>
       </View>
       <Field label="Tournament name" value={name} onChangeText={setName} placeholder="Wichita Falls Spring 3D Shoot" maxLength={120} autoCapitalize="words" />
