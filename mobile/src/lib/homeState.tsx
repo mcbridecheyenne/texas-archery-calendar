@@ -7,6 +7,9 @@ import { readJSON, writeJSON } from "../features/calendar/storage";
 import { useAuth } from "./auth";
 
 const KEY = "homeState";
+// Set the first time this version runs, so only phones that already had a saved schedule
+// before the USA update get the Texas shortcut (not one that just downloaded it).
+const SEEN_KEY = "homeStateSeen";
 
 interface HomeStateValue {
   ready: boolean; // finished reading the phone
@@ -31,9 +34,12 @@ export function HomeStateProvider({ children }: { children: ReactNode }) {
     (async () => {
       let saved = await readJSON<string>(KEY);
       // People who used the Texas app before the USA update keep opening on Texas.
-      if (!saved && (await hasCachedEvents())) {
-        saved = "TX";
-        await writeJSON(KEY, saved);
+      if (!(await readJSON<boolean>(SEEN_KEY))) {
+        await writeJSON(SEEN_KEY, true);
+        if (!saved && (await hasCachedEvents())) {
+          saved = "TX";
+          await writeJSON(KEY, saved);
+        }
       }
       setLocal(saved);
       setReady(true);
