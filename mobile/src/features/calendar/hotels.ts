@@ -26,6 +26,17 @@ export interface HotelsConfig {
   campaign: string;
   /** hotel-prices.json on the website: real prices per shoot town. */
   pricesUrl?: string;
+  /** "Find flights" under the hotel button, for national championships only. */
+  flights?: FlightsConfig;
+}
+
+export interface FlightsConfig {
+  enabled: boolean;
+  /**
+   * A flight affiliate's search link, with {to}, {depart} and {return} where the town and
+   * dates go. Blank: the button opens a plain Google Flights search that earns nothing.
+   */
+  affiliateUrl: string;
 }
 
 export interface PriceRange {
@@ -162,6 +173,29 @@ export function hotelSearchUrl(
     return `https://www.stay22.com/allez/roam?${query({ aid, ...campaign, address, ...nights })}`;
   }
   return `https://www.booking.com/searchresults.html?${query({ ss: address, ...nights, group_adults: "2" })}`;
+}
+
+/**
+ * Where "Find flights" goes: flying in the day before the shoot and home on the last day.
+ * Null when the shoot is over or has no place. Google Flights works out the nearest
+ * airports from the town name and starts from the archer's own area.
+ */
+export function flightSearchUrl(
+  e: Pick<TournamentEvent, "city" | "state" | "location" | "startDate" | "endDate">,
+  config: FlightsConfig,
+  today = new Date()
+): string | null {
+  const place = hotelPlace(e);
+  const nights = hotelNights(e, today);
+  if (!place || !nights) return null;
+  const template = config.affiliateUrl.trim();
+  if (template) {
+    return template
+      .replace("{to}", encodeURIComponent(place))
+      .replace("{depart}", nights.checkin)
+      .replace("{return}", nights.checkout);
+  }
+  return `https://www.google.com/travel/flights?${query({ q: `Flights to ${place} on ${nights.checkin} through ${nights.checkout}` })}`;
 }
 
 // Built by hand: React Native's URLSearchParams can't be relied on without a polyfill.

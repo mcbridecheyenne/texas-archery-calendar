@@ -5,7 +5,8 @@ import { addToPhoneCalendar, callHost, emailHost, openDirections, openUrl } from
 import { daysUntil, fmtDayLong, fmtRange } from "../dates";
 import type { CalendarTheme } from "../theme";
 import { listedBy, type TournamentEvent } from "../types";
-import { hotelPlace, hotelPrices, hotelSearchUrl, useCityPrices, type HotelsConfig } from "../hotels";
+import { isNationalChampionship } from "../browse";
+import { flightSearchUrl, hotelPlace, hotelPrices, hotelSearchUrl, useCityPrices, type HotelsConfig } from "../hotels";
 import { shareShoot, shootMessage } from "../share";
 import { useShareCard, type ShareCardInfo } from "./ShareCard";
 import { SourcePill } from "./SourcePill";
@@ -203,11 +204,13 @@ export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra
 }
 
 // Nightly hotel prices in the shoot's town (when we have them) and a button that searches hotels
-// for the shoot's dates. Hidden for shoots that are over or have no place.
+// for the shoot's dates. Hidden for shoots that are over or have no place. National
+// championships, where archers come from far away, also get a "Find flights" button.
 function HotelCard({ event, config, theme }: { event: TournamentEvent; config: HotelsConfig; theme: CalendarTheme }) {
   const table = useCityPrices(config.pricesUrl);
   const url = hotelSearchUrl(event, config);
   if (!url) return null;
+  const flightsUrl = config.flights?.enabled && isNationalChampionship(event) ? flightSearchUrl(event, config.flights) : null;
   const prices = hotelPrices(event, table);
   const place = hotelPlace(event);
   return (
@@ -233,6 +236,17 @@ function HotelCard({ event, config, theme }: { event: TournamentEvent; config: H
       >
         <Text style={[styles.hotelBtnText, { color: theme.onPrimary }]}>Find hotels{place ? ` near ${place}` : ""}</Text>
       </Pressable>
+      {flightsUrl ? (
+        <Pressable
+          onPress={() => openUrl(flightsUrl)}
+          accessibilityRole="link"
+          accessibilityLabel={`Find flights to ${place ?? "the shoot"}`}
+          style={({ pressed }) => [styles.hotelBtn, styles.flightBtn, { borderColor: theme.primary, opacity: pressed ? 0.7 : 1 }]}
+        >
+          <Text style={[styles.hotelBtnText, { color: theme.primary }]}>Find flights{place ? ` to ${place}` : ""}</Text>
+        </Pressable>
+      ) : null}
+      <Text style={[styles.hotelNote, { color: theme.muted }]}>We may earn a commission when you book through these links.</Text>
     </View>
   );
 }
@@ -324,6 +338,7 @@ const styles = StyleSheet.create({
   hotelPer: { fontSize: 15, fontWeight: "400" },
   hotelNote: { fontSize: 12, lineHeight: 16 },
   hotelBtn: { marginTop: 6, borderRadius: 10, paddingVertical: 11, paddingHorizontal: 12, alignItems: "center" },
+  flightBtn: { marginTop: 0, borderWidth: 1.5 },
   hotelBtnText: { fontSize: 15, fontWeight: "700", textAlign: "center" },
   userNote: { marginTop: 10, borderRadius: 10, borderWidth: StyleSheet.hairlineWidth, padding: 10 },
   userNoteText: { fontSize: 14, lineHeight: 19 },

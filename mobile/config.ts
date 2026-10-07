@@ -51,6 +51,11 @@ export const HOTELS = {
   stay22Aid: "archeryintheusa", // Cheyenne's Stay22 affiliate id
   campaign: "app", // shows app clicks separately from the website in Stay22's reports
   pricesUrl: `${API_BASE_URL}/hotel-prices.json`, // edit client/public/hotel-prices.json on main
+  // "Find flights" under the hotel button, only on national championships.
+  // TODO(Cheyenne): once you join a flight affiliate program, paste its search link here
+  // with {to}, {depart} and {return} where the town and dates go. While it's blank the
+  // button opens a plain Google Flights search, which works but earns nothing.
+  flights: { enabled: true, affiliateUrl: "" },
 };
 
 // ---- Texas Field Archery Scholarship Fund ----
