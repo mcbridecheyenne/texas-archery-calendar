@@ -2,7 +2,7 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useFocusEffect, useRouter } from "expo-router";
 import { useCallback, useState } from "react";
-import { ActivityIndicator, Alert, Image, Linking, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, Alert, Image, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { PRIVACY_URL, RULES_URL } from "../../config";
 import { fetchMyListings, renewListing } from "../../src/features/marketplace/api";
 import { expiryLabel, isExpired, syncExpiryReminders } from "../../src/features/marketplace/expiry";
@@ -56,7 +56,7 @@ export default function AccountTab() {
   function deleteAccount() {
     confirm(
       "Delete your account?",
-      "This permanently deletes your profile, listings, photos and messages. Your ad-free subscription is separate: cancel it in your App Store or Google Play settings.",
+      `This permanently deletes your profile, listings, photos and messages. Your ad-free subscription is separate: cancel it in your ${Platform.select({ ios: "App Store", default: "Google Play" })} settings.`,
       "Delete everything",
       async () => {
         setDeleting(true);
