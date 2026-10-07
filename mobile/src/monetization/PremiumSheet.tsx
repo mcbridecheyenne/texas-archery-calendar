@@ -58,7 +58,7 @@ export function PremiumSheet({ visible, onClose }: { visible: boolean; onClose: 
 
         <Text style={[styles.title, { color: theme.text }]}>Go ad-free</Text>
         <Text style={[styles.lead, { color: theme.muted }]}>
-          Remove the ads in the shoot list and help keep Archery in the USA running. Everything else stays free.
+          Remove the ads and help keep Archery in the USA running. Everything else stays free.
         </Text>
 
         {isPremium ? (

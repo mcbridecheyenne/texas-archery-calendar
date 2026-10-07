@@ -1,4 +1,4 @@
-// Ad-free subscription state, shared by the ads in the shoot list and the "Remove ads" sheet.
+// Ad-free subscription state, shared by the banner, the ads in the shoot list and the "Remove ads" sheet.
 // Uses RevenueCat, which runs Apple and Google subscriptions from one setup.
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { Platform } from "react-native";

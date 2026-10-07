@@ -30,7 +30,7 @@ export const SHARE_PLUG = `📲 Find archery shoots and see who's going with the
 export const TERMS_URL = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/";
 
 // ---- Ads (Google AdMob) ----
-// Shown as small "Ad" cards inside the Tournaments list, one after every `every` shoots
+// A banner above the tab bar, plus small "Ad" cards inside the Tournaments list, one after every `every` shoots
 // (src/monetization/ListAd.tsx). Your AdMob ids (admob.google.com). The app ids are in app.json under the
 // react-native-google-mobile-ads plugin. Don't tap your own ads; add your phone as a
 // test device in AdMob → Settings → Test devices instead.

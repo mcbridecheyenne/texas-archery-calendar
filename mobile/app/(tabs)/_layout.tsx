@@ -1,8 +1,12 @@
 // The tab bar. New features (scores, clubs, results…) become new tabs here.
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { BottomTabBar } from "@react-navigation/bottom-tabs";
 import { Tabs } from "expo-router";
+import { View } from "react-native";
 import { useFriends } from "../../src/features/friends";
 import { useInbox } from "../../src/features/marketplace/inbox";
+import { AdBanner } from "../../src/monetization/AdBanner";
+import { usePremium } from "../../src/monetization/premium";
 import { useTheme } from "../../src/ui";
 
 type IconName = keyof typeof Ionicons.glyphMap;
@@ -15,9 +19,17 @@ export default function TabsLayout() {
   const t = useTheme();
   const { unreadCount } = useInbox();
   const { incoming } = useFriends();
+  const { openSheet } = usePremium();
 
   return (
     <Tabs
+      // The banner sits right above the tab bar, on every tab, and never covers content.
+      tabBar={(props) => (
+        <View>
+          <AdBanner onRemoveAds={openSheet} padBottom={false} />
+          <BottomTabBar {...props} />
+        </View>
+      )}
       screenOptions={{
         tabBarActiveTintColor: t.primary,
         tabBarInactiveTintColor: t.muted,

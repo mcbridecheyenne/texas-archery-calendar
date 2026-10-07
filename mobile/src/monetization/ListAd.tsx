@@ -1,43 +1,13 @@
-// Ads sit inside the shoot list: a small card marked "Ad" after every few shoots, scrolling
-// with the list and never covering anything. No pop-ups, no video, and
-// only non-personalized ads, so the app never asks to track people across other apps.
+// Ad cards inside the shoot list (besides the banner above the tab bar): a small card marked
+// "Ad" after every few shoots, scrolling with the list and never covering anything. No
+// pop-ups, no video, and only non-personalized ads, so the app never asks to track people.
 // Hidden for ad-free subscribers and while the subscription check is still running.
 import { useEffect, useState } from "react";
 import { Platform, Pressable, StyleSheet, Text, View, useWindowDimensions } from "react-native";
 import { ADS } from "../../config";
 import { useCalendarTheme } from "../features/calendar";
+import { Ads, startAds, useAdsVisible } from "./AdBanner";
 import { usePremium } from "./premium";
-
-// Not available in Expo Go; the app just runs without ads there.
-let Ads: any = null;
-try {
-  Ads = require("react-native-google-mobile-ads");
-} catch {
-  Ads = null;
-}
-
-let startup: Promise<boolean> | null = null;
-function startAds(): Promise<boolean> {
-  if (!startup) {
-    startup = (async () => {
-      try {
-        // Shows Google's consent form only where the law requires it (EU/UK); a no-op in the US.
-        const consent = await Ads.AdsConsent.gatherConsent().catch(() => null);
-        if (consent && consent.canRequestAds === false) return false;
-        await Ads.default().initialize();
-        return true;
-      } catch {
-        return false;
-      }
-    })();
-  }
-  return startup;
-}
-
-export function useAdsVisible(): boolean {
-  const { isPremium, ready } = usePremium();
-  return !!Ads && ADS.enabled && ready && !isPremium;
-}
 
 // The list's side padding (CalendarScreen styles.scroll) and the card's own padding.
 const LIST_PADDING = 16;
