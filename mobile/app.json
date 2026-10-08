@@ -33,7 +33,7 @@
         "expo-calendar",
         {
           "calendarPermission": "Archery in the USA adds the tournaments you pick to your calendar.",
-          "remindersPermission": false
+          "remindersPermission": "Archery in the USA doesn't use your reminders."
         }
       ],
       "expo-notifications",
