@@ -4,6 +4,7 @@ import { apiRequest, queryClient } from "@/lib/queryClient";
 import type { EventsResponse, TournamentEvent } from "@shared/schema";
 import { CalendarMonth } from "@/components/CalendarMonth";
 import { UpcomingList } from "@/components/UpcomingList";
+import { FeaturedStrip } from "@/components/FeaturedStrip";
 import { Logo } from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -255,6 +256,8 @@ export default function Home() {
             </div>
           </div>
         )}
+
+        {data && <FeaturedStrip events={data.events} />}
 
         {isLoading ? (
           <LoadingState />
