@@ -8,7 +8,7 @@ import { AppState, Platform } from "react-native";
 import type { Session } from "@supabase/supabase-js";
 import type { Profile } from "../features/marketplace/types";
 import { forgetPushToken } from "./push";
-import { PHOTO_BUCKET, supabase } from "./supabase";
+import { supabase } from "./supabase";
 
 export interface AuthState {
   enabled: boolean; // marketplace configured
@@ -28,7 +28,8 @@ export interface AuthState {
   block: (userId: string) => Promise<void>;
   unblock: (userId: string) => Promise<void>;
   signOut: () => Promise<void>;
-  deleteAccount: () => Promise<void>;
+  /** "cancelled" when they backed out of the Apple confirmation. */
+  deleteAccount: () => Promise<"deleted" | "cancelled">;
 }
 
 // Your own full profile. Other people's private columns can't be read, so this
@@ -213,20 +214,33 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   // Removes the person's photos, then their account and everything linked to it.
-  const deleteAccount = useCallback(async () => {
-    if (!userId || !supabase) return;
-    const bucket = supabase.storage.from(PHOTO_BUCKET);
-    const { data: folders } = await bucket.list(userId, { limit: 1000 });
-    for (const folder of folders ?? []) {
-      const { data: files } = await bucket.list(`${userId}/${folder.name}`, { limit: 100 });
-      const paths = (files ?? []).map((f) => `${userId}/${folder.name}/${f.name}`);
-      if (paths.length) await bucket.remove(paths);
+  // The delete-account edge function removes their photos on the server and deletes the
+  // account. Sign in with Apple accounts confirm with Apple once more first: that gives a
+  // one-time code the server uses to remove the app from their Apple ID, as Apple asks.
+  const deleteAccount = useCallback(async (): Promise<"deleted" | "cancelled"> => {
+    if (!userId || !supabase) return "cancelled";
+    const user = session?.user;
+    const usesApple = user?.app_metadata?.provider === "apple" || !!user?.identities?.some((i) => i.provider === "apple");
+    let appleAuthorizationCode: string | undefined;
+    if (usesApple && Platform.OS === "ios") {
+      try {
+        const cred = await AppleAuthentication.signInAsync({ requestedScopes: [] });
+        appleAuthorizationCode = cred.authorizationCode ?? undefined;
+      } catch (e: any) {
+        if (e?.code === "ERR_REQUEST_CANCELED") return "cancelled";
+        throw e;
+      }
     }
-    const { error } = await supabase.rpc("delete_my_account");
-    if (error) throw error;
+    const { data, error } = await supabase.functions.invoke("delete-account", { body: { appleAuthorizationCode } });
+    if (error || !data?.ok) {
+      const res = (error as any)?.context;
+      const body = res && typeof res.json === "function" ? await res.json().catch(() => null) : data;
+      throw new Error(body?.message ?? "Couldn't delete your account. Check your connection and try again.");
+    }
     await forgetPushToken(); // the database already removed this account's tokens
     await supabase.auth.signOut();
-  }, [userId]);
+    return "deleted";
+  }, [userId, session]);
 
   // Still working out who's signed in, or their profile hasn't arrived yet.
   const loading = !sessionChecked || (!!userId && loadedFor !== userId);

@@ -237,6 +237,24 @@ One-time setup:
    pasting both files).
 Until the products exist, the Feature sheet says "Not available yet".
 
+## Deleting an account (and Sign in with Apple)
+
+Account → Delete account calls the `delete-account` edge function
+(`supabase/functions/delete-account`). It removes the person's photos from storage (stopping if
+that fails, so they can retry), then deletes the account through `delete_my_account()`. For
+Sign in with Apple accounts the app first asks Apple to confirm, and the function uses that
+one-time code to revoke the app's access to their Apple ID, as Apple requires (5.1.1(v)).
+
+One-time setup for the Apple part:
+1. **Apple Developer → Certificates, Identifiers & Profiles → Keys → +**: name it
+   "Archery Sign in with Apple", tick **Sign in with Apple**, Configure → primary App ID
+   `com.cheyennemcbride.archeryintexas`, Save, Continue, Register. **Download** the .p8 file
+   (you can only download it once) and note the **Key ID**.
+2. **Supabase → Edge Functions → Secrets**: add `APPLE_KEY_ID` (the Key ID) and
+   `APPLE_PRIVATE_KEY` (open the .p8 file in TextEdit and paste everything, including the
+   BEGIN/END lines).
+Without these, accounts are still deleted; only the Apple revoke is skipped (it's logged).
+
 ## Google Play (Android)
 
 ```bash
