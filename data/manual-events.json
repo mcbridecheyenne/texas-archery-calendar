@@ -21,8 +21,9 @@
     "watch": {
       "url": "https://www.texasringer.com/nextgenschedule",
       "expect": [
-        "December 4",
-        "College Station"
+        "Dec 4",
+        "December 6",
+        "2026"
       ]
     }
   }
