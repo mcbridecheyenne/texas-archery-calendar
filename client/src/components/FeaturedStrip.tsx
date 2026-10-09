@@ -6,8 +6,26 @@ import { MapPin, Star } from "lucide-react";
 
 // Up to 3 paid "Featured" shoots above the calendar, taking turns (the order changes daily),
 // the same ones the app pins to the top of its Texas and All states lists.
+const HIDE_KEY = "hideFeatured";
+
+function readHidden(): boolean {
+  try {
+    return localStorage.getItem(HIDE_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
 export function FeaturedStrip({ events }: { events: TournamentEvent[] }) {
   const [featured, setFeatured] = useState<FeaturedShoot[]>([]);
+  // Anyone can hide featured shoots, for free (remembered in this browser).
+  const [hidden, setHidden] = useState(readHidden);
+  const toggle = (hide: boolean) => {
+    setHidden(hide);
+    try {
+      localStorage.setItem(HIDE_KEY, hide ? "1" : "0");
+    } catch {}
+  };
 
   useEffect(() => {
     let live = true;
@@ -27,16 +45,35 @@ export function FeaturedStrip({ events }: { events: TournamentEvent[] }) {
     return n ? unique.map((_, i) => unique[(i + day) % n]).slice(0, 3) : [];
   }, [featured]);
 
-  const shownKey = shown.map((f) => f.id).join(",");
+  const shownKey = hidden ? "" : shown.map((f) => f.id).join(",");
   useEffect(() => {
     if (shownKey) countSeen(shownKey.split(","));
   }, [shownKey]);
 
   if (!shown.length) return null;
+  if (hidden) {
+    return (
+      <p className="mb-4 text-xs text-muted-foreground">
+        Featured shoots are hidden.{" "}
+        <button className="underline underline-offset-2 hover:text-foreground" onClick={() => toggle(false)}>
+          Show them
+        </button>
+      </p>
+    );
+  }
 
   return (
     <section className="mb-6" data-testid="featured-shoots">
-      <h3 className="text-sm uppercase tracking-[0.18em] text-muted-foreground font-medium mb-3">Featured</h3>
+      <div className="flex items-baseline justify-between mb-3">
+        <h3 className="text-sm uppercase tracking-[0.18em] text-muted-foreground font-medium">Featured</h3>
+        <button
+          className="text-xs text-muted-foreground underline underline-offset-2 hover:text-foreground"
+          onClick={() => toggle(true)}
+          data-testid="button-hide-featured"
+        >
+          Hide featured shoots
+        </button>
+      </div>
       <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
         {shown.map((f) => {
           const official = events.find((e) => e.id === f.eventId);
