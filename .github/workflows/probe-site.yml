@@ -1,0 +1,27 @@
+# Scratch: fetch a public site from a runner so a cloud session can read it. Not for merging.
+name: Probe site
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: Site to fetch
+        required: true
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch
+        run: |
+          mkdir -p out
+          curl -sSL -m 30 -A "Mozilla/5.0" "${{ inputs.url }}" -o out/index.html -w "status %{http_code} final %{url_effective} bytes %{size_download}\n" | tee out/head.txt
+          grep -oiE 'href="[^"]+"' out/index.html | sort -u > out/links.txt || true
+          for p in events schedule calendar register registration feed rss sitemap.xml events.ics calendar.ics; do
+            curl -sSL -m 20 -A "Mozilla/5.0" "${{ inputs.url }}/$p" -o "out/$p.html" -w "$p: %{http_code} %{content_type} %{size_download}\n" >> out/head.txt || true
+          done
+          cat out/head.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: probe
+          path: out
