@@ -65,6 +65,28 @@ export interface CalendarScreenProps {
    *  `slot` counts them from 0 down the list. Return null to show nothing there. */
   listAd?: (slot: number) => ReactNode;
   adEvery?: number;
+  /** Paid "Featured" shoots, pinned to the top of the Upcoming list for their spot (a state, or ALL). */
+  featured?: FeaturedPin[];
+  onFeaturedSeen?: (ids: string[]) => void;
+  onFeaturedOpen?: (id: string) => void;
+}
+
+export interface FeaturedPin {
+  id: string;
+  spot: string; // two-letter state, or "ALL"
+  eventId: string;
+  eventName: string;
+  eventStart: string; // YYYY-MM-DD, to find the shoot again if its id changed
+  promoterName: string;
+}
+
+// The same shoot under a new id (the host moved it): same name, within 45 days.
+function findPinned(pin: FeaturedPin, events: TournamentEvent[]): TournamentEvent | undefined {
+  const exact = events.find((e) => e.id === pin.eventId);
+  if (exact) return exact;
+  const key = pin.eventName.trim().toLowerCase();
+  const start = parseISODate(pin.eventStart).getTime();
+  return events.find((e) => e.name.trim().toLowerCase() === key && Math.abs(parseISODate(e.startDate).getTime() - start) <= 45 * 86_400_000);
 }
 
 // Archer-added and emailed-in shoots go after the governing bodies.
@@ -77,7 +99,7 @@ const NEAR_KEY = "nearMe";
 // people actually scroll to), so picking "All states" doesn't look up every town in the country.
 const MILES_FOR_FIRST = 80;
 
-export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery in the USA", bottomInset, footer, social, sharePlug, shareAs, homeState, hotels, flights, listAd, adEvery = 8 }: CalendarScreenProps) {
+export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery in the USA", bottomInset, footer, social, sharePlug, shareAs, homeState, hotels, flights, listAd, adEvery = 8, featured, onFeaturedSeen, onFeaturedOpen }: CalendarScreenProps) {
   const card = useShareCard();
   const theme = useCalendarTheme();
   const insets = useSafeAreaInsets();
@@ -399,6 +421,54 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
     return listAd((pos + 1) / adEvery - 1);
   };
 
+  // Featured shoots for the state being shown (or "All states"), up to 3, taking turns at
+  // the top: the order changes each day.
+  const pinned = useMemo(() => {
+    if (!featured?.length || view !== "list" || searching) return [];
+    const spot = stateFilter === "ALL" ? "ALL" : stateFilter;
+    const day = Math.floor(Date.now() / 86_400_000);
+    const out: { pin: FeaturedPin; event: TournamentEvent }[] = [];
+    for (const pin of featured) {
+      if (pin.spot !== spot) continue;
+      const event = findPinned(pin, upcomingAll);
+      if (event && !out.some((o) => o.event.id === event.id)) out.push({ pin, event });
+    }
+    const n = out.length;
+    return n ? out.map((_, i) => out[(i + day) % n]).slice(0, 3) : [];
+  }, [featured, view, searching, stateFilter, upcomingAll]);
+
+  const pinnedKey = pinned.map((p) => p.pin.id).join(",");
+  useEffect(() => {
+    if (pinnedKey) onFeaturedSeen?.(pinnedKey.split(","));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pinnedKey]);
+
+  const featuredBlock = pinned.length ? (
+    <View style={{ marginBottom: 6 }}>
+      <Text style={[styles.sectionTitle, styles.listSection, { color: theme.muted }]}>FEATURED</Text>
+      {pinned.map(({ pin, event }) => (
+        <EventRow
+          key={`featured-${pin.id}`}
+          event={event}
+          theme={theme}
+          going={isGoing(event.id)}
+          note={social?.rowNote?.(event) ?? null}
+          onPress={(e) => {
+            onFeaturedOpen?.(pin.id);
+            setOpenEvent(e);
+          }}
+          onToggleGoing={onToggleGoing}
+          miles={distances.miles.get(event.id)}
+          extra={
+            <Text style={{ color: theme.muted, fontSize: 12, marginTop: 4 }} numberOfLines={1}>
+              Featured · promoted by {pin.promoterName}
+            </Text>
+          }
+        />
+      ))}
+    </View>
+  ) : null;
+
   const refreshControl = (
     <RefreshControl refreshing={refreshing} onRefresh={refresh} tintColor={theme.primary} colors={[theme.primary]} />
   );
@@ -670,7 +740,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
               {section.title.toUpperCase()}
             </Text>
           )}
-          ListHeaderComponent={view === "mine" ? mineHeader : controls}
+          ListHeaderComponent={view === "mine" ? mineHeader : <>{controls}{featuredBlock}</>}
           ListFooterComponent={footer ? <>{footer}</> : null}
           ListEmptyComponent={
             view !== "mine" && nothingHere ? (
