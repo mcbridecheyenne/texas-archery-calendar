@@ -322,11 +322,19 @@ async function collectAsaProAm(): Promise<UsaEvent[]> {
 interface ManualEvent {
   organization: string; name: string; startDate: string; endDate?: string;
   city?: string; state?: string; location?: string; sourceUrl: string;
+  // Optional daily check of the organizer's page: every phrase in `expect` must still appear in
+  // its text (case-insensitive). When one goes missing, or the page can't be read, the Manual
+  // source is reported as "partial", which opens the feed-health issue so the hand-kept dates
+  // get looked at. The event itself stays published either way.
+  watch?: { url: string; expect: string[] };
 }
 
-async function collectManual(): Promise<UsaEvent[]> {
+function readManualRows(): ManualEvent[] {
   const path = new URL("../data/manual-events.json", import.meta.url);
-  const rows = JSON.parse(readFileSync(path, "utf8")) as ManualEvent[];
+  return JSON.parse(readFileSync(path, "utf8")) as ManualEvent[];
+}
+
+function manualEvents(rows: ManualEvent[]): UsaEvent[] {
   return rows.map((row) => ({
     ...blankEvent(),
     id: `manual-${hash(`${row.name}|${row.startDate}`)}`,
@@ -335,6 +343,31 @@ async function collectManual(): Promise<UsaEvent[]> {
     location: row.location ?? null, city: row.city ?? null, state: normalizeState(row.state),
     sourceUrl: row.sourceUrl,
   }));
+}
+
+/** One line per watched page whose expected text is missing or that couldn't be read. */
+export async function checkManualWatches(rows: ManualEvent[], today = new Date().toISOString().slice(0, 10)): Promise<string[]> {
+  const problems: string[] = [];
+  for (const row of rows) {
+    if (!row.watch || (row.endDate ?? row.startDate) < today) continue; // nothing to watch once it's over
+    try {
+      const res = await fetchWithTimeout(row.watch.url, { headers: { "User-Agent": "Mozilla/5.0 (archery calendar check)" } });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const html = (await res.text())
+        .replace(/<(script|style)[\s\S]*?<\/\1>/gi, " ")
+        .replace(/&(nbsp|#160|#xa0);/gi, " ")
+        .replace(/&(ndash|mdash|#8211|#8212);/gi, "-")
+        .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCharCode(parseInt(h, 16)));
+      const text = decodeEntities(html).replace(/[\u00a0\s]+/g, " ").toLowerCase();
+      const missing = row.watch.expect.filter((phrase) => !text.includes(phrase.replace(/\s+/g, " ").toLowerCase()));
+      if (missing.length) {
+        problems.push(`${row.name}: ${row.watch.url} no longer says ${missing.map((m) => `"${m}"`).join(", ")}; check the hand-kept dates.`);
+      }
+    } catch (err) {
+      problems.push(`${row.name}: couldn't read ${row.watch.url} (${err instanceof Error ? err.message : String(err)}).`);
+    }
+  }
+  return problems;
 }
 
 // The app's month view labels each shoot with its town, so a place that isn't known
@@ -353,13 +386,19 @@ export async function getUsaEvents(): Promise<UsaResult> {
   // requests from GitHub with a block page (checked 2026-10-04). Its national and state
   // championships go in data/manual-events.json instead. collectS3DA is kept in case they
   // open a feed.
-  const [texas, wa, asa, manual, states] = await Promise.all([
+  const manualRows = readManualRows();
+  const [texas, wa, asa, manual, states, watchProblems] = await Promise.all([
     getEvents(),
     runSource("World Archery", WA_URL, collectWorldArchery),
     runSource("ASA Pro/Am", ASA_PROAM_URL, collectAsaProAm),
-    runSource("Manual", "data/manual-events.json", collectManual),
+    runSource("Manual", "data/manual-events.json", async () => manualEvents(manualRows)),
     collectStateCalendars(),
+    checkManualWatches(manualRows),
   ]);
+  if (watchProblems.length && manual.status.status === "ok") {
+    manual.status.status = "partial";
+    manual.status.message = watchProblems.join(" ");
+  }
   const texasEvents: UsaEvent[] = texas.events.map((e) => ({
     ...e, state: normalizeState(e.state) ?? "TX", organization: TEXAS_ORGANIZATION[e.source],
   }));
