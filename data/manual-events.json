@@ -8,5 +8,22 @@
     "state": "PA",
     "location": "Spooky Nook Sports, Manheim, PA",
     "sourceUrl": "https://www.lancasterarcheryclassic.com/schedule"
+  },
+  {
+    "organization": "Texas Archery",
+    "name": "The Texas Ringer 2026",
+    "startDate": "2026-12-04",
+    "endDate": "2026-12-06",
+    "city": "College Station",
+    "state": "TX",
+    "location": "Texas Archery, 10265 State Highway 30, Suite 302, College Station, TX 77845",
+    "sourceUrl": "https://www.texasringer.com/nextgenschedule",
+    "watch": {
+      "url": "https://www.texasringer.com/nextgenschedule",
+      "expect": [
+        "December 4",
+        "College Station"
+      ]
+    }
   }
 ]
