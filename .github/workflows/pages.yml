@@ -194,6 +194,18 @@ jobs:
       - id: deployment
         uses: actions/deploy-pages@v4
 
+      # Featured shoots (paid placement, bought in the app) are tied to shoots in the feed just
+      # published. This asks Supabase to follow moved shoots and end features of shoots that
+      # left the schedule (mobile/supabase/functions/featured-sync). The key is the public
+      # "anon" key, the same one shipped in the app; the function only reads the public feed.
+      - name: Sync featured shoots with the feed
+        continue-on-error: true
+        run: |
+          curl -sS --max-time 60 -X POST \
+            -H "apikey: sb_publishable_GWYdb3dSEHy4jvrkkJJEww_FD6nOt3B" \
+            -H "Authorization: Bearer sb_publishable_GWYdb3dSEHy4jvrkkJJEww_FD6nOt3B" \
+            https://mefqiniuudxcnoimfipo.supabase.co/functions/v1/featured-sync
+
   # Opens a "feed-health" issue when a source breaks (GitHub emails the repo owner), comments
   # only when the set of broken sources changes, and closes the issue once everything recovers.
   alert:

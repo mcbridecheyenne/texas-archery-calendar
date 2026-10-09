@@ -4,6 +4,7 @@ import { apiRequest, queryClient } from "@/lib/queryClient";
 import type { EventsResponse, TournamentEvent } from "@shared/schema";
 import { CalendarMonth } from "@/components/CalendarMonth";
 import { UpcomingList } from "@/components/UpcomingList";
+import { FeaturedShoots } from "@/components/FeaturedShoots";
 import { Logo } from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -262,6 +263,7 @@ export default function Home() {
           <div className="grid 2xl:grid-cols-[1fr_320px] gap-6">
             <CalendarMonth events={filtered} initial={initial} />
             <aside>
+              <FeaturedShoots compact />
               <h3 className="text-sm uppercase tracking-[0.18em] text-muted-foreground font-medium mb-3">
                 Next up
               </h3>
@@ -269,7 +271,10 @@ export default function Home() {
             </aside>
           </div>
         ) : (
-          <UpcomingList events={upcoming} />
+          <>
+            <FeaturedShoots />
+            <UpcomingList events={upcoming} />
+          </>
         )}
       </main>
 
