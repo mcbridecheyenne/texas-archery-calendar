@@ -2,12 +2,13 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useFocusEffect, useRouter } from "expo-router";
 import { useCallback, useState } from "react";
-import { ActivityIndicator, Alert, Image, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, Alert, Image, Linking, Platform, Pressable, ScrollView, StyleSheet, Switch, Text, View } from "react-native";
 import { PRIVACY_URL, RULES_URL, SUPPORT_URL } from "../../config";
 import { StatePicker, stateName, useCalendarTheme } from "../../src/features/calendar";
 import { fetchMyListings, renewListing } from "../../src/features/marketplace/api";
 import { expiryLabel, isExpired, syncExpiryReminders } from "../../src/features/marketplace/expiry";
 import { formatPrice, type Listing } from "../../src/features/marketplace/types";
+import { useShowFeatured } from "../../src/features/featured";
 import { useFriends } from "../../src/features/friends";
 import { useAuth } from "../../src/lib/auth";
 import { useHomeState } from "../../src/lib/homeState";
@@ -21,6 +22,7 @@ export default function AccountTab() {
   const t = useTheme();
   const router = useRouter();
   const auth = useAuth();
+  const [showFeatured, setShowFeatured] = useShowFeatured();
   const premium = usePremium();
   const friends = useFriends();
   const home = useHomeState();
@@ -228,6 +230,16 @@ export default function AccountTab() {
         <Row icon="lock-closed-outline" label="Privacy policy" onPress={() => Linking.openURL(PRIVACY_URL)} />
         <Row icon="help-circle-outline" label="Help and contact" onPress={() => Linking.openURL(SUPPORT_URL)} />
         <Row icon="location-outline" label={`Home state: ${stateName(home.homeState) ?? "Choose your state"}`} onPress={() => setPickingState(true)} />
+        <View style={[styles.row, { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: t.border }]}>
+          <Ionicons name="star-outline" size={20} color={t.primary} />
+          <Text style={[styles.rowTitle, { color: t.text, flex: 1 }]}>Show featured shoots</Text>
+          <Switch
+            value={showFeatured}
+            onValueChange={setShowFeatured}
+            trackColor={{ true: t.primary }}
+            accessibilityLabel="Show featured shoots at the top of the Tournaments list"
+          />
+        </View>
       </View>
 
       {auth.userId ? (

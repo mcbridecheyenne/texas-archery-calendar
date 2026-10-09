@@ -4,6 +4,7 @@ import { Alert } from "react-native";
 import { ADS, API_BASE_URL, FLIGHTS, HOTELS, SHARE_PLUG } from "../../config";
 import { CalendarScreen, StatePicker, useCalendarTheme, type CalendarSocial, type TournamentEvent } from "../../src/features/calendar";
 import { CommunityActions, useCommunity } from "../../src/features/community";
+import { FeatureButton, FeatureSheet, countOpened, countSeen, useFeatured, useShowFeatured } from "../../src/features/featured";
 import { GoingWith, askShareLevel, useFriends } from "../../src/features/friends";
 import { useAuth } from "../../src/lib/auth";
 import { useHomeState } from "../../src/lib/homeState";
@@ -28,6 +29,9 @@ export default function TournamentsTab() {
   // First launch on a new phone: ask where they shoot. "Cancel" shows every state for now, and we ask again next launch.
   const [skipped, setSkipped] = useState(false);
   const { openSheet } = usePremium();
+  const { featured, refresh: refreshFeatured } = useFeatured();
+  const [showFeatured] = useShowFeatured();
+  const [featureFor, setFeatureFor] = useState<TournamentEvent | null>(null);
 
   const social = useMemo<CalendarSocial | undefined>(() => {
     if (!enabled) return undefined; // no accounts yet: the calendar works on its own
@@ -56,6 +60,7 @@ export default function TournamentsTab() {
         <>
           <GoingWith event={event} going={going} close={close} />
           {event.source === "USER" ? <CommunityActions event={event} close={close} /> : null}
+          <FeatureButton event={event} close={close} onFeature={setFeatureFor} />
         </>
       ),
     };
@@ -76,7 +81,19 @@ export default function TournamentsTab() {
         flights={FLIGHTS}
         listAd={() => <ListAd onRemoveAds={openSheet} />}
         adEvery={ADS.every}
+        featured={showFeatured ? featured : undefined}
+        onFeaturedSeen={countSeen}
+        onFeaturedOpen={countOpened}
       />
+      {featureFor && profile ? (
+        <FeatureSheet
+          event={featureFor}
+          visible
+          onClose={() => setFeatureFor(null)}
+          onFeatured={refreshFeatured}
+          promoterName={profile.display_name}
+        />
+      ) : null}
       <StatePicker
         visible={ready && !homeState && !skipped}
         value={null}

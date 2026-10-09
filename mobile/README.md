@@ -210,6 +210,33 @@ messages (user content), and user ID, all linked to the person and used for app 
 with Sign in with Apple. Point out Report and Block (the ••• button on listings and chats), the
 marketplace rules agreement during setup, and Account → Delete account.
 
+## Featured shoots (paid spots at the top of a list)
+
+Anyone signed in can pay to show an upcoming shoot (archer-added or from a schedule) at the
+top of one state's list or the All states list for 7, 14 or 30 days. Up to 3 run at once per
+spot; a new one waits for the next open place, and it ends early when the shoot is over. The
+website shows the Texas and All states ones above its calendar.
+
+How it fits together: the app buys a one-time product through RevenueCat
+(`src/monetization/featured.ts`), then calls the `claim-feature` edge function
+(`supabase/functions/claim-feature`), which checks the purchase with RevenueCat's API, checks
+the shoot is upcoming and the spot has room, and creates the `featured_shoots` row. The app
+can only read those rows. Each new feature sends a push to the accounts in `app_admins`; to
+remove one, set its `status` to `removed` in the Table Editor.
+
+One-time setup:
+1. **App Store Connect → your app → In-App Purchases:** create six **Consumable** products:
+   `feature_state_7`, `feature_state_14`, `feature_state_30` (one state) and `feature_all_7`,
+   `feature_all_14`, `feature_all_30` (All states), with prices and a review screenshot of the
+   Feature sheet.
+2. **RevenueCat → Products:** add the same six product ids (no entitlement needed).
+3. **RevenueCat → API keys:** copy the secret API key (v1, starts with `sk_`). In **Supabase →
+   Edge Functions → Secrets**, add it as `REVENUECAT_SECRET_KEY`.
+4. **Supabase:** run `supabase/migrations/20261009120000_featured_shoots.sql`, then deploy the
+   function: `supabase functions deploy claim-feature` (or the dashboard's Deploy a new function,
+   pasting both files).
+Until the products exist, the Feature sheet says "Not available yet".
+
 ## Google Play (Android)
 
 ```bash

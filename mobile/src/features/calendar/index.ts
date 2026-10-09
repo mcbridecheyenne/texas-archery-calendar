@@ -1,7 +1,7 @@
 // Public surface of the calendar feature. A host app only needs CalendarScreen;
 // the hooks and types are exported for apps that want to reuse the data (for example,
 // showing "next shoot" on the scoring app's dashboard).
-export { CalendarScreen, type CalendarScreenProps } from "./CalendarScreen";
+export { CalendarScreen, type CalendarScreenProps, type FeaturedPin } from "./CalendarScreen";
 export { useEvents } from "./useEvents";
 export { useGoing } from "./useGoing";
 export { addStarsFromAccount, movedStars, onStarsMoved, starredShoots, type AccountStar, type StarredShoot } from "./goingStore";

@@ -89,6 +89,11 @@ export const PURCHASES = {
   // "Support the app" tips: consumable in-app purchases with these product ids, created in
   // App Store Connect and Google Play and added to RevenueCat. Hidden until they exist.
   tipProductIds: ["tip_small", "tip_medium", "tip_large"],
+  // "Feature this shoot": one-time purchases (consumables) for a state's list or the
+  // All states list. Created in App Store Connect and added to RevenueCat; the button
+  // says "not available yet" until they load. The claim-feature edge function checks
+  // each purchase before the shoot is featured.
+  featureProductIds: ["feature_state_7", "feature_state_14", "feature_state_30", "feature_all_7", "feature_all_14", "feature_all_30"],
 };
 
 // App Store reviewers can't receive our emailed codes, so this one account signs in with a
