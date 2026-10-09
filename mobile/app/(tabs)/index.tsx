@@ -4,7 +4,7 @@ import { Alert } from "react-native";
 import { ADS, API_BASE_URL, FLIGHTS, HOTELS, SHARE_PLUG } from "../../config";
 import { CalendarScreen, StatePicker, useCalendarTheme, type CalendarSocial, type TournamentEvent } from "../../src/features/calendar";
 import { CommunityActions, useCommunity } from "../../src/features/community";
-import { FeatureButton, FeatureSheet, countOpened, countSeen, useFeatured } from "../../src/features/featured";
+import { FeatureButton, FeatureSheet, countOpened, countSeen, useFeatured, useShowFeatured } from "../../src/features/featured";
 import { GoingWith, askShareLevel, useFriends } from "../../src/features/friends";
 import { useAuth } from "../../src/lib/auth";
 import { useHomeState } from "../../src/lib/homeState";
@@ -30,6 +30,7 @@ export default function TournamentsTab() {
   const [skipped, setSkipped] = useState(false);
   const { openSheet } = usePremium();
   const { featured, refresh: refreshFeatured } = useFeatured();
+  const [showFeatured] = useShowFeatured();
   const [featureFor, setFeatureFor] = useState<TournamentEvent | null>(null);
 
   const social = useMemo<CalendarSocial | undefined>(() => {
@@ -80,7 +81,7 @@ export default function TournamentsTab() {
         flights={FLIGHTS}
         listAd={() => <ListAd onRemoveAds={openSheet} />}
         adEvery={ADS.every}
-        featured={featured}
+        featured={showFeatured ? featured : undefined}
         onFeaturedSeen={countSeen}
         onFeaturedOpen={countOpened}
       />
