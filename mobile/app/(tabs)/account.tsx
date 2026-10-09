@@ -71,13 +71,14 @@ export default function AccountTab() {
   function deleteAccount() {
     confirm(
       "Delete your account?",
-      `This permanently deletes your profile, listings, photos and messages. Your ad-free subscription is separate: cancel it in your ${Platform.select({ ios: "App Store", default: "Google Play" })} settings.`,
+      `This permanently deletes your profile, listings, photos and messages${Platform.OS === "ios" ? ". If you signed in with Apple, Apple asks you to confirm and the app is removed from your Apple ID" : ""}. Your ad-free subscription is separate: cancel it in your ${Platform.select({ ios: "App Store", default: "Google Play" })} settings.`,
       "Delete everything",
       async () => {
         setDeleting(true);
         try {
-          await auth.deleteAccount();
-          Alert.alert("Account deleted", "Your account and everything in it have been removed.");
+          if ((await auth.deleteAccount()) === "deleted") {
+            Alert.alert("Account deleted", "Your account and everything in it have been removed.");
+          }
         } catch (e) {
           Alert.alert("Couldn't delete your account", errorText(e));
         } finally {
