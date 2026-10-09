@@ -4,6 +4,7 @@ import { Alert } from "react-native";
 import { ADS, API_BASE_URL, FLIGHTS, HOTELS, SHARE_PLUG } from "../../config";
 import { CalendarScreen, StatePicker, useCalendarTheme, type CalendarSocial, type TournamentEvent } from "../../src/features/calendar";
 import { CommunityActions, useCommunity } from "../../src/features/community";
+import { FeatureButton, FeaturedCards } from "../../src/features/featured";
 import { GoingWith, askShareLevel, useFriends } from "../../src/features/friends";
 import { useAuth } from "../../src/lib/auth";
 import { useHomeState } from "../../src/lib/homeState";
@@ -56,6 +57,7 @@ export default function TournamentsTab() {
         <>
           <GoingWith event={event} going={going} close={close} />
           {event.source === "USER" ? <CommunityActions event={event} close={close} /> : null}
+          <FeatureButton event={event} close={close} />
         </>
       ),
     };
@@ -76,6 +78,9 @@ export default function TournamentsTab() {
         flights={FLIGHTS}
         listAd={() => <ListAd onRemoveAds={openSheet} />}
         adEvery={ADS.every}
+        listTop={({ stateFilter, searching, events, open }) => (
+          <FeaturedCards theme={theme} stateFilter={stateFilter} searching={searching} events={events} onOpen={open} />
+        )}
       />
       <StatePicker
         visible={ready && !homeState && !skipped}

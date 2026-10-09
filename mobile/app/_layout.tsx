@@ -8,6 +8,7 @@ import { AuthProvider, useAuth } from "../src/lib/auth";
 import { HomeStateProvider } from "../src/lib/homeState";
 import { isAboutOpenChat, usePushNotifications } from "../src/lib/push";
 import { CommunityProvider } from "../src/features/community";
+import { FeaturedProvider, FeatureSheetHost } from "../src/features/featured";
 import { FriendsProvider } from "../src/features/friends";
 import { InboxProvider } from "../src/features/marketplace/inbox";
 import { PremiumProvider } from "../src/monetization/premium";
@@ -63,6 +64,7 @@ export default function RootLayout() {
             <InboxProvider>
               <FriendsProvider>
                 <CommunityProvider>
+                <FeaturedProvider>
                   <StatusBar style="auto" />
                   <PushNotifications />
                   <Stack
@@ -90,6 +92,8 @@ export default function RootLayout() {
                     <Stack.Screen name="tournament/edit/[id]" options={{ title: "Edit tournament", presentation: "modal" }} />
                   </Stack>
                   <PremiumSheetHost />
+                  <FeatureSheetHost />
+                </FeaturedProvider>
                 </CommunityProvider>
               </FriendsProvider>
             </InboxProvider>

@@ -2,12 +2,13 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useFocusEffect, useRouter } from "expo-router";
 import { useCallback, useState } from "react";
-import { ActivityIndicator, Alert, Image, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, Alert, Image, Linking, Platform, Pressable, ScrollView, StyleSheet, Switch, Text, View } from "react-native";
 import { PRIVACY_URL, RULES_URL, SUPPORT_URL } from "../../config";
 import { StatePicker, stateName, useCalendarTheme } from "../../src/features/calendar";
 import { fetchMyListings, renewListing } from "../../src/features/marketplace/api";
 import { expiryLabel, isExpired, syncExpiryReminders } from "../../src/features/marketplace/expiry";
 import { formatPrice, type Listing } from "../../src/features/marketplace/types";
+import { fetchMyFeatured, useFeatured, type FeaturedShoot } from "../../src/features/featured";
 import { useFriends } from "../../src/features/friends";
 import { useAuth } from "../../src/lib/auth";
 import { useHomeState } from "../../src/lib/homeState";
@@ -23,6 +24,7 @@ export default function AccountTab() {
   const auth = useAuth();
   const premium = usePremium();
   const friends = useFriends();
+  const featured = useFeatured();
   const home = useHomeState();
   const calendarTheme = useCalendarTheme();
   const [pickingState, setPickingState] = useState(false);
@@ -30,6 +32,7 @@ export default function AccountTab() {
   const [deleting, setDeleting] = useState(false);
   const [tipping, setTipping] = useState<string | null>(null);
   const [renewing, setRenewing] = useState<string | null>(null);
+  const [myFeatured, setMyFeatured] = useState<FeaturedShoot[]>([]);
 
   useFocusEffect(
     useCallback(() => {
@@ -42,7 +45,9 @@ export default function AccountTab() {
           })
           .catch(() => setMine([]));
       else setMine(null);
-    }, [auth.userId, auth.profile])
+      if (auth.userId && featured.enabled) fetchMyFeatured(auth.userId).then(setMyFeatured).catch(() => {});
+      else setMyFeatured([]);
+    }, [auth.userId, auth.profile, featured.enabled])
   );
 
   // "Still for sale? Renew": gives the listing another 60 days in the market.
@@ -213,6 +218,37 @@ export default function AccountTab() {
         </>
       ) : null}
 
+      {myFeatured.length ? (
+        <>
+          <SectionLabel>My featured shoots</SectionLabel>
+          <View style={[styles.group, { backgroundColor: t.card, borderColor: t.border }]}>
+            {myFeatured.map((f, i) => {
+              const now = Date.now();
+              const when =
+                f.status !== "active"
+                  ? "Ended"
+                  : new Date(f.startsAt).getTime() > now
+                  ? `Starts ${new Date(f.startsAt).toLocaleDateString()}`
+                  : new Date(f.endsAt).getTime() > now
+                  ? `Until ${new Date(f.endsAt).toLocaleDateString()}`
+                  : "Ended";
+              return (
+                <View key={f.id} style={[styles.listingRow, i > 0 && { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: t.border }]}>
+                  <View style={{ flex: 1 }}>
+                    <Text style={[styles.rowTitle, { color: t.text }]} numberOfLines={1}>
+                      {f.eventName}
+                    </Text>
+                    <Text style={[styles.p, { color: t.muted }]}>
+                      {f.spot === "ALL" ? "All states" : stateName(f.spot) ?? f.spot} · {when} · shown {f.shownCount.toLocaleString()} times · {f.openedCount.toLocaleString()} opened
+                    </Text>
+                  </View>
+                </View>
+              );
+            })}
+          </View>
+        </>
+      ) : null}
+
       <SectionLabel>App</SectionLabel>
       <View style={[styles.group, { backgroundColor: t.card, borderColor: t.border }]}>
         {premium.storeEnabled || premium.isPremium ? (
@@ -228,6 +264,14 @@ export default function AccountTab() {
         <Row icon="lock-closed-outline" label="Privacy policy" onPress={() => Linking.openURL(PRIVACY_URL)} />
         <Row icon="help-circle-outline" label="Help and contact" onPress={() => Linking.openURL(SUPPORT_URL)} />
         <Row icon="location-outline" label={`Home state: ${stateName(home.homeState) ?? "Choose your state"}`} onPress={() => setPickingState(true)} />
+        {featured.enabled ? (
+          // Free for everyone: takes the paid "Featured" cards off the top of the Tournaments list.
+          <View style={[styles.row, { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: t.border }]}>
+            <Ionicons name="star-outline" size={20} color={t.primary} />
+            <Text style={[styles.rowTitle, { color: t.text, flex: 1 }]}>Hide featured shoots</Text>
+            <Switch value={featured.hidden} onValueChange={featured.setHidden} trackColor={{ true: t.primary }} accessibilityLabel="Hide featured shoots" />
+          </View>
+        ) : null}
       </View>
 
       {auth.userId ? (

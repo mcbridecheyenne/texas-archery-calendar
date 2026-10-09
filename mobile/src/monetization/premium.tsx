@@ -29,6 +29,20 @@ export interface Tip {
   product: unknown;
 }
 
+export interface FeatureProduct {
+  id: string; // store product id, e.g. "feature_state_7"
+  placement: "state" | "national";
+  days: 7 | 14 | 30;
+  price: string; // e.g. "$4.99"
+  product: unknown;
+}
+
+/** What a finished consumable purchase hands back, so the server can check it. */
+export interface PurchaseReceipt {
+  transactionId: string;
+  appUserId: string; // RevenueCat's id for this phone
+}
+
 export interface PremiumState {
   available: boolean; // subscriptions are set up and the store is reachable
   storeEnabled: boolean; // purchases are set up in this build, even if prices haven't loaded
@@ -43,6 +57,8 @@ export interface PremiumState {
   restore: () => Promise<boolean>;
   tips: Tip[]; // smallest first; empty until the tip products exist in the stores
   sendTip: (tip: Tip) => Promise<"thanks" | "cancelled" | "failed">;
+  featureProducts: FeatureProduct[]; // empty until the feature products exist in the store
+  buyFeature: (product: FeatureProduct) => Promise<PurchaseReceipt | "cancelled" | "failed">;
   sheetOpen: boolean; // the "Go ad-free" screen
   openSheet: () => void;
   closeSheet: () => void;
@@ -62,6 +78,8 @@ const PremiumContext = createContext<PremiumState>({
   restore: async () => false,
   tips: [],
   sendTip: async () => "failed",
+  featureProducts: [],
+  buyFeature: async () => "failed",
   sheetOpen: false,
   openSheet: () => {},
   closeSheet: () => {},
@@ -84,6 +102,7 @@ export function PremiumProvider({ children }: { children: ReactNode }) {
   const [ready, setReady] = useState(!enabled);
   const [plans, setPlans] = useState<Plan[]>([]);
   const [tips, setTips] = useState<Tip[]>([]);
+  const [featureProducts, setFeatureProducts] = useState<FeatureProduct[]>([]);
   const [sheetOpen, setSheetOpen] = useState(false);
   const openSheet = useCallback(() => setSheetOpen(true), []);
   const closeSheet = useCallback(() => setSheetOpen(false), []);
@@ -149,6 +168,18 @@ export function PremiumProvider({ children }: { children: ReactNode }) {
           .map(({ amount, ...t }) => t as Tip);
         if (!cancelled) setTips(list);
       } catch {}
+      try {
+        const products: any[] = await Purchases.getProducts(PURCHASES.featureProductIds, Purchases.PRODUCT_CATEGORY?.NON_SUBSCRIPTION);
+        const list = (products ?? [])
+          .map((p) => {
+            const m = /^feature_(state|national)_(7|14|30)$/.exec(p.identifier);
+            if (!m) return null;
+            return { id: p.identifier, placement: m[1] as "state" | "national", days: Number(m[2]) as 7 | 14 | 30, price: p.priceString ?? "", product: p };
+          })
+          .filter((p): p is FeatureProduct => !!p)
+          .sort((a, b) => a.days - b.days);
+        if (!cancelled) setFeatureProducts(list);
+      } catch {}
     })();
     return () => {
       cancelled = true;
@@ -185,6 +216,26 @@ export function PremiumProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
+  // One-time purchase of a feature. The server, not the phone, decides whether it counts
+  // (src/features/featured/api.ts sends the receipt to the feature-shoot function).
+  const buyFeature = useCallback(async (fp: FeatureProduct) => {
+    try {
+      const result = await Purchases.purchaseStoreProduct(fp.product);
+      const info = result?.customerInfo;
+      const fromResult = result?.transaction?.transactionIdentifier as string | undefined;
+      // Older SDKs don't return the transaction: fall back to the newest purchase of this product.
+      const latest = (info?.nonSubscriptionTransactions ?? [])
+        .filter((t: any) => t.productIdentifier === fp.id)
+        .sort((a: any, b: any) => String(b.purchaseDate).localeCompare(String(a.purchaseDate)))[0];
+      const transactionId = fromResult || latest?.transactionIdentifier;
+      if (!transactionId) return "failed" as const;
+      const appUserId: string = await Purchases.getAppUserID();
+      return { transactionId, appUserId };
+    } catch (e: any) {
+      return e?.userCancelled ? ("cancelled" as const) : ("failed" as const);
+    }
+  }, []);
+
   const value = useMemo<PremiumState>(
     () => ({
       available: enabled && plans.length > 0,
@@ -200,11 +251,13 @@ export function PremiumProvider({ children }: { children: ReactNode }) {
       restore,
       tips,
       sendTip,
+      featureProducts,
+      buyFeature,
       sheetOpen,
       openSheet,
       closeSheet,
     }),
-    [enabled, plans, plansFailed, loadPlans, isPremium, showAdsAnyway, setShowAdsAnyway, ready, purchase, restore, tips, sendTip, sheetOpen, openSheet, closeSheet]
+    [enabled, plans, plansFailed, loadPlans, isPremium, showAdsAnyway, setShowAdsAnyway, ready, purchase, restore, tips, sendTip, featureProducts, buyFeature, sheetOpen, openSheet, closeSheet]
   );
 
   return <PremiumContext.Provider value={value}>{children}</PremiumContext.Provider>;

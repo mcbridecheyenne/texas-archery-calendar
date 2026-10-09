@@ -65,6 +65,10 @@ export interface CalendarScreenProps {
    *  `slot` counts them from 0 down the list. Return null to show nothing there. */
   listAd?: (slot: number) => ReactNode;
   adEvery?: number;
+  /** Something shown above the first shoot in the Upcoming list (e.g. featured shoots), given the
+   *  state being looked at ("ALL" or a two-letter code), whether a search is on, every event the
+   *  calendar knows, and a way to open one. */
+  listTop?: (ctx: { stateFilter: string; searching: boolean; events: TournamentEvent[]; open: (event: TournamentEvent) => void }) => ReactNode;
 }
 
 // Archer-added and emailed-in shoots go after the governing bodies.
@@ -77,7 +81,7 @@ const NEAR_KEY = "nearMe";
 // people actually scroll to), so picking "All states" doesn't look up every town in the country.
 const MILES_FOR_FIRST = 80;
 
-export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery in the USA", bottomInset, footer, social, sharePlug, shareAs, homeState, hotels, flights, listAd, adEvery = 8 }: CalendarScreenProps) {
+export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery in the USA", bottomInset, footer, social, sharePlug, shareAs, homeState, hotels, flights, listAd, adEvery = 8, listTop }: CalendarScreenProps) {
   const card = useShareCard();
   const theme = useCalendarTheme();
   const insets = useSafeAreaInsets();
@@ -584,6 +588,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
         </Pressable>
       ) : null}
       <StatusNotes data={data} error={error} theme={theme} onRetry={refresh} />
+      {listTop && view === "list" ? listTop({ stateFilter: nearOn ? "ALL" : stateFilter, searching, events: upcomingAll, open: setOpenEvent }) : null}
     </View>
   );
 
