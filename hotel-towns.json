@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-09",
+ "updated": "2026-10-10",
  "towns": [
   {
    "key": "allen, tx",
@@ -85,8 +85,8 @@
    "key": "chula vista, ca",
    "city": "Chula Vista",
    "state": "CA",
-   "checkin": "2026-10-09",
-   "checkout": "2026-10-10",
+   "checkin": "2026-10-10",
+   "checkout": "2026-10-11",
    "shoot": "2026 South Cali Outdoor"
   },
   {
@@ -178,6 +178,14 @@
    "shoot": "Arjun Archery-1"
   },
   {
+   "key": "ft. wayne, in",
+   "city": "Ft. Wayne",
+   "state": "IN",
+   "checkin": "2027-02-12",
+   "checkout": "2027-02-14",
+   "shoot": "2027 Indiana State and Open Indoor Championship"
+  },
+  {
    "key": "garland, tx",
    "city": "Garland",
    "state": "TX",
@@ -208,6 +216,14 @@
    "checkin": "2027-01-01",
    "checkout": "2027-01-03",
    "shoot": "Bass Pro Shops-Grapevine-1"
+  },
+  {
+   "key": "greenwood, in",
+   "city": "Greenwood",
+   "state": "IN",
+   "checkin": "2027-01-22",
+   "checkout": "2027-01-23",
+   "shoot": "2027 Indiana State and Open Indoor JOAD Championship"
   },
   {
    "key": "houston, tx",
