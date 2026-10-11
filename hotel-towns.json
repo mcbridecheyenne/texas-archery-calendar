@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-10",
+ "updated": "2026-10-11",
  "towns": [
   {
    "key": "allen, tx",
@@ -85,9 +85,9 @@
    "key": "chula vista, ca",
    "city": "Chula Vista",
    "state": "CA",
-   "checkin": "2026-10-10",
-   "checkout": "2026-10-11",
-   "shoot": "2026 South Cali Outdoor"
+   "checkin": "2026-11-06",
+   "checkout": "2026-11-08",
+   "shoot": "2026 So Cal Indoor Fall Classic"
   },
   {
    "key": "clarkston, mi",
@@ -357,8 +357,8 @@
    "key": "new tripoli, pa",
    "city": "New Tripoli",
    "state": "PA",
-   "checkin": "2026-10-10",
-   "checkout": "2026-10-11",
+   "checkin": "2026-10-11",
+   "checkout": "2026-10-12",
    "shoot": "Ontelaunee Oktoberfest 18 Meter Indoor"
   },
   {
