@@ -1,5 +1,5 @@
-// Collects nationwide events (the Texas sources plus World Archery, the ASA Pro/Am tour and the hand-kept
-// list in data/manual-events.json) into events-usa.json. Runs next to collect-events.ts in
+// Collects nationwide events (the Texas sources plus World Archery, the ASA Pro/Am tour, NFAA and the
+// hand-kept list in data/manual-events.json) into events-usa.json. Runs next to collect-events.ts in
 // .github/workflows/pages.yml; the current app's events.json is not touched.
 //
 //   node --experimental-strip-types script/collect-usa-events.ts dist/public/events-usa.json
