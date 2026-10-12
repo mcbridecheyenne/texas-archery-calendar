@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /cms
+Sitemap: https://www.usarchery.org/sitemap.xml

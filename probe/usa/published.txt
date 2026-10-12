@@ -1,0 +1,2 @@
+[{'name': 'NFAA', 'url': 'https://nfaausa.com/events/find-an-event', 'status': 'ok', 'message': None, 'eventCount': 33, 'fetchedAt': '2026-10-12T17:26:56.890Z'}]
+32

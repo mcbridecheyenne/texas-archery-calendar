@@ -1,0 +1,11 @@
+https://www.usarchery.org/robots.txt 200 79 https://www.usarchery.org/robots.txt
+https://www.usarchery.org/terms-of-use 404 31114 https://www.usarchery.org/terms-of-use
+https://www.usarchery.org/about/terms-of-use 200 68172 https://www.usarchery.org/about/terms-of-use
+https://www.usarchery.org/ 200 53321 https://www.usarchery.org/
+home.html:href="/about/privacy-policy"
+home.html:href="/about/terms-of-use"
+terms.html:href="/about/privacy-policy"
+terms.html:href="/about/terms-of-use"
+terms2.html:href="../about/privacy-policy"
+terms2.html:href="/about/privacy-policy"
+terms2.html:href="/about/terms-of-use"
