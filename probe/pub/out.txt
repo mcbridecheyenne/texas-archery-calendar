@@ -1,0 +1,4 @@
+NFAA ok 32 2026-10-12T17:30:16.424Z Refreshed weekly on Wednesdays; these are from the last refresh.
+USA Archery ok 98 2026-10-12T17:36:39.007Z None
+Counter({'USA Archery': 95, 'TFAA': 84, 'World Archery': 51, 'NFAA': 32, 'TSAA': 20, 'ASA Pro/Am': 6, 'Manual': 4, 'State calendars': 1})
+[('2026 HotelPlanner USA Archery Collegiate 3D Nationals', 'Foley', 'AL'), ('2026 USA Archery Arizona State Outdoor Championships', 'Phoenix', 'AZ'), ('Coach Credentials - 2026 USA Archery Arizona State Outdoor Championships', 'Phoenix', 'AZ'), ('Lancaster Archery Fall Harvest Star FITA', 'Lancaster', 'PA'), ('The Indoor Season Opener', 'Centreville', 'VA'), ('2026 Fall Freeze in NJ', 'Hillsborough', 'NJ')]
