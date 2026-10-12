@@ -86,6 +86,22 @@ export function timeAgo(iso: string): string {
   return `${d.getMonth() + 1}/${d.getDate()}/${String(d.getFullYear()).slice(2)}`;
 }
 
+// Full-sentence age for a listing, e.g. "listed today", "listed 8 days ago".
+// timeAgo() is the compact form for chat lists and falls back to a date, which
+// read as "listed 10/4/26 ago" here.
+export function listedAgo(iso: string): string {
+  const days = Math.floor((Date.now() - new Date(iso).getTime()) / 86400000);
+  if (!isFinite(days)) return "";
+  if (days <= 0) return "listed today";
+  if (days === 1) return "listed yesterday";
+  if (days < 14) return `listed ${days} days ago`;
+  if (days < 60) return `listed ${Math.floor(days / 7)} weeks ago`;
+  const months = Math.floor(days / 30);
+  if (months < 12) return `listed ${months} months ago`;
+  const years = Math.floor(days / 365);
+  return `listed ${years} year${years === 1 ? "" : "s"} ago`;
+}
+
 export function memberSince(iso: string): string {
   const d = new Date(iso);
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];

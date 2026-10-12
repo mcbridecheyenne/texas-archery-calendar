@@ -8,7 +8,7 @@ import { fmtRange } from "../../src/features/calendar/dates";
 import { deleteListing, fetchListing, openConversation, renewListing, setListingStatus } from "../../src/features/marketplace/api";
 import { expiryLabel, isExpired } from "../../src/features/marketplace/expiry";
 import { PhotoCarousel } from "../../src/features/marketplace/components/PhotoCarousel";
-import { askToReport, memberSince, timeAgo, useRequireMember } from "../../src/features/marketplace/helpers";
+import { askToReport, listedAgo, memberSince, useRequireMember } from "../../src/features/marketplace/helpers";
 import { categoryLabel, conditionLabel, formatPrice, type Listing } from "../../src/features/marketplace/types";
 import { useAuth } from "../../src/lib/auth";
 import { Button, Empty, confirm, errorText, showMenu, useTheme } from "../../src/ui";
@@ -153,7 +153,7 @@ export default function ListingScreen() {
           <Text style={[styles.price, { color: t.text }]}>{formatPrice(listing.price_cents)}</Text>
           <Text style={[styles.title, { color: t.text }]}>{listing.title}</Text>
           <Text style={[styles.meta, { color: t.muted }]}>
-            {[conditionLabel(listing.condition), categoryLabel(listing.category), listing.city, `listed ${timeAgo(listing.created_at)} ago`]
+            {[conditionLabel(listing.condition), categoryLabel(listing.category), listing.city, listedAgo(listing.created_at)]
               .filter(Boolean)
               .join(" · ")}
           </Text>
