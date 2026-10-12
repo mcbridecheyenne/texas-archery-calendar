@@ -430,6 +430,10 @@ export function parseUsaArcheryAddress(html: string): { city: string | null; loc
   return { city: parts[stateAt - 1], location: parts.slice(0, stateAt + 1).join(", ") };
 }
 
+// Virtual and postal tournaments aren't a place to travel to, and coach packages and coach
+// credentials are registration add-ons that USA Archery lists as rows of their own.
+export const notAShoot = (name: string) => /\b(virtual|postal|online|package|credentials?)\b/i.test(name);
+
 async function collectUsaArchery(): Promise<UsaEvent[]> {
   const headers = { "User-Agent": UA };
   const res = await fetchWithTimeout(USAA_URL, { headers });
@@ -442,10 +446,7 @@ async function collectUsaArchery(): Promise<UsaEvent[]> {
     if (!found.length) break;
     rows.push(...found);
   }
-  const unique = [...new Map(rows.map((r) => [r.id, r])).values()]
-    // Virtual and postal tournaments aren't a place to travel to, and a "coach package" is a
-    // registration add-on listed as its own row.
-    .filter((r) => !/\b(virtual|postal|online|package)\b/i.test(r.name));
+  const unique = [...new Map(rows.map((r) => [r.id, r])).values()].filter((r) => !notAShoot(r.name));
   const events: UsaEvent[] = [];
   // A few event pages at a time, for the town.
   for (let i = 0; i < unique.length; i += 4) {
@@ -579,7 +580,12 @@ export async function getUsaEvents(
     runSource("World Archery", WA_URL, collectWorldArchery),
     runSource("ASA Pro/Am", ASA_PROAM_URL, collectAsaProAm),
     runWeeklySource("NFAA", NFAA_URL, collectNfaa, previous, now),
-    runWeeklySource("USA Archery", USAA_URL, collectUsaArchery, previous, now),
+    runWeeklySource("USA Archery", USAA_URL, collectUsaArchery, previous, now)
+      // Also applied to carried rows, so a newly skipped kind of row leaves without waiting a week.
+      .then((r) => {
+        const events = r.events.filter((e) => !notAShoot(e.name));
+        return { events, status: { ...r.status, eventCount: events.length } };
+      }),
     runSource("Manual", "data/manual-events.json", async () => manualEvents(manualRows)),
     collectStateCalendars(),
     checkManualWatches(manualRows),
