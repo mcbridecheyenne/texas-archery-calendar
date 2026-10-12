@@ -2,19 +2,25 @@ name: NFAA probe
 on:
   push:
     branches: [nfaa-probe]
+    paths: [".github/workflows/nfaa-probe.yml"]
+permissions:
+  contents: write
 jobs:
   probe:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - run: |
-          mkdir out; cd out
+          mkdir -p probe; cd probe
           UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
-          for u in https://nfaausa.com/robots.txt https://nfaausa.com/events/find-an-event https://nfaausa.com/terms-of-use https://nfaausa.com/terms https://nfaausa.com/privacy-policy https://nfaausa.com/ ; do
-            f=$(echo "$u" | sed 's#https://##; s#[/:]#_#g')
-            curl -sSL -A "$UA" -o "$f.html" -w "$u %{http_code} %{size_download} %{url_effective}\n" "$u" || true
-          done
-          grep -oiE 'href="[^"]*(terms|legal|privacy|policy)[^"]*"' *.html | sort -u | head -40
-          grep -oE '(src|href)="[^"]*\.js[^"]*"' nfaausa.com_events_find-an-event.html | head -40
-          grep -oiE '"[^"]*(api|ajax|json|graphql|search)[^"]*"' nfaausa.com_events_find-an-event.html | sort -u | head -60
-      - uses: actions/upload-artifact@v4
-        with: { name: probe, path: out }
+          get() { curl -sSL -A "$UA" -o "$2" -w "$1 %{http_code} %{size_download}\n" "$1" >> log.txt || true; }
+          get https://nfaausa.com/robots.txt robots.txt
+          get https://nfaausa.com/events/find-an-event find.html
+          get https://nfaausa.com/about/privacy-policy privacy.html
+          get https://nfaausa.com/js/javascript.js?v=20 site.js
+          get "https://nfaausa.com/events/find-an-event?page=2" find2.html
+          id=$(grep -oE 'event-information/[0-9]+' find.html | head -1)
+          [ -n "$id" ] && get "https://nfaausa.com/events/$id" event.html
+      - run: |
+          git config user.name probe; git config user.email probe@users.noreply.github.com
+          git add probe && git commit -m "probe output" && git push
