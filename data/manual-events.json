@@ -26,5 +26,25 @@
         "2026"
       ]
     }
+  },
+  {
+    "organization": "USA Archery",
+    "name": "2027 USA Archery Collegiate Target Nationals",
+    "startDate": "2027-05-13",
+    "endDate": "2027-05-16",
+    "city": "Chula Vista",
+    "state": "CA",
+    "location": "Easton Archery Center of Excellence, Chula Vista, CA",
+    "sourceUrl": "https://www.usarchery.org/news/usa-archery-announces-that-2027-collegiate-target-nationals-to-be-held-in-chula-vista"
+  },
+  {
+    "organization": "USA Archery",
+    "name": "2027 USA Archery Target Nationals & U.S. Open",
+    "startDate": "2027-08-11",
+    "endDate": "2027-08-15",
+    "city": "Westfield",
+    "state": "IN",
+    "location": "Grand Park, Westfield, IN",
+    "sourceUrl": "https://www.usarchery.org/news/usa-archery-announces-the-2027-calendar-for-indoor-and-outdoor-events"
   }
 ]
