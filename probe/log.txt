@@ -1,0 +1,6 @@
+https://nfaausa.com/robots.txt 200 70
+https://nfaausa.com/events/find-an-event 200 39228
+https://nfaausa.com/about/privacy-policy 200 22330
+https://nfaausa.com/js/javascript.js?v=20 200 21135
+https://nfaausa.com/events/find-an-event?page=2 200 21014
+https://nfaausa.com/events/event-information/38527 200 21276
