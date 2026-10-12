@@ -318,6 +318,76 @@ async function collectAsaProAm(): Promise<UsaEvent[]> {
   return mergeAsaProAm(menu, Array.isArray(feed) ? feed : []);
 }
 
+// --- NFAA: the "Find an Event" calendar on nfaausa.com ---
+// The page lists every upcoming NFAA-sanctioned shoot (local, state, sectional, national) in
+// one server-rendered table: a link to the event page, the dates and "City, State". When the
+// whole list fits, the page carries <input id="hide" value="hide"> and the "load more" button
+// is not used; otherwise the site's own ajax endpoint serves the next pages. robots.txt only
+// disallows /cms. Only the facts are kept (name, dates, town, link back), no descriptions.
+const NFAA_URL = "https://nfaausa.com/events/find-an-event";
+const NFAA_MORE = "https://nfaausa.com/php/ajax/filterCompetitions.php?level=0&category=0&distance=0&zipcode=&keyword=&run=true&page=";
+
+/** "Oct 11, 2026" -> "2026-10-11". */
+export function parseNfaaDate(text: string): string | null {
+  const m = text.trim().match(/^([A-Za-z]{3,})\.? (\d{1,2}),? (\d{4})$/);
+  const mon = m ? MONTHS[m[1].slice(0, 3).toLowerCase()] : undefined;
+  return m && mon ? `${m[3]}-${String(mon).padStart(2, "0")}-${m[2].padStart(2, "0")}` : null;
+}
+
+export function parseNfaaEvents(html: string): UsaEvent[] {
+  const out: UsaEvent[] = [];
+  const re = /<a href="(?:https?:\/\/(?:www\.)?nfaausa\.com)?\/events\/event-information\/(\d+)"[^>]*>\s*<small[^>]*>([^<]*)<\/small>\s*<span[^>]*>([^<]*)<\/span>\s*<span[^>]*location[^>]*>([^<]*)<\/span>/gi;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(html))) {
+    const [, id, dates, rawName, rawPlace] = m;
+    const [from, to] = decodeEntities(dates).split(/\s+[-–]\s+/);
+    const start = parseNfaaDate(from ?? "");
+    const end = parseNfaaDate(to ?? "") ?? start;
+    const name = decodeEntities(rawName);
+    if (!name || !start || !end) continue;
+    const parts = decodeEntities(rawPlace).split(",").map((s) => s.trim());
+    const city = parts[0] || null;
+    // Online leagues and postal shoots (National Indoor League, Collegiate Cup) have no town;
+    // they aren't a place anyone drives to, so they stay off the calendar.
+    if (!city) continue;
+    const state = normalizeState(parts[parts.length - 1]);
+    out.push({
+      ...blankEvent(),
+      id: `nfaa-${id}`, source: "NFAA", organization: "NFAA", name, startDate: start, endDate: end,
+      location: [city, parts.length > 1 ? parts[parts.length - 1] : null].filter(Boolean).join(", "),
+      city, state, sourceUrl: `https://nfaausa.com/events/event-information/${id}`,
+    });
+  }
+  // NFAA sometimes posts one tournament twice ("Hoosier 690 Pro/Am" and "Hoosier 690 Pro-Am",
+  // a day apart). Keep one listing per name and town, covering both date ranges.
+  const key = (e: UsaEvent) => `${e.name.toLowerCase().replace(/[^a-z0-9]/g, "")}|${(e.city ?? "").toLowerCase()}`;
+  const kept: UsaEvent[] = [];
+  for (const e of out) {
+    const same = kept.find((k) => key(k) === key(e) && k.startDate <= e.endDate && e.startDate <= k.endDate);
+    if (!same) { kept.push(e); continue; }
+    if (e.startDate < same.startDate) same.startDate = e.startDate;
+    if (e.endDate > same.endDate) same.endDate = e.endDate;
+  }
+  return kept;
+}
+
+async function collectNfaa(): Promise<UsaEvent[]> {
+  const headers = { "User-Agent": UA };
+  const res = await fetchWithTimeout(NFAA_URL, { headers });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  let html = await res.text();
+  // Follow "load more" only while the page says there is more (at most 10 extra pages).
+  for (let page = 2; !/id=["']hide["'][^>]*value=["']hide["']|value=["']hide["'][^>]*id=["']hide["']/i.test(html) && page <= 11; page++) {
+    const more = await fetchWithTimeout(`${NFAA_MORE}${page}`, { headers });
+    if (!more.ok) break;
+    const chunk = await more.text();
+    if (!/event-information\/\d+/.test(chunk)) break;
+    html += chunk;
+    if (!/loadMoreEvents/.test(chunk)) break;
+  }
+  return parseNfaaEvents(html);
+}
+
 // --- Hand-kept marquee events (data/manual-events.json) ---
 interface ManualEvent {
   organization: string; name: string; startDate: string; endDate?: string;
@@ -387,10 +457,11 @@ export async function getUsaEvents(): Promise<UsaResult> {
   // championships go in data/manual-events.json instead. collectS3DA is kept in case they
   // open a feed.
   const manualRows = readManualRows();
-  const [texas, wa, asa, manual, states, watchProblems] = await Promise.all([
+  const [texas, wa, asa, nfaa, manual, states, watchProblems] = await Promise.all([
     getEvents(),
     runSource("World Archery", WA_URL, collectWorldArchery),
     runSource("ASA Pro/Am", ASA_PROAM_URL, collectAsaProAm),
+    runSource("NFAA", NFAA_URL, collectNfaa),
     runSource("Manual", "data/manual-events.json", async () => manualEvents(manualRows)),
     collectStateCalendars(),
     checkManualWatches(manualRows),
@@ -403,13 +474,13 @@ export async function getUsaEvents(): Promise<UsaResult> {
     ...e, state: normalizeState(e.state) ?? "TX", organization: TEXAS_ORGANIZATION[e.source],
   }));
   const today = new Date().toISOString().slice(0, 10);
-  const events = [...texasEvents, ...wa.events, ...asa.events, ...manual.events, ...states.events]
+  const events = [...texasEvents, ...wa.events, ...asa.events, ...nfaa.events, ...manual.events, ...states.events]
     .filter((e) => e.endDate >= today)
     .map(tidyPlace)
     .sort((a, b) => a.startDate.localeCompare(b.startDate) || a.name.localeCompare(b.name));
   return {
     events,
-    sources: [...texas.sources, wa.status, asa.status, manual.status, states.status, ...states.feedStatuses],
+    sources: [...texas.sources, wa.status, asa.status, nfaa.status, manual.status, states.status, ...states.feedStatuses],
     lastUpdated: new Date().toISOString(),
   };
 }
