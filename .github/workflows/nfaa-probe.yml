@@ -1,0 +1,20 @@
+name: NFAA probe
+on:
+  push:
+    branches: [nfaa-probe]
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          mkdir out; cd out
+          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
+          for u in https://nfaausa.com/robots.txt https://nfaausa.com/events/find-an-event https://nfaausa.com/terms-of-use https://nfaausa.com/terms https://nfaausa.com/privacy-policy https://nfaausa.com/ ; do
+            f=$(echo "$u" | sed 's#https://##; s#[/:]#_#g')
+            curl -sSL -A "$UA" -o "$f.html" -w "$u %{http_code} %{size_download} %{url_effective}\n" "$u" || true
+          done
+          grep -oiE 'href="[^"]*(terms|legal|privacy|policy)[^"]*"' *.html | sort -u | head -40
+          grep -oE '(src|href)="[^"]*\.js[^"]*"' nfaausa.com_events_find-an-event.html | head -40
+          grep -oiE '"[^"]*(api|ajax|json|graphql|search)[^"]*"' nfaausa.com_events_find-an-event.html | sort -u | head -60
+      - uses: actions/upload-artifact@v4
+        with: { name: probe, path: out }
