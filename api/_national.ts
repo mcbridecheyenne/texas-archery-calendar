@@ -388,6 +388,121 @@ async function collectNfaa(): Promise<UsaEvent[]> {
   return parseNfaaEvents(html);
 }
 
+// --- USA Archery: the "Find an Event" calendar on usarchery.org ---
+// Listed with USA Archery's permission (Cheyenne, 2026-10-12); their terms otherwise forbid
+// automated collection, so keep this to the weekly refresh below. The list page gives name,
+// dates, level and state, 48 rows at a time, with the rest served by the site's own "load
+// more" endpoint. The town is only on each event's page ("21 Farrington Corner Rd, Dunbarton,
+// New Hampshire, United States of America, 03046"). Only facts are kept, plus a link back.
+const USAA_URL = "https://www.usarchery.org/events/find-an-event";
+const USAA_MORE = "https://www.usarchery.org/php/ajax/filterEvents.php?level=0&state=0&distance=0&zipcode=&event_name=&run=true&page=";
+const USAA_EVENT = "https://www.usarchery.org/events/event-information/";
+
+/** "10/10/2026" -> "2026-10-10". */
+export function parseUsDate(text: string): string | null {
+  const m = text.trim().match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  return m ? `${m[3]}-${m[1].padStart(2, "0")}-${m[2].padStart(2, "0")}` : null;
+}
+
+export interface UsaArcheryRow { id: string; name: string; startDate: string; endDate: string; state: string | null }
+
+export function parseUsaArcheryRows(html: string): UsaArcheryRow[] {
+  const out: UsaArcheryRow[] = [];
+  const re = /<span class="mobile">\s*([\d/]+)\s*<\/span>[\s\S]*?<p class="eventTitleText">([\s\S]*?)<\/p>[\s\S]*?<td class="stateTitle">\s*<p>([\s\S]*?)<\/p>[\s\S]*?<td class="endTitle">\s*<p>([\s\S]*?)<\/p>[\s\S]*?\/events\/event-information\/(\d+)/g;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(html))) {
+    const [, from, rawName, rawState, to, id] = m;
+    const startDate = parseUsDate(from);
+    const endDate = parseUsDate(decodeEntities(to)) ?? startDate;
+    const name = decodeEntities(rawName).replace(/\s+/g, " ");
+    if (!name || !startDate || !endDate) continue;
+    out.push({ id, name, startDate, endDate, state: normalizeState(decodeEntities(rawState)) });
+  }
+  return out;
+}
+
+/** Town and street address from an event page's "Address:" row, cut before the country. */
+export function parseUsaArcheryAddress(html: string): { city: string | null; location: string | null } {
+  const raw = html.match(/<h1>\s*Address:\s*<\/h1>[\s\S]*?<p>([\s\S]*?)<\/p>/i)?.[1];
+  const parts = decodeEntities(raw ?? "").split(",").map((s) => s.trim()).filter(Boolean);
+  const stateAt = parts.findIndex((p, i) => i > 0 && normalizeState(p));
+  if (stateAt < 1) return { city: null, location: null };
+  return { city: parts[stateAt - 1], location: parts.slice(0, stateAt + 1).join(", ") };
+}
+
+async function collectUsaArchery(): Promise<UsaEvent[]> {
+  const headers = { "User-Agent": UA };
+  const res = await fetchWithTimeout(USAA_URL, { headers });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const rows = parseUsaArcheryRows(await res.text());
+  for (let page = 1; page <= 20; page++) {
+    const more = await fetchWithTimeout(`${USAA_MORE}${page}`, { headers });
+    if (!more.ok) break;
+    const found = parseUsaArcheryRows(await more.text());
+    if (!found.length) break;
+    rows.push(...found);
+  }
+  const unique = [...new Map(rows.map((r) => [r.id, r])).values()]
+    // Virtual and postal tournaments aren't a place to travel to, and a "coach package" is a
+    // registration add-on listed as its own row.
+    .filter((r) => !/\b(virtual|postal|online|package)\b/i.test(r.name));
+  const events: UsaEvent[] = [];
+  // A few event pages at a time, for the town.
+  for (let i = 0; i < unique.length; i += 4) {
+    events.push(...await Promise.all(unique.slice(i, i + 4).map(async (r) => {
+      let place: { city: string | null; location: string | null } = { city: null, location: null };
+      try {
+        const page = await fetchWithTimeout(`${USAA_EVENT}${r.id}`, { headers });
+        if (page.ok) place = parseUsaArcheryAddress(await page.text());
+      } catch {
+        // The list's state still places the shoot; the town reads TBA.
+      }
+      return {
+        ...blankEvent(),
+        id: `usaa-${r.id}`, source: "USA Archery", organization: "USA Archery",
+        name: r.name, startDate: r.startDate, endDate: r.endDate,
+        location: place.location, city: place.city, state: r.state,
+        sourceUrl: `${USAA_EVENT}${r.id}`,
+      };
+    })));
+  }
+  return events;
+}
+
+// --- Weekly sources ---
+// Cheyenne wants NFAA and USA Archery refreshed once a week, on Wednesday (Central time).
+// The other runs carry their last published events forward. A source refreshes when it is
+// Wednesday and it hasn't been refreshed yet that day, or when there's nothing to carry
+// (first run, or the check-feeds job, which has no previous feed).
+const centralDay = (d: Date) => new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(d);
+const centralWeekday = (d: Date) => new Intl.DateTimeFormat("en-US", { timeZone: "America/Chicago", weekday: "long" }).format(d);
+
+export function weeklyRefreshDue(lastFetchedAt: string | null | undefined, now = new Date()): boolean {
+  if (!lastFetchedAt) return true;
+  return centralWeekday(now) === "Wednesday" && centralDay(new Date(lastFetchedAt)) !== centralDay(now);
+}
+
+async function runWeeklySource(
+  name: string,
+  url: string,
+  collect: () => Promise<UsaEvent[]>,
+  previous: UsaResult | null | undefined,
+  now: Date,
+): Promise<{ events: UsaEvent[]; status: UsaSourceStatus }> {
+  const prevStatus = previous?.sources.find((s) => s.name === name);
+  const kept = previous?.events.filter((e) => e.source === name) ?? [];
+  if (!kept.length || !prevStatus || weeklyRefreshDue(prevStatus.fetchedAt, now)) {
+    return runSource(name, url, collect);
+  }
+  return {
+    events: kept,
+    status: {
+      ...prevStatus, status: "ok", eventCount: kept.length,
+      message: "Refreshed weekly on Wednesdays; these are from the last refresh.",
+    },
+  };
+}
+
 // --- Hand-kept marquee events (data/manual-events.json) ---
 interface ManualEvent {
   organization: string; name: string; startDate: string; endDate?: string;
@@ -451,17 +566,20 @@ export function tidyPlace<T extends Pick<UsaEvent, "city" | "location">>(e: T): 
   return { ...e, city: "TBA", location: "Location TBA" };
 }
 
-export async function getUsaEvents(): Promise<UsaResult> {
+export async function getUsaEvents(
+  { previous = null, now = new Date() }: { previous?: UsaResult | null; now?: Date } = {},
+): Promise<UsaResult> {
   // S3DA is not collected automatically: its site has no events API and answers automated
   // requests from GitHub with a block page (checked 2026-10-04). Its national and state
   // championships go in data/manual-events.json instead. collectS3DA is kept in case they
   // open a feed.
   const manualRows = readManualRows();
-  const [texas, wa, asa, nfaa, manual, states, watchProblems] = await Promise.all([
+  const [texas, wa, asa, nfaa, usaa, manual, states, watchProblems] = await Promise.all([
     getEvents(),
     runSource("World Archery", WA_URL, collectWorldArchery),
     runSource("ASA Pro/Am", ASA_PROAM_URL, collectAsaProAm),
-    runSource("NFAA", NFAA_URL, collectNfaa),
+    runWeeklySource("NFAA", NFAA_URL, collectNfaa, previous, now),
+    runWeeklySource("USA Archery", USAA_URL, collectUsaArchery, previous, now),
     runSource("Manual", "data/manual-events.json", async () => manualEvents(manualRows)),
     collectStateCalendars(),
     checkManualWatches(manualRows),
@@ -474,13 +592,13 @@ export async function getUsaEvents(): Promise<UsaResult> {
     ...e, state: normalizeState(e.state) ?? "TX", organization: TEXAS_ORGANIZATION[e.source],
   }));
   const today = new Date().toISOString().slice(0, 10);
-  const events = [...texasEvents, ...wa.events, ...asa.events, ...nfaa.events, ...manual.events, ...states.events]
+  const events = [...texasEvents, ...wa.events, ...asa.events, ...nfaa.events, ...usaa.events, ...manual.events, ...states.events]
     .filter((e) => e.endDate >= today)
     .map(tidyPlace)
     .sort((a, b) => a.startDate.localeCompare(b.startDate) || a.name.localeCompare(b.name));
   return {
     events,
-    sources: [...texas.sources, wa.status, asa.status, nfaa.status, manual.status, states.status, ...states.feedStatuses],
+    sources: [...texas.sources, wa.status, asa.status, nfaa.status, usaa.status, manual.status, states.status, ...states.feedStatuses],
     lastUpdated: new Date().toISOString(),
   };
 }
