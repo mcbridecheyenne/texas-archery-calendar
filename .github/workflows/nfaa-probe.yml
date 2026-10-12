@@ -11,11 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          mkdir -p probe/usa3; cd probe/usa3
-          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
-          get() { curl -sSL -A "$UA" -o "$2" -w "$1 %{http_code} %{size_download}\n" "$1" >> log.txt || true; }
-          for p in 1 2 3 4 5 6 8 10 15; do get "https://www.usarchery.org/php/ajax/filterEvents.php?level=0&state=0&distance=0&zipcode=&event_name=&page=$p&run=true" more$p.html; done
-          get https://www.usarchery.org/events/event-information/50828 event.html
+          mkdir -p probe/pub; cd probe/pub
+          curl -s https://mcbridecheyenne.github.io/texas-archery-calendar/events-usa.json | python3 -c "import json,sys;d=json.load(sys.stdin);[print(s['name'],s['status'],s['eventCount'],s['fetchedAt'],s['message']) for s in d['sources'] if s['name'] in ('NFAA','USA Archery')];import collections;print(collections.Counter(e['source'] for e in d['events']));print([ (e['name'],e['city'],e['state']) for e in d['events'] if e['source']=='USA Archery'][:6])" > out.txt
       - run: |
           git config user.name probe; git config user.email probe@users.noreply.github.com
-          git add probe && git commit -m "probe output usa3" && git push
+          git add probe && git commit -m "probe output pub" && git push
