@@ -2,12 +2,44 @@
  "updated": "2026-10-12",
  "towns": [
   {
+   "key": "1000 west austin blvd, mo",
+   "city": "1000 West Austin Blvd",
+   "state": "MO",
+   "checkin": "2027-01-08",
+   "checkout": "2027-01-09",
+   "shoot": "2027 Cottey Classic Event #2"
+  },
+  {
+   "key": "1000 west austin, mo",
+   "city": "1000 West Austin",
+   "state": "MO",
+   "checkin": "2026-10-23",
+   "checkout": "2026-10-24",
+   "shoot": "2026 Cottey Classic Event #1"
+  },
+  {
+   "key": "acworth, ga",
+   "city": "Acworth",
+   "state": "GA",
+   "checkin": "2026-11-06",
+   "checkout": "2026-11-07",
+   "shoot": "2026 USA Archery Georgia State Field Championship"
+  },
+  {
    "key": "allen, tx",
    "city": "Allen",
    "state": "TX",
    "checkin": "2027-01-06",
    "checkout": "2027-01-09",
    "shoot": "Allen Bullseye Classic"
+  },
+  {
+   "key": "alloway, nj",
+   "city": "Alloway",
+   "state": "NJ",
+   "checkin": "2027-02-18",
+   "checkout": "2027-02-21",
+   "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - Obissquasoit Bowmen"
   },
   {
    "key": "alvarado, tx",
@@ -32,6 +64,14 @@
    "checkin": "2027-04-02",
    "checkout": "2027-04-04",
    "shoot": "2027 USA Archery Massachusetts State and JOAD Indoor Championships"
+  },
+  {
+   "key": "audubon, pa",
+   "city": "Audubon",
+   "state": "PA",
+   "checkin": "2026-11-27",
+   "checkout": "2026-11-29",
+   "shoot": "Lower Providence Ice Breaker 600"
   },
   {
    "key": "boerne, tx",
@@ -66,6 +106,14 @@
    "shoot": "Korbin's-Burleson-1"
   },
   {
+   "key": "canfield, oh",
+   "city": "Canfield",
+   "state": "OH",
+   "checkin": "2027-01-29",
+   "checkout": "2027-01-31",
+   "shoot": "Great Lakes Indoor Sectionals & National Series 2027 - On Target Outfitters (Canfield)"
+  },
+  {
    "key": "canton, tx",
    "city": "Canton",
    "state": "TX",
@@ -80,6 +128,30 @@
    "checkin": "2026-11-19",
    "checkout": "2026-11-22",
    "shoot": "Archers Haven-1"
+  },
+  {
+   "key": "centerville, va",
+   "city": "Centerville",
+   "state": "VA",
+   "checkin": "2026-11-06",
+   "checkout": "2026-11-08",
+   "shoot": "Cub Run Archers (ARL-FX IWLA) Fall Indoor"
+  },
+  {
+   "key": "centreville, va",
+   "city": "Centreville",
+   "state": "VA",
+   "checkin": "2026-10-16",
+   "checkout": "2026-10-18",
+   "shoot": "The Indoor Season Opener"
+  },
+  {
+   "key": "chicago, il",
+   "city": "Chicago",
+   "state": "IL",
+   "checkin": "2026-10-24",
+   "checkout": "2026-10-25",
+   "shoot": "North Side Archery Club: October 2026 USA Archery JOAD/AAP Indoor Pin Shoot"
   },
   {
    "key": "chula vista, ca",
@@ -114,12 +186,44 @@
    "shoot": "Texas Archery-1"
   },
   {
+   "key": "colorado springs, co",
+   "city": "Colorado Springs",
+   "state": "CO",
+   "checkin": "2026-10-23",
+   "checkout": "2026-10-24",
+   "shoot": "2026 Colorado JOAD Event #1"
+  },
+  {
    "key": "dayton, tx",
    "city": "Dayton",
    "state": "TX",
    "checkin": "2027-01-08",
    "checkout": "2027-01-10",
    "shoot": "Triple Edge Archery-1"
+  },
+  {
+   "key": "delray beach, fl",
+   "city": "Delray Beach",
+   "state": "FL",
+   "checkin": "2026-10-16",
+   "checkout": "2026-10-18",
+   "shoot": "Southeast Target Sectionals 2026 - Gold Coast Archers"
+  },
+  {
+   "key": "des moines, ia",
+   "city": "Des Moines",
+   "state": "IA",
+   "checkin": "2026-12-17",
+   "checkout": "2026-12-20",
+   "shoot": "Iowa Pro Am Archery Tournament"
+  },
+  {
+   "key": "dewey, ok",
+   "city": "Dewey",
+   "state": "OK",
+   "checkin": "2027-02-18",
+   "checkout": "2027-02-20",
+   "shoot": "Oklahoma Indoor Series Event # 3"
   },
   {
    "key": "dracut, ma",
@@ -138,6 +242,22 @@
    "shoot": "STX Archery & Outdoors-1"
   },
   {
+   "key": "el dorado, ar",
+   "city": "El Dorado",
+   "state": "AR",
+   "checkin": "2026-11-20",
+   "checkout": "2026-11-21",
+   "shoot": "2026 USA Archery Arkansas State Indoor Championship"
+  },
+  {
+   "key": "endicott, ny",
+   "city": "Endicott",
+   "state": "NY",
+   "checkin": "2027-02-18",
+   "checkout": "2027-02-21",
+   "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - Neil's Archery and Crossbow, Inc."
+  },
+  {
    "key": "eustace, tx",
    "city": "Eustace",
    "state": "TX",
@@ -146,12 +266,20 @@
    "shoot": "Eustace Invitational (NASP State Qualifier)"
   },
   {
+   "key": "falls church, va",
+   "city": "Falls Church",
+   "state": "VA",
+   "checkin": "2026-10-22",
+   "checkout": "2026-10-25",
+   "shoot": "Spooky Spiders Tournament"
+  },
+  {
    "key": "foley, al",
    "city": "Foley",
    "state": "AL",
-   "checkin": "2027-02-24",
-   "checkout": "2027-02-27",
-   "shoot": "Hoyt/Easton Pro/Am"
+   "checkin": "2026-10-14",
+   "checkout": "2026-10-17",
+   "shoot": "2026 HotelPlanner USA Archery Collegiate 3D Nationals"
   },
   {
    "key": "fort mitchell, al",
@@ -186,6 +314,14 @@
    "shoot": "2027 Indiana State and Open Indoor Championship"
   },
   {
+   "key": "gainesville, fl",
+   "city": "Gainesville",
+   "state": "FL",
+   "checkin": "2026-10-23",
+   "checkout": "2026-10-25",
+   "shoot": "Southeast Target Sectionals 2026 - Gator Bowmen"
+  },
+  {
    "key": "garland, tx",
    "city": "Garland",
    "state": "TX",
@@ -200,6 +336,14 @@
    "checkin": "2026-11-05",
    "checkout": "2026-11-07",
    "shoot": "Double G-1"
+  },
+  {
+   "key": "gilroy, ca",
+   "city": "Gilroy",
+   "state": "CA",
+   "checkin": "2027-02-19",
+   "checkout": "2027-02-21",
+   "shoot": "Southwest Indoor Sectionals & National Series 2027 - Predator's Archery"
   },
   {
    "key": "grand prairie, tx",
@@ -226,6 +370,22 @@
    "shoot": "2027 Indiana State and Open Indoor JOAD Championship"
   },
   {
+   "key": "harrisburg, pa",
+   "city": "Harrisburg",
+   "state": "PA",
+   "checkin": "2027-02-18",
+   "checkout": "2027-02-21",
+   "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - Harrisburg Archery Club"
+  },
+  {
+   "key": "hillsborough, nj",
+   "city": "Hillsborough",
+   "state": "NJ",
+   "checkin": "2026-10-17",
+   "checkout": "2026-10-18",
+   "shoot": "2026 Fall Freeze in NJ"
+  },
+  {
    "key": "houston, tx",
    "city": "Houston",
    "state": "TX",
@@ -240,6 +400,14 @@
    "checkin": "2026-12-02",
    "checkout": "2026-12-06",
    "shoot": "2026 Riverside Festivus"
+  },
+  {
+   "key": "indianapolis, in",
+   "city": "Indianapolis",
+   "state": "IN",
+   "checkin": "2027-01-07",
+   "checkout": "2027-01-10",
+   "shoot": "Rushmore Rumble 2027"
   },
   {
    "key": "kaufman, tx",
@@ -290,6 +458,22 @@
    "shoot": "Arena Archery-1"
   },
   {
+   "key": "las vegas, nv",
+   "city": "Las Vegas",
+   "state": "NV",
+   "checkin": "2027-03-10",
+   "checkout": "2027-03-14",
+   "shoot": "The Vegas Shoot 2027"
+  },
+  {
+   "key": "lawrenceburg, ky",
+   "city": "Lawrenceburg",
+   "state": "KY",
+   "checkin": "2026-12-17",
+   "checkout": "2026-12-19",
+   "shoot": "Anderson Archery Winter Classic 2026"
+  },
+  {
    "key": "long beach, ca",
    "city": "Long Beach",
    "state": "CA",
@@ -304,6 +488,22 @@
    "checkin": "2026-11-13",
    "checkout": "2026-11-15",
    "shoot": "2026 Lunenburg Open"
+  },
+  {
+   "key": "madison, nc",
+   "city": "madison",
+   "state": "NC",
+   "checkin": "2026-10-24",
+   "checkout": "2026-10-25",
+   "shoot": "Spooks"
+  },
+  {
+   "key": "manchester, ct",
+   "city": "Manchester",
+   "state": "CT",
+   "checkin": "2026-11-20",
+   "checkout": "2026-11-22",
+   "shoot": "2026 USA Archery Connecticut State Indoor Championship"
   },
   {
    "key": "manheim, pa",
@@ -325,17 +525,33 @@
    "key": "mcclellan, ca",
    "city": "McClellan",
    "state": "CA",
-   "checkin": "2027-01-08",
-   "checkout": "2027-01-09",
+   "checkin": "2027-01-07",
+   "checkout": "2027-01-08",
    "shoot": "2027 California State Indoor Championship - Sacramento (U13 and U15)"
+  },
+  {
+   "key": "mccomb, oh",
+   "city": "McComb",
+   "state": "OH",
+   "checkin": "2027-01-29",
+   "checkout": "2027-01-31",
+   "shoot": "Great Lakes Indoor Sectionals & National Series 2027 - On Target Outfitters (Findlay)"
   },
   {
    "key": "memphis, tn",
    "city": "Memphis",
    "state": "TN",
-   "checkin": "2027-02-04",
-   "checkout": "2027-02-07",
-   "shoot": "NFAA Indoor Nationals"
+   "checkin": "2027-02-03",
+   "checkout": "2027-02-06",
+   "shoot": "IFAA World Indoor Championships 2027"
+  },
+  {
+   "key": "monmouth junction, nj",
+   "city": "Monmouth Junction",
+   "state": "NJ",
+   "checkin": "2027-02-18",
+   "checkout": "2027-02-21",
+   "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - WA-XO-BE Archers"
   },
   {
    "key": "mooringsport, la",
@@ -352,6 +568,14 @@
    "checkin": "2026-10-22",
    "checkout": "2026-10-25",
    "shoot": "Archery HQ-1"
+  },
+  {
+   "key": "new haven, mo",
+   "city": "New Haven",
+   "state": "MO",
+   "checkin": "2026-11-06",
+   "checkout": "2026-11-07",
+   "shoot": "Little Hills Winter Warm-up"
   },
   {
    "key": "new tripoli, pa",
@@ -378,6 +602,38 @@
    "shoot": "2027 USA Archery Florida State Indoor Championship"
   },
   {
+   "key": "newport news, va",
+   "city": "Newport News",
+   "state": "VA",
+   "checkin": "2026-11-13",
+   "checkout": "2026-11-14",
+   "shoot": "Turkey Target Toss Up"
+  },
+  {
+   "key": "noblesville, in",
+   "city": "NOBLESVILLE",
+   "state": "IN",
+   "checkin": "2027-03-18",
+   "checkout": "2027-03-21",
+   "shoot": "2027 Arizona Cup Warm-Up"
+  },
+  {
+   "key": "norman, ok",
+   "city": "Norman",
+   "state": "OK",
+   "checkin": "2026-11-12",
+   "checkout": "2026-11-14",
+   "shoot": "Oklahoma Indoor Series Event # 1"
+  },
+  {
+   "key": "north ft myers, fl",
+   "city": "North Ft Myers",
+   "state": "FL",
+   "checkin": "2026-10-24",
+   "checkout": "2026-10-25",
+   "shoot": "Southeast Target Sectionals 2026 - Lee County Archers"
+  },
+  {
    "key": "orange grove, tx",
    "city": "Orange Grove",
    "state": "TX",
@@ -394,12 +650,28 @@
    "shoot": "2026 Arizona State Field Championships"
   },
   {
+   "key": "ozone park, ny",
+   "city": "Ozone Park",
+   "state": "NY",
+   "checkin": "2026-12-04",
+   "checkout": "2026-12-06",
+   "shoot": "Pro Line Winter Open"
+  },
+  {
    "key": "pampa, tx",
    "city": "Pampa",
    "state": "TX",
    "checkin": "2026-10-23",
    "checkout": "2026-10-25",
    "shoot": "Gray County 4H-Clyde Carruth Livestock Pavilion-1"
+  },
+  {
+   "key": "paramus, nj",
+   "city": "Paramus",
+   "state": "NJ",
+   "checkin": "2026-10-30",
+   "checkout": "2026-10-31",
+   "shoot": "Spooktacular Showdown"
   },
   {
    "key": "perry hall, md",
@@ -434,6 +706,14 @@
    "shoot": "2027 USA Archery North Carolina Indoor State Championship"
   },
   {
+   "key": "rimrock, az",
+   "city": "Rimrock",
+   "state": "AZ",
+   "checkin": "2026-10-23",
+   "checkout": "2026-10-24",
+   "shoot": "ABFAA Break The Barriers Style Trail Shoot"
+  },
+  {
    "key": "roanoke, tx",
    "city": "Roanoke",
    "state": "TX",
@@ -450,6 +730,14 @@
    "shoot": "Lubbock County 4H @ Korbin's Archery-Lubbock-1"
   },
   {
+   "key": "sacramento, ca",
+   "city": "Sacramento",
+   "state": "CA",
+   "checkin": "2026-10-24",
+   "checkout": "2026-10-25",
+   "shoot": "17th Annual Breast Cancer Shoot"
+  },
+  {
    "key": "san antonio, tx",
    "city": "San Antonio",
    "state": "TX",
@@ -458,12 +746,76 @@
    "shoot": "Mission Ridge-1"
   },
   {
+   "key": "sharpsville, pa",
+   "city": "Sharpsville",
+   "state": "PA",
+   "checkin": "2027-03-05",
+   "checkout": "2027-03-06",
+   "shoot": "2026 USA Archery Pennsylvania State JOAD Indoor Championship"
+  },
+  {
+   "key": "simpsonville, ky",
+   "city": "Simpsonville",
+   "state": "KY",
+   "checkin": "2026-12-11",
+   "checkout": "2026-12-12",
+   "shoot": "2026 Louisville Open"
+  },
+  {
+   "key": "south attleboro, ma",
+   "city": "South Attleboro",
+   "state": "MA",
+   "checkin": "2027-02-26",
+   "checkout": "2027-02-28",
+   "shoot": "New England Indoor Sectionals & National Series 2027 - X-Spot Archery"
+  },
+  {
+   "key": "st. louis, mo",
+   "city": "St. Louis",
+   "state": "MO",
+   "checkin": "2027-01-15",
+   "checkout": "2027-01-17",
+   "shoot": "2027 Missouri State and JOAD Indoor Championship East Location - St. Louis"
+  },
+  {
+   "key": "statesboro, ga",
+   "city": "Statesboro",
+   "state": "GA",
+   "checkin": "2026-10-30",
+   "checkout": "2026-10-31",
+   "shoot": "Halloween Preparty 600"
+  },
+  {
    "key": "the woodlands, tx",
    "city": "The Woodlands",
    "state": "TX",
    "checkin": "2026-10-22",
    "checkout": "2026-10-25",
    "shoot": "Saddle River Range-1"
+  },
+  {
+   "key": "thomaston, ct",
+   "city": "Thomaston",
+   "state": "CT",
+   "checkin": "2026-10-24",
+   "checkout": "2026-10-25",
+   "shoot": "2026-2027 Clock Tower Series #1"
+  },
+  {
+   "key": "tipp city, oh",
+   "city": "Tipp City",
+   "state": "OH",
+   "checkin": "2026-11-13",
+   "checkout": "2026-11-15",
+   "shoot": "Zulu Archery Showdown"
+  },
+  {
+   "key": "tucson, az",
+   "city": "Tucson",
+   "state": "AZ",
+   "checkin": "2026-11-14",
+   "checkout": "2026-11-15",
+   "shoot": "ABFAA State Animal Round"
   },
   {
    "key": "tyler, tx",
@@ -504,6 +856,30 @@
    "checkin": "2027-01-09",
    "checkout": "2027-01-10",
    "shoot": "2027 Michigan State JOAD Indoor Championship (January 10 ONLY)"
+  },
+  {
+   "key": "westfield, in",
+   "city": "Westfield",
+   "state": "IN",
+   "checkin": "2026-12-03",
+   "checkout": "2026-12-06",
+   "shoot": "Hoosier 690 Pro/Am 2026"
+  },
+  {
+   "key": "worcester, ma",
+   "city": "Worcester",
+   "state": "MA",
+   "checkin": "2026-10-22",
+   "checkout": "2026-10-25",
+   "shoot": "2026 Quest Archery Spooktacular"
+  },
+  {
+   "key": "yukon, ok",
+   "city": "Yukon",
+   "state": "OK",
+   "checkin": "2026-12-03",
+   "checkout": "2026-12-06",
+   "shoot": "Frozen Okie 2026"
   }
  ]
 }
