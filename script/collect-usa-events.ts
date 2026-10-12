@@ -1,5 +1,5 @@
-// Collects nationwide events (the Texas sources plus World Archery, the ASA Pro/Am tour, NFAA and the
-// hand-kept list in data/manual-events.json) into events-usa.json. Runs next to collect-events.ts in
+// Collects nationwide events (the Texas sources plus World Archery, the ASA Pro/Am tour, NFAA, USA
+// Archery and the hand-kept list in data/manual-events.json) into events-usa.json. Runs next to collect-events.ts in
 // .github/workflows/pages.yml; the current app's events.json is not touched.
 //
 //   node --experimental-strip-types script/collect-usa-events.ts dist/public/events-usa.json
@@ -37,7 +37,10 @@ async function loadPrevious(): Promise<UsaResult | null> {
   }
 }
 
-const [fresh, previous] = await Promise.all([getUsaEvents(), loadPrevious()]);
+// The previous feed is read first: NFAA and USA Archery carry their events forward from it
+// except on Wednesdays (see runWeeklySource).
+const previous = await loadPrevious();
+const fresh = await getUsaEvents({ previous });
 
 for (const status of fresh.sources) {
   const failed = status.status === "error" || status.eventCount === 0;
