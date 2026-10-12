@@ -1,0 +1,10 @@
+https://www.usarchery.org/php/ajax/filterEvents.php?level=0&state=0&distance=0&zipcode=&event_name=&page=1&run=true 200 31061
+https://www.usarchery.org/php/ajax/filterEvents.php?level=0&state=0&distance=0&zipcode=&event_name=&page=2&run=true 200 3137
+https://www.usarchery.org/php/ajax/filterEvents.php?level=0&state=0&distance=0&zipcode=&event_name=&page=3&run=true 200 158
+https://www.usarchery.org/php/ajax/filterEvents.php?level=0&state=0&distance=0&zipcode=&event_name=&page=4&run=true 200 158
+https://www.usarchery.org/php/ajax/filterEvents.php?level=0&state=0&distance=0&zipcode=&event_name=&page=5&run=true 200 158
+https://www.usarchery.org/php/ajax/filterEvents.php?level=0&state=0&distance=0&zipcode=&event_name=&page=6&run=true 200 158
+https://www.usarchery.org/php/ajax/filterEvents.php?level=0&state=0&distance=0&zipcode=&event_name=&page=8&run=true 200 158
+https://www.usarchery.org/php/ajax/filterEvents.php?level=0&state=0&distance=0&zipcode=&event_name=&page=10&run=true 200 158
+https://www.usarchery.org/php/ajax/filterEvents.php?level=0&state=0&distance=0&zipcode=&event_name=&page=15&run=true 200 158
+https://www.usarchery.org/events/event-information/50828 200 45281
