@@ -1,0 +1,16 @@
+https://www.usarchery.org/events/find-an-event 200 77205 https://www.usarchery.org/events/find-an-event
+https://www.usarchery.org/php/ajax/filterCompetitions.php?level=0&category=0&distance=0&zipcode=&keyword=&page=2&run=true 500 0 https://www.usarchery.org/php/ajax/filterCompetitions.php?level=0&category=0&distance=0&zipcode=&keyword=&page=2&run=true
+https://www.usarchery.org/php/ajax/filterCompetitions.php?level=0&category=0&distance=0&zipcode=&keyword=&page=3&run=true 500 0 https://www.usarchery.org/php/ajax/filterCompetitions.php?level=0&category=0&distance=0&zipcode=&keyword=&page=3&run=true
+src="js/html5shiv.js"
+src="/js/jquery-3.2.1.min.js"
+src="/js/slick.min.js"
+src="js/instafeed.js"
+src="js/imagesloaded.pkgd.min.js"
+src="js/jquery.easydropdown.js"
+src="js/unorphanize.jquery.js"
+src="js/jquery.scrollbar.min.js"
+src="js/javascript.js?v=88"
+src="js/dashboard.js?v=88"
+src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
+https://www.usarchery.org/js/javascript.js?v=88 200 53571 https://www.usarchery.org/js/javascript.js?v=88
