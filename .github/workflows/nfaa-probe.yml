@@ -11,15 +11,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          mkdir -p probe/usa; cd probe/usa
+          mkdir -p probe/usa2; cd probe/usa2
           UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
           get() { curl -sSL -A "$UA" -o "$2" -w "$1 %{http_code} %{size_download} %{url_effective}\n" "$1" >> log.txt || true; }
-          get https://www.usarchery.org/robots.txt robots.txt
-          get https://www.usarchery.org/terms-of-use terms.html
-          get https://www.usarchery.org/about/terms-of-use terms2.html
-          get https://www.usarchery.org/ home.html
-          grep -oiE 'href="[^"]*(terms|legal|privacy|policy|conditions)[^"]*"' *.html | sort -u >> log.txt || true
-          curl -s https://mcbridecheyenne.github.io/texas-archery-calendar/events-usa.json | python3 -c "import json,sys;d=json.load(sys.stdin);print([s for s in d['sources'] if s['name']=='NFAA']);print(sum(e['source']=='NFAA' for e in d['events']))" > published.txt
+          get https://www.usarchery.org/events/find-an-event find.html
+          get "https://www.usarchery.org/php/ajax/filterCompetitions.php?level=0&category=0&distance=0&zipcode=&keyword=&page=2&run=true" more2.html
+          get "https://www.usarchery.org/php/ajax/filterCompetitions.php?level=0&category=0&distance=0&zipcode=&keyword=&page=3&run=true" more3.html
+          grep -oE '(src|href)="[^"]*\.js[^"]*"' find.html >> log.txt || true
+          for f in $(grep -oE 'src="[^"]*javascript[^"]*\.js[^"]*"' find.html | sed 's/src="//; s/"$//' | head -2); do get "https://www.usarchery.org/${f#/}" site.js; done
       - run: |
           git config user.name probe; git config user.email probe@users.noreply.github.com
-          git add probe && git commit -m "probe output usa" && git push
+          git add probe && git commit -m "probe output usa2" && git push
