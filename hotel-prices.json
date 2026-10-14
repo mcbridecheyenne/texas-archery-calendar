@@ -372,10 +372,10 @@
    "checkout": "2027-02-14"
   },
   "gainesville, fl": {
-   "low": 83,
-   "typical": 165,
-   "high": 207,
-   "checked": "2026-10-13",
+   "low": 82,
+   "typical": 160,
+   "high": 219,
+   "checked": "2026-10-14",
    "hotels": 12,
    "checkin": "2026-10-23",
    "checkout": "2026-10-25"
@@ -410,8 +410,8 @@
   "grand prairie, tx": {
    "low": 59,
    "typical": 95,
-   "high": 148,
-   "checked": "2026-10-13",
+   "high": 144,
+   "checked": "2026-10-14",
    "hotels": 12,
    "checkin": "2026-11-05",
    "checkout": "2026-11-07"
@@ -443,6 +443,15 @@
    "checkin": "2027-02-18",
    "checkout": "2027-02-21"
   },
+  "hattiesburg, ms": {
+   "low": 74,
+   "typical": 120,
+   "high": 163,
+   "checked": "2026-10-14",
+   "hotels": 10,
+   "checkin": "2027-02-25",
+   "checkout": "2027-02-27"
+  },
   "hillsborough, nj": {
    "low": 84,
    "typical": 120,
@@ -471,11 +480,11 @@
    "checkout": "2026-12-06"
   },
   "indianapolis, in": {
-   "low": 73,
-   "typical": 135,
-   "high": 167,
-   "checked": "2026-10-13",
-   "hotels": 12,
+   "low": 94,
+   "typical": 125,
+   "high": 163,
+   "checked": "2026-10-14",
+   "hotels": 11,
    "checkin": "2027-01-07",
    "checkout": "2027-01-10"
   },
@@ -509,8 +518,8 @@
   "killeen, tx": {
    "low": 57,
    "typical": 90,
-   "high": 115,
-   "checked": "2026-10-13",
+   "high": 110,
+   "checked": "2026-10-14",
    "hotels": 12,
    "checkin": "2026-11-12",
    "checkout": "2026-11-14"
@@ -543,11 +552,11 @@
    "checkout": "2027-03-14"
   },
   "lawrenceburg, ky": {
-   "low": 55,
+   "low": 54,
    "typical": 115,
-   "high": 168,
-   "checked": "2026-10-13",
-   "hotels": 7,
+   "high": 175,
+   "checked": "2026-10-14",
+   "hotels": 6,
    "checkin": "2026-12-17",
    "checkout": "2026-12-19"
   },
@@ -579,11 +588,11 @@
    "checkout": "2026-10-25"
   },
   "manchester, ct": {
-   "low": 93,
-   "typical": 155,
-   "high": 197,
-   "checked": "2026-10-13",
-   "hotels": 9,
+   "low": 78,
+   "typical": 140,
+   "high": 190,
+   "checked": "2026-10-14",
+   "hotels": 10,
    "checkin": "2026-11-20",
    "checkout": "2026-11-22"
   },
@@ -615,10 +624,10 @@
    "checkout": "2026-11-22"
   },
   "mcclellan, ca": {
-   "low": 51,
-   "typical": 90,
+   "low": 52,
+   "typical": 95,
    "high": 122,
-   "checked": "2026-10-13",
+   "checked": "2026-10-14",
    "hotels": 12,
    "checkin": "2027-01-07",
    "checkout": "2027-01-08"
@@ -649,6 +658,15 @@
    "hotels": 12,
    "checkin": "2027-02-18",
    "checkout": "2027-02-21"
+  },
+  "monroe, wa": {
+   "low": 61,
+   "typical": 100,
+   "high": 132,
+   "checked": "2026-10-14",
+   "hotels": 12,
+   "checkin": "2027-02-18",
+   "checkout": "2027-02-19"
   },
   "mooringsport, la": {
    "low": 57,
@@ -705,10 +723,10 @@
    "checkout": "2027-01-03"
   },
   "newport news, va": {
-   "low": 57,
-   "typical": 115,
-   "high": 146,
-   "checked": "2026-10-13",
+   "low": 61,
+   "typical": 110,
+   "high": 145,
+   "checked": "2026-10-14",
    "hotels": 12,
    "checkin": "2026-11-13",
    "checkout": "2026-11-14"
@@ -742,9 +760,9 @@
   },
   "orange grove, tx": {
    "low": 62,
-   "typical": 95,
-   "high": 137,
-   "checked": "2026-10-13",
+   "typical": 100,
+   "high": 142,
+   "checked": "2026-10-14",
    "hotels": 5,
    "checkin": "2026-11-13",
    "checkout": "2026-11-14"
@@ -777,10 +795,10 @@
    "checkout": "2026-10-25"
   },
   "paramus, nj": {
-   "low": 78,
+   "low": 79,
    "typical": 135,
-   "high": 182,
-   "checked": "2026-10-13",
+   "high": 167,
+   "checked": "2026-10-14",
    "hotels": 12,
    "checkin": "2026-10-30",
    "checkout": "2026-10-31"
@@ -813,10 +831,10 @@
    "checkout": "2026-10-18"
   },
   "plainview, tx": {
-   "low": 82,
+   "low": 83,
    "typical": 115,
-   "high": 153,
-   "checked": "2026-10-13",
+   "high": 162,
+   "checked": "2026-10-14",
    "hotels": 5,
    "checkin": "2026-10-30",
    "checkout": "2026-11-01"
@@ -848,6 +866,15 @@
    "checkin": "2026-10-23",
    "checkout": "2026-10-25"
   },
+  "rockford, mn": {
+   "low": 74,
+   "typical": 140,
+   "high": 295,
+   "checked": "2026-10-14",
+   "hotels": 11,
+   "checkin": "2027-02-18",
+   "checkout": "2027-02-20"
+  },
   "ropesville, tx": {
    "low": 68,
    "typical": 95,
@@ -876,10 +903,10 @@
    "checkout": "2027-02-05"
   },
   "san antonio, tx": {
-   "low": 83,
-   "typical": 140,
-   "high": 226,
-   "checked": "2026-10-13",
+   "low": 69,
+   "typical": 135,
+   "high": 239,
+   "checked": "2026-10-14",
    "hotels": 10,
    "checkin": "2026-10-30",
    "checkout": "2026-11-01"
@@ -912,10 +939,10 @@
    "checkout": "2027-02-28"
   },
   "st. louis, mo": {
-   "low": 103,
+   "low": 106,
    "typical": 125,
-   "high": 175,
-   "checked": "2026-10-13",
+   "high": 152,
+   "checked": "2026-10-14",
    "hotels": 12,
    "checkin": "2027-01-15",
    "checkout": "2027-01-17"
@@ -949,10 +976,10 @@
   },
   "tipp city, oh": {
    "low": 71,
-   "typical": 95,
-   "high": 124,
-   "checked": "2026-10-13",
-   "hotels": 12,
+   "typical": 100,
+   "high": 130,
+   "checked": "2026-10-14",
+   "hotels": 11,
    "checkin": "2026-11-13",
    "checkout": "2026-11-15"
   },
@@ -984,11 +1011,11 @@
    "checkout": "2026-11-21"
   },
   "weatherford, tx": {
-   "low": 58,
-   "typical": 110,
+   "low": 57,
+   "typical": 115,
    "high": 168,
-   "checked": "2026-10-13",
-   "hotels": 11,
+   "checked": "2026-10-14",
+   "hotels": 12,
    "checkin": "2026-11-05",
    "checkout": "2026-11-08"
   },
@@ -1018,6 +1045,15 @@
    "hotels": 10,
    "checkin": "2026-12-03",
    "checkout": "2026-12-06"
+  },
+  "wheaton, il": {
+   "low": 55,
+   "typical": 85,
+   "high": 112,
+   "checked": "2026-10-14",
+   "hotels": 12,
+   "checkin": "2027-02-18",
+   "checkout": "2027-02-19"
   },
   "worcester, ma": {
    "low": 85,
