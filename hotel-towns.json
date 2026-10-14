@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-13",
+ "updated": "2026-10-14",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -24,6 +24,14 @@
    "checkin": "2026-11-06",
    "checkout": "2026-11-07",
    "shoot": "2026 USA Archery Georgia State Field Championship"
+  },
+  {
+   "key": "albuquerque, nm",
+   "city": "Albuquerque",
+   "state": "NM",
+   "checkin": "2027-02-25",
+   "checkout": "2027-02-27",
+   "shoot": "2027 USA Archery JOAD Indoor Nationals - NM"
   },
   {
    "key": "allen, tx",
@@ -266,12 +274,28 @@
    "shoot": "Eustace Invitational (NASP State Qualifier)"
   },
   {
+   "key": "evansville, in",
+   "city": "Evansville",
+   "state": "IN",
+   "checkin": "2027-01-28",
+   "checkout": "2027-01-30",
+   "shoot": "2027 USA Archery JOAD Indoor Nationals - IN"
+  },
+  {
    "key": "falls church, va",
    "city": "Falls Church",
    "state": "VA",
    "checkin": "2026-10-22",
    "checkout": "2026-10-25",
    "shoot": "Spooky Spiders Tournament"
+  },
+  {
+   "key": "fiskdale, ma",
+   "city": "Fiskdale",
+   "state": "MA",
+   "checkin": "2027-02-18",
+   "checkout": "2027-02-20",
+   "shoot": "2027 USA Archery JOAD Indoor Nationals - MA"
   },
   {
    "key": "foley, al",
@@ -376,6 +400,14 @@
    "checkin": "2027-02-18",
    "checkout": "2027-02-21",
    "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - Harrisburg Archery Club"
+  },
+  {
+   "key": "hattiesburg, ms",
+   "city": "Hattiesburg",
+   "state": "MS",
+   "checkin": "2027-02-25",
+   "checkout": "2027-02-27",
+   "shoot": "2027 USA Archery JOAD Indoor Nationals - MS"
   },
   {
    "key": "hillsborough, nj",
@@ -514,6 +546,14 @@
    "shoot": "2027 Lancaster Archery Classic"
   },
   {
+   "key": "mason, mi",
+   "city": "Mason",
+   "state": "MI",
+   "checkin": "2027-02-25",
+   "checkout": "2027-02-28",
+   "shoot": "2027 USA Archery JOAD Indoor Nationals - MI"
+  },
+  {
    "key": "mays landing, nj",
    "city": "Mays Landing",
    "state": "NJ",
@@ -554,12 +594,28 @@
    "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - WA-XO-BE Archers"
   },
   {
+   "key": "monroe, wa",
+   "city": "Monroe",
+   "state": "WA",
+   "checkin": "2027-02-18",
+   "checkout": "2027-02-19",
+   "shoot": "2027 USA Archery JOAD Indoor Nationals - WA"
+  },
+  {
    "key": "mooringsport, la",
    "city": "Mooringsport",
    "state": "LA",
    "checkin": "2026-10-23",
    "checkout": "2026-10-24",
    "shoot": "North Caddo Shooting Club-1"
+  },
+  {
+   "key": "morristown, nj",
+   "city": "Morristown",
+   "state": "NJ",
+   "checkin": "2027-02-11",
+   "checkout": "2027-02-13",
+   "shoot": "2027 USA Archery JOAD Indoor Nationals - NJ"
   },
   {
    "key": "new braunfels, tx",
@@ -674,6 +730,14 @@
    "shoot": "Spooktacular Showdown"
   },
   {
+   "key": "penn laird, va",
+   "city": "Penn Laird",
+   "state": "VA",
+   "checkin": "2027-03-04",
+   "checkout": "2027-03-06",
+   "shoot": "2027 USA Archery JOAD Indoor Nationals - VA"
+  },
+  {
    "key": "perry hall, md",
    "city": "Perry Hall",
    "state": "MD",
@@ -722,6 +786,14 @@
    "shoot": "Cinnamon Creek Ranch-1"
   },
   {
+   "key": "rockford, mn",
+   "city": "Rockford",
+   "state": "MN",
+   "checkin": "2027-02-18",
+   "checkout": "2027-02-20",
+   "shoot": "2027 USA Archery JOAD Indoor Nationals - MN"
+  },
+  {
    "key": "ropesville, tx",
    "city": "Ropesville",
    "state": "TX",
@@ -738,6 +810,14 @@
    "shoot": "17th Annual Breast Cancer Shoot"
   },
   {
+   "key": "salt lake city, ut",
+   "city": "Salt Lake City",
+   "state": "UT",
+   "checkin": "2027-02-04",
+   "checkout": "2027-02-05",
+   "shoot": "2027 USA Archery JOAD Indoor Nationals - UT"
+  },
+  {
    "key": "san antonio, tx",
    "city": "San Antonio",
    "state": "TX",
@@ -751,7 +831,7 @@
    "state": "PA",
    "checkin": "2027-03-05",
    "checkout": "2027-03-06",
-   "shoot": "2026 USA Archery Pennsylvania State JOAD Indoor Championship"
+   "shoot": "2027 USA Archery Pennsylvania State JOAD Indoor Championship"
   },
   {
    "key": "simpsonville, ky",
@@ -866,12 +946,28 @@
    "shoot": "Hoosier 690 Pro/Am 2026"
   },
   {
+   "key": "wheaton, il",
+   "city": "Wheaton",
+   "state": "IL",
+   "checkin": "2027-02-18",
+   "checkout": "2027-02-19",
+   "shoot": "2027 USA Archery JOAD Indoor Nationals - IL"
+  },
+  {
    "key": "worcester, ma",
    "city": "Worcester",
    "state": "MA",
    "checkin": "2026-10-22",
    "checkout": "2026-10-25",
    "shoot": "2026 Quest Archery Spooktacular"
+  },
+  {
+   "key": "yankton, sd",
+   "city": "Yankton",
+   "state": "SD",
+   "checkin": "2027-02-25",
+   "checkout": "2027-02-27",
+   "shoot": "2027 USA Archery JOAD Indoor Nationals - SD"
   },
   {
    "key": "yukon, ok",
