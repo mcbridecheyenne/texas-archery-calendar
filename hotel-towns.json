@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-14",
+ "updated": "2026-10-15",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -301,7 +301,7 @@
    "key": "foley, al",
    "city": "Foley",
    "state": "AL",
-   "checkin": "2026-10-14",
+   "checkin": "2026-10-15",
    "checkout": "2026-10-17",
    "shoot": "2026 HotelPlanner USA Archery Collegiate 3D Nationals"
   },
