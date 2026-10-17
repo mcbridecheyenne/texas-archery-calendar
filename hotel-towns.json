@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16",
+ "updated": "2026-10-17",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -149,7 +149,7 @@
    "key": "centreville, va",
    "city": "Centreville",
    "state": "VA",
-   "checkin": "2026-10-16",
+   "checkin": "2026-10-17",
    "checkout": "2026-10-18",
    "shoot": "The Indoor Season Opener"
   },
@@ -213,7 +213,7 @@
    "key": "delray beach, fl",
    "city": "Delray Beach",
    "state": "FL",
-   "checkin": "2026-10-16",
+   "checkin": "2026-10-17",
    "checkout": "2026-10-18",
    "shoot": "Southeast Target Sectionals 2026 - Gold Coast Archers"
   },
@@ -301,8 +301,8 @@
    "key": "foley, al",
    "city": "Foley",
    "state": "AL",
-   "checkin": "2026-10-16",
-   "checkout": "2026-10-17",
+   "checkin": "2026-10-17",
+   "checkout": "2026-10-18",
    "shoot": "2026 HotelPlanner USA Archery Collegiate 3D Nationals"
   },
   {
@@ -477,7 +477,7 @@
    "key": "lancaster, pa",
    "city": "Lancaster",
    "state": "PA",
-   "checkin": "2026-10-16",
+   "checkin": "2026-10-17",
    "checkout": "2026-10-18",
    "shoot": "Lancaster Archery Fall Harvest Star FITA"
   },
@@ -749,7 +749,7 @@
    "key": "phoenix, az",
    "city": "Phoenix",
    "state": "AZ",
-   "checkin": "2026-10-16",
+   "checkin": "2026-10-17",
    "checkout": "2026-10-18",
    "shoot": "2026 USA Archery Arizona State Outdoor Championships"
   },
