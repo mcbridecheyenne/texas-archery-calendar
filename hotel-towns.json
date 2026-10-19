@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-18",
+ "updated": "2026-10-19",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -149,9 +149,9 @@
    "key": "centreville, va",
    "city": "Centreville",
    "state": "VA",
-   "checkin": "2026-10-18",
-   "checkout": "2026-10-19",
-   "shoot": "The Indoor Season Opener"
+   "checkin": "2026-12-11",
+   "checkout": "2026-12-13",
+   "shoot": "The Frostbite JOAD"
   },
   {
    "key": "chicago, il",
@@ -208,14 +208,6 @@
    "checkin": "2027-01-08",
    "checkout": "2027-01-10",
    "shoot": "Triple Edge Archery-1"
-  },
-  {
-   "key": "delray beach, fl",
-   "city": "Delray Beach",
-   "state": "FL",
-   "checkin": "2026-10-18",
-   "checkout": "2026-10-19",
-   "shoot": "Southeast Target Sectionals 2026 - Gold Coast Archers"
   },
   {
    "key": "des moines, ia",
@@ -322,6 +314,14 @@
    "shoot": "Legacy Archery-1"
   },
   {
+   "key": "friant, ca",
+   "city": "Friant",
+   "state": "CA",
+   "checkin": "2027-04-16",
+   "checkout": "2027-04-18",
+   "shoot": "BTB & NFAA 1-Arrow 3D National Championships 2027"
+  },
+  {
    "key": "frisco, tx",
    "city": "Frisco",
    "state": "TX",
@@ -413,9 +413,9 @@
    "key": "hillsborough, nj",
    "city": "Hillsborough",
    "state": "NJ",
-   "checkin": "2026-10-18",
-   "checkout": "2026-10-19",
-   "shoot": "2026 Fall Freeze in NJ"
+   "checkin": "2026-11-14",
+   "checkout": "2026-11-15",
+   "shoot": "2026 NSA Indoor Series - Rumble Royale in NJ"
   },
   {
    "key": "houston, tx",
@@ -477,9 +477,9 @@
    "key": "lancaster, pa",
    "city": "Lancaster",
    "state": "PA",
-   "checkin": "2026-10-18",
-   "checkout": "2026-10-19",
-   "shoot": "Lancaster Archery Fall Harvest Star FITA"
+   "checkin": "2026-11-13",
+   "checkout": "2026-11-15",
+   "shoot": "Lancaster Archery Winter Warm Up"
   },
   {
    "key": "laredo, tx",
@@ -749,9 +749,9 @@
    "key": "phoenix, az",
    "city": "Phoenix",
    "state": "AZ",
-   "checkin": "2026-10-18",
-   "checkout": "2026-10-19",
-   "shoot": "2026 USA Archery Arizona State Outdoor Championships"
+   "checkin": "2026-11-07",
+   "checkout": "2026-11-08",
+   "shoot": "Southwest Target Sectionals 2026 - Corner Archery"
   },
   {
    "key": "plainview, tx",
