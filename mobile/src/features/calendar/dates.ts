@@ -107,3 +107,37 @@ export function daysUntil(iso: string): number {
   const today = parseISODate(toIso(new Date()));
   return Math.round((parseISODate(iso).getTime() - today.getTime()) / 86400000);
 }
+
+// Longest shoot we ask "which days?" about. Anything longer is a season-long listing, not a
+// weekend shoot, so picking days there makes no sense.
+const MAX_PICK_DAYS = 10;
+
+/** The days an archer can pick from for a shoot, or [] when it's a one-day (or season-long) listing. */
+export function pickableDays(startIso: string, endIso: string): string[] {
+  if (!endIso || endIso <= startIso) return [];
+  const days = daysInRange(startIso, endIso);
+  return days.length > 1 && days.length <= MAX_PICK_DAYS ? days : [];
+}
+
+/**
+ * Cleans a saved list of days for a shoot: keeps only days inside the shoot, in order.
+ * Returns undefined when that's every day (or none), which means "all days".
+ */
+export function cleanDays(days: readonly string[] | null | undefined, startIso: string, endIso: string): string[] | undefined {
+  if (!days?.length) return undefined;
+  const all = pickableDays(startIso, endIso);
+  if (!all.length) return undefined;
+  const picked = all.filter((d) => days.includes(d));
+  return picked.length && picked.length < all.length ? picked : undefined;
+}
+
+/** "Sat & Sun", "Fri, Sat & Sun" or, when the days span more than a week, "Oct 24 & Nov 2". */
+export function fmtDays(days: readonly string[]): string {
+  const withinWeek = days.length > 0 && daysInRange(days[0], days[days.length - 1]).length <= 7;
+  const names = days.map((iso) => {
+    const d = parseISODate(iso);
+    return withinWeek ? WEEKDAYS_SHORT[d.getDay()] : `${MONTHS_SHORT[d.getMonth()]} ${d.getDate()}`;
+  });
+  if (names.length <= 1) return names.join("");
+  return `${names.slice(0, -1).join(", ")} & ${names[names.length - 1]}`;
+}

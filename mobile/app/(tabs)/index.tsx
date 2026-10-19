@@ -44,12 +44,16 @@ export default function TournamentsTab() {
       onAddEvent: () => router.push("/tournament/new"),
       // Signed in: ask who can see it (every choice is saved to their account, so a new phone
       // gets it back; "Just me" ones only they can see). Signed out: Going stays on the phone, as before.
-      beforeGoing: async (event: TournamentEvent) => {
+      beforeGoing: async (event: TournamentEvent, days?: string[]) => {
         if (!fr.active) return true;
         const level = await askShareLevel(event.name);
         if (!level) return false;
-        fr.setShareLevel(event, level).catch((e) => Alert.alert("Couldn't share it", errorText(e)));
+        fr.setShareLevel(event, level, days).catch((e) => Alert.alert("Couldn't share it", errorText(e)));
         return true;
+      },
+      // Picked different days: update the account's copy, so friends see the right days.
+      onDaysChange: (event, days) => {
+        if (fr.active) fr.setGoingDays(event, days).catch(() => {});
       },
       // Un-starred: take it out of their account too ("Just me" ones are saved there as well).
       onGoingChange: (event, going) => {

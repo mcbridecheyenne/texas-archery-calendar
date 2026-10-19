@@ -20,6 +20,8 @@ export interface Attendee {
   city: string | null;
   archeryClass: string | null;
   isFriend: boolean;
+  /** The days they're going, when they didn't pick every day of the shoot. */
+  days: string[] | null;
 }
 
 export type AddFriendResult = {

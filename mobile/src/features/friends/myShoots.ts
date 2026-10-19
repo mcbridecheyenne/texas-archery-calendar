@@ -38,7 +38,7 @@ export async function syncMyShoots(me: string): Promise<MyGoingRow[]> {
   // 2. First sign-in on this phone: bring back the stars saved to the account.
   await addStarsFromAccount(
     me,
-    Array.from(byId.values()).map((r) => ({ id: r.eventId, name: r.eventName, startDate: r.eventDate }))
+    Array.from(byId.values()).map((r) => ({ id: r.eventId, name: r.eventName, startDate: r.eventDate, days: r.days }))
   );
 
   // 3. Save stars that are only on this phone to the account, as "Just me".
@@ -47,7 +47,7 @@ export async function syncMyShoots(me: string): Promise<MyGoingRow[]> {
     try {
       await api.saveGoingPrivately(me, missing);
       for (const s of missing) {
-        byId.set(s.id, { eventId: s.id, eventName: s.name, eventDate: s.startDate, visibility: "private" });
+        byId.set(s.id, { eventId: s.id, eventName: s.name, eventDate: s.startDate, visibility: "private", days: s.days ?? null });
       }
     } catch {
       // Until schema.sql is re-run in Supabase the database turns down "Just me" rows.

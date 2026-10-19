@@ -2,7 +2,7 @@ import { useState, type ReactNode } from "react";
 import { Alert, Image, Modal, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { addToPhoneCalendar, callHost, emailHost, openDirections, openUrl } from "../actions";
-import { daysUntil, fmtDayLong, fmtRange } from "../dates";
+import { daysUntil, fmtDayLong, fmtDays, fmtRange, pickableDays } from "../dates";
 import type { CalendarTheme } from "../theme";
 import { listedBy, type TournamentEvent } from "../types";
 import { flightSearchUrl, type FlightsConfig } from "../flights";
@@ -14,6 +14,12 @@ import { SourcePill } from "./SourcePill";
 interface Props {
   event: TournamentEvent | null;
   going: boolean;
+  /** On a shoot of more than one day: the days they're going. Undefined means every day. */
+  myDays?: string[];
+  /** Opens "Which days are you going?" to change them. */
+  onChangeDays?: (event: TournamentEvent) => void;
+  /** Shown on top of the page (the day picker, which can't open as a second page). */
+  overlay?: ReactNode;
   theme: CalendarTheme;
   onClose: () => void;
   onToggleGoing: (event: TournamentEvent) => void;
@@ -36,7 +42,7 @@ function countdown(event: TournamentEvent): string | null {
   return null;
 }
 
-export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra, sharePlug, shareAs, hotels, flights }: Props) {
+export function EventDetail({ event, going, myDays, onChangeDays, overlay, theme, onClose, onToggleGoing, extra, sharePlug, shareAs, hotels, flights }: Props) {
   const card = useShareCard();
   const [flyerOpen, setFlyerOpen] = useState(false);
   const win = useWindowDimensions();
@@ -84,6 +90,21 @@ export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra
                 {going ? "★  Going" : "☆  I'm going"}
               </Text>
             </Pressable>
+
+            {going && onChangeDays && pickableDays(event.startDate, event.endDate).length ? (
+              <Pressable
+                onPress={() => onChangeDays(event)}
+                style={styles.daysRow}
+                hitSlop={6}
+                accessibilityRole="button"
+                accessibilityLabel={`Going ${myDays?.length ? fmtDays(myDays) : "every day"}. Change days`}
+              >
+                <Text style={[styles.daysText, { color: theme.muted }]}>
+                  Going <Text style={{ color: theme.text, fontWeight: "700" }}>{myDays?.length ? fmtDays(myDays) : "every day"}</Text>
+                </Text>
+                <Text style={[styles.daysLink, { color: theme.primary }]}>Change days</Text>
+              </Pressable>
+            ) : null}
 
             {extra ? extra(event, going, onClose) : null}
 
@@ -200,6 +221,7 @@ export function EventDetail({ event, going, theme, onClose, onToggleGoing, extra
               </View>
             </Modal>
           ) : null}
+          {overlay}
         </View>
       ) : null}
     </Modal>
@@ -338,6 +360,9 @@ const styles = StyleSheet.create({
   countdown: { fontSize: 14, fontWeight: "600" },
   goingBtn: { marginTop: 14, borderRadius: 12, borderWidth: 1.5, paddingVertical: 13, alignItems: "center" },
   goingText: { fontSize: 16, fontWeight: "700" },
+  daysRow: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 8, marginTop: 10 },
+  daysText: { fontSize: 14, flex: 1 },
+  daysLink: { fontSize: 14, fontWeight: "700" },
   actions: { flexDirection: "row", gap: 10, marginTop: 10 },
   action: { flex: 1, borderRadius: 12, borderWidth: StyleSheet.hairlineWidth, paddingVertical: 12, alignItems: "center" },
   actionText: { fontSize: 15, fontWeight: "600" },

@@ -8,7 +8,7 @@
 // town). When the schedule loads and a starred shoot is missing, we look for the same shoot
 // under its new id and move the star and the reminders over.
 import { nameKey, toSource } from "./api";
-import { toIso } from "./dates";
+import { cleanDays, toIso } from "./dates";
 import { cancelRemindersFor, scheduleRemindersFor } from "./reminders";
 import { readJSON, writeJSON } from "./storage";
 import type { EventSource, EventsResponse, TournamentEvent } from "./types";
@@ -34,6 +34,8 @@ export interface StarredShoot {
   city: string | null;
   /** The dates the reminders were set for (see reminderKey). Missing when no reminders are set. */
   remindersFor?: string;
+  /** On a shoot of more than one day: the days they're going (ISO dates). Missing means every day. */
+  days?: string[];
 }
 
 /** What a star looks like when it comes back from the archer's account. */
@@ -41,6 +43,8 @@ export interface AccountStar {
   id: string;
   name: string;
   startDate: string;
+  /** The days they picked, when they didn't pick every day. */
+  days?: string[] | null;
 }
 
 let ids = new Set<string>();
@@ -48,7 +52,9 @@ let info: Record<string, StarredShoot> = {};
 let moved: Record<string, string> = {};
 let loading: Promise<void> | null = null;
 
-const listeners = new Set<(ids: Set<string>) => void>();
+/** Starred shoot id → the days picked (only shoots where they didn't pick every day). */
+export type PickedDays = Record<string, string[]>;
+const listeners = new Set<(ids: Set<string>, days: PickedDays) => void>();
 const moveListeners = new Set<() => void>();
 
 // Every change goes through this line one at a time, so two things (a tap and a schedule
@@ -76,9 +82,16 @@ function ensureLoaded(): Promise<void> {
   return loading;
 }
 
+function pickedDays(): PickedDays {
+  const out: PickedDays = {};
+  for (const id of ids) if (info[id]?.days?.length) out[id] = [...info[id].days!];
+  return out;
+}
+
 function tell() {
   const copy = new Set(ids);
-  listeners.forEach((fn) => fn(copy));
+  const days = pickedDays();
+  listeners.forEach((fn) => fn(copy, days));
 }
 
 async function save() {
@@ -93,7 +106,8 @@ function reminderKey(e: TournamentEvent): string {
   return `${e.startDate}|${e.endDate}|${e.registrationEnd ?? ""}`;
 }
 
-function noteFor(e: TournamentEvent, remindersFor?: string): StarredShoot {
+function noteFor(e: TournamentEvent, remindersFor?: string, pickedDays?: string[]): StarredShoot {
+  const days = cleanDays(pickedDays, e.startDate, e.endDate);
   return {
     id: e.id,
     name: e.name,
@@ -102,8 +116,11 @@ function noteFor(e: TournamentEvent, remindersFor?: string): StarredShoot {
     source: e.source,
     city: e.city,
     ...(remindersFor ? { remindersFor } : {}),
+    ...(days ? { days } : {}),
   };
 }
+
+const sameDays = (a?: string[], b?: string[]) => (a ?? []).join(",") === (b ?? []).join(",");
 
 function sameNote(a: StarredShoot, b: StarredShoot | undefined): boolean {
   return (
@@ -113,7 +130,8 @@ function sameNote(a: StarredShoot, b: StarredShoot | undefined): boolean {
     a.endDate === b.endDate &&
     a.source === b.source &&
     a.city === b.city &&
-    a.remindersFor === b.remindersFor
+    a.remindersFor === b.remindersFor &&
+    sameDays(a.days, b.days)
   );
 }
 
@@ -199,7 +217,7 @@ async function checkStars(events: TournamentEvent[], data: EventsResponse): Prom
     if (e) {
       // Still on the schedule. Refresh the note, and move the reminders if the dates changed
       // (or set them if they never were, e.g. a star that came back from the account).
-      let fresh = noteFor(e, note?.remindersFor);
+      let fresh = noteFor(e, note?.remindersFor, note?.days);
       if (e.endDate >= today && fresh.remindersFor !== reminderKey(e)) {
         fresh = { ...fresh, remindersFor: await setRemindersQuietly(e) };
         if (!fresh.remindersFor) delete fresh.remindersFor;
@@ -269,7 +287,13 @@ export function reloadStars(): Promise<Set<string>> {
   });
 }
 
-export function subscribeStars(fn: (ids: Set<string>) => void): () => void {
+/** The days picked for each starred shoot (see PickedDays). */
+export async function loadPickedDays(): Promise<PickedDays> {
+  await ensureLoaded();
+  return pickedDays();
+}
+
+export function subscribeStars(fn: (ids: Set<string>, days: PickedDays) => void): () => void {
   listeners.add(fn);
   return () => {
     listeners.delete(fn);
@@ -290,7 +314,8 @@ export function onStarsMoved(fn: () => void): () => void {
  */
 export function setStar(
   event: TournamentEvent,
-  want: boolean
+  want: boolean,
+  days?: string[]
 ): Promise<{ starred: boolean; changed: boolean; count: number; reminders: number }> {
   return inLine(async () => {
     await ensureLoaded();
@@ -302,7 +327,7 @@ export function setStar(
       return { starred: false, changed: true, count: ids.size, reminders: 0 };
     }
     ids.add(event.id);
-    info[event.id] = noteFor(event);
+    info[event.id] = noteFor(event, undefined, days);
     await save(); // show the star right away, before the notification question
     let reminders = 0;
     try {
@@ -311,11 +336,37 @@ export function setStar(
       reminders = 0;
     }
     if (reminders > 0 && ids.has(event.id)) {
-      info[event.id] = noteFor(event, reminderKey(event));
+      info[event.id] = noteFor(event, reminderKey(event), info[event.id]?.days);
       await save();
     }
     return { starred: true, changed: true, count: ids.size, reminders };
   });
+}
+
+/**
+ * Changes which days of a starred shoot they're going. Pass every day (or none) for "all days".
+ * Resolves to the days saved (undefined = all days), or null if the shoot isn't starred.
+ */
+export function setDays(event: TournamentEvent, days: string[]): Promise<string[] | undefined | null> {
+  return inLine(async () => {
+    await ensureLoaded();
+    if (!ids.has(event.id)) return null;
+    const note = info[event.id] ?? noteFor(event);
+    const picked = cleanDays(days, event.startDate, event.endDate);
+    const next: StarredShoot = { ...note };
+    if (picked) next.days = picked;
+    else delete next.days;
+    if (!sameDays(next.days, note.days) || !info[event.id]) {
+      info[event.id] = next;
+      await save();
+    }
+    return picked;
+  });
+}
+
+/** The days they picked for a starred shoot, or undefined for every day (or not starred). */
+export function daysFor(id: string): string[] | undefined {
+  return ids.has(id) ? info[id]?.days : undefined;
 }
 
 /** Runs whenever the schedule loads: follows shoots that moved and fixes their reminders. */
@@ -359,6 +410,9 @@ export function addStarsFromAccount(userId: string, stars: AccountStar[]): Promi
       // Archer-added tournaments have ids starting "user:"; their ids never change.
       const source = id.startsWith(ARCHER_ADDED_PREFIX) ? "USER" : null;
       info[id] = { id, name: s.name, startDate: s.startDate, endDate: s.startDate, source, city: null };
+      // Keep the days they picked on their other phone. The shoot's end date isn't known yet,
+      // so they're checked against the shoot when the schedule loads (see noteFor).
+      if (id === s.id && s.days?.length) info[id].days = [...s.days].sort();
       added = true;
     }
     if (added) await save();

@@ -6,6 +6,7 @@ import { ActivityIndicator, Alert, Pressable, StyleSheet, Text, View } from "rea
 import { useAuth } from "../../lib/auth";
 import { errorText, useTheme } from "../../ui";
 import { askAboutPerson } from "../marketplace/helpers";
+import { fmtDays } from "../calendar/dates";
 import type { TournamentEvent } from "../calendar";
 import { fetchAttendees } from "./api";
 import { useFriends } from "./FriendsProvider";
@@ -106,7 +107,7 @@ function Names({ list, onPerson }: { list: Attendee[]; onPerson: (p: Attendee) =
           key={p.userId}
           onPress={() => onPerson(p)}
           accessibilityRole="button"
-          accessibilityLabel={`${p.name}. Report or block`}
+          accessibilityLabel={`${p.name}${p.days?.length ? `, going ${fmtDays(p.days)}` : ""}. Report or block`}
           style={[styles.person, { backgroundColor: t.subtle }]}
         >
           <View style={[styles.avatar, { backgroundColor: t.primary }]}>
@@ -115,6 +116,7 @@ function Names({ list, onPerson }: { list: Attendee[]; onPerson: (p: Attendee) =
           <Text style={[styles.personName, { color: t.text }]} numberOfLines={1}>
             {p.name}
             {p.archeryClass ? <Text style={{ color: t.muted, fontWeight: "500" }}> · {p.archeryClass}</Text> : null}
+            {p.days?.length ? <Text style={{ color: t.primary, fontWeight: "600" }}> · {fmtDays(p.days)}</Text> : null}
           </Text>
         </Pressable>
       ))}
