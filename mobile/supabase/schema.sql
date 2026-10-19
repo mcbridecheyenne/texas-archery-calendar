@@ -538,6 +538,11 @@ alter table public.going drop constraint if exists going_visibility_check;
 alter table public.going add constraint going_visibility_check
   check (visibility in ('friends', 'public', 'private'));
 
+-- On a shoot of more than one day: the days the archer is going. Null means every day
+-- (and every row saved before this column existed). Safe to run again.
+alter table public.going add column if not exists days date[]
+  check (days is null or cardinality(days) between 1 and 31);
+
 create index if not exists going_by_event on public.going (event_id);
 create index if not exists going_by_date on public.going (event_date);
 

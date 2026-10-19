@@ -3,7 +3,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { AppState } from "react-native";
 import { useAuth } from "../../lib/auth";
-import { onStarsMoved, type TournamentEvent } from "../calendar";
+import { daysFor, onStarsMoved, type TournamentEvent } from "../calendar";
 import * as api from "./api";
 import { syncMyShoots } from "./myShoots";
 import type { AddFriendResult, Friend, ShareLevel } from "./types";
@@ -19,7 +19,10 @@ export interface FriendsState {
   /** event id → names of friends who shared that they're going */
   friendsGoing: Map<string, string[]>;
   shareLevelFor: (eventId: string) => ShareLevel;
-  setShareLevel: (event: TournamentEvent, level: ShareLevel) => Promise<void>;
+  /** Saves who can see it. days: the days picked when adding it (otherwise the ones already saved on the phone). */
+  setShareLevel: (event: TournamentEvent, level: ShareLevel, days?: string[]) => Promise<void>;
+  /** Saves which days of a starred shoot they're going to the account (undefined = every day). */
+  setGoingDays: (event: TournamentEvent, days: string[] | undefined) => Promise<void>;
   /** Removes an un-starred shoot from the account. */
   removeGoing: (eventId: string) => Promise<void>;
   addByCode: (code: string) => Promise<AddFriendResult>;
@@ -41,6 +44,7 @@ const FriendsContext = createContext<FriendsState>({
   shareLevelFor: () => "private",
   setShareLevel: noop,
   removeGoing: noop,
+  setGoingDays: noop,
   addByCode: async () => {
     throw new Error("Sign in to add friends.");
   },
@@ -164,20 +168,21 @@ export function FriendsProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const setShareLevel = useCallback(
-    async (event: TournamentEvent, level: ShareLevel) => {
+    async (event: TournamentEvent, level: ShareLevel, days?: string[]) => {
       if (!active || !userId) return;
       const me = userId;
       const before = shares.get(event.id) ?? null;
       setShareEntry(event.id, level);
       await inTurn(async () => {
+        const shoot = { ...event, days: days ?? daysFor(event.id) };
         try {
           if (level !== "private") {
-            await api.shareGoing(me, event, level);
+            await api.shareGoing(me, shoot, level);
           } else {
             // "Just me": keep it in the account where only they can read it. If the database
             // hasn't been updated for that yet, fall back to the old way (remove it there).
             try {
-              await api.shareGoing(me, event, "private");
+              await api.shareGoing(me, shoot, "private");
             } catch {
               await api.unshareGoing(me, event.id);
             }
@@ -190,6 +195,15 @@ export function FriendsProvider({ children }: { children: ReactNode }) {
       });
     },
     [active, userId, shares, setShareEntry, inTurn]
+  );
+
+  const setGoingDays = useCallback(
+    async (event: TournamentEvent, days: string[] | undefined) => {
+      if (!active || !userId) return;
+      const me = userId;
+      await inTurn(() => api.setGoingDays(me, event.id, days));
+    },
+    [active, userId, inTurn]
   );
 
   const removeGoing = useCallback(
@@ -256,13 +270,14 @@ export function FriendsProvider({ children }: { children: ReactNode }) {
       shareLevelFor,
       setShareLevel,
       removeGoing,
+      setGoingDays,
       addByCode,
       addById,
       accept,
       remove,
       refresh,
     }),
-    [active, friendCode, friends, incoming, outgoing, friendIds, friendsGoing, shareLevelFor, setShareLevel, removeGoing, addByCode, addById, accept, remove, refresh]
+    [active, friendCode, friends, incoming, outgoing, friendIds, friendsGoing, shareLevelFor, setShareLevel, removeGoing, setGoingDays, addByCode, addById, accept, remove, refresh]
   );
 
   return <FriendsContext.Provider value={value}>{children}</FriendsContext.Provider>;

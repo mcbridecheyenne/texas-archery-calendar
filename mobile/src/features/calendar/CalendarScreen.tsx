@@ -15,10 +15,11 @@ import {
   View,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { DayPicker } from "./components/DayPicker";
 import { EventDetail } from "./components/EventDetail";
 import { EventRow } from "./components/EventRow";
 import { MonthGrid } from "./components/MonthGrid";
-import { currentYM, daysInRange, fmtDayLong, fmtMonthYear, fmtRelative, parseISODate, toIso, type YM } from "./dates";
+import { cleanDays, currentYM, daysInRange, fmtDayLong, fmtDays, pickableDays, fmtMonthYear, fmtRelative, parseISODate, toIso, type YM } from "./dates";
 import { useCalendarTheme, type CalendarTheme } from "./theme";
 import { normalizeEvent } from "./api";
 import { StatePicker } from "./components/StatePicker";
@@ -105,7 +106,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
   const insets = useSafeAreaInsets();
   const bottom = bottomInset ?? insets.bottom;
   const { data, loading, refreshing, error, refresh: refreshOfficial } = useEvents(apiBaseUrl);
-  const { going, isGoing, toggle } = useGoing();
+  const { going, isGoing, daysFor, toggle, changeDays } = useGoing();
 
   const [filter, setFilter] = useState<OrgFilter>("all");
   const [stateFilter, setStateFilter] = useState<StateFilter>(homeState || "ALL");
@@ -379,17 +380,62 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
     setSelectedDay(null);
   }, []);
 
+  // "Which days are you going?" for shoots of more than one day. Resolves to the days
+  // ticked, or null if they cancel.
+  const [dayAsk, setDayAsk] = useState<{
+    event: TournamentEvent;
+    initial?: string[];
+    adding: boolean;
+    done: (days: string[] | null) => void;
+  } | null>(null);
+  const askDays = useCallback(
+    (event: TournamentEvent, adding: boolean, initial?: string[]) =>
+      new Promise<string[] | null>((resolve) => {
+        setDayAsk({
+          event,
+          initial,
+          adding,
+          // Let the picker fade out first, so the next question (who can see it) can show.
+          done: (days) => {
+            setDayAsk(null);
+            setTimeout(() => resolve(days), 350);
+          },
+        });
+      }),
+    []
+  );
+
   const beforeGoing = social?.beforeGoing;
   const onGoingChange = social?.onGoingChange;
+  const onDaysChange = social?.onDaysChange;
   const onToggleGoing = useCallback(
     async (event: TournamentEvent) => {
       const adding = !isGoing(event.id);
-      if (adding && beforeGoing && !(await beforeGoing(event))) return;
-      const msg = await toggle(event, adding);
+      let days: string[] | undefined;
+      if (adding && pickableDays(event.startDate, event.endDate).length) {
+        const picked = await askDays(event, true);
+        if (!picked) return;
+        days = cleanDays(picked, event.startDate, event.endDate);
+      }
+      if (adding && beforeGoing && !(await beforeGoing(event, days))) return;
+      const msg = await toggle(event, adding, days);
       onGoingChange?.(event, adding);
       if (msg) showToast(msg);
     },
-    [toggle, showToast, isGoing, beforeGoing, onGoingChange]
+    [toggle, showToast, isGoing, askDays, beforeGoing, onGoingChange]
+  );
+
+  // Changing the days later, from the shoot's page.
+  const onChangeDays = useCallback(
+    async (event: TournamentEvent) => {
+      const picked = await askDays(event, false, daysFor(event.id));
+      if (!picked) return;
+      const saved = await changeDays(event, picked);
+      if (saved === null) return; // no longer starred
+      onDaysChange?.(event, saved);
+      showToast(saved ? `Going ${fmtDays(saved)}.` : "Going every day.");
+    },
+    [askDays, daysFor, changeDays, onDaysChange, showToast]
   );
 
   // Events listed under the month grid: the tapped day, or everything in the visible month.
@@ -452,6 +498,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
           event={event}
           theme={theme}
           going={isGoing(event.id)}
+          myDays={daysFor(event.id)}
           note={social?.rowNote?.(event) ?? null}
           onPress={(e) => {
             onFeaturedOpen?.(pin.id);
@@ -469,6 +516,17 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
     </View>
   ) : null;
 
+  const dayPicker = (
+    <DayPicker
+      event={dayAsk?.event ?? null}
+      initial={dayAsk?.initial}
+      theme={theme}
+      saveLabel={dayAsk?.adding ? "I'm going" : "Save"}
+      onSave={(days) => dayAsk?.done(days)}
+      onCancel={() => dayAsk?.done(null)}
+    />
+  );
+
   const refreshControl = (
     <RefreshControl refreshing={refreshing} onRefresh={refresh} tintColor={theme.primary} colors={[theme.primary]} />
   );
@@ -479,6 +537,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
       event={ev}
       theme={theme}
       going={isGoing(ev.id)}
+      myDays={daysFor(ev.id)}
       note={social?.rowNote?.(ev) ?? null}
       onPress={setOpenEvent}
       onToggleGoing={onToggleGoing}
@@ -492,6 +551,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
       event={ev}
       theme={theme}
       going={isGoing(ev.id)}
+      myDays={daysFor(ev.id)}
       note={social?.rowNote?.(ev) ?? null}
       onPress={setOpenEvent}
       onToggleGoing={onToggleGoing}
@@ -775,15 +835,21 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
       <EventDetail
         event={openEvent}
         going={openEvent ? isGoing(openEvent.id) : false}
+        myDays={openEvent ? daysFor(openEvent.id) : undefined}
+        onChangeDays={onChangeDays}
         theme={theme}
         onClose={() => setOpenEvent(null)}
         onToggleGoing={onToggleGoing}
+        overlay={openEvent ? dayPicker : null}
         extra={social?.renderDetail}
         sharePlug={sharePlug}
         shareAs={shareAs}
         hotels={hotels}
         flights={flights}
       />
+
+      {/* With a shoot's page open, the picker shows inside that page (a phone can't show two pages at once). */}
+      {openEvent ? null : dayPicker}
 
       {card.element}
 

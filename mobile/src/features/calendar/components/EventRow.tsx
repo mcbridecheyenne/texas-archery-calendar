@@ -1,6 +1,6 @@
 import { memo, type ReactNode } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
-import { fmtRange, monthShort, parseISODate } from "../dates";
+import { fmtDays, fmtRange, monthShort, parseISODate } from "../dates";
 import { fmtMiles } from "../distances";
 import type { CalendarTheme } from "../theme";
 import type { TournamentEvent } from "../types";
@@ -10,6 +10,8 @@ interface Props {
   event: TournamentEvent;
   theme: CalendarTheme;
   going: boolean;
+  /** The days they're going, when they didn't pick every day of the shoot. */
+  myDays?: string[];
   note?: string | null;
   /** Miles from the archer, when both places are known. */
   miles?: number | null;
@@ -19,7 +21,7 @@ interface Props {
   extra?: ReactNode;
 }
 
-export const EventRow = memo(function EventRow({ event, theme, going, note, miles, onPress, onToggleGoing, extra }: Props) {
+export const EventRow = memo(function EventRow({ event, theme, going, myDays, note, miles, onPress, onToggleGoing, extra }: Props) {
   const d = parseISODate(event.startDate);
   return (
     <Pressable
@@ -47,6 +49,11 @@ export const EventRow = memo(function EventRow({ event, theme, going, note, mile
         {event.location ? (
           <Text style={[styles.meta, { color: theme.muted }]} numberOfLines={1}>
             📍 {event.location}
+          </Text>
+        ) : null}
+        {going && myDays?.length ? (
+          <Text style={[styles.note, { color: theme.primary }]} numberOfLines={1}>
+            ★ You're going {fmtDays(myDays)}
           </Text>
         ) : null}
         {note ? (
