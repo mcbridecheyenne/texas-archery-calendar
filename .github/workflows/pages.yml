@@ -166,6 +166,14 @@ jobs:
           node -e 'const d=require("./hotel-prices.json"); if (!d.cities || !Object.keys(d.cities).length) process.exit(1)'
           cp hotel-prices.json dist/public/hotel-prices.json
 
+      # Average gas price in each state (AAA), for the app's trip costs when an archer hasn't
+      # typed in their own gas price. Keeps the last file if AAA can't be reached.
+      - name: State gas prices
+        continue-on-error: true
+        run: node script/gas-prices.mjs dist/public/gas-prices.json
+        env:
+          PREVIOUS_GAS_URL: https://mcbridecheyenne.github.io/texas-archery-calendar/gas-prices.json
+
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
