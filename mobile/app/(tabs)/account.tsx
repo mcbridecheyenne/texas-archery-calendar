@@ -4,7 +4,7 @@ import { useFocusEffect, useRouter } from "expo-router";
 import { useCallback, useState } from "react";
 import { ActivityIndicator, Alert, Image, Linking, Platform, Pressable, ScrollView, StyleSheet, Switch, Text, View } from "react-native";
 import { PRIVACY_URL, RULES_URL, SUPPORT_URL } from "../../config";
-import { StatePicker, stateName, useCalendarTheme } from "../../src/features/calendar";
+import { StatePicker, VehicleCard, stateName, useCalendarTheme } from "../../src/features/calendar";
 import { fetchMyListings, renewListing } from "../../src/features/marketplace/api";
 import { expiryLabel, isExpired, syncExpiryReminders } from "../../src/features/marketplace/expiry";
 import { formatPrice, type Listing } from "../../src/features/marketplace/types";
@@ -215,6 +215,9 @@ export default function AccountTab() {
           </View>
         </>
       ) : null}
+
+      <SectionLabel>Your vehicle</SectionLabel>
+      <VehicleCard theme={calendarTheme} />
 
       <SectionLabel>App</SectionLabel>
       <View style={[styles.group, { backgroundColor: t.card, borderColor: t.border }]}>

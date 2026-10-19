@@ -12,6 +12,7 @@ export { useShareCard, type ShareCardInfo } from "./components/ShareCard";
 export type { TournamentEvent, EventsResponse, EventSource, SourceStatus, CalendarSocial } from "./types";
 export { hasCachedEvents, normalizeEvent } from "./api";
 export { StatePicker } from "./components/StatePicker";
+export { VehicleCard } from "./components/VehicleCard";
 export { US_STATES, stateName } from "./states";
 export { organizationOf, organizationsOf, listedBy } from "./types";
 export { flightSearchUrl, type FlightsConfig } from "./flights";
