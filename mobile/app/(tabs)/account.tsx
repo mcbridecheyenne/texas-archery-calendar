@@ -3,7 +3,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { useFocusEffect, useRouter } from "expo-router";
 import { useCallback, useState } from "react";
 import { ActivityIndicator, Alert, Image, Linking, Platform, Pressable, ScrollView, StyleSheet, Switch, Text, View } from "react-native";
-import { PRIVACY_URL, RULES_URL, SUPPORT_URL } from "../../config";
+import { API_BASE_URL, PRIVACY_URL, RULES_URL, SUPPORT_URL } from "../../config";
 import { StatePicker, VehicleCard, stateName, useCalendarTheme } from "../../src/features/calendar";
 import { fetchMyListings, renewListing } from "../../src/features/marketplace/api";
 import { expiryLabel, isExpired, syncExpiryReminders } from "../../src/features/marketplace/expiry";
@@ -217,7 +217,7 @@ export default function AccountTab() {
       ) : null}
 
       <SectionLabel>Your vehicle</SectionLabel>
-      <VehicleCard theme={calendarTheme} />
+      <VehicleCard theme={calendarTheme} apiBaseUrl={API_BASE_URL} homeState={home.homeState} />
 
       <SectionLabel>App</SectionLabel>
       <View style={[styles.group, { backgroundColor: t.card, borderColor: t.border }]}>

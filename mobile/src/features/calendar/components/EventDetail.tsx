@@ -7,7 +7,9 @@ import type { CalendarTheme } from "../theme";
 import { listedBy, type TournamentEvent } from "../types";
 import { flightSearchUrl, type FlightsConfig } from "../flights";
 import { hotelPlace, hotelPrices, hotelSearchUrl, useCityPrices, type HotelsConfig } from "../hotels";
+import type { GasPrice } from "../gas";
 import { fmtCount, fmtMoney } from "../season";
+import { stateName } from "../states";
 import { shareShoot, shootMessage } from "../share";
 import { useShareCard, type ShareCardInfo } from "./ShareCard";
 import { SourcePill } from "./SourcePill";
@@ -20,7 +22,7 @@ interface Props {
   /** Opens "Which days are you going?" to change them. */
   onChangeDays?: (event: TournamentEvent) => void;
   /** Gas for the round trip, from the archer's MPG (Account tab). Null until the distance is known. */
-  gasTrip?: { miles: number; gas: number; mpg: number; gasPrice: number } | null;
+  gasTrip?: { miles: number; gas: number; mpg: number; gasPrice: GasPrice } | null;
   /** Shown on top of the page (the day picker, which can't open as a second page). */
   overlay?: ReactNode;
   theme: CalendarTheme;
@@ -242,13 +244,21 @@ function DriveCard({ trip, theme }: { trip: NonNullable<Props["gasTrip"]>; theme
         <Text style={[styles.hotelPer, { color: theme.muted }]}> in gas, round trip</Text>
       </Text>
       <Text style={[styles.rowValue, { color: theme.text }]}>
-        About {fmtCount(trip.miles)} miles each way at {trip.mpg} mpg and ${trip.gasPrice.toFixed(2)} a gallon
+        About {fmtCount(trip.miles)} miles each way at {trip.mpg} mpg and ${trip.gasPrice.price.toFixed(2)} a gallon
+        {gasSource(trip.gasPrice)}
       </Text>
       <Text style={[styles.hotelNote, { color: theme.muted }]}>
         A rough guess from the straight-line distance. Change your MPG and gas price in the Account tab.
       </Text>
     </View>
   );
+}
+
+// " (the Texas average)" when the archer left the gas price blank.
+function gasSource(g: GasPrice): string {
+  if (g.kind === "state") return ` (the ${stateName(g.state) ?? g.state} average)`;
+  if (g.kind === "national") return " (the US average)";
+  return "";
 }
 
 // Nightly hotel prices in the shoot's town (when we have them) and a button that searches hotels

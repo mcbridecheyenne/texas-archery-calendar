@@ -1,9 +1,12 @@
 // "Your vehicle" in the Account tab: miles per gallon and the gas price, used to work out
 // what gas costs to get to each shoot (on the shoot's page and in My Season). Same settings
-// as My Season's trip settings, saved on the phone.
+// as My Season's trip settings, saved on the phone. A blank gas price means the average in
+// the archer's state (gas.ts).
 import { useEffect, useState } from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
+import { driveState, gasPriceFor, useGasPrices } from "../gas";
 import { useSeasonSettings } from "../season";
+import { stateName } from "../states";
 import type { CalendarTheme } from "../theme";
 
 function num(v: string): number | null {
@@ -11,13 +14,24 @@ function num(v: string): number | null {
   return isFinite(n) && n > 0 && n < 1000 ? n : null;
 }
 
-export function VehicleCard({ theme }: { theme: CalendarTheme }) {
+const money = (n: number | null) => (n != null ? n.toFixed(2) : "");
+
+export function VehicleCard({ theme, apiBaseUrl, homeState }: { theme: CalendarTheme; apiBaseUrl?: string; homeState?: string | null }) {
   const [settings, change] = useSeasonSettings();
   const [mpg, setMpg] = useState(String(settings.mpg));
-  const [gas, setGas] = useState(settings.gasPrice.toFixed(2));
+  const [gas, setGas] = useState(money(settings.gasPrice));
+  const table = useGasPrices(apiBaseUrl);
+  const state = driveState(settings.homeTown, homeState);
+  const avg = gasPriceFor({ gasPrice: null }, table, state);
+  const avgLabel =
+    avg.kind === "state"
+      ? `the ${stateName(avg.state) ?? avg.state} average ($${avg.price.toFixed(2)} today)`
+      : avg.kind === "national"
+      ? `the US average ($${avg.price.toFixed(2)} today)${state ? "" : ". Pick your home state below to use your state's"}`
+      : "your state's average";
   // Follow changes made elsewhere (My Season's trip settings) and the first load.
   useEffect(() => setMpg(String(settings.mpg)), [settings.mpg]);
-  useEffect(() => setGas(settings.gasPrice.toFixed(2)), [settings.gasPrice]);
+  useEffect(() => setGas(money(settings.gasPrice)), [settings.gasPrice]);
 
   const saveMpg = () => {
     const n = num(mpg);
@@ -25,9 +39,11 @@ export function VehicleCard({ theme }: { theme: CalendarTheme }) {
     else setMpg(String(settings.mpg));
   };
   const saveGas = () => {
+    // Blank: use the state average.
+    if (!gas.trim()) return change({ gasPrice: null });
     const n = num(gas);
     if (n) change({ gasPrice: Math.round(n * 100) / 100 });
-    else setGas(settings.gasPrice.toFixed(2));
+    else setGas(money(settings.gasPrice));
   };
 
   const box = [styles.input, { color: theme.text, backgroundColor: theme.background, borderColor: theme.border }];
@@ -59,12 +75,16 @@ export function VehicleCard({ theme }: { theme: CalendarTheme }) {
           returnKeyType="done"
           selectTextOnFocus
           maxLength={6}
+          placeholder={avg.kind === "guess" ? "" : avg.price.toFixed(2)}
+          placeholderTextColor={theme.muted}
+          clearButtonMode="while-editing"
           style={box}
           accessibilityLabel="Gas price in dollars a gallon"
         />
       </View>
       <Text style={[styles.hint, { color: theme.muted }]}>
-        Used to work out the gas cost of the round trip to each shoot. You'll see it on the shoot's page and in My Season.
+        Used to work out the gas cost of the round trip to each shoot. You'll see it on the shoot's page and in My Season.{" "}
+        {settings.gasPrice == null ? `No gas price entered, so it uses ${avgLabel}.` : `Clear the gas price to use ${avgLabel}.`}
       </Text>
     </View>
   );

@@ -343,7 +343,8 @@ function SettingsSheet({
     };
     onSave({
       mpg: num(form.mpg) ?? settings.mpg,
-      gasPrice: num(form.gasPrice) ?? settings.gasPrice,
+      // Blank: the average in their state.
+      gasPrice: form.gasPrice.trim() ? num(form.gasPrice) ?? settings.gasPrice : null,
       overnightMiles: num(form.overnightMiles) ?? settings.overnightMiles,
       homeTown: form.homeTown.trim(),
       goal: num(form.goal) != null ? Math.round(num(form.goal)!) : null,
@@ -367,7 +368,7 @@ function SettingsSheet({
         <ScrollView contentContainerStyle={[styles.sheetBody, { paddingBottom: insets.bottom + 24 }]} keyboardShouldPersistTaps="handled">
           <Field theme={theme} label="Drive from" hint="Your town, e.g. Abilene, TX. Leave blank to use your phone's location." value={form.homeTown} onChange={set("homeTown")} />
           <Field theme={theme} label="Miles per gallon" value={form.mpg} onChange={set("mpg")} numeric />
-          <Field theme={theme} label="Gas price ($ a gallon)" value={form.gasPrice} onChange={set("gasPrice")} numeric />
+          <Field theme={theme} label="Gas price ($ a gallon)" hint="Leave blank to use the average in your state." value={form.gasPrice} onChange={set("gasPrice")} numeric />
           <Field
             theme={theme}
             label="Stay in a hotel when the shoot is at least (miles away)"
@@ -391,7 +392,7 @@ function SettingsSheet({
 function toForm(s: SeasonSettings): Record<keyof SeasonSettings, string> {
   return {
     mpg: String(s.mpg),
-    gasPrice: String(s.gasPrice),
+    gasPrice: s.gasPrice != null ? String(s.gasPrice) : "",
     overnightMiles: String(s.overnightMiles),
     homeTown: s.homeTown,
     goal: s.goal != null ? String(s.goal) : "",

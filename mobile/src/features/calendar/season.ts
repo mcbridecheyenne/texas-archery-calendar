@@ -12,8 +12,8 @@ import type { TournamentEvent } from "./types";
 export interface SeasonSettings {
   /** The car's miles per gallon. */
   mpg: number;
-  /** Dollars per gallon. */
-  gasPrice: number;
+  /** Dollars per gallon. Null: the average in the archer's state (see gas.ts). */
+  gasPrice: number | null;
   /** Shoots at least this far away (one way) get a hotel; closer ones are day trips. */
   overnightMiles: number;
   /** Where the archer drives from, e.g. "Abilene, TX". Blank: the phone's location. */
@@ -26,12 +26,15 @@ export interface SeasonSettings {
 
 export const DEFAULT_SETTINGS: SeasonSettings = {
   mpg: 25,
-  gasPrice: 3.25,
+  gasPrice: null,
   overnightMiles: 150,
   homeTown: "",
   goal: null,
   budget: null,
 };
+
+// Used when the gas price is blank and there are no state averages to go on.
+export const FALLBACK_GAS_PRICE = 3.25;
 
 // The miles the app shows are straight-line; roads are about this much longer.
 export const ROAD_FACTOR = 1.2;
@@ -52,6 +55,8 @@ export function useSeasonSettings(): [SeasonSettings, (change: Partial<SeasonSet
     listeners.add(setSettings);
     if (!saved) {
       readJSON<Partial<SeasonSettings>>(KEY).then((s) => {
+        // 3.25 was the gas price filled in for everyone before state averages, not one they typed.
+        if (s?.gasPrice === FALLBACK_GAS_PRICE) s.gasPrice = null;
         saved = { ...DEFAULT_SETTINGS, ...(saved ?? {}), ...(s ?? {}) };
         if (live) setSettings(saved);
       });
@@ -101,7 +106,7 @@ export function tripFor(
     return { event, miles: null, gas: null, nights: null, nightly: null, hotel: null, total: 0, partial: true };
   }
   const mpg = settings.mpg > 0 ? settings.mpg : DEFAULT_SETTINGS.mpg;
-  const gas = ((miles * 2 * ROAD_FACTOR) / mpg) * settings.gasPrice;
+  const gas = ((miles * 2 * ROAD_FACTOR) / mpg) * (settings.gasPrice ?? FALLBACK_GAS_PRICE);
   const range = hotelNights(event);
   const nights = miles >= settings.overnightMiles && range ? nightsBetween(range.checkin, range.checkout) : 0;
   const nightly = hotelPrices(event, prices)?.typical ?? null;

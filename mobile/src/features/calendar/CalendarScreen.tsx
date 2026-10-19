@@ -29,6 +29,7 @@ import { NEIGHBORS, isNationalChampionship, matchesSearch, searchText, searchWor
 import { useDistances } from "./distances";
 import type { FlightsConfig } from "./flights";
 import { useCityPrices, type HotelsConfig } from "./hotels";
+import { driveState, gasPriceFor, useGasPrices } from "./gas";
 import { ROAD_FACTOR, clashes, openStretches, seasonTotals, tripFor, useSeasonSettings } from "./season";
 import { SeasonPlan, TripLine } from "./components/SeasonPlan";
 import { readJSON, writeJSON } from "./storage";
@@ -335,18 +336,25 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
     return openEvent && !list.some((e) => e.id === openEvent.id) ? [...list, openEvent] : list;
   }, [view, myShoots, gapCandidates, openEvent]);
   const seasonMiles = useDistances(allEvents, seasonOrigin, seasonWanted);
+  // Gas price for trip costs: the archer's own, or the average in the state they drive from.
+  const gasTable = useGasPrices(apiBaseUrl);
+  const gasPrice = useMemo(
+    () => gasPriceFor(season, gasTable, driveState(season.homeTown, homeState, originState)),
+    [season, gasTable, homeState, originState]
+  );
+  const tripSettings = useMemo(() => ({ ...season, gasPrice: gasPrice.price }), [season, gasPrice.price]);
   const cityPrices = useCityPrices(view === "mine" ? hotels?.pricesUrl : undefined);
   const trips = useMemo(
-    () => new Map(myShoots.map((e) => [e.id, tripFor(e, seasonMiles.miles.get(e.id), season, cityPrices)])),
-    [myShoots, seasonMiles.miles, season, cityPrices]
+    () => new Map(myShoots.map((e) => [e.id, tripFor(e, seasonMiles.miles.get(e.id), tripSettings, cityPrices)])),
+    [myShoots, seasonMiles.miles, tripSettings, cityPrices]
   );
   const totals = useMemo(() => seasonTotals([...trips.values()]), [trips]);
   // Gas for the round trip to one shoot, from the archer's MPG and gas price (Account tab).
   const gasTrip = (e: TournamentEvent) => {
     const miles = seasonMiles.miles.get(e.id);
     if (miles == null) return null;
-    const trip = tripFor(e, miles, season, null);
-    return trip.gas != null ? { miles: miles * ROAD_FACTOR, gas: trip.gas, mpg: season.mpg, gasPrice: season.gasPrice } : null;
+    const trip = tripFor(e, miles, tripSettings, null);
+    return trip.gas != null ? { miles: miles * ROAD_FACTOR, gas: trip.gas, mpg: season.mpg, gasPrice } : null;
   };
   const seasonClashes = useMemo(() => clashes(myShoots), [myShoots]);
   const clashName = useMemo(() => {
