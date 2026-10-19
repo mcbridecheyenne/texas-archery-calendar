@@ -29,7 +29,7 @@ import { NEIGHBORS, isNationalChampionship, matchesSearch, searchText, searchWor
 import { useDistances } from "./distances";
 import type { FlightsConfig } from "./flights";
 import { useCityPrices, type HotelsConfig } from "./hotels";
-import { clashes, openStretches, seasonTotals, tripFor, useSeasonSettings } from "./season";
+import { ROAD_FACTOR, clashes, openStretches, seasonTotals, tripFor, useSeasonSettings } from "./season";
 import { SeasonPlan, TripLine } from "./components/SeasonPlan";
 import { readJSON, writeJSON } from "./storage";
 import { approxHere, placeCoords, regionAt, type Coords } from "../../lib/location";
@@ -329,7 +329,11 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
       .filter((e) => !around || statesOf(e).some((st) => around.has(st)))
       .slice(0, 60);
   }, [roughGaps, seasonCenter, upcomingAll, going]);
-  const seasonWanted = useMemo(() => (view === "mine" ? [...myShoots, ...gapCandidates] : myShoots), [view, myShoots, gapCandidates]);
+  // Also the open shoot's page, so it can show the gas cost to get there.
+  const seasonWanted = useMemo(() => {
+    const list = view === "mine" ? [...myShoots, ...gapCandidates] : myShoots;
+    return openEvent && !list.some((e) => e.id === openEvent.id) ? [...list, openEvent] : list;
+  }, [view, myShoots, gapCandidates, openEvent]);
   const seasonMiles = useDistances(allEvents, seasonOrigin, seasonWanted);
   const cityPrices = useCityPrices(view === "mine" ? hotels?.pricesUrl : undefined);
   const trips = useMemo(
@@ -337,6 +341,13 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
     [myShoots, seasonMiles.miles, season, cityPrices]
   );
   const totals = useMemo(() => seasonTotals([...trips.values()]), [trips]);
+  // Gas for the round trip to one shoot, from the archer's MPG and gas price (Account tab).
+  const gasTrip = (e: TournamentEvent) => {
+    const miles = seasonMiles.miles.get(e.id);
+    if (miles == null) return null;
+    const trip = tripFor(e, miles, season, null);
+    return trip.gas != null ? { miles: miles * ROAD_FACTOR, gas: trip.gas, mpg: season.mpg, gasPrice: season.gasPrice } : null;
+  };
   const seasonClashes = useMemo(() => clashes(myShoots), [myShoots]);
   const clashName = useMemo(() => {
     const m = new Map<string, string>();
@@ -836,6 +847,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
         event={openEvent}
         going={openEvent ? isGoing(openEvent.id) : false}
         myDays={openEvent ? daysFor(openEvent.id) : undefined}
+        gasTrip={openEvent ? gasTrip(openEvent) : null}
         onChangeDays={onChangeDays}
         theme={theme}
         onClose={() => setOpenEvent(null)}

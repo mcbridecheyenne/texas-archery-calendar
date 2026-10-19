@@ -7,6 +7,7 @@ import type { CalendarTheme } from "../theme";
 import { listedBy, type TournamentEvent } from "../types";
 import { flightSearchUrl, type FlightsConfig } from "../flights";
 import { hotelPlace, hotelPrices, hotelSearchUrl, useCityPrices, type HotelsConfig } from "../hotels";
+import { fmtCount, fmtMoney } from "../season";
 import { shareShoot, shootMessage } from "../share";
 import { useShareCard, type ShareCardInfo } from "./ShareCard";
 import { SourcePill } from "./SourcePill";
@@ -18,6 +19,8 @@ interface Props {
   myDays?: string[];
   /** Opens "Which days are you going?" to change them. */
   onChangeDays?: (event: TournamentEvent) => void;
+  /** Gas for the round trip, from the archer's MPG (Account tab). Null until the distance is known. */
+  gasTrip?: { miles: number; gas: number; mpg: number; gasPrice: number } | null;
   /** Shown on top of the page (the day picker, which can't open as a second page). */
   overlay?: ReactNode;
   theme: CalendarTheme;
@@ -42,7 +45,7 @@ function countdown(event: TournamentEvent): string | null {
   return null;
 }
 
-export function EventDetail({ event, going, myDays, onChangeDays, overlay, theme, onClose, onToggleGoing, extra, sharePlug, shareAs, hotels, flights }: Props) {
+export function EventDetail({ event, going, myDays, onChangeDays, gasTrip, overlay, theme, onClose, onToggleGoing, extra, sharePlug, shareAs, hotels, flights }: Props) {
   const card = useShareCard();
   const [flyerOpen, setFlyerOpen] = useState(false);
   const win = useWindowDimensions();
@@ -173,6 +176,7 @@ export function EventDetail({ event, going, myDays, onChangeDays, overlay, theme
               ) : null}
             </View>
 
+            {gasTrip && daysUntil(event.endDate) >= 0 ? <DriveCard trip={gasTrip} theme={theme} /> : null}
             {hotels?.enabled ? <HotelCard event={event} config={hotels} theme={theme} /> : null}
             {flights?.enabled ? <FlightCard event={event} config={flights} theme={theme} /> : null}
 
@@ -225,6 +229,25 @@ export function EventDetail({ event, going, myDays, onChangeDays, overlay, theme
         </View>
       ) : null}
     </Modal>
+  );
+}
+
+// Gas for the round trip, worked out from the archer's MPG and gas price (Account tab).
+function DriveCard({ trip, theme }: { trip: NonNullable<Props["gasTrip"]>; theme: CalendarTheme }) {
+  return (
+    <View style={[styles.card, { backgroundColor: theme.card, borderColor: theme.border, paddingVertical: 12, gap: 6 }]}>
+      <Text style={[styles.rowLabel, { color: theme.muted }]}>DRIVING THERE</Text>
+      <Text style={[styles.hotelPrice, { color: theme.text }]}>
+        About {fmtMoney(trip.gas)}
+        <Text style={[styles.hotelPer, { color: theme.muted }]}> in gas, round trip</Text>
+      </Text>
+      <Text style={[styles.rowValue, { color: theme.text }]}>
+        About {fmtCount(trip.miles)} miles each way at {trip.mpg} mpg and ${trip.gasPrice.toFixed(2)} a gallon
+      </Text>
+      <Text style={[styles.hotelNote, { color: theme.muted }]}>
+        A rough guess from the straight-line distance. Change your MPG and gas price in the Account tab.
+      </Text>
+    </View>
   );
 }
 
