@@ -10,6 +10,8 @@ interface Props {
   event: TournamentEvent;
   theme: CalendarTheme;
   going: boolean;
+  /** Starred as "Maybe" rather than "Going". */
+  maybe?: boolean;
   /** The days they're going, when they didn't pick every day of the shoot. */
   myDays?: string[];
   note?: string | null;
@@ -21,7 +23,7 @@ interface Props {
   extra?: ReactNode;
 }
 
-export const EventRow = memo(function EventRow({ event, theme, going, myDays, note, miles, onPress, onToggleGoing, extra }: Props) {
+export const EventRow = memo(function EventRow({ event, theme, going, maybe, myDays, note, miles, onPress, onToggleGoing, extra }: Props) {
   const d = parseISODate(event.startDate);
   return (
     <Pressable
@@ -51,7 +53,11 @@ export const EventRow = memo(function EventRow({ event, theme, going, myDays, no
             📍 {event.location}
           </Text>
         ) : null}
-        {going && myDays?.length ? (
+        {going && maybe ? (
+          <Text style={[styles.note, { color: theme.primary }]} numberOfLines={1}>
+            ★ Maybe{myDays?.length ? ` · ${fmtDays(myDays)}` : ""}
+          </Text>
+        ) : going && myDays?.length ? (
           <Text style={[styles.note, { color: theme.primary }]} numberOfLines={1}>
             ★ You're going {fmtDays(myDays)}
           </Text>
@@ -68,10 +74,10 @@ export const EventRow = memo(function EventRow({ event, theme, going, myDays, no
         hitSlop={12}
         style={styles.star}
         accessibilityRole="button"
-        accessibilityLabel={going ? "Remove from Going" : "Mark as Going"}
+        accessibilityLabel={going ? (maybe ? "Remove from Maybe" : "Remove from Going") : "Mark as Going"}
         accessibilityState={{ selected: going }}
       >
-        <Text style={[styles.starText, { color: going ? theme.primary : theme.muted }]}>{going ? "★" : "☆"}</Text>
+        <Text style={[styles.starText, { color: going ? theme.primary : theme.muted, opacity: maybe ? 0.55 : 1 }]}>{going ? "★" : "☆"}</Text>
       </Pressable>
     </Pressable>
   );

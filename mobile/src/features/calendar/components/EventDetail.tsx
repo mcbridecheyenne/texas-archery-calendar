@@ -17,6 +17,8 @@ import { SourcePill } from "./SourcePill";
 interface Props {
   event: TournamentEvent | null;
   going: boolean;
+  /** Starred as "Maybe" rather than "Going". */
+  maybe?: boolean;
   /** On a shoot of more than one day: the days they're going. Undefined means every day. */
   myDays?: string[];
   /** Opens "Which days are you going?" to change them. */
@@ -27,9 +29,10 @@ interface Props {
   overlay?: ReactNode;
   theme: CalendarTheme;
   onClose: () => void;
-  onToggleGoing: (event: TournamentEvent) => void;
+  /** choice: which button was tapped. Tapping the one already picked takes the shoot off. */
+  onToggleGoing: (event: TournamentEvent, choice?: "going" | "maybe") => void;
   /** Host-supplied content under the Going button (friends going, etc.). */
-  extra?: (event: TournamentEvent, going: boolean, close: () => void) => ReactNode;
+  extra?: (event: TournamentEvent, going: boolean, close: () => void, maybe?: boolean) => ReactNode;
   sharePlug?: string;
   shareAs?: ShareCardInfo;
   /** Shows "Hotels near the shoot" with a price range and a search link. */
@@ -47,11 +50,14 @@ function countdown(event: TournamentEvent): string | null {
   return null;
 }
 
-export function EventDetail({ event, going, myDays, onChangeDays, gasTrip, overlay, theme, onClose, onToggleGoing, extra, sharePlug, shareAs, hotels, flights }: Props) {
+export function EventDetail({ event, going, maybe = false, myDays, onChangeDays, gasTrip, overlay, theme, onClose, onToggleGoing, extra, sharePlug, shareAs, hotels, flights }: Props) {
   const card = useShareCard();
   const [flyerOpen, setFlyerOpen] = useState(false);
   const win = useWindowDimensions();
   const insets = useSafeAreaInsets();
+  // going is true for any starred shoot; these split it into the two buttons.
+  const isGoing = going && !maybe;
+  const maybeOn = going && maybe;
   return (
     <Modal visible={!!event} animationType="slide" presentationStyle="pageSheet" onRequestClose={onClose}>
       {event ? (
@@ -79,22 +85,41 @@ export function EventDetail({ event, going, myDays, onChangeDays, gasTrip, overl
               </View>
             ) : null}
 
-            <Pressable
-              onPress={() => onToggleGoing(event)}
-              style={({ pressed }) => [
-                styles.goingBtn,
-                going
-                  ? { backgroundColor: theme.primary, borderColor: theme.primary }
-                  : { backgroundColor: "transparent", borderColor: theme.primary },
-                pressed && { opacity: 0.8 },
-              ]}
-              accessibilityRole="button"
-              accessibilityState={{ selected: going }}
-            >
-              <Text style={[styles.goingText, { color: going ? theme.onPrimary : theme.primary }]}>
-                {going ? "★  Going" : "☆  I'm going"}
-              </Text>
-            </Pressable>
+            <View style={styles.goingRow}>
+              <Pressable
+                onPress={() => onToggleGoing(event, "going")}
+                style={({ pressed }) => [
+                  styles.goingBtn,
+                  { flex: 2 },
+                  isGoing
+                    ? { backgroundColor: theme.primary, borderColor: theme.primary }
+                    : { backgroundColor: "transparent", borderColor: theme.primary },
+                  pressed && { opacity: 0.8 },
+                ]}
+                accessibilityRole="button"
+                accessibilityState={{ selected: isGoing }}
+              >
+                <Text style={[styles.goingText, { color: isGoing ? theme.onPrimary : theme.primary }]}>
+                  {isGoing ? "★  Going" : "☆  I'm going"}
+                </Text>
+              </Pressable>
+              <Pressable
+                onPress={() => onToggleGoing(event, "maybe")}
+                style={({ pressed }) => [
+                  styles.goingBtn,
+                  { flex: 1 },
+                  maybeOn
+                    ? { backgroundColor: theme.primary, borderColor: theme.primary }
+                    : { backgroundColor: "transparent", borderColor: theme.primary },
+                  pressed && { opacity: 0.8 },
+                ]}
+                accessibilityRole="button"
+                accessibilityLabel={maybeOn ? "Maybe. Tap to remove" : "Maybe"}
+                accessibilityState={{ selected: maybeOn }}
+              >
+                <Text style={[styles.goingText, { color: maybeOn ? theme.onPrimary : theme.primary }]}>Maybe</Text>
+              </Pressable>
+            </View>
 
             {going && onChangeDays && pickableDays(event.startDate, event.endDate).length ? (
               <Pressable
@@ -102,16 +127,16 @@ export function EventDetail({ event, going, myDays, onChangeDays, gasTrip, overl
                 style={styles.daysRow}
                 hitSlop={6}
                 accessibilityRole="button"
-                accessibilityLabel={`Going ${myDays?.length ? fmtDays(myDays) : "every day"}. Change days`}
+                accessibilityLabel={`${maybeOn ? "Maybe" : "Going"} ${myDays?.length ? fmtDays(myDays) : "every day"}. Change days`}
               >
                 <Text style={[styles.daysText, { color: theme.muted }]}>
-                  Going <Text style={{ color: theme.text, fontWeight: "700" }}>{myDays?.length ? fmtDays(myDays) : "every day"}</Text>
+                  {maybeOn ? "Maybe" : "Going"} <Text style={{ color: theme.text, fontWeight: "700" }}>{myDays?.length ? fmtDays(myDays) : "every day"}</Text>
                 </Text>
                 <Text style={[styles.daysLink, { color: theme.primary }]}>Change days</Text>
               </Pressable>
             ) : null}
 
-            {extra ? extra(event, going, onClose) : null}
+            {extra ? extra(event, going, onClose, maybeOn) : null}
 
             <View style={styles.actions}>
               <Action
@@ -127,7 +152,7 @@ export function EventDetail({ event, going, myDays, onChangeDays, gasTrip, overl
                 <Action label="Directions" theme={theme} onPress={() => openDirections(event)} />
               ) : null}
               <Action label="Share" theme={theme} onPress={() =>
-                  (going
+                  (isGoing
                     ? card.shareCard([event], shareAs ?? {}, shootMessage(event, true, sharePlug))
                     : shareShoot(event, false, sharePlug)
                   ).catch(() => {})
@@ -391,6 +416,7 @@ const styles = StyleSheet.create({
   title: { fontSize: 26, fontWeight: "700", lineHeight: 32 },
   when: { fontSize: 17, marginTop: 4 },
   countdown: { fontSize: 14, fontWeight: "600" },
+  goingRow: { flexDirection: "row", gap: 10 },
   goingBtn: { marginTop: 14, borderRadius: 12, borderWidth: 1.5, paddingVertical: 13, alignItems: "center" },
   goingText: { fontSize: 16, fontWeight: "700" },
   daysRow: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 8, marginTop: 10 },

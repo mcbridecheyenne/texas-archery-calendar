@@ -26,7 +26,7 @@ export async function syncMyShoots(me: string): Promise<MyGoingRow[]> {
       const shoot = starred.get(to);
       if (shoot && !byId.has(to)) {
         await api.shareGoing(me, shoot, row.visibility);
-        byId.set(to, { eventId: to, eventName: shoot.name, eventDate: shoot.startDate, visibility: row.visibility });
+        byId.set(to, { eventId: to, eventName: shoot.name, eventDate: shoot.startDate, visibility: row.visibility, maybe: !!shoot.maybe });
       }
       await api.unshareGoing(me, row.eventId);
       byId.delete(row.eventId);
@@ -38,7 +38,7 @@ export async function syncMyShoots(me: string): Promise<MyGoingRow[]> {
   // 2. First sign-in on this phone: bring back the stars saved to the account.
   await addStarsFromAccount(
     me,
-    Array.from(byId.values()).map((r) => ({ id: r.eventId, name: r.eventName, startDate: r.eventDate, days: r.days }))
+    Array.from(byId.values()).map((r) => ({ id: r.eventId, name: r.eventName, startDate: r.eventDate, days: r.days, maybe: r.maybe }))
   );
 
   // 3. Save stars that are only on this phone to the account, as "Just me".
@@ -47,7 +47,7 @@ export async function syncMyShoots(me: string): Promise<MyGoingRow[]> {
     try {
       await api.saveGoingPrivately(me, missing);
       for (const s of missing) {
-        byId.set(s.id, { eventId: s.id, eventName: s.name, eventDate: s.startDate, visibility: "private", days: s.days ?? null });
+        byId.set(s.id, { eventId: s.id, eventName: s.name, eventDate: s.startDate, visibility: "private", days: s.days ?? null, maybe: !!s.maybe });
       }
     } catch {
       // Until schema.sql is re-run in Supabase the database turns down "Just me" rows.

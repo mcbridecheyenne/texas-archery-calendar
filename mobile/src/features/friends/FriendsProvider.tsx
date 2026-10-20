@@ -3,7 +3,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { AppState } from "react-native";
 import { useAuth } from "../../lib/auth";
-import { daysFor, onStarsMoved, type TournamentEvent } from "../calendar";
+import { daysFor, maybeFor, onStarsMoved, type TournamentEvent } from "../calendar";
 import * as api from "./api";
 import { syncMyShoots } from "./myShoots";
 import type { AddFriendResult, Friend, ShareLevel } from "./types";
@@ -18,9 +18,13 @@ export interface FriendsState {
   friendIds: Set<string>;
   /** event id → names of friends who shared that they're going */
   friendsGoing: Map<string, string[]>;
+  /** event id → names of friends who shared "Maybe" */
+  friendsMaybe: Map<string, string[]>;
   shareLevelFor: (eventId: string) => ShareLevel;
-  /** Saves who can see it. days: the days picked when adding it (otherwise the ones already saved on the phone). */
-  setShareLevel: (event: TournamentEvent, level: ShareLevel, days?: string[]) => Promise<void>;
+  /** Saves who can see it. days and maybe: what was picked when adding it (otherwise what's already saved on the phone). */
+  setShareLevel: (event: TournamentEvent, level: ShareLevel, days?: string[], maybe?: boolean) => Promise<void>;
+  /** Saves a switch between "Going" and "Maybe" to the account. */
+  setGoingMaybe: (event: TournamentEvent, maybe: boolean) => Promise<void>;
   /** Saves which days of a starred shoot they're going to the account (undefined = every day). */
   setGoingDays: (event: TournamentEvent, days: string[] | undefined) => Promise<void>;
   /** Removes an un-starred shoot from the account. */
@@ -41,10 +45,12 @@ const FriendsContext = createContext<FriendsState>({
   outgoing: [],
   friendIds: new Set(),
   friendsGoing: new Map(),
+  friendsMaybe: new Map(),
   shareLevelFor: () => "private",
   setShareLevel: noop,
   removeGoing: noop,
   setGoingDays: noop,
+  setGoingMaybe: noop,
   addByCode: async () => {
     throw new Error("Sign in to add friends.");
   },
@@ -73,7 +79,7 @@ export function FriendsProvider({ children }: { children: ReactNode }) {
   const [friendCode, setFriendCode] = useState<string | null>(null);
   // Every starred shoot saved to the account → who can see it ("private" = Just me).
   const [shares, setShares] = useState<Map<string, ShareLevel>>(new Map());
-  const [goingIds, setGoingIds] = useState<Map<string, string[]>>(new Map());
+  const [goingIds, setGoingIds] = useState<Map<string, api.FriendGoing[]>>(new Map());
 
   // Who's signed in right now, so a slow answer for someone who just signed out is ignored.
   const signedInAs = useRef<string | null>(null);
@@ -145,14 +151,21 @@ export function FriendsProvider({ children }: { children: ReactNode }) {
   const outgoing = useMemo(() => visible.filter((f) => f.status === "pending" && !f.incoming), [visible]);
   const friendIds = useMemo(() => new Set(friends.map((f) => f.id)), [friends]);
 
-  const friendsGoing = useMemo(() => {
+  const [friendsGoing, friendsMaybe] = useMemo(() => {
     const names = new Map(friends.map((f) => [f.id, f.name]));
-    const out = new Map<string, string[]>();
-    for (const [eventId, ids] of goingIds) {
-      const list = ids.map((id) => names.get(id)).filter((n): n is string => !!n);
-      if (list.length) out.set(eventId, list);
+    const going = new Map<string, string[]>();
+    const maybe = new Map<string, string[]>();
+    for (const [eventId, people] of goingIds) {
+      for (const p of people) {
+        const name = names.get(p.userId);
+        if (!name) continue;
+        const into = p.maybe ? maybe : going;
+        const list = into.get(eventId);
+        if (list) list.push(name);
+        else into.set(eventId, [name]);
+      }
     }
-    return out;
+    return [going, maybe];
   }, [goingIds, friends]);
 
   const shareLevelFor = useCallback((eventId: string): ShareLevel => shares.get(eventId) ?? "private", [shares]);
@@ -168,13 +181,13 @@ export function FriendsProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const setShareLevel = useCallback(
-    async (event: TournamentEvent, level: ShareLevel, days?: string[]) => {
+    async (event: TournamentEvent, level: ShareLevel, days?: string[], maybe?: boolean) => {
       if (!active || !userId) return;
       const me = userId;
       const before = shares.get(event.id) ?? null;
       setShareEntry(event.id, level);
       await inTurn(async () => {
-        const shoot = { ...event, days: days ?? daysFor(event.id) };
+        const shoot = { ...event, days: days ?? daysFor(event.id), maybe: maybe ?? maybeFor(event.id) };
         try {
           if (level !== "private") {
             await api.shareGoing(me, shoot, level);
@@ -202,6 +215,15 @@ export function FriendsProvider({ children }: { children: ReactNode }) {
       if (!active || !userId) return;
       const me = userId;
       await inTurn(() => api.setGoingDays(me, event.id, days));
+    },
+    [active, userId, inTurn]
+  );
+
+  const setGoingMaybe = useCallback(
+    async (event: TournamentEvent, maybe: boolean) => {
+      if (!active || !userId) return;
+      const me = userId;
+      await inTurn(() => api.setGoingMaybe(me, event.id, maybe));
     },
     [active, userId, inTurn]
   );
@@ -267,17 +289,19 @@ export function FriendsProvider({ children }: { children: ReactNode }) {
       outgoing,
       friendIds,
       friendsGoing,
+      friendsMaybe,
       shareLevelFor,
       setShareLevel,
       removeGoing,
       setGoingDays,
+      setGoingMaybe,
       addByCode,
       addById,
       accept,
       remove,
       refresh,
     }),
-    [active, friendCode, friends, incoming, outgoing, friendIds, friendsGoing, shareLevelFor, setShareLevel, removeGoing, setGoingDays, addByCode, addById, accept, remove, refresh]
+    [active, friendCode, friends, incoming, outgoing, friendIds, friendsGoing, friendsMaybe, shareLevelFor, setShareLevel, removeGoing, setGoingDays, setGoingMaybe, addByCode, addById, accept, remove, refresh]
   );
 
   return <FriendsContext.Provider value={value}>{children}</FriendsContext.Provider>;

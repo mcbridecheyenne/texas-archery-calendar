@@ -12,11 +12,25 @@ import { ListAd } from "../../src/monetization/ListAd";
 import { usePremium } from "../../src/monetization/premium";
 import { errorText } from "../../src/ui";
 
-function friendsNote(names: string[] | undefined): string | null {
+function friendsNote(names: string[] | undefined, maybes: string[] | undefined): string | null {
+  const going = goingNote(names);
+  const maybe = maybeNote(maybes);
+  if (going && maybe) return `${going} · ${maybe}`;
+  return going ?? maybe;
+}
+
+function goingNote(names: string[] | undefined): string | null {
   if (!names?.length) return null;
   if (names.length === 1) return `${names[0]} is going`;
   if (names.length === 2) return `${names[0]} and ${names[1]} are going`;
   return `${names[0]} and ${names.length - 1} other friends are going`;
+}
+
+function maybeNote(names: string[] | undefined): string | null {
+  if (!names?.length) return null;
+  if (names.length === 1) return `${names[0]} might go`;
+  if (names.length === 2) return `${names[0]} and ${names[1]} might go`;
+  return `${names.length} friends might go`;
 }
 
 export default function TournamentsTab() {
@@ -44,25 +58,29 @@ export default function TournamentsTab() {
       onAddEvent: () => router.push("/tournament/new"),
       // Signed in: ask who can see it (every choice is saved to their account, so a new phone
       // gets it back; "Just me" ones only they can see). Signed out: Going stays on the phone, as before.
-      beforeGoing: async (event: TournamentEvent, days?: string[]) => {
+      beforeGoing: async (event: TournamentEvent, days?: string[], maybe?: boolean) => {
         if (!fr.active) return true;
-        const level = await askShareLevel(event.name);
+        const level = await askShareLevel(event.name, maybe);
         if (!level) return false;
-        fr.setShareLevel(event, level, days).catch((e) => Alert.alert("Couldn't share it", errorText(e)));
+        fr.setShareLevel(event, level, days, maybe).catch((e) => Alert.alert("Couldn't share it", errorText(e)));
         return true;
       },
       // Picked different days: update the account's copy, so friends see the right days.
       onDaysChange: (event, days) => {
         if (fr.active) fr.setGoingDays(event, days).catch(() => {});
       },
+      // Switched between Going and Maybe: update the account's copy, so friends see it.
+      onMaybeChange: (event, maybe) => {
+        if (fr.active) fr.setGoingMaybe(event, maybe).catch(() => {});
+      },
       // Un-starred: take it out of their account too ("Just me" ones are saved there as well).
       onGoingChange: (event, going) => {
         if (!going && fr.active) fr.removeGoing(event.id).catch(() => {});
       },
-      rowNote: (event) => friendsNote(fr.friendsGoing.get(event.id)),
-      renderDetail: (event, going, close) => (
+      rowNote: (event) => friendsNote(fr.friendsGoing.get(event.id), fr.friendsMaybe.get(event.id)),
+      renderDetail: (event, going, close, maybe) => (
         <>
-          <GoingWith event={event} going={going} close={close} />
+          <GoingWith event={event} going={going} maybe={maybe} close={close} />
           {event.source === "USER" ? <CommunityActions event={event} close={close} /> : null}
           <FeatureButton event={event} close={close} onFeature={setFeatureFor} />
         </>

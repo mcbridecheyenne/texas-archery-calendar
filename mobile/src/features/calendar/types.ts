@@ -94,16 +94,18 @@ export interface CalendarSocial {
   extraEvents?: TournamentEvent[];
   /** Shows an "Add a tournament" button when provided. */
   onAddEvent?: () => void;
-  /** Runs before an event is added to Going, with the days picked (undefined = every day). Resolve false to cancel. */
-  beforeGoing?: (event: TournamentEvent, days?: string[]) => Promise<boolean>;
+  /** Runs before an event is added to Going (or Maybe), with the days picked (undefined = every day). Resolve false to cancel. */
+  beforeGoing?: (event: TournamentEvent, days?: string[], maybe?: boolean) => Promise<boolean>;
   /** Runs after Going changes. */
   onGoingChange?: (event: TournamentEvent, going: boolean) => void;
   /** Runs after they change which days of a starred shoot they're going (undefined = every day). */
   onDaysChange?: (event: TournamentEvent, days: string[] | undefined) => void;
+  /** Runs after a starred shoot is switched between "Going" (false) and "Maybe" (true). */
+  onMaybeChange?: (event: TournamentEvent, maybe: boolean) => void;
   /** A short line on an event's row, e.g. "Kim and Jo are going". */
   rowNote?: (event: TournamentEvent) => string | null;
   /** Extra content in the event's detail sheet, under the Going button. */
-  renderDetail?: (event: TournamentEvent, going: boolean, close: () => void) => ReactNode;
+  renderDetail?: (event: TournamentEvent, going: boolean, close: () => void, maybe?: boolean) => ReactNode;
   /** Pull-to-refresh also reloads these. */
   onRefresh?: () => void;
 }

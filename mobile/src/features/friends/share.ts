@@ -9,10 +9,10 @@ const CHOICES: { level: ShareLevel; label: string }[] = [
   { level: "private", label: "Just me (don't share)" },
 ];
 
-/** Asks who can see that you're going. Resolves null if the archer cancels. */
-export function askShareLevel(eventName: string): Promise<ShareLevel | null> {
+/** Asks who can see that you're going (or might go). Resolves null if the archer cancels. */
+export function askShareLevel(eventName: string, maybe?: boolean): Promise<ShareLevel | null> {
   return new Promise((resolve) => {
-    const title = "Who can see you're going?";
+    const title = maybe ? "Who can see you might go?" : "Who can see you're going?";
     if (Platform.OS === "ios") {
       ActionSheetIOS.showActionSheetWithOptions(
         { title, message: eventName, options: [...CHOICES.map((c) => c.label), "Cancel"], cancelButtonIndex: CHOICES.length },

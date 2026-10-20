@@ -107,7 +107,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
   const insets = useSafeAreaInsets();
   const bottom = bottomInset ?? insets.bottom;
   const { data, loading, refreshing, error, refresh: refreshOfficial } = useEvents(apiBaseUrl);
-  const { going, isGoing, daysFor, toggle, changeDays } = useGoing();
+  const { going, isGoing, isMaybe, daysFor, toggle, changeMaybe, changeDays } = useGoing();
 
   const [filter, setFilter] = useState<OrgFilter>("all");
   const [stateFilter, setStateFilter] = useState<StateFilter>(homeState || "ALL");
@@ -405,15 +405,17 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
     event: TournamentEvent;
     initial?: string[];
     adding: boolean;
+    maybe?: boolean;
     done: (days: string[] | null) => void;
   } | null>(null);
   const askDays = useCallback(
-    (event: TournamentEvent, adding: boolean, initial?: string[]) =>
+    (event: TournamentEvent, adding: boolean, initial?: string[], maybe?: boolean) =>
       new Promise<string[] | null>((resolve) => {
         setDayAsk({
           event,
           initial,
           adding,
+          maybe,
           // Let the picker fade out first, so the next question (who can see it) can show.
           done: (days) => {
             setDayAsk(null);
@@ -427,21 +429,35 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
   const beforeGoing = social?.beforeGoing;
   const onGoingChange = social?.onGoingChange;
   const onDaysChange = social?.onDaysChange;
+  const onMaybeChange = social?.onMaybeChange;
+  // The star on a row flips it on or off. The shoot's page passes which button was tapped
+  // ("going" or "maybe"): tapping the one already picked takes it off, tapping the other switches.
   const onToggleGoing = useCallback(
-    async (event: TournamentEvent) => {
-      const adding = !isGoing(event.id);
+    async (event: TournamentEvent, choice?: "going" | "maybe") => {
+      const now = isGoing(event.id) ? (isMaybe(event.id) ? "maybe" : "going") : null;
+      const want = choice ? (choice === now ? null : choice) : now ? null : "going";
+      if (now && want) {
+        // Switching between Going and Maybe: keep the days, reminders and who can see it.
+        const saved = await changeMaybe(event, want === "maybe");
+        if (saved === null) return;
+        onMaybeChange?.(event, saved);
+        showToast(saved ? "Changed to Maybe." : "Changed to Going.");
+        return;
+      }
+      const adding = !!want;
+      const maybe = want === "maybe";
       let days: string[] | undefined;
       if (adding && pickableDays(event.startDate, event.endDate).length) {
-        const picked = await askDays(event, true);
+        const picked = await askDays(event, true, undefined, maybe);
         if (!picked) return;
         days = cleanDays(picked, event.startDate, event.endDate);
       }
-      if (adding && beforeGoing && !(await beforeGoing(event, days))) return;
-      const msg = await toggle(event, adding, days);
+      if (adding && beforeGoing && !(await beforeGoing(event, days, maybe))) return;
+      const msg = await toggle(event, adding, days, maybe);
       onGoingChange?.(event, adding);
       if (msg) showToast(msg);
     },
-    [toggle, showToast, isGoing, askDays, beforeGoing, onGoingChange]
+    [toggle, changeMaybe, showToast, isGoing, isMaybe, askDays, beforeGoing, onGoingChange, onMaybeChange]
   );
 
   // Changing the days later, from the shoot's page.
@@ -452,9 +468,10 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
       const saved = await changeDays(event, picked);
       if (saved === null) return; // no longer starred
       onDaysChange?.(event, saved);
-      showToast(saved ? `Going ${fmtDays(saved)}.` : "Going every day.");
+      const word = isMaybe(event.id) ? "Maybe" : "Going";
+      showToast(saved ? `${word} ${fmtDays(saved)}.` : `${word} every day.`);
     },
-    [askDays, daysFor, changeDays, onDaysChange, showToast]
+    [askDays, daysFor, isMaybe, changeDays, onDaysChange, showToast]
   );
 
   // Events listed under the month grid: the tapped day, or everything in the visible month.
@@ -517,6 +534,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
           event={event}
           theme={theme}
           going={isGoing(event.id)}
+          maybe={isMaybe(event.id)}
           myDays={daysFor(event.id)}
           note={social?.rowNote?.(event) ?? null}
           onPress={(e) => {
@@ -540,7 +558,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
       event={dayAsk?.event ?? null}
       initial={dayAsk?.initial}
       theme={theme}
-      saveLabel={dayAsk?.adding ? "I'm going" : "Save"}
+      saveLabel={dayAsk?.adding ? (dayAsk.maybe ? "Save as Maybe" : "I'm going") : "Save"}
       onSave={(days) => dayAsk?.done(days)}
       onCancel={() => dayAsk?.done(null)}
     />
@@ -556,6 +574,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
       event={ev}
       theme={theme}
       going={isGoing(ev.id)}
+      maybe={isMaybe(ev.id)}
       myDays={daysFor(ev.id)}
       note={social?.rowNote?.(ev) ?? null}
       onPress={setOpenEvent}
@@ -570,6 +589,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
       event={ev}
       theme={theme}
       going={isGoing(ev.id)}
+      maybe={isMaybe(ev.id)}
       myDays={daysFor(ev.id)}
       note={social?.rowNote?.(ev) ?? null}
       onPress={setOpenEvent}
@@ -854,6 +874,7 @@ export function CalendarScreen({ apiBaseUrl, showHeader = true, title = "Archery
       <EventDetail
         event={openEvent}
         going={openEvent ? isGoing(openEvent.id) : false}
+        maybe={openEvent ? isMaybe(openEvent.id) : false}
         myDays={openEvent ? daysFor(openEvent.id) : undefined}
         gasTrip={openEvent ? gasTrip(openEvent) : null}
         onChangeDays={onChangeDays}
