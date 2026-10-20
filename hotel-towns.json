@@ -690,6 +690,14 @@
    "shoot": "Southeast Target Sectionals 2026 - Lee County Archers"
   },
   {
+   "key": "oklahoma city, ok",
+   "city": "Oklahoma City",
+   "state": "OK",
+   "checkin": "2027-01-29",
+   "checkout": "2027-01-31",
+   "shoot": "2027 USA Archery Oklahoma State & JOAD Indoor Championship"
+  },
+  {
    "key": "orange grove, tx",
    "city": "Orange Grove",
    "state": "TX",
