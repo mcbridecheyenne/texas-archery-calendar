@@ -22,6 +22,8 @@ export interface Attendee {
   isFriend: boolean;
   /** The days they're going, when they didn't pick every day of the shoot. */
   days: string[] | null;
+  /** True when they said "Maybe" rather than "Going". */
+  maybe: boolean;
 }
 
 export type AddFriendResult = {

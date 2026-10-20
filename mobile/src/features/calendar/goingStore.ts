@@ -36,6 +36,8 @@ export interface StarredShoot {
   remindersFor?: string;
   /** On a shoot of more than one day: the days they're going (ISO dates). Missing means every day. */
   days?: string[];
+  /** True when they picked "Maybe" instead of "Going". Missing means going. */
+  maybe?: boolean;
 }
 
 /** What a star looks like when it comes back from the archer's account. */
@@ -45,6 +47,8 @@ export interface AccountStar {
   startDate: string;
   /** The days they picked, when they didn't pick every day. */
   days?: string[] | null;
+  /** True when they picked "Maybe". */
+  maybe?: boolean;
 }
 
 let ids = new Set<string>();
@@ -54,7 +58,7 @@ let loading: Promise<void> | null = null;
 
 /** Starred shoot id → the days picked (only shoots where they didn't pick every day). */
 export type PickedDays = Record<string, string[]>;
-const listeners = new Set<(ids: Set<string>, days: PickedDays) => void>();
+const listeners = new Set<(ids: Set<string>, days: PickedDays, maybes: Set<string>) => void>();
 const moveListeners = new Set<() => void>();
 
 // Every change goes through this line one at a time, so two things (a tap and a schedule
@@ -88,10 +92,18 @@ function pickedDays(): PickedDays {
   return out;
 }
 
+/** Starred shoots marked "Maybe" (the rest of the stars are "Going"). */
+function maybeIds(): Set<string> {
+  const out = new Set<string>();
+  for (const id of ids) if (info[id]?.maybe) out.add(id);
+  return out;
+}
+
 function tell() {
   const copy = new Set(ids);
   const days = pickedDays();
-  listeners.forEach((fn) => fn(copy, days));
+  const maybes = maybeIds();
+  listeners.forEach((fn) => fn(copy, days, maybes));
 }
 
 async function save() {
@@ -106,7 +118,7 @@ function reminderKey(e: TournamentEvent): string {
   return `${e.startDate}|${e.endDate}|${e.registrationEnd ?? ""}`;
 }
 
-function noteFor(e: TournamentEvent, remindersFor?: string, pickedDays?: string[]): StarredShoot {
+function noteFor(e: TournamentEvent, remindersFor?: string, pickedDays?: string[], maybe?: boolean): StarredShoot {
   const days = cleanDays(pickedDays, e.startDate, e.endDate);
   return {
     id: e.id,
@@ -117,6 +129,7 @@ function noteFor(e: TournamentEvent, remindersFor?: string, pickedDays?: string[
     city: e.city,
     ...(remindersFor ? { remindersFor } : {}),
     ...(days ? { days } : {}),
+    ...(maybe ? { maybe: true } : {}),
   };
 }
 
@@ -131,6 +144,7 @@ function sameNote(a: StarredShoot, b: StarredShoot | undefined): boolean {
     a.source === b.source &&
     a.city === b.city &&
     a.remindersFor === b.remindersFor &&
+    !!a.maybe === !!b.maybe &&
     sameDays(a.days, b.days)
   );
 }
@@ -217,7 +231,7 @@ async function checkStars(events: TournamentEvent[], data: EventsResponse): Prom
     if (e) {
       // Still on the schedule. Refresh the note, and move the reminders if the dates changed
       // (or set them if they never were, e.g. a star that came back from the account).
-      let fresh = noteFor(e, note?.remindersFor, note?.days);
+      let fresh = noteFor(e, note?.remindersFor, note?.days, note?.maybe);
       if (e.endDate >= today && fresh.remindersFor !== reminderKey(e)) {
         fresh = { ...fresh, remindersFor: await setRemindersQuietly(e) };
         if (!fresh.remindersFor) delete fresh.remindersFor;
@@ -241,7 +255,7 @@ async function checkStars(events: TournamentEvent[], data: EventsResponse): Prom
       await cancelRemindersFor(id);
       if (!ids.has(match.id)) {
         ids.add(match.id);
-        info[match.id] = noteFor(match, await setRemindersQuietly(match));
+        info[match.id] = noteFor(match, await setRemindersQuietly(match), undefined, note.maybe);
       }
       // Remember the move (and point older moves at the newest id) so the account copy can follow.
       for (const [from, to] of Object.entries(moved)) if (to === id) moved[from] = match.id;
@@ -293,7 +307,13 @@ export async function loadPickedDays(): Promise<PickedDays> {
   return pickedDays();
 }
 
-export function subscribeStars(fn: (ids: Set<string>, days: PickedDays) => void): () => void {
+/** Starred shoots marked "Maybe". */
+export async function loadMaybes(): Promise<Set<string>> {
+  await ensureLoaded();
+  return maybeIds();
+}
+
+export function subscribeStars(fn: (ids: Set<string>, days: PickedDays, maybes: Set<string>) => void): () => void {
   listeners.add(fn);
   return () => {
     listeners.delete(fn);
@@ -310,12 +330,13 @@ export function onStarsMoved(fn: () => void): () => void {
 
 /**
  * Stars or un-stars a shoot. Resolves to whether it's now starred, whether anything changed,
- * how many shoots are starred, and how many reminders were set.
+ * how many shoots are starred, and how many reminders were set. maybe: star it as "Maybe".
  */
 export function setStar(
   event: TournamentEvent,
   want: boolean,
-  days?: string[]
+  days?: string[],
+  maybe?: boolean
 ): Promise<{ starred: boolean; changed: boolean; count: number; reminders: number }> {
   return inLine(async () => {
     await ensureLoaded();
@@ -327,7 +348,7 @@ export function setStar(
       return { starred: false, changed: true, count: ids.size, reminders: 0 };
     }
     ids.add(event.id);
-    info[event.id] = noteFor(event, undefined, days);
+    info[event.id] = noteFor(event, undefined, days, maybe);
     await save(); // show the star right away, before the notification question
     let reminders = 0;
     try {
@@ -336,7 +357,7 @@ export function setStar(
       reminders = 0;
     }
     if (reminders > 0 && ids.has(event.id)) {
-      info[event.id] = noteFor(event, reminderKey(event), info[event.id]?.days);
+      info[event.id] = noteFor(event, reminderKey(event), info[event.id]?.days, info[event.id]?.maybe);
       await save();
     }
     return { starred: true, changed: true, count: ids.size, reminders };
@@ -362,6 +383,31 @@ export function setDays(event: TournamentEvent, days: string[]): Promise<string[
     }
     return picked;
   });
+}
+
+/**
+ * Switches a starred shoot between "Going" and "Maybe" (keeping its days and reminders).
+ * Resolves to the new value, or null if the shoot isn't starred.
+ */
+export function setMaybe(event: TournamentEvent, maybe: boolean): Promise<boolean | null> {
+  return inLine(async () => {
+    await ensureLoaded();
+    if (!ids.has(event.id)) return null;
+    const note = info[event.id] ?? noteFor(event);
+    if (!!note.maybe !== maybe || !info[event.id]) {
+      const next: StarredShoot = { ...note };
+      if (maybe) next.maybe = true;
+      else delete next.maybe;
+      info[event.id] = next;
+      await save();
+    }
+    return maybe;
+  });
+}
+
+/** True when a starred shoot is marked "Maybe". */
+export function maybeFor(id: string): boolean {
+  return ids.has(id) && !!info[id]?.maybe;
 }
 
 /** The days they picked for a starred shoot, or undefined for every day (or not starred). */
@@ -413,6 +459,7 @@ export function addStarsFromAccount(userId: string, stars: AccountStar[]): Promi
       // Keep the days they picked on their other phone. The shoot's end date isn't known yet,
       // so they're checked against the shoot when the schedule loads (see noteFor).
       if (id === s.id && s.days?.length) info[id].days = [...s.days].sort();
+      if (s.maybe) info[id].maybe = true;
       added = true;
     }
     if (added) await save();

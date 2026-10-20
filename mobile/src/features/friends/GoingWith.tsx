@@ -13,7 +13,7 @@ import { useFriends } from "./FriendsProvider";
 import { askShareLevel } from "./share";
 import { shareLabel, type Attendee } from "./types";
 
-export function GoingWith({ event, going, close }: { event: TournamentEvent; going: boolean; close: () => void }) {
+export function GoingWith({ event, going, maybe = false, close }: { event: TournamentEvent; going: boolean; maybe?: boolean; close: () => void }) {
   const t = useTheme();
   const router = useRouter();
   const auth = useAuth();
@@ -53,26 +53,31 @@ export function GoingWith({ event, going, close }: { event: TournamentEvent; goi
   }
 
   async function changeLevel() {
-    const next = await askShareLevel(event.name);
+    const next = await askShareLevel(event.name, maybe);
     if (!next || next === level) return;
     fr.setShareLevel(event, next).catch((e) => Alert.alert("Couldn't change who can see this", errorText(e)));
   }
 
   const friends = (people ?? []).filter((p) => p.isFriend);
   const others = (people ?? []).filter((p) => !p.isFriend);
+  // "Friends going (2)" counts only Going; Maybes are listed with a "Maybe" tag and counted after.
+  const count = (list: Attendee[]) => {
+    const maybes = list.filter((p) => p.maybe).length;
+    return `${list.length - maybes}${maybes ? `, ${maybes} maybe` : ""}`;
+  };
 
   return (
     <View style={[styles.card, { backgroundColor: t.card, borderColor: t.border }]}>
       {going ? (
         <Pressable onPress={changeLevel} style={styles.shareRow} accessibilityRole="button" accessibilityLabel={`Shared with ${shareLabel(level)}. Change`}>
           <Text style={[styles.p, { color: t.muted, flex: 1 }]}>
-            You're going · shared with <Text style={{ color: t.text, fontWeight: "700" }}>{shareLabel(level)}</Text>
+            {maybe ? "You might go" : "You're going"} · shared with <Text style={{ color: t.text, fontWeight: "700" }}>{shareLabel(level)}</Text>
           </Text>
           <Text style={[styles.link, { color: t.primary }]}>Change</Text>
         </Pressable>
       ) : null}
 
-      <Text style={[styles.h, { color: t.text }]}>Friends going{people ? ` (${friends.length})` : ""}</Text>
+      <Text style={[styles.h, { color: t.text }]}>Friends going{people ? ` (${count(friends)})` : ""}</Text>
       {people === null ? (
         <ActivityIndicator color={t.primary} style={{ alignSelf: "flex-start" }} />
       ) : friends.length ? (
@@ -85,7 +90,7 @@ export function GoingWith({ event, going, close }: { event: TournamentEvent; goi
 
       {others.length ? (
         <>
-          <Text style={[styles.h, { color: t.text, marginTop: 6 }]}>Other archers going ({others.length})</Text>
+          <Text style={[styles.h, { color: t.text, marginTop: 6 }]}>Other archers going ({count(others)})</Text>
           <Names list={others} onPerson={(p) => askAboutPerson(p.name, p.userId, auth.userId, auth.block)} />
         </>
       ) : null}
@@ -107,7 +112,7 @@ function Names({ list, onPerson }: { list: Attendee[]; onPerson: (p: Attendee) =
           key={p.userId}
           onPress={() => onPerson(p)}
           accessibilityRole="button"
-          accessibilityLabel={`${p.name}${p.days?.length ? `, going ${fmtDays(p.days)}` : ""}. Report or block`}
+          accessibilityLabel={`${p.name}${p.maybe ? ", maybe" : ""}${p.days?.length ? `, ${p.maybe ? "maybe" : "going"} ${fmtDays(p.days)}` : ""}. Report or block`}
           style={[styles.person, { backgroundColor: t.subtle }]}
         >
           <View style={[styles.avatar, { backgroundColor: t.primary }]}>
@@ -116,6 +121,7 @@ function Names({ list, onPerson }: { list: Attendee[]; onPerson: (p: Attendee) =
           <Text style={[styles.personName, { color: t.text }]} numberOfLines={1}>
             {p.name}
             {p.archeryClass ? <Text style={{ color: t.muted, fontWeight: "500" }}> · {p.archeryClass}</Text> : null}
+            {p.maybe ? <Text style={{ color: t.muted, fontWeight: "600" }}> · Maybe</Text> : null}
             {p.days?.length ? <Text style={{ color: t.primary, fontWeight: "600" }}> · {fmtDays(p.days)}</Text> : null}
           </Text>
         </Pressable>

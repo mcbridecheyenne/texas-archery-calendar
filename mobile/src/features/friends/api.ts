@@ -68,41 +68,54 @@ export interface MyGoingRow {
   visibility: ShareLevel;
   /** The days they picked on a shoot of more than one day; null means every day. */
   days?: string[] | null;
+  /** True when they picked "Maybe" rather than "Going". */
+  maybe?: boolean;
 }
 
-// The "days" column (which days of a multi-day shoot) comes from a newer schema.sql. Until
-// that's run in Supabase, the database turns down anything that mentions it, so we ask again
-// without it and stop sending it until the app is opened again. Nothing else changes.
+// The "days" column (which days of a multi-day shoot) and the "status" column (Going or
+// Maybe) come from newer versions of schema.sql. Until that's run in Supabase, the database
+// turns down anything that mentions them, so we ask again without the missing one and stop
+// sending it until the app is opened again. Nothing else changes (a Maybe is saved as Going).
 let daysColumn = true;
-function missingDaysColumn(error: { code?: string; message?: string } | null): boolean {
-  if (!error || !daysColumn) return false;
-  const missing = (error.code === "PGRST204" || error.code === "42703") && /\bdays\b/.test(error.message ?? "");
-  if (missing) daysColumn = false;
-  return missing;
+let statusColumn = true;
+function missingColumn(error: { code?: string; message?: string } | null): boolean {
+  if (!error || !(error.code === "PGRST204" || error.code === "42703")) return false;
+  const msg = error.message ?? "";
+  if (daysColumn && /\bdays\b/.test(msg)) {
+    daysColumn = false;
+    return true;
+  }
+  if (statusColumn && /\bstatus\b/.test(msg)) {
+    statusColumn = false;
+    return true;
+  }
+  return false;
 }
+const extraFields = () => `${daysColumn ? ", days" : ""}${statusColumn ? ", status" : ""}`;
 
 /** Every shoot you starred that's saved to your account, including "Just me" ones. */
 export async function fetchMyGoing(me: string): Promise<MyGoingRow[]> {
   const ask = () =>
     db()
       .from("going")
-      .select(`event_id, event_name, event_date, visibility${daysColumn ? ", days" : ""}`)
+      .select(`event_id, event_name, event_date, visibility${extraFields()}`)
       .eq("user_id", me)
       .limit(2000);
   let { data, error } = await ask();
-  if (missingDaysColumn(error)) ({ data, error } = await ask());
+  while (missingColumn(error)) ({ data, error } = await ask());
   if (error) throw error;
-  return ((data ?? []) as unknown as { event_id: string; event_name: string; event_date: string; visibility: ShareLevel; days?: string[] | null }[]).map((r) => ({
+  return ((data ?? []) as unknown as { event_id: string; event_name: string; event_date: string; visibility: ShareLevel; days?: string[] | null; status?: string | null }[]).map((r) => ({
     eventId: r.event_id,
     eventName: r.event_name,
     eventDate: r.event_date,
     visibility: r.visibility,
     days: r.days ?? null,
+    maybe: r.status === "maybe",
   }));
 }
 
 /** A shoot to save, with the days they picked (undefined or empty = every day). */
-type ShootBits = Pick<TournamentEvent, "id" | "name" | "startDate"> & { days?: string[] | null };
+type ShootBits = Pick<TournamentEvent, "id" | "name" | "startDate"> & { days?: string[] | null; maybe?: boolean };
 
 const goingRow = (me: string, shoot: ShootBits, visibility: ShareLevel) => ({
   user_id: me,
@@ -111,13 +124,14 @@ const goingRow = (me: string, shoot: ShootBits, visibility: ShareLevel) => ({
   event_date: shoot.startDate,
   visibility,
   ...(daysColumn ? { days: shoot.days?.length ? shoot.days.slice(0, 31) : null } : {}),
+  ...(statusColumn ? { status: shoot.maybe ? "maybe" : "going" } : {}),
 });
 
 /** Saves a starred shoot to your account with who can see it ("private" = Just me, only you). */
 export async function shareGoing(me: string, shoot: ShootBits, visibility: ShareLevel): Promise<void> {
   const ask = () => db().from("going").upsert(goingRow(me, shoot, visibility));
   let { error } = await ask();
-  if (missingDaysColumn(error)) ({ error } = await ask());
+  while (missingColumn(error)) ({ error } = await ask());
   if (error) throw error;
 }
 
@@ -129,7 +143,7 @@ export async function saveGoingPrivately(me: string, shoots: ShootBits[]): Promi
       .from("going")
       .upsert(shoots.map((s) => goingRow(me, s, "private")), { onConflict: "user_id,event_id", ignoreDuplicates: true });
   let { error } = await ask();
-  if (missingDaysColumn(error)) ({ error } = await ask());
+  while (missingColumn(error)) ({ error } = await ask());
   if (error) throw error;
 }
 
@@ -141,7 +155,19 @@ export async function setGoingDays(me: string, eventId: string, days: string[] |
     .update({ days: days?.length ? days.slice(0, 31) : null })
     .eq("user_id", me)
     .eq("event_id", eventId);
-  if (missingDaysColumn(error)) return;
+  if (missingColumn(error)) return;
+  if (error) throw error;
+}
+
+/** Switches a saved shoot between "Going" and "Maybe". */
+export async function setGoingMaybe(me: string, eventId: string, maybe: boolean): Promise<void> {
+  if (!statusColumn) return;
+  const { error } = await db()
+    .from("going")
+    .update({ status: maybe ? "maybe" : "going" })
+    .eq("user_id", me)
+    .eq("event_id", eventId);
+  if (missingColumn(error)) return;
   if (error) throw error;
 }
 
@@ -150,22 +176,32 @@ export async function unshareGoing(me: string, eventId: string): Promise<void> {
   if (error) throw error;
 }
 
-/** Upcoming events your friends shared: event id → friend ids. */
-export async function fetchFriendsGoing(friendIds: string[], fromDate: string): Promise<Map<string, string[]>> {
-  const map = new Map<string, string[]>();
+/** A friend who shared a shoot, and whether they said "Maybe". */
+export interface FriendGoing {
+  userId: string;
+  maybe: boolean;
+}
+
+/** Upcoming events your friends shared: event id → those friends. */
+export async function fetchFriendsGoing(friendIds: string[], fromDate: string): Promise<Map<string, FriendGoing[]>> {
+  const map = new Map<string, FriendGoing[]>();
   if (!friendIds.length) return map;
-  const { data, error } = await db()
-    .from("going")
-    .select("user_id, event_id")
-    .in("user_id", friendIds)
-    .neq("visibility", "private") // "Just me" rows are hidden by the database anyway; this is a second lock
-    .gte("event_date", fromDate)
-    .limit(2000);
+  const ask = () =>
+    db()
+      .from("going")
+      .select(`user_id, event_id${statusColumn ? ", status" : ""}`)
+      .in("user_id", friendIds)
+      .neq("visibility", "private") // "Just me" rows are hidden by the database anyway; this is a second lock
+      .gte("event_date", fromDate)
+      .limit(2000);
+  let { data, error } = await ask();
+  while (missingColumn(error)) ({ data, error } = await ask());
   if (error) throw error;
-  for (const r of (data ?? []) as { user_id: string; event_id: string }[]) {
+  for (const r of (data ?? []) as unknown as { user_id: string; event_id: string; status?: string | null }[]) {
+    const who = { userId: r.user_id, maybe: r.status === "maybe" };
     const arr = map.get(r.event_id);
-    if (arr) arr.push(r.user_id);
-    else map.set(r.event_id, [r.user_id]);
+    if (arr) arr.push(who);
+    else map.set(r.event_id, [who]);
   }
   return map;
 }
@@ -175,14 +211,14 @@ export async function fetchAttendees(me: string, eventId: string, friendIds: Set
   const ask = () =>
     db()
       .from("going")
-      .select(`user_id, ${daysColumn ? "days, " : ""}profile:profiles!going_user_id_fkey(display_name, city, archery_class)`)
+      .select(`user_id${extraFields()}, profile:profiles!going_user_id_fkey(display_name, city, archery_class)`)
       .eq("event_id", eventId)
       .neq("user_id", me)
       .neq("visibility", "private")
       .order("created_at", { ascending: true })
       .limit(300);
   let { data, error } = await ask();
-  if (missingDaysColumn(error)) ({ data, error } = await ask());
+  while (missingColumn(error)) ({ data, error } = await ask());
   if (error) throw error;
   return ((data ?? []) as any[]).map((r) => ({
     userId: r.user_id,
@@ -191,6 +227,7 @@ export async function fetchAttendees(me: string, eventId: string, friendIds: Set
     archeryClass: r.profile?.archery_class ?? null,
     isFriend: friendIds.has(r.user_id),
     days: Array.isArray(r.days) && r.days.length ? (r.days as string[]) : null,
+    maybe: r.status === "maybe",
   }));
 }
 

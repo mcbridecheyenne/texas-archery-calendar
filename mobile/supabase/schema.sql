@@ -543,6 +543,11 @@ alter table public.going add constraint going_visibility_check
 alter table public.going add column if not exists days date[]
   check (days is null or cardinality(days) between 1 and 31);
 
+-- Going or Maybe: 'maybe' when the archer tapped "Maybe" instead of "I'm going". Rows saved
+-- before this column existed are 'going'. Safe to run again.
+alter table public.going add column if not exists status text not null default 'going'
+  check (status in ('going', 'maybe'));
+
 create index if not exists going_by_event on public.going (event_id);
 create index if not exists going_by_date on public.going (event_date);
 
