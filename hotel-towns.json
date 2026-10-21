@@ -82,6 +82,14 @@
    "shoot": "Lower Providence Ice Breaker 600"
   },
   {
+   "key": "beloit, wi",
+   "city": "Beloit",
+   "state": "WI",
+   "checkin": "2027-01-29",
+   "checkout": "2027-01-31",
+   "shoot": "Great Lakes Indoor Sectionals & National Series 2027 - Beloit Field Archers"
+  },
+  {
    "key": "boerne, tx",
    "city": "Boerne",
    "state": "TX",
@@ -96,6 +104,14 @@
    "checkin": "2026-12-18",
    "checkout": "2026-12-20",
    "shoot": "Canadian River Archery and Gun Club-1"
+  },
+  {
+   "key": "brownstown twp, mi",
+   "city": "Brownstown Twp",
+   "state": "MI",
+   "checkin": "2027-01-29",
+   "checkout": "2027-01-31",
+   "shoot": "Great Lakes Indoor Sectionals & National Series 2027 - Lincoln Bowmen Archery Club"
   },
   {
    "key": "burkburnett, tx",
@@ -439,7 +455,7 @@
    "state": "IN",
    "checkin": "2027-01-07",
    "checkout": "2027-01-10",
-   "shoot": "Rushmore Rumble 2027"
+   "shoot": "Rushmore Rumble & Indoor World Series 2027"
   },
   {
    "key": "kaufman, tx",
@@ -634,6 +650,14 @@
    "shoot": "Little Hills Winter Warm-up"
   },
   {
+   "key": "new iberia, la",
+   "city": "New Iberia",
+   "state": "LA",
+   "checkin": "2027-01-15",
+   "checkout": "2027-01-17",
+   "shoot": "Southern Indoor Sectionals & National Series 2027 - Bayou Bowmen"
+  },
+  {
    "key": "new tripoli, pa",
    "city": "New Tripoli",
    "state": "PA",
@@ -778,6 +802,14 @@
    "shoot": "2027 USA Archery North Carolina Indoor State Championship"
   },
   {
+   "key": "reno, nv",
+   "city": "Reno",
+   "state": "NV",
+   "checkin": "2026-11-06",
+   "checkout": "2026-11-07",
+   "shoot": "High Desert Archery November Pin Shoot"
+  },
+  {
    "key": "rimrock, az",
    "city": "Rimrock",
    "state": "AZ",
@@ -872,6 +904,14 @@
    "checkin": "2026-10-30",
    "checkout": "2026-10-31",
    "shoot": "Halloween Preparty 600"
+  },
+  {
+   "key": "tampa, fl",
+   "city": "Tampa",
+   "state": "FL",
+   "checkin": "2027-01-29",
+   "checkout": "2027-01-31",
+   "shoot": "Southeast Indoor Sectionals & National Series 2027 - Adventures Archery"
   },
   {
    "key": "the woodlands, tx",
