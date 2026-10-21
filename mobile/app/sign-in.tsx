@@ -15,6 +15,11 @@ export default function SignInScreen() {
   const [email, setEmail] = useState("");
   const [code, setCode] = useState("");
   const [step, setStep] = useState<"email" | "code">("email");
+  // Email sign-in is hidden until an email sender is set up, but App Review still needs a
+  // way in: a small link opens an email + password form (only accounts with a password,
+  // like the review account, can use it).
+  const [passwordMode, setPasswordMode] = useState(false);
+  const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
   const [signedIn, setSignedIn] = useState(false);
 
@@ -55,6 +60,18 @@ export default function SignInScreen() {
       setStep("code");
     } catch (e) {
       Alert.alert("Couldn't send the code", errorText(e));
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function passwordSignIn() {
+    try {
+      setBusy(true);
+      await verifyEmailCode(email, password);
+      setSignedIn(true);
+    } catch (e) {
+      Alert.alert("Couldn't sign in", "Check the email and password and try again.");
     } finally {
       setBusy(false);
     }
@@ -106,7 +123,32 @@ export default function SignInScreen() {
           </>
         ) : null}
 
-        {!EMAIL_SIGN_IN_ENABLED ? (
+        {!EMAIL_SIGN_IN_ENABLED && passwordMode ? (
+          <View style={styles.form}>
+            <Field
+              label="Email"
+              value={email}
+              onChangeText={setEmail}
+              placeholder="you@example.com"
+              keyboardType="email-address"
+              autoCapitalize="none"
+              autoComplete="email"
+              textContentType="username"
+            />
+            <Field
+              label="Password"
+              value={password}
+              onChangeText={setPassword}
+              secureTextEntry
+              autoCapitalize="none"
+              autoComplete="password"
+              textContentType="password"
+              returnKeyType="go"
+              onSubmitEditing={passwordSignIn}
+            />
+            <Button title="Sign in" onPress={passwordSignIn} busy={busy} disabled={!email.trim() || !password} />
+          </View>
+        ) : !EMAIL_SIGN_IN_ENABLED ? (
           appleAvailable ? null : (
             <Text style={[styles.lead, { color: t.text }]}>
               Sign-in on this phone is coming soon. You can still browse every tournament and the marketplace.
@@ -150,6 +192,14 @@ export default function SignInScreen() {
             </Pressable>
           </View>
         )}
+
+        {!EMAIL_SIGN_IN_ENABLED && !signedIn ? (
+          <Pressable onPress={() => setPasswordMode((v) => !v)} hitSlop={8}>
+            <Text style={[styles.link, { color: t.muted, fontWeight: "400" }]}>
+              {passwordMode ? "Back" : "Sign in with email and password"}
+            </Text>
+          </Pressable>
+        ) : null}
 
         <Text style={[styles.fine, { color: t.muted }]}>
           By continuing you agree to the{" "}
