@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-23",
+ "updated": "2026-10-24",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -13,8 +13,8 @@
    "key": "1000 west austin, mo",
    "city": "1000 West Austin",
    "state": "MO",
-   "checkin": "2026-10-23",
-   "checkout": "2026-10-24",
+   "checkin": "2026-10-24",
+   "checkout": "2026-10-25",
    "shoot": "2026 Cottey Classic Event #1"
   },
   {
@@ -130,6 +130,14 @@
    "shoot": "Korbin's-Burleson-1"
   },
   {
+   "key": "camp minden, la",
+   "city": "Camp Minden",
+   "state": "LA",
+   "checkin": "2027-04-21",
+   "checkout": "2027-04-24",
+   "shoot": "Easton / Hoyt Pro/Am"
+  },
+  {
    "key": "canfield, oh",
    "city": "Canfield",
    "state": "OH",
@@ -213,8 +221,8 @@
    "key": "colorado springs, co",
    "city": "Colorado Springs",
    "state": "CO",
-   "checkin": "2026-10-23",
-   "checkout": "2026-10-24",
+   "checkin": "2026-10-24",
+   "checkout": "2026-10-25",
    "shoot": "2026 Colorado JOAD Event #1"
   },
   {
@@ -293,7 +301,7 @@
    "key": "falls church, va",
    "city": "Falls Church",
    "state": "VA",
-   "checkin": "2026-10-23",
+   "checkin": "2026-10-24",
    "checkout": "2026-10-25",
    "shoot": "Spooky Spiders Tournament"
   },
@@ -357,7 +365,7 @@
    "key": "gainesville, fl",
    "city": "Gainesville",
    "state": "FL",
-   "checkin": "2026-10-23",
+   "checkin": "2026-10-24",
    "checkout": "2026-10-25",
    "shoot": "Southeast Target Sectionals 2026 - Gator Bowmen"
   },
@@ -525,7 +533,7 @@
    "key": "long beach, ca",
    "city": "Long Beach",
    "state": "CA",
-   "checkin": "2026-10-23",
+   "checkin": "2026-10-24",
    "checkout": "2026-10-25",
    "shoot": "2026 California Classic 1440"
   },
@@ -629,8 +637,8 @@
    "key": "mooringsport, la",
    "city": "Mooringsport",
    "state": "LA",
-   "checkin": "2026-10-23",
-   "checkout": "2026-10-24",
+   "checkin": "2026-10-24",
+   "checkout": "2026-10-25",
    "shoot": "North Caddo Shooting Club-1"
   },
   {
@@ -645,7 +653,7 @@
    "key": "new braunfels, tx",
    "city": "New Braunfels",
    "state": "TX",
-   "checkin": "2026-10-23",
+   "checkin": "2026-10-24",
    "checkout": "2026-10-25",
    "shoot": "Archery HQ-1"
   },
@@ -765,7 +773,7 @@
    "key": "pampa, tx",
    "city": "Pampa",
    "state": "TX",
-   "checkin": "2026-10-23",
+   "checkin": "2026-10-24",
    "checkout": "2026-10-25",
    "shoot": "Gray County 4H-Clyde Carruth Livestock Pavilion-1"
   },
@@ -776,6 +784,14 @@
    "checkin": "2026-10-30",
    "checkout": "2026-10-31",
    "shoot": "Spooktacular Showdown"
+  },
+  {
+   "key": "paris, tx",
+   "city": "Paris",
+   "state": "TX",
+   "checkin": "2027-04-21",
+   "checkout": "2027-04-25",
+   "shoot": "ASA McKenzie Classic"
   },
   {
    "key": "penn laird, va",
@@ -829,15 +845,15 @@
    "key": "rimrock, az",
    "city": "Rimrock",
    "state": "AZ",
-   "checkin": "2026-10-23",
-   "checkout": "2026-10-24",
+   "checkin": "2026-10-24",
+   "checkout": "2026-10-25",
    "shoot": "ABFAA Break The Barriers Style Trail Shoot"
   },
   {
    "key": "roanoke, tx",
    "city": "Roanoke",
    "state": "TX",
-   "checkin": "2026-10-23",
+   "checkin": "2026-10-24",
    "checkout": "2026-10-25",
    "shoot": "Cinnamon Creek Ranch-1"
   },
@@ -933,7 +949,7 @@
    "key": "the woodlands, tx",
    "city": "The Woodlands",
    "state": "TX",
-   "checkin": "2026-10-23",
+   "checkin": "2026-10-24",
    "checkout": "2026-10-25",
    "shoot": "Saddle River Range-1"
   },
@@ -1021,7 +1037,7 @@
    "key": "worcester, ma",
    "city": "Worcester",
    "state": "MA",
-   "checkin": "2026-10-23",
+   "checkin": "2026-10-24",
    "checkout": "2026-10-25",
    "shoot": "2026 Quest Archery Spooktacular"
   },
