@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-24",
+ "updated": "2026-10-25",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -8,14 +8,6 @@
    "checkin": "2027-01-08",
    "checkout": "2027-01-09",
    "shoot": "2027 Cottey Classic Event #2"
-  },
-  {
-   "key": "1000 west austin, mo",
-   "city": "1000 West Austin",
-   "state": "MO",
-   "checkin": "2026-10-24",
-   "checkout": "2026-10-25",
-   "shoot": "2026 Cottey Classic Event #1"
   },
   {
    "key": "acworth, ga",
@@ -181,8 +173,8 @@
    "key": "chicago, il",
    "city": "Chicago",
    "state": "IL",
-   "checkin": "2026-10-24",
-   "checkout": "2026-10-25",
+   "checkin": "2026-10-25",
+   "checkout": "2026-10-26",
    "shoot": "North Side Archery Club: October 2026 USA Archery JOAD/AAP Indoor Pin Shoot"
   },
   {
@@ -221,9 +213,9 @@
    "key": "colorado springs, co",
    "city": "Colorado Springs",
    "state": "CO",
-   "checkin": "2026-10-24",
-   "checkout": "2026-10-25",
-   "shoot": "2026 Colorado JOAD Event #1"
+   "checkin": "2026-11-07",
+   "checkout": "2026-11-08",
+   "shoot": "2026 USA Archery Colorado 3D Indoor Buckle Series #1"
   },
   {
    "key": "dayton, tx",
@@ -301,8 +293,8 @@
    "key": "falls church, va",
    "city": "Falls Church",
    "state": "VA",
-   "checkin": "2026-10-24",
-   "checkout": "2026-10-25",
+   "checkin": "2026-10-25",
+   "checkout": "2026-10-26",
    "shoot": "Spooky Spiders Tournament"
   },
   {
@@ -365,8 +357,8 @@
    "key": "gainesville, fl",
    "city": "Gainesville",
    "state": "FL",
-   "checkin": "2026-10-24",
-   "checkout": "2026-10-25",
+   "checkin": "2026-10-25",
+   "checkout": "2026-10-26",
    "shoot": "Southeast Target Sectionals 2026 - Gator Bowmen"
   },
   {
@@ -533,8 +525,8 @@
    "key": "long beach, ca",
    "city": "Long Beach",
    "state": "CA",
-   "checkin": "2026-10-24",
-   "checkout": "2026-10-25",
+   "checkin": "2026-10-25",
+   "checkout": "2026-10-26",
    "shoot": "2026 California Classic 1440"
   },
   {
@@ -549,8 +541,8 @@
    "key": "madison, nc",
    "city": "madison",
    "state": "NC",
-   "checkin": "2026-10-24",
-   "checkout": "2026-10-25",
+   "checkin": "2026-10-25",
+   "checkout": "2026-10-26",
    "shoot": "Spooks"
   },
   {
@@ -637,9 +629,9 @@
    "key": "mooringsport, la",
    "city": "Mooringsport",
    "state": "LA",
-   "checkin": "2026-10-24",
-   "checkout": "2026-10-25",
-   "shoot": "North Caddo Shooting Club-1"
+   "checkin": "2026-12-03",
+   "checkout": "2026-12-05",
+   "shoot": "North Caddo Shooting Club-2"
   },
   {
    "key": "morristown, nj",
@@ -653,8 +645,8 @@
    "key": "new braunfels, tx",
    "city": "New Braunfels",
    "state": "TX",
-   "checkin": "2026-10-24",
-   "checkout": "2026-10-25",
+   "checkin": "2026-10-25",
+   "checkout": "2026-10-26",
    "shoot": "Archery HQ-1"
   },
   {
@@ -685,8 +677,8 @@
    "key": "newark, de",
    "city": "Newark",
    "state": "DE",
-   "checkin": "2026-10-24",
-   "checkout": "2026-10-25",
+   "checkin": "2026-10-25",
+   "checkout": "2026-10-26",
    "shoot": "NC100 Autumn Archers Altercation"
   },
   {
@@ -725,8 +717,8 @@
    "key": "north ft myers, fl",
    "city": "North Ft Myers",
    "state": "FL",
-   "checkin": "2026-10-24",
-   "checkout": "2026-10-25",
+   "checkin": "2026-10-25",
+   "checkout": "2026-10-26",
    "shoot": "Southeast Target Sectionals 2026 - Lee County Archers"
   },
   {
@@ -773,8 +765,8 @@
    "key": "pampa, tx",
    "city": "Pampa",
    "state": "TX",
-   "checkin": "2026-10-24",
-   "checkout": "2026-10-25",
+   "checkin": "2026-10-25",
+   "checkout": "2026-10-26",
    "shoot": "Gray County 4H-Clyde Carruth Livestock Pavilion-1"
   },
   {
@@ -842,19 +834,11 @@
    "shoot": "High Desert Archery November Pin Shoot"
   },
   {
-   "key": "rimrock, az",
-   "city": "Rimrock",
-   "state": "AZ",
-   "checkin": "2026-10-24",
-   "checkout": "2026-10-25",
-   "shoot": "ABFAA Break The Barriers Style Trail Shoot"
-  },
-  {
    "key": "roanoke, tx",
    "city": "Roanoke",
    "state": "TX",
-   "checkin": "2026-10-24",
-   "checkout": "2026-10-25",
+   "checkin": "2026-10-25",
+   "checkout": "2026-10-26",
    "shoot": "Cinnamon Creek Ranch-1"
   },
   {
@@ -877,8 +861,8 @@
    "key": "sacramento, ca",
    "city": "Sacramento",
    "state": "CA",
-   "checkin": "2026-10-24",
-   "checkout": "2026-10-25",
+   "checkin": "2026-10-25",
+   "checkout": "2026-10-26",
    "shoot": "17th Annual Breast Cancer Shoot"
   },
   {
@@ -949,16 +933,16 @@
    "key": "the woodlands, tx",
    "city": "The Woodlands",
    "state": "TX",
-   "checkin": "2026-10-24",
-   "checkout": "2026-10-25",
+   "checkin": "2026-10-25",
+   "checkout": "2026-10-26",
    "shoot": "Saddle River Range-1"
   },
   {
    "key": "thomaston, ct",
    "city": "Thomaston",
    "state": "CT",
-   "checkin": "2026-10-24",
-   "checkout": "2026-10-25",
+   "checkin": "2026-10-25",
+   "checkout": "2026-10-26",
    "shoot": "2026-2027 Clock Tower Series #1"
   },
   {
@@ -1037,8 +1021,8 @@
    "key": "worcester, ma",
    "city": "Worcester",
    "state": "MA",
-   "checkin": "2026-10-24",
-   "checkout": "2026-10-25",
+   "checkin": "2026-10-25",
+   "checkout": "2026-10-26",
    "shoot": "2026 Quest Archery Spooktacular"
   },
   {
