@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-27",
+ "updated": "2026-10-28",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -282,6 +282,14 @@
    "shoot": "2027 USA Archery JOAD Indoor Nationals - IN"
   },
   {
+   "key": "fairbanks, ak",
+   "city": "Fairbanks",
+   "state": "AK",
+   "checkin": "2027-01-21",
+   "checkout": "2027-01-23",
+   "shoot": "Northwest Indoor Sectionals & National Series 2027 - Screaming Eagle Archery of Alaska (Fairbanks)"
+  },
+  {
    "key": "fiskdale, ma",
    "city": "Fiskdale",
    "state": "MA",
@@ -312,6 +320,14 @@
    "checkin": "2026-11-12",
    "checkout": "2026-11-15",
    "shoot": "Legacy Archery-1"
+  },
+  {
+   "key": "foxboro, ma",
+   "city": "Foxboro",
+   "state": "MA",
+   "checkin": "2027-03-12",
+   "checkout": "2027-03-14",
+   "shoot": "2027 Archer's Cup"
   },
   {
    "key": "friant, ca",
@@ -485,9 +501,9 @@
    "key": "las vegas, nv",
    "city": "Las Vegas",
    "state": "NV",
-   "checkin": "2027-03-10",
-   "checkout": "2027-03-14",
-   "shoot": "The Vegas Shoot 2027"
+   "checkin": "2027-01-15",
+   "checkout": "2027-01-23",
+   "shoot": "Southwest Indoor Sectionals & National Series 2027 - Impact Archery"
   },
   {
    "key": "lawrenceburg, ky",
@@ -496,6 +512,14 @@
    "checkin": "2026-12-17",
    "checkout": "2026-12-19",
    "shoot": "Anderson Archery Winter Classic 2026"
+  },
+  {
+   "key": "le roy, ny",
+   "city": "Le Roy",
+   "state": "NY",
+   "checkin": "2027-02-12",
+   "checkout": "2027-02-14",
+   "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - C&C Archery and Sporting Goods"
   },
   {
    "key": "long beach, ca",
@@ -624,6 +648,14 @@
    "checkin": "2026-12-10",
    "checkout": "2026-12-13",
    "shoot": "Archery HQ-2"
+  },
+  {
+   "key": "new hartford, ny",
+   "city": "New Hartford",
+   "state": "NY",
+   "checkin": "2027-02-12",
+   "checkout": "2027-02-14",
+   "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - Straight Arrow Archery"
   },
   {
    "key": "new haven, mo",
@@ -938,6 +970,14 @@
    "shoot": "Out House Archery-1"
   },
   {
+   "key": "wasilla, ak",
+   "city": "Wasilla",
+   "state": "AK",
+   "checkin": "2027-01-29",
+   "checkout": "2027-01-30",
+   "shoot": "Northwest Indoor Sectionals & National Series 2027 - Screaming Eagle Archery of Alaska (Wasilla)"
+  },
+  {
    "key": "weatherford, tx",
    "city": "Weatherford",
    "state": "TX",
@@ -976,6 +1016,14 @@
    "checkin": "2027-02-18",
    "checkout": "2027-02-19",
    "shoot": "2027 USA Archery JOAD Indoor Nationals - IL"
+  },
+  {
+   "key": "wrightstown, nj",
+   "city": "Wrightstown",
+   "state": "NJ",
+   "checkin": "2027-02-11",
+   "checkout": "2027-02-14",
+   "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - Black Knight Bowbenders"
   },
   {
    "key": "yankton, sd",
