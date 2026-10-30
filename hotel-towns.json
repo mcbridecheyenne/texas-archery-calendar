@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-29",
+ "updated": "2026-10-30",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -197,7 +197,7 @@
    "key": "college station, tx",
    "city": "College Station",
    "state": "TX",
-   "checkin": "2026-10-29",
+   "checkin": "2026-10-30",
    "checkout": "2026-11-01",
    "shoot": "Texas Archery-1"
   },
@@ -344,6 +344,14 @@
    "checkin": "2026-10-30",
    "checkout": "2026-11-01",
    "shoot": "Arjun Archery-1"
+  },
+  {
+   "key": "front royal, va",
+   "city": "Front Royal",
+   "state": "VA",
+   "checkin": "2027-01-07",
+   "checkout": "2027-01-10",
+   "shoot": "2027 USA Archery Virginia State Indoor Championship"
   },
   {
    "key": "ft. wayne, in",
