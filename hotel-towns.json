@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-30",
+ "updated": "2026-10-31",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -117,7 +117,7 @@
    "key": "burleson, tx",
    "city": "Burleson",
    "state": "TX",
-   "checkin": "2026-10-30",
+   "checkin": "2026-10-31",
    "checkout": "2026-11-01",
    "shoot": "Korbin's-Burleson-1"
   },
@@ -197,7 +197,7 @@
    "key": "college station, tx",
    "city": "College Station",
    "state": "TX",
-   "checkin": "2026-10-30",
+   "checkin": "2026-10-31",
    "checkout": "2026-11-01",
    "shoot": "Texas Archery-1"
   },
@@ -341,7 +341,7 @@
    "key": "frisco, tx",
    "city": "Frisco",
    "state": "TX",
-   "checkin": "2026-10-30",
+   "checkin": "2026-10-31",
    "checkout": "2026-11-01",
    "shoot": "Arjun Archery-1"
   },
@@ -781,8 +781,8 @@
    "key": "paramus, nj",
    "city": "Paramus",
    "state": "NJ",
-   "checkin": "2026-10-30",
-   "checkout": "2026-10-31",
+   "checkin": "2026-10-31",
+   "checkout": "2026-11-01",
    "shoot": "Spooktacular Showdown"
   },
   {
@@ -821,7 +821,7 @@
    "key": "plainview, tx",
    "city": "Plainview",
    "state": "TX",
-   "checkin": "2026-10-30",
+   "checkin": "2026-10-31",
    "checkout": "2026-11-01",
    "shoot": "Hale County 4H-Ollie Liner Center-1"
   },
@@ -877,7 +877,7 @@
    "key": "san antonio, tx",
    "city": "San Antonio",
    "state": "TX",
-   "checkin": "2026-10-30",
+   "checkin": "2026-10-31",
    "checkout": "2026-11-01",
    "shoot": "Mission Ridge-1"
   },
@@ -917,8 +917,8 @@
    "key": "statesboro, ga",
    "city": "Statesboro",
    "state": "GA",
-   "checkin": "2026-10-30",
-   "checkout": "2026-10-31",
+   "checkin": "2026-10-31",
+   "checkout": "2026-11-01",
    "shoot": "Halloween Preparty 600"
   },
   {
