@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-31",
+ "updated": "2026-11-01",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -117,8 +117,8 @@
    "key": "burleson, tx",
    "city": "Burleson",
    "state": "TX",
-   "checkin": "2026-10-31",
-   "checkout": "2026-11-01",
+   "checkin": "2026-11-01",
+   "checkout": "2026-11-02",
    "shoot": "Korbin's-Burleson-1"
   },
   {
@@ -197,8 +197,8 @@
    "key": "college station, tx",
    "city": "College Station",
    "state": "TX",
-   "checkin": "2026-10-31",
-   "checkout": "2026-11-01",
+   "checkin": "2026-11-01",
+   "checkout": "2026-11-02",
    "shoot": "Texas Archery-1"
   },
   {
@@ -341,8 +341,8 @@
    "key": "frisco, tx",
    "city": "Frisco",
    "state": "TX",
-   "checkin": "2026-10-31",
-   "checkout": "2026-11-01",
+   "checkin": "2026-11-01",
+   "checkout": "2026-11-02",
    "shoot": "Arjun Archery-1"
   },
   {
@@ -781,9 +781,9 @@
    "key": "paramus, nj",
    "city": "Paramus",
    "state": "NJ",
-   "checkin": "2026-10-31",
-   "checkout": "2026-11-01",
-   "shoot": "Spooktacular Showdown"
+   "checkin": "2026-12-04",
+   "checkout": "2026-12-05",
+   "shoot": "2027 Glacier Games"
   },
   {
    "key": "paris, tx",
@@ -821,8 +821,8 @@
    "key": "plainview, tx",
    "city": "Plainview",
    "state": "TX",
-   "checkin": "2026-10-31",
-   "checkout": "2026-11-01",
+   "checkin": "2026-11-01",
+   "checkout": "2026-11-02",
    "shoot": "Hale County 4H-Ollie Liner Center-1"
   },
   {
@@ -832,6 +832,14 @@
    "checkin": "2027-01-28",
    "checkout": "2027-01-30",
    "shoot": "2027 USA Archery North Carolina Indoor State Championship"
+  },
+  {
+   "key": "redding, ca",
+   "city": "Redding",
+   "state": "CA",
+   "checkin": "2027-04-29",
+   "checkout": "2027-05-02",
+   "shoot": "NFAA Marked 3D National Championships & Western Classic Trail Shoot 2027"
   },
   {
    "key": "reno, nv",
@@ -877,8 +885,8 @@
    "key": "san antonio, tx",
    "city": "San Antonio",
    "state": "TX",
-   "checkin": "2026-10-31",
-   "checkout": "2026-11-01",
+   "checkin": "2026-11-01",
+   "checkout": "2026-11-02",
    "shoot": "Mission Ridge-1"
   },
   {
@@ -912,14 +920,6 @@
    "checkin": "2027-01-15",
    "checkout": "2027-01-17",
    "shoot": "2027 Missouri State and JOAD Indoor Championship East Location - St. Louis"
-  },
-  {
-   "key": "statesboro, ga",
-   "city": "Statesboro",
-   "state": "GA",
-   "checkin": "2026-10-31",
-   "checkout": "2026-11-01",
-   "shoot": "Halloween Preparty 600"
   },
   {
    "key": "tampa, fl",
