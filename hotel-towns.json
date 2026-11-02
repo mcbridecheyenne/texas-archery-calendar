@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-01",
+ "updated": "2026-11-02",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -117,9 +117,9 @@
    "key": "burleson, tx",
    "city": "Burleson",
    "state": "TX",
-   "checkin": "2026-11-01",
-   "checkout": "2026-11-02",
-   "shoot": "Korbin's-Burleson-1"
+   "checkin": "2027-01-22",
+   "checkout": "2027-01-24",
+   "shoot": "Korbin's-Burleson-2"
   },
   {
    "key": "camp minden, la",
@@ -197,9 +197,9 @@
    "key": "college station, tx",
    "city": "College Station",
    "state": "TX",
-   "checkin": "2026-11-01",
-   "checkout": "2026-11-02",
-   "shoot": "Texas Archery-1"
+   "checkin": "2026-11-05",
+   "checkout": "2026-11-08",
+   "shoot": "Aggie Invitational"
   },
   {
    "key": "colorado springs, co",
@@ -341,9 +341,9 @@
    "key": "frisco, tx",
    "city": "Frisco",
    "state": "TX",
-   "checkin": "2026-11-01",
-   "checkout": "2026-11-02",
-   "shoot": "Arjun Archery-1"
+   "checkin": "2026-11-12",
+   "checkout": "2026-11-15",
+   "shoot": "Texans Archery Club-1"
   },
   {
    "key": "front royal, va",
@@ -821,9 +821,9 @@
    "key": "plainview, tx",
    "city": "Plainview",
    "state": "TX",
-   "checkin": "2026-11-01",
-   "checkout": "2026-11-02",
-   "shoot": "Hale County 4H-Ollie Liner Center-1"
+   "checkin": "2027-02-19",
+   "checkout": "2027-02-21",
+   "shoot": "Hale County 4H-Ollie Liner Center-2"
   },
   {
    "key": "randleman, nc",
@@ -885,9 +885,9 @@
    "key": "san antonio, tx",
    "city": "San Antonio",
    "state": "TX",
-   "checkin": "2026-11-01",
-   "checkout": "2026-11-02",
-   "shoot": "Mission Ridge-1"
+   "checkin": "2026-12-04",
+   "checkout": "2026-12-06",
+   "shoot": "Mission Ridge-2"
   },
   {
    "key": "sharpsville, pa",
