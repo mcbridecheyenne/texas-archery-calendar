@@ -77,9 +77,17 @@
    "key": "beloit, wi",
    "city": "Beloit",
    "state": "WI",
-   "checkin": "2027-01-29",
+   "checkin": "2027-01-28",
    "checkout": "2027-01-31",
    "shoot": "Great Lakes Indoor Sectionals & National Series 2027 - Beloit Field Archers"
+  },
+  {
+   "key": "bend, or",
+   "city": "Bend",
+   "state": "OR",
+   "checkin": "2027-02-12",
+   "checkout": "2027-02-13",
+   "shoot": "2027 USA Archery Oregon State and JOAD Indoor Championship"
   },
   {
    "key": "boerne, tx",
@@ -168,6 +176,14 @@
    "checkin": "2026-12-11",
    "checkout": "2026-12-13",
    "shoot": "The Frostbite JOAD"
+  },
+  {
+   "key": "chicago, il",
+   "city": "Chicago",
+   "state": "IL",
+   "checkin": "2026-11-21",
+   "checkout": "2026-11-22",
+   "shoot": "North Side Archery Club: November 2026 USA Archery JOAD/AAP Indoor Pin Shoot"
   },
   {
    "key": "chula vista, ca",
@@ -298,6 +314,14 @@
    "shoot": "2027 USA Archery JOAD Indoor Nationals - MA"
   },
   {
+   "key": "flushing, ny",
+   "city": "Flushing",
+   "state": "NY",
+   "checkin": "2027-01-29",
+   "checkout": "2027-01-31",
+   "shoot": "2027 NYSAA Indoor Championship - Queens"
+  },
+  {
    "key": "foley, al",
    "city": "Foley",
    "state": "AL",
@@ -328,6 +352,14 @@
    "checkin": "2027-03-12",
    "checkout": "2027-03-14",
    "shoot": "2027 Archer's Cup"
+  },
+  {
+   "key": "fresno, ca",
+   "city": "Fresno",
+   "state": "CA",
+   "checkin": "2027-02-25",
+   "checkout": "2027-02-27",
+   "shoot": "Southwest Indoor Sectionals & National Series 2027 - Break the Barriers, Inc"
   },
   {
    "key": "friant, ca",
@@ -794,6 +826,14 @@
    "shoot": "ASA McKenzie Classic"
   },
   {
+   "key": "pawtucket, ri",
+   "city": "Pawtucket",
+   "state": "RI",
+   "checkin": "2027-04-16",
+   "checkout": "2027-04-18",
+   "shoot": "2027 Quahog Classic"
+  },
+  {
    "key": "penn laird, va",
    "city": "Penn Laird",
    "state": "VA",
@@ -909,7 +949,7 @@
    "key": "south attleboro, ma",
    "city": "South Attleboro",
    "state": "MA",
-   "checkin": "2027-02-26",
+   "checkin": "2027-02-25",
    "checkout": "2027-02-28",
    "shoot": "New England Indoor Sectionals & National Series 2027 - X-Spot Archery"
   },
@@ -925,9 +965,9 @@
    "key": "statesboro, ga",
    "city": "Statesboro",
    "state": "GA",
-   "checkin": "2027-02-26",
-   "checkout": "2027-02-27",
-   "shoot": "2027 USA Archery GAA State JOAD 18M Championship"
+   "checkin": "2026-11-20",
+   "checkout": "2026-11-21",
+   "shoot": "2026 SEA Invitational"
   },
   {
    "key": "tampa, fl",
@@ -1018,6 +1058,14 @@
    "shoot": "2027 Michigan State JOAD Indoor Championship (January 10 ONLY)"
   },
   {
+   "key": "west falls, ny",
+   "city": "West Falls",
+   "state": "NY",
+   "checkin": "2027-02-12",
+   "checkout": "2027-02-14",
+   "shoot": "2027 NYSAA Indoor Championship - West Falls"
+  },
+  {
    "key": "westfield, in",
    "city": "Westfield",
    "state": "IN",
@@ -1032,6 +1080,14 @@
    "checkin": "2027-02-18",
    "checkout": "2027-02-19",
    "shoot": "2027 USA Archery JOAD Indoor Nationals - IL"
+  },
+  {
+   "key": "worcester, ma",
+   "city": "Worcester",
+   "state": "MA",
+   "checkin": "2027-02-25",
+   "checkout": "2027-02-28",
+   "shoot": "New England Indoor Sectionals & National Series 2027 - Quest Archery"
   },
   {
    "key": "wrightstown, nj",
