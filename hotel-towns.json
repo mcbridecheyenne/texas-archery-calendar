@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04",
+ "updated": "2026-11-05",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -912,6 +912,14 @@
    "checkin": "2027-01-28",
    "checkout": "2027-01-31",
    "shoot": "Lubbock County 4H @ Korbin's Archery-Lubbock-1"
+  },
+  {
+   "key": "sacramento, ca",
+   "city": "Sacramento",
+   "state": "CA",
+   "checkin": "2027-01-07",
+   "checkout": "2027-01-08",
+   "shoot": "2027 USA Archery JOAD Indoor Nationals - SAC"
   },
   {
    "key": "salt lake city, ut",
