@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05",
+ "updated": "2026-11-06",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -213,7 +213,7 @@
    "key": "college station, tx",
    "city": "College Station",
    "state": "TX",
-   "checkin": "2026-11-05",
+   "checkin": "2026-11-06",
    "checkout": "2026-11-08",
    "shoot": "Aggie Invitational"
   },
@@ -285,7 +285,7 @@
    "key": "eustace, tx",
    "city": "Eustace",
    "state": "TX",
-   "checkin": "2026-11-05",
+   "checkin": "2026-11-06",
    "checkout": "2026-11-07",
    "shoot": "Eustace Invitational (NASP State Qualifier)"
   },
@@ -405,7 +405,7 @@
    "key": "georgetown, tx",
    "city": "Georgetown",
    "state": "TX",
-   "checkin": "2026-11-05",
+   "checkin": "2026-11-06",
    "checkout": "2026-11-07",
    "shoot": "Double G-1"
   },
@@ -421,7 +421,7 @@
    "key": "grand prairie, tx",
    "city": "Grand Prairie",
    "state": "TX",
-   "checkin": "2026-11-05",
+   "checkin": "2026-11-06",
    "checkout": "2026-11-07",
    "shoot": "Reagan Knights Fall Tournament - 3D"
   },
@@ -1045,7 +1045,7 @@
    "key": "weatherford, tx",
    "city": "Weatherford",
    "state": "TX",
-   "checkin": "2026-11-05",
+   "checkin": "2026-11-06",
    "checkout": "2026-11-08",
    "shoot": "Fort Grard Guns & Archery-1"
   },
