@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07",
+ "updated": "2026-11-08",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -13,9 +13,9 @@
    "key": "acworth, ga",
    "city": "Acworth",
    "state": "GA",
-   "checkin": "2026-11-07",
-   "checkout": "2026-11-08",
-   "shoot": "2026 USA Archery Georgia State Field Championship"
+   "checkin": "2026-11-08",
+   "checkout": "2026-11-09",
+   "shoot": "2026 USA Archery Georgia State 3D Championship"
   },
   {
    "key": "albuquerque, nm",
@@ -165,8 +165,8 @@
    "key": "centerville, va",
    "city": "Centerville",
    "state": "VA",
-   "checkin": "2026-11-07",
-   "checkout": "2026-11-08",
+   "checkin": "2026-11-08",
+   "checkout": "2026-11-09",
    "shoot": "Cub Run Archers (ARL-FX IWLA) Fall Indoor"
   },
   {
@@ -189,8 +189,8 @@
    "key": "chula vista, ca",
    "city": "Chula Vista",
    "state": "CA",
-   "checkin": "2026-11-07",
-   "checkout": "2026-11-08",
+   "checkin": "2026-11-08",
+   "checkout": "2026-11-09",
    "shoot": "2026 So Cal Indoor Fall Classic"
   },
   {
@@ -205,24 +205,24 @@
    "key": "claude, tx",
    "city": "Claude",
    "state": "TX",
-   "checkin": "2026-11-07",
-   "checkout": "2026-11-08",
+   "checkin": "2026-11-08",
+   "checkout": "2026-11-09",
    "shoot": "Armstrong County 4H-1"
   },
   {
    "key": "college station, tx",
    "city": "College Station",
    "state": "TX",
-   "checkin": "2026-11-07",
-   "checkout": "2026-11-08",
+   "checkin": "2026-11-08",
+   "checkout": "2026-11-09",
    "shoot": "Aggie Invitational"
   },
   {
    "key": "colorado springs, co",
    "city": "Colorado Springs",
    "state": "CO",
-   "checkin": "2026-11-07",
-   "checkout": "2026-11-08",
+   "checkin": "2026-11-08",
+   "checkout": "2026-11-09",
    "shoot": "2026 USA Archery Colorado 3D Indoor Buckle Series #1"
   },
   {
@@ -280,14 +280,6 @@
    "checkin": "2027-02-18",
    "checkout": "2027-02-21",
    "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - Neil's Archery and Crossbow, Inc."
-  },
-  {
-   "key": "eustace, tx",
-   "city": "Eustace",
-   "state": "TX",
-   "checkin": "2026-11-07",
-   "checkout": "2026-11-08",
-   "shoot": "Eustace Invitational (NASP State Qualifier)"
   },
   {
    "key": "evansville, in",
@@ -405,9 +397,9 @@
    "key": "georgetown, tx",
    "city": "Georgetown",
    "state": "TX",
-   "checkin": "2026-11-07",
-   "checkout": "2026-11-08",
-   "shoot": "Double G-1"
+   "checkin": "2027-01-07",
+   "checkout": "2027-01-10",
+   "shoot": "Double G-2"
   },
   {
    "key": "gilroy, ca",
@@ -421,9 +413,9 @@
    "key": "grand prairie, tx",
    "city": "Grand Prairie",
    "state": "TX",
-   "checkin": "2026-11-07",
-   "checkout": "2026-11-08",
-   "shoot": "Reagan Knights Fall Tournament - 3D"
+   "checkin": "2026-11-12",
+   "checkout": "2026-11-14",
+   "shoot": "NASP Reagan Knights Fall Tournament"
   },
   {
    "key": "grapevine, tx",
@@ -469,8 +461,8 @@
    "key": "houston, tx",
    "city": "Houston",
    "state": "TX",
-   "checkin": "2026-11-07",
-   "checkout": "2026-11-08",
+   "checkin": "2026-11-08",
+   "checkout": "2026-11-09",
    "shoot": "X10 Archery Academy-1"
   },
   {
@@ -533,8 +525,8 @@
    "key": "laredo, tx",
    "city": "Laredo",
    "state": "TX",
-   "checkin": "2026-11-07",
-   "checkout": "2026-11-08",
+   "checkin": "2026-11-08",
+   "checkout": "2026-11-09",
    "shoot": "Arena Archery-1"
   },
   {
@@ -698,14 +690,6 @@
    "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - Straight Arrow Archery"
   },
   {
-   "key": "new haven, mo",
-   "city": "New Haven",
-   "state": "MO",
-   "checkin": "2026-11-07",
-   "checkout": "2026-11-08",
-   "shoot": "Little Hills Winter Warm-up"
-  },
-  {
    "key": "new iberia, la",
    "city": "New Iberia",
    "state": "LA",
@@ -853,8 +837,8 @@
    "key": "phoenix, az",
    "city": "Phoenix",
    "state": "AZ",
-   "checkin": "2026-11-07",
-   "checkout": "2026-11-08",
+   "checkin": "2026-11-08",
+   "checkout": "2026-11-09",
    "shoot": "Southwest Target Sectionals 2026 - Corner Archery"
   },
   {
@@ -885,9 +869,9 @@
    "key": "reno, nv",
    "city": "Reno",
    "state": "NV",
-   "checkin": "2026-11-07",
-   "checkout": "2026-11-08",
-   "shoot": "High Desert Archery November Pin Shoot"
+   "checkin": "2026-12-04",
+   "checkout": "2026-12-05",
+   "shoot": "High Desert Archery December Pin Shoot"
   },
   {
    "key": "roanoke, tx",
@@ -1045,8 +1029,8 @@
    "key": "weatherford, tx",
    "city": "Weatherford",
    "state": "TX",
-   "checkin": "2026-11-07",
-   "checkout": "2026-11-08",
+   "checkin": "2026-11-08",
+   "checkout": "2026-11-09",
    "shoot": "Fort Grard Guns & Archery-1"
   },
   {
