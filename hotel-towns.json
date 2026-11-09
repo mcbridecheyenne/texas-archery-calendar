@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08",
+ "updated": "2026-11-09",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -8,14 +8,6 @@
    "checkin": "2027-01-08",
    "checkout": "2027-01-09",
    "shoot": "2027 Cottey Classic Event #2"
-  },
-  {
-   "key": "acworth, ga",
-   "city": "Acworth",
-   "state": "GA",
-   "checkin": "2026-11-08",
-   "checkout": "2026-11-09",
-   "shoot": "2026 USA Archery Georgia State 3D Championship"
   },
   {
    "key": "albuquerque, nm",
@@ -162,14 +154,6 @@
    "shoot": "Archers Haven-1"
   },
   {
-   "key": "centerville, va",
-   "city": "Centerville",
-   "state": "VA",
-   "checkin": "2026-11-08",
-   "checkout": "2026-11-09",
-   "shoot": "Cub Run Archers (ARL-FX IWLA) Fall Indoor"
-  },
-  {
    "key": "centreville, va",
    "city": "Centreville",
    "state": "VA",
@@ -189,9 +173,9 @@
    "key": "chula vista, ca",
    "city": "Chula Vista",
    "state": "CA",
-   "checkin": "2026-11-08",
-   "checkout": "2026-11-09",
-   "shoot": "2026 So Cal Indoor Fall Classic"
+   "checkin": "2027-01-14",
+   "checkout": "2027-01-15",
+   "shoot": "2027 California State Indoor Championships - Chula Vista (U13 and U15)"
   },
   {
    "key": "clarkston, mi",
@@ -205,25 +189,25 @@
    "key": "claude, tx",
    "city": "Claude",
    "state": "TX",
-   "checkin": "2026-11-08",
-   "checkout": "2026-11-09",
-   "shoot": "Armstrong County 4H-1"
+   "checkin": "2026-11-20",
+   "checkout": "2026-11-22",
+   "shoot": "Armstrong County 4H-2"
   },
   {
    "key": "college station, tx",
    "city": "College Station",
    "state": "TX",
-   "checkin": "2026-11-08",
-   "checkout": "2026-11-09",
-   "shoot": "Aggie Invitational"
+   "checkin": "2026-12-03",
+   "checkout": "2026-12-06",
+   "shoot": "The Texas Ringer 2026"
   },
   {
    "key": "colorado springs, co",
    "city": "Colorado Springs",
    "state": "CO",
-   "checkin": "2026-11-08",
-   "checkout": "2026-11-09",
-   "shoot": "2026 USA Archery Colorado 3D Indoor Buckle Series #1"
+   "checkin": "2026-12-05",
+   "checkout": "2026-12-06",
+   "shoot": "USA Archery Colorado 3D Indoor Buckle Series #2"
   },
   {
    "key": "dayton, tx",
@@ -461,9 +445,9 @@
    "key": "houston, tx",
    "city": "Houston",
    "state": "TX",
-   "checkin": "2026-11-08",
-   "checkout": "2026-11-09",
-   "shoot": "X10 Archery Academy-1"
+   "checkin": "2026-11-13",
+   "checkout": "2026-11-15",
+   "shoot": "Knox Archery-1"
   },
   {
    "key": "hudson, ma",
@@ -525,9 +509,9 @@
    "key": "laredo, tx",
    "city": "Laredo",
    "state": "TX",
-   "checkin": "2026-11-08",
-   "checkout": "2026-11-09",
-   "shoot": "Arena Archery-1"
+   "checkin": "2026-12-04",
+   "checkout": "2026-12-06",
+   "shoot": "Arena Archery-2"
   },
   {
    "key": "las vegas, nv",
@@ -837,9 +821,9 @@
    "key": "phoenix, az",
    "city": "Phoenix",
    "state": "AZ",
-   "checkin": "2026-11-08",
-   "checkout": "2026-11-09",
-   "shoot": "Southwest Target Sectionals 2026 - Corner Archery"
+   "checkin": "2027-01-29",
+   "checkout": "2027-01-31",
+   "shoot": "2027 USA Archery Arizona State Indoor Championships"
   },
   {
    "key": "plainview, tx",
@@ -1029,9 +1013,9 @@
    "key": "weatherford, tx",
    "city": "Weatherford",
    "state": "TX",
-   "checkin": "2026-11-08",
-   "checkout": "2026-11-09",
-   "shoot": "Fort Grard Guns & Archery-1"
+   "checkin": "2026-11-13",
+   "checkout": "2026-11-15",
+   "shoot": "NASP 2nd Annual Turkey Target Shoot"
   },
   {
    "key": "west bloomfield township, mi",
@@ -1072,6 +1056,14 @@
    "checkin": "2027-02-18",
    "checkout": "2027-02-19",
    "shoot": "2027 USA Archery JOAD Indoor Nationals - IL"
+  },
+  {
+   "key": "wingate, in",
+   "city": "Wingate",
+   "state": "IN",
+   "checkin": "2027-05-07",
+   "checkout": "2027-05-08",
+   "shoot": "2027 USA Archery Indiana State 3D Championship"
   },
   {
    "key": "worcester, ma",
