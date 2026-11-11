@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10",
+ "updated": "2026-11-11",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -98,12 +98,28 @@
    "shoot": "Canadian River Archery and Gun Club-1"
   },
   {
+   "key": "bristow, va",
+   "city": "Bristow",
+   "state": "VA",
+   "checkin": "2027-02-12",
+   "checkout": "2027-02-14",
+   "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - Prince William Archers"
+  },
+  {
    "key": "brownstown twp, mi",
    "city": "Brownstown Twp",
    "state": "MI",
    "checkin": "2027-01-29",
    "checkout": "2027-01-31",
    "shoot": "Great Lakes Indoor Sectionals & National Series 2027 - Lincoln Bowmen Archery Club"
+  },
+  {
+   "key": "bryan, tx",
+   "city": "Bryan",
+   "state": "TX",
+   "checkin": "2027-01-15",
+   "checkout": "2027-01-17",
+   "shoot": "Southern Indoor Sectionals & National Series 2027 - Texas Archery"
   },
   {
    "key": "burkburnett, tx",
@@ -152,6 +168,22 @@
    "checkin": "2026-11-19",
    "checkout": "2026-11-22",
    "shoot": "Archers Haven-1"
+  },
+  {
+   "key": "cedaredge, co",
+   "city": "Cedaredge",
+   "state": "CO",
+   "checkin": "2027-01-08",
+   "checkout": "2027-01-09",
+   "shoot": "Southwest Indoor Sectionals & National Series 2027 - Grand Mesa Archery"
+  },
+  {
+   "key": "central, sc",
+   "city": "Central",
+   "state": "SC",
+   "checkin": "2027-01-28",
+   "checkout": "2027-01-31",
+   "shoot": "Southeast Indoor Sectionals & National Series 2027 - Keowee Bowmen"
   },
   {
    "key": "centreville, va",
@@ -205,9 +237,9 @@
    "key": "colorado springs, co",
    "city": "Colorado Springs",
    "state": "CO",
-   "checkin": "2026-12-05",
-   "checkout": "2026-12-06",
-   "shoot": "USA Archery Colorado 3D Indoor Buckle Series #2"
+   "checkin": "2026-11-20",
+   "checkout": "2026-11-21",
+   "shoot": "2026 Colorado JOAD Indoor Event #2"
   },
   {
    "key": "dayton, tx",
@@ -242,6 +274,14 @@
    "shoot": "2027 Snow Bird 600"
   },
   {
+   "key": "dunbarton, nh",
+   "city": "Dunbarton",
+   "state": "NH",
+   "checkin": "2027-02-05",
+   "checkout": "2027-02-07",
+   "shoot": "2027 USA Archery New Hampshire State and JOAD Indoor Championship"
+  },
+  {
    "key": "edna, tx",
    "city": "Edna",
    "state": "TX",
@@ -256,14 +296,6 @@
    "checkin": "2026-11-20",
    "checkout": "2026-11-21",
    "shoot": "2026 USA Archery Arkansas State Indoor Championship"
-  },
-  {
-   "key": "endicott, ny",
-   "city": "Endicott",
-   "state": "NY",
-   "checkin": "2027-02-18",
-   "checkout": "2027-02-21",
-   "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - Neil's Archery and Crossbow, Inc."
   },
   {
    "key": "evansville, in",
@@ -325,25 +357,9 @@
    "key": "foxboro, ma",
    "city": "Foxboro",
    "state": "MA",
-   "checkin": "2027-03-12",
-   "checkout": "2027-03-14",
-   "shoot": "2027 Archer's Cup"
-  },
-  {
-   "key": "fresno, ca",
-   "city": "Fresno",
-   "state": "CA",
-   "checkin": "2027-02-25",
-   "checkout": "2027-02-27",
-   "shoot": "Southwest Indoor Sectionals & National Series 2027 - Break the Barriers, Inc"
-  },
-  {
-   "key": "friant, ca",
-   "city": "Friant",
-   "state": "CA",
-   "checkin": "2027-04-16",
-   "checkout": "2027-04-18",
-   "shoot": "BTB & NFAA 1-Arrow 3D National Championships 2027"
+   "checkin": "2026-11-20",
+   "checkout": "2026-11-21",
+   "shoot": "2026 Fall Collegiate"
   },
   {
    "key": "frisco, tx",
@@ -370,6 +386,14 @@
    "shoot": "2027 Indiana State and Open Indoor Championship"
   },
   {
+   "key": "galveston, in",
+   "city": "GALVESTON",
+   "state": "IN",
+   "checkin": "2027-01-29",
+   "checkout": "2027-01-31",
+   "shoot": "Great Lakes Indoor Sectionals & National Series 2027 - Galveston Archery Club"
+  },
+  {
    "key": "garland, tx",
    "city": "Garland",
    "state": "TX",
@@ -384,14 +408,6 @@
    "checkin": "2027-01-07",
    "checkout": "2027-01-10",
    "shoot": "Double G-2"
-  },
-  {
-   "key": "gilroy, ca",
-   "city": "Gilroy",
-   "state": "CA",
-   "checkin": "2027-02-19",
-   "checkout": "2027-02-21",
-   "shoot": "Southwest Indoor Sectionals & National Series 2027 - Predator's Archery"
   },
   {
    "key": "grand prairie, tx",
@@ -418,20 +434,20 @@
    "shoot": "2027 Indiana State and Open Indoor JOAD Championship"
   },
   {
-   "key": "harrisburg, pa",
-   "city": "Harrisburg",
-   "state": "PA",
-   "checkin": "2027-02-18",
-   "checkout": "2027-02-21",
-   "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - Harrisburg Archery Club"
-  },
-  {
    "key": "hattiesburg, ms",
    "city": "Hattiesburg",
    "state": "MS",
    "checkin": "2027-02-25",
    "checkout": "2027-02-27",
    "shoot": "2027 USA Archery JOAD Indoor Nationals - MS"
+  },
+  {
+   "key": "helena, mt",
+   "city": "HELENA",
+   "state": "MT",
+   "checkin": "2027-01-29",
+   "checkout": "2027-01-31",
+   "shoot": "Northwest Indoor Sectionals & National Series 2027 - Lewis and Clark Archers"
   },
   {
    "key": "hillsborough, nj",
@@ -458,12 +474,28 @@
    "shoot": "2026 Riverside Festivus"
   },
   {
+   "key": "hyde park, ny",
+   "city": "Hyde Park",
+   "state": "NY",
+   "checkin": "2027-02-11",
+   "checkout": "2027-02-14",
+   "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - Ti Yogi Bowmen"
+  },
+  {
    "key": "indianapolis, in",
    "city": "Indianapolis",
    "state": "IN",
    "checkin": "2027-01-07",
    "checkout": "2027-01-10",
    "shoot": "Rushmore Rumble & Indoor World Series 2027"
+  },
+  {
+   "key": "ishpeming, mi",
+   "city": "Ishpeming",
+   "state": "MI",
+   "checkin": "2027-01-29",
+   "checkout": "2027-01-31",
+   "shoot": "Great Lakes Indoor Sectionals & National Series 2027 - Straight Line Archery"
   },
   {
    "key": "kaufman, tx",
@@ -554,6 +586,14 @@
    "shoot": "2026 Lunenburg Open"
   },
   {
+   "key": "madison heights, va",
+   "city": "Madison Heights",
+   "state": "VA",
+   "checkin": "2027-02-12",
+   "checkout": "2027-02-14",
+   "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - Amherst Arms and Supply"
+  },
+  {
    "key": "madison, nc",
    "city": "madison",
    "state": "NC",
@@ -568,6 +608,14 @@
    "checkin": "2026-11-20",
    "checkout": "2026-11-22",
    "shoot": "2026 USA Archery Connecticut State Indoor Championship"
+  },
+  {
+   "key": "manhattan, ks",
+   "city": "Manhattan",
+   "state": "KS",
+   "checkin": "2027-01-22",
+   "checkout": "2027-01-24",
+   "shoot": "Midwest Indoor Sectionals & National Series 2027 - Kansas Archery Center"
   },
   {
    "key": "manheim, pa",
@@ -626,14 +674,6 @@
    "shoot": "2027 IFAA World Indoor Archery Championships"
   },
   {
-   "key": "monmouth junction, nj",
-   "city": "Monmouth Junction",
-   "state": "NJ",
-   "checkin": "2027-02-18",
-   "checkout": "2027-02-21",
-   "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - WA-XO-BE Archers"
-  },
-  {
    "key": "monroe, wa",
    "city": "Monroe",
    "state": "WA",
@@ -658,6 +698,14 @@
    "shoot": "2027 USA Archery JOAD Indoor Nationals - NJ"
   },
   {
+   "key": "muskegon, mi",
+   "city": "Muskegon",
+   "state": "MI",
+   "checkin": "2027-01-29",
+   "checkout": "2027-01-31",
+   "shoot": "Great Lakes Indoor Sectionals & National Series 2027 - Muskegon Bowmen"
+  },
+  {
    "key": "new braunfels, tx",
    "city": "New Braunfels",
    "state": "TX",
@@ -680,6 +728,14 @@
    "checkin": "2027-01-15",
    "checkout": "2027-01-17",
    "shoot": "Southern Indoor Sectionals & National Series 2027 - Bayou Bowmen"
+  },
+  {
+   "key": "new milford, pa",
+   "city": "new milford",
+   "state": "PA",
+   "checkin": "2027-02-12",
+   "checkout": "2027-02-14",
+   "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - The Outdoor Insiders"
   },
   {
    "key": "new tripoli, pa",
@@ -728,6 +784,14 @@
    "checkin": "2026-11-12",
    "checkout": "2026-11-14",
    "shoot": "Oklahoma Indoor Series Event # 1"
+  },
+  {
+   "key": "noti, or",
+   "city": "Noti",
+   "state": "OR",
+   "checkin": "2027-01-29",
+   "checkout": "2027-01-31",
+   "shoot": "Northwest Indoor Sectionals & National Series 2027 - Cascadian Bowmen"
   },
   {
    "key": "oklahoma city, ok",
@@ -794,6 +858,14 @@
    "shoot": "ASA McKenzie Classic"
   },
   {
+   "key": "pasadena, ca",
+   "city": "Pasadena",
+   "state": "CA",
+   "checkin": "2027-01-30",
+   "checkout": "2027-01-31",
+   "shoot": "Southwest Indoor Sectionals & National Series 2027 - Pasadena Roving Archers"
+  },
+  {
    "key": "pawtucket, ri",
    "city": "Pawtucket",
    "state": "RI",
@@ -842,12 +914,12 @@
    "shoot": "2027 USA Archery North Carolina Indoor State Championship"
   },
   {
-   "key": "redding, ca",
-   "city": "Redding",
+   "key": "redondo beach, ca",
+   "city": "Redondo Beach",
    "state": "CA",
-   "checkin": "2027-04-29",
-   "checkout": "2027-05-02",
-   "shoot": "NFAA Marked 3D National Championships & Western Classic Trail Shoot 2027"
+   "checkin": "2027-01-22",
+   "checkout": "2027-01-25",
+   "shoot": "Southwest Indoor Sectionals & National Series 2027 - South Bay Archery Lessons"
   },
   {
    "key": "reno, nv",
@@ -922,12 +994,12 @@
    "shoot": "2026 Louisville Open"
   },
   {
-   "key": "south attleboro, ma",
-   "city": "South Attleboro",
-   "state": "MA",
-   "checkin": "2027-02-25",
-   "checkout": "2027-02-28",
-   "shoot": "New England Indoor Sectionals & National Series 2027 - X-Spot Archery"
+   "key": "soldotna, ak",
+   "city": "Soldotna",
+   "state": "AK",
+   "checkin": "2027-01-29",
+   "checkout": "2027-01-31",
+   "shoot": "Northwest Indoor Sectionals & National Series 2027 - Kenai Penisula Archers"
   },
   {
    "key": "st. louis, mo",
@@ -968,6 +1040,14 @@
    "checkin": "2026-11-28",
    "checkout": "2026-11-29",
    "shoot": "Clock Tower Series #2"
+  },
+  {
+   "key": "tigard, or",
+   "city": "Tigard",
+   "state": "OR",
+   "checkin": "2027-01-28",
+   "checkout": "2027-01-31",
+   "shoot": "Northwest Indoor Sectionals & National Series 2027 - Archers Afield"
   },
   {
    "key": "tipp city, oh",
@@ -1066,14 +1146,6 @@
    "shoot": "2027 USA Archery Indiana State 3D Championship"
   },
   {
-   "key": "worcester, ma",
-   "city": "Worcester",
-   "state": "MA",
-   "checkin": "2027-02-25",
-   "checkout": "2027-02-28",
-   "shoot": "New England Indoor Sectionals & National Series 2027 - Quest Archery"
-  },
-  {
    "key": "wrightstown, nj",
    "city": "Wrightstown",
    "state": "NJ",
@@ -1085,9 +1157,9 @@
    "key": "yankton, sd",
    "city": "Yankton",
    "state": "SD",
-   "checkin": "2027-02-25",
-   "checkout": "2027-02-27",
-   "shoot": "2027 USA Archery JOAD Indoor Nationals - SD"
+   "checkin": "2027-01-15",
+   "checkout": "2027-01-17",
+   "shoot": "Midwest Indoor Sectionals & National Series 2027 - NFAA Yankton Easton Archery Center"
   },
   {
    "key": "yukon, ok",
