@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12",
+ "updated": "2026-11-13",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -45,7 +45,7 @@
    "key": "amarillo, tx",
    "city": "Amarillo",
    "state": "TX",
-   "checkin": "2026-11-12",
+   "checkin": "2026-11-13",
    "checkout": "2026-11-14",
    "shoot": "Randall County 4H-Randall County Fire Department-1"
   },
@@ -85,7 +85,7 @@
    "key": "boerne, tx",
    "city": "Boerne",
    "state": "TX",
-   "checkin": "2026-11-12",
+   "checkin": "2026-11-13",
    "checkout": "2026-11-14",
    "shoot": "Leading Edge Archery-1"
   },
@@ -314,6 +314,14 @@
    "shoot": "Northwest Indoor Sectionals & National Series 2027 - Screaming Eagle Archery of Alaska (Fairbanks)"
   },
   {
+   "key": "falls church, va",
+   "city": "Falls Church",
+   "state": "VA",
+   "checkin": "2027-02-04",
+   "checkout": "2027-02-05",
+   "shoot": "2027 USA Archery Virginia State JOAD Indoor Championship"
+  },
+  {
    "key": "fiskdale, ma",
    "city": "Fiskdale",
    "state": "MA",
@@ -349,7 +357,7 @@
    "key": "fort worth, tx",
    "city": "Fort Worth",
    "state": "TX",
-   "checkin": "2026-11-12",
+   "checkin": "2026-11-13",
    "checkout": "2026-11-15",
    "shoot": "Legacy Archery-1"
   },
@@ -365,7 +373,7 @@
    "key": "frisco, tx",
    "city": "Frisco",
    "state": "TX",
-   "checkin": "2026-11-12",
+   "checkin": "2026-11-13",
    "checkout": "2026-11-15",
    "shoot": "Texans Archery Club-1"
   },
@@ -413,7 +421,7 @@
    "key": "grand prairie, tx",
    "city": "Grand Prairie",
    "state": "TX",
-   "checkin": "2026-11-12",
+   "checkin": "2026-11-13",
    "checkout": "2026-11-14",
    "shoot": "NASP Reagan Knights Fall Tournament"
   },
@@ -525,7 +533,7 @@
    "key": "killeen, tx",
    "city": "Killeen",
    "state": "TX",
-   "checkin": "2026-11-12",
+   "checkin": "2026-11-13",
    "checkout": "2026-11-14",
    "shoot": "Nocked & Loaded-1"
   },
@@ -781,7 +789,7 @@
    "key": "norman, ok",
    "city": "Norman",
    "state": "OK",
-   "checkin": "2026-11-12",
+   "checkin": "2026-11-13",
    "checkout": "2026-11-14",
    "shoot": "Oklahoma Indoor Series Event # 1"
   },
