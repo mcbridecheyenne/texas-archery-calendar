@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13",
+ "updated": "2026-11-14",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -45,8 +45,8 @@
    "key": "amarillo, tx",
    "city": "Amarillo",
    "state": "TX",
-   "checkin": "2026-11-13",
-   "checkout": "2026-11-14",
+   "checkin": "2026-11-14",
+   "checkout": "2026-11-15",
    "shoot": "Randall County 4H-Randall County Fire Department-1"
   },
   {
@@ -85,8 +85,8 @@
    "key": "boerne, tx",
    "city": "Boerne",
    "state": "TX",
-   "checkin": "2026-11-13",
-   "checkout": "2026-11-14",
+   "checkin": "2026-11-14",
+   "checkout": "2026-11-15",
    "shoot": "Leading Edge Archery-1"
   },
   {
@@ -357,7 +357,7 @@
    "key": "fort worth, tx",
    "city": "Fort Worth",
    "state": "TX",
-   "checkin": "2026-11-13",
+   "checkin": "2026-11-14",
    "checkout": "2026-11-15",
    "shoot": "Legacy Archery-1"
   },
@@ -373,7 +373,7 @@
    "key": "frisco, tx",
    "city": "Frisco",
    "state": "TX",
-   "checkin": "2026-11-13",
+   "checkin": "2026-11-14",
    "checkout": "2026-11-15",
    "shoot": "Texans Archery Club-1"
   },
@@ -421,8 +421,8 @@
    "key": "grand prairie, tx",
    "city": "Grand Prairie",
    "state": "TX",
-   "checkin": "2026-11-13",
-   "checkout": "2026-11-14",
+   "checkin": "2026-11-14",
+   "checkout": "2026-11-15",
    "shoot": "NASP Reagan Knights Fall Tournament"
   },
   {
@@ -469,7 +469,7 @@
    "key": "houston, tx",
    "city": "Houston",
    "state": "TX",
-   "checkin": "2026-11-13",
+   "checkin": "2026-11-14",
    "checkout": "2026-11-15",
    "shoot": "Knox Archery-1"
   },
@@ -533,15 +533,15 @@
    "key": "killeen, tx",
    "city": "Killeen",
    "state": "TX",
-   "checkin": "2026-11-13",
-   "checkout": "2026-11-14",
+   "checkin": "2026-11-14",
+   "checkout": "2026-11-15",
    "shoot": "Nocked & Loaded-1"
   },
   {
    "key": "lancaster, pa",
    "city": "Lancaster",
    "state": "PA",
-   "checkin": "2026-11-13",
+   "checkin": "2026-11-14",
    "checkout": "2026-11-15",
    "shoot": "Lancaster Archery Winter Warm Up"
   },
@@ -589,7 +589,7 @@
    "key": "lunenburg, ma",
    "city": "Lunenburg",
    "state": "MA",
-   "checkin": "2026-11-13",
+   "checkin": "2026-11-14",
    "checkout": "2026-11-15",
    "shoot": "2026 Lunenburg Open"
   },
@@ -773,8 +773,8 @@
    "key": "newport news, va",
    "city": "Newport News",
    "state": "VA",
-   "checkin": "2026-11-13",
-   "checkout": "2026-11-14",
+   "checkin": "2026-11-14",
+   "checkout": "2026-11-15",
    "shoot": "Turkey Target Toss Up"
   },
   {
@@ -789,8 +789,8 @@
    "key": "norman, ok",
    "city": "Norman",
    "state": "OK",
-   "checkin": "2026-11-13",
-   "checkout": "2026-11-14",
+   "checkin": "2026-11-14",
+   "checkout": "2026-11-15",
    "shoot": "Oklahoma Indoor Series Event # 1"
   },
   {
@@ -813,16 +813,16 @@
    "key": "orange grove, tx",
    "city": "Orange Grove",
    "state": "TX",
-   "checkin": "2026-11-13",
-   "checkout": "2026-11-14",
+   "checkin": "2026-11-14",
+   "checkout": "2026-11-15",
    "shoot": "Dark Horse Archery-1"
   },
   {
    "key": "oro valley, az",
    "city": "Oro Valley",
    "state": "AZ",
-   "checkin": "2026-11-13",
-   "checkout": "2026-11-14",
+   "checkin": "2026-11-14",
+   "checkout": "2026-11-15",
    "shoot": "2026 Arizona State Field Championships"
   },
   {
@@ -1061,7 +1061,7 @@
    "key": "tipp city, oh",
    "city": "Tipp City",
    "state": "OH",
-   "checkin": "2026-11-13",
+   "checkin": "2026-11-14",
    "checkout": "2026-11-15",
    "shoot": "Zulu Archery Showdown"
   },
@@ -1077,7 +1077,7 @@
    "key": "tyler, tx",
    "city": "Tyler",
    "state": "TX",
-   "checkin": "2026-11-13",
+   "checkin": "2026-11-14",
    "checkout": "2026-11-15",
    "shoot": "Griffin Archery-1"
   },
@@ -1101,7 +1101,7 @@
    "key": "weatherford, tx",
    "city": "Weatherford",
    "state": "TX",
-   "checkin": "2026-11-13",
+   "checkin": "2026-11-14",
    "checkout": "2026-11-15",
    "shoot": "NASP 2nd Annual Turkey Target Shoot"
   },
