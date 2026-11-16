@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15",
+ "updated": "2026-11-16",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -357,9 +357,9 @@
    "key": "fort worth, tx",
    "city": "Fort Worth",
    "state": "TX",
-   "checkin": "2026-11-15",
-   "checkout": "2026-11-16",
-   "shoot": "Legacy Archery-1"
+   "checkin": "2026-12-18",
+   "checkout": "2026-12-20",
+   "shoot": "Legacy Archery-2"
   },
   {
    "key": "foxboro, ma",
@@ -373,9 +373,9 @@
    "key": "frisco, tx",
    "city": "Frisco",
    "state": "TX",
-   "checkin": "2026-11-15",
-   "checkout": "2026-11-16",
-   "shoot": "Texans Archery Club-1"
+   "checkin": "2026-12-10",
+   "checkout": "2026-12-12",
+   "shoot": "Texans Archery Club-2"
   },
   {
    "key": "front royal, va",
@@ -453,17 +453,17 @@
    "key": "hillsborough, nj",
    "city": "Hillsborough",
    "state": "NJ",
-   "checkin": "2026-11-15",
-   "checkout": "2026-11-16",
-   "shoot": "2026 NSA Indoor Series - Rumble Royale in NJ"
+   "checkin": "2027-02-18",
+   "checkout": "2027-02-21",
+   "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - Northeast Shooters Association"
   },
   {
    "key": "houston, tx",
    "city": "Houston",
    "state": "TX",
-   "checkin": "2026-11-15",
-   "checkout": "2026-11-16",
-   "shoot": "Knox Archery-1"
+   "checkin": "2026-12-03",
+   "checkout": "2026-12-05",
+   "shoot": "Memorial Lutheran School - Advent Invitational"
   },
   {
    "key": "hudson, ma",
@@ -533,9 +533,9 @@
    "key": "lancaster, pa",
    "city": "Lancaster",
    "state": "PA",
-   "checkin": "2026-11-15",
-   "checkout": "2026-11-16",
-   "shoot": "Lancaster Archery Winter Warm Up"
+   "checkin": "2027-02-04",
+   "checkout": "2027-02-05",
+   "shoot": "2027 USA Archery JOAD Indoor Nationals - PA"
   },
   {
    "key": "laredo, tx",
@@ -573,17 +573,17 @@
    "key": "long beach, ca",
    "city": "Long Beach",
    "state": "CA",
-   "checkin": "2026-11-15",
-   "checkout": "2026-11-16",
-   "shoot": "November 2026 SFTA Long Beach Qualifier"
+   "checkin": "2026-12-12",
+   "checkout": "2026-12-13",
+   "shoot": "December 2026 SFTA Long Beach Qualifier"
   },
   {
    "key": "lunenburg, ma",
    "city": "Lunenburg",
    "state": "MA",
-   "checkin": "2026-11-15",
-   "checkout": "2026-11-16",
-   "shoot": "2026 Lunenburg Open"
+   "checkin": "2027-01-08",
+   "checkout": "2027-01-10",
+   "shoot": "2027 Lunenie Star FITA"
   },
   {
    "key": "madison heights, va",
@@ -597,9 +597,9 @@
    "key": "madison, nc",
    "city": "madison",
    "state": "NC",
-   "checkin": "2026-11-15",
-   "checkout": "2026-11-16",
-   "shoot": "Ham and Turkey"
+   "checkin": "2026-12-19",
+   "checkout": "2026-12-20",
+   "shoot": "Welcome Winter"
   },
   {
    "key": "manchester, ct",
@@ -1035,27 +1035,19 @@
   },
   {
    "key": "tipp city, oh",
-   "city": "Tipp City",
+   "city": "Tipp CIty",
    "state": "OH",
-   "checkin": "2026-11-15",
-   "checkout": "2026-11-16",
-   "shoot": "Zulu Archery Showdown"
-  },
-  {
-   "key": "tucson, az",
-   "city": "Tucson",
-   "state": "AZ",
-   "checkin": "2026-11-15",
-   "checkout": "2026-11-16",
-   "shoot": "ABFAA State Animal Round"
+   "checkin": "2027-01-01",
+   "checkout": "2027-01-02",
+   "shoot": "2027 USA Archery Ohio State Indoor and JOAD Championship"
   },
   {
    "key": "tyler, tx",
    "city": "Tyler",
    "state": "TX",
-   "checkin": "2026-11-15",
-   "checkout": "2026-11-16",
-   "shoot": "Griffin Archery-1"
+   "checkin": "2026-12-11",
+   "checkout": "2026-12-13",
+   "shoot": "Griffin Archery-2"
   },
   {
    "key": "waco, tx",
@@ -1077,9 +1069,9 @@
    "key": "weatherford, tx",
    "city": "Weatherford",
    "state": "TX",
-   "checkin": "2026-11-15",
-   "checkout": "2026-11-16",
-   "shoot": "NASP 2nd Annual Turkey Target Shoot"
+   "checkin": "2026-12-03",
+   "checkout": "2026-12-06",
+   "shoot": "Fort Grard Guns & Archery-2"
   },
   {
    "key": "west bloomfield township, mi",
