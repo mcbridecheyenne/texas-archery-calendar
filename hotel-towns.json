@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16",
+ "updated": "2026-11-17",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -496,6 +496,14 @@
    "checkin": "2027-01-29",
    "checkout": "2027-01-31",
    "shoot": "Great Lakes Indoor Sectionals & National Series 2027 - Straight Line Archery"
+  },
+  {
+   "key": "jefferson city, tn",
+   "city": "Jefferson City",
+   "state": "TN",
+   "checkin": "2027-02-12",
+   "checkout": "2027-02-13",
+   "shoot": "2027 USA Archery Tennessee JOAD State Indoor Championship"
   },
   {
    "key": "kaufman, tx",
