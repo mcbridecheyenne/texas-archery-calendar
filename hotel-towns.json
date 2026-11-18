@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17",
+ "updated": "2026-11-18",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -66,6 +66,14 @@
    "shoot": "Lower Providence Ice Breaker 600"
   },
   {
+   "key": "bedias, tx",
+   "city": "Bedias",
+   "state": "TX",
+   "checkin": "2027-04-16",
+   "checkout": "2027-04-18",
+   "shoot": "Sherwood Forest Archery Games"
+  },
+  {
    "key": "beloit, wi",
    "city": "Beloit",
    "state": "WI",
@@ -112,6 +120,14 @@
    "checkin": "2027-01-29",
    "checkout": "2027-01-31",
    "shoot": "Great Lakes Indoor Sectionals & National Series 2027 - Lincoln Bowmen Archery Club"
+  },
+  {
+   "key": "brownwood, tx",
+   "city": "Brownwood",
+   "state": "TX",
+   "checkin": "2027-04-16",
+   "checkout": "2027-04-18",
+   "shoot": "Brownwood Bowhunters Assoc"
   },
   {
    "key": "bryan, tx",
@@ -242,6 +258,14 @@
    "shoot": "2026 Colorado JOAD Indoor Event #2"
   },
   {
+   "key": "dallas, tx",
+   "city": "Dallas",
+   "state": "TX",
+   "checkin": "2027-05-07",
+   "checkout": "2027-05-09",
+   "shoot": "Irving Bowhunters Assoc. Bi-State TX/OK Qualifier"
+  },
+  {
    "key": "dayton, tx",
    "city": "Dayton",
    "state": "TX",
@@ -280,6 +304,14 @@
    "checkin": "2027-02-05",
    "checkout": "2027-02-07",
    "shoot": "2027 USA Archery New Hampshire State and JOAD Indoor Championship"
+  },
+  {
+   "key": "eastland, tx",
+   "city": "Eastland",
+   "state": "TX",
+   "checkin": "2027-02-12",
+   "checkout": "2027-02-14",
+   "shoot": "Cross Timbers Archery Club"
   },
   {
    "key": "edna, tx",
@@ -458,6 +490,14 @@
    "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - Northeast Shooters Association"
   },
   {
+   "key": "holliday, tx",
+   "city": "Holliday",
+   "state": "TX",
+   "checkin": "2027-02-19",
+   "checkout": "2027-02-21",
+   "shoot": "Holliday Creek Archery Assoc.Bi-State Qualifier (TX/OK)"
+  },
+  {
    "key": "houston, tx",
    "city": "Houston",
    "state": "TX",
@@ -576,6 +616,14 @@
    "checkin": "2027-02-12",
    "checkout": "2027-02-14",
    "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - C&C Archery and Sporting Goods"
+  },
+  {
+   "key": "liberty hill, tx",
+   "city": "Liberty Hill",
+   "state": "TX",
+   "checkin": "2027-02-05",
+   "checkout": "2027-02-07",
+   "shoot": "Hill Country Bowhunters"
   },
   {
    "key": "long beach, ca",
@@ -826,6 +874,14 @@
    "shoot": "Pro Line Winter Open"
   },
   {
+   "key": "paige, tx",
+   "city": "Paige",
+   "state": "TX",
+   "checkin": "2027-05-14",
+   "checkout": "2027-05-16",
+   "shoot": "Axis Archery"
+  },
+  {
    "key": "pampa, tx",
    "city": "Pampa",
    "state": "TX",
@@ -845,9 +901,9 @@
    "key": "paris, tx",
    "city": "Paris",
    "state": "TX",
-   "checkin": "2027-04-21",
-   "checkout": "2027-04-25",
-   "shoot": "ASA McKenzie Classic"
+   "checkin": "2027-04-02",
+   "checkout": "2027-04-04",
+   "shoot": "Archers For Christ Quad-State Shootout (TX/OK/AR/LA)"
   },
   {
    "key": "pasadena, ca",
@@ -1050,6 +1106,14 @@
    "shoot": "2027 USA Archery Ohio State Indoor and JOAD Championship"
   },
   {
+   "key": "tuscola, tx",
+   "city": "Tuscola",
+   "state": "TX",
+   "checkin": "2027-04-30",
+   "checkout": "2027-05-02",
+   "shoot": "Abilene Bowhunters Assoc"
+  },
+  {
    "key": "tyler, tx",
    "city": "Tyler",
    "state": "TX",
@@ -1064,6 +1128,14 @@
    "checkin": "2026-11-19",
    "checkout": "2026-11-21",
    "shoot": "Out House Archery-1"
+  },
+  {
+   "key": "waelder, tx",
+   "city": "Waelder",
+   "state": "TX",
+   "checkin": "2027-01-29",
+   "checkout": "2027-01-31",
+   "shoot": "Buck Branch Archery Club"
   },
   {
    "key": "wasilla, ak",
