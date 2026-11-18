@@ -13,9 +13,9 @@
    "key": "albuquerque, nm",
    "city": "Albuquerque",
    "state": "NM",
-   "checkin": "2027-02-25",
-   "checkout": "2027-02-27",
-   "shoot": "2027 USA Archery JOAD Indoor Nationals - NM"
+   "checkin": "2026-12-05",
+   "checkout": "2026-12-06",
+   "shoot": "2026 Winter Warmup"
   },
   {
    "key": "allen, tx",
@@ -24,14 +24,6 @@
    "checkin": "2027-01-06",
    "checkout": "2027-01-09",
    "shoot": "Allen Bullseye Classic"
-  },
-  {
-   "key": "alloway, nj",
-   "city": "Alloway",
-   "state": "NJ",
-   "checkin": "2027-02-18",
-   "checkout": "2027-02-21",
-   "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - Obissquasoit Bowmen"
   },
   {
    "key": "alvarado, tx",
@@ -104,14 +96,6 @@
    "checkin": "2026-12-18",
    "checkout": "2026-12-20",
    "shoot": "Canadian River Archery and Gun Club-1"
-  },
-  {
-   "key": "bristow, va",
-   "city": "Bristow",
-   "state": "VA",
-   "checkin": "2027-02-12",
-   "checkout": "2027-02-14",
-   "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - Prince William Archers"
   },
   {
    "key": "brownstown twp, mi",
@@ -208,6 +192,14 @@
    "checkin": "2026-12-11",
    "checkout": "2026-12-13",
    "shoot": "The Frostbite JOAD"
+  },
+  {
+   "key": "cherry valley, ca",
+   "city": "Cherry Valley",
+   "state": "CA",
+   "checkin": "2027-01-29",
+   "checkout": "2027-01-31",
+   "shoot": "Southwest Indoor Sectionals & National Series 2027 - Cherry Valley Bowhunters"
   },
   {
    "key": "chicago, il",
@@ -378,6 +370,14 @@
    "shoot": "Hoyt/Easton Pro/Am"
   },
   {
+   "key": "fort lauderdale, fl",
+   "city": "Fort Lauderdale",
+   "state": "FL",
+   "checkin": "2027-01-29",
+   "checkout": "2027-01-31",
+   "shoot": "Southeast Indoor Sectionals & National Series 2027 - Fort Lauderdale Archers"
+  },
+  {
    "key": "fort mitchell, al",
    "city": "Fort Mitchell",
    "state": "AL",
@@ -482,12 +482,12 @@
    "shoot": "Northwest Indoor Sectionals & National Series 2027 - Lewis and Clark Archers"
   },
   {
-   "key": "hillsborough, nj",
-   "city": "Hillsborough",
-   "state": "NJ",
-   "checkin": "2027-02-18",
-   "checkout": "2027-02-21",
-   "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - Northeast Shooters Association"
+   "key": "henderson, nv",
+   "city": "Henderson",
+   "state": "NV",
+   "checkin": "2027-01-16",
+   "checkout": "2027-01-17",
+   "shoot": "Southwest Indoor Sectionals & National Series 2027 - Aces and Arrows Archery"
   },
   {
    "key": "holliday, tx",
@@ -512,14 +512,6 @@
    "checkin": "2026-12-02",
    "checkout": "2026-12-06",
    "shoot": "2026 Riverside Festivus"
-  },
-  {
-   "key": "hyde park, ny",
-   "city": "Hyde Park",
-   "state": "NY",
-   "checkin": "2027-02-11",
-   "checkout": "2027-02-14",
-   "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - Ti Yogi Bowmen"
   },
   {
    "key": "indianapolis, in",
@@ -578,6 +570,14 @@
    "shoot": "Nocked & Loaded-2"
   },
   {
+   "key": "lady lake, fl",
+   "city": "Lady Lake",
+   "state": "FL",
+   "checkin": "2027-01-29",
+   "checkout": "2027-01-31",
+   "shoot": "Southeast Indoor Sectionals & National Series 2027 - The Villages Archery Club"
+  },
+  {
    "key": "lancaster, pa",
    "city": "Lancaster",
    "state": "PA",
@@ -610,14 +610,6 @@
    "shoot": "Anderson Archery Winter Classic 2026"
   },
   {
-   "key": "le roy, ny",
-   "city": "Le Roy",
-   "state": "NY",
-   "checkin": "2027-02-12",
-   "checkout": "2027-02-14",
-   "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - C&C Archery and Sporting Goods"
-  },
-  {
    "key": "liberty hill, tx",
    "city": "Liberty Hill",
    "state": "TX",
@@ -640,14 +632,6 @@
    "checkin": "2027-01-08",
    "checkout": "2027-01-10",
    "shoot": "2027 Lunenie Star FITA"
-  },
-  {
-   "key": "madison heights, va",
-   "city": "Madison Heights",
-   "state": "VA",
-   "checkin": "2027-02-12",
-   "checkout": "2027-02-14",
-   "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - Amherst Arms and Supply"
   },
   {
    "key": "madison, nc",
@@ -754,6 +738,14 @@
    "shoot": "2027 USA Archery JOAD Indoor Nationals - NJ"
   },
   {
+   "key": "mount vernon, wa",
+   "city": "Mount Vernon",
+   "state": "WA",
+   "checkin": "2027-01-28",
+   "checkout": "2027-01-31",
+   "shoot": "Northwest Indoor Sectionals & National Series 2027 - Silver Arrow Bowmen"
+  },
+  {
    "key": "muskegon, mi",
    "city": "Muskegon",
    "state": "MI",
@@ -770,28 +762,12 @@
    "shoot": "Archery HQ-2"
   },
   {
-   "key": "new hartford, ny",
-   "city": "New Hartford",
-   "state": "NY",
-   "checkin": "2027-02-12",
-   "checkout": "2027-02-14",
-   "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - Straight Arrow Archery"
-  },
-  {
    "key": "new iberia, la",
    "city": "New Iberia",
    "state": "LA",
    "checkin": "2027-01-15",
    "checkout": "2027-01-17",
    "shoot": "Southern Indoor Sectionals & National Series 2027 - Bayou Bowmen"
-  },
-  {
-   "key": "new milford, pa",
-   "city": "new milford",
-   "state": "PA",
-   "checkin": "2027-02-12",
-   "checkout": "2027-02-14",
-   "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - The Outdoor Insiders"
   },
   {
    "key": "new tripoli, pa",
@@ -834,6 +810,14 @@
    "shoot": "2027 Arizona Cup Warm-Up"
   },
   {
+   "key": "north fort myers, fl",
+   "city": "North Fort Myers",
+   "state": "FL",
+   "checkin": "2027-01-28",
+   "checkout": "2027-01-31",
+   "shoot": "Southeast Indoor Sectionals & National Series 2027 - Lee County Archers"
+  },
+  {
    "key": "noti, or",
    "city": "Noti",
    "state": "OR",
@@ -850,12 +834,36 @@
    "shoot": "2027 USA Archery Oklahoma State & JOAD Indoor Championship"
   },
   {
+   "key": "omaha, ne",
+   "city": "Omaha",
+   "state": "NE",
+   "checkin": "2027-01-22",
+   "checkout": "2027-01-24",
+   "shoot": "Midwest Indoor Sectionals & National Series 2027 - Golden Arrow Archery Club"
+  },
+  {
+   "key": "omro, wi",
+   "city": "Omro",
+   "state": "WI",
+   "checkin": "2027-01-29",
+   "checkout": "2027-01-31",
+   "shoot": "Great Lakes Indoor Sectionals & National Series 2027 - Omro Bowhunters Club"
+  },
+  {
    "key": "orange grove, tx",
    "city": "Orange Grove",
    "state": "TX",
    "checkin": "2026-12-11",
    "checkout": "2026-12-12",
    "shoot": "Dark Horse Archery-2"
+  },
+  {
+   "key": "orlando, fl",
+   "city": "Orlando",
+   "state": "FL",
+   "checkin": "2027-01-22",
+   "checkout": "2027-01-24",
+   "shoot": "Southeast Indoor Sectionals & National Series 2027 - East River Archery Club"
   },
   {
    "key": "owenton, ky",
@@ -954,12 +962,28 @@
    "shoot": "Hale County 4H-Ollie Liner Center-2"
   },
   {
+   "key": "prattville, al",
+   "city": "Prattville",
+   "state": "AL",
+   "checkin": "2027-02-19",
+   "checkout": "2027-02-20",
+   "shoot": "2027 USA Archery Alabama State and JOAD Indoor Championship"
+  },
+  {
    "key": "randleman, nc",
    "city": "Randleman",
    "state": "NC",
    "checkin": "2027-01-28",
    "checkout": "2027-01-30",
    "shoot": "2027 USA Archery North Carolina Indoor State Championship"
+  },
+  {
+   "key": "redding, ca",
+   "city": "REDDING",
+   "state": "CA",
+   "checkin": "2027-01-16",
+   "checkout": "2027-01-17",
+   "shoot": "Southwest Indoor Sectionals & National Series 2027 - The Bow Rack"
   },
   {
    "key": "redondo beach, ca",
@@ -1048,6 +1072,14 @@
    "checkin": "2027-01-29",
    "checkout": "2027-01-31",
    "shoot": "Northwest Indoor Sectionals & National Series 2027 - Kenai Penisula Archers"
+  },
+  {
+   "key": "spring hill, fl",
+   "city": "Spring Hill",
+   "state": "FL",
+   "checkin": "2027-01-29",
+   "checkout": "2027-01-31",
+   "shoot": "Southeast Indoor Sectionals & National Series 2027 - Citrus Archery Club"
   },
   {
    "key": "st. louis, mo",
@@ -1200,14 +1232,6 @@
    "checkin": "2027-05-07",
    "checkout": "2027-05-08",
    "shoot": "2027 USA Archery Indiana State 3D Championship"
-  },
-  {
-   "key": "wrightstown, nj",
-   "city": "Wrightstown",
-   "state": "NJ",
-   "checkin": "2027-02-11",
-   "checkout": "2027-02-14",
-   "shoot": "Mid-Atlantic Indoor Sectionals & National Series 2027 - Black Knight Bowbenders"
   },
   {
    "key": "yankton, sd",
