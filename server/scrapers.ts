@@ -6,8 +6,14 @@ const UA =
 const TFAA_URL = "https://texasfieldarchery.org/schedule";
 const ASA_URL = "https://www.txasafederation.com/texas-asa-schedule";
 const TSAA_URL = "https://texasarchery.org/Calendar";
-const ASA_SHEET_ID = "1PeF-bm9k73m1onVmGDytHoGNCET4WRyLJeR9xCAI6Y4";
-const ASA_CSV_URL = `https://docs.google.com/spreadsheets/d/${ASA_SHEET_ID}/export?format=csv`;
+// One Google Sheet per season (2026, 2027). Add the next season's sheet ID here.
+const ASA_SHEET_IDS = [
+  "1PeF-bm9k73m1onVmGDytHoGNCET4WRyLJeR9xCAI6Y4", // 2026 Texas ASA schedule
+  "19AvwcPTMdBxBKBe_UHlOZTWZ5sh9951HsbKMH_0Ud3s", // 2027 Texas ASA Qualifier Schedule
+];
+const ASA_CSV_URLS = ASA_SHEET_IDS.map(
+  (id) => `https://docs.google.com/spreadsheets/d/${id}/export?format=csv`,
+);
 const TSAA_APP_ID = "69ac99564af1af86e1557667";
 const TSAA_EVENTS_URL = `https://base44.app/api/apps/${TSAA_APP_ID}/entities/TournamentEvent`;
 
@@ -17,9 +23,10 @@ function pad(n: number): string {
 
 function toIsoDate(mmddyyyy: string): string | null {
   // Handles "5/09/2026", "5/9/2026", "05/09/2026"
-  const m = mmddyyyy.trim().match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})$/);
+  const m = mmddyyyy.trim().match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4}|\d{2})$/);
   if (!m) return null;
-  const [, mo, d, y] = m;
+  const [, mo, d, yRaw] = m;
+  const y = yRaw.length === 2 ? `20${yRaw}` : yRaw; // "5/16/27" -> 2027
   const moNum = parseInt(mo, 10);
   const dNum = parseInt(d, 10);
   if (moNum < 1 || moNum > 12 || dNum < 1 || dNum > 31) return null;
@@ -163,10 +170,24 @@ export async function scrapeASA(): Promise<{
 }> {
   const fetchedAt = new Date().toISOString();
   try {
-    const res = await fetch(ASA_CSV_URL, { headers: { "User-Agent": UA } });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const csv = await res.text();
-    const events = parseASACsv(csv);
+    const results = await Promise.allSettled(
+      ASA_CSV_URLS.map(async (url) => {
+        const res = await fetch(url, { headers: { "User-Agent": UA } });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return parseASACsv(await res.text());
+      }),
+    );
+    const loaded = results.filter(
+      (r): r is PromiseFulfilledResult<TournamentEvent[]> => r.status === "fulfilled",
+    );
+    if (!loaded.length) {
+      const first = results[0] as PromiseRejectedResult;
+      throw first.reason instanceof Error ? first.reason : new Error(String(first.reason));
+    }
+    const seen = new Set<string>();
+    const events = loaded
+      .flatMap((r) => r.value)
+      .filter((e) => !seen.has(e.id) && (seen.add(e.id), true));
     return {
       events,
       status: {
