@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19",
+ "updated": "2026-11-20",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -157,7 +157,7 @@
    "key": "canton, tx",
    "city": "Canton",
    "state": "TX",
-   "checkin": "2026-11-19",
+   "checkin": "2026-11-20",
    "checkout": "2026-11-21",
    "shoot": "On Target Archery-1"
   },
@@ -165,7 +165,7 @@
    "key": "canyon lake, tx",
    "city": "Canyon Lake",
    "state": "TX",
-   "checkin": "2026-11-19",
+   "checkin": "2026-11-20",
    "checkout": "2026-11-22",
    "shoot": "Archers Haven-1"
   },
@@ -941,7 +941,7 @@
    "key": "perry hall, md",
    "city": "Perry Hall",
    "state": "MD",
-   "checkin": "2026-11-19",
+   "checkin": "2026-11-20",
    "checkout": "2026-11-22",
    "shoot": "2026 Mid Atlantic Indoor Star FITA I"
   },
@@ -1157,7 +1157,7 @@
    "key": "waco, tx",
    "city": "Waco",
    "state": "TX",
-   "checkin": "2026-11-19",
+   "checkin": "2026-11-20",
    "checkout": "2026-11-21",
    "shoot": "Out House Archery-1"
   },
