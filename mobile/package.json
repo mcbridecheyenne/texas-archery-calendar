@@ -8,6 +8,7 @@
     "ios": "expo start --ios",
     "android": "expo start --android",
     "typecheck": "tsc --noEmit",
+    "postinstall": "patch-package",
     "upgrade-sdk": "npx expo install expo@latest && npx expo install --fix",
     "ios:build": "./scripts/ios-release.sh",
     "ios:upload": "./scripts/ios-release.sh --upload",
@@ -46,6 +47,7 @@
   },
   "devDependencies": {
     "@types/react": "~19.1.10",
+    "patch-package": "^8.0.1",
     "typescript": "~5.9.2"
   }
 }

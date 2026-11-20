@@ -1,0 +1,56 @@
+diff --git a/node_modules/react-native-screens/ios/RNSScreenStack.mm b/node_modules/react-native-screens/ios/RNSScreenStack.mm
+index 229dc58..2e9bd1d 100644
+--- a/node_modules/react-native-screens/ios/RNSScreenStack.mm
++++ b/node_modules/react-native-screens/ios/RNSScreenStack.mm
+@@ -221,47 +221,10 @@ namespace react = facebook::react;
+ 
+ #pragma mark - UINavigationBarDelegate
+ 
+-#if RNS_IPHONE_OS_VERSION_AVAILABLE(26_0)
+-- (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPopItem:(UINavigationItem *)item
+-{
+-  if (@available(iOS 26, *)) {
+-    // To prevent popping multiple screens when back button is pressed repeatedly,
+-    // We allow for pop operation to proceed only if no transition is in progress,
+-    // which we check indirectly by checking if transitionCoordinator is set.
+-    // If it's not, we are safe to proceed.
+-    if (self.transitionCoordinator == nil) {
+-      // We still need to disable interactions for back button so click effects are not applied,
+-      // and there is unfortunately no better place for it currently
+-      UIView *button = [navigationBar rnscreens_findBackButtonWrapperView];
+-      if (button != nil) {
+-        button.userInteractionEnabled = false;
+-      }
+-
+-      return true;
+-    }
+-
+-    return false;
+-  }
+-
+-  return true;
+-}
+-
+-- (void)navigationBar:(UINavigationBar *)navigationBar didPopItem:(UINavigationItem *)item
+-{
+-  if (@available(iOS 26, *)) {
+-    // Reset interactions on back button -> see navigationBar:shouldPopItem
+-    // IMPORTANT: This reset won't execute when preventNativeDismiss is on.
+-    // However, on iOS 26, unlike in previous versions, the back button instance changes
+-    // when handling preventNativeDismiss and userIteractionEnabled is reset.
+-    // The instance also changes when regular screen pop happens, but in that case
+-    // the value of userInteractionEnabled is carried on, and we reset it here.
+-    UIView *button = [navigationBar rnscreens_findBackButtonWrapperView];
+-    if (button != nil) {
+-      button.userInteractionEnabled = true;
+-    }
+-  }
+-}
+-#endif // Check for iOS >= 26
++// Archery in the USA: removed the iOS 26 shouldPopItem/didPopItem pair from 4.16.0.
++// It turned the back button's touches off on every tap and only turned them back on in
++// didPopItem, so when a pop didn't finish (tap during an animation, a cancelled swipe back)
++// the back button stayed dead. react-native-screens 4.17.0 removed the same code upstream.
+ 
+ #pragma mark - RNSFrameCorrectionProvider
+ 
