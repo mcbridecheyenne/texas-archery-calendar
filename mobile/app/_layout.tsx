@@ -72,7 +72,9 @@ export default function RootLayout() {
                       headerTitleStyle: { color: t.text, fontWeight: "700" },
                       headerShadowVisible: false,
                       contentStyle: { backgroundColor: t.background },
-                      headerBackTitle: "Back",
+                      // Just the arrow, no "Back" word: on iOS 27 a back button with its own title
+                      // can go blank and stop responding after the header resizes a few times.
+                      headerBackButtonDisplayMode: "minimal",
                     }}
                   >
                     <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
