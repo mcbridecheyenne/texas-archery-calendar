@@ -56,5 +56,15 @@
     "state": "IN",
     "location": "Grand Park, Westfield, IN",
     "sourceUrl": "https://www.usarchery.org/news/usa-archery-announces-the-2027-calendar-for-indoor-and-outdoor-events"
+  },
+  {
+    "organization": "TBOT",
+    "name": "Abilene TBoT",
+    "startDate": "2027-03-13",
+    "endDate": "2027-03-14",
+    "city": "Tuscola",
+    "state": "TX",
+    "location": "Abilene Bowhunters Association, 4951 FM 89, Tuscola, TX 79562",
+    "sourceUrl": "https://tbot-org.hannahstone215.workers.dev/shoots/abilene-tbot-2027"
   }
 ]
