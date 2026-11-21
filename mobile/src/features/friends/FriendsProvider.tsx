@@ -1,7 +1,7 @@
 // Friends, friend requests and shared "Going" for the signed-in archer, shared by the
 // Tournaments tab, the Friends screen and the Account tab badge.
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { AppState } from "react-native";
+import { Alert, AppState } from "react-native";
 import { useAuth } from "../../lib/auth";
 import { daysFor, maybeFor, onStarsMoved, type TournamentEvent } from "../calendar";
 import * as api from "./api";
@@ -66,9 +66,9 @@ export function useFriends(): FriendsState {
   return useContext(FriendsContext);
 }
 
-function weekAgoIso(): string {
+function weekAgoIso(daysAgo = 7): string {
   const d = new Date();
-  d.setDate(d.getDate() - 7);
+  d.setDate(d.getDate() - daysAgo);
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 }
 
@@ -100,10 +100,47 @@ export function FriendsProvider({ children }: { children: ReactNode }) {
     const me = userId;
     return inTurn(async () => {
       if (signedInAs.current !== me) return;
-      const rows = await syncMyShoots(me);
-      if (signedInAs.current === me) setShares(new Map(rows.map((r) => [r.eventId, r.visibility])));
+      const { rows, savedPrivately } = await syncMyShoots(me);
+      if (signedInAs.current !== me) return;
+      setShares(new Map(rows.map((r) => [r.eventId, r.visibility])));
+      // Stars added on this phone without the "who can see it?" question (signed out, or before
+      // setting up a profile) were just saved as "Just me". Ask once whether to share the
+      // upcoming ones, so friends going to the same shoot can see each other.
+      const today = weekAgoIso(0);
+      const upcoming = savedPrivately.filter((r) => r.eventDate >= today);
+      if (upcoming.length) askToShareSaved(me, upcoming);
     });
   }, [active, userId, inTurn]);
+
+  // Saves each of those shoots with the level they picked ("Not now" leaves them as "Just me").
+  const shareSaved = useCallback(
+    (me: string, list: api.MyGoingRow[], level: ShareLevel) =>
+      inTurn(async () => {
+        for (const r of list) {
+          if (signedInAs.current !== me) return;
+          try {
+            await api.shareGoing(me, { id: r.eventId, name: r.eventName, startDate: r.eventDate, days: r.days, maybe: r.maybe }, level);
+            setShares((cur) => new Map(cur).set(r.eventId, level));
+          } catch {
+            // Stays "Just me"; they can still change it from the shoot's page.
+          }
+        }
+      }),
+    [inTurn]
+  );
+
+  function askToShareSaved(me: string, list: api.MyGoingRow[]) {
+    const one = list.length === 1;
+    Alert.alert(
+      one ? "Share this shoot?" : `Share ${list.length} shoots?`,
+      `${one ? `"${list[0].eventName}" is` : "These shoots are"} in My Shoots but only you can see ${one ? "it" : "them"}. Let your friends see you're going?`,
+      [
+        { text: "My friends", onPress: () => void shareSaved(me, list, "friends") },
+        { text: "Everyone in the app", onPress: () => void shareSaved(me, list, "public") },
+        { text: "Not now", style: "cancel" },
+      ]
+    );
+  }
 
   const refresh = useCallback(async () => {
     if (!active || !userId) return;

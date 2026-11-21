@@ -10,8 +10,9 @@ import { addStarsFromAccount, movedStars, starredShoots } from "../calendar";
 import * as api from "./api";
 import type { MyGoingRow } from "./api";
 
-/** Brings the account and this phone in step, and returns the account's rows afterwards. */
-export async function syncMyShoots(me: string): Promise<MyGoingRow[]> {
+/** Brings the account and this phone in step. Returns the account's rows afterwards, and the
+ *  stars that were only on this phone and were just saved as "Just me" (nobody was asked). */
+export async function syncMyShoots(me: string): Promise<{ rows: MyGoingRow[]; savedPrivately: MyGoingRow[] }> {
   const rows = await api.fetchMyGoing(me);
   const byId = new Map(rows.map((r) => [r.eventId, r]));
 
@@ -43,11 +44,14 @@ export async function syncMyShoots(me: string): Promise<MyGoingRow[]> {
 
   // 3. Save stars that are only on this phone to the account, as "Just me".
   const missing = (await starredShoots()).filter((s) => !byId.has(s.id));
+  const savedPrivately: MyGoingRow[] = [];
   if (missing.length) {
     try {
       await api.saveGoingPrivately(me, missing);
       for (const s of missing) {
-        byId.set(s.id, { eventId: s.id, eventName: s.name, eventDate: s.startDate, visibility: "private", days: s.days ?? null, maybe: !!s.maybe });
+        const row: MyGoingRow = { eventId: s.id, eventName: s.name, eventDate: s.startDate, visibility: "private", days: s.days ?? null, maybe: !!s.maybe };
+        byId.set(s.id, row);
+        savedPrivately.push(row);
       }
     } catch {
       // Until schema.sql is re-run in Supabase the database turns down "Just me" rows.
@@ -55,5 +59,5 @@ export async function syncMyShoots(me: string): Promise<MyGoingRow[]> {
     }
   }
 
-  return Array.from(byId.values());
+  return { rows: Array.from(byId.values()), savedPrivately };
 }
