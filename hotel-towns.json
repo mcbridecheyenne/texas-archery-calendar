@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20",
+ "updated": "2026-11-21",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -157,15 +157,15 @@
    "key": "canton, tx",
    "city": "Canton",
    "state": "TX",
-   "checkin": "2026-11-20",
-   "checkout": "2026-11-21",
+   "checkin": "2026-11-21",
+   "checkout": "2026-11-22",
    "shoot": "On Target Archery-1"
   },
   {
    "key": "canyon lake, tx",
    "city": "Canyon Lake",
    "state": "TX",
-   "checkin": "2026-11-20",
+   "checkin": "2026-11-21",
    "checkout": "2026-11-22",
    "shoot": "Archers Haven-1"
   },
@@ -229,7 +229,7 @@
    "key": "claude, tx",
    "city": "Claude",
    "state": "TX",
-   "checkin": "2026-11-20",
+   "checkin": "2026-11-21",
    "checkout": "2026-11-22",
    "shoot": "Armstrong County 4H-2"
   },
@@ -245,8 +245,8 @@
    "key": "colorado springs, co",
    "city": "Colorado Springs",
    "state": "CO",
-   "checkin": "2026-11-20",
-   "checkout": "2026-11-21",
+   "checkin": "2026-11-21",
+   "checkout": "2026-11-22",
    "shoot": "2026 Colorado JOAD Indoor Event #2"
   },
   {
@@ -309,7 +309,7 @@
    "key": "edna, tx",
    "city": "Edna",
    "state": "TX",
-   "checkin": "2026-11-20",
+   "checkin": "2026-11-21",
    "checkout": "2026-11-22",
    "shoot": "STX Archery & Outdoors-1"
   },
@@ -317,8 +317,8 @@
    "key": "el dorado, ar",
    "city": "El Dorado",
    "state": "AR",
-   "checkin": "2026-11-20",
-   "checkout": "2026-11-21",
+   "checkin": "2026-11-21",
+   "checkout": "2026-11-22",
    "shoot": "2026 USA Archery Arkansas State Indoor Championship"
   },
   {
@@ -397,8 +397,8 @@
    "key": "foxboro, ma",
    "city": "Foxboro",
    "state": "MA",
-   "checkin": "2026-11-20",
-   "checkout": "2026-11-21",
+   "checkin": "2026-11-21",
+   "checkout": "2026-11-22",
    "shoot": "2026 Fall Collegiate"
   },
   {
@@ -645,7 +645,7 @@
    "key": "manchester, ct",
    "city": "Manchester",
    "state": "CT",
-   "checkin": "2026-11-20",
+   "checkin": "2026-11-21",
    "checkout": "2026-11-22",
    "shoot": "2026 USA Archery Connecticut State Indoor Championship"
   },
@@ -677,7 +677,7 @@
    "key": "mays landing, nj",
    "city": "Mays Landing",
    "state": "NJ",
-   "checkin": "2026-11-20",
+   "checkin": "2026-11-21",
    "checkout": "2026-11-22",
    "shoot": "2026 - Eastern Seaboard Championships"
   },
@@ -941,7 +941,7 @@
    "key": "perry hall, md",
    "city": "Perry Hall",
    "state": "MD",
-   "checkin": "2026-11-20",
+   "checkin": "2026-11-21",
    "checkout": "2026-11-22",
    "shoot": "2026 Mid Atlantic Indoor Star FITA I"
   },
@@ -1005,7 +1005,7 @@
    "key": "roanoke, tx",
    "city": "Roanoke",
    "state": "TX",
-   "checkin": "2026-11-20",
+   "checkin": "2026-11-21",
    "checkout": "2026-11-22",
    "shoot": "Cinnamon Creek Ranch-2"
   },
@@ -1093,8 +1093,8 @@
    "key": "statesboro, ga",
    "city": "Statesboro",
    "state": "GA",
-   "checkin": "2026-11-20",
-   "checkout": "2026-11-21",
+   "checkin": "2026-11-21",
+   "checkout": "2026-11-22",
    "shoot": "2026 SEA Invitational"
   },
   {
@@ -1157,8 +1157,8 @@
    "key": "waco, tx",
    "city": "Waco",
    "state": "TX",
-   "checkin": "2026-11-20",
-   "checkout": "2026-11-21",
+   "checkin": "2026-11-21",
+   "checkout": "2026-11-22",
    "shoot": "Out House Archery-1"
   },
   {
