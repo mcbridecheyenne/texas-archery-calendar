@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21",
+ "updated": "2026-11-22",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -157,16 +157,16 @@
    "key": "canton, tx",
    "city": "Canton",
    "state": "TX",
-   "checkin": "2026-11-21",
-   "checkout": "2026-11-22",
-   "shoot": "On Target Archery-1"
+   "checkin": "2027-01-07",
+   "checkout": "2027-01-09",
+   "shoot": "On Target Archery-2"
   },
   {
    "key": "canyon lake, tx",
    "city": "Canyon Lake",
    "state": "TX",
-   "checkin": "2026-11-21",
-   "checkout": "2026-11-22",
+   "checkin": "2026-11-22",
+   "checkout": "2026-11-23",
    "shoot": "Archers Haven-1"
   },
   {
@@ -205,8 +205,8 @@
    "key": "chicago, il",
    "city": "Chicago",
    "state": "IL",
-   "checkin": "2026-11-21",
-   "checkout": "2026-11-22",
+   "checkin": "2026-11-22",
+   "checkout": "2026-11-23",
    "shoot": "North Side Archery Club: November 2026 USA Archery JOAD/AAP Indoor Pin Shoot"
   },
   {
@@ -229,8 +229,8 @@
    "key": "claude, tx",
    "city": "Claude",
    "state": "TX",
-   "checkin": "2026-11-21",
-   "checkout": "2026-11-22",
+   "checkin": "2026-11-22",
+   "checkout": "2026-11-23",
    "shoot": "Armstrong County 4H-2"
   },
   {
@@ -245,9 +245,9 @@
    "key": "colorado springs, co",
    "city": "Colorado Springs",
    "state": "CO",
-   "checkin": "2026-11-21",
-   "checkout": "2026-11-22",
-   "shoot": "2026 Colorado JOAD Indoor Event #2"
+   "checkin": "2026-12-05",
+   "checkout": "2026-12-06",
+   "shoot": "USA Archery Colorado 3D Indoor Buckle Series #2"
   },
   {
    "key": "dallas, tx",
@@ -309,17 +309,17 @@
    "key": "edna, tx",
    "city": "Edna",
    "state": "TX",
-   "checkin": "2026-11-21",
-   "checkout": "2026-11-22",
+   "checkin": "2026-11-22",
+   "checkout": "2026-11-23",
    "shoot": "STX Archery & Outdoors-1"
   },
   {
    "key": "el dorado, ar",
    "city": "El Dorado",
    "state": "AR",
-   "checkin": "2026-11-21",
-   "checkout": "2026-11-22",
-   "shoot": "2026 USA Archery Arkansas State Indoor Championship"
+   "checkin": "2026-12-31",
+   "checkout": "2027-01-02",
+   "shoot": "2027 USA Archery Arkansas State Indoor Championship"
   },
   {
    "key": "evansville, in",
@@ -397,9 +397,9 @@
    "key": "foxboro, ma",
    "city": "Foxboro",
    "state": "MA",
-   "checkin": "2026-11-21",
-   "checkout": "2026-11-22",
-   "shoot": "2026 Fall Collegiate"
+   "checkin": "2027-03-12",
+   "checkout": "2027-03-14",
+   "shoot": "2027 Archer's Cup"
   },
   {
    "key": "frisco, tx",
@@ -645,8 +645,8 @@
    "key": "manchester, ct",
    "city": "Manchester",
    "state": "CT",
-   "checkin": "2026-11-21",
-   "checkout": "2026-11-22",
+   "checkin": "2026-11-22",
+   "checkout": "2026-11-23",
    "shoot": "2026 USA Archery Connecticut State Indoor Championship"
   },
   {
@@ -677,8 +677,8 @@
    "key": "mays landing, nj",
    "city": "Mays Landing",
    "state": "NJ",
-   "checkin": "2026-11-21",
-   "checkout": "2026-11-22",
+   "checkin": "2026-11-22",
+   "checkout": "2026-11-23",
    "shoot": "2026 - Eastern Seaboard Championships"
   },
   {
@@ -773,8 +773,8 @@
    "key": "new tripoli, pa",
    "city": "New Tripoli",
    "state": "PA",
-   "checkin": "2026-11-21",
-   "checkout": "2026-11-22",
+   "checkin": "2026-11-22",
+   "checkout": "2026-11-23",
    "shoot": "Ontelaunee Fall Frolic 18 Meter Indoor"
   },
   {
@@ -941,8 +941,8 @@
    "key": "perry hall, md",
    "city": "Perry Hall",
    "state": "MD",
-   "checkin": "2026-11-21",
-   "checkout": "2026-11-22",
+   "checkin": "2026-11-22",
+   "checkout": "2026-11-23",
    "shoot": "2026 Mid Atlantic Indoor Star FITA I"
   },
   {
@@ -1005,8 +1005,8 @@
    "key": "roanoke, tx",
    "city": "Roanoke",
    "state": "TX",
-   "checkin": "2026-11-21",
-   "checkout": "2026-11-22",
+   "checkin": "2026-11-22",
+   "checkout": "2026-11-23",
    "shoot": "Cinnamon Creek Ranch-2"
   },
   {
@@ -1093,9 +1093,9 @@
    "key": "statesboro, ga",
    "city": "Statesboro",
    "state": "GA",
-   "checkin": "2026-11-21",
-   "checkout": "2026-11-22",
-   "shoot": "2026 SEA Invitational"
+   "checkin": "2026-12-11",
+   "checkout": "2026-12-12",
+   "shoot": "2027 USA Archery GAA State 25M Championship"
   },
   {
    "key": "tampa, fl",
@@ -1141,9 +1141,9 @@
    "key": "tuscola, tx",
    "city": "Tuscola",
    "state": "TX",
-   "checkin": "2027-04-30",
-   "checkout": "2027-05-02",
-   "shoot": "Abilene Bowhunters Assoc"
+   "checkin": "2027-03-12",
+   "checkout": "2027-03-14",
+   "shoot": "Abilene TBoT"
   },
   {
    "key": "tyler, tx",
@@ -1152,14 +1152,6 @@
    "checkin": "2026-12-11",
    "checkout": "2026-12-13",
    "shoot": "Griffin Archery-2"
-  },
-  {
-   "key": "waco, tx",
-   "city": "Waco",
-   "state": "TX",
-   "checkin": "2026-11-21",
-   "checkout": "2026-11-22",
-   "shoot": "Out House Archery-1"
   },
   {
    "key": "waelder, tx",
