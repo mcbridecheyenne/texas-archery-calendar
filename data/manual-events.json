@@ -66,5 +66,89 @@
     "state": "TX",
     "location": "Abilene Bowhunters Association, 4951 FM 89, Tuscola, TX 79562",
     "sourceUrl": "https://tbot-org.hannahstone215.workers.dev/shoots/abilene-tbot-2027"
+  },
+  {
+    "organization": "IBO",
+    "name": "IBO Brazos Bownanza Trad Shoot",
+    "startDate": "2027-02-19",
+    "endDate": "2027-02-20",
+    "city": "Bryan",
+    "state": "TX",
+    "location": "Brazos County Archery Club, Bryan, TX 77803",
+    "sourceUrl": "https://www.facebook.com/IBOTrad/",
+    "contact": "David",
+    "phone": "979-220-0145"
+  },
+  {
+    "organization": "IBO",
+    "name": "IBO Hudson River Trad Shoot",
+    "startDate": "2027-04-03",
+    "endDate": "2027-04-04",
+    "city": "Homer",
+    "state": "GA",
+    "location": "211 Hudson Valley Dr, Homer, GA",
+    "sourceUrl": "https://www.facebook.com/IBOTrad/",
+    "contact": "Ben",
+    "phone": "706-499-0991"
+  },
+  {
+    "organization": "IBO",
+    "name": "IBO Southeastern Trad Championship",
+    "startDate": "2027-04-24",
+    "endDate": "2027-04-25",
+    "city": "Pensacola",
+    "state": "FL",
+    "location": "Panhandle Bowhunters, 7200 Sparshott Dr, Pensacola, FL 32526",
+    "sourceUrl": "https://www.facebook.com/IBOTrad/",
+    "contact": "Tyler",
+    "phone": "850-281-2067"
+  },
+  {
+    "organization": "IBO",
+    "name": "Chester Classic and IBO Trad Championship",
+    "startDate": "2027-05-13",
+    "endDate": "2027-05-16",
+    "city": "Chester",
+    "state": "TX",
+    "location": "1809 FM 2097, Chester, TX 75936",
+    "sourceUrl": "https://www.facebook.com/IBOTrad/",
+    "contact": "Shana",
+    "phone": "409-673-5797"
+  },
+  {
+    "organization": "IBO",
+    "name": "IBO East Coast Trad Championship",
+    "startDate": "2027-05-21",
+    "endDate": "2027-05-23",
+    "city": "Jacksonville",
+    "state": "FL",
+    "location": "North Florida Archers, Jacksonville, FL 32244",
+    "sourceUrl": "https://www.facebook.com/IBOTrad/",
+    "contact": "Butch",
+    "phone": "904-445-0001"
+  },
+  {
+    "organization": "IBO",
+    "name": "IBO Volunteer State Trad Arrow Fling",
+    "startDate": "2027-06-04",
+    "endDate": "2027-06-06",
+    "city": "Dickson",
+    "state": "TN",
+    "location": "Buck Hollow Bowhunters, 123 Holland Rd, Dickson, TN 37055",
+    "sourceUrl": "https://www.facebook.com/IBOTrad/",
+    "contact": "Dewayne",
+    "phone": "615-218-9671"
+  },
+  {
+    "organization": "IBO",
+    "name": "IBO Traditional World Championship",
+    "startDate": "2027-07-15",
+    "endDate": "2027-07-18",
+    "city": "Pipestem",
+    "state": "WV",
+    "location": "Pipestem State Park, 3405 Pipestem Dr, Pipestem, WV 25979",
+    "sourceUrl": "https://www.facebook.com/IBOTrad/",
+    "contact": "Shana",
+    "phone": "409-673-5797"
   }
 ]
