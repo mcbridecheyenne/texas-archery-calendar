@@ -508,6 +508,8 @@ async function runWeeklySource(
 interface ManualEvent {
   organization: string; name: string; startDate: string; endDate?: string;
   city?: string; state?: string; location?: string; sourceUrl: string;
+  // Optional organizer contact from the flyer, shown on the event card.
+  contact?: string; phone?: string;
   // Optional daily check of the organizer's page: every phrase in `expect` must still appear in
   // its text (case-insensitive). When one goes missing, or the page can't be read, the Manual
   // source is reported as "partial", which opens the feed-health issue so the hand-kept dates
@@ -527,6 +529,7 @@ function manualEvents(rows: ManualEvent[]): UsaEvent[] {
     source: "Manual", organization: row.organization, name: row.name,
     startDate: row.startDate, endDate: row.endDate ?? row.startDate,
     location: row.location ?? null, city: row.city ?? null, state: normalizeState(row.state),
+    contact: row.contact ?? null, phone: row.phone ?? null,
     sourceUrl: row.sourceUrl,
   }));
 }
