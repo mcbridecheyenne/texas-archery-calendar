@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24",
+ "updated": "2026-11-25",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -40,6 +40,14 @@
    "checkin": "2027-02-04",
    "checkout": "2027-02-07",
    "shoot": "Randall County 4H-Randall County Fire Department-2"
+  },
+  {
+   "key": "andover, mn",
+   "city": "Andover",
+   "state": "MN",
+   "checkin": "2027-01-14",
+   "checkout": "2027-01-17",
+   "shoot": "Midwest Indoor Sectionals & National Series 2027 - Rapids Archery Club"
   },
   {
    "key": "ashland, ma",
@@ -96,6 +104,14 @@
    "checkin": "2026-12-18",
    "checkout": "2026-12-20",
    "shoot": "Canadian River Archery and Gun Club-1"
+  },
+  {
+   "key": "broomfield, co",
+   "city": "BROOMFIELD",
+   "state": "CO",
+   "checkin": "2027-01-22",
+   "checkout": "2027-01-24",
+   "shoot": "Southwest Indoor Sectionals & National Series 2027 - Empty Quiver Archery"
   },
   {
    "key": "brownstown twp, mi",
@@ -186,12 +202,20 @@
    "shoot": "Southwest Indoor Sectionals & National Series 2027 - Grand Mesa Archery"
   },
   {
+   "key": "centerville, va",
+   "city": "Centerville",
+   "state": "VA",
+   "checkin": "2027-02-12",
+   "checkout": "2027-02-13",
+   "shoot": "2027 Cub Run Archers (ARL-FX IWLA) Winter Indoor"
+  },
+  {
    "key": "central, sc",
    "city": "Central",
    "state": "SC",
    "checkin": "2027-01-28",
    "checkout": "2027-01-31",
-   "shoot": "Southeast Indoor Sectionals & National Series 2027 - Keowee Bowmen"
+   "shoot": "2027 SCAA State Indoor Round Championship @Keowee Bowmen"
   },
   {
    "key": "centreville, va",
@@ -386,14 +410,6 @@
    "shoot": "Hoyt/Easton Pro/Am"
   },
   {
-   "key": "fort lauderdale, fl",
-   "city": "Fort Lauderdale",
-   "state": "FL",
-   "checkin": "2027-01-29",
-   "checkout": "2027-01-31",
-   "shoot": "Southeast Indoor Sectionals & National Series 2027 - Fort Lauderdale Archers"
-  },
-  {
    "key": "fort mitchell, al",
    "city": "Fort Mitchell",
    "state": "AL",
@@ -466,6 +482,14 @@
    "shoot": "Double G-2"
   },
   {
+   "key": "glendale, az",
+   "city": "Glendale",
+   "state": "AZ",
+   "checkin": "2027-01-18",
+   "checkout": "2027-01-26",
+   "shoot": "Southwest Indoor Sectionals & National Series 2027 - Corner Archery"
+  },
+  {
    "key": "grapevine, tx",
    "city": "Grapevine",
    "state": "TX",
@@ -485,9 +509,9 @@
    "key": "hattiesburg, ms",
    "city": "Hattiesburg",
    "state": "MS",
-   "checkin": "2027-02-25",
-   "checkout": "2027-02-27",
-   "shoot": "2027 USA Archery JOAD Indoor Nationals - MS"
+   "checkin": "2027-01-29",
+   "checkout": "2027-01-30",
+   "shoot": "2027 USA Archery Mississippi Indoor State and JOAD Championship"
   },
   {
    "key": "helena, mt",
@@ -600,14 +624,6 @@
    "checkin": "2027-01-21",
    "checkout": "2027-01-23",
    "shoot": "Nocked & Loaded-2"
-  },
-  {
-   "key": "lady lake, fl",
-   "city": "Lady Lake",
-   "state": "FL",
-   "checkin": "2027-01-29",
-   "checkout": "2027-01-31",
-   "shoot": "Southeast Indoor Sectionals & National Series 2027 - The Villages Archery Club"
   },
   {
    "key": "lancaster, pa",
@@ -826,6 +842,14 @@
    "shoot": "2027 Arizona Cup Warm-Up"
   },
   {
+   "key": "north charleston, sc",
+   "city": "North Charleston",
+   "state": "SC",
+   "checkin": "2027-01-28",
+   "checkout": "2027-01-31",
+   "shoot": "2027 SCAA State Indoor Round Championship @Riverpointe"
+  },
+  {
    "key": "north fort myers, fl",
    "city": "North Fort Myers",
    "state": "FL",
@@ -853,8 +877,8 @@
    "key": "omaha, ne",
    "city": "Omaha",
    "state": "NE",
-   "checkin": "2027-01-22",
-   "checkout": "2027-01-24",
+   "checkin": "2027-01-29",
+   "checkout": "2027-01-31",
    "shoot": "Midwest Indoor Sectionals & National Series 2027 - Golden Arrow Archery Club"
   },
   {
@@ -880,6 +904,14 @@
    "checkin": "2027-01-22",
    "checkout": "2027-01-24",
    "shoot": "Southeast Indoor Sectionals & National Series 2027 - East River Archery Club"
+  },
+  {
+   "key": "oro valley, az",
+   "city": "Oro Valley",
+   "state": "AZ",
+   "checkin": "2026-12-11",
+   "checkout": "2026-12-13",
+   "shoot": "2027 Winter 1440 Round (The old FITA Round)"
   },
   {
    "key": "owenton, ky",
@@ -928,14 +960,6 @@
    "checkin": "2027-04-02",
    "checkout": "2027-04-04",
    "shoot": "Archers For Christ Quad-State Shootout (TX/OK/AR/LA)"
-  },
-  {
-   "key": "pasadena, ca",
-   "city": "Pasadena",
-   "state": "CA",
-   "checkin": "2027-01-30",
-   "checkout": "2027-01-31",
-   "shoot": "Southwest Indoor Sectionals & National Series 2027 - Pasadena Roving Archers"
   },
   {
    "key": "pawtucket, ri",
