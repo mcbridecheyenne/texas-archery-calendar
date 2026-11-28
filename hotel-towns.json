@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27",
+ "updated": "2026-11-28",
  "towns": [
   {
    "key": "1000 west austin blvd, mo",
@@ -61,7 +61,7 @@
    "key": "audubon, pa",
    "city": "Audubon",
    "state": "PA",
-   "checkin": "2026-11-27",
+   "checkin": "2026-11-28",
    "checkout": "2026-11-29",
    "shoot": "Lower Providence Ice Breaker 600"
   },
